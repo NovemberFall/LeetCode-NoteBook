@@ -6,13 +6,14 @@ Output: 5->4->3->2->1->NULL
 
 Follow up:
 
-A linked list can be reversed either iteratively or recursively. Could you implement both?
+A linked list can be reversed either iteratively or recursively. 
+Could you implement both?
 ```
 
 
 
 
-- Recursive method:
+### Recursive method:
 
 - https://novemberfall.github.io/Algorithm-FullStack/ch3/ListReverse.html
 
