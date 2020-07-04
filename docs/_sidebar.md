@@ -114,6 +114,7 @@
 * [Fundamental Concept](basic/intro.md)
     * [Series Big-O | arithmetic, Geometric sequence](basic/series.md)
     * [Object| Java Pass by Value](basic/pbv.md)
+    * [Integer | Strings](basic/string.md)
     * [Array | Sort](Array/intro.md)
         * [704. Classical Binary Search](Array/classicalBinarySearch.md)
         * [912. Merge Sort | Selection | Quick | recursion tree Time Complexity](Array/arraySort.md)
