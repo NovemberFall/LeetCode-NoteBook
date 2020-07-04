@@ -7,10 +7,6 @@ docsifyjs
 
 https://novemberfall.github.io/LeetCode-NoteBook/
 
----
-# LeetCode-Algorithm for GitBook
-
-https://novemberfall.github.io/LeetCode-Algorithm/
 
 ---
 
