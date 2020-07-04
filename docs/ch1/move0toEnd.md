@@ -19,8 +19,8 @@ or {3, 1, 1, 0, 0}
 
 ## Analysis:
 
-- [reference to 283. Move Zeroes](https://novemberfall.github.io/LeetCode-Algorithm/ch1/move0.html)
-- [reference to Move 0s To The End II](https://novemberfall.github.io/LeetCode-Algorithm/ch1/move0toEnd2.html)
+- [reference to 283. Move Zeroes](https://novemberfall.github.io/LeetCode-NoteBook/#/ch1/move0)
+- [reference to Move 0s To The End II](https://novemberfall.github.io/LeetCode-NoteBook/#/ch1/move0toEnd2)
 
 
 

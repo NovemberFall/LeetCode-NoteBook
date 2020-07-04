@@ -17,8 +17,8 @@ Examples:
 
 ## Analysis:
 
-- [reference to 283. Move Zeroes](https://novemberfall.github.io/LeetCode-Algorithm/ch1/move0.html)
-- [reference to Move 0s To The End](https://novemberfall.github.io/LeetCode-Algorithm/ch1/move0toEnd.html)
+- [reference to 283. Move Zeroes](https://novemberfall.github.io/LeetCode-NoteBook/#/ch1/move0)
+- [reference to Move 0s To The End](https://novemberfall.github.io/LeetCode-NoteBook/#/ch1/move0toEnd)
 
 
 - **Note: quick sort doesn't work because 相向而行不保证相对顺序**
