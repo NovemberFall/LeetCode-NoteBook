@@ -70,7 +70,7 @@ class Solution {
         }
         int len = sb.length();
         sb.append(root.val);
-        if(root.left != null && root.right != null){
+        if(root.left == null && root.right == null){
             res.add(sb.toString());
         }else{
             sb.append("->");
