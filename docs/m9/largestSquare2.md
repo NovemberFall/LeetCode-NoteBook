@@ -32,7 +32,7 @@ grid[i][j] is 0 or 1
 
 
 
-- [Analysis: reference to Largest Square Surrounded By One](https://novemberfall.github.io/LeetCode-Algorithm/m9/largestSquare1.html)
+- [Analysis: reference to Largest Square Surrounded By One](https://novemberfall.github.io/LeetCode-NoteBook/#/m9/largestSquare1)
 
 
 ```java

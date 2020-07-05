@@ -24,7 +24,7 @@ return its bottom-up level order traversal as:
 ```
 
 
-- 具体分析可以参考 [102. Binary Tree Level Order Traversal](https://novemberfall.github.io/LeetCode-Algorithm/m6/printByLayer.html)
+- 具体分析可以参考 [102. Binary Tree Level Order Traversal](https://novemberfall.github.io/LeetCode-NoteBook/#/m6/printByLayer)
 
 
 - 唯一不同点在于， `ArrayList.add(0, list)` => 把最先的这一层元素全部加到第一个，然后下一次又加在第一个

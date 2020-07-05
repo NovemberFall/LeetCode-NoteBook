@@ -20,7 +20,8 @@ For example, given n = 3, a solution set is:
 
 ## Analysis:
 
-- Time = $$O(2^{2n}*2n)$$
+- $$Time = O(2^{2n}*2n)$$
+  
 - Extra space = O(n)
 
 

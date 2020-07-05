@@ -15,7 +15,7 @@ Input: [1,null,2,3]
 Output: [3,2,1]
 ```
 
-- [可以先参考pre-order print](https://novemberfall.github.io/LeetCode-Algorithm/m2/bstPre-order.html)
+- [可以先参考pre-order print](https://novemberfall.github.io/LeetCode-NoteBook/#/m2/bstPre-order)
 
 
 ## Analysis:

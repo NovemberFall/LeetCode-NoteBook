@@ -4,7 +4,7 @@
 
 ![](img/2020-06-07-23-20-01.png)
 
-- [对照上一小节的代码，来探讨Time Complexity:](https://novemberfall.github.io/LeetCode-Algorithm/graph/matrix1.html)
+- [对照上一小节的代码，来探讨Time Complexity:](https://novemberfall.github.io/LeetCode-NoteBook/#/graph/matrix1)
 - 在上一节中，我们调用`adj()` => 求一个点的相邻节点： O(V)
 - 建图，我们通过构造函数， 一个for loop => O(E)
 - 查看两点是否相邻 => `hasEdge(v1, v2)` => O(1)

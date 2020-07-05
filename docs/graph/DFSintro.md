@@ -7,9 +7,9 @@
 - 假如 `4` 节点下面是一颗非常大的数，那就非常冗余，因为我们已经遍历过了, 所以需要记录哪个节点被遍历过
 
 - 可以回顾一下，BST 遍历：
-- [144.Binary Tree Preorder Traversal](https://novemberfall.github.io/LeetCode-Algorithm/m2/bstPre-order.html)
-- [94. Binary Tree Inorder Traversal](https://novemberfall.github.io/LeetCode-Algorithm/m2/bstIn-order.html)
-- [145. Binary Tree Postorder Traversal](https://novemberfall.github.io/LeetCode-Algorithm/hBinaryTree/bstPost-order.html)
+- [144.Binary Tree Preorder Traversal](https://novemberfall.github.io/LeetCode-NoteBook/#/m2/bstPre-order)
+- [94. Binary Tree Inorder Traversal](https://novemberfall.github.io/LeetCode-NoteBook/#/m2/bstIn-order)
+- [145. Binary Tree Postorder Traversal](https://novemberfall.github.io/LeetCode-NoteBook/#/hBinaryTree/bstPost-order)
 - [102. Binary Tree Level Order Traversal]()
 
 - 其实 144, 94, 145 都是图的DFS 遍历

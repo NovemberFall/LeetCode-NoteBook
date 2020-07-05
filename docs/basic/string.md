@@ -46,7 +46,7 @@ Thread Safe  |      Yes                     Yes                     No
 public class immutable {
     // Concatenates to String
     public static void concat1(String s1) {
-        s1 = s1 + "forgeeks";
+        s1 = s1 + "forgeeks";// 这里的s1, 只是还叫做s1, 其实已经是新建立的String Object
         System.out.println(s1);
     }
 

@@ -41,7 +41,7 @@ Output: false
 ```
 ---
 
-- [reference to 951. Flip Equivalent Binary Trees](https://novemberfall.github.io/LeetCode-Algorithm/m2/tweakTree.html)
+- [reference to 951. Flip Equivalent Binary Trees](https://novemberfall.github.io/LeetCode-NoteBook/#/m2/tweakTree)
 
 
 

@@ -3,7 +3,7 @@
 ![](img/2020-06-08-15-40-59.png)
 
 - 相比较 邻接矩阵，邻接表的性能提升：
-- [对照代码来探讨Time Complexity](https://novemberfall.github.io/LeetCode-Algorithm/graph/list.html)
+- [对照代码来探讨Time Complexity](https://novemberfall.github.io/LeetCode-NoteBook/#/graph/list)
 - 求一个点的相邻节点： `O(degree(v))` => 假如一个图有3000节点，就不需要遍历全部节点来查找
 - 但是还是有其缺点： 快速查重
 - 快速查看两点是否相邻
