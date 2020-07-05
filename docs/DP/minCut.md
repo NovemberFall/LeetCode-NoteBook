@@ -35,7 +35,7 @@ The minimum number of cuts needed is 3.
 
 ### Analysis:
 
-```ruby
+
 Assumption:
 1. if there is only one character in this string, it is a palindrome and doesn't need to cut
 2. if this string is empty, it doesn't need to cut, return 0
@@ -60,11 +60,12 @@ Additional data structures:
 - need to convert this string to char Array
 
 
-Time = O(n^3),      two for loop n^2 * isPalindrome() while loop,       =>  n^2 * n = n^3
+- Time = O(n^3),      
+  - two for loop n^2 * isPalindrome() while loop,   =>  n^2 * n = n^3
 
 
 
-```
+
 
 
 
