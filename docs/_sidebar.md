@@ -3,6 +3,7 @@
         * [283. Move Zeroes](ch1/move0.md)
         * [Move 0s To The End](ch1/move0toEnd.md)
         * [Move 0s To The End II](ch1/move0toEnd2.md)
+        * [Remove Leading/Trailing/Dup Space | Medium](ch1/removeAllSpace.md)
         * [344. Reverse String](ch1/reverseStr.md)
         * [Right Shift By N Characters](ch1/rightShift.md)
         * [26. Remove Duplicates from Sorted Array | Array Deduplication I](ch1/dedup1.md)
