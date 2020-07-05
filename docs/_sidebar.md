@@ -44,6 +44,7 @@
         * [156. Binary Tree Upside Down](m2/upsideDown.md)
         * [951. Flip Equivalent Binary Trees](m2/tweakTree.md)
         * [100. Same Tree | Easy](m2/sameTree.md)
+        * [701. Insert into a Binary Search Tree](m2/insertBST.md)
     * [m3：Array](m3/intro.md)
         * [33. Search in Rotated Sorted Array](m3/SearchinRotatedSortedArray.md)
         * [74. Search a 2D Matrix I](m3/SearchIn2DArray.md)
