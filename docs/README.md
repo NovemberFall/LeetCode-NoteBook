@@ -8,11 +8,6 @@ https://novemberfall.github.io/LeetCode-NoteBook/
 
 
 ---
-# LeetCode-Algorithm
-
-https://novemberfall.github.io/LeetCode-Algorithm/
-
----
 
 ### Algorithm with java c++ javascript
 
