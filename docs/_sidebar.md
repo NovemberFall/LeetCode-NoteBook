@@ -97,6 +97,8 @@
 
 -----
 * [Hard](Hard/intro.md)
+    * [String](hString/intro.md)
+        * [Remove Adjacent Repeated Characters IV](hString/dedupAdjRepChar.md)
     * [Binary Tree](hBinaryTree/intro.md)
         * [145. Binary Tree Postorder Traversal](hBinaryTree/bstPost-order.md)
         * [124. Binary Tree Maximum Path Sum | Maximum Path Sum Binary Tree II](hBinaryTree/maxPathSum.md)
