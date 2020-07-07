@@ -18,7 +18,7 @@ Examples
 - How to use the **least number of comparisons** to find the largest and 
   second largest number?
 
-- [reference to Largest And Smallest](https://novemberfall.github.io/LeetCode-Algorithm/m3/maxMin.html)
+- [reference to Largest And Smallest](https://novemberfall.github.io/LeetCode-NoteBook/#/m3/maxMin)
 
 - 假如本题还用 两两比较法：
 

@@ -35,7 +35,7 @@ Internally you can think of this:
 
 ## Analysis:
 
-- [reference 26. Remove Duplicates from Sorted Array](https://novemberfall.github.io/LeetCode-Algorithm/ch1/dedup1.html)
+- [reference 26. Remove Duplicates from Sorted Array](https://novemberfall.github.io/LeetCode-NoteBook/#/ch1/dedup1)
 
 - slow: all elements to the left side of the slow (excluding slow) pointer are the result for  
   the elements that have been processed.

@@ -2,7 +2,7 @@
 
 - 首先你要知道， original tree的定义 不等于 recursion tree的定义
 
-- Example 1:  [Maximum Depth of Binary Tree](https://novemberfall.github.io/LeetCode-Algorithm/ch5/getHightTree.html)
+- Example 1:  [Maximum Depth of Binary Tree](https://novemberfall.github.io/LeetCode-NoteBook/#/ch5/getHightTree)
 
 
 - input tree:
@@ -68,19 +68,19 @@
 
 - Time complexity: the sum of time complexity of all nodes in the recursion tree
 - Space complexity: the sum of space complexity of all nodes on a pink path (a path from top to bottom)
-- [具体 examaple: merge sort](https://novemberfall.github.io/LeetCode-Algorithm/Array/arraySort.html)
+- [具体 examaple: merge sort](https://novemberfall.github.io/LeetCode-NoteBook/#/Array/arraySort)
 
 ---
 
 ## one more example:
 
-- [110. Check If Binary Tree Is Balanced](https://novemberfall.github.io/LeetCode-Algorithm/ch5/checkBalanced.html)
+- [110. Check If Binary Tree Is Balanced](https://novemberfall.github.io/LeetCode-NoteBook/#/ch5/checkBalanced)
 
 
 ---
 
 ## example:
 
-- [951. Flip Equivalent Binary Trees | Tweaked Identical Binary Trees](https://novemberfall.github.io/LeetCode-Algorithm/m2/tweakTree.html)
+- [951. Flip Equivalent Binary Trees | Tweaked Identical Binary Trees](https://novemberfall.github.io/LeetCode-NoteBook/#/m2/tweakTree)
 
 

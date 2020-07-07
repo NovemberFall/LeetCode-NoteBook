@@ -50,17 +50,17 @@ What if the given binary tree is null? Return an empty list in this case.
           5   9    12  17  
 
 ---
-Stack -> 10 -> 7 -> 5
-List ->
+Stack => 10 => 7 => 5
+List =>
 
 Stack -> 10 -> 7 -> 
-List -> 5
+List => 5
 
-Stack -> 10 -> 
-List -> 5 -> 7
+Stack => 10 => 
+List => 5 => 7
 
-Stack -> 
-List -> 5 -> 7 -> 10
+Stack => 
+List => 5 => 7 => 10
 
 ---
 

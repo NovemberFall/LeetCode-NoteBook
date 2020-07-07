@@ -103,7 +103,7 @@ public class Solution {
 
 ## C++
 
-```c++
+```cpp
 /**
  * Definition for singly-linked list.
  * struct ListNode {

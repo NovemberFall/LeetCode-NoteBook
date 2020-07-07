@@ -14,7 +14,7 @@ Set = null, all permutations are []
 
 ## Analysis:
 
-- [具体分析可以参考 47. Permutations II | DFS](https://novemberfall.github.io/LeetCode-Algorithm/m6/permutationsII.html)
+- [具体分析可以参考 47. Permutations II | DFS](https://novemberfall.github.io/LeetCode-NoteBook/#/m6/permutationsII)
 
 
 ```java

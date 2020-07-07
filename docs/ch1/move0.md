@@ -19,8 +19,8 @@ Note:
 
 ## Analysis:
 
-- [reference -> Move 0s To The End](https://novemberfall.github.io/LeetCode-Algorithm/ch1/move0toEnd.html)
-- [reference -> Move 0s To The End II](https://novemberfall.github.io/LeetCode-Algorithm/ch1/move0toEnd2.html)
+- [reference -> Move 0s To The End](https://novemberfall.github.io/LeetCode-NoteBook/#/ch1/move0toEnd)
+- [reference -> Move 0s To The End II](https://novemberfall.github.io/LeetCode-NoteBook/#/ch1/move0toEnd2)
 
 ```ruby
 [0      1       0       3       12]

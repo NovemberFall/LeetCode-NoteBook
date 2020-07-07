@@ -30,7 +30,7 @@ What if A is null or A of zero length? We should return -1 in this case.
 
 ## Analysis:
 
-- [具体分析这里不再解释，可以参考leetCode q.34](https://novemberfall.github.io/LeetCode-Algorithm/m3/FirstLastPositionOfSortedArr.html)
+- [具体分析这里不再解释，可以参考leetCode q.34](https://novemberfall.github.io/LeetCode-NoteBook/#/m3/FirstLastPositionOfSortedArr)
 
 - 以及也对 `while(left < right - 1){//prevent infinite loop` 做了充分解释
 
