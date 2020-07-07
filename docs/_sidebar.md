@@ -7,6 +7,7 @@
         * [344. Reverse String](ch1/reverseStr.md)
         * [Right Shift By N Characters](ch1/rightShift.md)
         * [26. Remove Duplicates from Sorted Array | Array Deduplication I](ch1/dedup1.md)
+        * [28. Implement strStr() | Determine If One String Is Another's Substring](ch1/strstr.md)
     * [Chapter2：Binary Search](ch2/intro.md)
         * [704. Classical Binary Search](ch2/classicalBinarySearch.md)
         * [Smallest Element Larger than Target](ch2/firstLarge.md)
