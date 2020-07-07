@@ -21,7 +21,7 @@
         * [141. Linked List Cycle](ch4/listCycle.md)
         * [876. Middle of the Linked List](ch4/midNodeOfList.md)
         * [21. Merge Two Sorted Lists | dummyHead](ch4/mergeTwoList.md)
-    * [Chapter5：Binary Search Tree](ch5/intro.md)
+    * [Chapter5：Binary Tree](ch5/intro.md)
         * [104. Maximum Depth of Binary Tree](ch5/getHightTree.md)
         * [110. Balanced Binary Tree | Check If Binary Tree Is Balanced](ch5/checkBalanced.md)
         * [101. Symmetric Tree](ch5/symmetric.md)
@@ -37,7 +37,7 @@
 -----
 * [Medium](Medium/intro.md)
     * [m1：Queue && Stack](m1/intro.md)
-    * [m2: Binary Search Tree](m2/intro.md)
+    * [m2: Binary Tree](m2/intro.md)
         * [94. Binary Tree Inorder Traversal](m2/bstIn-order.md)
         * [144. Binary Tree Preorder Traversal](m2/bstPre-order.md)
         * [450. Delete Node in a BST ](m2/DeleteNode-BST.md)
