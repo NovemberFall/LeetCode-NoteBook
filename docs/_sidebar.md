@@ -107,6 +107,7 @@
         * [Maximum Path Sum Binary Tree I](hBinaryTree/maxPathSum1.md)
         * [Max Path Sum From Leaf To Root](hBinaryTree/maxPathSumLeafToRoot.md)
         * [1026. Maximum Difference Between Node and Ancestor](hBinaryTree/maxDiffNodeAnce.md)
+        * [Binary Tree Path Sum To Target II](hBinaryTree/pathSumToTarget.md)
     * [Dynamic Programming |](DP/intro.md)
         * [72. Edit Distance](DP/editDis.md)
         * [45. Jump Game II | Array Hopper II](DP/jumpGameII.md)
