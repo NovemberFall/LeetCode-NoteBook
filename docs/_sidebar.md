@@ -134,7 +134,7 @@
         * [How to analyze time&&space complexity of recursion?](Recursion/recursionTime.md)
         * [Recursion Tree I](Recursion/rTree.md)
         * [Recursion Tree II](Recursion/rTree1.md)
-    * [Binary Tree](binaryTree/intro.md)
+    * [Binary Tree | preOrder inOrder postOrder](binaryTree/intro.md)
     * [Heap | PriorityQueue](heap/intro.md)
         * [1. Heap in Java](heap/concept.md)
     * [Map | Set | Hash](map/intro.md)

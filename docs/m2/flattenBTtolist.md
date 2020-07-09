@@ -170,5 +170,4 @@ public class Solution {
     prev[0] = root;
   }
 }
-
 ```
