@@ -44,3 +44,54 @@ map<12, 4>
 map<15, 5>
 map<20, 6>
 ```
+
+- Time = O(n)
+- Space = O(n)
+
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public TreeNode buildTree(int[] preorder, int[] inorder) {
+        Map<Integer, Integer> inOrderMap = indexMap(inorder); 
+        return dfs(0, inorder.length - 1, preorder, 
+                  0, preorder.length - 1, inOrderMap);
+    }
+    
+    private Map<Integer, Integer> indexMap(int[] inorder){
+        Map<Integer, Integer> map = new HashMap<>();
+        for(int i = 0; i < inorder.length; i++){
+            map.put(inorder[i], i);
+        }
+        return map;
+    }
+    
+    private TreeNode dfs(int inLeft, int inRight, int[] preorder, 
+            int preLeft, int preRight, Map<Integer, Integer> idxMap){
+        if(inLeft > inRight){
+            return null;
+        }
+        TreeNode root = new TreeNode(preorder[preLeft]);
+        int leftSize = idxMap.get(root.val) - inLeft;
+        root.left = dfs(inLeft, inLeft + leftSize - 1, preorder,
+                       preLeft + 1, preLeft + leftSize, idxMap);
+        root.right = dfs(inLeft + leftSize + 1, inRight, preorder,
+                       preLeft + leftSize + 1, preRight, idxMap);     
+        return root;
+    }
+}
+```
