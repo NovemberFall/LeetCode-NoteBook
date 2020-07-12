@@ -1,4 +1,4 @@
-# Spiral Order Traverse I
+# Spiral Order Traverse I   | Recursion
 
 ```ruby
 Traverse an N * N 2D array in spiral order clock-wise starting from the top left corner. 
