@@ -1,4 +1,4 @@
-# 88. Merge Sorted Array
+# 88. Merge Sorted Array  | Merge Two Sorted Array
 
 ```ruby
 Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 
@@ -46,4 +46,49 @@ class Solution {
         }
     }
 }
+```
+
+
+## 变种题目：
+
+```ruby
+Merge given amount of numbers from two sorted arrays.
+
+Note that given amount of numbers are not larger than the length of the respective arrays.
+
+Input: [1, 2, 3], 3, [2, 4, 6], 1
+
+Output: [1,2, 2, 3]
+```
+
+
+- 本题不是变种题型，所以可以用不同办法:
+- 也可用正序！
+
+```java
+public class Solution {
+  public int[] merge(int[] A, int m, int[] B, int n) {
+    // Write your solution here
+    int i = m - 1;
+    int j = n - 1;
+    int[] array = new int[m + n];
+    int resIndex = m + n - 1;
+    while (i >= 0 && j >= 0){
+      if (A[i] > B[j]) {
+        array[resIndex--] = A[i--];
+      } else {
+        array[resIndex--] = B[j--];
+      }
+    }
+    while(i >= 0){
+      array[resIndex--] = A[i--];
+    }
+
+    while (j >= 0){
+      array[resIndex--] = B[j--];
+    }
+    return array;
+  }
+}
+
 ```
