@@ -1,4 +1,4 @@
-# 674. Longest Continuous Increasing Subsequence
+### 674. Longest Continuous Increasing Subsequence | Longest Ascending SubArray
 
 ```ruby
 Given an unsorted array of integers, 

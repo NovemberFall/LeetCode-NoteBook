@@ -92,7 +92,7 @@
         * [557. Reverse Words in a String III](m8/reverseWord3.md)
     * [m9: Dynamic Programming |](m9/intro.md)
         * [509. Fibonacci Number](m9/fibonacci.md)
-        * [674. Longest Continuous Increasing Subsequence](m9/longestSubarray.md)
+        * [674. Longest Continuous Increasing Subsequence | Longest Ascending SubArray](m9/longestSubarray.md)
         * [Max Product Of Cutting Rope](m9/maxProductOfCuttingRope.md)
         * [101. Largest Square Of 1s](m9/largestSquare.md)
         * [55. Jump Game | Array Hopper I](m9/jumpGame.md)
