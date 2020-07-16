@@ -40,5 +40,50 @@ M[i]     1   1   2   1   3   4   5   4
 Time = O(n^2)
 ```
 
+## step by step
 
+```ruby
+
+index    0   1   2   3   4   5   6   7
+input = {7   2   3   1   5   8   9   6 }           
+M[i]     1                            
+
+
+index    0   1   2   3   4   5   6   7
+input = {7   2   3   1   5   8   9   6 }           
+M[i]     1   1                  
+
+
+index    0   1   2   3   4   5   6   7
+input = {7   2   3   1   5   8   9   6 }           
+M[i]     1   1   2                           where input[j] < input[i], dp[i] = 1 + max[M[j]]
+
+
+
+index    0   1   2   3   4   5   6   7
+input = {7   2   3   1   5   8   9   6 }           
+M[i]     1   1   2   1                       
+
+
+index    0   1   2   3   4   5   6   7
+input = {7   2   3   1   5   8   9   6 }           
+M[i]     1   1   2   1   3                     where input[j] < input[i], dp[i] = 1 + max[M[j]]
+
+
+index    0   1   2   3   4   5   6   7
+input = {7   2   3   1   5   8   9   6 }           
+M[i]     1   1   2   1   3   4                  where input[j] < input[i], dp[i] = 1 + max[M[j]]
+
+
+
+index    0   1   2   3   4   5   6   7
+input = {7   2   3   1   5   8   9   6 }           
+M[i]     1   1   2   1   3   4   5               where input[j] < input[i], dp[i] = 1 + max[M[j]]
+
+
+
+index    0   1   2   3   4   5   6   7
+input = {7   2   3   1   5   8   9   6 }           
+M[i]     1   1   2   1   3   4   5   4            where input[j] < input[i], dp[i] = 1 + max[M[j]]
+```
 
