@@ -100,6 +100,7 @@
         * [139. Word Break | Dictionary Word |](m9/wordBreak.md)
         * [Largest Square Surrounded By One](m9/largestSquare1.md)
         * [1139. Largest 1-Bordered Square](m9/largestSquare2.md)
+        * [300. Longest Increasing Subsequence](m9/longestAscSubseq.md)
 
 -----
 * [Hard](Hard/intro.md)
