@@ -111,6 +111,8 @@ class Solution {
                 if(nums[j] < nums[i]){
                     longest[i] = Math.max(longest[j] + 1, longest[i]);
                 }
+                //注意 if(nums[j] < nums[i]) == false, 的时候, 跳过当前"断点",
+                //那么由于 longest[i] = 1, 通过上面那句 max(), 可以继续保存最大的长度直到ending
             }
             result = Math.max(longest[i], result);
             //possibly update the global longest one.            

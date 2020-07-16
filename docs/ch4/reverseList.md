@@ -15,7 +15,7 @@ Could you implement both?
 
 ### Recursive method:
 
-- https://novemberfall.github.io/Algorithm-FullStack/ch3/ListReverse.html
+- https://novemberfall.github.io/programming/#/ch3/ListReverse
 
 
 ---
@@ -23,7 +23,7 @@ Could you implement both?
 
 ### iteratively method:
 
-- https://novemberfall.github.io/Algorithm-FullStack/ch3/ListReverse1.html
+- https://novemberfall.github.io/programming/#/ch3/ListReverse1
 
 
 
