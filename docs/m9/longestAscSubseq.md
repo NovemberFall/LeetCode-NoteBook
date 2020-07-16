@@ -87,3 +87,35 @@ input = {7   2   3   1   5   8   9   6 }
 M[i]     1   1   2   1   3   4   5   4            where input[j] < input[i], dp[i] = 1 + max[M[j]]
 ```
 
+## O(n^2) solution
+
+```java
+class Solution {
+    public int lengthOfLIS(int[] nums) {
+        if(nums == null || nums.length == 0){
+            return 0;
+        }
+        //dp[i] = the length of longest acending subsequence
+        //ending at index i        
+        int result = 1;
+        int[] longest = new int[nums.length];
+        //record the length of longest subsequence so far        
+        for(int i = 0; i < nums.length; i++){
+            //initialize dp[i] as 1, since the shortest one has length 1,
+            //(just array[i] itself)            
+            longest[i] = 1;
+            for(int j = 0; j < i; j++){//liner scan && look back
+                //only when array[j] < array[i], it is possible to use the
+                //longest acending subsequence ending at index j and array[i]
+                //to form a new ascending subsequence.                
+                if(nums[j] < nums[i]){
+                    longest[i] = Math.max(longest[j] + 1, longest[i]);
+                }
+            }
+            result = Math.max(longest[i], result);
+            //possibly update the global longest one.            
+        }
+        return result;
+    }
+}
+```
