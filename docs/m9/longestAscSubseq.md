@@ -28,4 +28,17 @@ approach: (liner scan && look back)
 index    0   1   2   3   4   5   6   7
 input = {7   2   3   1   5   8   9   6 }           
 M[i]     1   1   2   1   3   4   5   4
+
+1. Base Case dp[0] = 1
+2. Induction rule:
+    a. dp[i] represents what? [from the 0-th index to the i-th index] the length of
+    the longest increasing subsequence, ended at the i-th index,(must include i-th 
+    index)
+    b. dp[i] = 1 + max[M[j]]          where input[j] < input[i]
+                   0 <= j < i
+
+Time = O(n^2)
 ```
+
+
+
