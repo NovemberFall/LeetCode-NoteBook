@@ -101,6 +101,7 @@
         * [Largest Square Surrounded By One](m9/largestSquare1.md)
         * [1139. Largest 1-Bordered Square](m9/largestSquare2.md)
         * [300. Longest Increasing Subsequence](m9/longestAscSubseq.md)
+        * [Largest Set Of Points With Positive Slope](m9/largestSetPositiveSlop.md)
 
 -----
 * [Hard](Hard/intro.md)
