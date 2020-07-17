@@ -53,3 +53,46 @@ Step2: A[N] = {<x0, y0> , <x1, y1>, <x2, y2> ... <xn-1, yn-1> }
     - 在x相同的时候对y排序从大到小，<u>这样可以避免相同x被选</u>!
     - for example: input: [<4,2>, <2,3>, <5,5>, <6,9>, <3,3>, <3,1>, <4,2>, <5,5>, <6,9>]
     - [具体dp算法可以参考](m9/longestAscSubseq.md)
+
+
+```java
+/*
+* class Point {
+*   public int x;
+*   public int y;
+*   public Point(int x, int y) {
+*     this.x = x;
+*     this.y = y;
+*   }
+* }
+*/
+public class Solution {
+  public int largest(Point[] points) {
+    //Assumptions: points is not null
+    //we need to sort the points by x ascending and y descending
+    Arrays.sort(points, new MyComparator());
+    //similar to longest ascending subsequence
+    int result = 0;
+    int[] longest = new int[points.length];
+    for(int i = 0; i < longest.length; i++){
+      longest[i] = 1;
+      for(int j = 0; j < i; j++){
+        if(points[j].y < points[i].y){
+          longest[i] = Math.max(longest[j] + 1, longest[i]);
+        }
+        //注意 if(points[j].y < nums[i].y) == false, 的时候, 跳过当前"断点",
+        //那么由于 longest[i] = 1, 通过上面那句 max(), 可以继续保存最大的长度直到ending        
+      }
+      result = Math.max(longest[i], result);
+    }
+    return result == 1 ? 0 : result;
+  }
+  //this comparator will sort the points by x ascending and y descending
+  static class MyComparator implements Comparator<Point>{
+    @Override
+    public int compare(Point p1, Point p2){
+      return p1.x != p2.x ? p1.x - p2.x : p2.y - p1.y;
+    }
+  }
+}
+```
