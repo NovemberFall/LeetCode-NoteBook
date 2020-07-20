@@ -105,7 +105,7 @@
         * [Largest Set Of Points With Positive Slope](m9/largestSetPositiveSlop.md)
 
 -----
-* [Hard](Hard/intro.md)
+* [Hard && Interview Question](Hard/intro.md)
     * [String](hString/intro.md)
         * [Remove Adjacent Repeated Characters IV](hString/dedupAdjRepChar.md)
     * [Binary Tree](hBinaryTree/intro.md)
@@ -127,6 +127,7 @@
         * [132. Palindrome Partitioning II | Minimum Cuts For Palindromes](DP/minCut.md)
     * [Graph DFS |](DFS/intro.md)
         * [Print If Blocks](DFS/ifBlock.md)
+        * [Recruiting Event Schedules](DFS/recruiting.md)
 
 -----
 * [Fundamental Concept](basic/intro.md)
