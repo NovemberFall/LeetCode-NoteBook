@@ -103,6 +103,7 @@
         * [1139. Largest 1-Bordered Square](m9/largestSquare2.md)
         * [300. Longest Increasing Subsequence](m9/longestAscSubseq.md)
         * [Largest Set Of Points With Positive Slope](m9/largestSetPositiveSlop.md)
+        * [Packing Up the Swags | Interview](m9/packingSwag.md)
 
 -----
 * [Hard && Interview Question](Hard/intro.md)
@@ -116,6 +117,7 @@
         * [1026. Maximum Difference Between Node and Ancestor](hBinaryTree/maxDiffNodeAnce.md)
         * [Binary Tree Path Sum To Target II](hBinaryTree/pathSumToTarget.md)
         * [Maximum Path Sum Binary Tree III](hBinaryTree/maxPathSumIII.md)
+        * [Cousins in a Binary Tree | Interview](hBinaryTree/isCousins.md)
     * [Dynamic Programming |](DP/intro.md)
         * [72. Edit Distance](DP/editDis.md)
         * [45. Jump Game II | Array Hopper II](DP/jumpGameII.md)
@@ -128,7 +130,7 @@
     * [Graph DFS |](DFS/intro.md)
         * [Print If Blocks](DFS/ifBlock.md)
         * [Recruiting Event Schedules | Interview](DFS/recruiting.md)
-        * [Infinite Loop Around the Dinner Table | Interview](DFS/recruiting.md)
+        * [Infinite Loop Around the Dinner Table | Interview](DFS/formRing.md)
 
 -----
 * [Fundamental Concept](basic/intro.md)
