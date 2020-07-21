@@ -1,4 +1,4 @@
-##  Recruiting Event Schedules
+##  Recruiting Event Schedules | Interview
 
 ```ruby
 Our company is organizing a series of university recruiting events. 
