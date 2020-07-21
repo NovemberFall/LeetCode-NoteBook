@@ -127,7 +127,8 @@
         * [132. Palindrome Partitioning II | Minimum Cuts For Palindromes](DP/minCut.md)
     * [Graph DFS |](DFS/intro.md)
         * [Print If Blocks](DFS/ifBlock.md)
-        * [Recruiting Event Schedules](DFS/recruiting.md)
+        * [Recruiting Event Schedules | Interview](DFS/recruiting.md)
+        * [Infinite Loop Around the Dinner Table | Interview](DFS/recruiting.md)
 
 -----
 * [Fundamental Concept](basic/intro.md)

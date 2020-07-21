@@ -51,12 +51,12 @@ There are N universitites to visit
 
 
 Approach:
-**high level => DFS**
+high level => DFS
 using DFS to implemnt this algorithm to enumerate all the possibilites
 
-**mid level**
-    **key points**
-  	  1. **how many levels**? 4 levels
+mid level
+    key points
+  	  1. how many levels? 4 levels
 	  2. what do we do at each level? what are the branches?
 	    - before the character
 	      - add 'x'
