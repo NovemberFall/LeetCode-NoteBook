@@ -36,7 +36,7 @@ AxBxC
 
 ## Analysis
 
-
+```ruby
 Clarification: We can take a break after ecah event, we use 'x' to represent
 
 Assumption:
@@ -82,7 +82,7 @@ e.g. ABC
 - StringBuilder, because we need to hold the recursion state is same
 - stringbuilder should append `stirng.lengt() - 1`
 - stringbuilder should remove because recursion have to keep same state
-
+```
 
 
 - time = O(2^n * n) => O(n) for creating the strings
@@ -138,3 +138,5 @@ input: "ABC"
 		    ABC     ABxC     AxBC     AxBxC
 */
 ```
+
+
