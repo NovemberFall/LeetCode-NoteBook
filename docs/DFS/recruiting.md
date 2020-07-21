@@ -61,7 +61,7 @@ mid level
 	    - before the character
 	      - add 'x'
 		  - don't add 'x'
-      3. **base case** :  index == unversities.length() - 1
+      3. base case :  index == unversities.length() - 1
 					
 
 
