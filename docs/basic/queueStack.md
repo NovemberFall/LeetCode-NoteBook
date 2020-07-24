@@ -9,7 +9,7 @@
 
 ### Question 1 : Sort With 2 Stacks
 
-- [Sort With 2 Stacks](../m1/sortWithTwoStack.md)
+- [Sort With 2 Stacks](https://novemberfall.github.io/LeetCode-NoteBook/#/m1/sortWithTwoStack)
 
 
 
