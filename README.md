@@ -10,7 +10,7 @@ https://novemberfall.github.io/LeetCode-NoteBook/
 
 ---
 
-### Algorithm with java c++ javascript
+### basic knowledge with java c/c++ javascript
 
 https://novemberfall.github.io/Algorithm-FullStack/
 

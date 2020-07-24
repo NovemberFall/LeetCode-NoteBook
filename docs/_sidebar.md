@@ -39,6 +39,7 @@
 -----
 * [Medium](Medium/intro.md)
     * [m1：Queue && Stack](m1/intro.md)
+        * [Sort With Two Stacks](m1/sortWithTwoStack.md)
     * [m2: Binary Tree](m2/intro.md)
         * [94. Binary Tree Inorder Traversal](m2/bstIn-order.md)
         * [144. Binary Tree Preorder Traversal](m2/bstPre-order.md)
@@ -136,6 +137,7 @@
 * [Fundamental Concept](basic/intro.md)
     * [Series Big-O | arithmetic, Geometric sequence](basic/series.md)
     * [Object| Java Pass by Value](basic/pbv.md)
+    * [Queue| Stack](basic/queueStack.md)
     * [Integer | Strings](basic/string.md)
     * [Array | Sort](Array/intro.md)
         * [704. Classical Binary Search](Array/classicalBinarySearch.md)
