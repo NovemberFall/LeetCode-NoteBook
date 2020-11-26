@@ -134,6 +134,10 @@
         * [Infinite Loop Around the Dinner Table | Interview](DFS/formRing.md)
 
 -----
+* [Bit Operation](Bit/intro.md)
+    
+
+-----
 * [Fundamental Concept](basic/intro.md)
     * [Series Big-O | arithmetic, Geometric sequence](basic/series.md)
     * [Object| Java Pass by Value](basic/pbv.md)
