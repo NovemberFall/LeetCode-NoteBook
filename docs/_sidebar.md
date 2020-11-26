@@ -135,7 +135,7 @@
 
 -----
 * [Bit Operation](Bit/intro.md)
-    
+    * [Power Of Two](Bit/powerTwo.md)
 
 -----
 * [Fundamental Concept](basic/intro.md)
