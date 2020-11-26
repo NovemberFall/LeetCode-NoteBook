@@ -135,7 +135,8 @@
 
 -----
 * [Bit Operation](Bit/intro.md)
-    * [Power Of Two](Bit/powerTwo.md)
+    * [Power Of Two | Easy](Bit/powerTwo.md)
+    * [Number Of Different Bits | Medium](Bit/different.md)
 
 -----
 * [Fundamental Concept](basic/intro.md)
