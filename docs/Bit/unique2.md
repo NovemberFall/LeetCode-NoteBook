@@ -48,3 +48,68 @@ public class Solution {
     return true;
 }
 ```
+
+
+---
+
+### Optimize space
+
+![](img/2020-11-27-01-31-16.png)
+
+
+```java
+  public boolean allUnique(String word) {
+    //Write your solution here
+    int occurredCharacters = 0;
+    for(int i = 0; i < word.length(); i++){
+      int pos = word.charAt(i) - 'a';
+      if( ((occurredCharacters >> pos) & 1) == 1){
+        return false;
+      }
+      occurredCharacters |= (1 << pos);
+    }
+    return true;
+  }  
+```
+
+
+---
+
+
+### Critical details: ch - 'a'
+
+- 可以用 boolean[] 来节省空间
+
+```java
+  public boolean allUnique(String word) {
+    //Write your solution here
+    boolean[] unique = new boolean[26];
+    for (int i = 0; i < word.length(); i++){
+      int k = word.charAt(i) - 'a';
+      if(unique[k]){
+        return false;
+      }
+      unique[k] = true;
+    }
+    return true;
+  }  
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
