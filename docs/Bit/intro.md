@@ -114,3 +114,28 @@ public class uniqueCharacter {
 ---
 
 
+```java
+public class uniqueCharacter {
+    public static void main(String[] args) {
+
+        char ch = 'd';
+        System.out.println((int) ch); //100
+        int row = ch / 32; //3
+        int col = ch % 32; //4
+        System.out.println(1 << col); //16
+    }
+}
+
+```
+
+```ruby
+int col = ch % 32 = 100 % 32 = 4
+
+1 << 4    
+
+0001 ,  shift left 4 bits
+
+10000     =>    2^4 = 16
+
+因此 1 << col  => 16
+```
