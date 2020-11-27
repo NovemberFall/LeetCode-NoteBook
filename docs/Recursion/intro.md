@@ -14,16 +14,25 @@
 - 那么 Time（）, 不考虑常数项，所以 Tme = O(2^n)
 
 
----
+
 
 
 ![](img/2020-05-02-02-04-33.png)
 ![](img/2020-05-02-02-04-59.png)
 
 ![](img/2020-05-05-17-00-11.png)
-![](img/2020-05-05-17-02-20.png)
-
 ![](img/2020-05-05-17-04-38.png)
+
+```java
+public int pow(int a, int b){
+    if(b == 0){
+        return 1;
+    }
+    int half = pow(a, b / 2);
+    return (b % 2 == 0) ? half * half : a * half * half;
+}
+```
+
 
 
 1. Recursion = base + rule
