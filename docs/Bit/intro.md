@@ -97,3 +97,20 @@ public class uniqueCharacter {
 ```
 
 - Output: 25
+
+---
+
+
+```java
+public class uniqueCharacter {
+    public static void main(String[] args) {
+        char ch = 'c';
+        System.out.println((int)ch); //99
+        int row = ch / 32;
+        System.out.println(row); // 3
+    }
+}
+```
+---
+
+
