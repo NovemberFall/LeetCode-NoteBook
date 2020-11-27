@@ -66,3 +66,34 @@ x + (-x) two's complement = 10000...0
 
 - signed shift `>>` ---- arithmetical 保证符号， 因为 negative/2 => still negative
 - unsigned shift `>>>` ---- logical => shift 0, 左移全补0，因为没歧义，因为不改变`+`,`-`
+
+---
+
+### Critical details: ch - 'a'
+
+- According ASCII Table:
+
+![](img/2020-11-26-22-41-04.png)
+
+
+```ruby
+[0] 'a' = 96
+[1] 'b' = 97
+...
+
+[25] 'z' = 96 + 25 
+```
+
+
+```java
+public class uniqueCharacter {
+    public static void main(String[] args) {
+        String str = "zzzlanguage";
+        int count = 0;
+        int k = str.charAt(0) - 'a'; // k = 25
+        System.out.println(k);
+    }
+}
+```
+
+- Output: 25
