@@ -137,6 +137,7 @@
 * [Bit Operation](Bit/intro.md)
     * [Power Of Two | Easy](Bit/powerTwo.md)
     * [Number Of Different Bits | Medium](Bit/different.md)
+    * [All Unique Characters II | Medium](Bit/unique2.md)
 
 -----
 * [Fundamental Concept](basic/intro.md)
