@@ -146,3 +146,4 @@ res1 xor res2  => missing number
 Pros: time = O(n)  space = O(1)
 Cons: none
 
+- [java code implementation](https://novemberfall.github.io/LeetCode-NoteBook/#/Bit/miss)
