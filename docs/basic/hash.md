@@ -16,7 +16,7 @@ Example:
 
 3. Hash table is a general data structure
     - HashMap and HashSet are its implementation classes in Java.
-    - 在Java, **HashMap** 就是hast table, 只不过在java里，它的名字叫 `HashMap`, 即关心key, 也关心value.
+    - 在Java, **HashMap** 就是hast table, 只不过在java里，它的名字叫 `HashMap`, 既关心key, 也关心value.
     - 如果只关心key, 不关心value, 就是 **HashSet**
 
 
