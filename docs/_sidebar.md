@@ -144,6 +144,7 @@
     * [Series Big-O | arithmetic, Geometric sequence](basic/series.md)
     * [Object| Java Pass by Value](basic/pbv.md)
     * [Queue| Stack](basic/queueStack.md)
+    * [HashTable && String I](basic/hash.md)
     * [Integer | Strings](basic/string.md)
     * [Array | Sort](Array/intro.md)
         * [704. Classical Binary Search](Array/classicalBinarySearch.md)
