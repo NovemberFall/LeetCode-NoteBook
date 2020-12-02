@@ -33,8 +33,26 @@ public int pow(int a, int b){
 }
 ```
 
+- 值得注意的是，`pow(a, b/2)`, 在java b/2 取整数
 
+```
+2^1000    b
+  |
+2^500     b/2
+  |
+2^250     b/4
+  |
+2^125     b/8
+  |
+2^62      b/16
+...
+  |
+2^0       1          
+```
 
+- 可以看到 125/2 = 62, 所以在最后需要 `a * half * half`
+
+---
 1. Recursion = base + rule
 2. 一个递归调用需要存储： 内存地址，parameter.
 3. Recursion Time Complexity, Space complexity 只有是常数 O(1)时，才和总node数，总层数有关
