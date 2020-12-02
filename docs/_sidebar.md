@@ -138,6 +138,7 @@
     * [Power Of Two | Easy](Bit/powerTwo.md)
     * [Number Of Different Bits | Medium](Bit/different.md)
     * [All Unique Characters II | Medium](Bit/unique2.md)
+    * [Missing Number I | XOR](Bit/miss.md)
 
 -----
 * [Fundamental Concept](basic/intro.md)

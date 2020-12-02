@@ -40,7 +40,7 @@ votes[name]++;
 
 ##Q2
 
-- [Missing Number](https://novemberfall.github.io/LeetCode-NoteBook/#/ch7/misssingNum)
+- [Missing Number | Solution 2](https://novemberfall.github.io/LeetCode-NoteBook/#/ch7/misssingNum)
 
 ```
 Given an integer array of size N - 1, containing all the numbers from 1 to N except one, find the missing number.
@@ -73,3 +73,76 @@ Solution 2: HashSet
 Step 1: insert all numbers in the array to a hash set:
         hash set: {3, 1, 4}
 Step 2: for each number from 1 to n, find whether it is in the hashtable        
+Time = O(n) in average and O(n^2) in worst case
+Space: O(n)
+
+
+
+
+Solution 3: 
+Array: boolean occurred[n+1]
+occurred[i] 表示 i 有没有出现在input array
+
+Step 1:
+occurred = [F, F, ..., F]
+```
+for each number (x) in the input array:
+        occurred[x] = true;
+```
+
+Step 2:
+```
+for i = 1; i <=n; i++
+        if occurred[i] = false;
+            return i;
+```
+
+n = 4
+ 0   1   2   3   4
+[F,  T,  F,  T,  T]
+
+Time = O(n)
+Space = O(n)
+
+---
+
+Solution 4: **XOR**
+
+- **This operator is binary operator, denoted by ‘^’. It returns bit by bit XOR of input values, i.e, if corresponding bits are different, it gives 1, else it gives 0.**
+
+
+```
+5 = 0101
+6 = 0110
+
+A xor A = 0
+0 xor A = A
+A xor B == B xor A
+A xor (B xor C) == (A xor B) xor C
+
+
+
+
+(1 xor 2 xor 3 xor ... xor n) xor (a[0] xor a[1] xor ... xor a[n - 1])
+
+(1 xor 2 xor 3 xor 4) xor (3 xor 1 xor 4) = 
+1 xor 2 xor 3 xor 4 xor 3 xor 1 xor 4 = 
+(1 xor 1) xor 2 xor (3 xor 3) xor (4 xor 4) = 
+0 xor 2 xor 0 xor 0 = 2
+```
+
+
+
+
+
+```
+A = [3, 1, 4]
+3 xor 1 xor 4  => res1
+1 xor 2 xor 3 xor 4  => res2
+
+res1 xor res2  => missing number
+```
+
+Pros: time = O(n)  space = O(1)
+Cons: none
+
