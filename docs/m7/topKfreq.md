@@ -22,6 +22,14 @@ Explanation: "the", "is", "sunny" and "day" are the four most frequent words,
 ```
 ---
 
+
+## extra reading
+
+- [Comparator Interface Type]()
+
+- `Interface Map.Entry<K,V>`, 
+
+---
 ## Analysis:
 
 - if you are not familiar with the implementation of Comparator, use lambda
