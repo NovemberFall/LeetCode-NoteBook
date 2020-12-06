@@ -44,6 +44,14 @@ Collections.sort(countries, new CountryComparatorByName());
 
 - If you look at your own programs, you will find that you often use anonymous values of type int or String 
 
+---
+
+
+![](img/2020-12-05-16-17-01.png)
+
+- Note: `new Comparator<Country>()` couldn't have been a regular constructor call
+  - In fact, `Comparator<Country>` is an **interface type** and you can’t construct instances of an interface type.
+
 
 
 
