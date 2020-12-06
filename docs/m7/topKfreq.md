@@ -25,7 +25,7 @@ Explanation: "the", "is", "sunny" and "day" are the four most frequent words,
 
 ## extra reading
 
-- [Comparator Interface Type]()
+- [Comparator Interface Type](https://novemberfall.github.io/LeetCode-NoteBook/#/oritented/comparator)
 
 - `Interface Map.Entry<K,V>`, 
 
