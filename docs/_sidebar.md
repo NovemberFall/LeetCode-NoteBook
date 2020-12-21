@@ -88,6 +88,7 @@
         * [133. Clone Graph | Deep Copy Undirected Graph](m6/deepCopyGraph.md)
     * [m7: HashMap](m7/intro.md)
         * [692. Top K Frequent Words](m7/topKfreq.md)
+        * [146. LRU Cache](m7/lru.md)
     * [m8: String](m8/intro.md)
         * [Remove Certain Characters](m8/rmCertainChar.md)
         * [186 Reverse Words in a String II](m8/reverseWord.md)
