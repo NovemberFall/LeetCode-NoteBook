@@ -58,14 +58,14 @@ https://novemberfall.github.io/programming
 
 ---
 
-## 记录我的前端癫狂之路！
+## FrontEnd
 
 https://novemberfall.github.io/Big-Front-End/
 
 
 ---
 
-## 记录我的后端！
+## BackEnd
 
 https://novemberfall.github.io/Java-backEnd-fullstack/
 
@@ -80,3 +80,9 @@ https://novemberfall.github.io/JavaScript-ObjectOriented/
 
 ## Java Object-Oriented
 https://novemberfall.github.io/Java-ObjectOriented/
+
+
+---
+
+## Python
+https://novemberfall.github.io/Python-100days/
