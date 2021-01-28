@@ -43,6 +43,8 @@ public class partitionLabels {
                 start = last + 1;
             }
         }
+
+        return list;
     }
 }
 ```
