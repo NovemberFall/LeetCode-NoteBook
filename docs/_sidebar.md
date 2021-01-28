@@ -135,6 +135,10 @@
         * [Infinite Loop Around the Dinner Table | Interview](DFS/formRing.md)
 
 -----
+* [Amazon Medium](amazon/intro.md)
+    * [763. Partition Labels](amazon/partitionLabel.md)
+
+-----
 * [Bit Operation](Bit/intro.md)
     * [Power Of Two | Easy](Bit/powerTwo.md)
     * [Number Of Different Bits | Medium](Bit/different.md)
