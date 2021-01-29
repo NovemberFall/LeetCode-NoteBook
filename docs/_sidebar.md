@@ -137,6 +137,7 @@
 -----
 * [Amazon Medium](amazon/intro.md)
     * [763. Partition Labels](amazon/partitionLabel.md)
+    * [1010. Pairs of Songs](amazon/pairs.md)
 
 -----
 * [Bit Operation](Bit/intro.md)
