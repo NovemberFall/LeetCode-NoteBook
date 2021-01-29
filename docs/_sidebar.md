@@ -138,6 +138,7 @@
     * [763. Partition Labels](amazon/partitionLabel.md)
     * [1010. Pairs of Songs](amazon/pairs.md)
     * [146. LRU Cache](m7/lru.md)
+    * [200. Number of Islands](amazon/islands.md)
 
 -----
 * [Bit Operation](Bit/intro.md)
