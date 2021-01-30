@@ -139,6 +139,7 @@
     * [1010. Pairs of Songs](amazon/pairs.md)
     * [146. LRU Cache](m7/lru.md)
     * [200. Number of Islands](amazon/islands.md)
+    * [1152. Analyze User Website Visit Pattern](amazon/web.md)
 
 -----
 * [Bit Operation](Bit/intro.md)
