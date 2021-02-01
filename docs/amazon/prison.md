@@ -35,7 +35,36 @@ public class PersionCellsAfterNdays {
 
 - 假如我们用以上这一段代码，测试我们会发现在第十四个会有循环:
 
-![](img/2021-01-31-16-57-47.png)
+```ruby
+When i = 0 the key is [0, 1, 1, 0, 0, 0, 0, 0]
+When i = 1 the key is [0, 0, 0, 0, 1, 1, 1, 0]
+When i = 2 the key is [0, 1, 1, 0, 0, 1, 0, 0]
+When i = 3 the key is [0, 0, 0, 0, 0, 1, 0, 0]
+When i = 4 the key is [0, 1, 1, 1, 0, 1, 0, 0]
+When i = 5 the key is [0, 0, 1, 0, 1, 1, 0, 0]
+When i = 6 the key is [0, 0, 1, 1, 0, 0, 0, 0]
+When i = 7 the key is [0, 0, 0, 0, 0, 1, 1, 0]
+When i = 8 the key is [0, 1, 1, 1, 0, 0, 0, 0]
+When i = 9 the key is [0, 0, 1, 0, 0, 1, 1, 0]
+When i = 10 the key is [0, 0, 1, 0, 0, 0, 0, 0]
+When i = 11 the key is [0, 0, 1, 0, 1, 1, 1, 0]
+When i = 12 the key is [0, 0, 1, 1, 0, 1, 0, 0]
+When i = 13 the key is [0, 0, 0, 0, 1, 1, 0, 0]
+When i = 14 the key is [0, 1, 1, 0, 0, 0, 0, 0]
+When i = 15 the key is [0, 0, 0, 0, 1, 1, 1, 0]
+When i = 16 the key is [0, 1, 1, 0, 0, 1, 0, 0]
+When i = 17 the key is [0, 0, 0, 0, 0, 1, 0, 0]
+When i = 18 the key is [0, 1, 1, 1, 0, 1, 0, 0]
+When i = 19 the key is [0, 0, 1, 0, 1, 1, 0, 0]
+When i = 20 the key is [0, 0, 1, 1, 0, 0, 0, 0]
+When i = 21 the key is [0, 0, 0, 0, 0, 1, 1, 0]
+When i = 22 the key is [0, 1, 1, 1, 0, 0, 0, 0]
+When i = 23 the key is [0, 0, 1, 0, 0, 1, 1, 0]
+When i = 24 the key is [0, 0, 1, 0, 0, 0, 0, 0]
+When i = 25 the key is [0, 0, 1, 0, 1, 1, 1, 0]
+When i = 26 the key is [0, 0, 1, 1, 0, 1, 0, 0]
+When i = 27 the key is [0, 0, 0, 0, 1, 1, 0, 0]
+```
 
 - Time O(2^N)
 - Space O(2^N * N)
