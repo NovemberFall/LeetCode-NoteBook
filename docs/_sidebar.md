@@ -134,7 +134,7 @@
         * [Infinite Loop Around the Dinner Table | Interview](DFS/formRing.md)
 
 -----
-* [Amazon Medium](amazon/intro.md)
+* [Amazon Top 50](amazon/intro.md)
     * [763. Partition Labels](amazon/partitionLabel.md)
     * [1010. Pairs of Songs](amazon/pairs.md)
     * [146. LRU Cache](m7/lru.md)
@@ -142,6 +142,7 @@
     * [1152. Analyze User Website Visit Pattern](amazon/web.md)
     * [937. Reorder Data in Log Files](amazon/log.md)
     * [957. Prison Cells After N Days](amazon/prison.md)
+    * [1192. Critical Connections in a Network | Hard](amazon/critical.md)
 
 -----
 * [Bit Operation](Bit/intro.md)
