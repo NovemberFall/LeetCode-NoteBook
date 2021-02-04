@@ -143,6 +143,7 @@
     * [937. Reorder Data in Log Files](amazon/log.md)
     * [957. Prison Cells After N Days](amazon/prison.md)
     * [1192. Critical Connections in a Network | Hard](amazon/critical.md)
+    * [973. K Closest Points to Origin](amazon/kclosest.md)
 
 -----
 * [Bit Operation](Bit/intro.md)
