@@ -13,6 +13,10 @@ Given nums = [2, 7, 11, 15], target = 9,
 Because nums[0] + nums[1] = 2 + 7 = 9,
 return [0, 1].
 ```
+-----
+
+![](img/2021-02-07-03-12-33.png)
+
 
 ```java
 public int[] towSum(int[] nums, int target){
