@@ -147,6 +147,7 @@
     * [572. Subtree of Another Tree](amazon/subTree.md)
     * [1. Two Sum](amazon/two.md)
     * [547. Number of Provinces](amazon/circle.md)
+    * [221. Maximal Square](amazon/max.md)
 
 -----
 * [Bit Operation](Bit/intro.md)
