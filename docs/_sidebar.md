@@ -146,6 +146,7 @@
     * [973. K Closest Points to Origin](amazon/kclosest.md)
     * [572. Subtree of Another Tree](amazon/subTree.md)
     * [1. Two Sum](amazon/two.md)
+    * [547. Number of Provinces](amazon/circle.md)
 
 -----
 * [Bit Operation](Bit/intro.md)
