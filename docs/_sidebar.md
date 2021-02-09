@@ -148,6 +148,7 @@
     * [1. Two Sum](amazon/two.md)
     * [547. Number of Provinces](amazon/circle.md)
     * [221. Maximal Square](amazon/max.md)
+    * [	994	Rotting Oranges](amazon/rotting.md)
 
 -----
 * [Bit Operation](Bit/intro.md)
