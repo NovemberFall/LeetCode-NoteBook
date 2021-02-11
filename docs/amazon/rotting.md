@@ -10,7 +10,18 @@
   reduced by `1`. If the number has not been reduced to `0` when the BFS is ending, that means 
   there are oranages that cannot be rotten.
 
+```ruby
+Time Complexity：O(nm)
+即进行一次广度优先搜索的时间，其中 n=grid.length, m=grid[0].length
+
+Space Complexity：O(nm)
+需要额外的 dis 数组记录每个新鲜橘子被腐烂的最短时间，大小为 O(nm)，且广度优先搜索中队列里存放的状态最多不会超过 nm 个，
+最多需要 O(nm) 的空间，所以最后的空间复杂度为 O(nm)。
+```
+
+
 ```java
+
 class Solution {
     public int orangesRotting(int[][] grid) {
         // row column
@@ -22,15 +33,15 @@ class Solution {
         int count = 0;
         
         
-        // 遍历二维数组 找出所有的新鲜橘子和腐烂的橘子
+        //traverse 2d array, find out all fresh and rotten oranges
         for (int r = 0; r < m; r++) {
             for (int c = 0; c <n; c++) {
-                // 新鲜橘子计数
+                // count all fresh oranages
                 if (grid[r][c] == 1) {
                     count++;
-                    // 腐烂的橘子就放进队列
+                    //push rotten oranages into queue 
                 } else if (grid[r][c] == 2){
-                    // 缓存腐烂橘子的坐标
+                    //store rotten oranages' coordinate 缓存腐烂橘子的坐标
                     queue.add(new int [] {r, c});
                 }
             }
@@ -39,21 +50,21 @@ class Solution {
         //minute, represent the number of minute
         int minute = 0;
         
-    // 如果有新鲜橘子 并且 队列不为空
-    // 直到上下左右都触及边界 或者 被感染的橘子已经遍历完        
+        //if there are still fresh oranages left, and queue is not emepty
+        //until up, down, left, right boundary or we have traversed all rotten oranages         
         while (count > 0 && !queue.isEmpty()) {
             
-            // BFS 层级 + 1
+            // BFS layer + 1
             minute++;
             
-            // 拿到当前层级的腐烂橘子数量， 因为每个层级会更新队列
+            //get the current the number of rotten oranages, since we will update every queue from every laryer
             int size = queue.size();
             
-            //遍历当前层级的队列
+            //traverse current layer's queue 
             for (int i = 0; i < size; i++) {
-                // 踢出队列（拿出一个腐烂的橘子）
+                //poll a rotten oranage from queue
                 int [] orange = queue.poll();
-                // 恢复橘子坐标
+                //recover oranage's coordinate
                 int r = orange[0];
                 int c = orange[1];
                 
@@ -84,6 +95,8 @@ class Solution {
             }
         }
         
+        //if there is still fresh oranages, return -1
+        //or return minutes
         if (count > 0) {
             return -1;
         }else {
