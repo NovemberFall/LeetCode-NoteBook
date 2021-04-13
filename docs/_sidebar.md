@@ -66,6 +66,7 @@
         * [Largest And Smallest](m3/maxMin.md)
         * [Largest And Second Largest](m3/maxSecondMax.md)
         * [48. Rotate Image || Rotate Matrix](m3/rotateMatrix.md)
+        * [189. Rotate Array](m3/rotateArr.md)
     * [m4: Recursion](m4/intro.md)
         * [50. Pow(x, n)](m4/power.md)
         * [Spiral Order Traverse I](m4/spiral.md)
