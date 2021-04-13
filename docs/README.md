@@ -86,3 +86,9 @@ https://novemberfall.github.io/Java-ObjectOriented/
 
 ## Python
 https://novemberfall.github.io/Python-100days/
+
+
+---
+## MySQL NoSQL
+
+https://novemberfall.github.io/sql/
