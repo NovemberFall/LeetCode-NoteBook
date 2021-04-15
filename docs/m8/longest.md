@@ -5,7 +5,8 @@ You are given a string s and an integer k. You can choose any character of the s
 change it to any other uppercase English character. 
 You can perform this operation at most k times.
 
-Return the length of the longest substring containing the same letter you can get after performing the above operations.
+Return the length of the longest substring containing the same letter you can get after 
+performing the above operations.
 
 
 Example 1:
@@ -31,17 +32,19 @@ The substring "BBBB" has the longest repeating letters, which is 4.
 
 - two pointers, left and right
 
-1. Move the right pointer first and find one that satisfies the meaning of the question and can replace k characters, 
-  all the characters become the same as the longest substring at present, until the right boundary contains one character, 
-  and it stops when it cannot be satisfied;
-2. Then consider that the left boundary moves to the right. After the left boundary only needs to move one square to the right, 
-  the right boundary can start to move to the right again, and continue to try to find a longer target substring;
-3.  The longest repetitive substring after replacement is generated in the process of alternately moving the right 
-   and left borders to the right.
+1. Move the right pointer first and find one that satisfies the meaning of the question and can
+  replace k characters, all the characters become the same as the longest substring at present, 
+  until the right boundary contains one character, and it stops when it cannot be satisfied;
+2. Then consider that the left boundary moves to the right. After the left boundary only needs to 
+  move one square to the right, the right boundary can start to move to the right again, and 
+  continue to try to find a longer target substring;
+3.  The longest repetitive substring after replacement is generated in the process of alternately 
+  moving the right and left borders to the right.
 
 
 time complexity: O(N),  here N is the length of the input string S;
-Space complexity: O(A), where A is the range of ASCII values of characters appearing in the input string S
+Space complexity: O(A), where A is the range of ASCII values of characters appearing 
+in the input string S
 ```
 
 ---
