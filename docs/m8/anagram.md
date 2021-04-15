@@ -28,6 +28,24 @@ The substring with start index = 2 is "ab", which is an anagram of "ab".
 ```ruby
 string s2 = "aabc"      reference_hashmap: <a, 2> <b, 1> <c, 1>
        s1 = "zzzzcdebcaabcyywwwww"
+              ----
+
+left = 1
+right = 5 
+hashmap = {z:3, c:1}
+num_matches = 0
+
+如果c 的frequency从对上变成对不上
+    num_matches--;
+如果c 的frequency从对不上变成对上
+    num_matches++;   
+    
+
+如果z 的frequency从对上变成对不上
+    num_matches--;
+如果z 的frequency从对不上变成对上
+    num_matches++;   
+
 
 Data structure:
 left
@@ -47,4 +65,30 @@ hashmap[a[left]]--;
 left++
 right++
 hashmap[a[right]]++;
+```
+
+
+```java
+public class Solution {
+  public List<Integer> allAnagrams(String sh, String lo) {
+    // Write your solution here
+    List<Integer> result = new ArrayList<>();
+    if (lo.length() == 0) {
+      return res;
+    }
+    //when sh is longer than lo, there is no way any of 
+    //the substring of lo could be an anagram of sh.
+    if (sh.length() > lo.length()) {
+      return res;
+    }
+
+    //This map records for each of the distinct character in s
+    //how many characters are needed
+    //e.g. s = "abbc", map = {'a':1, 'b':2, 'c':1}
+    //when we get an instance of 'a' in lo, 
+    //we let count of 'a' decremented by 1,
+    //and only when the count is from 1 to 0, we have 'a' totally matched.
+    Map
+  }
+}
 ```
