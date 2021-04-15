@@ -95,6 +95,7 @@
         * [186 Reverse Words in a String II](m8/reverseWord.md)
         * [557. Reverse Words in a String III](m8/reverseWord3.md)
         * [424. Longest Repeating Character Replacement](m8/longest.md)
+        * [438. Find All Anagrams in a String](m8/anagram.md)
     * [m9: Dynamic Programming |](m9/intro.md)
         * [509. Fibonacci Number](m9/fibonacci.md)
         * [674. Longest Continuous Increasing Subsequence | Longest Ascending SubArray](m9/longestSubarray.md)
