@@ -69,26 +69,33 @@ hashmap[a[right]]++;
 
 
 ```java
-public class Solution {
-  public List<Integer> allAnagrams(String sh, String lo) {
-    // Write your solution here
-    List<Integer> result = new ArrayList<>();
-    if (lo.length() == 0) {
-      return res;
+class Solution {
+    public List<Integer> findAnagrams(String s, String p) {
+        List<Integer> res = new ArrayList<>();
+        
+        //Record the frequency of occurrence of all letters of p
+        int[] pFreq = new int[26];
+        for(int i = 0; i < p.length(); i++){
+           pFreq[p.charAt(i) - 'a']++; 
+        }
+        
+        //[left right] corresponding to the left and right of window
+        int[] window = new int[26];
+        int left = 0, right = 0;
+        while (right < s.length()) {
+            window[s.charAt(right) - 'a']++;
+            //increase frequence of letters of window
+            if (right - left + 1 == p.length()) {
+                //maintain the length of sh, update the result
+                if (Arrays.equals(window, pFreq)) {
+                    res.add(left);
+                }
+                window[s.charAt(left) - 'a']--;
+                left++;
+            }
+            right++;
+        }
+        return res;
     }
-    //when sh is longer than lo, there is no way any of 
-    //the substring of lo could be an anagram of sh.
-    if (sh.length() > lo.length()) {
-      return res;
-    }
-
-    //This map records for each of the distinct character in s
-    //how many characters are needed
-    //e.g. s = "abbc", map = {'a':1, 'b':2, 'c':1}
-    //when we get an instance of 'a' in lo, 
-    //we let count of 'a' decremented by 1,
-    //and only when the count is from 1 to 0, we have 'a' totally matched.
-    Map
-  }
 }
 ```
