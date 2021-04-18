@@ -46,7 +46,8 @@ public class subsetI {
 
     private void dfs(int[] nums, int index, List<Integer> path, List<List<Integer>>result){
         if(index == nums.length){
-            List<Integer> temp = new ArrayList<>(path); 
+            List<Integer> temp = new ArrayList<>(path);
+            // shallow copy 
             result.add(temp);
             return;
         }
