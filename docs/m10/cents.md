@@ -74,6 +74,7 @@ level4(1 cent)   0*1(99), 1*1(98), 2*1(97)...99*1(rem=0)
  Because there are 4 levels, and each level has AT MOST 99 branches.
 
  Time = O(99^4)
+ Space = O(4), height
 ```
 
 ---
