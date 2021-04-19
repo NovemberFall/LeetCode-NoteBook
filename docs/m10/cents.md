@@ -53,4 +53,8 @@ level4(1 cent)   0*1(99), 1*1(98), 2*1(97)...99*1(rem=0)
 
 
  Summary: 一共四层， 每一层按最后一层做多叉出来99个叉的upper bound计算，就是 99 * 99 * 99 * 99
+
+ Because there are 4 levels, and each level has AT MOST 99 branches.
+
+ Time = O(99^4)
 ```
