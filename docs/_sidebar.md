@@ -110,6 +110,7 @@
         * [All Permutations I | DFS](m6/permutationsWithStr.md)
         * [All Permutations II | DFS](m6/permutationsWithStrII.md)
         * [47. Permutations II | DFS](m6/permutationsII.md)
+        * [Combinations Of Coins | 99 cents](m10/cents.md)
 
 -----
 * [Hard && Interview Question](Hard/intro.md)

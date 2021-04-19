@@ -26,10 +26,12 @@ For example, given n = 3, a solution set is:
 - `r` stores the number of right parenthesis `)` **added so far**
 - `soluPrefix`: solution so far
 
+---
 
+- Because there are `2n` level in the recursion tree, and it's a binary
+  tree. Thus, there are at most $$2^{2n}$$
 - $$Time = O(2^{2n}*2n)$$
-  
-- Extra space = O(n)
+- Space = O(2n)
 
 
 
