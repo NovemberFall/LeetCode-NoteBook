@@ -93,6 +93,7 @@
         * [438. Find All Anagrams in a String](m8/anagram.md)
     * [m9: Dynamic Programming |](m9/intro.md)
         * [509. Fibonacci Number](m9/fibonacci.md)
+        * [62. Unique Paths](m9/path.md)
         * [674. Longest Continuous Increasing Subsequence | Longest Ascending SubArray](m9/longestSubarray.md)
         * [Max Product Of Cutting Rope](m9/maxProductOfCuttingRope.md)
         * [101. Largest Square Of 1s](m9/largestSquare.md)
