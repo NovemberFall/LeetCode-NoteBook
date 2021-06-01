@@ -26,6 +26,14 @@ For example, given n = 3, a solution set is:
 - `r` stores the number of right parenthesis `)` **added so far**
 - `soluPrefix`: solution so far
 
+- what does it store on each level?
+  - six levels, each level considers one position (in which there will be only one parenthesis added
+    in this position)
+- How many different states should we try to put on this level?
+  - **two**, either left or right parenthesis
+  
+---
+![](img/2021-05-31-18-25-11.png)
 ---
 
 - Because there are `2n` level in the recursion tree, and it's a binary
@@ -33,7 +41,7 @@ For example, given n = 3, a solution set is:
 - $$Time = O(2^{2n}*2n)$$
 - Space = O(2n)
 
-
+---
 
 ```java
 class Solution {
