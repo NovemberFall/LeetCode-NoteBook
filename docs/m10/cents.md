@@ -111,6 +111,41 @@ public class Solution {
 }
 ```
 
+- 2nd way:
+
+```java
+public class Solution {
+  public List<List<Integer>> combinations(int target, int[] coins) {
+    // Write your solution here
+    List<List<Integer>> res = new ArrayList<>();
+    List<Integer> cur = new ArrayList<>();
+    findCombination(target, coins, 0, cur, res);
+    return res;
+  }
+
+  private void findCombination(int moneyLeft, int[]coins, int index, 
+    List<Integer> cur, List<List<Integer>> res) {
+    
+    if (index == coins.length) {
+      if (moneyLeft == 0) {
+        res.add(new ArrayList<>(cur));
+      }
+      return;
+    } 
+
+    int max = moneyLeft / coins[index];
+    for (int i = 0; i <= max; i++) {
+      cur.add(i);
+      findCombination(moneyLeft - i * coins[index], coins, index+1, cur, res);
+      cur.remove(cur.size() - 1);
+    }
+  }
+}
+
+```
+
+
+
 ---
 
 ### Reference:
