@@ -20,6 +20,8 @@ Output:
 
 ## Analysis:
 
+- [all permutations | DFS](https://novemberfall.github.io/LeetCode-NoteBook/#/m6/permutationsWithStr)
+
 - 又一题排列， 注意每一个元素只是改变顺序， 最终generate a new list
 - DFS 算法
 - if `index == nums.length - 1`, 这样没有cover到set = “” 的corner case， 
