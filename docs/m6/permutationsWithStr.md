@@ -17,6 +17,50 @@ Set = "", all permutations are [""]
 
 ## Analysis:
 
+- What does it store on each level?
+  - three level. each level respresents one position
+- How many different states should we try to put on this level?
+  - remaining unused letter
+
+
+---
+
+```ruby
+                    root(abc)
+              /         |         \
+L0          a(bc)      b(ac)      c(ab)
+           /  \        /  \        /    \
+L1      b(c)  c(b)   a(c) c(a)    a(b)  b(a)   
+          |     |      |     |     |      |       
+L2        c     b      c     a     b      a 
+path:    abc    acb    bac   bca   cab    cba
+```
+---
+
+- new version:
+
+```ruby
+                           root(abc)
+              /                |                  \
+i =0,1,2   swap(0,0)          swap(0,1)           swap(0,2)
+L0          a(bc)               b(ac)                c(ab)
+           /       \           /  \                 /    \
+i=1,2  swap(1,1) swap(1,2)   swap(1,1) swap(1,2)        
+L1      b(c)       c(b)       a(c)     c(a)       a(b)  b(a)   
+          |         |          |         |         |      |  
+i=2     swap(2,2)  swap(2,2)             
+L2        c         b          c         a         b      a 
+
+Time = O(n!)
+Extra space = O(n)
+```
+
+
+
+
+
+---
+
 ```java
 public class Solution {
   //DFS solution with swapping
