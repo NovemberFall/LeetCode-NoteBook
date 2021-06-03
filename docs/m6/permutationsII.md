@@ -22,8 +22,9 @@ Output:
 
 - 又一题排列， 注意每一个元素只是改变顺序， 最终generate a new list
 - DFS 算法
-- 注意当 `index == nums.length`时候，越界， indexOutOfbound, 但是这个时候 我们把进行一系列操作的数组nums里的元素
-  全部取出，放进一个新的list
+- 当nums.length == 0 的时候是一个关键点，因为 这时候 list.size() == 1.
+  - 如果题目说 input 不是null 且 input.length() > 0，可以这样写；
+
 
 - 利用一个set, 去重， 当遇到重复元素时，我们直接跳过 current index, 进行下一loop 操作
 - 递归前后继续保持一致状态，所以调用两次 swap()
