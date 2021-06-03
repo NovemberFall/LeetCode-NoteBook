@@ -22,8 +22,17 @@ Output:
 
 - 又一题排列， 注意每一个元素只是改变顺序， 最终generate a new list
 - DFS 算法
-- 当nums.length == 0 的时候是一个关键点，因为 这时候 list.size() == 1.
-  - 如果题目说 input 不是null 且 input.length() > 0，可以这样写；
+- if `index == nums.length - 1`, 这样没有cover到set = “” 的corner case， 
+  set="" 的时候应该返回[""]，
+
+- 也可以加上这个条件：
+
+```java
+if (set == "") {
+    result.add("");
+    return result;
+}
+```
 
 
 - 利用一个set, 去重， 当遇到重复元素时，我们直接跳过 current index, 进行下一loop 操作
@@ -72,6 +81,45 @@ class Solution {
         int tmp = nums[left];
         nums[left] = nums[right];
         nums[right] = tmp;
+    }
+}
+```
+
+---
+
+### 2nd method
+
+```java
+class Solution {
+    public List<List<Integer>> permuteUnique(int[] nums) {
+        List<List<Integer>> res = new ArrayList<>();
+        dfs(nums, 0, res);
+        return res;
+    }
+    
+    private void dfs(int[]nums, int index ,List<List<Integer>> res) {
+        if (index == nums.length) {
+            List<Integer> cur = new ArrayList<>();
+            for (int num : nums) {
+                cur.add(num);
+            }
+            res.add(cur);
+            return;
+        }
+        Set<Integer> used = new HashSet<>();
+        for (int i = index; i < nums.length; i++) {
+            if (used.add(nums[i])) {
+                swap(nums, index, i);
+                dfs(nums, index+1, res);
+                swap(nums, index, i);                
+            }
+        }
+    }
+    
+    private void swap(int[] nums, int index, int i) {
+        int tmp = nums[index];
+        nums[index] = nums[i];
+        nums[i] = tmp;
     }
 }
 ```
