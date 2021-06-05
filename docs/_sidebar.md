@@ -114,6 +114,7 @@
         * [47. Permutations II | DFS](m6/permutationsII.md)
         * [Combinations Of Coins | 99 cents](m10/cents.md)
         * [39. Combination Sum](m10/sum.md)
+        * [40. Combination Sum II](m10/sum1.md)
 
 -----
 * [Hard && Interview Question](Hard/intro.md)
