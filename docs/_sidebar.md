@@ -30,6 +30,7 @@
         * [993. Cousins in Binary Tree](ch5/cousinInTree.md)
     * [Chapter6：Graph | DFS | BFS](ch6/intro.md)
         * [257. Binary Tree Paths](ch6/btreePath.md)
+        * [733. Flood Fill](ch6/flood.md)
     * [Chapter7：HashMap | HashSet](ch7/intro.md)
         * [268. Missing Number](ch7/misssingNum.md)
         * [349. Intersection of Two Arrays](ch7/interset.md)
