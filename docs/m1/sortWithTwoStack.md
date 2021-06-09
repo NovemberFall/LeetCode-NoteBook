@@ -23,15 +23,15 @@ No additional memory, time complexity = O(n ^ 2).
 
 ```ruby
 stack1: output | input        [1 3 2 4]
-stack2: buffer                [       ]               curMin = 1, globalMin_count = 1
+stack2: buffer                [       ]   curMin = 1, globalMin_count = 1
 
 
 stack1: output | input        [       ]
-stack2: buffer                [4 2 3 1]                 curMin = 1, globalMin_count = 1
+stack2: buffer                [4 2 3 1]   curMin = 1, globalMin_count = 1
 
 
 stack1: output | input        [3 2 4]
-stack2: buffer                [| 1]               curMin = 1, globalMin_count = 0
+stack2: buffer                [| 1]       curMin = 1, globalMin_count = 0
 
 
 
@@ -40,15 +40,15 @@ stack2: buffer                [| 1]               curMin = 1, globalMin_count = 
 
 
 stack1: output | input        [3 2 4]
-stack2: buffer                [ 1 ]               curMin = 2, globalMin_count = 1
+stack2: buffer                [ 1 ]        curMin = 2, globalMin_count = 1
 
 
 stack1: output | input        [       ]
-stack2: buffer                [4 2 3 1]                 curMin = 2, globalMin_count = 1
+stack2: buffer                [4 2 3 1]    curMin = 2, globalMin_count = 1
 
 
 stack1: output | input        [3 4]
-stack2: buffer                [ | 2 1]               curMin = 2, globalMin_count = 0
+stack2: buffer                [ | 2 1]     curMin = 2, globalMin_count = 0
 
 
 
@@ -59,15 +59,15 @@ stack2: buffer                [ | 2 1]               curMin = 2, globalMin_count
 
 
 stack1: output | input        [3 4]
-stack2: buffer                [2 1]               curMin = 3, globalMin_count = 1
+stack2: buffer                [2 1]         curMin = 3, globalMin_count = 1
 
 
 stack1: output | input        [       ]
-stack2: buffer                [3 4 2 1]                 curMin = 3, globalMin_count = 1
+stack2: buffer                [3 4 2 1]     curMin = 3, globalMin_count = 1
 
 
 stack1: output | input        [4]
-stack2: buffer                [ | 3 2 1]               curMin = 3, globalMin_count = 0
+stack2: buffer                [ | 3 2 1]    curMin = 3, globalMin_count = 0
 
 
 
@@ -77,15 +77,15 @@ stack2: buffer                [ | 3 2 1]               curMin = 3, globalMin_cou
 
 
 stack1: output | input        [4]
-stack2: buffer                [3 2 1]               curMin = 4, globalMin_count = 1
+stack2: buffer                [3 2 1]       curMin = 4, globalMin_count = 1
 
 
 stack1: output | input        [       ]
-stack2: buffer                [4  | 3 2 1]                 curMin = 4, globalMin_count = 1
+stack2: buffer                [4  | 3 2 1]  curMin = 4, globalMin_count = 1
 
 
 stack1: output | input        [ ]
-stack2: buffer                [ | 4 3 2 1]               curMin = 4, globalMin_count = 0
+stack2: buffer                [ | 4 3 2 1]  curMin = 4, globalMin_count = 0
 
 
 

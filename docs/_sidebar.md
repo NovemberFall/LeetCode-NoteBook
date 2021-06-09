@@ -22,6 +22,8 @@
         * [141. Linked List Cycle](ch4/listCycle.md)
         * [876. Middle of the Linked List](ch4/midNodeOfList.md)
         * [21. Merge Two Sorted Lists | dummyHead](ch4/mergeTwoList.md)
+    * [Queue & Stack](stack/intro.md)
+        * [232. Implement Queue using Stacks](stack/queue.md)
     * [Chapter5：Binary Tree](ch5/intro.md)
         * [104. Maximum Depth of Binary Tree](ch5/getHightTree.md)
         * [110. Balanced Binary Tree | Check If Binary Tree Is Balanced](ch5/checkBalanced.md)
