@@ -1,9 +1,8 @@
-# 704. Classical Binary Search
+## 704. Classical Binary Search
 
-```java
-Given a sorted (in ascending order) integer array nums of n elements and a target value,
-write a function to search target in nums. 
-If target exists, then return its index, otherwise return -1.
+- Given a sorted (in ascending order) integer array nums of n elements and a target value,
+- write a function to search target in nums. 
+- If target exists, then return its index, otherwise return -1.
 
 EX1:
 Input: nums = [-1,0,3,5,9,12], target = 9
@@ -14,7 +13,7 @@ EX2:
 Input: nums = [-1,0,3,5,9,12], target = 2
 Output: -1
 Explanation: 2 does not exist in nums so return -1
-```
+
 
 
 -> to find a element/number in an array, -> sorted array
