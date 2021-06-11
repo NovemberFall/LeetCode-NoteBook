@@ -29,6 +29,10 @@ Since the list has two middle nodes with values 3 and 4, we return the second on
 
 - 这里注意跳出循环条件必须为： `while(fast != null && fast.next != null)`, 
 - 如果和判断是否有环那题一样的跳出循环条件 => 那么将无法判断 `odd | even`  cases
+- note there are two example, one is odd numbers of Nodes
+  - second is even numbers of Nodes, which it requires return `Node 4`
+    - so first, count the length of LinkedList
+    - then, count either odd or even
 
 ```java
 /**
@@ -43,17 +47,30 @@ Since the list has two middle nodes with values 3 and 4, we return the second on
  */
 class Solution {
     public ListNode middleNode(ListNode head) {
-        if(head == null){
-            return null;
+        if (head == null) {
+            return head;
+        }
+        int len = 0;
+        ListNode count = head;
+        while (count != null) {
+            len++;
+            count = count.next;
         }
         
-        ListNode fast = head;
         ListNode slow = head;
-        while(fast != null && fast.next != null){
+        ListNode fast = head;
+        while(fast.next != null && fast.next.next != null){
             slow = slow.next;
             fast = fast.next.next;
         }
-        return slow;
+        
+        if (len % 2 == 0) {
+            return slow.next;
+        } else {
+            return slow;
+        }
+        
+        // return (len % 2 == 0) ? slow.next : slow;
     }
 }
 ```
