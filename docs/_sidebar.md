@@ -80,6 +80,7 @@
     * [m5: LinkedList](m5/intro.md)
         * [2. Add Two Numbers](m5/AddTwoNums.md)
         * [138. Copy List with Random Pointer | Deep Copy](m5/deepCopyList.md)
+        * [143. Reorder List](m5/reorderList.md)
     * [m6：Heap & Graph | BFS ](m6/intro.md)
         * [215. Kth Largest Element in an Array](m6/KthLarget.md)
         * [K Smallest In Unsorted Array](m6/K_smallest.md)
