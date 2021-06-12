@@ -22,6 +22,7 @@
         * [141. Linked List Cycle](ch4/listCycle.md)
         * [876. Middle of the Linked List](ch4/midNodeOfList.md)
         * [21. Merge Two Sorted Lists | dummyHead](ch4/mergeTwoList.md)
+        * [203. Remove Linked List Elements](ch4/remove.md)
     * [Queue & Stack](stack/intro.md)
         * [232. Implement Queue using Stacks](stack/queue.md)
     * [Chapter5：Binary Tree](ch5/intro.md)
