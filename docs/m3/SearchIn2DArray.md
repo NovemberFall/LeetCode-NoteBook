@@ -29,6 +29,12 @@ public class searhInMatrix {
 
 ![](img/2020-03-15-16-15-00.png)
 
+- map index `mid`(in 1D array) back to 2D array
+  - row =  mid / matrix[0].length 
+  - column = mid % matrix[0].length
+
+---
+
 ```java
 /**
  * searhInMatrix
