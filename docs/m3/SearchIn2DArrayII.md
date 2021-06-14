@@ -8,6 +8,7 @@
 
 Example:
 
+```ruby
 Consider the following matrix:
 [
   [1,   4,  7, 11, 15],
@@ -20,7 +21,7 @@ Consider the following matrix:
 Given target = 5, return true.
 
 Given target = 20, return false.
-
+```
 
 ### Analysis:
 
