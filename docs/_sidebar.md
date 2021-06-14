@@ -23,6 +23,7 @@
         * [876. Middle of the Linked List](ch4/midNodeOfList.md)
         * [21. Merge Two Sorted Lists | dummyHead](ch4/mergeTwoList.md)
         * [203. Remove Linked List Elements](ch4/remove.md)
+        * [234. Palindrome Linked List](ch4/palindrome.md)
     * [Queue & Stack](stack/intro.md)
         * [232. Implement Queue using Stacks](stack/queue.md)
     * [Chapter5：Binary Tree](ch5/intro.md)
