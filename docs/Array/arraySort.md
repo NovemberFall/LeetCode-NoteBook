@@ -1,4 +1,4 @@
-# Merge Sort | Selection | Quick
+## 912. Merge Sort | Selection | Quick
 
 ### Merge Sort
 
@@ -43,16 +43,12 @@
   - n (1/(1/2)) =
   - 2n => O(n)
 
-
+---
 
 #### if merge LinkedList:
 
 ![](img/2020-05-05-19-13-00.png)
 ![](img/2020-05-05-19-13-49.png)
-
-
-
-
 
 ```java
 public class Solution {
@@ -155,15 +151,9 @@ public class Solution {
 
 - [基础解释：](https://novemberfall.github.io/Algorithm-FullStack/csBasic/quickRainbow.html)
 
-
-
-
-
 ![](img/2020-05-08-13-45-55.png)
 
 ![](img/2020-05-08-13-46-15.png)
-
-
 
 ![](img/2020-05-08-01-47-43.png)
 ![](img/2020-05-08-01-48-11.png)
