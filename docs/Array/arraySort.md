@@ -93,14 +93,16 @@ public class Solution {
     //    由于谁小移谁，那么右半数组全部被留下，
     //所以 再次对 右半数组 或者 左半数组 进行最后全部处理：
 
-    //对一个元素都还没被处理的左半数组处理，合并到最后数组
+    //对一个元素都还没被处理的左半数组处理(或者还剩下左边数组的元素还没被处理)，
+    //合并到最后数组
     while(leftIndex < leftResult.length){
       result[resultIndex] = leftResult[leftIndex];
       leftIndex++;
       resultIndex++;
     }
 
-    //对一个元素都还没被处理的右半数组处理，合并到最后数组
+    //对一个元素都还没被处理的右半数组处理（或者还剩下右边数组的元素还没被处理)，
+    //合并到最后数组
     while(rightIndex < rightResult.length){
       result[resultIndex] = rightResult[rightIndex];
       rightIndex++;
