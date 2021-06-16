@@ -95,23 +95,9 @@ class Solution {
   - **left and right sub-tree have similar height,** i.e. difference is 0 or 1
     (balanced height)
 
-```ruby
-
-
-      			                  isBalanced(root)      n nodes			         time = n
-                        getHeight(L)     getHeight(R)   									
-                        n/2			                n/2
-				                    /			                \
-            isBalanced( root.left )          isBalanced( root.right)	    time = n
-	      getHeight(L)     getHeight(R)   	  getHeight(L)     getHeight(R)   		
-	       n/4			           n/4                 n/4               n/4  
-
-
-
-
-how many levels in this recursion tree =  log n         total time = O(nlogn)
-space = O(n)
-```
+- how many levels in this recursion tree = `log n`
+  total time = O(nlogn)
+- space = O(n)
 
 
 
