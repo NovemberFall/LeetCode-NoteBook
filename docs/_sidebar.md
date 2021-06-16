@@ -194,6 +194,7 @@
         * [Recursion Tree I](Recursion/rTree.md)
         * [Recursion Tree II](Recursion/rTree1.md)
     * [Binary Tree | preOrder inOrder postOrder](binaryTree/intro.md)
+        * [Basic conception](binaryTree/conception.md)
     * [Heap | PriorityQueue](heap/intro.md)
         * [1. Heap in Java](heap/concept.md)
     * [Map | Set | Hash](map/intro.md)
