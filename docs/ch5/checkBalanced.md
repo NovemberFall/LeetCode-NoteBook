@@ -1,11 +1,12 @@
-# 110. Balanced Binary Tree ||  Check If Binary Tree Is Balanced
+## 110. Balanced Binary Tree ||  Check If Binary Tree Is Balanced
 
 ```ruby
 Given a binary tree, determine if it is height-balanced.
 
 For this problem, a height-balanced binary tree is defined as:
 
-a binary tree in which the left and right subtrees of every node differ in height by no more than 1.
+a binary tree in which the left and right subtrees of every node 
+differ in height by no more than 1.
 
  
 
@@ -75,7 +76,11 @@ class Solution {
     }
     
     private int getHeight(TreeNode root){
-        return (root == null)? 0 : Math.max(getHeight(root.left), getHeight(root.right)) + 1;
+      if (root == null) {
+        return 0;
+      }
+      
+      return Math.max(getHeight(root.left), getHeight(root.right)) + 1;
     }
     
 }
@@ -117,18 +122,25 @@ space = O(n)
 
 关于space 
 
-```ruby
-还有就是在一个method的stack frame里继续进行另一个method的call stack操作，这种情况的space complexity应该如何计算？
 
-space在每次使用完之后其实被释放了，所以其实是logn
-一般来说当recursive返回时，之前的space已经被释放了，可以理解为取最大值就是space complexity
+- 还有就是在一个method的stack frame里继续进行另一个method的call stack操作，
+  这种情况的space complexity应该如何计算？
 
-java在执行的时候只有一个stack，stack在执行的时候累进的，但是你从root开始，到第二层继续执行recursive，接着下到更下一层，
-这时候你stack上其实只有两层。你可以理解为stack是一组大楼，root占据了第一层，然后以最左边的节点root的recursive占据了第二层，
-继续累进执行。在你完成以最左子节点为root的累进执行前，其实root为节点的recursive只有第一层被他使用了。
-直到recursive本身进行的recursive执行完毕，才开始由root的getHeight function使用stack进行recursive。
-也就是说，没有开辟新的空间，stack只有一个
-```
+- space在每次使用完之后其实被释放了，所以其实是`logn`
+  一般来说当recursive返回时，之前的space已经被释放了，可以理解为取最大值就是space complexity
+
+- java在执行的时候只有一个stack，stack在执行的时候累进的，但是你从root开始，
+  到第二层继续执行recursive，接着下到更下一层，
+
+- 这时候你stack上其实只有两层。你可以理解为stack是一组大楼，root占据了第一层，
+  然后以最左边的节点root的recursive占据了第二层，
+
+- 继续累进执行。在你完成以最左子节点为root的累进执行前，其实root为节点的recursive只有第一层被他使用了。
+  直到recursive本身进行的recursive执行完毕，才开始由root的getHeight function使用stack进行
+  recursive。
+
+- 也就是说，没有开辟新的空间，stack只有一个
+
 
 
 ![](img/2020-07-01-16-50-49.png)
