@@ -188,6 +188,7 @@
     * [Array | Sort](Array/intro.md)
         * [704. Classical Binary Search](Array/classicalBinarySearch.md)
         * [912. Merge Sort | Selection | Quick | recursion tree Time Complexity](Array/arraySort.md)
+        * [Quick Sort](Array/quick.md)
     * [Recursion](Recursion/intro.md)
         * [How to analyze time&&space complexity of recursion?](Recursion/recursionTime.md)
         * [Recursion Tree I](Recursion/rTree.md)
