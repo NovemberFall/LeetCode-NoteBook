@@ -1,7 +1,7 @@
-# 450. Delete Node in a BST 
+## 450. Delete Node in a BST 
 
 - Given a root node reference of a BST and a key, delete the node with the given key in the BST. 
-  Return the root node reference (possibly updated) of the BST.
+- Return the root node reference (possibly updated) of the BST.
 
 - Ex:
   
@@ -59,8 +59,11 @@ Output:
     1
 ```
 
+---
+
 ## Analysis:
 
+```ruby
 1. Find the target in the BST (recursion)
     
     - a. Current.value > key, then go left
@@ -121,10 +124,11 @@ Output:
 
 Note: if root's left child and right child both is null,
 we only need to return root.right, since root.right is also null
+
+```
+
 ---
 
-
-## codes
 
 ```java
 /**
@@ -151,7 +155,8 @@ class Solution {
             }else if(root.right == null){
                 return root.left;
             }
-            //假如root 左右child都等于null, only reutrn root.right, 因为这时候root.right == null
+            //假如root 左右child都等于null, only reutrn root.right, 
+            //因为这时候root.right == null
             //反正root.right都是null 这就cover了 第三种情况
 
             //还有一种情况，当root都有左右child, 我们就去找right subtree's 最小node
