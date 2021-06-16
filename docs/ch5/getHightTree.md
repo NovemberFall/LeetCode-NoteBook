@@ -28,6 +28,8 @@ return its depth = 3.
 
 - [关于recursion tree time and space complexity analysis](https://novemberfall.github.io/LeetCode-NoteBook/#/Recursion/recursionTime)
 
+![](img/2021-06-16-14-52-43.png)
+
 - 不包括root, 因为递归往下走，往上值传递， return max() 比较左右subtree 的高度， return => 最大高度
 - 最后得包含current root, current level的高度 => ans + 1.
 
