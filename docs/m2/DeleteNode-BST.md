@@ -5,7 +5,7 @@
 
 - Ex:
   
-```
+```ruby
 root = [5,3,6,2,4,null,7]
 key = 3
 
@@ -38,7 +38,7 @@ Another valid answer is [5,2,6,null,4,null,7].
 
 ### My analysis
 
-```
+```ruby
 Ex1:
         5
        / \
