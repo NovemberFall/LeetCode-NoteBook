@@ -1,7 +1,8 @@
-# 101. Symmetric Tree
+## 101. Symmetric Tree
 
 ```ruby
-Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).
+Given a binary tree, check whether it is a mirror of itself 
+(ie, symmetric around its center).
 
 
 
