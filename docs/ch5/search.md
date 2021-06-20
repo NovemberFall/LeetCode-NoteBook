@@ -1,4 +1,4 @@
-# 700. Search in a Binary Search Tree
+## 700. Search in a Binary Search Tree
 
 ```ruby
 Given the root node of a binary search tree (BST) and a value. 
