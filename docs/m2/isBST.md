@@ -57,7 +57,7 @@ Explanation: The root node's value is 5 but its right child's value is 4.
 - why we set root, `min=-inf, max =+inf`? because we don't know its left child and 
   right child, **we need to know if current level is so far so good**
 
-- Time = O(n)
+- Time = O(n)    : since we need to iterate all nodes
 - Space = O(height)
 
 
