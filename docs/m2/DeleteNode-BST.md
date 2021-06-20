@@ -66,10 +66,8 @@ Output:
 ```ruby
 1. Find the target in the BST (recursion)
     
-    - a. Current.value > key, then go left
-    
+    - a. Current.value > key, then go left 
     - b. Current.value < key, then go right
-    
     - c. Current.value == key, find the target.
 
 2. Delete target from tree.
