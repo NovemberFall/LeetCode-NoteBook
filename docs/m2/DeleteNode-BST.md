@@ -3,7 +3,7 @@
 - Given a root node reference of a BST and a key, delete the node with the given key in the BST. 
 - Return the root node reference (possibly updated) of the BST.
 
-- Ex:
+---
   
 ```ruby
 root = [5,3,6,2,4,null,7]
@@ -34,7 +34,7 @@ Another valid answer is [5,2,6,null,4,null,7].
     4   7
 ```
 
-
+---
 
 ### My analysis
 
