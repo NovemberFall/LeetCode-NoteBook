@@ -43,18 +43,25 @@ Explanation: The root node's value is 5 but its right child's value is 4.
 - Our way:
 
 ```ruby
-                              10(min=-inf, max =+inf)     == root
+                   10(min=-inf, max =+inf) == root
 
-                            /                 \
+                   /                      \
 
-            5(min=-inf,max=10)  AND             15
+            5(min=-inf,max=10)  AND         15
 
-          /         \                           /    \   
+          /         \                     /    \   
 
-2(min=-inf,max=5)     X(min=5,max=10)          12     20
+2(min=-inf,max=5)   X(min=5,max=10)      12     20
 ```
 
+- why we set root, `min=-inf, max =+inf`? because we don't know its left child and 
+  right child, **we need to know if current level is so far so good**
 
+- Time = O(n)
+- Space = O(height)
+
+
+---
 
 ```java
 /**
@@ -74,21 +81,21 @@ Explanation: The root node's value is 5 but its right child's value is 4.
  */
 class Solution {
     public boolean isValidBST(TreeNode root) {
-        return isValidBST(root, Long.MIN_VALUE, Long.MAX_VALUE);
+        return isValidBst(root, Long.MIN_VALUE, Long.MAX_VALUE);        
     }
     
-    private boolean isValidBST(TreeNode root, long min, long max){
+    private boolean isValidBst(TreeNode root, long min, long max){
         if(root == null){
             return true;
         }
-        
-        if(root.val <= min || root.val >= max){
+                
+        if(root.val > min && root.val < max){
+            return isValidBst(root.left, min, root.val)
+                && isValidBst(root.right, root.val, max);
+        } else {
             return false;
         }
-        
-        return isValidBST(root.left, min, root.val)
-            && isValidBST(root.right, root.val, max);
-    }
+    }    
 }
 ```
 
