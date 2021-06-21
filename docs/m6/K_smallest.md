@@ -44,6 +44,7 @@ public class Solution {
     new Comparator<Integer>(){
       @Override
       public int compare(Integer o1, Integer o2){
+        //do not use "==" here !!
         if(o1.equals(o2)){
           return 0;
         }
@@ -52,6 +53,7 @@ public class Solution {
     });
     for(int i=0; i<array.length; i++){
       if(i < k){
+        //offer the first k elements into max heap
         maxHeap.offer(array[i]);
       }else if(array[i] < maxHeap.peek()){
         maxHeap.poll();
@@ -65,5 +67,4 @@ public class Solution {
     return result;
   }
 }
-
 ```
