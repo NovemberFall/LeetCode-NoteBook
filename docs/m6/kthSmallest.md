@@ -1,4 +1,4 @@
-# 378. Kth Smallest Element in a Sorted Matrix | Best FS
+## 378. Kth Smallest Element in a Sorted Matrix | Best FS
 
 ```ruby
 Given a n x n matrix where each of the rows and columns are sorted in ascending order, 

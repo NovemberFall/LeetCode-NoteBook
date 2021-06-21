@@ -1,4 +1,4 @@
-# 215. Kth Largest Element in an Array
+## 215. Kth Largest Element in an Array
 
 ```ruby
 Find the kth largest element in an unsorted array. 
