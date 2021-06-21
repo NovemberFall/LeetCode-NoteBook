@@ -1,12 +1,10 @@
-# K Smallest In Unsorted Array
+## K Smallest In Unsorted Array
 
 - 这是215. Kth Largest Element in an Array 的一个变种题目：
 
 
-```ruby
-Find the K smallest numbers in an unsorted integer array A. 
-The returned numbers should be in ascending order.
-
+- Find the K smallest numbers in an unsorted integer array A. 
+  The returned numbers should be in ascending order.
 
 Assumptions
 A is not null
@@ -14,12 +12,24 @@ K is >= 0 and smaller than or equal to size of A
 
 Return
 
-an array with size K containing the K smallest numbers in ascending order
-Examples
+- an array with size K containing the K smallest numbers in ascending order
+- Examples
+- A = {3, 4, 1, 2, 5}, K = 3, the 3 smallest numbers are {1, 2, 3}
 
-A = {3, 4, 1, 2, 5}, K = 3, the 3 smallest numbers are {1, 2, 3}
-```
+---
 
+- Solution 0 sort -> O(N * logN)
+
+- Solution 1 (min heap)
+  - Step1: heapify all elements -> O(n)
+  - Step2: call pop() k times to get the k smallest elements. -> O(k logN)
+  - Time = O(N + k longN)
+
+
+![](img/2021-06-21-01-30-38.png)
+
+
+---
 
 ```java
 public class Solution {
