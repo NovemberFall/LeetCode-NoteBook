@@ -77,6 +77,7 @@ public class Solution {
 
 ### Analysis:
 
+![](img/2021-06-21-17-39-26.png)
 
 ```ruby
 expand: 中心开花, 往外延展
@@ -104,6 +105,12 @@ For each step:
 1. Record the size (=k) of the queue
 2. k次 expand + generate
 ```
+
+![](img/2021-06-21-17-48-11.png)
+![](img/2021-06-21-17-48-50.png)
+
+![](img/2021-06-21-17-42-24.png)
+![](img/2021-06-21-17-42-43.png)
 
 ---
 
