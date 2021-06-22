@@ -1,7 +1,8 @@
 # 107. Binary Tree Level Order Traversal||
 
 ```ruby
-Given a binary tree, return the bottom-up level order traversal of its nodes' values. 
+Given a binary tree, return the bottom-up level order 
+traversal of its nodes' values. 
 (ie, from left to right, level by level from leaf to root).
 
 
@@ -82,7 +83,9 @@ class Solution {
 ## 一个变种题目
 
 ```ruby
-Given a binary tree, return the bottom-up level order traversal of its nodes' values, from left to right. Only need to return lowest level 
+Given a binary tree, return the bottom-up level order 
+traversal of its nodes' values, from left to right. 
+Only need to return lowest level 
 
 Example:
 
