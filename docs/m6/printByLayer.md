@@ -1,10 +1,12 @@
-# 102.    Binary Tree Level Order Traversal
+## 102. Binary Tree Level Order Traversal
 
-# Get Keys In Binary Tree Layer By Layer
+## Get Keys In Binary Tree Layer By Layer
 
 ```ruby
-Get the list of list of keys in a given binary tree layer by layer. 
-Each layer is represented by a list of keys and the keys are traversed from left to right.
+Get the list of list of keys 
+in a given binary tree layer by layer. 
+Each layer is represented by a list of keys and 
+the keys are traversed from left to right.
 
 Examples
 
@@ -22,7 +24,8 @@ the result is [ [5], [3, 8], [1, 4, 11] ]
 
 Corner Cases
 
-What if the binary tree is null? Return an empty list of list in this case.
+What if the binary tree is null? 
+Return an empty list of list in this case.
 ```
 
 
@@ -70,8 +73,10 @@ public class Solution {
 
 ```
 
+---
 
-## Analysis:
+### Analysis:
+
 
 ```ruby
 expand: 中心开花, 往外延展
@@ -100,6 +105,7 @@ For each step:
 2. k次 expand + generate
 ```
 
+---
 
 ```java
 //param: root - the root of the tree
@@ -110,7 +116,8 @@ public void PrintNodeByLevel(Node root){
         Queue<Node> q = new ArrayDeque<Node>();
         q.offer(root);
         while(!q.empty()){
-                int size = q.size(); //size = # of nodes in the current layer.
+                int size = q.size(); 
+                //size = # of nodes in the current layer.
                 for(int i = 0; i<size; i++){
                         Node n = q.poll();
                         if(n.left != null){
