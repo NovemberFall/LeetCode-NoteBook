@@ -41,7 +41,7 @@
         * [257. Binary Tree Paths](ch6/btreePath.md)
         * [733. Flood Fill](ch6/flood.md)
     * [Chapter7：HashMap | HashSet](ch7/intro.md)
-        * [268. Missing Number](ch7/misssingNum.md)
+        * [268. Missing Number | bit operation](ch7/misssingNum.md)
         * [349. Intersection of Two Arrays](ch7/interset.md)
     * [Chapter8: Dynamic Programming |](ch8/intro.md)
         * [485. Max Consecutive Ones | Longest Consecutive 1s](ch8/longestOnes.md)
