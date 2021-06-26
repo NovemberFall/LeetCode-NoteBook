@@ -98,6 +98,7 @@
         * [133. Clone Graph | Deep Copy Undirected Graph](m6/deepCopyGraph.md)
     * [m7: HashMap](m7/intro.md)
         * [692. Top K Frequent Words](m7/topKfreq.md)
+        * [347. Top K Frequent Elements](m7/topKfreq1.md)
     * [m8: String](m8/intro.md)
         * [3.Longest Substring Without Repeating Characters](m8/without.md)
         * [Remove Certain Characters](m8/rmCertainChar.md)
