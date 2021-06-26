@@ -43,6 +43,10 @@ class Solution {
 - 1 xor 2 xor 3 xor 4  => res2
 - res1 xor res2        => missing number
 
+- Pros: time = O(n) space = O(1)
+- Cons: none
+
+
 ```java
 class Solution {
     public int missingNumber(int[] nums) {
