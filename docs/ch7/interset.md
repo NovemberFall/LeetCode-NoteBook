@@ -1,8 +1,7 @@
-# 349. Intersection of Two Arrays
+## 349. Intersection of Two Arrays
 
-```ruby
-Given two arrays, write a function to compute their intersection.
 
+- Given two arrays, write a function to compute their intersection.
 Example 1:
 
 Input: nums1 = [1,2,2,1], nums2 = [2,2]
@@ -13,11 +12,12 @@ Input: nums1 = [4,9,5], nums2 = [9,4,9,8,4]
 Output: [9,4]
 Note:
 
-Each element in the result must be unique.
-The result can be in any order.
-```
+- Each element in the result must be unique.
+  The result can be in any order.
 
+---
 
+![](img/2021-06-26-17-43-01.png)
 
 
 
