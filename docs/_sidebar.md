@@ -43,6 +43,7 @@
     * [Chapter7：HashMap | HashSet](ch7/intro.md)
         * [268. Missing Number | bit operation](ch7/misssingNum.md)
         * [349. Intersection of Two Arrays](ch7/interset.md)
+        * [350. Intersection of Two Arrays II](ch7/interset1.md)
     * [Chapter8: Dynamic Programming |](ch8/intro.md)
         * [485. Max Consecutive Ones | Longest Consecutive 1s](ch8/longestOnes.md)
 
@@ -96,8 +97,11 @@
         * [958. Check Completeness of a Binary Tree | BFS](m6/checkComplete.md)
         * [378. Kth Smallest Element in a Sorted Matrix | Best FS](m6/kthSmallest.md)
         * [133. Clone Graph | Deep Copy Undirected Graph](m6/deepCopyGraph.md)
+        * [103. Binary Tree Zigzag Level Order Traversal](m6/zigzag.md)
+        * [270. closest binary search tree value](m6/cloestBst.md)
     * [m7: HashMap](m7/intro.md)
         * [692. Top K Frequent Words](m7/topKfreq.md)
+        * [347. Top K Frequent Elements](m7/topKfreq1.md)
     * [m8: String](m8/intro.md)
         * [3.Longest Substring Without Repeating Characters](m8/without.md)
         * [Remove Certain Characters](m8/rmCertainChar.md)
@@ -156,6 +160,8 @@
         * [Print If Blocks](DFS/ifBlock.md)
         * [Recruiting Event Schedules | Interview](DFS/recruiting.md)
         * [Infinite Loop Around the Dinner Table | Interview](DFS/formRing.md)
+    * [Graph BFS |](BFS/intro.md)
+        * [272. closest binary search tree value II](BFS/bstVallue.md)
 
 -----
 * [Amazon Top 50](amazon/intro.md)
