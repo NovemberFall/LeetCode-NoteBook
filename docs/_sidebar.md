@@ -6,7 +6,6 @@
         * [Remove Leading/Trailing/Dup Space | Medium](ch1/removeAllSpace.md)
         * [344. Reverse String](ch1/reverseStr.md)
         * [Right Shift By N Characters](ch1/rightShift.md)
-        * [26. Remove Duplicates from Sorted Array | Array Deduplication I](ch1/dedup1.md)
         * [28. Implement strStr() | Determine If One String Is Another's Substring](ch1/strstr.md)
         * [392. Is Subsequence](ch1/isSubsequence.md)
         * [88. Merge Sorted Array | Merge two Sorted Array](ch1/mergeTwoArr.md)
