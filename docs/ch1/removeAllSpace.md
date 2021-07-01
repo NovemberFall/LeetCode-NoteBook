@@ -1,16 +1,13 @@
-# Remove Spaces
+## Remove Spaces
 
-```ruby
-Given a string, remove all leading/trailing/duplicated empty spaces.
 
-Assumptions:
+- Given a string, remove all leading/trailing/duplicated empty spaces.
+- Assumptions:
+- The given string is not null.
+- Examples:
+- “  a” --> “a”
+- “   I     love MTV ” --> “I love MTV”
 
-The given string is not null.
-Examples:
-
-“  a” --> “a”
-“   I     love MTV ” --> “I love MTV”
-```
 
 ### 本题关键在于是否使用 String API
 
