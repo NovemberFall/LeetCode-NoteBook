@@ -1,22 +1,20 @@
-# m8: Remove Certain Characters
+## m8: Remove Certain Characters
 
-```ruby
-Remove given characters in input string, the relative order of other characters should be remained. 
-Return the new string after deletion.
+- Remove given characters in input string, the relative order of other characters should
+  be remained. 
+- Return the new string after deletion.
 
-Assumptions
+- Assumptions:
+  The given input string is not null.
+  The characters to be removed is given by another string, it is guaranteed to be not null.
 
-The given input string is not null.
-The characters to be removed is given by another string, it is guaranteed to be not null.
+- Examples
+  input = "abcd", t = "ab", delete all instances of 'a' and 'b', the result is "cd"
 
+---
 
-Examples
-
-input = "abcd", t = "ab", delete all instances of 'a' and 'b', the result is "cd"
-```
-
-
-
+![](img/2021-06-27-16-44-55.png)
+![](img/2021-06-27-16-45-12.png)
 
 
 
