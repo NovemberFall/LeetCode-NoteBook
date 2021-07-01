@@ -11,6 +11,7 @@
         * [392. Is Subsequence](ch1/isSubsequence.md)
         * [88. Merge Sorted Array | Merge two Sorted Array](ch1/mergeTwoArr.md)
         * [27. Remove Element](ch1/rmEle.md)
+        * [26. Remove Duplicates from Sorted Array](ch1/rmDupEle.md)
     * [Chapter2：Binary Search](ch2/intro.md)
         * [704. Classical Binary Search](ch2/classicalBinarySearch.md)
         * [Smallest Element Larger than Target](ch2/firstLarge.md)
