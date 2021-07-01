@@ -10,6 +10,7 @@
         * [28. Implement strStr() | Determine If One String Is Another's Substring](ch1/strstr.md)
         * [392. Is Subsequence](ch1/isSubsequence.md)
         * [88. Merge Sorted Array | Merge two Sorted Array](ch1/mergeTwoArr.md)
+        * [27. Remove Element](ch1/rmEle.md)
     * [Chapter2：Binary Search](ch2/intro.md)
         * [704. Classical Binary Search](ch2/classicalBinarySearch.md)
         * [Smallest Element Larger than Target](ch2/firstLarge.md)
