@@ -16,6 +16,11 @@
 ![](img/2021-06-27-16-44-55.png)
 ![](img/2021-06-27-16-45-12.png)
 
+---
+
+## My method: two points
+
+![](img/2021-06-30-20-08-59.png)
 
 
 
@@ -45,5 +50,4 @@ public class Solution {
     return set;
   }
 }
-
 ```
