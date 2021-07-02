@@ -11,7 +11,7 @@
   Output: 2
 
 - Example 2:
-  Input: haystack = "aaaaa", needle = "bba"\
+  Input: haystack = "aaaaa", needle = "bba"
   Output: -1
 
 
@@ -90,4 +90,42 @@ class Solution {
 }
 ```
 
+---
 
+### Solution 2:  O(m) Rabin-Karp
+
+```ruby
+hash(c d e) = 1434
+
+a  b  c  d  e
+      _______
+
+hash(abc) = 28 
+hash(bcd) = 731 
+hash(cde) = 1434
+
+O(1) to calculate hash()
+
+a -> 0
+b -> 1
+c -> 2
+d -> 3
+...
+z -> 25
+
+
+hash(c d e) = 1434
+     2 * 26^2 + 3 * 26 + 4 = 1434
+
+hash(abc) = 0 * 26^2 + 1 * 26   + 2 = 28
+hash(bcd) =            1 * 26^2 + 2 * 26   + 3 = 731 
+hash(cde) =                       2 * 26^2 + 3 * 26 + 4 = 1434       
+
+O(1) to calculate hash()
+
+1. remove the leftmost item from the hash function
+2. all the rest items * 26
+3. add new item 
+```
+
+- Time = O(m) in average [和 KMP 方法不相上下]
