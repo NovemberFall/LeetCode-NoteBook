@@ -13,7 +13,6 @@
         * [26. Remove Duplicates from Sorted Array](ch1/rmDupEle.md)
         * [Remove Adjacent Repeated Characters I](ch1/rmDupChar.md)
         * [Remove Adjacent Repeated Characters IV [Hard]](ch1/rmAllDupChar.md)
-        * [Determine If One String Is Another's Substring](ch1/subStr.md)
     * [Chapter2：Binary Search](ch2/intro.md)
         * [704. Classical Binary Search](ch2/classicalBinarySearch.md)
         * [Smallest Element Larger than Target](ch2/firstLarge.md)
