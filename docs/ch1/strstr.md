@@ -44,7 +44,7 @@ assume i = 2,
 
 
 
-- Time = O(n^2)
+- Time = O(m * n)
 
 ```java
 /*
