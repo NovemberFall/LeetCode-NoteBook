@@ -39,17 +39,16 @@ public class Solution {
     if(input.length() <= 1){
       return input;
     }
-
-    char[] res = input.toCharArray();
-    int mod = n % res.length;
-    reverse(res, res.length - mod, res.length - 1);
-    reverse(res, 0, res.length - mod - 1);
-    reverse(res, 0, res.length - 1);
-    return new String(res);
+    char[] arr = input.toCharArray();
+    n %= arr.length;
+    reverse(arr, 0, arr.length - 1);
+    reverse(arr, 0, n - 1);
+    reverse(arr, n, arr.length - 1);
+    return new String(arr);
   }
 
   private void reverse(char[] res, int left, int right){
-        while(left <= right){
+        while(left < right){
             char temp = res[left];
             res[left] = res[right];
             res[right] = temp;
@@ -58,5 +57,4 @@ public class Solution {
         }
   }
 }
-
 ```
