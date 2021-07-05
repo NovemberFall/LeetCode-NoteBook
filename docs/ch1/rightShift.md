@@ -1,4 +1,4 @@
-# Right Shift By N Characters
+## Right Shift By N Characters
 
 ```ruby
 Right shift a given string by n characters.
@@ -17,12 +17,18 @@ Examples
 
 ```ruby
 
+shift the whole string to the right-hand side 
+by two positions
+
+
  0  1   2   3   4   5   
 [a  b   c   d   e   f]
 
-reverse(index == 2 ,  index == 5)
-reverse(index == 0, array.length - n - 1)
-reverse(0, array.length - 1)
+[e  f   a   b   c   d]
+
+reverse(0 ,  n - 1)
+reverse(0, 1)
+reverse(2, n - 1)
 ```
 
 
