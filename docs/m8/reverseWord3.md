@@ -1,16 +1,6 @@
-# 557. Reverse Words in a String III
+## 557. Reverse Words in a String III
 
-```java
-Given a string, you need to reverse the order of characters in each word within a sentence 
-while still preserving whitespace and initial word order.
-
-Example 1:
-Input: "Let's take LeetCode contest"
-Output: "s'teL ekat edoCteeL tsetnoc"
-
-Note: In the string, each word is separated by single space and 
-there will not be any extra space in the string.
-```
+![](img/2021-07-05-03-19-38.png)
 
 
 ## 具体分析看下面链接：
