@@ -129,3 +129,65 @@ O(1) to calculate hash()
 ```
 
 - Time = O(m) in average [和 KMP 方法不相上下]
+
+---
+
+```java
+public class Solution {     //Method2: Rabin Karp
+  public final static int d = 256;
+  
+  public int strstr(String large, String small) {
+    if(large.length() < small.length()){
+      return -1;
+    }
+    if(small.length() == 0) {
+      return 0;
+    }
+    int S = small.length();
+    int L = large.length();
+    int p = 0; // hash value for pattern -> samll
+    int t = 0; // hash value for text -> large
+    int pow = 1; // d^(m-1)   
+    int largePrime = 101;
+    // The value of h would be "pow(d, M-1)%q"
+    for (int i = 0; i < S - 1; i++){
+      pow = (pow * d) % largePrime;
+      //ex: ((1 * 31) * 31) * 31 = 31^3
+    }
+
+    // Calculate the hash value of pattern(small) 
+    // and first window of text(large)
+    for (int i = 0; i < S; i++) {
+      p = (p * d + small.charAt(i)) % largePrime;
+      t = (t * d + large.charAt(i)) % largePrime;
+    }
+
+    // Slide the pattern over text one by one
+    for (int i = 0; i <= L - S; i++) {
+      // Check the hash values of current window of text (large)
+      // and pattern(small). If the hash values match then only
+      // check for characters one by one
+      if (p == t && equals(large, i, small)) {
+        return i;
+      }
+      if (i < L - S) {
+        t = (d * (t - large.charAt(i) * pow) + large.charAt(i + S)) % largePrime;
+        if (t < 0) {
+          t += largePrime;
+        }
+      }
+    }
+    return -1;
+  }
+
+  //check pat[0...M-1] == txt[i, i+1, ...i+M-1]
+  public boolean equals(String large, int start, String small) {
+    for (int i = 0; i < small.length(); i++) {
+      if (large.charAt(i + start) != small.charAt(i)) {
+        return false;
+      }
+    }
+    return true;
+  }
+}
+```
