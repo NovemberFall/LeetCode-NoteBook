@@ -148,18 +148,18 @@ public class Solution {     //Method2: Rabin Karp
     int p = 0; // hash value for pattern -> samll
     int t = 0; // hash value for text -> large
     int pow = 1; // d^(m-1)   
-    int largePrime = 101;
+    int MOD = 101; // prime
     // The value of h would be "pow(d, M-1)%q"
     for (int i = 0; i < S - 1; i++){
-      pow = (pow * d) % largePrime;
+      pow = (pow * d) % MOD;
       //ex: ((1 * 31) * 31) * 31 = 31^3
     }
 
     // Calculate the hash value of pattern(small) 
     // and first window of text(large)
     for (int i = 0; i < S; i++) {
-      p = (p * d + small.charAt(i)) % largePrime;
-      t = (t * d + large.charAt(i)) % largePrime;
+      p = (p * d + small.charAt(i)) % MOD;
+      t = (t * d + large.charAt(i)) % MOD;
     }
 
     // Slide the pattern over text one by one
@@ -171,9 +171,9 @@ public class Solution {     //Method2: Rabin Karp
         return i;
       }
       if (i < L - S) {
-        t = (d * (t - large.charAt(i) * pow) + large.charAt(i + S)) % largePrime;
+        t = (d * (t - large.charAt(i)*pow) + large.charAt(i+S)) % MOD;
         if (t < 0) {
-          t += largePrime;
+          t += MOD;
         }
       }
     }
