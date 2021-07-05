@@ -109,6 +109,7 @@
     * [m8: String](m8/intro.md)
         * [3.Longest Substring Without Repeating Characters](m8/without.md)
         * [Remove Certain Characters](m8/rmCertainChar.md)
+        * [151. Reverse Words in a String](m8/reverseWord1.md)
         * [186 Reverse Words in a String II](m8/reverseWord.md)
         * [557. Reverse Words in a String III](m8/reverseWord3.md)
         * [424. Longest Repeating Character Replacement](m8/longest.md)
