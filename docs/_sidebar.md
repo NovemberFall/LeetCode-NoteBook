@@ -90,6 +90,7 @@
         * [2. Add Two Numbers](m5/AddTwoNums.md)
         * [138. Copy List with Random Pointer | Deep Copy](m5/deepCopyList.md)
         * [143. Reorder List](m5/reorderList.md)
+        * [ReOrder Array](m5/reorderArr.md)
         * [86. Partition List](m5/partitionList.md)
         * [445. Add Two Numbers II](m5/twoNumsII.md)
         * [148. Sort List](m5/sortList.md)
