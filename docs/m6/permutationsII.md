@@ -1,4 +1,4 @@
-# 47. Permutations II | DFS
+## 47. Permutations II | DFS
 
 ```java
 Given a collection of numbers that might contain duplicates, 
@@ -14,9 +14,6 @@ Output:
   [2,1,1]
 ]
 ```
-
-
-
 
 ## Analysis:
 

@@ -117,6 +117,7 @@
         * [424. Longest Repeating Character Replacement](m8/longest.md)
         * [438. Find All Anagrams in a String](m8/anagram.md)
         * [String Replace](m8/strReplace.md)
+        * [443. String Compression](m8/strencode.md)
     * [m9: Dynamic Programming |](m9/intro.md)
         * [509. Fibonacci Number](m9/fibonacci.md)
         * [62. Unique Paths](m9/path.md)
