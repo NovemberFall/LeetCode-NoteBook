@@ -78,26 +78,24 @@ class Solution {
             return 0;
         }
         //the distinct set contains all distinct characters
-        //in the sliding window of (left, right)
-        int len = s.length();
-        int left = 0;
-        int right = 0;
-        int global_max = 0;
-        Set<Character> hset = new HashSet<>();
-        while (right < len) {
-            if (hset.contains(s.charAt(right))) {
-                //if there is duplicate character, we need to move 
-                //the left pointer
-                hset.remove(s.charAt(left));
-                left++;
-            } else {
+        //in the sliding window of (left, right)        
+        char[] arr = s.toCharArray();
+        HashSet<Character> set = new HashSet<>();
+        int global_max = -1;
+        int slow = 0;
+        int fast = 0;
+        while (fast < arr.length) {
+            if (!set.contains(arr[fast])) {
                 //if there is no duplicate character, we can slide
                 //right pointer and we have a new sliding window of
-                //(left, right) containing all distincet characters.
-                hset.add(s.charAt(right));
-                right++;
+                //(left, right) containing all distincet characters.                
+                set.add(arr[fast++]);
+            } else {
+                //if there is duplicate character, 
+                //we need to move the left pointer                
+                set.remove(arr[slow++]);
             }
-            global_max = Math.max(global_max, hset.size());
+            global_max = Math.max(global_max, set.size());
         }
         return global_max;
     }
