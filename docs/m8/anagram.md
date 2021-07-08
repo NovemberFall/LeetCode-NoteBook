@@ -1,29 +1,62 @@
 ## 438. Find All Anagrams in a String
 
-```ruby
-Given two strings s and p, return an array of all the start indices of `p's`
-anagrams in s. You may return the answer in any order.
+- Given two strings s and p, return an array of all the start indices of `p's`
+  anagrams in s. You may return the answer in any order.
+
+- Example 1:
+  Input: s = "cbaebabacd", p = "abc"
+  Output: [0,6]
+  Explanation:
+  The substring with start index = 0 is "cba", which is an anagram of "abc".
+  The substring with start index = 6 is "bac", which is an anagram of "abc".
+
+- Example 2:
+  Input: s = "abab", p = "ab"
+  Output: [0,1,2]
+  Explanation:
+  The substring with start index = 0 is "ab", which is an anagram of "ab".
+  The substring with start index = 1 is "ba", which is an anagram of "ab".
+  The substring with start index = 2 is "ab", which is an anagram of "ab".
 
 
-Example 1:
+---
 
-Input: s = "cbaebabacd", p = "abc"
-Output: [0,6]
-Explanation:
-The substring with start index = 0 is "cba", which is an anagram of "abc".
-The substring with start index = 6 is "bac", which is an anagram of "abc".
+![](img/2021-07-08-14-58-23.png)
 
 
-Example 2:
-
-Input: s = "abab", p = "ab"
-Output: [0,1,2]
-Explanation:
-The substring with start index = 0 is "ab", which is an anagram of "ab".
-The substring with start index = 1 is "ba", which is an anagram of "ab".
-The substring with start index = 2 is "ab", which is an anagram of "ab".
+```java
+class Solution {
+    public List<Integer> findAnagrams(String s, String p) {
+        List<Integer> res = new ArrayList<>();
+        
+        //Record the frequency of occurrence of all letters of p
+        int[] pFreq = new int[26];
+        for(int i = 0; i < p.length(); i++){
+           pFreq[p.charAt(i) - 'a']++; 
+        }
+        
+        //[left right] corresponding to the left and right of window
+        int[] window = new int[26];
+        int left = 0, right = 0;
+        while (right < s.length()) {
+            window[s.charAt(right) - 'a']++;
+            //increase frequence of letters of window
+            if (right - left + 1 == p.length()) {
+                //maintain the length of sh, update the result
+                if (Arrays.equals(window, pFreq)) {
+                    res.add(left);
+                }
+                window[s.charAt(left) - 'a']--;
+                left++;
+            }
+            right++;
+        }
+        return res;
+    }
+}
 ```
 
+---
 
 ```ruby
 string s2 = "aabc"      reference_hashmap: <a, 2> <b, 1> <c, 1>
@@ -67,35 +100,3 @@ right++
 hashmap[a[right]]++;
 ```
 
-
-```java
-class Solution {
-    public List<Integer> findAnagrams(String s, String p) {
-        List<Integer> res = new ArrayList<>();
-        
-        //Record the frequency of occurrence of all letters of p
-        int[] pFreq = new int[26];
-        for(int i = 0; i < p.length(); i++){
-           pFreq[p.charAt(i) - 'a']++; 
-        }
-        
-        //[left right] corresponding to the left and right of window
-        int[] window = new int[26];
-        int left = 0, right = 0;
-        while (right < s.length()) {
-            window[s.charAt(right) - 'a']++;
-            //increase frequence of letters of window
-            if (right - left + 1 == p.length()) {
-                //maintain the length of sh, update the result
-                if (Arrays.equals(window, pFreq)) {
-                    res.add(left);
-                }
-                window[s.charAt(left) - 'a']--;
-                left++;
-            }
-            right++;
-        }
-        return res;
-    }
-}
-```
