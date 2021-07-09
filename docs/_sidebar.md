@@ -119,6 +119,7 @@
         * [String Replace](m8/strReplace.md)
         * [443. String Compression](m8/strencode.md)
         * [394. Decode String](m8/decode.md)
+        * [1004. Max Consecutive Ones III](m8/maxOnes.md)
     * [m9: Dynamic Programming |](m9/intro.md)
         * [509. Fibonacci Number](m9/fibonacci.md)
         * [62. Unique Paths](m9/path.md)
