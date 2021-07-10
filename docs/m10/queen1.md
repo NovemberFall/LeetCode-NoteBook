@@ -24,8 +24,7 @@ class Solution {
     public int totalNQueens(int n) {
         if (n <= 0) {
             return res;
-        }
-        
+        }       
         dfs(0, n);
         return res;
     }
