@@ -45,33 +45,41 @@
 ---
 
 ```java
+/*
+k = 2
+map<'A'=>[0], 2 >
+   <'B'=>[1], 3 > 
+longest {3  }   
+
+0  1  2  3  4  5  6
+A  A  B  A  B  B  A
+   s
+                  f
+
+6 - 0 > 3 + k
+
+*/
 class Solution {
     public int characterReplacement(String s, int k) {
-        int len = s.length();
-        if (len < 2) {
-            return len;
+        if (s == null || s.length() == 0) {
+            return 0;
         }
-        char[] arr = s.toCharArray();
-        int[] freq = new int[26];
-        // Replace at most k characters in [left, right) to get a substring with only one character
-        int left = 0;
-        int right = 0;
-        int maxCount = 0;
-        while (right < len) {
-            freq[arr[right] - 'A']++;
-            maxCount = Math.max(maxCount, freq[arr[right] - 'A']);
-            right++;
+        int slow = 0;
+        int fast = 0;
+        int [] map = new int[26];
+        int longest = 0;
+        
+        while (fast < s.length()) {
+            map[s.charAt(fast) - 'A']++;
+            longest = Math.max(longest, map[s.charAt(fast) - 'A']);
+            fast++;
             
-            if (right - left > maxCount + k) {
-                // k is not enough
-                // After replacing other characters that are not the most appearing, 
-                // they will not be able to fill the sliding window. At this time, 
-                // you need to consider moving the left pointer to the right.
-                freq[arr[left] - 'A']--;
-                left++;
+            if (fast - slow > longest + k) {
+                map[s.charAt(slow) - 'A']--;
+                slow++;
             }
         }
-        return right - left;
+        return fast - slow;
     }
 }
 ```
