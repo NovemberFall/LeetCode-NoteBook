@@ -86,6 +86,7 @@
         * [50. Pow(x, n)](m4/power.md)
         * [54. Spiral Matrix](m4/spiralMatrix.md)
         * [59. Spiral Matrix II](m4/spiralMatrix1.md)
+        * [408 Valid Word Abbreviation](m4/abbreviation.md)
     * [m5: LinkedList](m5/intro.md)
         * [2. Add Two Numbers](m5/AddTwoNums.md)
         * [138. Copy List with Random Pointer | Deep Copy](m5/deepCopyList.md)
