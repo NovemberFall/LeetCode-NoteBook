@@ -69,6 +69,7 @@
         * [114. Flatten Binary Tree to Linked List](m2/flattenBTtolist.md)
         * [105. Construct Binary Tree from Preorder and Inorder Traversal](m2/rebuildFromPreIn.md)
         * [Reconstruct Binary Search Tree With Postorder Traversal](m2/buildBSTbyPost.md)
+        * [Store Number Of Nodes In Left Subtree](m2/leftSubtree.md)
     * [m3：Array](m3/intro.md)
         * [33. Search in Rotated Sorted Array](m3/SearchinRotatedSortedArray.md)
         * [74. Search a 2D Matrix I](m3/SearchIn2DArray.md)
