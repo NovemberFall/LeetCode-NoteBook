@@ -21,7 +21,8 @@ class Solution {
             if (word.charAt(0) != abbr.charAt(0)) {
                 return false;
             } else {
-                return validWordAbbreviation(word.substring(1), abbr.substring(1));
+                return validWordAbbreviation(word.substring(1), 
+                                                abbr.substring(1));
             }
         } else {
             if (abbr.charAt(0) == '0') {
@@ -29,14 +30,17 @@ class Solution {
             }
             int i = 0;
             int num = 0;
-            while (i < abbr.length() && Character.isDigit(abbr.charAt(i))) {
+            while (i < abbr.length() && 
+                Character.isDigit(abbr.charAt(i))) {
+                
                 num = num * 10 + (abbr.charAt(i) - '0');
                 i++;
             }
             if (num > word.length()) {
                 return false;
             } else {
-                return validWordAbbreviation(word.substring(num), abbr.substring(i));
+                return validWordAbbreviation(word.substring(num), 
+                                                abbr.substring(i));
             }
         }
     }
