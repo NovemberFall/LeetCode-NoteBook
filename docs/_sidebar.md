@@ -39,6 +39,7 @@
         * [700. Search in a Binary Search Tree](ch5/search.md)
         * [993. Cousins in Binary Tree](ch5/cousinInTree.md)
         * [404. Sum of Left Leaves](ch5/leftSum.md)
+        * [112. Path Sum](ch5/pathSum.md)
     * [Cha5.1：Recursion](ch5.1/intro.md)
         * [509. Fibonacci Number](ch5.1/fibonacci.md)
     * [Chapter6：Graph | DFS | BFS](ch6/intro.md)
