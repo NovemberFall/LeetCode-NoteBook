@@ -113,6 +113,7 @@
         * [103. Binary Tree Zigzag Level Order Traversal](m6/zigzag.md)
         * [270. closest binary search tree value](m6/cloestBst.md)
         * [116. Populating Next Right Pointers in Each Node](m6/nextPointer.md)
+        * [23. Merge k Sorted Lists](m6/kLists.md)
     * [m7: HashMap](m7/intro.md)
         * [692. Top K Frequent Words](m7/topKfreq.md)
         * [347. Top K Frequent Elements](m7/topKfreq1.md)
