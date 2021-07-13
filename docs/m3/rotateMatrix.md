@@ -1,15 +1,13 @@
-# 48. Rotate Image || Rotate Matrix
+## 48. Rotate Image || Rotate Matrix
+
+- You are given an n x n 2D matrix representing an image.
+  Rotate the image by 90 degrees (clockwise).
+
+- You have to rotate the image in-place, which means you have to modify 
+  the input 2D matrix directly. DO NOT allocate another 2D matrix and do the rotation.
+
 
 ```ruby
-You are given an n x n 2D matrix representing an image.
-
-Rotate the image by 90 degrees (clockwise).
-
-Note:
-
-You have to rotate the image in-place, which means you have to modify 
-the input 2D matrix directly. DO NOT allocate another 2D matrix and do the rotation.
-
 Example 1:
 
 Given input matrix = 
@@ -42,4 +40,36 @@ rotate the input matrix in-place such that it becomes:
   [12, 6, 8, 9],
   [16, 7,10,11]
 ]
+```
+
+---
+
+![](img/2021-07-12-17-00-35.png)
+
+![](img/2021-07-12-18-09-46.png)
+
+---
+
+```java
+class Solution {
+    public void rotate(int[][] matrix) {
+        if (matrix.length <= 1) {
+            return;
+        }
+        
+        int n = matrix.length;
+        int round = n / 2;
+        for (int level = 0; level < round; level++) {
+            int left = level;
+            int right = n - 2 - level;
+            for (int i = left; i <= right; i++) {
+                int tmp = matrix[left][i];
+                matrix[left][i] = matrix[n - 1 - i][left];
+                matrix[n - 1 - i][left] = matrix[n - 1 - left][n - 1 - i];
+                matrix[n - 1 - left][n - 1 - i] = matrix[i][n - 1 - left];
+                matrix[i][n - 1 - left] = tmp;
+            }            
+        }
+    }
+}
 ```
