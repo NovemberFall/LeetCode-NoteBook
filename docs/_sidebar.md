@@ -188,6 +188,7 @@
 
 -----
 * [Amazon Top 50](amazon/intro.md)
+    * [1041. Robot Bounded In Circle](amazon/robot.md)
     * [763. Partition Labels](amazon/partitionLabel.md)
     * [1010. Pairs of Songs](amazon/pairs.md)
     * [146. LRU Cache](m7/lru.md)
