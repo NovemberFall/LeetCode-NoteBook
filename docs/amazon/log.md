@@ -2,28 +2,44 @@
 
 ![](img/2021-01-31-00-43-48.png)
 
-```ruby
-排序规则如下：
-    - 字母日志先于数字日志；
-    - 字母日志按字母数字顺序排列，先按内容排序，再按标识符排序；
-    - 数字日志的顺序保持不变。
-```
+![](img/2021-07-14-16-56-17.png)
 
 ```java
 class Solution {
     public String[] reorderLogFiles(String[] logs) {
-        Arrays.sort(logs, (log1, log2) -> {
-            String [] split1 = log1.split(" ", 2);
-            String [] split2 = log2.split(" ", 2);
-            boolean isDigit1 = Character.isDigit(split1[1].charAt(0));
-            boolean isDigit2 = Character.isDigit(split2[1].charAt(0));            
-            if(!isDigit1 && !isDigit2){
-                int cmp = split1[1].compareTo(split2[1]);  
-                return (cmp != 0) ? cmp : split1[0].compareTo(split2[0]);                
-            }
-            return isDigit1 ? (isDigit2 ? 0 : 1) : -1;
-        });
-        return logs;
+      if (logs == null || logs.length == 0) {
+        return null;
+      }
+      Arrays.sort(logs, (a, b)-> {
+   //split strings，split(String regex, int limit)，limit表示分割的份数。
+        String[] splitStrA = a.split(" ", 2);
+        String[] splitStrB = b.split(" ", 2);        
+        //determine the type of log: string or digit
+        boolean aIsDigit = Character.isDigit(splitStrA[1].charAt(0));
+        boolean bIsDigit = Character.isDigit(splitStrB[1].charAt(0)); 
+        // if a and b aren't digits
+        if (!aIsDigit && !bIsDigit) {
+          //while the content are same, sort by identifier
+          if (splitStrA[1].equals(splitStrB[1])) {
+            return splitStrA[0].compareTo(splitStrB[0]);
+          } else {
+            //while the content are different, sort by content
+            return splitStrA[1].compareTo(splitStrB[1]);
+          }
+        }
+        else if (aIsDigit && bIsDigit) {
+          //a and b are both digit, keep relative ordering
+          return 0;
+        } else if (!aIsDigit) {
+          //when a is letter log, letter is first
+          return -1;
+        } else {
+          //when b is letter log, letter is first
+          return 1;
+        }
+      });
+      
+      return logs;
     }
 }
 ```
