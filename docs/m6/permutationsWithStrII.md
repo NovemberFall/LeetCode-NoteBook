@@ -1,4 +1,4 @@
-# All Permutations II | DFS
+## All Permutations II | DFS
 
 ```ruby
 Given a string with possible duplicate characters, 
@@ -15,6 +15,9 @@ Set = null, all permutations are []
 ## Analysis:
 
 - [具体分析可以参考 47. Permutations II | DFS](https://novemberfall.github.io/LeetCode-NoteBook/#/m6/permutationsII)
+
+![](img/2021-07-18-15-55-33.png)
+
 
 
 ```java
