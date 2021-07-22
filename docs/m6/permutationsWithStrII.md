@@ -40,14 +40,12 @@ public class Solution {
     }
 
     Set<Character> used = new HashSet<>();
-    for(int i = index; i<array.length; i++){
-      if(used.contains(array[i])){
-        continue;
+    for (int i = index; i<array.length; i++) {
+      if (used.add(array[i])) {
+        swap(array, i, index);
+        dfs(array, index + 1, res);
+        swap(array, i, index);        
       }
-      used.add(array[i]);
-      swap(array, i, index);
-      dfs(array, index + 1, res);
-      swap(array, i, index);
     }
   }
 
@@ -57,5 +55,4 @@ public class Solution {
     array[right] = tmp;
   }
 }
-
 ```
