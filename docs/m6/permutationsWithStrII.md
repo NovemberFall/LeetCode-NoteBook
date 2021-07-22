@@ -41,11 +41,14 @@ public class Solution {
 
     Set<Character> used = new HashSet<>();
     for (int i = index; i<array.length; i++) {
-      if (used.add(array[i])) {
-        swap(array, i, index);
-        dfs(array, index + 1, res);
-        swap(array, i, index);        
-      }
+        if (used.contains(nums[i])) {
+          continue;
+        }
+        used.add(nums[i]);
+        
+        swap(nums, index, i);
+        dfs(res, nums, index + 1);
+        swap(nums, index, i);
     }
   }
 
