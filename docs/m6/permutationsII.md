@@ -18,9 +18,6 @@ Output:
 ## Analysis:
 
 - [all permutations | DFS](https://novemberfall.github.io/LeetCode-NoteBook/#/m6/permutationsWithStr)
-
-- 又一题排列， 注意每一个元素只是改变顺序， 最终generate a new list
-- DFS 算法
 - if `index == nums.length - 1`, 这样没有cover到set = “” 的corner case， 
   set="" 的时候应该返回[""]，
 
@@ -37,12 +34,26 @@ if (set == "") {
 - 利用一个set, 去重， 当遇到重复元素时，我们直接跳过 current index, 进行下一loop 操作
 - 递归前后继续保持一致状态，所以调用两次 swap()
 
+---
 
+![](img/2021-07-22-20-14-10.png)
 
 
 
 
 ```java
+/*
+                    []
+     /              |             \
+  1(1, 2)        1(1, 2)        2(1, 1)
+   /   \           /  \          /   \
+ 1(2)  2(1)     1(2)  2(1)     1(1)  1(1)
+  |      |        |     |       |      |
+  2      1        2     1       1      1
+
+*/
+
+
 class Solution {
     public List<List<Integer>> permuteUnique(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
