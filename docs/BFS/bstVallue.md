@@ -1,6 +1,6 @@
 ## 272. closest binary search tree value II
 
-![](img/2021-07-23-01-48-29.png)
+![](img/2021-07-23-01-56-20.png)
 
 ![](img/2021-06-27-02-58-17.png)
 
