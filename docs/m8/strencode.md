@@ -4,6 +4,9 @@
 
 ![](img/2021-07-07-16-32-11.png)
 
+- when a character only occur only one time, means: `fast - slow == 1`
+  - **we don't need to count its numbers of occurrences**
+
 ```java
 class Solution {
     public int compress(char[] chars) {
