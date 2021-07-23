@@ -1,6 +1,6 @@
 ## 272. closest binary search tree value II
 
-![](img/2021-06-27-02-59-10.png)
+![](img/2021-07-23-01-48-29.png)
 
 ![](img/2021-06-27-02-58-17.png)
 
@@ -23,7 +23,7 @@
  * }
  */
 class Solution {
-    public List<Integer> closestKValues(TreeNode root, double target, int k) {
+    public List<Integer> closestKValues(TreeNode root, double target, int k){
         Queue<Integer> queue = new ArrayDeque<>();
         inorderTraversal(root, target, k, queue);
         return new ArrayList(queue);
@@ -36,7 +36,7 @@ class Solution {
         }
         inorderTraversal(root.left, target, k, queue);
         if (queue.size() == k) {
-            if (Math.abs(queue.peek() - target) > Math.abs(root.val - target)) {
+            if(Math.abs(queue.peek() - target) > Math.abs(root.val - target)){
                 queue.poll();
                 queue.offer(root.val);
             } else {
