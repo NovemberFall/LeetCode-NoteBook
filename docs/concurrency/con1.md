@@ -172,6 +172,36 @@ new Thread(new Runnable(){
 });
 ```
 
+- 银行取钱，`count++` 都是 data race, 全是并发
+
 ---
 
+![](img/2021-07-24-13-51-06.png)
+![](img/2021-07-24-13-51-40.png)
+
+- 在有 `data race` 的情况下，我们用以下这段代码:
+
+```java
+// pseudocode
+int a = 10;
+Lock I = new Lock();
+//Thread 1:
+      I.lock();
+      a++;
+      I.unlock();
+//Thread 2:
+      I.lock();
+      a--;
+      I.unlock();      
+```
+
+![](img/2021-07-24-14-08-30.png)
+
+---
+
+![](img/2021-07-24-14-26-32.png)
+
+---
+
+### Java 中， 如何 locking?
 
