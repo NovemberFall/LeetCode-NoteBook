@@ -100,3 +100,14 @@ public class myThread extends Thread{
 ---
 
 ![](img/2021-07-24-11-59-35.png)
+
+---
+
+- `sleep(100)`
+- `yield()` , 让道，学校门口，让对面的车走，上高速时候
+  - **static method of Thread class**
+- `Thread.sleep(1000)`
+- `Thread.yield()`
+
+
+![](img/2021-07-24-13-18-00.png)
