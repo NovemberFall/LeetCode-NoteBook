@@ -205,3 +205,10 @@ Lock I = new Lock();
 
 ### Java 中， 如何 locking?
 
+```java
+public void increase(){
+  synchronized(this){
+    value++;
+  }
+}
+```
