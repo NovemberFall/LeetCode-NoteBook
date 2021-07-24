@@ -45,3 +45,48 @@ ConcurrentModificationException
   - start the thread
 
 ![](img/2021-07-24-10-28-47.png)
+---
+
+```java
+public class myThread extends Thread{
+    public static void main(String[] args) throws InterruptedException {
+        myThread t = new myThread(){
+            @Override
+            public void run(){
+                System.out.println("Hello 1");
+            }
+        };
+        t.start(); //开始执行
+        System.out.println("Hello 2");
+        t.join();
+        System.out.println("Hello 3");
+    }
+}
+```
+
+![](img/2021-07-24-10-39-08.png)
+
+- `hello1`, `hello2` 打印顺序不一定，有时候1， 有时候2
+  - `hello3` 一定是最后一个，原因在于 `join`
+
+---
+
+### without `join`
+
+![](img/2021-07-24-11-17-43.png)
+
+```java
+    public static void main(String[] args) {
+        Thread t = new Thread(){
+            @Override
+            public void run(){
+                System.out.println("Hello1");
+            }
+        };
+        t.start();
+        System.out.println("Hello2");
+    }
+```
+
+- 由于最后**默认**会有一句 `join` 
+
