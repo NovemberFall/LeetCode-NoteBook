@@ -113,3 +113,65 @@ public class myThread extends Thread{
 ![](img/2021-07-24-13-18-00.png)
 
 ![](img/2021-07-24-13-30-54.png)
+
+---
+
+![](img/2021-07-24-13-31-55.png)
+
+- 安排顺序，这就是同步，就是给不能分出顺序的事情，约束一下，分出顺序
+
+```java
+// Example 1
+int a = 10;
+Thread 1:
+        a = 8;
+Thread 2:
+       int b = a + 1;         
+// Is there a race?
+(yes)
+
+
+
+// Example 2:
+int a = 10;
+Thread 1:
+      int b = a + 1;
+Thread 2:
+       int c = a + 4;         
+// Is there a race?
+(no)
+
+
+
+// Example 3:
+int a = 10;
+Thread 1:
+{
+  int a = 10;
+}
+
+Thread 2:
+{
+  int a = 20
+}   
+// Is there a race?
+(no)
+
+
+
+public void test(){
+  int a = 20;
+  System.out.println(a);
+}
+
+new Thread(new Runnable(){
+    @Override
+    public void run(){
+      test();
+    }
+});
+```
+
+---
+
+
