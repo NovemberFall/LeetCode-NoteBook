@@ -88,5 +88,15 @@ public class myThread extends Thread{
     }
 ```
 
-- 由于最后**默认**会有一句 `join` 
+- 由于最后**默认**会有一句 `join`, 所以 `hello1`,`hello2` 都会打印 但是顺序不一样
 
+- daemon(守护进程；后台程序) thread
+- **When the JVM will exit? -> no alive non-daemon threads**
+
+- 如何declare daemon?
+  - [`setDaemon(boolean on)`](https://docs.oracle.com/javase/7/docs/api/java/lang/Thread.html#setDaemon(boolean)), 
+
+
+---
+
+![](img/2021-07-24-11-59-35.png)
