@@ -2,6 +2,9 @@
 
 ![](img/2021-07-24-16-42-39.png)
 
+![](img/2021-07-24-16-47-33.png)
+![](img/2021-07-24-16-47-59.png)
+
 ```java
 public static void main(String[] args) {
     String name = "garbage collection";
@@ -15,7 +18,3 @@ public void static printHello(String name) {
     //...
 }
 ```
-
-![](img/2021-07-24-16-47-33.png)
-![](img/2021-07-24-16-47-59.png)
-
