@@ -248,5 +248,7 @@
     * [Integers and Strings](integerString/intString.md)
     * [Object-Oritented Design](oritented/.md)
         * [The Comparator Interface Type](oritented/comparator.md)
+    * [C++ vs Java | Garbage collection](garbage/intro.md)
+        * [Garbage Collection](garbage/garbage.md)
     * [Concurrency](concurrency/intro.md)
         * [Concurrency I](concurrency/con1.md)
