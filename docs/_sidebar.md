@@ -158,6 +158,7 @@
         * [52. N-Queens ||](m10/queen1.md)
         * [93. Restore IP Addresses](m10/ip.md)
         * [1448. Count Good Nodes in Binary Tree](m10/goodNode.md)
+        * [695. Max Area of Island](m10/maxArea.md)
     * [m11: Random, Probability, sampling](m11/intro.md)
         * [384. Shuffle an Array](m11/shuffle.md)
 
