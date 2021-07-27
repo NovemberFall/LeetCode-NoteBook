@@ -157,6 +157,7 @@
         * [51. N-Queens](m10/queen.md)
         * [52. N-Queens ||](m10/queen1.md)
         * [93. Restore IP Addresses](m10/ip.md)
+        * [1448. Count Good Nodes in Binary Tree](m10/goodNode.md)
     * [m11: Random, Probability, sampling](m11/intro.md)
         * [384. Shuffle an Array](m11/shuffle.md)
 
