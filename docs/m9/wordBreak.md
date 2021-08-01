@@ -23,26 +23,44 @@
 ![](img/2021-07-31-15-45-48.png)
 ![](img/2021-07-31-15-46-05.png)
 
+```java
+Input: s = "applepenapple", wordDict = ["apple","pen"]
+  
+  0  1  2  3  4  5  6  7  8  9  10 11 12
+  a  p  p  l  e  p  e  n  a  p  p  l  e 
+                 i  
+                 dp[5] = true
+
+
+  0  1  2  3  4  5  6  7  8  9  10 11 12
+  a  p  p  l  e  p  e  n  a  p  p  l  e 
+                          i  
+                 dp[8] = true
+
+
+init: dp[0] = true // empty string represents true
+
+wordDict.contains(s.substring(j, i)) && dp[j]
+```
+
 
 ```java
 class Solution {
-    public boolean wordBreak(String s, List<String> wordDict) {
-        Set<String> dict = new HashSet<wordDict>;
-        if(s.length() == 0){
-            return true;
-        }
-        boolean[] dp = new boolean[s.length() + 1];
-        //base case, set dp[0] = true => empty string represents true
-        dp[0] = true;
-        for(int i = 1; i < dp.length; i++){
-            for(int j = 0; j < i; j++){
+    public boolean wordBreak(String s, List<String> wordDict){
+        Set<String> dict = new HashSet<>(wordDict);
+        int len = s.length();
+        boolean[] dp = new boolean[len + 1];
+        dp[0] = true; //set empty string to be true, base case
+        
+        for (int i = 1; i < dp.length; i++) {
+            for (int j = 0; j < i; j++) {
                 if(dict.contains(s.substring(j, i)) && dp[j]){
                     dp[i] = true;
                     break;
                 }
             }
         }
-        return dp[s.length()];
+        return dp[len];
     }
 }
 ```
