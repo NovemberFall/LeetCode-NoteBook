@@ -1,27 +1,14 @@
-### 674. Longest Continuous Increasing Subsequence | Longest Ascending SubArray
-
-```ruby
-Given an unsorted array of integers, 
-find the length of longest continuous increasing subsequence (subarray).
-
-Example 1:
-Input: [1,3,5,4,7]
-Output: 3
-Explanation: The longest continuous increasing subsequence is [1,3,5], its length is 3. 
-Even though [1,3,5,7] is also an increasing subsequence, 
-it's not a continuous one where 5 and 7 are separated by 4. 
-
-Example 2:
-Input: [2,2,2,2,2]
-Output: 1
-Explanation: The longest continuous increasing subsequence is [2], its length is 1. 
-```
+## 674. Longest Continuous Increasing Subsequence | Longest Ascending SubArray
+![](img/2021-07-31-22-09-09.png)
 
 
-
-## Analysis:
+### Analysis:
 
 ![](img/2020-06-06-02-12-40.png)
+
+- input[i - 1] < input[i], `继承遗产 + 1`
+- input[i - 1] >= input[i], `另起炉灶`
+
 
 - Time O(n)
 - Space = O(n) -> 0(1) if we can optimize it
