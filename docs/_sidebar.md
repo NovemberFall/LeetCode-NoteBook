@@ -251,6 +251,7 @@
         * [6. 图的深度优先遍历：遍历的意义](graph/DFSintro.md)
         * [7. 图的深度优先遍历 I](graph/dfs1.md)
         * [8. 图的深度优先遍历的应用 I](graph/dfsApp.md)
+        * [13. digraph[ˈdaɪɡræf]有向图算法](graph/digraph.md)
     * [Interface, Abstract class,Access Modifier,Exceptions](class/intro.md)
     * [Bit Representation & Bit Operations](Bit/intro.md)
     * [Integers and Strings](integerString/intString.md)
