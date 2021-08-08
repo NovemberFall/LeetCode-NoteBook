@@ -210,6 +210,7 @@
     * [547. Number of Provinces](amazon/circle.md)
     * [221. Maximal Square](amazon/max.md)
     * [994. Rotting Oranges](amazon/rotting.md)
+    * [Apple | nested anagrams](amazon/nestedAnagram.md)
     * [207. Course Schedule | BFS](amazon/course.md)
 
 -----
