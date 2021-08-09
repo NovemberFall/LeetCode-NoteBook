@@ -1,16 +1,5 @@
-# 53. Maximum Subarray      |       Largest SubArray Sum
-
-```ruby
-Given an integer array nums, find the contiguous subarray (containing at least one number) 
-which has the largest sum and return its sum.
-
-
-Example:
-
-Input: [-2,1,-3,4,-1,2,1,-5,4],
-Output: 6
-Explanation: [4,-1,2,1] has the largest sum = 6.
-```
+## 53. Maximum Subarray      |       Largest SubArray Sum
+![](img/2021-08-09-02-33-59.png)
 ---
 
 ## Analysis
