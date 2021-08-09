@@ -1,19 +1,6 @@
-# 1. Two Sum
-
-
-```java
-Given an array of integers, return indices of the two numbers such that they add up to a specific target. 
-You may assume that each input would have *exactly* one solution, 
-and you may not use the same element twice. 
-
-Example:
-
-Given nums = [2, 7, 11, 15], target = 9,
-
-Because nums[0] + nums[1] = 2 + 7 = 9,
-return [0, 1].
-```
------
+## 1. Two Sum
+![](img/2021-08-08-23-39-08.png)
+---
 
 ![](img/2021-02-07-03-12-33.png)
 
