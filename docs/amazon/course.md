@@ -38,3 +38,65 @@
 ![](img/2021-08-08-17-20-30.png)
 
 ![](img/2021-08-08-15-09-39.png)
+
+```java
+class Solution {
+    public boolean canFinish(int numCourses, int[][] prerequisites) {
+        int[] indegree = new int[numCourses];
+        // List[] adjacency = new ArrayList[numCourses];
+        
+        //记录每门课程的先修课        
+        Map<Integer, List<Integer>> map = new HashMap<>();
+
+        
+        //为每门课开一个list存放它的先修课的课程, pointer
+        // for (int i = 0; i < numCourses; i++) {
+        //     adjacency[i] = new ArrayList<Integer>();
+        // }
+        
+        //把先修课放到每个课程的list 里 & 统计indegree数量
+        for (int i = 0; i < prerequisites.length; i++) {
+            //先修课-> 当前课
+            if (map.containsKey(prerequisites[i][1])) {
+                map.get(prerequisites[i][1]).add(prerequisites[i][0]);
+            } else {
+                List<Integer> list = new ArrayList<>();
+                list.add(prerequisites[i][0]);
+                //key是value的先修课
+                map.put(prerequisites[i][1], list);
+            }
+            //current course++
+            indegree[prerequisites[i][0]]++;
+        }
+        
+        //BFS
+        Queue<Integer> queue = new LinkedList<>();
+        for (int i = 0; i < numCourses; i++) {
+            if (indegree[i] == 0) {//没有先修课
+                queue.offer(i);
+            }
+        }
+        
+        int count = 0;//统计一共上过的课程数量
+        while (!queue.isEmpty()) {
+            int course = queue.poll();
+            count++;
+            //value
+            List<Integer> list = map.get(course);
+            if (list != null) {
+                //有n门课以当前的course作为先修课，course->n个其他课程
+                int n = list.size();
+                for (int i = 0; i < n; i++) {
+                    int pointer = map.get(course).get(i);
+                    indegree[pointer]--;
+                    //判断当前课pointer，是否入度为0
+                    if (indegree[pointer] == 0) {
+                        queue.add(pointer);
+                    }
+                }                
+            }
+        }
+        return count == numCourses;
+    }
+}
+```
