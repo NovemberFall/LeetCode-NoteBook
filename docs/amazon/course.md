@@ -17,15 +17,10 @@
    - 因此，拓扑排序出队次数等于课程个数，返回 numCourses == 0 判断课程是否可以成功安排。
 
 ![](img/2021-08-08-11-52-51.png)
-
 ![](img/2021-08-08-11-53-53.png)
-
 ![](img/2021-08-08-13-01-15.png)
-
 ![](img/2021-08-08-13-01-45.png)
-
 ![](img/2021-08-08-13-01-56.png)
-
 ![](img/2021-08-08-13-03-11.png)
 
 - T = O(N + M) :  遍历一个图需要访问所有节点和所有临边，N 和 M 分别为节点数量和临边数量；
@@ -43,16 +38,8 @@
 class Solution {
     public boolean canFinish(int numCourses, int[][] prerequisites) {
         int[] indegree = new int[numCourses];
-        // List[] adjacency = new ArrayList[numCourses];
-        
         //记录每门课程的先修课        
         Map<Integer, List<Integer>> map = new HashMap<>();
-
-        
-        //为每门课开一个list存放它的先修课的课程, pointer
-        // for (int i = 0; i < numCourses; i++) {
-        //     adjacency[i] = new ArrayList<Integer>();
-        // }
         
         //把先修课放到每个课程的list 里 & 统计indegree数量
         for (int i = 0; i < prerequisites.length; i++) {
