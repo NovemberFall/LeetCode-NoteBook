@@ -1,37 +1,6 @@
-# 80. Remove Duplicates from Sorted Array II || Array Deduplication II
-
-```ruby
-Given a sorted array nums, remove the duplicates in-place such that 
-duplicates appeared at most twice and return the new length.
-
-Do not allocate extra space for another array, 
-you must do this by modifying the input array in-place with O(1) extra memory.
-
-Example 1:
-
-Given nums = [1,1,1,2,2,3],
-
-Your function should return length = 5, 
-with the first five elements of nums being 1, 1, 2, 2 and 3 respectively.
-
-It doesn't matter what you leave beyond the returned length.
-Example 2:
-
-Given nums = [0,0,1,1,1,1,2,3,3],
-
-Your function should return length = 7, 
-with the first seven elements of nums being modified to 0, 0, 1, 1, 2, 3 and 3 respectively.
-
-It doesn't matter what values are set beyond the returned length.
-Clarification:
-
-Confused why the returned value is an integer but your answer is an array?
-
-Note that the input array is passed in by reference, which means modification to the input array will be known to the caller as well.
-
-Internally you can think of this:
-```
-
+## 80. Remove Duplicates from Sorted Array II || Array Deduplication II
+![](img/2021-08-10-11-48-57.png)
+![](img/2021-08-10-11-49-07.png)
 
 ## Analysis:
 
@@ -79,14 +48,14 @@ Internally you can think of this:
 
 1   2   3   3   3   3
                 f->             
-                s->     //since arr[f] = arr[s - 2], continue
-                       //f++;
+                s-> //since arr[f] = arr[s - 2], continue
+                    //f++;
                      
 
 1   2   3   3   3   3
                     f->             
                 s->        
-                        //then loop is done!                 
+                    //then loop is done!                 
 
 
 return slow index.
@@ -119,16 +88,17 @@ class Solution {
 
 
 
-
+---
 
 ## 变种题型
 
 
 ```ruby
 Given a sorted integer array, remove duplicate elements. 
-For each group of elements with the same value keep at most two of them. Do this in-place, 
-using the left side of the original array and 
-maintain the relative order of the elements of the array. 
+For each group of elements with the same value keep 
+at most two of them. Do this in-place, using the left side 
+of the original array and maintain the relative order of 
+the elements of the array. 
 Return the array after deduplication.
 
 Assumptions
