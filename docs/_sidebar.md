@@ -104,7 +104,7 @@
         * [445. Add Two Numbers II](m5/twoNumsII.md)
         * [148. Sort List](m5/sortList.md)
         * [24. Swap Nodes in Pairs](m5/swap.md)
-        * [24. Swap Nodes in Pairs](m5/swap.md)
+        * [19. Remove Nth Node From End of List](m5/nthOfEnd.md)
     * [m6：Heap & Graph | BFS ](m6/intro.md)
         * [215. Kth Largest Element in an Array](m6/KthLarget.md)
         * [K Smallest In Unsorted Array](m6/K_smallest.md)
