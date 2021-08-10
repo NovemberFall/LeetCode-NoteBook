@@ -89,6 +89,7 @@
         * [189. Rotate Array](m3/rotateArr.md)
         * [59. Spiral Matrix II](m3/spiral2.md)
         * [167. Two Sum II - Input array is sorted](m3/two2.md)
+        * [15. 3Sum](m3/threeSum.md)
     * [m4: Recursion](m4/intro.md)
         * [50. Pow(x, n)](m4/power.md)
         * [54. Spiral Matrix](m4/spiralMatrix.md)
