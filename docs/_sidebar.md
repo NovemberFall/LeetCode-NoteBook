@@ -75,6 +75,7 @@
         * [Store Number Of Nodes In Left Subtree](m2/leftSubtree.md)
         * [222. Count Complete Tree Nodes](m2/countnodes.md)
         * [1026. Maximum Difference Between Node and Ancestor](m2/maxDiff.md)
+        * [235. Lowest Common Ancestor of a Binary Search Tree](m2/LCAbst.md)
         * [236. Lowest Common Ancestor of a Binary Tree](m2/LCA.md)
         * [1650. Lowest Common Ancestor of a Binary Tree III](m2/LCA3.md)
     * [m3：Array](m3/intro.md)
