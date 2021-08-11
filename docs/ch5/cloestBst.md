@@ -1,6 +1,5 @@
-## 270. closest binary search tree value
-
-![](img/2021-06-27-15-29-54.png)
+## 270. closest binary search tree value I
+![](img/2021-08-11-00-43-15.png)
 
 ```java
 /**
