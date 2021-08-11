@@ -27,6 +27,7 @@
         * [21. Merge Two Sorted Lists | dummyHead](ch4/mergeTwoList.md)
         * [203. Remove Linked List Elements](ch4/remove.md)
         * [234. Palindrome Linked List](ch4/palindrome.md)
+        * [160. Intersection of Two Linked Lists](ch4/intersect.md)
     * [Queue & Stack](stack/intro.md)
         * [232. Implement Queue using Stacks](stack/queue.md)
     * [Chapter5：Binary Tree](ch5/intro.md)
