@@ -1,26 +1,11 @@
-# 138. Copy List with Random Pointer | Deep Copy
-
-```ruby
-A linked list is given such that each node contains an additional random pointer which 
-could point to any node in the list or null.
-
-Return a deep copy of the list.
-
-The Linked List is represented in the input/output as a list of n nodes. 
-Each node is represented as a pair of [val, random_index] where:
-
-val: an integer representing Node.val
-random_index: the index of the node (range from 0 to n-1) where random pointer points to, 
-or null if it does not point to any node.
-```
+## 138. Copy List with Random Pointer | Deep Copy
+![](img/2021-08-11-16-42-43.png)
 
 ![](img/2020-06-27-17-06-25.png)
 
-
-
 - Deep copy:
 
-![](img/2020-06-27-17-07-02.png)
+![](img/2021-08-11-16-45-20.png)
 
 
 - Assumptions:
@@ -87,6 +72,34 @@ class Solution {
             cur = cur.next;
         }
         return dummy.next;
+    }
+}
+```
+
+---
+
+### Method 2
+
+```java
+class Solution {
+    public Node copyRandomList(Node head) {
+        if (head == null) {
+            return head;
+        }
+        Map<Node, Node> map = new HashMap<>();
+        Node cur = head;
+        while (cur != null) {
+            map.put(cur, new Node(cur.val));
+            cur = cur.next;
+        }
+        
+        cur = head;
+        while (cur != null) {
+            map.get(cur).next = map.get(cur.next);
+            map.get(cur).random = map.get(cur.random);
+            cur = cur.next;
+        }
+        return map.get(head);
     }
 }
 ```
