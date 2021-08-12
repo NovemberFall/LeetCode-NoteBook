@@ -78,6 +78,7 @@
         * [235. Lowest Common Ancestor of a Binary Search Tree](m2/LCAbst.md)
         * [236. Lowest Common Ancestor of a Binary Tree](m2/LCA.md)
         * [1650. Lowest Common Ancestor of a Binary Tree III](m2/LCA3.md)
+        * [230. Kth Smallest Element in a BST](m2/kth.md)
     * [m3：Array](m3/intro.md)
         * [33. Search in Rotated Sorted Array](m3/SearchinRotatedSortedArray.md)
         * [74. Search a 2D Matrix I](m3/SearchIn2DArray.md)
