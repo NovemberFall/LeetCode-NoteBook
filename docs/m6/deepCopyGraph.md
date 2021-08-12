@@ -105,16 +105,16 @@ class Solution {
         if (map.containsKey(node)) {
             return map.get(node);
         } else {//没有找到过这个node
-            //newNode's val
-            Node newNode = new Node(node.val);
-            map.put(node, newNode);
-            //newNode's neighbors
+            //copyNode's val
+            Node copyNode = new Node(node.val);
+            map.put(node, copyNode);
+            //copyNode's neighbors
             List<Node> list = new ArrayList<>();
             for (Node nei : node.neighbors) {
                 list.add(dfs(nei));
             }
-            newNode.neighbors = list;
-            return newNode;
+            copyNode.neighbors = list;
+            return copyNode;
         }
     }
 }
