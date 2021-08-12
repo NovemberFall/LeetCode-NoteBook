@@ -1,4 +1,4 @@
-## 133. Clone Graph | Deep Copy Undirected Graph
+## 133. Clone Graph | Deep Copy Undirected Graph | BFS | DFS
 ![](img/2021-08-11-17-29-26.png)
 
 ![](img/2021-08-11-17-32-02.png)
@@ -90,24 +90,31 @@ class Solution {
 ```java
 //DFS
 class Solution {
+    Map<Node, Node> map = new HashMap<>();
+    
     public Node cloneGraph(Node node) {
-        if(node == null){
-            return null;
-        }
-        Map<Node, Node> map = new HashMap<>();
-        map.put(node, new Node(node.val));
-        DFS(node, map);
-        return map.get(node);
+        if (node == null) return node;
+        
+        return dfs(node);
     }
     
-    private void DFS(Node seed, Map<Node, Node> map){
-        Node copy = map.get(seed);
-        for(Node nei : seed.neighbors){
-            if(!map.containsKey(nei)){
-                map.put(nei, new Node(nei.val));
-                DFS(nei, map);
+    private Node dfs(Node node) {
+        if (node == null) return node;
+        
+        //1. 已经找到过这个node
+        if (map.containsKey(node)) {
+            return map.get(node);
+        } else {//没有找到过这个node
+            //newNode's val
+            Node newNode = new Node(node.val);
+            map.put(node, newNode);
+            //newNode's neighbors
+            List<Node> list = new ArrayList<>();
+            for (Node nei : node.neighbors) {
+                list.add(dfs(nei));
             }
-            copy.neighbors.add(map.get(nei));
+            newNode.neighbors = list;
+            return newNode;
         }
     }
 }
