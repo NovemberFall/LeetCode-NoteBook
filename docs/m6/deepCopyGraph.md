@@ -1,26 +1,18 @@
-# 133. Clone Graph | Deep Copy Undirected Graph
+## 133. Clone Graph | Deep Copy Undirected Graph
+![](img/2021-08-11-17-29-26.png)
 
-```ruby
-Given a reference of a node in a connected undirected graph.
+![](img/2021-08-11-17-32-02.png)
 
-Return a deep copy (clone) of the graph.
-
-Each node in the graph contains a val (int) and a list (List[Node]) of its neighbors.
-
-class Node {
-    public int val;
-    public List<Node> neighbors;
-}
-```
-
-
-
+![](img/2021-08-11-17-32-14.png)
+---
 ## Analysis:
 
 - Assumptions:
   - if grahp is null, return null
 
 - Approach:
+
+![](img/2021-08-11-18-51-20.png)
 
 ```ruby
 N1  --  N2
@@ -34,21 +26,11 @@ N1'  --  N2'
     N3'
 ```
 
+
+
 - Method1: BFS
 
-- step1: create a HashMap to hash `<old GraphNode, new GraphNode>`,
-  - 同时创建一个 `queue`, 来记录已经遍历过的 old GraphNode
-  - 这也是一种暂时的 "顺序", 因为我们必须在之后遍历操作中，知道哪一个已经遍历过了
-
-- Step2: 每一个 new `GraphNode` 都contains a `List<GraphNode> negihbors`, 
-  所以必须对其 也进行一次deep copy，hashTable 来 copy old GrapNode
-  - 同时， queue 继续记录old graphNode's neighbors List's `neighbor Node`
-
-- 第一步执行完，对old GraphNode的copy, 然后queue进行队列操作，然后每一个队列里的old GraphNode
-  进行遍历，然后call hashTable 对old Node's neighbors's GraphNode进行copy,
-  最后把遍历过的新的neighbor GraphNode, 全部加进 new GraphNode's negihbors List 里
-  最后一个新的list.addAll(new GraphNode)
-
+![](img/2021-08-11-18-52-03.png)
 
 
 ```java
@@ -98,50 +80,6 @@ class Solution {
         }
         return map.get(node);
     }
-}
-```
-
-
-## 
-
-
-```java
-/*
-* class GraphNode {
-*   public int key;
-*   public List<GraphNode> neighbors;
-*   public GraphNode(int key) {
-*     this.key = key;
-*     this.neighbors = new ArrayList<GraphNode>();
-*   }
-* }
-*/
-public class Solution {
-  public List<GraphNode> copy(List<GraphNode> graph) {
-    // Write your solution here.
-    if(graph == null){
-      return null;
-    }
-    List<GraphNode> copy = new ArrayList<>();
-    Queue<GraphNode> queue = new ArrayDeque<>();
-    Map<GraphNode, GraphNode> map = new HashMap<>();
-    for(GraphNode old : graph){
-        map.put(old, new GraphNode(old.key));
-        queue.offer(old);
-    }
-    while(!queue.isEmpty()){
-      GraphNode old = queue.poll();
-      for(GraphNode neiNode : old.neighbors){
-        if(!map.containsKey(neiNode)){
-          map.put(neiNode, new GraphNode(neiNode.key));
-          queue.offer(neiNode);
-        }
-        map.get(old).neighbors.add(map.get(neiNode));
-      }
-      copy.add(map.get(old));
-    }
-    return copy; 
-  }
 }
 ```
 
