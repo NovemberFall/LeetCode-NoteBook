@@ -221,6 +221,7 @@
     * [994. Rotting Oranges](amazon/rotting.md)
     * [Apple | nested anagrams](amazon/nestedAnagram.md)
     * [207. Course Schedule | BFS](amazon/course.md)
+    * [315. Count of Smaller Numbers After Self | merge sort](amazon/count.md)
 
 -----
 * [Bit Operation](Bit/intro.md)
