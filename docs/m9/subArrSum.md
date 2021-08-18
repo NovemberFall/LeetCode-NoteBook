@@ -4,21 +4,11 @@
 
 ## Analysis
 
-```ruby
-index = 0   1   2   3   4   5   6   7   8
-input:[-2   1  -3   4  -1   2   1  -5   4]
-M[i] = -2   1  -2   4   3   5   6   1   5               globalMax = 6
+![](img/2021-08-17-21-15-46.png)
+![](img/2021-08-17-21-17-35.png)
 
-Base case: M[0] = input[0]
-
-Induction rule:
-M[i] represents [within the range from the beginning to the i-th element] the largest sum of the
-subarray [including the i-th element]
-
-M[i] = M[i - 1] + input[i]                      if M[i - 1] >= 0
-input[i]                                        otherwise
-```
-
+- T = O(n)
+- Space = O(n)
 
 ```java
 class Solution {
