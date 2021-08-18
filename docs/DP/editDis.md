@@ -1,39 +1,12 @@
-# 72. Edit Distance
+## 72. Edit Distance
 
-```ruby
-Given two words word1 and word2, 
-find the minimum number of operations required to convert word1 to word2.
-
-You have the following 3 operations permitted on a word:
-
-Insert a character
-Delete a character
-Replace a character
-
-Example 1:
-
-Input: word1 = "horse", word2 = "ros"
-Output: 3
-Explanation: 
-horse -> rorse (replace 'h' with 'r')
-rorse -> rose (remove 'r')
-rose -> ros (remove 'e')
-
-Example 2:
-
-Input: word1 = "intention", word2 = "execution"
-Output: 5
-Explanation: 
-intention -> inention (remove 't')
-inention -> enention (replace 'i' with 'e')
-enention -> exention (replace 'n' with 'x')
-exention -> exection (replace 'n' with 'c')
-exection -> execution (insert 'u')
-```
+![](img/2021-08-18-00-53-05.png)
 ---
 
 
 ## Analysis
+
+
 
 - we grow the string from the left hand side to the right hand side ===>
 - **M[i][j] represents the minimum number of actions to transform the first letters of S1**
@@ -41,7 +14,6 @@ exection -> execution (insert 'u')
 
 
 ![](img/2020-06-09-04-27-57.png)
-![](img/2020-06-09-04-28-15.png)
 
 ```java
 case0: do nothing 
@@ -68,7 +40,7 @@ s1 = a -> as
 s2 = s          
 M[1][1] => M[1][0] + 1
 
-M[i][j] => M[1][j - 1] + 1
+M[i][j] => M[i][j - 1] + 1
 
 Final Rule =>
 
@@ -88,31 +60,36 @@ d    3 | 3  2   2   3   4
 f    4 | 4  3   3   3   4 -> return
 ```
 
+![](img/2021-08-18-09-27-43.png)
 
+
+- T = O(m * n)
+- Space = O(m * n)
 
 
 ```java
 class Solution {
     public int minDistance(String word1, String word2) {
-        int[][] dp = new int[word1.length() + 1][word2.length() + 1];
-        for(int i = 0; i <= word1.length(); i++){
-            for(int j = 0; j <= word2.length(); j++){
-                if(i == 0){
+        int m = word1.length();
+        int n = word2.length();
+        int[][] dp = new int[m + 1][n + 1];
+        for (int i = 0; i <= m; i++) {
+            for (int j = 0; j <= n; j++) {
+                if (i == 0) {
                     dp[i][j] = j;
-                }else if(j == 0){
+                } else if (j == 0) {
                     dp[i][j] = i;
-                }else if(word1.charAt(i - 1) == word2.charAt(j - 1)){
+                } else if (word1.charAt(i - 1) == word2.charAt(j - 1)) {
                     dp[i][j] = dp[i - 1][j - 1];
-                }else{
-                    int temp = Math.min(dp[i - 1][j] + 1, dp[i][j - 1] + 1);
-                    dp[i][j] = Math.min(dp[i - 1][j - 1] + 1, temp);
+                } else {
+                    int tmp = Math.min(dp[i - 1][j], dp[i - 1][j - 1]);
+                    dp[i][j] = Math.min(tmp, dp[i][j - 1]) + 1;
                 }
             }
         }
-        return dp[word1.length()][word2.length()];
+        return dp[m][n];
     }
 }
-
 ```
 
 
@@ -124,9 +101,16 @@ class Solution {
 
 ## 本题DFS 解法
 
+![](img/2020-06-09-04-28-15.png)
+
+- There are at most `m + n` levels in the recursion tree, and there are at most 3 branches
+  in each node. Thus
+  - Time = O(3^(m + n))
+
 ```java
 class Solution {
     public int minDistance(String word1, String word2) {
+        //Base case
         if(word1.isEmpty()){
             return word2.length();
         }
@@ -134,6 +118,8 @@ class Solution {
             return word1.length();
         }
         
+        //(a) check what the distance is if the character[0] are
+        //identical and we do nonthing first
         if(word1.charAt(0) == word2.charAt(0)){
             int nothing = minDistance(word1.substring(1), word2.substring(1));
             return nothing;
