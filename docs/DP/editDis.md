@@ -79,10 +79,10 @@ class Solution {
                     dp[i][j] = j;
                 } else if (j == 0) {
                     dp[i][j] = i;
-                } else if (word1.charAt(i - 1) == word2.charAt(j - 1)) {
+                } else if(word1.charAt(i-1) == word2.charAt(j-1)){
                     dp[i][j] = dp[i - 1][j - 1];
                 } else {
-                    int tmp = Math.min(dp[i - 1][j], dp[i - 1][j - 1]);
+                    int tmp = Math.min(dp[i-1][j], dp[i-1][j-1]);
                     dp[i][j] = Math.min(tmp, dp[i][j - 1]) + 1;
                 }
             }
