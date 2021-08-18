@@ -121,11 +121,14 @@ class Solution {
         //(a) check what the distance is if the character[0] are
         //identical and we do nonthing first
         if(word1.charAt(0) == word2.charAt(0)){
-            int nothing = minDistance(word1.substring(1), word2.substring(1));
+            int nothing = 
+                minDistance(word1.substring(1), word2.substring(1));
+            
             return nothing;
         }
         
-        int replace = 1 + minDistance(word1.substring(1), word2.substring(1));
+        int replace = 
+            1 + minDistance(word1.substring(1), word2.substring(1));
         int insert = 1 + minDistance(word1, word2.substring(1));
         int delete = 1 + minDistance(word1.substring(1), word2);
         return Math.min(delete,  Math.min(replace, insert));
