@@ -1,4 +1,4 @@
-# 101. Largest Square Of 1s
+## 101. Largest Square Of 1s
 
 ```ruby
 Given a 2D binary matrix filled with 0's and 1's, 
@@ -138,7 +138,8 @@ class Solution {
         int result = 0;
         for(int i = 1; i<=matrix.length; i++){
             for(int j = 1; j <= matrix[0].length; j++){
-                if(matrix[i-1][j-1] == '1'){ //本题精髓是，我们不需要对左上角不是1(是0)的情况下，进行操作
+                if(matrix[i-1][j-1] == '1'){ 
+                //本题精髓是，我们不需要对左上角不是1(是0)的情况下，进行操作
                 //换句话说，我们只需要对 左上角 == 1 的情况 进行下一步拆解
                     dp[i][j] = Math.min(dp[i-1][j]+1, dp[i-1][j-1]+1);
                     dp[i][j] = Math.min(dp[i][j-1] + 1, dp[i][j]);
@@ -160,7 +161,8 @@ class Solution {
 
 
 ```java
-Determine the largest square of 1s in a binary matrix (a binary matrix only contains 0 and 1), 
+Determine the largest square of 1s in a binary matrix 
+(a binary matrix only contains 0 and 1), 
 return the length of the largest square.
 
 Assumptions
