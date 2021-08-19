@@ -129,19 +129,22 @@ class Solution {
         if(matrix == null || matrix.length == 0){
             return 0;
         }
-        //之所new int[matrix.length + 1][matrix[0].length + 1], 是因为当你向左上角看的时候
-        //matrix[i-1][j-1] == '1' => 如果条件长度不加1， 就变成了 第一个index是0的时候 0 - 1 = -1
+        //之所new int[matrix.length + 1][matrix[0].length + 1], 
+        //是因为当你向左上角看的时候, matrix[i-1][j-1] == '1' => 如果条件长度不加1， 
+        //就变成了 第一个index是0的时候 0 - 1 = -1
         int[][] dp = new int[matrix.length + 1][matrix[0].length + 1];
         int result = 0;
         for(int i = 1; i<=matrix.length; i++){
             for(int j = 1; j <= matrix[0].length; j++){
-                if(matrix[i-1][j-1] == '1'){ //本题精髓是，我们不需要对左上角不是1(是0)的情况下，进行操作
+                if(matrix[i-1][j-1] == '1'){ 
+                //本题精髓是，我们不需要对左上角不是1(是0)的情况下，进行操作
                 //换句话说，我们只需要对 左上角 == 1 的情况 进行下一步拆解
                     dp[i][j] = Math.min(dp[i-1][j]+1, dp[i-1][j-1]+1);
                     dp[i][j] = Math.min(dp[i][j-1] + 1, dp[i][j]);
                     result = Math.max(result, dp[i][j]);
-                    //这里是精髓所在： 可以发现 左上角，左边，上面 的size一样的情况下，才可以math induction
-                    //if current size is 3, you can see, left top == top == left == 2 
+                    //这里是精髓所在： 可以发现 左上角，左边，上面 的size一样的情况下，
+                    //才可以math induction
+                    //if current size is 3, left top == top == left == 2 
                 }
             }
         }

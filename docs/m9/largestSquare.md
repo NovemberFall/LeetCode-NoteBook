@@ -1,4 +1,4 @@
-## 101. Largest Square Of 1s
+## 221. Maximal Square | Largest Square Of 1s
 
 ```ruby
 Given a 2D binary matrix filled with 0's and 1's, 
