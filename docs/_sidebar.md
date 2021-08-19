@@ -144,7 +144,7 @@
         * [62. Unique Paths](m9/path.md)
         * [674. Longest Continuous Increasing Subsequence | Longest Ascending SubArray](m9/longestSubarray.md)
         * [Max Product Of Cutting Rope](m9/maxProductOfCuttingRope.md)
-        * [101. Largest Square Of 1s](m9/largestSquare.md)
+        * [221. Maximal Square | Largest Square Of 1s](m9/largestSquare.md)
         * [55. Jump Game | Array Hopper I](m9/jumpGame.md)
         * [45. Jump Game|| Array Hopper II](m9/jumpGame1.md)
         * [53. Maximum Subarray | Largest SubArray Sum](m9/subArrSum.md)
