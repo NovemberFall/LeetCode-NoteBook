@@ -85,10 +85,13 @@ x   x   x   x
 x   x   x   X = min(左上角，左边，上边) + 1
 
 
-M[i][j] represents the max size of square with(i, j) as the bottom right corner.
+M[i][j] represents the max size of square with (i, j) 
+as the bottom right corner.
 
-if(A[i][j] == 0)         M[i][j] = 0
-otherwise               min(M(i - 1)(j - 1), M[i - 1][j], M[i][j - 1] + 1
+if(A[i][j] == 0) :        
+    M[i][j] = 0
+otherwise:               
+    min(M(i - 1)(j - 1), M[i - 1][j], M[i][j - 1] + 1
 
 
 
