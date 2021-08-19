@@ -19,9 +19,9 @@ Output: 4
 ## Analysis:
 
 - How many `rectangles` are  there in an n x n matrix?
-  -       $$cn^2 * cn^2 = n^4$$
+  $$cn^2 * cn^2 = n^4$$
 - How many `squares` are  there in an n x n matrix?
-  -       $$cn^2 * n = n^3$$
+  $$cn^2 * n = n^3$$
   
 - M0 : Primitive way
   - Time = O(n^3 * n^2) = O(N^5)
