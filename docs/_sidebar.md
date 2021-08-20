@@ -178,7 +178,7 @@
         * [Remove Adjacent Repeated Characters IV](hString/dedupAdjRepChar.md)
     * [Binary Tree](hBinaryTree/intro.md)
         * [145. Binary Tree Postorder Traversal](hBinaryTree/bstPost-order.md)
-        * [124. Binary Tree Maximum Path Sum | Maximum Path Sum Binary Tree II](hBinaryTree/maxPathSum.md)
+        * [124. Binary Tree Maximum Path Sum](hBinaryTree/maxPathSum.md)
         * [Maximum Path Sum Binary Tree I](hBinaryTree/maxPathSum1.md)
         * [Max Path Sum From Leaf To Root](hBinaryTree/maxPathSumLeafToRoot.md)
         * [1026. Maximum Difference Between Node and Ancestor](hBinaryTree/maxDiffNodeAnce.md)
