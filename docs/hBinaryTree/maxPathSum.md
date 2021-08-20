@@ -1,4 +1,5 @@
-## 124. Binary Tree Maximum Path Sum
+## 124. Binary Tree Maximum Path Sum 
+### (path from any node to any node)
 ![](img/2021-08-19-01-37-15.png)
 ![](img/2021-08-19-01-37-27.png)
 
