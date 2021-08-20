@@ -1,5 +1,20 @@
 ## 124. Binary Tree Maximum Path Sum 
 ### (path from any node to any node)
+
+- **题目的要求是any node to any node**，就是你可以带上下面的node，也可以不带。
+  如果下面node传上来的数是-10000，你说要不要带呢？所以这里和0比较.
+
+- let's look at test case:
+
+![](img/2021-08-20-13-35-35.png)
+![](img/2021-08-20-13-36-00.png)
+
+- 2nd test case:
+![](img/2021-08-20-13-54-03.png)
+![](img/2021-08-20-13-54-12.png)
+
+---
+
 ![](img/2021-08-19-01-37-15.png)
 ![](img/2021-08-19-01-37-27.png)
 
