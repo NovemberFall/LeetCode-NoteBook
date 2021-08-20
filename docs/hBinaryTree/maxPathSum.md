@@ -3,18 +3,6 @@
 ![](img/2021-08-19-01-37-27.png)
 
 
-Approach:
-1. left child and right child will do:
-  - left: maximum "root to leaf" path sum of left subtree
-  - right: maximum "root to leaf" path sum of right subtree
-2. the content of current layer:
-  - calculate left + right + root.vla
-  - update globalMax if possible
-3. report to the parent node
-  - max path  sum from root to leaf
-  - for example:  return max(left, right) + root.val    (be aware with the case if one side child == null)
-
-
 ## 三部曲
 
 1. What do you expect from your leftChild / rightChild? (usually it is the return type of the
@@ -24,7 +12,7 @@ Approach:
 2. What do you want to do in the current layer?
    - update globalMax with max(left, 0) + max(right, 0) + root.value
 3. What do you want to report to your parent? (same as Q1 == Q3)
-   - return max(left, right) + root.value
+   - return max(left, right, 0) + root.value
 
 
 - **Key Point:**
@@ -45,8 +33,6 @@ Approach:
  
 ---
 
-
-
  ```java
  /**
  * Definition for a binary tree node.
@@ -65,9 +51,6 @@ Approach:
  */
 class Solution {
     public int maxPathSum(TreeNode root) {
-        if(root == null){
-            return Integer.MIN_VALUE;
-        }
         int[] max = new int[1];
         max[0] = Integer.MIN_VALUE;
         helper(root, max);
