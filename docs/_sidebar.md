@@ -206,6 +206,7 @@
 
 -----
 * [Amazon Top 50](amazon/intro.md)
+    * [56. Merge Intervals](amazon/mergeInterval.md)
     * [1041. Robot Bounded In Circle](amazon/robot.md)
     * [763. Partition Labels](amazon/partitionLabel.md)
     * [1010. Pairs of Songs](amazon/pairs.md)
