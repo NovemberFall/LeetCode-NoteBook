@@ -203,7 +203,8 @@
     * [Graph BFS |](BFS/intro.md)
         * [272. closest binary search tree value II](BFS/bstVallue.md)
         * [127. Word Ladder](BFS/ladder.md)
-
+    * [Histogram](histogram/intro.md)
+        * [84. Largest Rectangle in Histogram](histogram/histogram.md)
 -----
 * [Amazon Top 50](amazon/intro.md)
     * [56. Merge Intervals](amazon/mergeInterval.md)
