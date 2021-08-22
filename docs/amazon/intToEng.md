@@ -15,15 +15,16 @@
 
 ```java
 class Solution {
-  private final String[] THOUSANDS = {"", "Thousand", "Million", "Billion"};
+  private final String[] THOUSANDS = {"", "Thousand", "Million", 
+    "Billion"};
     
-  private final String[] LESS_THAN_TWENTY = {"", "One", "Two", "Three", 
-    "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", 
-    "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", 
-                                               "Eighteen", "Nineteen"};
+  private final String[] LESS_THAN_TWENTY = {"", "One", "Two", 
+    "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", 
+    "Ten", "Eleven", "Twelve", "Thirteen","Fourteen", "Fifteen", 
+    "Sixteen", "Seventeen", "Eighteen", "Nineteen"};
     
-  private final String[] TENS = {"", "", "Twenty", "Thirty", "Forty", 
-     "Fifty","Sixty", "Seventy", "Eighty", "Ninety"};  
+  private final String[] TENS = {"", "", "Twenty", "Thirty", 
+    "Forty", "Fifty","Sixty", "Seventy", "Eighty", "Ninety"};  
   
   public String numberToWords(int num) {
     if (num == 0) {
@@ -50,7 +51,7 @@ class Solution {
     } else if (n < 100) {//20-99
       return TENS[n / 10] + " " + helper(n % 10);
     } else {//100-999
-      return LESS_THAN_TWENTY[n / 100] + " Hundred " + helper(n % 100);
+      return LESS_THAN_TWENTY[n/100]+" Hundred "+ helper(n % 100);
     }
   }
 }
