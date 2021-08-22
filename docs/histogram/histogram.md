@@ -40,7 +40,6 @@ public class Solution {
 }
 ```
 
-
 ---
 ![](img/2021-08-21-00-25-06.png)
 
@@ -60,3 +59,42 @@ for i = 0; i < n; i++
 
 - stack!!! 单调栈 O(N)
   - 性质： 单调递增，or 单调递减
+
+---
+![](img/2021-08-21-17-18-26.png)
+![](img/2021-08-21-17-18-51.png)
+![](img/2021-08-21-17-19-14.png)
+
+- 这个时候，还需要考虑的一个细节是，在确定一个柱形的面积的时候，**除了右边要比当前严格小**，
+  其实还蕴含了一个条件，那就是**左边也要比当前高度严格小**。
+![](img/2021-08-21-17-20-48.png)
+![](img/2021-08-21-17-21-16.png)
+![](img/2021-08-21-17-21-31.png)
+--- 
+
+```java
+class Solution {
+  public int largestRectangleArea(int[] heights) {
+    int result = 0;
+    //Note that the stack contains the "index"
+    //not the "value" of the array
+    Deque<Integer> stack = new LinkedList<>();
+    for (int i = 0; i <= heights.length; i++) {
+        //we need a way of popping out all the elements in the stack
+        //at least, so taht we explicitly add a bar of height 0.
+        int cur = i == heights.length ? 0 : heights[i];
+        while (!stack.isEmpty() && heights[stack.peekFirst()] >= cur) {
+            int height = heights[stack.pollFirst()];
+            //determine the left boundary of the largest rectangle
+            //with height array[i]
+            int left = stack.isEmpty() ? 0 : stack.peekFirst() + 1;
+            //determine the right boundary of the largest rectangle
+            //with height of the popped element
+            result = Math.max(result, height * (i - left));
+        }
+        stack.offerFirst(i);
+    }
+    return result;
+  }
+}
+```
