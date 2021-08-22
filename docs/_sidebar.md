@@ -36,6 +36,7 @@
         * [145. Binary Tree Postorder Traversal](ch5/postorder.md)
         * [104. Maximum Depth of Binary Tree](ch5/getHightTree.md)
         * [110. Balanced Binary Tree | Check If Binary Tree Is Balanced](ch5/checkBalanced.md)
+        * [110. Balanced Binary Tree | DFS](ch5/balance.md)
         * [101. Symmetric Tree](ch5/symmetric.md)
         * [700. Search in a Binary Search Tree](ch5/search.md)
         * [993. Cousins in Binary Tree](ch5/cousinInTree.md)
@@ -227,6 +228,7 @@
     * [Apple | nested anagrams](amazon/nestedAnagram.md)
     * [207. Course Schedule | BFS](amazon/course.md)
     * [315. Count of Smaller Numbers After Self | merge sort](amazon/count.md)
+    * [273. Integer to English Words](amazon/intToEng.md)
 
 -----
 * [Bit Operation](Bit/intro.md)
