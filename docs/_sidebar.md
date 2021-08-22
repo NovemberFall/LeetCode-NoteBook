@@ -177,6 +177,8 @@
 
 -----
 * [Hard && Interview Question](Hard/intro.md)
+    * [array](arr/intro.md)
+        * [4. Median of Two Sorted Arrays](arr/median.md)
     * [String](hString/intro.md)
         * [Remove Adjacent Repeated Characters IV](hString/dedupAdjRepChar.md)
     * [Binary Tree](hBinaryTree/intro.md)
