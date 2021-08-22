@@ -142,6 +142,7 @@
         * [443. String Compression](m8/strencode.md)
         * [394. Decode String](m8/decode.md)
         * [1004. Max Consecutive Ones III](m8/maxOnes.md)
+        * [5. Longest Palindromic Substring](m8/longestPalindrom.md)
     * [m9: Dynamic Programming](m9/intro.md)
         * [509. Fibonacci Number](m9/fibonacci.md)
         * [62. Unique Paths](m9/path.md)
