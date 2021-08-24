@@ -83,6 +83,7 @@
         * [112. Path Sum](ch5/pathSum.md)
         * [113. Path Sum II](m2/pathSum2.md)
         * [105. Construct Binary Tree from Preorder and Inorder Traversal](m2/construct.md)
+        * [106. Construct Binary Tree from Inorder and Postorder Traversal](m2/construct1.md)
     * [m3：Array](m3/intro.md)
         * [33. Search in Rotated Sorted Array](m3/SearchinRotatedSortedArray.md)
         * [74. Search a 2D Matrix I](m3/SearchIn2DArray.md)
