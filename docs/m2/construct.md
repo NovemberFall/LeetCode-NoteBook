@@ -4,7 +4,12 @@
 
 ![](img/2021-08-22-23-59-54.png)
 ![](img/2021-08-23-00-06-05.png)
+
+- key point: 把global的问题一分为二(recursively), 每半边返回一个subtree的
+  root node。
 ---
+
+
 
 ```java
 /**
