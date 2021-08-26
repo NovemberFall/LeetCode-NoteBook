@@ -30,6 +30,7 @@
         * [160. Intersection of Two Linked Lists](ch4/intersect.md)
     * [Queue & Stack](stack/intro.md)
         * [232. Implement Queue using Stacks](stack/queue.md)
+        * [20. Valid Parentheses](stack/valid.md)
     * [Chapter5：Binary Tree](ch5/intro.md)
         * [144. Binary Tree Preorder Traversal](ch5/preorder.md)
         * [94. Binary Tree Inorder Traversal](ch5/inorder.md)
