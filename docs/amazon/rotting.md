@@ -10,14 +10,13 @@
   reduced by `1`. If the number has not been reduced to `0` when the BFS is ending, that means 
   there are oranages that cannot be rotten.
 
-```ruby
-Time Complexity：O(nm)
-即进行一次广度优先搜索的时间，其中 n=grid.length, m=grid[0].length
+- Time Complexity：O(nm)
+  - 即进行一次广度优先搜索的时间，其中 n=grid.length, m=grid[0].length
 
-Space Complexity：O(nm)
-需要额外的 dis 数组记录每个新鲜橘子被腐烂的最短时间，大小为 O(nm)，且广度优先搜索中队列里存放的状态最多不会超过 nm 个，
-最多需要 O(nm) 的空间，所以最后的空间复杂度为 O(nm)。
-```
+- Space Complexity：O(nm)
+  - 需要额外的 dis 数组记录每个新鲜橘子被腐烂的最短时间，大小为 O(nm)，且广度优先搜索中队列里存放的状态最多不会超过 nm 个，
+  - 最多需要 O(nm) 的空间，所以最后的空间复杂度为 O(nm)。
+
 
 
 ```java
@@ -41,7 +40,8 @@ class Solution {
                     count++;
                     //push rotten oranages into queue 
                 } else if (grid[r][c] == 2){
-                    //store rotten oranages' coordinate 缓存腐烂橘子的坐标
+                    //store rotten oranages' coordinate
+                    //缓存腐烂橘子的坐标
                     queue.add(new int [] {r, c});
                 }
             }
@@ -50,14 +50,17 @@ class Solution {
         //minute, represent the number of minute
         int minute = 0;
         
-        //if there are still fresh oranages left, and queue is not emepty
-        //until up, down, left, right boundary or we have traversed all rotten oranages         
+        //if there are still fresh oranages left, 
+        //and queue is not emepty 
+        //until up, down, left, right boundary or 
+        //we have traversed all rotten oranages         
         while (count > 0 && !queue.isEmpty()) {
             
             // BFS layer + 1
             minute++;
             
-            //get the current the number of rotten oranages, since we will update every queue from every laryer
+            //get the current the number of rotten oranages, 
+            //since we will update every queue from every laryer
             int size = queue.size();
             
             //traverse current layer's queue 
