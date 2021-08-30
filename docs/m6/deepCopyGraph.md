@@ -63,6 +63,9 @@ class Node {
 }
 */
 
+
+
+
 //BFS
 class Solution {
     public Node cloneGraph(Node node) {
@@ -89,11 +92,25 @@ class Solution {
 }
 ```
 
+
+
 ---
 
 ## DFS
 
 ```java
+
+
+
+
+
+
+
+
+
+
+
+
 //DFS
 class Solution {
     Map<Node, Node> map = new HashMap<>();
