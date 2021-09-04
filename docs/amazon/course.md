@@ -32,6 +32,8 @@
 
 ![](img/2021-08-08-17-20-30.png)
 
+- 这里先遍历一下数组prerequisites, 然后 `indegree[prerequisites[i][0]]++`
+
 ![](img/2021-08-08-15-09-39.png)
 
 ```java
