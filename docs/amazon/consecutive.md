@@ -44,9 +44,59 @@ class Solution {
 x + x+1 + x+2 ... + x+m-1 = N
 
 按照公式： Sn = (a1 + an) * n / 2
-         N =  (x+x+m-1) / 2 
+         N =  (x + x+k-1) * k / 2     {x, k}
          
 ```
+---
 
-- set the consecutive positive number named `a`, set the numbers as `k`
--  N = k * (2a + k - 1) / 2
+- Let's make some observation first.
+  - 1. of length k only one consecutive sequence is possible.
+    e.g : let's say we want to make `18`
+    - `3 4 5 6` sum:`18`
+      - if we go left having length k sum will `decrease(2 3 4 5)`
+      - if we go to right sum `increase (4 5 6 7)`
+      - **So only one consecutive sequence of length k with specific sum is possible.**
+    - So now I have to find all possible sequence that starts with `x` , 
+      having length `k` and sum equals to `n`.
+      - x+ (x+1) + (x+2) ..... (x+k-1) = n
+      - => `(x + x+k-1) * k / 2 = n`
+      - => `(2x + k-1) * k / 2 = n`
+      - => `[(2x + k-1) * k] / 2 = n`
+      - => `[2kx + k(k-1)] / 2 = n`
+      - => **`kx + k(k-1) / 2 = n`**
+    - **K:unknown and also X:unknown**
+      - `kx = n - k*(k-1)/2`
+      - **k > 0 and x > 0 so LHS always Positive**
+      - => `n - k*(k-1)/2 > 0` 
+      - => `n > k*(k-1)/2` 
+      - => `n > k*(k)/2`  # approximation
+      - => `2n > k*(k)`  
+      - => `2n > k^2`  
+      - => `sqrt(2n) > k`  
+    - **Now we have range for k, K > 0 && k < sqrt(2n)**
+      - `kx = n - k*(k-1)/2`
+        - **left side is mutliple of k**
+        - if right side `(n - k*(k-1)/2) % k == 0` **means right side is also a multiple of k**.
+        - So if this condition follows increase answer count 1.
+
+---
+
+```java
+/**
+ n = (x + x + k - 1) * k / 2
+ n = [2kx + (k - 1) * k] / 2
+ n = kx + (k - 1) * k/2
+ kx = n - k*(k-1)/2
+*/
+class Solution {
+    public int consecutiveNumbersSum(int n) {
+        int ans = 0;
+        for (int k = 1; k < Math.sqrt(2*n); k++) {
+            if ((n - k*(k-1)/2) % k == 0) {
+                ans++;
+            }
+        }
+        return ans;
+    }
+}
+```
