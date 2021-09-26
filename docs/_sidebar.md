@@ -239,6 +239,7 @@
     * [Leetcode 269(hard). Alien Dictionary |Topological Sort/BFS/Graph](amazon/alien.md)
     * [253. Meeting Rooms II](amazon/room2.md)
     * [829. Consecutive Numbers Sum](amazon/consecutive.md)
+    * [42. Trapping Rain Water](amazon/rain.md)
 
 -----
 * [Bit Operation](Bit/intro.md)
