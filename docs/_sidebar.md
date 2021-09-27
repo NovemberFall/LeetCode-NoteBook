@@ -240,6 +240,7 @@
     * [253. Meeting Rooms II](amazon/room2.md)
     * [829. Consecutive Numbers Sum](amazon/consecutive.md)
     * [42. Trapping Rain Water](amazon/rain.md)
+    * [295. Find Median from Data Stream](amazon/median.md)
 
 -----
 * [Bit Operation](Bit/intro.md)
