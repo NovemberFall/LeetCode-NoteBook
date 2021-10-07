@@ -166,7 +166,7 @@
         * [78. Subsets | DFS](m10/subset.md)
         * [22. Generate Parentheses | DFS (All Permutations Of Parentheses I)](m10/parenthesesI.md)
         * [All Permutations I | DFS](m10/permutationsWithStr.md)
-        * [All Permutations II | DFS](m6/permutationsWithStrII.md)
+        * [All Permutations II | DFS](m10/permutationsWithStrII.md)
         * [46. Permutations | DFS](m10/permutations.md)
         * [47. Permutations II | DFS](m6/permutationsII.md)
         * [Combinations Of Coins | 99 cents](m10/cents.md)

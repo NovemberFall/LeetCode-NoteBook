@@ -1,4 +1,4 @@
-# All Permutations I | DFS
+## All Permutations I | DFS
 
 ```ruby
 Given a string with no duplicate characters, 
