@@ -1,4 +1,4 @@
-# 78. Subsets | DFS
+## 78. Subsets | DFS
 
 ```ruby
 Given a set of distinct integers, nums, return all possible subsets (the power set).
@@ -23,7 +23,7 @@ Output:
 
 ---
 
-
+![](img/2021-10-06-18-41-06.png)
 
 
 
@@ -44,7 +44,8 @@ public class subsetI {
         return result;
     }
 
-    private void dfs(int[] nums, int index, List<Integer> path, List<List<Integer>>result){
+    private void dfs(int[] nums, int index, 
+                        List<Integer> path, List<List<Integer>>result){
         if(index == nums.length){
             List<Integer> temp = new ArrayList<>(path);
             // deep copy 
@@ -118,7 +119,8 @@ class Solution {
         return result;
     }
     
-    private void dfs(int[] nums, List<List<Integer>> res, List<Integer> subset, int index){
+    private void dfs(int[] nums, 
+                    List<List<Integer>> res, List<Integer> subset, int index){
         //拆解 deep copy
         res.add(new ArrayList<Integer>(subset));
         //为什么这一步，一开始就加，而不是最后加？ 因为它第一次加了一个 empty list 

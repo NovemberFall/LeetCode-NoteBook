@@ -163,7 +163,7 @@
         * [Largest Set Of Points With Positive Slope](m9/largestSetPositiveSlop.md)
         * [Packing Up the Swags | Interview](m9/packingSwag.md)
     * [m10: Graph  | DFS ](m10/intro.md)
-        * [78. Subsets | DFS](m6/subset.md)
+        * [78. Subsets | DFS](m10/subset.md)
         * [22. Generate Parentheses | DFS (All Permutations Of Parentheses I)](m6/parenthesesI.md)
         * [All Permutations I | DFS](m6/permutationsWithStr.md)
         * [All Permutations II | DFS](m6/permutationsWithStrII.md)
