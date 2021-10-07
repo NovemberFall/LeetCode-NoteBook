@@ -1,4 +1,4 @@
-# 22. Generate Parentheses | DFS (All Permutations Of Parentheses I)
+## 22. Generate Parentheses | DFS (All Permutations Of Parentheses I)
 
 ```ruby
 Given n pairs of parentheses, write a function to generate all combinations of 
