@@ -34,6 +34,8 @@ For example, given n = 3, a solution set is:
   
 ---
 ![](img/2021-05-31-18-25-11.png)
+
+![](img/2021-10-06-20-44-53.png)
 ---
 
 - Because there are `2n` level in the recursion tree, and it's a binary
