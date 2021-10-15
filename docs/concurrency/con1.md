@@ -20,8 +20,8 @@ ConcurrentModificationException
 
 
 - 逻辑层面
-- `Parallel(并行)`: multiple tasks **physically** run simultaneously. Implementation level concept
-  In real time, there are at least two executors.
+- `Parallel(并行) [ˈpærəlel]`: multiple tasks **physically** run simultaneously. Implementation 
+  level concept In real time, there are at least two executors.
   Example: multilane(多车道) higway, multicore machines, hadoop clusters, ... 
 
 ![](img/2021-07-24-00-50-54.png)
