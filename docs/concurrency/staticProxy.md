@@ -54,6 +54,11 @@ class WeddingProxy implements Marry {
         System.out.println("Follow-up on your marriage is done!");
     }
 }
+/*
+        Preparing for marriage is done!
+        Congratulations on your marriage!
+        Follow-up on your marriage is done!
+*/
 ```
 
 - The static proxy mode feels a bit like the decorator mode, which uses one class to 
