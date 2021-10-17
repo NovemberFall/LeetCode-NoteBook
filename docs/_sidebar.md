@@ -302,3 +302,7 @@
         * [Concurrency 中文 | yield](concurrency/yield.md) 
         * [Concurrency 中文 | 线程强制执行 join](concurrency/join.md) 
         * [Concurrency 中文 | 观测线程状态](concurrency/state.md) 
+        * [Concurrency 中文 | priority](concurrency/priority.md) 
+        * [Concurrency 中文 | daemon](concurrency/daemon.md) 
+        * [Concurrency 中文 | 线程同步](concurrency/concn4.md) 
+        * [Concurrency 中文 | 同步方法](concurrency/concn5.md) 
