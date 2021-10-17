@@ -299,3 +299,5 @@
         * [Concurrency 中文 | Lambda](concurrency/lam.md) 
         * [Concurrency 中文 | 线程的停止](concurrency/thread.md) 
         * [Concurrency 中文 | sleep](concurrency/sleep.md) 
+        * [Concurrency 中文 | yield](concurrency/yield.md) 
+        * [Concurrency 中文 | 线程强制执行 join](concurrency/join.md) 
