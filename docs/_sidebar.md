@@ -295,3 +295,5 @@
         * [Concurrency 中文 | runnable interface](concurrency/concn2.md) 
         * [Concurrency 中文 | concurrency I](concurrency/concn3.md) 
         * [Concurrency 中文 | Data Race](concurrency/race.md) 
+        * [Concurrency 中文 | static proxy](concurrency/staticProxy.md) 
+        * [Concurrency 中文 | Lambda](concurrency/lam.md) 
