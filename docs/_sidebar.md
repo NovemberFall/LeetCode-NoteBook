@@ -298,3 +298,4 @@
         * [Concurrency 中文 | static proxy](concurrency/staticProxy.md) 
         * [Concurrency 中文 | Lambda](concurrency/lam.md) 
         * [Concurrency 中文 | 线程的停止](concurrency/thread.md) 
+        * [Concurrency 中文 | sleep](concurrency/sleep.md) 
