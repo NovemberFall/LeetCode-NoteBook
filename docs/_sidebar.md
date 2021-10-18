@@ -306,3 +306,4 @@
         * [Concurrency 中文 | daemon](concurrency/daemon.md) 
         * [Concurrency 中文 | 线程同步](concurrency/concn4.md) 
         * [Concurrency 中文 | 同步方法](concurrency/concn5.md) 
+        * [Concurrency 中文 | DeadLock](concurrency/dead.md) 
