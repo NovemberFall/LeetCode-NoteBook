@@ -307,3 +307,6 @@
         * [Concurrency 中文 | 线程同步](concurrency/concn4.md) 
         * [Concurrency 中文 | 同步方法](concurrency/concn5.md) 
         * [Concurrency 中文 | DeadLock](concurrency/dead.md) 
+        * [Concurrency 中文 | Lock](concurrency/dead1.md) 
+        * [Concurrency 中文 | 线程通信](concurrency/thread1.md) 
+        * [Concurrency 中文 | 管程法](concurrency/thread2.md) 
