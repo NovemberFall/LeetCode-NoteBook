@@ -7,6 +7,7 @@
 ## extra reading
 
 - [Comparator Interface Type](https://novemberfall.github.io/LeetCode-NoteBook/#/oritented/comparator)
+- [How do I use a PriorityQueue?](https://stackoverflow.com/questions/683041/how-do-i-use-a-priorityqueue)
 
 - `Interface Map.Entry<K,V>`, 
 
