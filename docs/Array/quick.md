@@ -1,27 +1,18 @@
 ## Quick Sort
-
-- Given an array of integers, sort the elements in the array in ascending order. 
-  The quick sort algorithm should be used to solve this problem.
-
-```ruby
-Examples
-
-{1} is sorted to {1}
-{1, 2, 3} is sorted to {1, 2, 3}
-{3, 2, 1} is sorted to {1, 2, 3}
-{4, 2, -3, 6, 1} is sorted to {-3, 1, 2, 4, 6}
-
-Corner Cases:
-
-What if the given array is null? 
-In this case, we do not need to do anything.
-
-What if the given array is of length zero? 
-In this case, we do not need to do anything.
-```
+![](img/2021-12-13-16-25-17.png)
 
 ---
+![](img/2021-12-13-16-19-46.png)
+- 1. 按照字母顺序大小，决定身高
+- 2. David 随机选到， as a pivot
+- 3. short than David 站在他的左手边，taller than David 站在右手边
+- 4. 然后两边 recursion 
 
+![](img/2021-12-13-16-31-57.png)
+
+![](img/2021-12-13-16-43-18.png)
+![](img/2021-12-13-16-43-37.png)
+---
 ```java
 public class Solution {
   public int[] quickSort(int[] array) {
