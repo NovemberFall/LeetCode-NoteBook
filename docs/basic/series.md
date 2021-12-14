@@ -31,10 +31,11 @@ n + n/2 + n/3 + ... + n/n
 
 ```ruby
 时间复杂度和空间复杂度都是函数，定量去描述该算法的运行时间和临时占用的储存空间。
-举个最简单的例子吧，你有一个array，现在需要找到数组中的最小值，那么时间上你要遍历在这个array中的
-每一个数字。当你遍历到某个数字的时候（array[n]），去和之前你遇到的min比较（min vs. array[n]）
-然后更新（min = array[n] or min），这一系列具体操作可以理解用了O(3)时间。
-那么你对于n个index都进行了这一系列操作，总时间是O（3*n） = O（n），在time complexity的计算中，
+举个最简单的例子吧，你有一个array，现在需要找到数组中的最小值，
+那么时间上你要遍历在这个array中的每一个数字。当你遍历到某个数字的时候（array[n]），
+去和之前你遇到的min比较（min vs. array[n]）然后更新（min = array[n] or min），
+这一系列具体操作可以理解用了O(3)时间。那么你对于n个index都进行了这一系列操作，
+总时间是O（3*n） = O（n），在time complexity的计算中，
 n前面的系数和后面次数比他小的数字都要忽略。
 然后空间上，因为你只引进了min这一个variable，所以占用了O（1）空间。
 ```
@@ -43,4 +44,11 @@ n前面的系数和后面次数比他小的数字都要忽略。
 
 ## arithmetic sequence
 
-- `(n-1) + (n-2) + (n-3) + ... + 2 + 1 = n (n - 1)/2 => O(n^2);`
+- `(n-1) + (n-2) + (n-3) + ... + 2 + 1 = n (n - 1)/2 => O(n^2);
+
+- `(N-1) + (N-2) +...+ 2 + 1` is a sum of `N-1` items. Now reorder the items 
+  so, that after the first comes the last, then the second, then the second to last, 
+  i.e. `(N-1) + 1 + (N-2) + 2 +...` The way the items are ordered now you can see 
+  that each of those pairs is equal to `N (N-1+1 is N, N-2+2 is N)`. 
+  Since there are `N-1` items, there are `(N-1)/2` such pairs. So you're adding 
+  `N (N-1)/2` times, so the total value is `N*(N-1)/2`.
