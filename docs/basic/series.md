@@ -44,7 +44,7 @@ n前面的系数和后面次数比他小的数字都要忽略。
 
 ## arithmetic sequence
 
-- `(n-1) + (n-2) + (n-3) + ... + 2 + 1 = n (n - 1)/2 => O(n^2);
+- `(n-1) + (n-2) + (n-3) + ... + 2 + 1 = n (n - 1)/2 => O(n^2)`
 
 - `(N-1) + (N-2) +...+ 2 + 1` is a sum of `N-1` items. Now reorder the items 
   so, that after the first comes the last, then the second, then the second to last, 
