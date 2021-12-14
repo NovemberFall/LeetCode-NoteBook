@@ -49,9 +49,9 @@ class Solution {
         
         // //If using Lambda =>
         // PriorityQueue<Map.Entry<String,Integer>> minHeap = new PriorityQueue<>(
-        //     (a, b)->(
-        //         (a.getValue() == b.getValue()) ? b.getKey().compareTo(a.getKey()) : a.getValue() - b.getValue();
-        //     );
+        //     (a, b)->
+        //         (a.getValue() == b.getValue()) ? b.getKey().compareTo(a.getKey()) : a.getValue() - b.getValue()
+        
         // );
         
         for(Map.Entry<String,Integer> entry : freqMap.entrySet()){
