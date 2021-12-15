@@ -35,3 +35,24 @@ class Solution {
     }
 }
 ```
+---
+
+```js
+/**
+ * @param {string[]} strs
+ * @return {string[][]}
+ */
+var groupAnagrams = function(strs) {
+    var map = new Map();
+    
+    for (let str of strs) {
+        const key = [...str].sort().join('');
+        if (!map.get(key)) {
+            map.set(key, []);
+        }
+        map.get(key).push(str)
+    }
+    
+    return [...map.values()];
+};
+```

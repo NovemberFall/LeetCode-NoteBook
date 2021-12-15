@@ -87,53 +87,36 @@ class Solution {
 
 ---
 
-```java
-class Solution {
-    public List<String> topKFrequent(String[] words, int k) {
-        List<String> res = new ArrayList<>();
-        if (words == null || words.length == 0) {
-            return res;
-        }
-        
-        HashMap<String, Integer> freqMap = getFreqMap(words);
-        PriorityQueue<Map.Entry<String, Integer>> minHeap = new PriorityQueue<>(k, 
-        new Comparator<Map.Entry<String, Integer>>(){
-            @Override
-            public int compare(Map.Entry<String, Integer> e1, 
-            Map.Entry<String, Integer> e2){
-                if (e1.getValue() == e2.getValue()) {
-                    return e2.getKey().compareTo(e1.getKey());
-                } 
-                return e1.getValue() < e2.getValue() ? -1 : 1;
-            }
-        });
-        
-        
-        for (Map.Entry<String, Integer> entry : freqMap.entrySet()) {
-            minHeap.offer(entry);
-            if (minHeap.size() > k) {
-                minHeap.poll();
-            }
-        }
-        
-        while (!minHeap.isEmpty()) {
-            res.add(0, minHeap.poll().getKey());
-        }
-        return res;
+```js
+/**
+ * @param {string[]} words
+ * @param {number} k
+ * @return {string[]}
+ */
+var topKFrequent = function (words, k) {
+    if (words == null) {
+        return words;
     }
-    
-    private HashMap<String, Integer> getFreqMap(String[] words){
-        HashMap<String, Integer> map = new HashMap<>();
-        for (String cur : words) {
-            if (map.containsKey(cur)) {
-                map.put(cur, map.get(cur) + 1);
-            } else {
-                map.put(cur, 1);
-            }
-        }
-        return map;
+
+    var map = new Map();
+    for (let i = 0; i < words.length; i++) {
+        map.set(words[i], (map.get(words[i]) || 0) + 1)
     }
-}
+
+    var list = [];
+    for (let key of map.keys()) {
+        list.push([key, map.get(key)])
+    }
+
+    list.sort((a, b) => {
+        if (a[1] === b[1]) {
+            return a[0] < b[0] ? -1 : 1;
+        }
+        return a[1] < b[1] ? 1 : -1;
+    })
+
+    return list.slice(0, k).map(e => e[0]);
+};
 ```
 
 
