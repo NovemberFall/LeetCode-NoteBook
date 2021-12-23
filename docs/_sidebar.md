@@ -241,6 +241,7 @@
     * [829. Consecutive Numbers Sum](amazon/consecutive.md)
     * [42. Trapping Rain Water](amazon/rain.md)
     * [295. Find Median from Data Stream](amazon/median.md)
+    * [239. Sliding Window Maximum](amazon/sliding.md)
 
 -----
 * [Bit Operation](Bit/intro.md)
