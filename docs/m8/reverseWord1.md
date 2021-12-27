@@ -46,7 +46,7 @@ class Solution {
         }
         if(slow > 0 && arr[slow - 1] == ' '){
             slow--;
-        }//为什么需要post process, => remove spaces        
+        }//为什么需要post process, => 查看remove spaces这题        
         return new String(arr, 0, slow);
     }
     
