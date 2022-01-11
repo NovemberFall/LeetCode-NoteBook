@@ -186,6 +186,7 @@
         * [4. Median of Two Sorted Arrays](arr/median.md)
     * [String](hString/intro.md)
         * [Remove Adjacent Repeated Characters IV](hString/dedupAdjRepChar.md)
+        * [65. Valid Number](hString/valid.md)
     * [Binary Tree](hBinaryTree/intro.md)
         * [145. Binary Tree Postorder Traversal](hBinaryTree/bstPost-order.md)
         * [124. Binary Tree Maximum Path Sum](hBinaryTree/maxPathSum.md)
