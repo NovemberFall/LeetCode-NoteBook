@@ -156,6 +156,7 @@
         * [55. Jump Game | Array Hopper I](m9/jumpGame.md)
         * [45. Jump Game|| Array Hopper II](m9/jumpGame1.md)
         * [53. Maximum Subarray | Largest SubArray Sum](m9/subArrSum.md)
+        * [152. Maximum Product Subarray](m9/subArrProduct.md)
         * [139. Word Break | Dictionary Word |](m9/wordBreak.md)
         * [Largest Square Surrounded By One](m9/largestSquare1.md)
         * [1139. Largest 1-Bordered Square](m9/largestSquare2.md)
