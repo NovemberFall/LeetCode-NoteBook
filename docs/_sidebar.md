@@ -14,6 +14,7 @@
         * [Remove Adjacent Repeated Characters I](ch1/rmDupChar.md)
         * [Remove Adjacent Repeated Characters IV [Hard]](ch1/rmAllDupChar.md)
         * [387. First Unique Character in a String](ch1/firstNonRepeatChar.md)
+        * [252. Meeting Rooms](ch1/meet.md)
     * [Chapter2：Binary Search](ch2/intro.md)
         * [704. Classical Binary Search](ch2/classicalBinarySearch.md)
         * [Smallest Element Larger than Target](ch2/firstLarge.md)
