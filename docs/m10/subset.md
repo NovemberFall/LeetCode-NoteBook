@@ -96,6 +96,10 @@ public class subsetI {
 
 ## 第二种解法：
 
+![](img/2022-02-05-12-10-22.png)
+
+![](img/2022-02-05-12-19-27.png)
+
 ```java
 class Solution {
     public List<List<Integer>> subsets(int[] nums) {
@@ -118,6 +122,5 @@ class Solution {
             subset.remove(subset.size() - 1); //回溯
         }
     }
-    
 }
 ```
