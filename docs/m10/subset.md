@@ -26,7 +26,8 @@ public class subsetI {
     }
 
     private void dfs(int[] nums, int index, 
-                        List<Integer> path, List<List<Integer>>result){
+                        List<Integer> path, 
+                        List<List<Integer>>result) {
         if(index == nums.length){
             List<Integer> temp = new ArrayList<>(path);
             // deep copy 
@@ -112,10 +113,11 @@ class Solution {
     }
     
     private void dfs(int[] nums, 
-                    List<List<Integer>> res, List<Integer> subset, int index){
+                    List<List<Integer>> res, 
+                    List<Integer> subset, int index) {
         //拆解 deep copy
         res.add(new ArrayList<Integer>(subset));
-        //为什么这一步，一开始就加，而不是最后加？ 因为它第一次加了一个 empty list 
+    //为什么这一步,一开始就加，而不是最后加？因为它第一次加了一个empty list 
         for(int i = index; i < nums.length; i++){
             subset.add(nums[i]);
             dfs(nums, res, subset, i + 1);
