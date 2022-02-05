@@ -245,6 +245,7 @@
     * [42. Trapping Rain Water](amazon/rain.md)
     * [295. Find Median from Data Stream](amazon/median.md)
     * [239. Sliding Window Maximum](amazon/sliding.md)
+    * [79. Word Search](amazon/word.md)
 
 -----
 * [Bit Operation](Bit/intro.md)

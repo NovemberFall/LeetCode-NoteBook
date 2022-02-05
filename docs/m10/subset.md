@@ -1,25 +1,6 @@
 ## 78. Subsets | DFS
 
-```ruby
-Given a set of distinct integers, nums, return all possible subsets (the power set).
-
-Note: The solution set must not contain duplicate subsets.
-
-Example:
-
-Input: nums = [1,2,3]
-Output:
-[
-  [3],
-  [1],
-  [2],
-  [1,2,3],
-  [1,3],
-  [2,3],
-  [1,2],
-  []
-]
-```
+![](img/2022-02-05-00-41-34.png)
 
 ---
 
@@ -71,6 +52,13 @@ public class subsetI {
 
 ## Anylysis:
 
+- **解题之前就知道DFS要recurse 多少层**？
+  - Three level. For each level, it makes the decision on whether to put this element
+    into the final set
+- **How many different states should we try to put on this level**?
+  - 每层有多少状态。 **Two**, each state consider either **select** or **not select**
+
+---
 - [AII subsets](https://novemberfall.github.io/Algorithm-FullStack/csPractice/review-dfs.html)
 
 - 对每一层进行 “加” 与 “不加” 的操作
