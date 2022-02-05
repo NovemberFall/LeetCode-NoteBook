@@ -121,7 +121,7 @@ class Solution {
         for(int i = startIndex; i < nums.length; i++){
             subset.add(nums[i]);
             dfs(nums, res, subset, i + 1);
-            subset.remove(subset.size() - 1); //回溯
+            subset.remove(subset.size() - 1); //backtracking
         }
     }
 }
