@@ -77,6 +77,7 @@ class Solution {
                      List<Integer> subset, 
                      int index) {
         if (index == nums.length) {
+            //拆解 deep copy
             res.add(new ArrayList<>(subset));
             return;
         }
