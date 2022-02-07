@@ -14,6 +14,9 @@
   - Find maximum height of bar from the left end upto an index i in the array `left_max`.
   - Find maximum height of bar from the right end upto an index i in the array `right_max`.
     - Add `min(left_max[i], right_max[i]) - height[i]` to ans
+  - `Min(leftMax, rightMax) - Height[i]` (we don't count negative, convert it to be 0)
+
+![](img/2022-02-06-23-05-33.png)
 
 ```java
 class Solution {
