@@ -240,7 +240,7 @@
     * [207. Course Schedule | BFS](amazon/course.md)
     * [315. Count of Smaller Numbers After Self | merge sort](amazon/count.md)
     * [273. Integer to English Words](amazon/intToEng.md)
-    * [Leetcode 269(hard). Alien Dictionary |Topological Sort/BFS/Graph](amazon/alien.md)
+    * [269(hard). Alien Dictionary |Topological Sort/BFS/Graph](amazon/alien.md)
     * [252. Meeting Rooms I](amazon/room.md)
     * [253. Meeting Rooms II](amazon/room2.md)
     * [829. Consecutive Numbers Sum](amazon/consecutive.md)

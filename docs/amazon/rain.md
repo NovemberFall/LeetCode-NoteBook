@@ -44,6 +44,8 @@ class Solution {
 }
 ```
 ---
+![](img/2022-02-06-22-24-42.png)
+---
 
 ### Two points
 
