@@ -248,6 +248,7 @@
     * [295. Find Median from Data Stream](amazon/median.md)
     * [239. Sliding Window Maximum](amazon/sliding.md)
     * [79. Word Search](amazon/word.md)
+    * [212. Word Search ||](amazon/word2.md)
 
 -----
 * [Bit Operation](Bit/intro.md)
