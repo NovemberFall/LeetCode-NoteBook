@@ -3,7 +3,7 @@
         * [283. Move Zeroes](ch1/move0.md)
         * [Move 0s To The End](ch1/move0toEnd.md)
         * [Move 0s To The End II](ch1/move0toEnd2.md)
-        * [Remove Leading/Trailing/Dup Space | Medium](ch1/removeAllSpace.md)
+        * [Remove Spaces](ch1/removeAllSpace.md)
         * [344. Reverse String](ch1/reverseStr.md)
         * [Right Shift By N Characters](ch1/rightShift.md)
         * [28. Implement strStr() | Determine If One String Is Another's Substring](ch1/strstr.md)
