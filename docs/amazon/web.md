@@ -6,6 +6,7 @@
 
 - To solve this problem is to find a three-page sequence that has the most number of users who
   have gone through this. 
+- windows 测试
 
 ```java
 class Pair {
