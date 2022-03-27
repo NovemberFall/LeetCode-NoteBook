@@ -4,6 +4,9 @@
 
 ![](img/2021-01-30-00-01-16.png)
 
+- To solve this problem is to find a three-page sequence that has the most number of users who
+  have gone through this. 
+
 ```java
 class Pair {
     int time;
