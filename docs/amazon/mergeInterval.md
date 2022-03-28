@@ -10,9 +10,6 @@
 ```ruby
 
 
-
-
-
 special case:
 
 
