@@ -1,5 +1,6 @@
 ## 828 Count Unique Characters of All Substrings of a Given String
 
+![](img/2022-03-30-14-16-11.png)
 
 ```ruby
 input: "ABA"
