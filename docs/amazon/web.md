@@ -5,7 +5,16 @@
 ![](img/2021-01-30-00-01-16.png)
 ---
 
+
+
+
 ```java
+/*
+    map<user_name, List<websites>>
+    map<3-sequence, Set<user_name>>
+    O(N * M^3)
+*/
+
 class Pair {
     int time;
     String web;
