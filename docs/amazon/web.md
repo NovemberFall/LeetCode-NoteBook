@@ -44,12 +44,13 @@ class Solution {
             for (int i = 0; i < list.size(); i++) {
                 for (int j = i + 1; j < list.size(); j++) {
                     for (int k = j + 1; k < list.size(); k++) {
-                        String str = list.get(i).web + " " + list.get(j).web + " " + list.get(k).web;
+                        String str = list.get(i).web + " " +list.get(j).web + " "+list.get(k).web;
                         if (!set.contains(str)) {
                             count.put(str, count.getOrDefault(str, 0) + 1);
                             set.add(str);
                         }
-                        if (res.equals("") || count.get(res) < count.get(str) || (count.get(res) == count.get(str) && res.compareTo(str) > 0)) {
+                        if (res.equals("") || count.get(res) < count.get(str) || 
+                                (count.get(res) == count.get(str) && res.compareTo(str) > 0)) {
                             // make sure the right lexi order
                             res = str;
                         }
@@ -112,67 +113,77 @@ each one is visited by one user, james only.
 
 ```java
 class Solution {
-    public List<String> mostVisitedPattern(String[] username, int[] timestamp, String[] website) {
-        // collect the website info for every user, key: username, value: (timestamp, website)
-        Map<String, TreeMap<Integer, String>> map = new HashMap<>();
-        for (int i = 0; i < timestamp.length; i++) {
-            if (!map.containsKey(username[i])) {
-                map.put(username[i], new TreeMap<>());
-            }
-            TreeMap<Integer, String> timeMap = map.get(username[i]);
-            timeMap.put(timestamp[i], website[i]);
-            map.put(username[i], timeMap);
+    /*
+        map<username, List<visit>>
+        map<3-sequence, Set<username>>
+        O(n * M^3)
+    */
+    
+    static class Visit{
+        private int timestamp;
+        private String website;
+        public Visit(int time, String web) {
+            timestamp = time;
+            website = web;            
         }
-        
-        Map<String, Integer> sequenceMap = new HashMap<>();
-        for (String user : map.keySet()) {
-            TreeMap<Integer, String> timeMap = map.get(user);
-            if (timeMap.size() < 3) {
-                continue;
-            } else {
-                List<Integer> times = new ArrayList<>();
-                for (int key : timeMap.keySet()) {
-                    times.add(key);
-                }
-                List<String> allSeqs = formAllSeqs(times, timeMap);
-                Set<String> visited = new HashSet();
-                for (String seq : allSeqs) {
-                    if (visited.add(seq)) {
-                        sequenceMap.put(seq, sequenceMap.getOrDefault(seq, 0) + 1);
-                    }
-                }
-            }
-        }
-        int count = 0;
-        String res = "";
-        for (String key : sequenceMap.keySet()) {
-            if (sequenceMap.get(key) > count) {
-                count = sequenceMap.get(key);
-                res = key;
-            } else if (sequenceMap.get(key) == count) {
-                if (key.compareTo(res) < 0) {
-                    res = key;
-                }
-            }
-        }
-        List<String> threeSeq = new ArrayList<>();
-        for (String s : res.split("->")) {
-            threeSeq.add(s);
-        }
-        return threeSeq;
     }
     
-    private List<String> formAllSeqs(List<Integer> times, TreeMap<Integer, String> timeMap) {
-        List<String> result = new ArrayList<>();
-        for (int i = 0; i < times.size(); i++) {
-            for (int j = i + 1; j < times.size(); j++) {
-                for (int k = j + 1; k < times.size(); k++) {
-                    result.add(timeMap.get(times.get(i)) + "->" + timeMap.get(times.get(j)) + 
-                    "->" + timeMap.get(times.get(k)));
+    private Map<String, List<Visit>> getUserVisit(String[] username, int[] timestamp, String[] website) {
+        // collect the website info for every user, key: username, value: (timestamp, website)
+        Map<String, List<Visit>> userVisited = new HashMap<>();
+        for (int i = 0; i < username.length; i++) {
+            if (!userVisited.containsKey(username[i])) {
+                userVisited.put(username[i], new ArrayList<>());
+            }
+            userVisited.get(username[i]).add(new Visit(timestamp[i], website[i]));
+        }
+        for (String tempUsername : userVisited.keySet()) {
+            List<Visit> visits = userVisited.get(tempUsername);
+            Collections.sort(visits, (visit1, visit2) -> (
+               visit1.timestamp - visit2.timestamp
+            ));
+        }
+        return userVisited;
+    }
+    
+    public List<String> mostVisitedPattern(String[] username, int[] timestamp, String[] website) {
+        Map<String, List<Visit>> userVisits = getUserVisit(username, timestamp, website);
+        Map<String, Set<String>> sequenceUser = new HashMap<>();
+        for (String tempUsername : userVisits.keySet()) {
+            List<Visit> visits = userVisits.get(tempUsername);
+            
+            for (int i = 0; i < visits.size() - 2; i++) {
+                for (int j = i + 1; j < visits.size() - 1; j++) {
+                    for (int k = j + 1; k < visits.size(); k++) {
+                        String sequence = visits.get(i).website + "->" + visits.get(j).website + "->"
+                            + visits.get(k).website;
+                        if (!sequenceUser.containsKey(sequence)) {
+                            sequenceUser.put(sequence, new HashSet<>());
+                        }
+                        sequenceUser.get(sequence).add(tempUsername);
+                    } 
                 }
             }
         }
-        return result;
+        
+        int maxFrequence = 0;
+        String mostSequence = "";
+        for (String sequence : sequenceUser.keySet()) {
+            if (sequenceUser.get(sequence).size() == maxFrequence) {
+                if (mostSequence.compareTo(sequence) > 0) {
+                    mostSequence = sequence;
+                }
+            } else if (sequenceUser.get(sequence).size() > maxFrequence) {
+                maxFrequence = sequenceUser.get(sequence).size();
+                mostSequence = sequence;
+            }
+        }
+        
+        List<String> res = new ArrayList<>();
+        for (String web : mostSequence.split("->")) {
+            res.add(web);
+        }
+        return res;
     }
 }
 ```
