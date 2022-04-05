@@ -182,7 +182,9 @@
         * [695. Max Area of Island](m10/maxArea.md)
     * [m11: Random, Probability, sampling](m11/intro.md)
         * [384. Shuffle an Array](m11/shuffle.md)
-
+    * [m12: Trie Tree](m12/intro.md)
+        * [208. Implement Trie (Prefix Tree)](m12/trie.md)
+  
 -----
 * [Hard && Interview Question](Hard/intro.md)
     * [array](arr/intro.md)
