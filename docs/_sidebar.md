@@ -228,6 +228,7 @@
     * [146. LRU Cache](m7/lru.md)
     * [200. Number of Islands](amazon/islands.md)
     * [1152. Analyze User Website Visit Pattern](amazon/web.md)
+    * [1268. Search Suggestions System](amazon/suggest.md)
     * [937. Reorder Data in Log Files](amazon/log.md)
     * [957. Prison Cells After N Days](amazon/prison.md)
     * [1192. Critical Connections in a Network | Hard](amazon/critical.md)
