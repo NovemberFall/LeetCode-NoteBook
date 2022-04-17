@@ -8,6 +8,7 @@
 
 two ways can solve this problem, 
 firs way:
+
 | 0 | 0 | 1 | 1 | 0 |
 |---|---|---|---|---|
 
@@ -17,6 +18,7 @@ flip 1 times to convert 0 to 1
 |---|---|---|---|---|
 
 second way:
+
 | 0 | 0 | 1 | 1 | 0 |
 |---|---|---|---|---|
 
