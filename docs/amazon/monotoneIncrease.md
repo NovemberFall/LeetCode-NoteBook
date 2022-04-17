@@ -26,7 +26,13 @@ flip 2 times to convert 1 to 0
 | 0 | 0 | 0 | 0 | 0 |
 |---|---|---|---|---|
 
-take res = Min(1, 2) = 1
+```ruby
+if onesToZeros > zeroToOnes:
+    return zeroToOnes
+else:
+    zeroToOnes = onesToZeros;
+    return zeroToOnes;
+```    
 
 finally, they become Monotone Increasing
 ---
