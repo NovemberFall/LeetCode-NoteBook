@@ -69,6 +69,9 @@ class Solution {
                 ones += data[j];                      
                 j++;
             } else {
+            // In this case, length equals to totalOnes count, 
+            // so we need to update maxOnes, also increase index i and index j, 
+            // update ones accordingly.    
                 maxOnes = Math.max(ones, maxOnes);
                 ones -= data[i];
                 i++;
