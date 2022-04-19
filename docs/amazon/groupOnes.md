@@ -43,4 +43,43 @@ maxOnes     0   0   0   2   2   2
 Math.max(ones, maxOnes)
 ```
 
-
+```java
+class Solution {
+    public int minSwaps(int[] data) {
+        if (data == null || data.length < 3) {
+            return 0;
+        }
+        
+        int totalOnes = 0;
+        int maxOnes = 0, ones = 0;
+        int i = 0, j = 0;
+        // i is the index of starting point, include i , 
+        // j is the index of end point, not include j        
+        
+        for (int k = 0; k < data.length; k++) {
+            if (data[k] == 1) {
+                totalOnes++;
+            }
+        }
+        
+        while (i < data.length && j <= data.length) {
+            if (j - i < totalOnes) {
+            // if the total length is smaller than totalOnes, 
+            // just increase j and make sure the length equals to totalOnes                
+                ones += data[j];                      
+                j++;
+            } else {
+                maxOnes = Math.max(ones, maxOnes);
+                ones -= data[i];
+                i++;
+                
+                if (j < data.length) {
+                    ones += data[j];
+                }
+                j++;                
+            }
+        }
+        return totalOnes - maxOnes;
+    }
+}
+```
