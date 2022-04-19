@@ -227,6 +227,7 @@
     * [2104. Sum of Subarray Ranges](amazon/sumOfSubarr.md)
     * [926	Flip String to Monotone Increasing](amazon/monotoneIncrease.md)
     * [696. Count Binary Substrings](amazon/countSubstrs.md)
+    * [907. Sum of Subarray Minimums](amazon/monotoneStack.md)
     * [1041. Robot Bounded In Circle](amazon/robot.md)
     * [763. Partition Labels](amazon/partitionLabel.md)
     * [1010. Pairs of Songs](amazon/pairs.md)
