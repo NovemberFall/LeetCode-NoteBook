@@ -4,11 +4,9 @@
 
 
 - brute force:
+  We can enumerate all numbers in the range [1, n] from small to large,
+  and determine whether they are factors of n.
 
-```ruby
-We can enumerate all numbers in the range [1, n] from small to large,
- and determine whether they are factors of nn.
-```
 
 ```java
 class Solution {
@@ -29,15 +27,13 @@ class Solution {
 ---
 
 - optimize:
+  If n=1000, then starting at 501 and ending at 999, 
+  none of these numbers are factors of n, 
+  but we have to enumerate all of these numbers.
+  It can be found that if n has a factor k, then it must have a factor n/k, 
+  and at least one of these two factors is less than or equal to sqrt(n)
 
 ```ruby
-If n=1000, then starting at 501 and ending at 999, 
-none of these numbers are factors of n, 
-but we have to enumerate all of these numbers.
-
-It can be found that if n has a factor k, then it must have a factor n/k, 
-and at least one of these two factors is less than or equal to sqrt(n)
-
 example: 18
 [1   2   3   6   9   18]
 
