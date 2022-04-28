@@ -21,6 +21,18 @@
     - because when we introducing new values: 
       - 1 * 3 = 3
 
+---
+
+
+```ruby
+max = 1, min = 1
+res = MIN_VALUE
+            [2   -2   3    2   -3    5]
++Product:    2   -2   3    6   72   360
+-Product:    2   -4  -12  -24  -18  -90 
+```
+
+
 ```java
 class Solution {
     public int maxProduct(int[] nums) {
