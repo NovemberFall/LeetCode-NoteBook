@@ -245,6 +245,7 @@
     * [1192. Critical Connections in a Network | Hard](amazon/critical.md)
     * [973. K Closest Points to Origin](amazon/kclosest.md)
     * [572. Subtree of Another Tree](amazon/subTree.md)
+    * [1710. Maximum Units on a Truck](amazon/maxUnits.md)
     * [1. Two Sum](amazon/two.md)
     * [547. Number of Provinces](amazon/circle.md)
     * [221. Maximal Square](amazon/max.md)
