@@ -231,6 +231,7 @@
     * [1151. Minimum Swaps to Group All 1's Together](amazon/groupOnes.md)
     * [1492 The kth Factor of n](amazon/kthFactor.md)
     * [1567. Maximum Length of Subarray With Positive Product](amazon/maxlen.md)
+    * [370. Range Addition](amazon/rangeAdd.md)
     * [472 Concatenated Words](amazon/concatWord.md)
     * [1041. Robot Bounded In Circle](amazon/robot.md)
     * [763. Partition Labels](amazon/partitionLabel.md)
