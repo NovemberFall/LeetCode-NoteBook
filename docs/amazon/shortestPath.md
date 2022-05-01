@@ -5,8 +5,35 @@
 ![](img/2022-04-30-22-45-00.png)
 
 - why Can't we apply DFS here?
+  - BFS by default reaches it's nearest neighbors which are one edge away from it's 
+    source vertex. (Example) let us have A as source vertex and it has B,C,D .. and 
+    level 1. Then if destination node is D , then BFS approach will find D at level 
+    iteration which is just one Edge away. If we find destination by using BFS, then 
+    it is very shortest route from source vertex. Then we do not have to proceed 
+    traversal . We can stop and return as soon as we find destination. Where as from 
+    DFS also we can find the route (Say for example)
+```ruby
+A -------------------------------------Level(0)
+|||
+|||
+B--------------C------------------------------D(level 1)
+|||
+|||
+|||
+E-------------------------------Level(2)
+|||
+|||
+D--------------------------------Level(3)
+```
+- As you can see above using DFS the path could be 
+  A---->B---->E----->D (3 steps ). By using BFS A--->D (Just one step) Since BFS 
+  always try to search nodes which are at nearest distance that are nodes which are 
+  just one edge away.
 
-![](img/2022-04-30-22-45-38.png)
+- Conclusion:
+  - DFS will be used when we need to find a path between two nodes.(not necessarily
+    shortest path . It may be shortest or longest path.)
+    BFS will be used when we need to find SHORTEST Path between two nodes
 
 ```java
 class Solution {
