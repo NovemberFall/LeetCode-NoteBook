@@ -244,6 +244,7 @@
     * [957. Prison Cells After N Days](amazon/prison.md)
     * [1192. Critical Connections in a Network | Hard](amazon/critical.md)
     * [973. K Closest Points to Origin](amazon/kclosest.md)
+    * [1730	Shortest Path to Get Food](amazon/shortestPath.md)
     * [572. Subtree of Another Tree](amazon/subTree.md)
     * [1710. Maximum Units on a Truck](amazon/maxUnits.md)
     * [2130. Maximum Twin Sum of a Linked List](amazon/twinSum.md)
