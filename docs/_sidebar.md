@@ -249,6 +249,7 @@
     * [1710. Maximum Units on a Truck](amazon/maxUnits.md)
     * [2130. Maximum Twin Sum of a Linked List](amazon/twinSum.md)
     * [1. Two Sum](amazon/two.md)
+    * [	1275 Find Winner on a Tic Tac Toe Game](amazon/tictactoe2.md)
     * [547. Number of Provinces](amazon/circle.md)
     * [221. Maximal Square](amazon/max.md)
     * [994. Rotting Oranges](amazon/rotting.md)
