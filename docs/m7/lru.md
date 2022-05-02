@@ -103,7 +103,7 @@ public class LRUCache {
 
     private final int capacity;
     //HashMap contain such every a element that contains: 
-    //<key, Node>, Node => <key, value>
+    //<key, Node>, Node => <Node.key, value>
     protected HashMap<Integer, Node> map;
 
     // maintain all the time that the head and tail of 
@@ -148,9 +148,11 @@ public class LRUCache {
             //3. if the key is not in the cache, 
             // even we don't have enough space
             // we need to evict the tail
-            // move the new node<key, value> into the head
+            // move the new node<Node.key, value> into the head
             node = tail;
+             //node references to tail reference to
             remove(node);
+        //after remove node, node.prev = null && node.next = null
             node.update(key, value);
             appendToHead(node);
         }
