@@ -17,7 +17,7 @@
   - `Min(leftMax, rightMax) - Height[i]` (we don't count negative, convert it to be 0)
 
 - 注意：无论左右两边多高，都无法蓄水。都会从最左最右边界溢出，
-  - 因为在比较左边高度，以及右边高度的时候，从 `index = 1`, 以及倒数第二个index 开始比较。
+  - 因此在比较左边高度，以及右边高度的时候，从 `index = 1`, 以及倒数第二个index 开始比较。
 
 ![](img/2022-05-03-10-01-52.png)
 
