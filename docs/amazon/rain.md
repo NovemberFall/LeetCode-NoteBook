@@ -67,24 +67,54 @@ class Solution {
         if (height == null || height.length == 0) {
             return 0;
         }
-        int leftMax = 0, rightMax = 0;
-        int left = 0;
-        int right = height.length - 1;
-        int count = 0;
+        int left = 0; int right = height.length - 1; 
+        // Pointers to both ends of the array.
+        int maxLeft = 0; int maxRight = 0;
         
+        int totalWater = 0;
         while (left < right) {
-            leftMax = Math.max(leftMax, height[left]);
-            rightMax = Math.max(rightMax, height[right]);
-            // 取左右两边比较矮的bar
-            if (leftMax < rightMax) {
-                count += leftMax - height[left];
+        // Water could, potentially, fill everything from left to right, 
+        // if there is nothing in between.
+            if (height[left] < height[right]) {
+            // If the current elevation is greater than the previous maximum, 
+            // water cannot occupy that point at all.
+            // However, we do know that everything from maxLeft to the current index, 
+            // has been optimally filled, as we've
+            // been adding water to the brim of the last maxLeft.
+                if (height[left] >= maxLeft) { 
+                // So, we say we've found a new maximum, 
+                // and look to see how much water we can fill from this point on.
+                    maxLeft = height[left]; 
+                // If we've yet to find a maximum, we know that 
+                // we can fill the current point with water up to the previous
+                // maximum, as any more will overflow it. We also subtract the current height, 
+                // as that is the elevation the ground will be at.
+                } else { 
+                    totalWater += maxLeft - height[left]; 
+                }
+                // Increment left, we'll now look at the next point.
                 left++;
+            // If the height at the left is NOT greater than height at the right, 
+            // we cannot fill from left to right without overflowing; 
+            // however, we do know that we could potentially fill from right to left, 
+            // if there is nothing in between.
             } else {
-                count += rightMax - height[right];
+                // Similarly to above, we see that we've found a height greater than the max, 
+                // and cannot fill it whatsoever, but everything before is optimally filled
+                if (height[right] >= maxRight) { 
+                    // We can say we've found a new maximum and move on.  
+                    maxRight = height[right]; 
+                // If we haven't found a greater elevation, 
+                // we can fill the current elevation with maxRight - height[right] water.
+                } else {
+                    totalWater += maxRight - height[right]; 
+                }
+                // Decrement left, we'll look at the next point.
                 right--;
             }
         }
-        return count;
+        // Return the sum we've been adding to.
+        return totalWater;
     }
 }
 ```
