@@ -21,7 +21,12 @@
 ```java
 class Solution {
     public int trap(int[] height) {
-        if (height == null || height.length == 0) {
+    /* 
+    To check is if we get an array of size less than 3. 
+    We immediately know that it cannot have any water trapped 
+    so we can do an early return of 0.
+    */
+        if (height.length < 3) {
             return 0;
         }
         int n = height.length;
