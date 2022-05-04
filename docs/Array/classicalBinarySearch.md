@@ -60,6 +60,7 @@ public class classical {
 
 ```ruby
 assume:  array: int[] {4, 5}, target = 5
+
  while (left < right) {
      doSomething();
  }
@@ -68,16 +69,6 @@ assume:  array: int[] {4, 5}, target = 5
 ```
 
 ---
-![](img/2020-06-02-21-30-05.png)
-
-- 因为当 mid 被更新=> 2 的时候， => left == 3
-- when `left == 3`, `while(left < right)` => 跳出循环
-- 所以再也搜索不到 array[3] == 9
-
----
-
-
-
 
 ### Data structure
 
