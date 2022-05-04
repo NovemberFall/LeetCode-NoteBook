@@ -135,6 +135,7 @@
         * [692. Top K Frequent Words](m7/topKfreq.md)
         * [347. Top K Frequent Elements](m7/topKfreq1.md)
         * [49. Group Anagrams](m7/group.md)
+        * [560. Subarray Sum Equals K](m7/subarrSum.md)
     * [m8: String](m8/intro.md)
         * [3.Longest Substring Without Repeating Characters](m8/without.md)
         * [Remove Certain Characters](m8/rmCertainChar.md)

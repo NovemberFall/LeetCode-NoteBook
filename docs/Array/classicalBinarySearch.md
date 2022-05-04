@@ -58,6 +58,16 @@ public class classical {
 
 - Note: `cannot => left < right`
 
+```ruby
+assume:  array: int[] {4, 5}, target = 5
+ while (left < right) {
+     doSomething();
+ }
+这里由于，leftIdx < rightIdx, 根本没办法进入while loop,
+所以导致 根本不搜索 5!
+```
+
+---
 ![](img/2020-06-02-21-30-05.png)
 
 - 因为当 mid 被更新=> 2 的时候， => left == 3
