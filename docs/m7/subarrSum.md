@@ -82,6 +82,12 @@ public class Solution {
   - so `current sum - k = previous sum` (which is stored in the map)
   - `sum - k` means the array elements in between add up to **k**
 
+```ruby
+Example:
+    [1  1  1  2  2  3  3]   k = 3
+    [0  1  2  3  5  7  10  13]
+```
+
 ```java
 class Solution {
     public int subarraySum(int[] nums, int k) {
