@@ -4,17 +4,24 @@
 ```java
 class Solution {
     public boolean isValid(String s) {
-        Deque<Character> stack = new ArrayDeque<>();
-        for (Character c : s.toCharArray()) {
-            if (c == '(') {
-                stack.offerFirst(')');
-            } else if (c == '[') {
-                stack.offerFirst(']');
-            } else if (c == '{') {
-                stack.offerFirst('}');
-            } else if (stack.isEmpty() || stack.pop() != c) {
-                return false;
-            }
+        char[] arr = s.toCharArray();
+        Deque<Character> stack = new LinkedList();
+        for (char c : arr) {         
+            if (c == ')') {
+                if (stack.isEmpty() || stack.pop() != '(') {
+                    return false;
+                }
+            } else if (c == ']') {
+                if (stack.isEmpty() || stack.pop() != '[') {
+                    return false;
+                }
+            } else if (c == '}') {
+                if (stack.isEmpty() || stack.pop() != '{') {
+                    return false;
+                }
+            } else {
+                stack.push(c);
+            }           
         }
         return stack.isEmpty();
     }
