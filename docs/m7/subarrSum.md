@@ -76,3 +76,68 @@ public class Solution {
   - Space complexity : `O(n)`
 ---
 
+- Optimization by Hashmap
+- Thinkings:
+  - our target is: `current sum - previous sum = k`
+  - so `current sum - k = previous sum` (which is stored in the map)
+  - `sum - k` means the array elements in between add up to **k**
+
+```java
+class Solution {
+    public int subarraySum(int[] nums, int k) {
+        int[] sums = new int[nums.length+1];
+        int sum = 0;
+        // compute prefix sum array
+        for(int i = 1; i<= nums.length; i++)
+        {
+            sums[i] = sums[i - 1] + nums[i - 1];
+        }
+        //now the problem becomes find two items from this sums array 
+        //so that sums[j]-sums[i] = k (similar to two sum)
+        int count = 0; 
+        Map<Integer, Integer> map = new HashMap<>();
+        for(int i=0; i < sums.length; i++)
+        {
+            //make sure to check sumes[i] here, not target
+            if(map.containsKey(sums[i])) {
+                count+=map.get(sums[i]);
+            }
+
+            int target = sums[i] + k;
+            if (!map.containsKey(target)) {
+                map.put(target, 1);
+            } else {
+                map.put(target, map.get(target) + 1);
+            }
+        }
+        return count;        
+    }
+}
+```
+
+
+  - Attention : In the previous method, we set the first element of sum to 0. 
+    Similarly, we put it in the hashmap, which is (0, 1).
+
+
+```java
+class Solution {
+    public int subarraySum(int[] nums, int k) {
+        Map<Integer, Integer> preSum = new HashMap<>();
+        preSum.put(0, 1);//key: preSum, value: frequency
+        int count = 0;
+        int curSum = 0;
+        for (int i = 0; i < nums.length; i++) {
+            curSum += nums[i];
+            if (preSum.containsKey(curSum - k)) {
+                count += preSum.get(curSum - k);                
+            }
+            // it means there is some sum value v between 0 and x, 
+            // which makes sum of array [x + 1 to i] == k
+            // the frequency is the number of x
+            preSum.put(curSum, preSum.getOrDefault(curSum, 0) + 1);
+        }
+        return count;
+    }
+}
+```
