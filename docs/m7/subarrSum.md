@@ -86,7 +86,6 @@ public class Solution {
 class Solution {
     public int subarraySum(int[] nums, int k) {
         int[] curSum = new int[nums.length+1];
-        int sum = 0;
         // compute prefix sum array
         for(int i = 1; i<= nums.length; i++)
         {
