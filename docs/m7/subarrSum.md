@@ -85,29 +85,29 @@ public class Solution {
 ```java
 class Solution {
     public int subarraySum(int[] nums, int k) {
-        int[] sums = new int[nums.length+1];
+        int[] curSum = new int[nums.length+1];
         int sum = 0;
         // compute prefix sum array
         for(int i = 1; i<= nums.length; i++)
         {
-            sums[i] = sums[i - 1] + nums[i - 1];
+            curSum[i] = curSum[i - 1] + nums[i - 1];
         }
+        
         //now the problem becomes find two items from this sums array 
-        //so that sums[j]-sums[i] = k (similar to two sum)
+        // so that sums[j]-sums[i] = k (similar to two sum)
         int count = 0; 
         Map<Integer, Integer> map = new HashMap<>();
-        for(int i=0; i < sums.length; i++)
+        for (int i = 0; i < curSum.length; i++)
         {
             //make sure to check sumes[i] here, not target
-            if(map.containsKey(sums[i])) {
-                count+=map.get(sums[i]);
+            if(map.containsKey(curSum[i] - k)) {
+                count += map.get(curSum[i] - k);
             }
 
-            int target = sums[i] + k;
-            if (!map.containsKey(target)) {
-                map.put(target, 1);
+            if (!map.containsKey(curSum[i])) {
+                map.put(curSum[i], 1);
             } else {
-                map.put(target, map.get(target) + 1);
+                map.put(curSum[i], map.get(curSum[i]) + 1);
             }
         }
         return count;        
