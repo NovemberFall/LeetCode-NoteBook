@@ -274,6 +274,24 @@
     * [680. Valid Palindrome II](amazon/palindrome.md)
 
 -----
+* [Most Frequency](most/intro.md)
+    * [1. Two Sum](amazon/two.md)
+    * [146. LRU Cache](m7/lru.md)
+    * [56. Merge Intervals](amazon/mergeInterval.md)
+    * [423. Reconstruct Original Digits from English](m8/digitFromEnglish.md)
+    * [200. Number of Islands](amazon/islands.md)
+    * [42. Trapping Rain Water](amazon/rain.md)
+    * [560. Subarray Sum Equals K](m7/subarrSum.md)
+    * [4. Median of Two Sorted Arrays](arr/median.md)
+    * [680. Valid Palindrome II](amazon/palindrome.md)
+    * [121. Best Time to Buy and Sell Stock](amazon/stock.md)
+    * [20. Valid Parentheses](stack/valid.md)
+    * [208. Implement Trie (Prefix Tree)](m12/trie.md)
+    * [588. Design In-Memory File System](amazon/file.md)
+    * [912. Merge|Select|Quick Sort](Array/arraySort.md)
+    * [704. Classical Binary Search](Array/classicalBinarySearch.md)
+
+-----
 * [Bit Operation](Bit/intro.md)
     * [Power Of Two | Easy](Bit/powerTwo.md)
     * [Number Of Different Bits | Medium](Bit/different.md)
