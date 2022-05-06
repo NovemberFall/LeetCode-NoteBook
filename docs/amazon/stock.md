@@ -29,6 +29,7 @@ max = 7 price at day 1
   - Then we initialize our `max_profit as 0`
   - Now we will start our `while loop` and we will run till 
     our `Right` pointer `less then length of array`, For Example:
+
 ```ruby
 prices=[7,1,5,3,6,4]
 Note:
