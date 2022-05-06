@@ -70,8 +70,6 @@ Time Complexity: O(n)
 Space Complexity: O(1)
 ```
 
----
-
 ```java
 class Solution {
     public int maxProfit(int[] prices) {
