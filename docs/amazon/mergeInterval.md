@@ -49,7 +49,8 @@ class Solution {
                 res.add(intervals[i]);
             }
         }
-        return res.toArray(new int[res.size()][2]);
+        // return res.toArray(new int[res.size()][2]);
+        return res.stream().toArray(int[][]::new);
     }
 }
 ```
