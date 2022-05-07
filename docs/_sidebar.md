@@ -290,6 +290,7 @@
     * [588. Design In-Memory File System](amazon/file.md)
     * [912. Merge|Select|Quick Sort](Array/arraySort.md)
     * [704. Classical Binary Search](Array/classicalBinarySearch.md)
+    * [314. Binary Tree Vertical Order Traversal](most/vertical.md)
 
 -----
 * [Bit Operation](Bit/intro.md)
