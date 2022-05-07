@@ -1,5 +1,19 @@
 ## 588. Design In-Memory File System
 ![](img/2022-05-05-21-56-39.png)
+- assume `path = /`, 
+  - `String[] dirs = path.split("/")`
+  - if there is nothing in current path, return null
+  - if there is a file, return file's name
+  - if there is directories, return directories.
+  - that's why 
+
+```java
+        String [] dirs = path.split("/");        
+        for (String dir : dirs) {
+            if (dir.length() == 0) {
+                continue;
+            }
+```
 
 ![](img/2022-05-05-21-56-58.png)
 
