@@ -291,6 +291,7 @@
     * [912. Merge|Select|Quick Sort](Array/arraySort.md)
     * [704. Classical Binary Search](Array/classicalBinarySearch.md)
     * [314. Binary Tree Vertical Order Traversal](most/vertical.md)
+    * [528. Random Pick with Weight](most/pickweight.md)
 
 -----
 * [Bit Operation](Bit/intro.md)
