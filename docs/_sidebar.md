@@ -293,6 +293,7 @@
     * [314. Binary Tree Vertical Order Traversal](most/vertical.md)
     * [528. Random Pick with Weight](most/pickweight.md)
     * [339. Nested List Weight Sum](most/nestedList.md)
+    * [13. Roman to Integer](most/roman.md)
 
 -----
 * [Bit Operation](Bit/intro.md)
