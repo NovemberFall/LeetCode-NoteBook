@@ -292,6 +292,7 @@
     * [704. Classical Binary Search](Array/classicalBinarySearch.md)
     * [314. Binary Tree Vertical Order Traversal](most/vertical.md)
     * [528. Random Pick with Weight](most/pickweight.md)
+    * [339. Nested List Weight Sum](most/nestedList.md)
 
 -----
 * [Bit Operation](Bit/intro.md)
