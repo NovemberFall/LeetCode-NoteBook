@@ -101,6 +101,10 @@ public class subsetI {
 
 ![](img/2022-02-05-12-19-27.png)
 
+![](img/2022-05-08-12-53-00.png)
+
+![](img/2022-05-08-17-12-37.png)
+
 ```java
 class Solution {
     public List<List<Integer>> subsets(int[] nums) {
