@@ -299,6 +299,7 @@
     * [3.Longest Substring Without Repeating Characters](m8/without.md)
     * [71. Simplify Path](most/simplify.md)
     * [31. Next Permutation](most/nextp.md)
+    * [5. Longest Palindromic Substring](m8/longestPalindrom.md)
 
 -----
 * [Bit Operation](Bit/intro.md)
