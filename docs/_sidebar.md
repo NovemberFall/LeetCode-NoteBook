@@ -294,6 +294,7 @@
     * [528. Random Pick with Weight](most/pickweight.md)
     * [339. Nested List Weight Sum](most/nestedList.md)
     * [13. Roman to Integer](most/roman.md)
+    * [2. Add Two Numbers](m5/AddTwoNums.md)
 
 -----
 * [Bit Operation](Bit/intro.md)
