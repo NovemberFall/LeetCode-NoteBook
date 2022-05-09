@@ -298,6 +298,7 @@
     * [53. Maximum Subarray | Largest SubArray Sum](m9/subArrSum.md)
     * [3.Longest Substring Without Repeating Characters](m8/without.md)
     * [71. Simplify Path](most/simplify.md)
+    * [31. Next Permutation](most/nextp.md)
 
 -----
 * [Bit Operation](Bit/intro.md)
