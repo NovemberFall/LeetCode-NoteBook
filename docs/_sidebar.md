@@ -297,6 +297,7 @@
     * [2. Add Two Numbers](m5/AddTwoNums.md)
     * [53. Maximum Subarray | Largest SubArray Sum](m9/subArrSum.md)
     * [3.Longest Substring Without Repeating Characters](m8/without.md)
+    * [71. Simplify Path](most/simplify.md)
 
 -----
 * [Bit Operation](Bit/intro.md)
