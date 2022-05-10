@@ -1,42 +1,68 @@
 ## 5. Longest Palindromic Substring
 ![](img/2021-08-22-16-01-43.png)
----
 
-![](img/2021-08-22-16-02-33.png)
+
+```ruby
+assume i = 3
+
+    0  1  2  3  4  5  6  7
+   [a  c  d  b  b  d  a  a]
+             l
+             r
+
+    0  1  2  3  4  5  6  7
+   [a  c  d  b  b  d  a  a]
+          l
+                   r
+
+    0  1  2  3  4  5  6  7
+   [a  c  d  b  b  d  a  a]
+       l
+                      r
+
+right - left - 1 = 6 - 1 - 1 = 4, # dbbd => len = 4
+lo = left + 1 # since we need to put lo back to begin of palindrome
+```
+
 
 ```java
-class Solution {
+public class LongestPalindromicSubstring {
+    private int lo, maxLen;
+
     public String longestPalindrome(String s) {
-        int strlen = s.length();
-        int maxLen = 0;
-        int maxBegin = 0;
-        int left = 0;
-        int right = 0;
-        int len = 1;
-        for (int i = 0; i < strlen; i++) {
-            left = i - 1;
-            right = i + 1;
-            while (left >= 0 && s.charAt(left) == s.charAt(i)) {
+        if (s.length() < 2)
+            return s;
+
+        int left = 0, right = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            left = i;
+            right = i;
+
+            while (left >= 0 && s.charAt(left) == c) {
                 left--;
-                len++;
             }
-            while (right < strlen && s.charAt(right) == s.charAt(i)) {
+            while (right < s.length() && s.charAt(right) == c) {
                 right++;
-                len++;
-            }        
-            while (left >= 0 && right < strlen && 
-                   s.charAt(left) == s.charAt(right)) {
+            }
+            while (left >= 0 && right < s.length() 
+                        && s.charAt(left) == s.charAt(right)) {
                 left--;
                 right++;
-                len += 2;
             }
-            if (len > maxLen) {
-                maxLen = len;
-                maxBegin = left;
+            if (maxLen < right - left - 1) {
+                lo = left + 1;
+                maxLen = right - left - 1;
             }
-            len = 1;
         }
-        return s.substring(maxBegin + 1, maxBegin + maxLen + 1);
+        return s.substring(lo, lo + maxLen);
+    }
+
+    public static void main(String[] args) {
+        LongestPalindromicSubstring lps = new LongestPalindromicSubstring();
+        String str = lps.longestPalindrome("acdbbdaa");
+        System.out.println(str); // dbbd
     }
 }
 ```
