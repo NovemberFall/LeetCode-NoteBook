@@ -305,6 +305,7 @@
     * [236. Lowest Common Ancestor of a Binary Tree](m2/LCA.md)
     * [227. Basic Calculator II](most/calc.md)
     * [408. Valid Word Abbreviation](most/abbr.md)
+    * [15. 3Sum](m3/threeSum.md)
 
 -----
 * [Bit Operation](Bit/intro.md)
