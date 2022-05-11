@@ -3,7 +3,51 @@
 
 ![](img/2021-08-09-17-19-38.png)
 
+
+
+
+
 ```java
+/*
+  -1   3   2  -4  -1  -4  3
+  -4  -4  -1  -1   2   3  3  //sort
+  
+  -4  -4  -1  -1   2   3  3  
+   i  
+       l                  r
+
+  -4  -4  -1  -1   2   3  3  
+   i  
+           l              r // nums[l] == nums[l - 1]   
+
+  -4  -4  -1  -1   2   3  3  
+   i  
+                   l      r
+
+  -4  -4  -1  -1   2   3  3  
+   i  
+                   l   r
+
+  -4  -4  -1  -1   2   3  3  
+   i  
+                   lr
+
+  -4  -4  -1  -1   2   3  3  
+       i    
+
+  -4  -4  -1  -1   2   3  3  
+           i                // since -4 == -4, skip
+
+  -4  -4  -1  -1   2   3  3  
+           i               
+               l          r   // -1 + (-1) + 3 > 0
+
+  -4  -4  -1  -1   2   3  3  
+           i               
+               l   r        
+               
+   [-1 -1  2] should be the ans               
+*/
 class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
