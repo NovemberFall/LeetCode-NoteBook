@@ -307,6 +307,7 @@
     * [408. Valid Word Abbreviation](most/abbr.md)
     * [15. 3Sum](m3/threeSum.md)
     * [14. Longest Common Prefix](most/commonPrefix.md)
+    * [215. Kth Largest Element in an Array](m6/KthLarget.md)
 
 -----
 * [Bit Operation](Bit/intro.md)
