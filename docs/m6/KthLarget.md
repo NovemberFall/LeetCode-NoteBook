@@ -6,6 +6,9 @@
 ```java
 class Solution {
     public int findKthLargest(int[] nums, int k) {
+        if (nums.length == 0 || k == 0) {
+            return new int[0];
+        }
         int n = nums.length;
         Arrays.sort(nums);
         return nums[n - k];
@@ -20,6 +23,9 @@ class Solution {
 ```java
 class Solution {
     public int findKthLargest(int[] nums, int k) {
+        if (nums.length == 0 || k == 0) {
+            return new int[0];
+        }        
         PriorityQueue<Integer> maxHeap = new PriorityQueue<>(k, new Comparator<Integer>() {
             @Override
             public int compare(Integer o1, Integer o2) {
