@@ -306,6 +306,7 @@
     * [227. Basic Calculator II](most/calc.md)
     * [408. Valid Word Abbreviation](most/abbr.md)
     * [15. 3Sum](m3/threeSum.md)
+    * [14. Longest Common Prefix](most/commonPrefix.md)
 
 -----
 * [Bit Operation](Bit/intro.md)
