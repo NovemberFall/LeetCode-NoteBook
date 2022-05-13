@@ -309,6 +309,7 @@
     * [14. Longest Common Prefix](most/commonPrefix.md)
     * [215. Kth Largest Element in an Array](m6/KthLarget.md)
     * [394. Decode String](m8/decode.md)
+    * [50. Pow(x, n)](m4/power.md)
   
 -----
 * [Bit Operation](Bit/intro.md)
