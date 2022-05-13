@@ -311,6 +311,7 @@
     * [394. Decode String](m8/decode.md)
     * [50. Pow(x, n)](m4/power.md)
     * [23. Merge k Sorted Lists](m6/kLists.md)
+    * [79. Word Search](amazon/word.md)
   
 -----
 * [Bit Operation](Bit/intro.md)
