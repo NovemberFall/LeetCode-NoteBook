@@ -310,6 +310,7 @@
     * [215. Kth Largest Element in an Array](m6/KthLarget.md)
     * [394. Decode String](m8/decode.md)
     * [50. Pow(x, n)](m4/power.md)
+    * [23. Merge k Sorted Lists](m6/kLists.md)
   
 -----
 * [Bit Operation](Bit/intro.md)
