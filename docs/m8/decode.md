@@ -1,41 +1,44 @@
 ## 394. Decode String
-
 ![](img/2021-07-08-02-14-44.png)
-
 ![](img/2021-07-08-02-15-10.png)
 
 ```java
 class Solution {
     public String decodeString(String s) {
-        if (s.length() <= 1) {
-            return s;
-        }
-        char[] arr = s.toCharArray();
-        StringBuilder res = new StringBuilder();
-        Deque<Integer> countStack = new ArrayDeque<>();
-        Deque<String> strStack = new ArrayDeque<>();
-        int multi = 0;
+        if (s == null || s.length() == 0) return null;
         
-        for (char c : arr) {
-            if (Character.isDigit(c)) {
-                multi = multi * 10 + Integer.parseInt(c + "");
+        Stack<String> stack = new Stack<>();
+        int num = 0;
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (c >= '0' && c <= '9') {
+                num = num * 10 + c - '0';
             } else if (c == '[') {
-                countStack.push(multi);
-                strStack.push(res.toString());
-                multi = 0;
-                res = new StringBuilder();
+                stack.push(num + "");
+                stack.push("[");
+                num = 0;
             } else if (c == ']') {
-                StringBuilder temp = new StringBuilder();
-                int repeatTimes = countStack.pop();
-                for (int i = 0; i < repeatTimes; i++) {
-                    temp.append(res);
+                String res = "";
+                while (stack.peek() != "[") {
+                    res = stack.pop() + res;
                 }
-                res = new StringBuilder(strStack.pop() + temp);
+                stack.pop(); // pop "["
+                StringBuilder sb = new StringBuilder();
+                int repeats = Integer.valueOf(stack.pop());
+                for (int j = 0; j < repeats; j++) {
+                    sb.append(res);
+                }
+                stack.push(sb.toString());
             } else {
-                res.append(c);
+                stack.push(c + "");
             }
         }
-        return res.toString();
+        
+        String ans = "";
+        while (!stack.isEmpty()) {
+            ans = stack.pop() + ans;
+        }
+        return ans;
     }
 }
 ```

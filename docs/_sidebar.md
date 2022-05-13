@@ -308,7 +308,8 @@
     * [15. 3Sum](m3/threeSum.md)
     * [14. Longest Common Prefix](most/commonPrefix.md)
     * [215. Kth Largest Element in an Array](m6/KthLarget.md)
-
+    * [394. Decode String](m8/decode.md)
+  
 -----
 * [Bit Operation](Bit/intro.md)
     * [Power Of Two | Easy](Bit/powerTwo.md)
