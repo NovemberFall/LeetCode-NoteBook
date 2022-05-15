@@ -50,9 +50,8 @@ class Solution {
         Arrays.sort(nums);
         int target = 0;
         for (int i = 0; i < nums.length; i++) {
-            //e.g. if we have 2, 2, 2 only the first 2 will be selected as i
             if (i > 0 && nums[i] == nums[i - 1]) {
-                continue;//skip duplicates
+                continue;//skip same result
             }
             int left = i + 1;
             int right = nums.length - 1;
@@ -62,21 +61,15 @@ class Solution {
                     left++;
                     right--;
                     while (left < right && nums[left] == nums[left - 1]) {
-                        left++;//skip duplicates
+                        left++;//skip same result
                     }
                     while (left < right && nums[right] == nums[right + 1]) {
-                        right--;//skip duplicates
+                        right--;//skip same result
                     }                    
                 } else if (nums[i]+nums[left]+nums[right] < target) {
-                    left++;
-                    while (left < right && nums[left] == nums[left - 1]) {
-                        left++;//skip duplicates
-                    }                    
+                    left++;               
                 } else {
-                    right--;
-                    while (left < right && nums[right] == nums[right + 1]) {
-                        right--;//skip duplicates
-                    }                    
+                    right--;                   
                 }
             }
         }
