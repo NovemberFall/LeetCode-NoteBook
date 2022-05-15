@@ -30,7 +30,6 @@ class Solution {
                 return false;
             }
 
-            int start = j;
             int num = 0;
             while (j < abbr.length() && abbr.charAt(j) >= '0' 
                                         && abbr.charAt(j) <= '9') {
