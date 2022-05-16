@@ -16,7 +16,7 @@ remove(4):
    0  1  2  3   
   [5  6  9]  # instead of 4 by 6
 
-# why we need to replay 4 by 6?
+# why we need to replace 4 by 6?
 # because we need to get a random value by index
 # and hashmap itself hardly get index
 ```
