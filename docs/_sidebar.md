@@ -301,7 +301,7 @@
     * [31. Next Permutation](most/nextp.md)
     * [5. Longest Palindromic Substring](m8/longestPalindrom.md)
     * [253. Meeting Rooms II](amazon/room2.md)
-    * [380. Insert Delete GetRandom O(1)](amazon/getRandom.md)
+    * [380. Insert Delete GetRandom O(1)](most/getRandom.md)
     * [236. Lowest Common Ancestor of a Binary Tree](m2/LCA.md)
     * [227. Basic Calculator II](most/calc.md)
     * [408. Valid Word Abbreviation](most/abbr.md)
