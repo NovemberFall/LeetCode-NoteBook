@@ -15,44 +15,40 @@
 
 ```java
 class Solution {
-  private final String[] THOUSANDS = {"", "Thousand", "Million", 
-    "Billion"};
     
-  private final String[] LESS_THAN_TWENTY = {"", "One", "Two", 
+  private final String[] ones = {"", "One", "Two", 
     "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", 
     "Ten", "Eleven", "Twelve", "Thirteen","Fourteen", "Fifteen", 
     "Sixteen", "Seventeen", "Eighteen", "Nineteen"};
     
-  private final String[] TENS = {"", "", "Twenty", "Thirty", 
+  private final String[] tens = {"Ten", "Twenty", "Thirty", 
     "Forty", "Fifty","Sixty", "Seventy", "Eighty", "Ninety"};  
   
-  public String numberToWords(int num) {
-    if (num == 0) {
-      return "Zero";
+    public String numberToWords(int num) {
+        if (num == 0) {
+            return "Zero";
+        }
+        
+        return helper(num).trim();
     }
     
-    String res = "";
-    int i = 0;
-    while (num > 0) {
-      if (num % 1000 != 0) {
-        res = helper(num % 1000) + THOUSANDS[i] + " " + res;
-      }
-      i++;
-      num /= 1000;
+    private String helper(int num) {
+        if (num >= 1000000000) {
+            return helper(num/1000000000)+" Billion "+helper(num % 1000000000);
+        } 
+        if (num >= 1000000) {
+            return helper(num / 1000000) + " Million " + helper(num % 1000000);
+        } 
+        if (num >= 1000) {
+            return helper(num / 1000) + " Thousand " + helper(num % 1000);
+        } 
+        if (num >= 100) {
+          return (helper(num / 100) + " Hundred " + helper(num % 100)).trim();
+        } 
+        if (num >= 20) {
+            return (tens[num / 10] + " " + helper(num % 10)).trim();
+        }     
+        return ones[num];
     }
-    return res.trim();
-  }
-  
-  private String helper(int n) {
-    if (n == 0) {
-      return "";
-    } else if (n < 20) {//1-19
-      return LESS_THAN_TWENTY[n] + " ";
-    } else if (n < 100) {//20-99
-      return TENS[n / 10] + " " + helper(n % 10);
-    } else {//100-999
-      return LESS_THAN_TWENTY[n/100]+" Hundred "+ helper(n % 100);
-    }
-  }
 }
 ```
