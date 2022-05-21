@@ -317,6 +317,7 @@
     * [134. Gas Station](most/gas.md)
     * [17. Letter Combinations of a Phone Number](most/letterCombin.md)
     * [127. Word Ladder](BFS/ladder.md)
+    * [22. Generate Parentheses | DFS (All Permutations Of Parentheses I)](m10/parenthesesI.md)
   
 -----
 * [Bit Operation](Bit/intro.md)
