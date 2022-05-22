@@ -320,6 +320,7 @@
     * [22. Generate Parentheses | DFS (All Permutations Of Parentheses I)](m10/parenthesesI.md)
     * [443. String Compression](m8/strencode.md)
     * [49. Group Anagrams](m7/group.md)
+    * [347. Top K Frequent Elements](m7/topKfreq1.md)    
   
 -----
 * [Bit Operation](Bit/intro.md)
