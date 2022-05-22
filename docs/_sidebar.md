@@ -319,6 +319,7 @@
     * [127. Word Ladder](BFS/ladder.md)
     * [22. Generate Parentheses | DFS (All Permutations Of Parentheses I)](m10/parenthesesI.md)
     * [443. String Compression](m8/strencode.md)
+    * [49. Group Anagrams](m7/group.md)
   
 -----
 * [Bit Operation](Bit/intro.md)
