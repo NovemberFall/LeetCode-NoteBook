@@ -327,6 +327,8 @@
     * [33. Search in Rotated Sorted Array](m3/SearchinRotatedSortedArray.md) 
     * [54. Spiral Matrix](m4/spiralMatrix.md)
     * [366. Find Leaves of Binary Tree](most/leaves.md)
+    * [162. Find Peak Element](most/findPeak.md)
+    * [138. Copy List with Random Pointer | Deep Copy](m5/deepCopyList.md)
   
 -----
 * [Bit Operation](Bit/intro.md)
