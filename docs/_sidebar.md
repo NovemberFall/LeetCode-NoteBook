@@ -325,6 +325,7 @@
     * [11. Container With Most Water](most/mostwater.md)    
     * [41. First Missing Positive](most/missNum.md)   
     * [33. Search in Rotated Sorted Array](m3/SearchinRotatedSortedArray.md) 
+    * [54. Spiral Matrix](m4/spiralMatrix.md)
   
 -----
 * [Bit Operation](Bit/intro.md)
