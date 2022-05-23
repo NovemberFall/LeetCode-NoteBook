@@ -323,7 +323,8 @@
     * [347. Top K Frequent Elements](m7/topKfreq1.md)    
     * [9. Palindrome Number](most/palindromenum.md)    
     * [11. Container With Most Water](most/mostwater.md)    
-    * [41. First Missing Positive](most/missNum.md)    
+    * [41. First Missing Positive](most/missNum.md)   
+    * [33. Search in Rotated Sorted Array](m3/SearchinRotatedSortedArray.md) 
   
 -----
 * [Bit Operation](Bit/intro.md)

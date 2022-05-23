@@ -1,6 +1,5 @@
-# 33. Search in Rotated Sorted Array
-
-- 解法二
+## 33. Search in Rotated Sorted Array
+![](img/2022-05-22-21-09-41.png)
 
 - [ 4 5 6 7 1 2 3 ] ，[ 4 5 6 7 ] 和 [ 1 2 3 ] 两段有序。
   而对于 [ 1 2 3 4] 这种，可以看做 [ 1 2 3 4 ] 和 [ ] 特殊的两段有序。
