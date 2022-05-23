@@ -326,6 +326,7 @@
     * [41. First Missing Positive](most/missNum.md)   
     * [33. Search in Rotated Sorted Array](m3/SearchinRotatedSortedArray.md) 
     * [54. Spiral Matrix](m4/spiralMatrix.md)
+    * [366. Find Leaves of Binary Tree](most/leaves.md)
   
 -----
 * [Bit Operation](Bit/intro.md)
