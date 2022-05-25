@@ -330,6 +330,7 @@
     * [162. Find Peak Element](most/findPeak.md)
     * [138. Copy List with Random Pointer | Deep Copy](m5/deepCopyList.md)
     * [426. Convert Binary Search Tree to Sorted Doubly Linked List](most/convert.md)
+    * [212. Word Search ||](amazon/word2.md)
   
 -----
 * [Bit Operation](Bit/intro.md)
