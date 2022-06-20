@@ -59,6 +59,23 @@ e:1
 
 ---
 
+```ruby
+Case:
+  ac
+  ab
+  zc
+  zb
+
+Case:
+  wrt
+  wrff
+  tf
+  ff
+
+## tf is duplicate, so we use Set<>
+```
+
+
 ```java
 public class alien1 {
     public static String alienOrder(String[] words) {
@@ -129,3 +146,4 @@ public class alien1 {
     }
 }
 ```
+
