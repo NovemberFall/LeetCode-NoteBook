@@ -56,7 +56,8 @@ e:1
 ---
 
 ![](img/2022-06-17-12-48-21.png)
-
+- Note: "ab" should before "abc", so ["abc", "ab"] is impossible!
+  
 ---
 
 ```ruby
