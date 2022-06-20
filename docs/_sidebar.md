@@ -331,6 +331,8 @@
     * [138. Copy List with Random Pointer | Deep Copy](m5/deepCopyList.md)
     * [426. Convert Binary Search Tree to Sorted Doubly Linked List](most/convert.md)
     * [212. Word Search ||](amazon/word2.md)
+    * [269(hard). Alien Dictionary |Topological Sort/BFS/Graph](amazon/alien.md)
+    * [207. Course Schedule | BFS](amazon/course.md)
   
 -----
 * [Bit Operation](Bit/intro.md)
