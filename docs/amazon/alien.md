@@ -12,7 +12,8 @@ e:0
 ```
 
 - Then build the hashmap by comparing the adjacent words, the first character that 
-  is different between two adjacent words reflect the lexicographical order. For example:
+  is different between two adjacent words reflect the lexicographical order. 
+  For example:
 
 ```ruby
 "wrt",
@@ -24,8 +25,8 @@ e:0
 # first different character is 1rd letter, so w comes before e
 ```
 
-- The characters in set come after the key. x->y means letter x comes before letter y. 
-  x -> set: y,z,t,w means x comes before all the letters in the set. 
+- The characters in set come after the key. x->y means letter x comes before 
+  letter y.   x -> set: y,z,t,w means x comes before all the letters in the set. 
   The final HashMap "map" looks like.
 
 ```java
@@ -35,8 +36,8 @@ r -> set: t
 e -> set: r
 ```
 
-- and final HashMap "degree" looks like, the number means "how many letters come before
-  the key":
+- and final HashMap "degree" looks like, the number means "how many letters come 
+  before the key":
 
 ```ruby
 w:0
@@ -55,3 +56,76 @@ e:1
 ---
 
 ![](img/2022-06-17-12-48-21.png)
+
+---
+
+```java
+public class alien1 {
+    public static String alienOrder(String[] words) {
+        int[] indegree = new int[26];
+        Map<Character, Set<Character>> graph = new HashMap<>();
+        buildGraph(graph, words, indegree);
+        return bfs(graph, indegree);
+    }
+
+    private static void buildGraph(Map<Character, Set<Character>> graph, 
+                                        String[] words, int[] indegree) {
+        for (String word : words) {
+            for (char c : word.toCharArray()) {
+                graph.putIfAbsent(c, new HashSet<>());
+            }
+        }
+        for (int i = 1; i < words.length; i++) {
+            String first = words[i - 1];
+            String second = words[i];
+            int len = Math.min(first.length(), second.length());
+            for (int j = 0; j < len; j++) {
+                // ett, rftt
+                char out = first.charAt(j);
+                char in = second.charAt(j);
+                if (out != in) {
+                    if (!graph.get(out).contains(in)) {
+                        graph.get(out).add(in);
+                        indegree[in - 'a']++;
+                    }
+                    break;
+                }
+                // test case: ["abc","ab"], Expected: ""
+                if (j + 1 == len && first.length() > second.length()) {
+                    graph.clear();
+                    return;
+                }
+            }
+        }
+    }
+
+    private static String bfs(Map<Character, Set<Character>> graph, 
+                                                      int[] indegree) {
+        StringBuilder sb = new StringBuilder();
+        Queue<Character> queue = new ArrayDeque<>();
+        int totalChars = graph.size();
+        for (char c : graph.keySet()) {
+            if (indegree[c - 'a'] == 0) {
+                queue.offer(c);
+            }
+        }
+
+        while (!queue.isEmpty()) {
+            char out = queue.poll();
+            sb.append(out);
+            for (char in : graph.get(out)) {
+                indegree[in - 'a']--;
+                if (indegree[in - 'a'] == 0) {
+                    queue.offer(in);
+                }
+            }
+        }
+        return sb.length() == totalChars ? sb.toString() : "";
+    }
+    public static void main(String[] args) {
+        String[] words = {"abc", "ab"};
+        String str = alienOrder(words);
+        System.out.println(str);
+    }
+}
+```
