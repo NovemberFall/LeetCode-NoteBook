@@ -33,6 +33,7 @@ prefixSum[2] = prefixSum[1] + arr[2] = 40 and so on.
 
 - Set the first element of the array "sum" to 0, and initialize the array "sum" 
   **from index 1 rather than 0**.
+
 ```ruby
 nums = [1,   2,   3  ]
 sum  = [0,   1,   1+2, 1+2+3] 
@@ -40,6 +41,7 @@ sum  = [0,   1,   1+2, 1+2+3]
 
 sum[i] = sum[i - 1] + nums[i - 1]
 ```
+
 - Using array "sum" to calculate the sum of a subarray
   - `sumOfSubarray = sum[end] - sum[start];`
 
@@ -48,7 +50,7 @@ sum[i] = sum[i - 1] + nums[i - 1]
     the last element of "sum" minus the first element of "sum" which is 0 :
     `nums[0] + nums[1] + nums[2] = sum[3] - sum[0] = 6 - 0`
 
-- **Brute Force**:
+#### Brute Force:
 
 ```java
 public class Solution {
@@ -72,8 +74,9 @@ public class Solution {
 ```
 
 - Complexity Analysis
-  - Time complexity : `O(n2)`
+  - Time complexity : `O(n^2)`
   - Space complexity : `O(n)`
+
 ---
 
 - Optimization by Hashmap
