@@ -59,9 +59,6 @@ class FileSystem {
             if (dir.length() == 0) {
                 continue;
             }
-            if (!curFile.children.containsKey(dir)) {
-                return res;
-            }
             curFile = curFile.children.get(dir);
             fileName = dir;
         }
