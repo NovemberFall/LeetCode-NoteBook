@@ -20,6 +20,18 @@
 - use `Trie Tree` to implement this:
 
 ```java
+if (dir.length() == 0) {
+    continue;
+}
+
+# assume path = "/a/b/c"
+String [] dirs = path.split("/");     
+/*
+    dirs => [, a, b, c]
+*/
+```
+
+```java
 class FileSystem {
     File root;
     
