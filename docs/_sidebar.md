@@ -333,6 +333,7 @@
     * [212. Word Search ||](amazon/word2.md)
     * [269(hard). Alien Dictionary |Topological Sort/BFS/Graph](amazon/alien.md)
     * [207. Course Schedule | BFS](amazon/course.md)
+    * [412. Fizz Buzz](most/fizz.md)
   
 -----
 * [Bit Operation](Bit/intro.md)
