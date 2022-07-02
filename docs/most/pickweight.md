@@ -33,25 +33,27 @@ since left > right, jump to outer of loop:
 class Solution {
     Random random;
     int [] preSum;
-    
+
     public Solution(int[] w) {
         random = new Random();
-        
-        for (int i = 1; i < w.length; i++) {
-            w[i] = w[i] + w[i - 1];
-        }
-        this.preSum = w;
+        preSum = new int[w.length];
+        int n = w.length;
+        preSum[0] = w[0];
+        for (int i = 1; i < n; i++) {
+            preSum[i] = w[i] + preSum[i - 1];
+        }        
     }
     
+    // [1, 2, 3, 4]
+    // [1, 3, 6, 10]
     public int pickIndex() {
-        int n = preSum.length;
-        int idx = this.random.nextInt(preSum[n - 1] - 0) + 1;  
-        int left = 0, right = n - 1;
+        int randomIdx = random.nextInt(0, preSum[preSum.length - 1]) + 1;
+        int left = 0, right = preSum.length - 1;
         while (left <= right) {
             int mid = left + (right - left) / 2;
-            if (preSum[mid] == idx) {
+            if (randomIdx == preSum[mid]) {
                 return mid;
-            } else if (preSum[mid] < idx) {
+            } else if (preSum[mid] < randomIdx) {
                 left = mid + 1;
             } else {
                 right = mid - 1;
