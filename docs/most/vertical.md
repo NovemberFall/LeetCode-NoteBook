@@ -32,7 +32,7 @@ class Solution {
         List<List<Integer>> res = new ArrayList<>();
         if (root == null) { return res;}
         
-        Map<Integer, ArrayList<Integer>> map = new HashMap<>();
+        Map<Integer, List<Integer>> map = new HashMap<>();
         Queue<TreeNode> q = new LinkedList<>();
         Queue<Integer> cols = new LinkedList<>();
         q.add(root); 
