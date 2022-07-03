@@ -335,6 +335,7 @@
     * [207. Course Schedule | BFS](amazon/course.md)
     * [412. Fizz Buzz](most/fizz.md)
     * [716. Max Stack](most/maxstk.md)
+    * [224. Basic Calculator](most/calculator.md)
   
 -----
 * [Bit Operation](Bit/intro.md)
