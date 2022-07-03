@@ -1,8 +1,8 @@
 ## 224. Basic Calculator
 
 - **Principle**:
-    1. (Sign before '+'/'-') = (This context sign);
-    2. (Sign after '+'/'-') = (This context sign) * (1 or -1);
+    1. `(Sign before '+'/'-')` = (This context sign);
+    2. `(Sign after '+'/'-')` = (This context sign) * (1 or -1);
 
 - **Algorithm**:
     1. Start from `+1` sign and scan s from left to right;
