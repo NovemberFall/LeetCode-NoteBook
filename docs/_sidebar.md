@@ -337,6 +337,7 @@
     * [716. Max Stack](most/maxstk.md)
     * [224. Basic Calculator](most/calculator.md)
     * [348. Design Tic-Tac-Toe](amazon/tictactoe.md)
+    * [78. Subsets | DFS](m10/subset.md)
   
 -----
 * [Bit Operation](Bit/intro.md)
