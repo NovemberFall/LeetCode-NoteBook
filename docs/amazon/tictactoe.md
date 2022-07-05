@@ -81,14 +81,19 @@ class TicTacToe {
                 return player;
             }            
         }
+
+/*       0 1 2   
+      0 | | |X|
+      1 | |X| |    # row + col + 1 == n
+      2 |X| | |                
+*/
         if (row + col + 1 == n) {
             antiDiagonal += playerId;
             if (antiDiagonal == n || antiDiagonal == -n){
                 return player;
             }
         }
-        
-        
+                
         rows[row] += playerId;
         cols[col] += playerId;
         if (rows[row] == n || rows[row] == -n ||
