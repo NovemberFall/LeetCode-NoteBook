@@ -40,30 +40,26 @@
 
 
 ```java
-class TrieNode {
-    char val;
-    boolean isWord;
-    TrieNode[] children;
-    public TrieNode(char c) {
-        val = c;
-        children = new TrieNode[26];
-        isWord = false;
-    }
-}
 class Trie {
-    private TrieNode root;
-    
+    Node root;
+    class Node {
+        boolean isWord;
+        Node[] children;
+        public Node() {
+            isWord = false;
+            children = new Node[26];
+        }
+    }
 
     public Trie() {
-        root = new TrieNode(' ');
+        root = new Node();
     }
     
     public void insert(String word) {
-        TrieNode cur = root;
-        for (int i = 0; i < word.length(); i++) {
-            char c = word.charAt(i);
+        Node cur = root;
+        for (char c : word.toCharArray()) {
             if (cur.children[c - 'a'] == null) {
-                cur.children[c - 'a'] = new TrieNode(c);
+                cur.children[c - 'a'] = new Node();
             }
             cur = cur.children[c - 'a'];
         }
@@ -71,9 +67,8 @@ class Trie {
     }
     
     public boolean search(String word) {
-        TrieNode cur = root;
-        for (int i = 0; i < word.length(); i++) {
-            char c = word.charAt(i);
+        Node cur = root;
+        for (char c : word.toCharArray()) {
             if (cur.children[c - 'a'] == null) {
                 return false;
             }
@@ -83,9 +78,8 @@ class Trie {
     }
     
     public boolean startsWith(String prefix) {
-        TrieNode cur = root;
-        for (int i = 0; i < prefix.length(); i++) {
-            char c = prefix.charAt(i);
+        Node cur = root;
+        for (char c : prefix.toCharArray()) {
             if (cur.children[c - 'a'] == null) {
                 return false;
             }
