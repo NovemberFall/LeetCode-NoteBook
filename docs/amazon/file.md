@@ -62,6 +62,10 @@ class FileSystem {
             curFile = curFile.children.get(dir);
             fileName = dir;
         }
+        /*
+          "/a/b/c/d"    # assume `d` is a file 
+           if d.isFile() == true, list.add(d)
+        */
         if (curFile.isFile) {
             res.add(fileName);
         } else {
