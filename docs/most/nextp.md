@@ -42,11 +42,13 @@ class Solution {
             }
         }        
         if (k == -1) {
+        //k == -1, means all nums are sorted by increasing order    
             reverse(nums, 0, n - 1);
             return;
         }
         
         for (int j = n - 1; j >= 0; j--) {
+        //find the first number is more than kv, then swap them
             if (nums[j] > kv) {
                 swap(nums, k, j);
                 break;
