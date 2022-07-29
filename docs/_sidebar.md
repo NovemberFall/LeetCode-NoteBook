@@ -339,7 +339,8 @@
     * [348. Design Tic-Tac-Toe](amazon/tictactoe.md)
     * [78. Subsets | DFS](m10/subset.md)
     * [206. Reverse Linked List](ch4/reverseList.md)
-  
+    * [217. Contains Duplicate](most/contains.md)
+    
 -----
 * [Bit Operation](Bit/intro.md)
     * [Power Of Two | Easy](Bit/powerTwo.md)
