@@ -342,6 +342,7 @@
     * [217. Contains Duplicate](most/contains.md)
     * [289. Game of Life](most/game.md)
     * [48. Rotate Image || Rotate Matrix](m3/rotateMatrix.md)
+    * [635. Design Log Storage System](most/log.md)
     
 -----
 * [Bit Operation](Bit/intro.md)
