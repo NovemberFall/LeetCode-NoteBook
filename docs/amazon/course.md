@@ -89,3 +89,50 @@ class Solution {
     }
 }
 ```
+
+---
+
+```java
+class Solution {
+    public boolean canFinish(int numCourses, int[][] prerequisites) {
+        int[] indegree = new int[numCourses];
+        Map<Integer, List<Integer>> graph = new HashMap<>();
+        buildGraph(graph, prerequisites, indegree);
+        return bfs(graph, numCourses, indegree);
+    }
+    
+    private void buildGraph(Map<Integer, List<Integer>> graph, int[][]prerequisites, int[] indegree) {
+        for (int i = 0; i < prerequisites.length; i++) {
+            graph.putIfAbsent(prerequisites[i][1], new ArrayList<>());
+            graph.get(prerequisites[i][1]).add(prerequisites[i][0]);
+            indegree[prerequisites[i][0]]++;
+        }
+    }
+    
+    private boolean bfs(Map<Integer, List<Integer>> graph, int numCourses, int[] indegree) {
+        Queue<Integer> queue = new LinkedList<>();
+        for (int i = 0; i < numCourses; i++) {
+            if (indegree[i] == 0) {
+                queue.offer(i);
+            }
+        }
+        int count = 0;
+        while (!queue.isEmpty()) {
+            int course = queue.poll();
+            count++;
+            List<Integer> list = graph.get(course);
+            if (list != null) {
+                int n = list.size();
+                for (int i = 0; i < n; i++) {
+                    int pointer = graph.get(course).get(i);
+                    indegree[pointer]--;
+                    if (indegree[pointer] == 0) {
+                        queue.add(pointer);
+                    }
+                }
+            }
+        }
+        return count == numCourses;
+    }
+}
+```
