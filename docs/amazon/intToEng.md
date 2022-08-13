@@ -21,7 +21,7 @@ class Solution {
     "Ten", "Eleven", "Twelve", "Thirteen","Fourteen", "Fifteen", 
     "Sixteen", "Seventeen", "Eighteen", "Nineteen"};
     
-  private final String[] tens = {"Ten", "Twenty", "Thirty", 
+  private final String[] tens = {"", "Ten", "Twenty", "Thirty", 
     "Forty", "Fifty","Sixty", "Seventy", "Eighty", "Ninety"};  
   
     public String numberToWords(int num) {
