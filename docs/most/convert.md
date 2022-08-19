@@ -6,6 +6,40 @@
 ![](img/2022-05-25-10-33-24.png)
 
 ```java
+public Node treeToDoublyList(Node root) {
+        if(root==null) return null;
+        Node sentinel = new Node();
+        //sentinel.right = root; //no need to do this here, it's handled by while loop
+        Node pre = sentinel;
+        
+        Node cur = root;
+        Stack<Node> st = new Stack<>();
+        while(cur!=null||!st.isEmpty())
+        {
+            while(cur!=null)
+            {
+                st.push(cur);
+                cur = cur.left;
+            }
+            Node node = st.pop();
+            cur = node.right; //putting this at the end of while loop is fine, as node.right won't be changed
+            
+            node.left = pre;
+            pre.right = node;
+            pre = node;
+        }
+        //at the end of the loop,pre will point to the tail
+        Node head = sentinel.right;
+        pre.right = head; //!!don't do pre.right = root; as root is not the head.
+        head.left = pre;
+        
+        return head;
+}
+```
+
+---
+
+```java
 /*
 // Definition for a Node.
 class Node {
