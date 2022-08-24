@@ -5,72 +5,76 @@
 - [Java simple solution with strict O(logN) push()/popMax()/pop()](https://leetcode.com/problems/max-stack/discuss/129922/Java-simple-solution-with-strict-O(logN)-push()popMax()pop())
 
 ```java
-class MaxStack {
+public class _716_MaxStack {
+    static class Node {
+        Node prev;
+        Node next;
+        int val;
+
+        public Node(int x) {
+            this.val = x;
+            this.prev = null;
+            this.next = null;
+        }
+    }
 
     Node head;
     Node tail;
     TreeMap<Integer, List<Node>> map;
-    
-    public MaxStack() {
+
+    public _716_MaxStack() {
         head = new Node(0);
         tail = new Node(0);
         head.next = tail;
-        tail.pre = head;
+        tail.prev = head;
         map = new TreeMap<>();
     }
-    
+
     public void push(int x) {
         Node newNode = new Node(x);
-        newNode.pre = tail.pre;
+        newNode.prev = tail.prev;
         newNode.next = tail;
-        tail.pre.next = newNode;
-        tail.pre = newNode;
-        if(!map.containsKey(x))    map.put(x, new ArrayList<Node>());
+        tail.prev.next = newNode;
+        tail.prev = newNode;
+        map.putIfAbsent(x, new ArrayList<>());
         map.get(x).add(newNode);
     }
-    
+
     public int pop() {
-        int value = tail.pre.val;
-        removeNode(tail.pre);
-        int listSize = map.get(value).size();
-        map.get(value).remove(listSize - 1);
-        if(listSize == 1)    map.remove(value);
-        return value;
+        int removed = tail.prev.val;
+        removeNode(tail.prev);
+        int listSize = map.get(removed).size();
+        map.get(removed).remove(listSize - 1);
+        if (listSize == 1) {
+            map.remove(removed);
+        }
+        return removed;
     }
-    
+
     public int top() {
-        return tail.pre.val;
+        return tail.prev.val;
     }
-    
+
     public int peekMax() {
         return map.lastKey();
     }
-    
+
     public int popMax() {
-        int maxVal = map.lastKey();
-        int listSize = map.get(maxVal).size();
-        Node node = map.get(maxVal).remove(listSize - 1);
+        int removedMaxVal = map.lastKey();
+        int listSize = map.get(removedMaxVal).size();
+        Node node = map.get(removedMaxVal).remove(listSize - 1);
         removeNode(node);
-        if(listSize == 1)    map.remove(maxVal);
-        return maxVal;
-    }
-    
-    private void removeNode(Node n){
-        Node preNode = n.pre;
-        Node nextNode = n.next;
-        preNode.next = nextNode;
-        nextNode.pre = preNode;
-    }
-    
-    class Node{
-        Node pre;
-        Node next;
-        int val;
-        public Node(int x){
-            this.val = x;
-            this.pre = null;
-            this.next = null;
+        if (listSize == 1) {
+            map.remove(removedMaxVal);
         }
+        return removedMaxVal;
+    }
+
+    private void removeNode(Node n) {
+        Node prevNode = n.prev;
+        Node nextNode = n.next;
+        prevNode.next = nextNode;
+        nextNode.prev = prevNode;
     }
 }
 ```
