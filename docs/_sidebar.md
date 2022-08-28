@@ -345,6 +345,7 @@
     * [635. Design Log Storage System](most/log.md)
     * [34. First&LastPositionElementInSortedArr](m3/FirstLastPositionOfSortedArr.md)
     * [432. All O one Data Structure](most/allOne.md)
+    * [128. Longest Consecutive Sequence](most/lcs.md)
     
 -----
 * [Bit Operation](Bit/intro.md)
