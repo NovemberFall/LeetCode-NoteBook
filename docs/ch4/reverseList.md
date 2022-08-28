@@ -1,4 +1,4 @@
-# 206. Reverse Linked List
+## 206. Reverse Linked List
 
 ```java
 Input: 1->2->3->4->5->NULL
@@ -133,6 +133,8 @@ public class Solution {
 ---
 
 ### Recursive method:
+
+![](img/2022-08-28-00-57-52.png)
 
 ![](img/2021-04-23-16-48-23.png)
 
