@@ -346,6 +346,7 @@
     * [34. First&LastPositionElementInSortedArr](m3/FirstLastPositionOfSortedArr.md)
     * [432. All O one Data Structure](most/allOne.md)
     * [128. Longest Consecutive Sequence](most/lcs.md)
+    * [7. Reverse Integer](most/ri.md)
     
 -----
 * [Bit Operation](Bit/intro.md)
