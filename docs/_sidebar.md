@@ -72,6 +72,7 @@
     * [128. Longest Consecutive Sequence](most/lcs.md)
     * [7. Reverse Integer](most/ri.md)
     * [489. Robot Room Cleaner](most/robot.md)
+    * [135. Candy](most/candy.md)
 
 -----
 * [Easy](README.md)
