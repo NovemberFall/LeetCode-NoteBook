@@ -73,6 +73,7 @@
     * [7. Reverse Integer](most/ri.md)
     * [489. Robot Room Cleaner](most/robot.md)
     * [135. Candy](most/candy.md)
+    * [118. Pascal's Triangle](most/pascal.md)
 
 -----
 * [Easy](README.md)
