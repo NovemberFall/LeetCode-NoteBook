@@ -74,6 +74,7 @@
     * [489. Robot Room Cleaner](most/robot.md)
     * [135. Candy](most/candy.md)
     * [118. Pascal's Triangle](most/pascal.md)
+    * [729. My Calendar I](most/calendar.md)
 
 -----
 * [Easy](README.md)
