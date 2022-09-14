@@ -1,14 +1,7 @@
-## 78. Subsets | DFS
-
+## 78. Subsets | DFS | backtrack 解释
 ![](img/2022-02-05-00-41-34.png)
-
 ---
-
 ![](img/2021-10-06-18-41-06.png)
-
-
-
-
 
 ```java
 import java.util.ArrayList;
@@ -104,7 +97,7 @@ public class subsetI {
 ![](img/2022-05-08-12-53-00.png)
 
 ![](img/2022-05-08-17-12-37.png)
-
+  
 ```java
 class Solution {
     public List<List<Integer>> subsets(int[] nums) {
@@ -123,6 +116,7 @@ class Solution {
         res.add(new ArrayList<Integer>(subset));
     //为什么这一步,一开始就加，而不是最后加？因为它第一次加了一个empty list 
         for(int i = startIndex; i < nums.length; i++){
+            // 九章算法 subsets version 2 解释 for loop
             subset.add(nums[i]);
             dfs(nums, res, subset, i + 1);
             subset.remove(subset.size() - 1); //backtracking
