@@ -116,7 +116,7 @@ class Solution {
         res.add(new ArrayList<Integer>(subset));
     //为什么这一步,一开始就加，而不是最后加？因为它第一次加了一个empty list 
         for(int i = startIndex; i < nums.length; i++){
-            // 九章算法 subsets version 2 解释 for loop
+            // 九章算法 subsets version2 [vedio 开始时间 9:00] 解释 for loop
             subset.add(nums[i]);
             dfs(nums, res, subset, i + 1);
             subset.remove(subset.size() - 1); //backtracking
