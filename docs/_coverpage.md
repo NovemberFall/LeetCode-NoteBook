@@ -4,7 +4,7 @@
 
 # Tom <small>leetCode</small>
 
-> LeetCode Algorithm >>> 一个已经疯癫的程序猿
+> LeetCode Algorithm >>> 风雨欲来！
 
 - Array
 - Recursion

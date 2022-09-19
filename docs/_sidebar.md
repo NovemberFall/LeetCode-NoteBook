@@ -90,9 +90,10 @@
     * [234. Palindrome Linked List](ch4/palindrome.md)
     * [160. Intersection of Two Linked Lists](ch4/intersect.md)
     * [2. Add Two Numbers](m5/AddTwoNums.md)
+    * [23. Merge k Sorted Lists](m6/kLists.md)
     * [138. Copy List with Random Pointer | Deep Copy](m5/deepCopyList.md)
+    * [426. Convert Binary Search Tree to Sorted Doubly Linked List](most/convert.md)
     * [143. Reorder List](m5/reorderList.md)
-    * [ReOrder Array](m5/reorderArr.md)
     * [86. Partition List](m5/partitionList.md)
     * [445. Add Two Numbers II](m5/twoNumsII.md)
     * [148. Sort List](m5/sortList.md)
@@ -146,6 +147,8 @@
     * [588. Design In-Memory File System](amazon/file.md)
     * [212. Word Search ||](amazon/word2.md)
     * [472 Concatenated Words](amazon/concatWord.md)
+* [Merge Sort](merge/intro.md)
+    * [ReOrder Array](m5/reorderArr.md)
 
 -----
 * [Easy](README.md)
@@ -239,7 +242,6 @@
         * [133. Clone Graph | Deep Copy Undirected Graph](m6/deepCopyGraph.md)
         * [103. Binary Tree Zigzag Level Order Traversal](m6/zigzag.md)
         * [116. Populating Next Right Pointers in Each Node](m6/nextPointer.md)
-        * [23. Merge k Sorted Lists](m6/kLists.md)
         * [200. Number of Islands](m6/islands.md)
         * [297. Serialize and Deserialize Binary Tree](m6/sdbt.md)
     * [m7: HashMap](m7/intro.md)
