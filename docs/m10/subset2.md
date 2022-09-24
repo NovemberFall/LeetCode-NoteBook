@@ -37,6 +37,7 @@ class Solution {
                      List<List<Integer>> res, 
                      List<Integer> subset, 
                      int startIndex) {
+        //Deep Copy & add to results                
         res.add(new ArrayList<>(subset));
         for (int i = startIndex; i < nums.length; i++) {
    //这里遍历的时候每次都有从之前选择元素的下一个开始，所以这里i的初始值是level    
