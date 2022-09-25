@@ -10,7 +10,7 @@ You can return the answer in any order.
 
 ### Analysis:
 
-- [all permutations | DFS](https://novemberfall.github.io/LeetCode-NoteBook/#/m6/permutationsWithStr)
+- [all permutations | DFS](https://novemberfall.github.io/LeetCode-NoteBook/#/m10/permutationsWithStr)
 
 
 ```java
