@@ -97,7 +97,11 @@ public class subsetI {
 ![](img/2022-05-08-12-53-00.png)
 
 ![](img/2022-05-08-17-12-37.png)
-  
+
+---
+- 递归 vs 循环 | 递归实现搜索的本质是，实现了按照规定给定参数来决定循环层数的一个多重循环]
+  - 递归实现的搜索 `= n` 重循环, `n` 由输入决定 ｜ jiu zhang video: 递归和多重循环的关系 
+
 ```java
 class Solution {
     public List<List<Integer>> subsets(int[] nums) {
