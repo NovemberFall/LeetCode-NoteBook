@@ -16,7 +16,42 @@ You can return the answer in any order.
 - 对以上的`122` 的排列进行去重
 ![](img/2022-09-24-18-00-46.png)
 
+---
+```java
+class Solution {
+    public List<List<Integer>> permute(int[] nums) {
+        List<List<Integer>> res = new ArrayList<>();
+        if (nums == null || nums.length == 0) {
+            return res;
+        }
+        
+        boolean[] visited = new boolean[nums.length];
+        dfs(nums, res, new ArrayList<>(), visited);
+        return res;
+    }
+    
+    private void dfs(int[] nums, List<List<Integer>> res, List<Integer> permutation, boolean[] visited) {
+        if (permutation.size() == nums.length) {
+            res.add(new ArrayList<>(permutation));
+            return;
+        }
+        
+        for (int i = 0; i < nums.length; i++) {
+            if (visited[i]) {
+                continue;
+            }
+            
+            permutation.add(nums[i]);
+            visited[i] = true;
+            dfs(nums, res, permutation, visited);
+            visited[i] = false;
+            permutation.remove(permutation.size() - 1);
+        }
+    }
+}
+```
 
+---
 ```java
 class Solution {
     public List<List<Integer>> permute(int[] nums) {
@@ -49,3 +84,4 @@ class Solution {
     }
 }
 ```
+
