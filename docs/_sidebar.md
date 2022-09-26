@@ -238,8 +238,6 @@
     * [300. Longest Increasing Subsequence](m9/longestAscSubseq.md)
     * [Largest Set Of Points With Positive Slope](m9/largestSetPositiveSlop.md)
     * [Packing Up the Swags | Interview](m9/packingSwag.md)
-* [Graph](Graph/concept.md)
-    * [1971. Find if Path Exists in Graph](Graph/pathExists.md)
 
 -----
 * [Easy](README.md)
@@ -401,6 +399,7 @@
     * [Graph](Graph/concept.md)
         * [Quick Find - Disjoint Set](Graph/unionfind.md)
         * [Find if Path Exists in Graph](Graph/exist.md)
+        * [1971. Find if Path Exists in Graph](Graph/pathExists.md)
     * [Interface, Abstract class,Access Modifier,Exceptions](class/intro.md)
     * [Bit Representation & Bit Operations](Bit/intro.md)
     * [Integers and Strings](integerString/intString.md)
