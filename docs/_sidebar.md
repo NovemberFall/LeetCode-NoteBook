@@ -304,8 +304,6 @@
         * [394. Decode String](m8/decode.md)
         * [1004. Max Consecutive Ones III](m8/maxOnes.md)
         * [5. Longest Palindromic Substring](m8/longestPalindrom.md)
-    * [m11: Random, Probability, sampling](m11/intro.md)
-        * [384. Shuffle an Array](m11/shuffle.md)
   
 -----
 * [Hard && Interview Question](Hard/intro.md)
