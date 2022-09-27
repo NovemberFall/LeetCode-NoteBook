@@ -5,6 +5,8 @@
 
 - [all permutations | DFS](https://novemberfall.github.io/LeetCode-NoteBook/#/m10/permutationsWithStr)
 
+![](img/2022-09-27-00-16-05.png)
+
 ---
 ```java
 class Solution {
