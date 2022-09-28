@@ -43,36 +43,41 @@ class Solution {
 ```
 
 ---
+
+- If we don't add `boolean[] visited`:
+
+![](img/2022-09-27-18-00-43.png)
+
 ```java
-class Solution {
+class Permutations_v1 {
     public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
-        dfs(nums, 0, res);
+        if (nums == null || nums.length == 0) return res;
+
+        dfs(res, new ArrayList<>(), nums);
         return res;
     }
-    
-    private void dfs(int[]nums, int index ,List<List<Integer>> res) {
-        if (index == nums.length) {
-            List<Integer> cur = new ArrayList<>();
-            for (int num : nums) {
-                cur.add(num);
-            }
-            res.add(cur);
+
+    private void dfs(List<List<Integer>> res, List<Integer> path, int[] nums) {
+        if (path.size() == nums.length) {
+            res.add(new ArrayList<>(path));
             return;
         }
-        
-        for (int i = index; i < nums.length; i++) {
-            swap(nums, index, i);
-            dfs(nums, index+1, res);
-            swap(nums, index, i);
+
+        for (int i = 0; i < nums.length; i++) {
+            path.add(nums[i]);
+            dfs(res, path, nums);
+            path.remove(path.size() - 1);
         }
     }
-    
-    private void swap(int[] nums, int index, int i) {
-        int tmp = nums[index];
-        nums[index] = nums[i];
-        nums[i] = tmp;
+
+    public static void main(String[] args) {
+        int[] nums = new int[]{1, 2, 3};
+        Permutations_v1 pv1 = new Permutations_v1();
+        List<List<Integer>> res = pv1.permute(nums);
+        System.out.println(res);
     }
 }
 ```
 
+![](img/2022-09-27-18-02-23.png)
