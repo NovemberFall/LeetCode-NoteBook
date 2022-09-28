@@ -46,6 +46,8 @@ class Solution {
 
 - If we don't add `boolean[] visited`:
 
+### Version I
+
 ![](img/2022-09-27-18-00-43.png)
 
 ```java
@@ -79,4 +81,44 @@ class Permutations_v1 {
     }
 }
 ```
+
 ![](img/2022-09-27-18-07-29.png)
+
+![](img/2022-09-27-18-14-08.png)
+
+---
+
+### Version II
+
+![](img/2022-09-27-20-40-42.png)
+
+```java
+class Permutations_v2 {
+    public List<List<Integer>> permute(int[] nums) {
+        List<List<Integer>> res = new ArrayList<>();
+        if (nums == null || nums.length == 0) return res;
+
+        dfs(res, new ArrayList<>(), nums);
+        return res;
+    }
+
+    private void dfs(List<List<Integer>> res, List<Integer> path, int[] nums) {
+        if (path.size() == nums.length) {
+            res.add(new ArrayList<>(path));
+            return;
+        }
+
+        path.add(nums[0]);
+        dfs(res, path, nums);
+        path.remove(path.size() - 1);
+
+        path.add(nums[1]);
+        dfs(res, path, nums);
+        path.remove(path.size() - 1);
+
+        path.add(nums[2]);
+        dfs(res, path, nums);
+        path.remove(path.size() - 1);
+    }
+}
+```
