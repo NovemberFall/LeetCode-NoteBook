@@ -147,6 +147,7 @@
     * [314. Binary Tree Vertical Order Traversal](most/vertical.md)
     * [339. Nested List Weight Sum](most/nestedList.md)
     * [127. Word Ladder](BFS/ladder.md)
+    * [322. Coin Change](BFS/coin.md)
     * [133. Clone Graph | Deep Copy Undirected Graph](m6/deepCopyGraph.md)
     * [272. closest binary search tree value II](BFS/bstVallue.md)
     * [102. Binary Tree Level Order Traversal](m6/printByLayer.md)
