@@ -124,3 +124,72 @@ class Solution {
 ```
 
 ![](img/2022-02-06-22-26-14.png)
+
+---
+
+### Monotonic Stack
+
+```ruby
+
+    _____           _____
+    |   |____3      |   |  
+    |   |   |____2  |   |
+    |   |   |   | 1 |   |
+    —————————————————————
+
+
+why (i - stack.peek() - 1) ?
+
+If:
+    _____                _____
+    |   |____3           |   |  
+    |   |   |____2       |   |
+    |   |   |   | 1   1  |   |
+    ———————————————————————————
+
+
+
+why we need to check if (!stk.isEmpty()) 
+        _____
+    ____|   |
+    |   |   | 
+    —————————
+
+
+
+why we need to check: minHeight = Math.min(height[stk.peek()], height[i]);
+
+    _____           
+    |   |____      
+    |   |   |   _____
+    |   |   |   |   |
+    —————————————————
+
+```
+
+---
+
+```java
+class Solution {
+    public int trap(int[] height) {
+        if (height == null || height.length <= 2) {
+            return 0;
+        }
+        Stack<Integer> stk = new Stack<>();
+        int water = 0, i = 0;
+        while (i < height.length) {
+            if (stk.isEmpty() || height[i] <= height[stk.peek()]) {
+                stk.push(i);
+                i++;
+            } else {
+                int prev = stk.pop();
+                if (!stk.isEmpty()) {
+                    int minHeight = Math.min(height[stk.peek()], height[i]);
+                    water += (minHeight - height[prev]) * (i - stk.peek() - 1);
+                }
+            }
+        }
+        return water;
+    }
+}
+```
