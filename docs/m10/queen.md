@@ -6,7 +6,10 @@
 
 ![](img/2021-07-10-11-34-33.png)
 
+- [参考教程](https://leetcode.cn/problems/n-queens/solution/gen-ju-di-46-ti-quan-pai-lie-de-hui-su-suan-fa-si-/)
 ---
+
+- [youtube video](https://www.youtube.com/watch?v=_ey1pyQy7Bg)
 
 ```java
 /*
