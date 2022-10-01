@@ -237,7 +237,7 @@
     * [ReOrder Array](m5/reorderArr.md)
 * [Dynamic Programming | Monotonic Stack](DP/intro.md)
     * [42. Trapping Rain Water](amazon/rain.md)
-    * [84. Largest Rectangle in Histogram](monotonic/histogram.md)
+    * [84. Largest Rectangle in Histogram | Monotonic Stack](monotonic/histogram.md)
     * [72. Edit Distance](DP/editDis.md)
     * [45. Jump Game II | Array Hopper II](DP/jumpGameII.md)
     * [Longest Cross Of 1s](DP/longestCrossOnes.md)
