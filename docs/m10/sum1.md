@@ -1,22 +1,9 @@
 ## 40. Combination Sum II
-
-```ruby
-Given a collection of candidate numbers (candidates) and 
-a target number (target), find all unique combinations in candidates 
-where the candidate numbers sum to target.
-
-Each number in candidates may only be used once in the combination.
-
-Note: The solution set must not contain duplicate combinations.
-```
-
-![](img/2021-06-05-12-38-45.png)
+![](img/2022-10-01-13-02-34.png)
 
 ---
 
 ![](img/2021-06-05-12-39-45.png)
-
-![](img/2021-06-05-12-40-08.png)
 
 ---
 
