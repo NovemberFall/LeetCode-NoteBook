@@ -235,8 +235,9 @@
 * [Merge Sort](merge/intro.md)
     * [4. Median of Two Sorted Arrays](arr/median.md)
     * [ReOrder Array](m5/reorderArr.md)
-* [Dynamic Programming](DP/intro.md)
+* [Dynamic Programming | Monotonic Stack](DP/intro.md)
     * [42. Trapping Rain Water](amazon/rain.md)
+    * [84. Largest Rectangle in Histogram](monotonic/histogram.md)
     * [72. Edit Distance](DP/editDis.md)
     * [45. Jump Game II | Array Hopper II](DP/jumpGameII.md)
     * [Longest Cross Of 1s](DP/longestCrossOnes.md)
@@ -311,8 +312,6 @@
     * [String](hString/intro.md)
         * [Remove Adjacent Repeated Characters IV](hString/dedupAdjRepChar.md)
         * [65. Valid Number](hString/valid.md)
-    * [Histogram | monotonic stack](histogram/intro.md)
-        * [84. Largest Rectangle in Histogram](histogram/histogram.md)
 
 -----
 * [Amazon Top 50](amazon/intro.md)
