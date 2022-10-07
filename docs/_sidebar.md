@@ -399,6 +399,7 @@
         * [1971. Find if Path Exists in Graph](graph/pathExists.md)
     * [Interface, Abstract class,Access Modifier,Exceptions](class/intro.md)
     * [Bit Representation & Bit Operations](Bit/intro.md)
+        * [key.hashCode() & 0X7FFFFFFF](Bit/hash.md)
     * [Integers and Strings](integerString/intString.md)
     * [Object-Oritented Design](oritented/.md)
         * [The Comparator Interface Type](oritented/comparator.md)
