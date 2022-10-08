@@ -84,7 +84,7 @@
     * [232. Implement Queue using Stacks](stack/queue.md)
     * [20. Valid Parentheses](stack/valid.md)
     * [Sort With Two Stacks](m1/sortWithTwoStack.md)
-* [HashMap](map/intro.md)
+* [HashMap](ch3/intro.md)
     * [1. Two Sum](ch3/twoSum.md)
     * [13. Roman to Integer](most/roman.md)
     * [244. Shortest Word Distance II](most/shortest.md)
