@@ -18,4 +18,4 @@ Anything                          &
 0 ← Always
 ```
 
-- After this, the `%` operator is used to ensure that we are in the range of tab.length.
+- After this, the `%` operator is used to ensure that we are in the range of `table.length`.
