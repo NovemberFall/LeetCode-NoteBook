@@ -44,6 +44,7 @@
     * [22. Generate Parentheses | DFS (All Permutations Of Parentheses I)](m10/parenthesesI.md)
     * [443. String Compression](m8/strencode.md)
     * [49. Group Anagrams](m7/group.md)
+    * [364. Nested List Weight Sum II](most/nestedList2.md)
     * [347. Top K Frequent Elements](m7/topKfreq1.md)    
     * [9. Palindrome Number](most/palindromenum.md)    
     * [11. Container With Most Water](most/mostwater.md)    
