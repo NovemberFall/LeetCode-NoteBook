@@ -265,6 +265,7 @@
     * [485. Max Consecutive Ones | Longest Consecutive 1s](ch8/longestOnes.md)
 * [Graph](graph/concept.md)
     * [1971. Find if Path Exists in Graph](graph/pathExists.md)
+    * [399. Evaluate Division | DFS](graph/division.md)
 
 -----
 * [Easy](README.md)
