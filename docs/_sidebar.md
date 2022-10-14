@@ -266,6 +266,7 @@
 * [Graph](graph/concept.md)
     * [1971. Find if Path Exists in Graph](graph/pathExists.md)
     * [399. Evaluate Division | DFS](graph/division.md)
+    * [785. Is Graph Bipartite? | BFS](graph/bipartite.md)
 
 -----
 * [Easy](README.md)
