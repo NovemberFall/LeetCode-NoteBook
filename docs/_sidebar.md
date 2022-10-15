@@ -159,6 +159,12 @@
     * [145. Binary Tree Postorder Traversal | BFS](hBinaryTree/bstPost-order.md)
     * [958. Check Completeness of a Binary Tree | BFS](m6/checkComplete.md)
     * [1730	Shortest Path to Get Food](amazon/shortestPath.md)
+* [Topological Sort](ts/intro.md)
+    * [210. Course Schedule II](ts/course2.md)
+* [Graph](graph/concept.md)
+    * [1971. Find if Path Exists in Graph](graph/pathExists.md)
+    * [399. Evaluate Division | DFS](graph/division.md)
+    * [785. Is Graph Bipartite? | BFS](graph/bipartite.md)
 * [Heap](heap/intro.md)
     * [215. Kth Largest Element in an Array](m6/KthLarget.md)
     * [K Smallest In Unsorted Array](m6/K_smallest.md)
@@ -263,10 +269,6 @@
     * [Largest Set Of Points With Positive Slope](m9/largestSetPositiveSlop.md)
     * [Packing Up the Swags | Interview](m9/packingSwag.md)
     * [485. Max Consecutive Ones | Longest Consecutive 1s](ch8/longestOnes.md)
-* [Graph](graph/concept.md)
-    * [1971. Find if Path Exists in Graph](graph/pathExists.md)
-    * [399. Evaluate Division | DFS](graph/division.md)
-    * [785. Is Graph Bipartite? | BFS](graph/bipartite.md)
 
 -----
 * [Easy](README.md)
