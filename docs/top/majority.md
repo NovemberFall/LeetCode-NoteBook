@@ -9,13 +9,13 @@ class Solution {
     public int majorityElement(int[] nums) {
         if (nums == null || nums.length == 0) return 0;
         
-        int count = 0, candicate = -1;
+        int count = 0, candidate = -1;
         for (int i = 0; i < nums.length; i++) {
             if (count == 0) {
-                candicate = nums[i];
+                candidate = nums[i];
                 count = 1;
             } else {
-                if (nums[i] == candicate) {
+                if (nums[i] == candidate) {
                     count++;
                 } else {
                     count--;
@@ -25,13 +25,13 @@ class Solution {
         
         count = 0;
         for (int i = 0; i < nums.length; i++) {
-            if (nums[i] == candicate) {
+            if (nums[i] == candidate) {
                 count++;
             }
         }
         
         if (count > (nums.length / 2)) {
-            return candicate;
+            return candidate;
         } else {
             return -1;
         }
