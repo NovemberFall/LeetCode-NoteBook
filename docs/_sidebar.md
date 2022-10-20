@@ -271,6 +271,10 @@
     * [485. Max Consecutive Ones | Longest Consecutive 1s](ch8/longestOnes.md)
 
 -----
+* [Top 200](top/intro.md)
+    * [169. Majority Element | Majority Voting Algorithm](top/majority.md)
+
+-----
 * [Easy](README.md)
     * [Chapter1：Array && String](ch1/intro.md)
         * [Remove Spaces](ch1/removeAllSpace.md)
