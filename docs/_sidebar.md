@@ -275,6 +275,7 @@
 * [Top 200](top/intro.md)
     * [169. Majority Element | Majority Voting Algorithm](top/majority.md)
     * [141. Linked List Cycle](ch4/listCycle.md)
+    * [6. Zigzag Conversion](top/zigzag.md)
 
 -----
 * [Easy](README.md)
