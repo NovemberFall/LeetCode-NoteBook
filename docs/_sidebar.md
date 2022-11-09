@@ -277,6 +277,7 @@
     * [141. Linked List Cycle](ch4/listCycle.md)
     * [6. Zigzag Conversion](top/zigzag.md)
     * [8. String to Integer (atoi)](top/atoi.md)
+    * [10. Regular Expression Matching](top/regular.md)
 
 -----
 * [Easy](README.md)
