@@ -1,6 +1,6 @@
 ## 12. Integer to Roman
-![](img/2022-11-18-00-06-42.png)
-![](img/2022-11-18-00-07-00.png)
+![](img/2022-11-18-00-12-00.png)
+![](img/2022-11-18-00-12-14.png)
 
 ```java
 class _12_IntegerToRoman {

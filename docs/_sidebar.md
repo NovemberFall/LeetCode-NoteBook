@@ -278,7 +278,7 @@
     * [6. Zigzag Conversion](top/zigzag.md)
     * [8. String to Integer (atoi)](top/atoi.md)
     * [10. Regular Expression Matching](top/regular.md)
-    * [12. Integer to Roman](ch4/intToRoman.md)
+    * [12. Integer to Roman](top/intToRoman.md)
 
 -----
 * [Easy](README.md)
