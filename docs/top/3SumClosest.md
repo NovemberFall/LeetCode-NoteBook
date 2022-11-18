@@ -1,6 +1,8 @@
 ## 16. 3Sum Closest
 ![](img/2022-11-18-00-14-55.png)
 
+- [ANS](https://leetcode.com/problems/3sum-closest/discuss/7883/C%2B%2B-solution-O(n2)-using-sort)
+
 ```ruby
 Sort the vector and then no need to run O(N^3) algorithm as each index has a direction to move.
 
