@@ -275,6 +275,9 @@
 * [Top 200](top/intro.md)
     * [169. Majority Element | Majority Voting Algorithm](top/majority.md)
     * [141. Linked List Cycle](ch4/listCycle.md)
+    * [6. Zigzag Conversion](top/zigzag.md)
+    * [8. String to Integer (atoi)](top/atoi.md)
+    * [10. Regular Expression Matching](top/regular.md)
     * [12. Integer to Roman](ch4/intToRoman.md)
 
 -----
