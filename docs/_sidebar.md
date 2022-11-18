@@ -279,7 +279,9 @@
     * [8. String to Integer (atoi)](top/atoi.md)
     * [10. Regular Expression Matching](top/regular.md)
     * [12. Integer to Roman](top/intToRoman.md)
+    * [15. 3Sum](m3/threeSum.md)
     * [16. 3Sum Closest](top/3SumClosest.md)
+    * [1. Two Sum](ch3/twoSum.md )
 
 -----
 * [Easy](README.md)
@@ -308,7 +310,6 @@
         * [189. Rotate Array](m3/rotateArr.md)
         * [59. Spiral Matrix II](m3/spiral2.md)
         * [167. Two Sum II - Input array is sorted](m3/two2.md)
-        * [15. 3Sum](m3/threeSum.md)
     * [m8: String](m8/intro.md)
         * [3.Longest Substring Without Repeating Characters](m8/without.md)
         * [Remove Certain Characters](m8/rmCertainChar.md)
