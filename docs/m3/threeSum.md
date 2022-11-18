@@ -47,29 +47,31 @@
 class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
+        if (nums == null || nums.length == 0) return res;
+        int n = nums.length;
         Arrays.sort(nums);
-        int target = 0;
-        for (int i = 0; i < nums.length; i++) {
-            if (i > 0 && nums[i] == nums[i - 1]) {
-                continue;//skip same result
+        for (int first = 0; first < n - 2; first++) {
+            if (first > 0 && nums[first] == nums[first - 1]) {
+                continue;
             }
-            int left = i + 1;
-            int right = nums.length - 1;
-            while (left < right) {
-                if (nums[i]+nums[left]+nums[right] == target) {
-                    res.add(Arrays.asList(nums[i],nums[left],nums[right]));
-                    left++;
-                    right--;
-                    while (left < right && nums[left] == nums[left - 1]) {
-                        left++;//skip same result
+            int second = first + 1;
+            int third = n - 1;
+            while (second < third) {
+                int curSum = nums[first] + nums[second] + nums[third];
+                if (curSum == 0) {
+                    res.add(Arrays.asList(nums[first], nums[second], nums[third]));
+                    second++;
+                    third--;
+                    while (second < third && nums[second] == nums[second - 1]) {
+                        second++;
                     }
-                    while (left < right && nums[right] == nums[right + 1]) {
-                        right--;//skip same result
-                    }                    
-                } else if (nums[i]+nums[left]+nums[right] < target) {
-                    left++;               
+                    while (second < third && nums[third] == nums[third + 1]) {
+                        third--;
+                    }
+                } else if (curSum < 0) {
+                    second++;
                 } else {
-                    right--;                   
+                    third--;
                 }
             }
         }
