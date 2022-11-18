@@ -279,6 +279,7 @@
     * [8. String to Integer (atoi)](top/atoi.md)
     * [10. Regular Expression Matching](top/regular.md)
     * [12. Integer to Roman](top/intToRoman.md)
+    * [16. 3Sum Closest](top/3SumClosest.md)
 
 -----
 * [Easy](README.md)
