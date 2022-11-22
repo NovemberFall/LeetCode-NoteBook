@@ -94,6 +94,7 @@
     * [347. Top K Frequent Elements](m7/topKfreq1.md)
     * [350. Intersection of Two Arrays II](ch7/interset1.md)
     * [387. First Unique Character in a String](ch1/firstNonRepeatChar.md)
+    * [12. Integer to Roman](top/intToRoman.md)
 * [HashSet](set/intro.md)
     * [268. Missing Number | bit operation](ch7/misssingNum.md)
     * [349. Intersection of Two Arrays](ch7/interset.md)
@@ -284,6 +285,7 @@
     * [15. 3Sum](m3/threeSum.md)
     * [16. 3Sum Closest](top/3SumClosest.md)
     * [1. Two Sum](ch3/twoSum.md )
+    * [25. Reverse Nodes in k-Group](top/kgroup.md)
 
 -----
 * [Easy](README.md)
