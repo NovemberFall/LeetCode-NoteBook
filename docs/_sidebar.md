@@ -286,6 +286,7 @@
     * [16. 3Sum Closest](top/3SumClosest.md)
     * [1. Two Sum](ch3/twoSum.md )
     * [25. Reverse Nodes in k-Group](top/kgroup.md)
+    * [27. Remove Element](top/removeEle.md)
 
 -----
 * [Easy](README.md)
