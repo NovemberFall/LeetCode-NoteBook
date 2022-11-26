@@ -233,6 +233,7 @@
     * [Move 0s To The End](ch1/move0toEnd.md)
     * [Move 0s To The End II](ch1/move0toEnd2.md)
     * [344. Reverse String](ch1/reverseStr.md)
+    * [27. Remove Element](top/removeEle.md)
 * [Binary Search](binarySearch/intro.md)
     * [704. Classical Binary Search](ch2/classicalBinarySearch.md)
     * [33. Search in Rotated Sorted Array](m3/SearchinRotatedSortedArray.md)
@@ -287,6 +288,7 @@
     * [1. Two Sum](ch3/twoSum.md )
     * [25. Reverse Nodes in k-Group](top/kgroup.md)
     * [27. Remove Element](top/removeEle.md)
+    * [32. Longest Valid Parentheses](top/LongestValidParentheses.md)
 
 -----
 * [Easy](README.md)
