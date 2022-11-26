@@ -248,6 +248,8 @@
 * [Merge Sort](merge/intro.md)
     * [4. Median of Two Sorted Arrays](arr/median.md)
     * [ReOrder Array](m5/reorderArr.md)
+* [Matrix](matrix/intro.md)
+    * [36. Valid Sudoku](top/ValidSudoku.md)
 * [Dynamic Programming | Monotonic Stack](DP/intro.md)
     * [42. Trapping Rain Water](amazon/rain.md)
     * [84. Largest Rectangle in Histogram | Monotonic Stack](monotonic/histogram.md)
@@ -291,6 +293,7 @@
     * [27. Remove Element](top/removeEle.md)
     * [32. Longest Valid Parentheses](top/LongestValidParentheses.md)
     * [35. Search Insert Position](top/SearchInsertPosition.md)
+    * [36. Valid Sudoku](top/ValidSudoku.md)
 
 -----
 * [Easy](README.md)
