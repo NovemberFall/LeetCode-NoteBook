@@ -12,7 +12,7 @@ public class classical {
         int left = 0;
         int right = array.length - 1;
         while(left <= right){   //cannot : left < right
-            int mid = (left + right) / 2;
+            int mid = left + (right - left) / 2;
             if(array[mid] == target){
                 return mid;
             }else if(array[mid] > target){
