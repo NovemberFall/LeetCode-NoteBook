@@ -289,6 +289,7 @@
     * [25. Reverse Nodes in k-Group](top/kgroup.md)
     * [27. Remove Element](top/removeEle.md)
     * [32. Longest Valid Parentheses](top/LongestValidParentheses.md)
+    * [35. Search Insert Position](top/SearchInsertPosition.md)
 
 -----
 * [Easy](README.md)
