@@ -1,4 +1,4 @@
-# Bit Representation & Bit Operations
+## Bit Representation & Bit Operations
 
 ```ruby
 219 = 2 * 100 + 1 * 10 + 9 * 1
@@ -69,6 +69,19 @@ x + (-x) two's complement = 10000...0
 
 ---
 
+#### Example:
+![](img/2022-11-25-16-34-20.png)
+
+```ruby
+            0 1 0 1 0 1
+>>> 2       0 0 0 1 0 1
+  & 1       0 0 0 0 0 1
+_________________________
+            0 0 0 0 0 1                       
+```
+
+
+---
 ### Critical details: ch - 'a'
 
 - According ASCII Table:
