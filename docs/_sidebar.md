@@ -239,6 +239,7 @@
     * [33. Search in Rotated Sorted Array](m3/SearchinRotatedSortedArray.md)
     * [162. Find Peak Element](most/findPeak.md)
     * [74. Search a 2D Matrix I](m3/SearchIn2DArray.md)
+    * [35. Search Insert Position](top/SearchInsertPosition.md)
 * [Trie](trie/intro.md)
     * [208. Implement Trie (Prefix Tree)](m12/trie.md)
     * [588. Design In-Memory File System](amazon/file.md)
