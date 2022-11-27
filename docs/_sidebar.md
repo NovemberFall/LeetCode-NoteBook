@@ -294,6 +294,7 @@
     * [32. Longest Valid Parentheses](top/LongestValidParentheses.md)
     * [35. Search Insert Position](top/SearchInsertPosition.md)
     * [36. Valid Sudoku](top/ValidSudoku.md)
+    * [37. Sudoku Solver](top/SudokuSolver.md)
 
 -----
 * [Easy](README.md)
