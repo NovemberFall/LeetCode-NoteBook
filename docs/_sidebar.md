@@ -295,6 +295,7 @@
     * [35. Search Insert Position](top/SearchInsertPosition.md)
     * [36. Valid Sudoku](top/ValidSudoku.md)
     * [37. Sudoku Solver](top/SudokuSolver.md)
+    * [38. Count and Say](top/countSay.md)
 
 -----
 * [Easy](README.md)
