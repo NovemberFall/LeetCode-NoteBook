@@ -296,6 +296,7 @@
     * [36. Valid Sudoku](top/ValidSudoku.md)
     * [37. Sudoku Solver](top/SudokuSolver.md)
     * [38. Count and Say](top/countSay.md)
+    * [43. Multiply Strings](top/MultiplyStr.md)
 
 -----
 * [Easy](README.md)
