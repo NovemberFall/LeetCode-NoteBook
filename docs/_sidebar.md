@@ -267,7 +267,6 @@
     * [Max Product Of Cutting Rope](m9/maxProductOfCuttingRope.md)
     * [221. Maximal Square | Largest Square Of 1s](m9/largestSquare.md)
     * [55. Jump Game | Array Hopper I](m9/jumpGame.md)
-    * [45. Jump Game|| Array Hopper II](m9/jumpGame1.md)
     * [53. Maximum Subarray | Largest SubArray Sum](m9/subArrSum.md)
     * [152. Maximum Product Subarray](m9/subArrProduct.md)
     * [139. Word Break | Dictionary Word |](m9/wordBreak.md)
@@ -297,6 +296,8 @@
     * [37. Sudoku Solver](top/SudokuSolver.md)
     * [38. Count and Say](top/countSay.md)
     * [43. Multiply Strings](top/MultiplyStr.md)
+    * [44. Wildcard Matching](top/WildcardMatch.md)
+    * [45. Jump Game II | Array Hopper II](DP/jumpGameII.md)
 
 -----
 * [Easy](README.md)
