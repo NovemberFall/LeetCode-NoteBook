@@ -19,6 +19,7 @@ class _10_RegularExpressionMatching {
         if (p.length() == 0) {
             return s.length() == 0;
         }
+        //Note: "*b" is invalid!!!
         if (p.length() > 1 && p.charAt(1) == '*') {// second char is *
             if (isMatch(s, p.substring(2))) {
                 return true;
