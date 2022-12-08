@@ -1,9 +1,12 @@
 ## 44. Wildcard Matching
 ![](img/2022-11-28-11-29-06.png)
 
-
 ![](img/2022-11-30-13-22-37.png)
 
+
+
+---
+### Iterator
 
 ```ruby
 Input:

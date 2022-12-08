@@ -3,12 +3,40 @@
 ---
 ![](img/2022-12-01-11-51-57.png)
 
+![](img/2022-12-07-22-07-39.png)
+
+```ruby
+##  How does "ablmy" stand true to "a*b.*y"?
+
+    a* ---> a
+    b ---> b
+    .* ----> . . ----> lm
+    y ----> y
+
+    In regular expression, single * has no meaning. It has to be *
+    Examples:
+    a*
+    b*
+    .*
+```
+
 - Note: `*b`  is **invalid**
+
+#### DP
+
+- [youtube video 4:24](https://www.youtube.com/watch?v=fWeTjhgDt3A&t=5s)
+
+
+```java
+/**
+  Note:  dp[0][0] = true, becase empty string vs empty string is True
+*/
+```
+
 ---
 ![](img/2022-11-08-22-33-03.png)
 
 ![](img/2022-11-08-22-34-44.png)
-
 ---
 
 - [DFS](https://www.youtube.com/watch?v=EdWzV-9lQMw)
