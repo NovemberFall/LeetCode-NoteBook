@@ -66,13 +66,12 @@ M[0][0] = true;
 
 #### DP
 
-- [another youtube video 4:24](https://www.youtube.com/watch?v=fWeTjhgDt3A&t=5s)
-
-
 ```java
 /**
   Note:  dp[0][0] = true, becase empty string vs empty string is True
 */
+
+
 ```
 
 ---
