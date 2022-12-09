@@ -1,31 +1,6 @@
-# Smallest Element Larger than Target
+## Smallest Element Larger than Target
 
-```ruby
-Given a target integer T and an integer array A sorted in ascending order, 
-find the index of the smallest element in A that is larger than T or return -1 
-if there is no such index.
-
-
-
-Assumptions
-There can be duplicate elements in the array.
-
-
-
-Examples
-
-A = {1, 2, 3}, T = 1, return 1
-
-A = {1, 2, 3}, T = 3, return -1
-
-A = {1, 2, 2, 2, 3}, T = 1, return 1
-
-
-
-Corner Cases
-
-What if A is null or A of zero length? We should return -1 in this case.
-```
+![](img/2022-12-09-09-05-33.png)
 
 
 ## Analysis:
@@ -34,12 +9,37 @@ What if A is null or A of zero length? We should return -1 in this case.
 
 - 以及也对 `while(left < right - 1){//prevent infinite loop` 做了充分解释
 
+```ruby
+T = 1
+0  1  2  3  4  
+1  2  2  2  3  
+l           r
+
+
+0  1  2  3  4  
+1  2  2  2  3  
+l     r              m  =  2
+
+
+0  1  2  3  4  
+1  2  2  2  3  
+l  r                 m  =  1
+
+
+0  1  2  3  4  
+1  2  2  2  3  
+l  r                 m  =  0
+
+
+## that's why we need to set :
+##    while (left < right - 1),    otherwise infinite loop
+```
+
 
 
 ```java
 public class Solution {
   public int smallestElementLargerThanTarget(int[] array, int target) {
-    // Write your solution here
     if(array == null || array.length == 0){
       return -1;
     }

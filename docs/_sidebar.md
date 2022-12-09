@@ -236,6 +236,7 @@
     * [27. Remove Element](top/removeEle.md)
 * [Binary Search](binarySearch/intro.md)
     * [704. Classical Binary Search](ch2/classicalBinarySearch.md)
+        * [704 II. Smallest Element that is Larger than Target](ch2/firstLarge.md)
     * [33. Search in Rotated Sorted Array](m3/SearchinRotatedSortedArray.md)
     * [162. Find Peak Element](most/findPeak.md)
     * [74. Search a 2D Matrix I](m3/SearchIn2DArray.md)
