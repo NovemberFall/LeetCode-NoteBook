@@ -1,18 +1,9 @@
-# 74. Search a 2D Matrix
+## 74. Search a 2D Matrix | Search In sorted matrix
+![](img/2022-12-09-22-11-31.png)
+![](img/2022-12-09-22-11-46.png)
 
-# Search In sorted matrix
-
-- Write an efficient algorithm that searches for a value in an 
-  m x n matrix. This matrix has the following properties:
-
-- Integers in each row are sorted from left to right.
-
-- The first integer of each row is greater than the last integer of 
-  the previous row.
-
-### `matrix.length` is rows' length
-
-### `matrix[0].length` is column's length
+- `matrix.length` is rows' length
+- `matrix[0].length` is column's length
 
 ```java
 public class searhInMatrix {
