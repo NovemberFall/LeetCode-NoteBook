@@ -47,16 +47,20 @@ public class Solution {
     int right = array.length - 1;
     while(left < right - 1){//prevent infinite loop
       int mid = left + (right - left) / 2;
-      if(array[mid] <= target){
-        left = mid;
-      }else{
-        right = mid;
+      if(array[mid] == target){
+        left = mid; // case1
+      } else if (array[mid] < target) {
+        left = mid; // case2 (can merge with case 1)
+      } else {
+        right = mid; // case3
       }
     }
-    if(array[left] > target){
+
+    // Post processing
+    if(array[left] > target){ // check a[left] against target first
       return left;
     }
-    if(array[right] > target){
+    if(array[right] > target){ // then check a[right] against target 
       return right;
     }
     return -1;
