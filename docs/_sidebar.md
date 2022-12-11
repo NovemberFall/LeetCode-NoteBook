@@ -293,6 +293,8 @@
     * [Largest Set Of Points With Positive Slope](m9/largestSetPositiveSlop.md)
     * [Packing Up the Swags | Interview](m9/packingSwag.md)
     * [485. Max Consecutive Ones | Longest Consecutive 1s](ch8/longestOnes.md)
+    * [10. Regular Expression Matching](top/regular.md)
+    * [44. Wildcard Matching](top/WildcardMatch.md)
 
 -----
 * [Top 200](top/intro.md)

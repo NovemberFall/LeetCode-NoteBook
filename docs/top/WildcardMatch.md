@@ -13,8 +13,11 @@ class _44_WildcardMatching {
         int m = s.length(), n = p.length();
         boolean[][] dp = new boolean[m + 1][n + 1];
         dp[0][0] = true;
+        // first col: dp[i][0]: can't match when p is empty. All false.
+
         for (int j = 1; j < dp[0].length; j++) {
             if (p.charAt(j - 1) == '*') {
+                // first row: dp[0][j]: except for String p starts with *, otherwise all false
                 dp[0][j] = dp[0][j - 1];
             }
         }
