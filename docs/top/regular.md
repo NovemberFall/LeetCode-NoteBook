@@ -101,6 +101,10 @@ class _10_RegularExpressionMatching {
                     dp[i][j] = dp[i - 1][j - 1];
                 } else if (p.charAt(j - 1) == '*') {
                     if (s.charAt(i - 1) == p.charAt(j - 2) || p.charAt(j - 2) == '.') {
+                        /*
+                        s = abc  p = ac*  // p need to check preceding element before `*`
+                                          // s only check current element
+                        */
                         dp[i][j] = dp[i][j - 2] || dp[i][j - 1] || dp[i - 1][j];
                         // 当*的前一位是'.'， 或者前一位的pc等于sc的话，
                         // *代表1个(dp[i][j - 1])，*代表多个(dp[i - 1][j])，或者用*消掉c*(dp[i][j - 2])
