@@ -31,30 +31,27 @@ public class classical {
 }
 ```
 
+---
 
-
-```js
-/**
- * @param {number[]} nums
- * @param {number} target
- * @return {number}
- */
-var search = function (nums, target) {
-    if (nums.length == null || nums.length == 0) {
-        return -1;
-    }
-    var left = 0;
-    var right = nums.length - 1;
+- 注意：如果`binarySerach`, 找的是具体的**target**, 那么：
+```java
     while (left <= right) {
-        var mid = Math.floor(left + (right - left) / 2);
-        if (nums[mid] == target) {
-            return mid;
-        } else if (nums[mid] > target) {
-            right = mid - 1;
-        } else {
-            left = mid + 1;
-        }
+        ...
+        ...
+        left = mid + 1;
+
+        right = mid - 1;
     }
-    return -1;
-};
+```
+
+
+- 注意：如果`binarySerach`, 找的是具体的**范围**, 那么：
+```java
+    while (left < right - 1) {
+        ...
+        ...
+        left = mid;
+
+        right = mid;
+    }
 ```
