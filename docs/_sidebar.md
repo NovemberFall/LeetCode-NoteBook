@@ -234,6 +234,7 @@
     * [Move 0s To The End II](ch1/move0toEnd2.md)
     * [344. Reverse String](ch1/reverseStr.md)
     * [27. Remove Element](top/removeEle.md)
+    * [88. Merge Sorted Array | Merge two Sorted Array](ch1/mergeTwoArr.md)
 * [Binary Search](binarySearch/intro.md)
     * [704. Classical Binary Search](ch2/classicalBinarySearch.md)
         * [704 II. Smallest Element that is Larger than Target](ch2/firstLarge.md)
@@ -317,6 +318,7 @@
     * [43. Multiply Strings](top/MultiplyStr.md)
     * [44. Wildcard Matching](top/WildcardMatch.md)
     * [45. Jump Game II | Array Hopper II](DP/jumpGameII.md)
+    * [88. Merge Sorted Array | Merge two Sorted Array](ch1/mergeTwoArr.md)
 
 -----
 * [Easy](README.md)
@@ -325,7 +327,6 @@
         * [Right Shift By N Characters](ch1/rightShift.md)
         * [28. Implement strStr() | Determine If One String Is Another's Substring](ch1/strstr.md)
         * [392. Is Subsequence](ch1/isSubsequence.md)
-        * [88. Merge Sorted Array | Merge two Sorted Array](ch1/mergeTwoArr.md)
         * [27. Remove Element](ch1/rmEle.md)
         * [26. Remove Duplicates from Sorted Array](ch1/rmDupEle.md)
         * [Remove Adjacent Repeated Characters I](ch1/rmDupChar.md)
