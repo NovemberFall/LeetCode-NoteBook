@@ -220,6 +220,7 @@
     * [Maximum Path Sum Binary Tree III](hBinaryTree/maxPathSumIII.md)
 * [Binary Search Tree](binarySearchTree/intro.md)
     * [109. Convert Sorted List to Binary Search Tree](binarySearchTree/listtobst.md)
+    * [108. Convert Sorted Array to Binary Search Tree](binarySearchTree/arrtobst.md)
 * [Two Pointers](twopoint/intro.md)
     * [15. 3Sum](m3/threeSum.md)
     * [16. 3Sum Closest](top/3SumClosest.md)
