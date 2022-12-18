@@ -89,6 +89,7 @@
       * [Facebook | Phone | Binary Tree Preorder Iterator](stack/preorderIterator.md)
     * [94. Binary Tree Inorder Traversal](ch5/inorder.md)
     * [145. Binary Tree Postorder Traversal | recurive](ch5/postorder.md)
+    * [173. Binary Search Tree Iterator](stack/bstIterator.md)
 * [HashMap](ch3/intro.md)
     * [1. Two Sum](ch3/twoSum.md)
     * [13. Roman to Integer](most/roman.md)

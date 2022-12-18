@@ -2,8 +2,11 @@
 
 ![](img/2021-06-20-23-44-34.png)
 
+- `Time O(n)`
+- space: `O(H)` -- on call stack
+
 ```java
-class _144_BinaryTreePreorderTraversal {
+class BinaryTreePreorderTraversal_Iterator {
     static class TreeNode {
         int val;
         TreeNode left;
@@ -24,17 +27,19 @@ class _144_BinaryTreePreorderTraversal {
     }
 
     public List<Integer> preorderTraversal(TreeNode root) {
+        if (root == null) return new ArrayList<>();
+
         List<Integer> res = new ArrayList<>();
-        Deque<TreeNode> stack = new ArrayDeque<>();
-        stack.push(root);
-        while (!stack.isEmpty()) {
-            TreeNode cur = stack.pop();
+        Deque<TreeNode> stk = new ArrayDeque<>();
+        stk.push(root);
+        while (!stk.isEmpty()) {
+            TreeNode cur = stk.pop();
             res.add(cur.val);
             if (cur.right != null) {
-                stack.push(cur.right);
+                stk.push(cur.right);
             }
             if (cur.left != null) {
-                stack.push(cur.left);
+                stk.push(cur.left);
             }
         }
         return res;
@@ -45,14 +50,13 @@ class _144_BinaryTreePreorderTraversal {
         root.left = new TreeNode(2);
         root.right = new TreeNode(8);
         root.left.left = new TreeNode(1);
-        root.right.right = new TreeNode(3);
+        root.left.right = new TreeNode(3);
 
-        _144_BinaryTreePreorderTraversal btpt = new _144_BinaryTreePreorderTraversal();
-        List<Integer> res = btpt.preorderTraversal(root);
-        System.out.println(res);// [5, 2, 1, 8, 3]
+        BinaryTreePreorderTraversal_Iterator btpti = new BinaryTreePreorderTraversal_Iterator();
+        List<Integer> res = btpti.preorderTraversal(root);
+        System.out.println(res);
     }
 }
-
 ```
 
 
