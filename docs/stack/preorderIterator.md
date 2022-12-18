@@ -5,7 +5,9 @@
 
 ---
 
-- Time: `O(n)`
+- Time:  
+  - `next() -- O(1)`
+  - `hashNext() -- O(1)`
 - space: `O(H)` -- the stack we created on heap.
 
 
