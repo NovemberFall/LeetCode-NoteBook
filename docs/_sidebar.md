@@ -86,7 +86,6 @@
     * [20. Valid Parentheses](stack/valid.md)
     * [Sort With Two Stacks](m1/sortWithTwoStack.md)
     * [144. Binary Tree Preorder Traversal](ch5/preorder.md)
-      * [Facebook | Phone | Binary Tree Preorder Iterator](stack/preorderIterator.md)
     * [94. Binary Tree Inorder Traversal](ch5/inorder.md)
     * [145. Binary Tree Postorder Traversal | recurive](ch5/postorder.md)
     * [173. Binary Search Tree Iterator](stack/bstIterator.md)
@@ -175,7 +174,6 @@
     * [K Smallest In Unsorted Array](m6/K_smallest.md)
     * [378. Kth Smallest Element in a Sorted Matrix | Best FS](m6/kthSmallest.md)
     * [23. Merge k Sorted Lists](m6/kLists.md)
-      * [23. Merge K Sorted Arrays](m6/karrs.md)
 * [Recursion](recursive/intro.md)
     * [50. Pow(x, n)](m4/power.md)
     * [509. Fibonacci Number](ch5.1/fibonacci.md)
@@ -192,8 +190,6 @@
     * [993. Cousins in Binary Tree](ch5/cousinInTree.md)
     * [404. Sum of Left Leaves](ch5/leftSum.md)
     * [270. closest binary search tree value I](ch5/cloestBst.md)
-    * [94. Binary Tree Inorder Traversal](m2/bstIn-order.md)
-    * [144. Binary Tree Preorder Traversal](m2/bstPre-order.md)
     * [450. Delete Node in a BST ](m2/DeleteNode-BST.md)
     * [199. Binary Tree Right Side View](m2/rightSide.md)
     * [98. Validate Binary Search Tree | Is Binary Search Tree Or Not?](m2/isBST.md)
@@ -324,6 +320,15 @@
     * [88. Merge Sorted Array | Merge two Sorted Array](ch1/mergeTwoArr.md)
 
 -----
+* [Interview Question](interview/intro.md)
+    * [Google | Onsite | Merge K Sorted Iterators](interview/mergeIters.md)
+    * [Facebook | Phone | Binary Tree Preorder Iterator](stack/preorderIterator.md)
+    * [Facebook | Onsite | Merge K Sorted Arrays](m6/karrs.md)
+    * [String](hString/intro.md)
+        * [Remove Adjacent Repeated Characters IV](hString/dedupAdjRepChar.md)
+        * [65. Valid Number](hString/valid.md)
+  
+-----
 * [Easy](README.md)
     * [Chapter1：Array && String](ch1/intro.md)
         * [Remove Spaces](ch1/removeAllSpace.md)
@@ -347,12 +352,6 @@
         * [189. Rotate Array](m3/rotateArr.md)
         * [59. Spiral Matrix II](m3/spiral2.md)
         * [167. Two Sum II - Input array is sorted](m3/two2.md)
-  
------
-* [Hard && Interview Question](Hard/intro.md)
-    * [String](hString/intro.md)
-        * [Remove Adjacent Repeated Characters IV](hString/dedupAdjRepChar.md)
-        * [65. Valid Number](hString/valid.md)
 
 -----
 * [Amazon Top 50](amazon/intro.md)
