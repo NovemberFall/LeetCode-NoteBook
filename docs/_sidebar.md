@@ -258,8 +258,6 @@
 * [Matrix](matrix/intro.md)
     * [36. Valid Sudoku](top/ValidSudoku.md)
 * [String](m8/intro.md)
-    * [10. Regular Expression Matching](top/regular.md)
-    * [44. Wildcard Matching](top/WildcardMatch.md)
     * [3.Longest Substring Without Repeating Characters](m8/without.md)
     * [Remove Certain Characters](m8/rmCertainChar.md)
     * [151. Reverse Words in a String](m8/reverseWord1.md)
@@ -299,6 +297,8 @@
     * [485. Max Consecutive Ones | Longest Consecutive 1s](ch8/longestOnes.md)
     * [10. Regular Expression Matching](top/regular.md)
     * [44. Wildcard Matching](top/WildcardMatch.md)
+* [Design](design/intro.md)
+    * [284. Peeking Iterator](design/iterator.md)
 
 -----
 * [Top 200](top/intro.md)
