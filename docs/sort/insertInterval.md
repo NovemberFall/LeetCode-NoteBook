@@ -6,7 +6,9 @@
 ```java
 class _57_InsertInterval {
     public int[][] insert(int[][] intervals, int[] newInterval) {
-        if (intervals == null || intervals.length == 0) return null;
+        if (intervals == null || intervals.length == 0) {
+            return new int[][]{newInterval};
+        }
 
         List<int[]> res = new ArrayList<>();
         boolean inserted = false;
