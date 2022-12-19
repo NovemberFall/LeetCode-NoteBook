@@ -81,6 +81,8 @@
     * [329. Longest Increasing Path in a Matrix](most/longestPath.md)
 
 -----
+* [Sorting](sort/intro.md)
+    * [56. Merge Intervals](amazon/mergeInterval.md)
 * [Stack](stack/intro.md)
     * [232. Implement Queue using Stacks](stack/queue.md)
     * [20. Valid Parentheses](stack/valid.md)
