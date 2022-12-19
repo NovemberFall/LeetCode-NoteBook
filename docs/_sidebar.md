@@ -83,6 +83,7 @@
 -----
 * [Sorting](sort/intro.md)
     * [56. Merge Intervals](amazon/mergeInterval.md)
+    * [57. Insert Interval](sort/insertInterval.md)
 * [Stack](stack/intro.md)
     * [232. Implement Queue using Stacks](stack/queue.md)
     * [20. Valid Parentheses](stack/valid.md)
