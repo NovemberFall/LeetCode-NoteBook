@@ -85,6 +85,7 @@
     * [56. Merge Intervals](amazon/mergeInterval.md)
     * [57. Insert Interval](amazon/insertInterval.md)
     * [252. Meeting Rooms I](sort/room.md)
+    * [253. Meeting Rooms II](amazon/room2.md)
 * [Stack](stack/intro.md)
     * [232. Implement Queue using Stacks](stack/queue.md)
     * [20. Valid Parentheses](stack/valid.md)
