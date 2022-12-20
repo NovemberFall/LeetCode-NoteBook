@@ -83,7 +83,8 @@
 -----
 * [Sorting](sort/intro.md)
     * [56. Merge Intervals](amazon/mergeInterval.md)
-    * [57. Insert Interval](sort/insertInterval.md)
+    * [57. Insert Interval](amazon/insertInterval.md)
+    * [252. Meeting Rooms I](sort/room.md)
 * [Stack](stack/intro.md)
     * [232. Implement Queue using Stacks](stack/queue.md)
     * [20. Valid Parentheses](stack/valid.md)
@@ -345,7 +346,6 @@
         * [26. Remove Duplicates from Sorted Array](ch1/rmDupEle.md)
         * [Remove Adjacent Repeated Characters I](ch1/rmDupChar.md)
         * [Remove Adjacent Repeated Characters IV [Hard]](ch1/rmAllDupChar.md)
-        * [252. Meeting Rooms](ch1/meet.md)
 * [Medium](Medium/intro.md)
     * [m3：Array](m3/intro.md)
         * [240. Search a 2D Matrix II](m3/SearchIn2DArrayII.md)

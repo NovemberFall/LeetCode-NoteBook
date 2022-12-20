@@ -24,7 +24,7 @@ special case:
 ```
 
 
-- T = O(N*logN)
+- T = `O(N*logN)` : **dominating by sorting**
 - extra space = O(n), 由于多开一个List, 所以额外空间复杂度是 o(N)
 
 - 每一个数组的区间长度一定是`2`
