@@ -276,6 +276,7 @@
     * [28. Implement strStr() | Determine If One String Is Another's Substring](ch1/strstr.md)
 * [Sliding Window](sliding/intro.md)
     * [219. Contains Duplicate II](sliding/dup2.md)
+    * [220. Contains Duplicate III](sliding/dup3.md)
 * [Dynamic Programming | Monotonic Stack](DP/intro.md)
     * [42. Trapping Rain Water](amazon/rain.md)
     * [84. Largest Rectangle in Histogram | Monotonic Stack](monotonic/histogram.md)
