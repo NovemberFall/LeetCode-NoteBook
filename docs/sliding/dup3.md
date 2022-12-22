@@ -9,20 +9,25 @@ class _220_ContainsDuplicate_III {
     public static boolean containsNearbyAlmostDuplicate(int[] nums, int indexDiff, int valueDiff) {
         if (nums == null || nums.length == 0) return true;
 
-        TreeSet<Integer> treeSet = new TreeSet<>();
+        TreeSet<Integer> window = new TreeSet<>();
         for (int fast = 0; fast < nums.length; fast++) {
-            Integer floor = treeSet.floor(nums[fast]);
+            // step 1: to get a `less than or equal` to the given element
+            Integer floor = window.floor(nums[fast]);
             if (floor != null && nums[fast] - floor <= valueDiff) {
                 return true;
             }
-            Integer ceiling = treeSet.ceiling(nums[fast]);
+
+            // step 2: to get a `greater than or equal` to the given element
+            Integer ceiling = window.ceiling(nums[fast]);
             if (ceiling != null && ceiling - nums[fast] <= valueDiff) {
                 return true;
             }
+            // step 3: add fast
+            window.add(nums[fast]);
 
-            treeSet.add(nums[fast]);
+            // step 4: remove slow
             if (fast >= indexDiff) {
-                treeSet.remove(nums[fast - indexDiff]);
+                window.remove(nums[fast - indexDiff]);
             }
         }
         return false;
