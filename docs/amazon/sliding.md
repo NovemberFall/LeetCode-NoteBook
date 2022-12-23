@@ -2,7 +2,28 @@
 
 ![](img/2021-12-22-16-45-41.png)
 
+### Brute Force
 
+```java
+class _239_SlidingWindowMaximum {
+    public static int[] maxSlidingWindow_BruteForce(int[] nums, int k) {
+        if (nums == null || nums.length == 0 || k == 0) return new int[0];
+
+        List<Integer> res = new ArrayList<>();
+        for (int i = k - 1; i < nums.length; i++) {
+            int curMax = nums[i];
+            for (int j = 0; j < k; j++) {
+                curMax = Math.max(curMax, nums[i - j]);
+            }
+            res.add(curMax);
+        }
+        return res.stream().mapToInt(i -> i).toArray();
+    }
+}
+```
+
+
+---
 - Key insight: when `a[i]` and `a[j]` are both in the slide window, 
   `i < j` and `a[i] <= a[j]`, we can remove `a[i]` from the sliding 
   window without affecting the result, because `a[i]` can no longer be
@@ -39,7 +60,7 @@
  */
 class _239_SlidingWindowMaximum {
     public static int[] maxSlidingWindow(int[] nums, int k) {
-        if (nums == null || nums.length == 0) return nums;
+        if (nums == null || nums.length == 0 || k == 0) return new int[0];
 
         List<Integer> res = new ArrayList<>();
         Deque<Integer> dq = new ArrayDeque<>();
@@ -61,3 +82,6 @@ class _239_SlidingWindowMaximum {
     }
 }
 ```
+
+---
+
