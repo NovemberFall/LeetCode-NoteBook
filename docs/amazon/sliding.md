@@ -55,10 +55,16 @@ class _239_SlidingWindowMaximum {
 k = 3
           0  1   2   3  4  5  6  7
          [1, 3, -1, -3, 5, 3, 6, 7]
-    PQ:   1  
-    PQ:      3
-    PQ:      3  -1
-    PQ:      3  -1  -3
+    DQ:   0
+    DQ:      1  
+    DQ:      1   2                          List[3, ]  
+    DQ:      1   2   3                      List[3, 3]  
+    DQ:                                     List[3, 3]   # poll() <== 1, 2, 3  
+    DQ:                 4                   List[3, 3, 5]     
+    DQ:                 4  5                List[3, 3, 5, 5]     
+    DQ:                       6             List[3, 3, 5, 5]  # poll() <== 4, 5   
+    DQ:                       6             List[3, 3, 5, 5, 6]     
+    DQ:                          7           List[3, 3, 5, 5, 6, 7]     
 
 
  */
