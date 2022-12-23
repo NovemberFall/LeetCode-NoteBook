@@ -29,28 +29,35 @@
     - in `decending` order of value
 
 ```java
-class Solution {
-    public int[] maxSlidingWindow(int[] nums, int k) {     
-      if (nums == null || nums.length == 0) {
-        return nums;
-      }
-      int [] res = new int[nums.length - k + 1];
-      Deque<Integer> dq = new ArrayDeque<>();
-      for (int i = 0; i < nums.length; i++) {
-        while (!dq.isEmpty() && nums[dq.peekLast()] <= nums[i]) {
-          dq.pollLast();
+/*
+          0  1   2   3  4  5  6  7
+         [1, 3, -1, -3, 5, 3, 6, 7]
+    PQ:   1  3
+    PQ:      3
+
+
+ */
+class _239_SlidingWindowMaximum {
+    public static int[] maxSlidingWindow(int[] nums, int k) {
+        if (nums == null || nums.length == 0) return nums;
+
+        List<Integer> res = new ArrayList<>();
+        Deque<Integer> dq = new ArrayDeque<>();
+        for (int i = 0; i < nums.length; i++) {
+            while (!dq.isEmpty() && nums[dq.peekLast()] <= nums[i]) {
+                dq.pollLast();
+            }
+            while (!dq.isEmpty() && dq.peekFirst() <= i - k) {
+                dq.pollFirst();
+            }
+
+            dq.offerLast(i);
+
+            if (i + 1 >= k) {
+                res.add(nums[dq.peekFirst()]);
+            }
         }
-        
-        while (!dq.isEmpty() && dq.peekFirst() <= i - k) {
-          dq.pollFirst();
-        }
-        
-        dq.offerLast(i);
-        if (i >= k - 1) {
-          res[i - k + 1] = nums[dq.peek()];
-        }
-      }       
-      return res;  
+        return res.stream().mapToInt(Integer::intValue).toArray();
     }
 }
 ```
