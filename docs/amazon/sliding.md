@@ -52,10 +52,13 @@ class _239_SlidingWindowMaximum {
 
 ```java
 /*
+k = 3
           0  1   2   3  4  5  6  7
          [1, 3, -1, -3, 5, 3, 6, 7]
-    PQ:   1  3
+    PQ:   1  
     PQ:      3
+    PQ:      3  -1
+    PQ:      3  -1  -3
 
 
  */
@@ -85,4 +88,5 @@ class _239_SlidingWindowMaximum {
 ```
 
 ---
+
 
