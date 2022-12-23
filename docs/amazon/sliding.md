@@ -3,6 +3,7 @@
 ![](img/2021-12-22-16-45-41.png)
 
 ### Brute Force
+![](img/2022-12-22-23-47-49.png)
 
 ```java
 class _239_SlidingWindowMaximum {
