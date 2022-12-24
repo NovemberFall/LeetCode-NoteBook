@@ -309,6 +309,7 @@
     * [44. Wildcard Matching](top/WildcardMatch.md)
 * [Design](design/intro.md)
     * [284. Peeking Iterator](design/iterator.md)
+    * [716. Max Stack](most/maxstk.md)
 
 -----
 * [Top 200](top/intro.md)
