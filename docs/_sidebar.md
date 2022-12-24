@@ -278,6 +278,7 @@
     * [219. Contains Duplicate II](sliding/dup2.md)
     * [220. Contains Duplicate III](sliding/dup3.md)
     * [239. Sliding Window Maximum](amazon/sliding.md)
+    * [76. Minimum Window Substring](sliding/mws.md)
 * [Dynamic Programming | Monotonic Stack](DP/intro.md)
     * [42. Trapping Rain Water](amazon/rain.md)
     * [84. Largest Rectangle in Histogram | Monotonic Stack](monotonic/histogram.md)
