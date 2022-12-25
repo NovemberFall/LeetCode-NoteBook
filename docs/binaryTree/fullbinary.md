@@ -7,6 +7,9 @@
 
 ### BFS
 
+- Time: `O(n)`
+- Space: `O(n)`
+
 ```java
 public class Solution {
     public boolean isFull(TreeNode root) {
@@ -26,6 +29,40 @@ public class Solution {
                 queue.offer(cur.left);
                 queue.offer(cur.right);
             }
+        }
+        return true;
+    }
+}
+```
+
+---
+
+### Recursion (DFS)
+
+![](img/2022-12-25-12-32-52.png)
+
+- Time: `O(n)`
+- Space: `O(Height)`
+
+```java
+public class CheckFull_Recursion {
+    public boolean isFullBinaryTree(TreeNode root) {
+        if (root == null) {
+            return true;
+        }
+        if (root.left == null && root.right == null) {
+            return true;
+        }
+        // check if left subtree and right subtree
+        boolean leftIsFull = isFullBinaryTree(root.left);
+        boolean rightIsFull = isFullBinaryTree(root.right);
+        if (!leftIsFull || !rightIsFull) {
+            return false;
+        }
+
+        // 当前层 check self node
+        if (root.left != null || root.right != null) {
+            return false;
         }
         return true;
     }
