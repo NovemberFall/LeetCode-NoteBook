@@ -56,6 +56,16 @@ class CheckCompleted {
 
 ### Recursion
 
+![](img/2022-12-25-11-11-13.png)
+- 注意： right subtree must be **perfect**
+
+![](img/2022-12-25-11-12-23.png)
+- right subtree, `Node 6` 下面不允许有`left child node`, 否则有气泡。 所以必须 perfect
+- 而且**左边的高度 还必须是右边高度 + 1**
+---
+![](img/2022-12-25-11-16-06.png)
+![](img/2022-12-25-11-44-21.png)
+---
 ```java
 
 ```
