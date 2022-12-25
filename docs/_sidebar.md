@@ -190,7 +190,7 @@
     * [236. Lowest Common Ancestor of a Binary Tree](m2/LCA.md)
     * [366. Find Leaves of Binary Tree](most/leaves.md)
     * [104. Maximum Depth of Binary Tree](ch5/getHightTree.md)
-    * [110. Balanced Binary Tree | Check If Binary Tree Is Balanced](ch5/checkBalanced.md)
+    * [110. Balanced Binary Tree](ch5/checkBalanced.md)
     * [101. Symmetric Tree](ch5/symmetric.md)
     * [700. Search in a Binary Search Tree](ch5/search.md)
     * [993. Cousins in Binary Tree](ch5/cousinInTree.md)

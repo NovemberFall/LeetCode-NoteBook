@@ -1,10 +1,16 @@
-# Binary Tree
+## Binary Tree
+![](img/2022-12-24-15-30-14.png)
+![](img/2022-12-24-15-30-34.png)
+![](img/2022-12-24-15-31-22.png)
+- [110. Balanced Binary Tree](https://novemberfall.github.io/LeetCode-NoteBook/#/ch5/checkBalanced)
 
-- [Binary Trees Introduce](https://www.cs.cmu.edu/~adamchik/15-121/lectures/Trees/trees.html)
-
-
-
-## PreOrder
+![](img/2022-12-24-15-32-45.png)
+![](img/2022-12-24-15-33-50.png)
+![](img/2022-12-24-15-34-30.png)
+---
+![](img/2022-12-24-15-36-05.png)
+---
+### PreOrder
 
 
 ```ruby

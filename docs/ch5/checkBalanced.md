@@ -1,49 +1,12 @@
-## 110. Balanced Binary Tree ||  Check If Binary Tree Is Balanced
-
-```ruby
-Given a binary tree, determine if it is height-balanced.
-
-For this problem, a height-balanced binary tree is defined as:
-
-a binary tree in which the left and right subtrees of every node 
-differ in height by no more than 1.
-
- 
-
-Example 1:
-
-Given the following tree [3,9,20,null,null,15,7]:
-
-    3
-   / \
-  9  20
-    /  \
-   15   7
-Return true.
-
-Example 2:
-
-Given the following tree [1,2,2,3,3,null,null,4,4]:
-
-       1
-      / \
-     2   2
-    / \
-   3   3
-  / \
- 4   4
-Return false.
-```
-
+## 110. Balanced Binary Tree 
+![](img/2022-12-24-16-51-32.png)
+![](img/2022-12-24-16-51-44.png)
 ---
 
 
 ## Analysis:
 
 ![](img/2020-05-24-13-05-02.png)
-
-
-
 
 
 
@@ -86,34 +49,31 @@ class Solution {
 }
 ```
 
+---
 ## Anaylysis:
 
-- 以上的写法是 O(n logn), 
+- 以上的写法是 `O(n logn)`, 
 - What's the definition of `balanced`? It could be:
-  - the tree has a minimum possible overall height
-  - no leaf is too further away, i.e. 0 or 1, from root than any other leaf
-  - **left and right sub-tree have similar height,** i.e. difference is 0 or 1
+  - the tree has a `minimum` possible overall height
+  - no leaf is too further away, i.e. `0` or `1`, from root than any other leaf
+  - **left and right sub-tree have similar height,** i.e. difference is `0` or `1`
     (balanced height)
 
 - how many levels in this recursion tree = `log n`
-  total time = O(nlogn)
-- space = O(n)
+  total time = `O(nlogn)`
+- space = `O(n)`
 
 
 
-
-
-
-- space complexity
+#### space complexity
 
 关于space 
-
 
 - 还有就是在一个method的stack frame里继续进行另一个method的call stack操作，
   这种情况的space complexity应该如何计算？
 
 - space在每次使用完之后其实被释放了，所以其实是`logn`
-  一般来说当recursive返回时，之前的space已经被释放了，可以理解为取最大值就是space complexity
+  一般来说当recursive返回时，之前的space已经被释放了，可以理解为取最大值就是`space complexity`
 
 - java在执行的时候只有一个stack，stack在执行的时候累进的，但是你从root开始，
   到第二层继续执行recursive，接着下到更下一层，
@@ -166,38 +126,85 @@ class Solution {
 
 ```java
 public class Solution {
-  public boolean isBalanced(TreeNode root) {
-    // Write your solution here
-    if(root == null){
-      return true;
+    public boolean isBalanced(TreeNode root) {
+        // Write your solution here
+        if(root == null){
+          return true;
+        }
+        
+        //use -1 to denote the tree is not balanced
+        // >= 0 value means the tree is balanced and it is the height of the tree
+        return getHeight(root) != -1;
     }
-    
-    //use -1 to denote the tree is not balanced
-    // >= 0 value means the tree is balanced and it is the height of the tree
-    return getHeight(root) != -1;
-  }
   
-  private int getHeight(TreeNode root){
-    if(root == null){
-      return 0;
-    }
-    int leftHeight = getHeight(root.left);
-    //if left subtree is already not balanced, we do not need to continue
-    //and we can return -1 directly.
-    if(leftHeight == -1){
-      return -1;
-    }
-    int rightHeight = getHeight(root.right);
-    if(rightHeight == -1){
-      return -1;
-    }
+    private int getHeight(TreeNode root){
+        if(root == null){
+          return 0;
+        }
+        int leftHeight = getHeight(root.left);
+        //if left subtree is already not balanced, we do not need to continue
+        //and we can return -1 directly.
+        if(leftHeight == -1){
+          return -1;
+        }
+        int rightHeight = getHeight(root.right);
+        if(rightHeight == -1){
+          return -1;
+        }
 
-    //if not balanced, return -1
-    if(Math.abs(leftHeight - rightHeight) > 1){
-      return -1;
+        //if not balanced, return -1
+        if(Math.abs(leftHeight - rightHeight) > 1){
+          return -1;
+        }
+        return Math.max(leftHeight, rightHeight) + 1;
     }
-    return Math.max(leftHeight, rightHeight) + 1;
-  }
 }
 ```
 
+---
+
+### Multi-ReturnValue
+
+![](img/2022-12-24-21-40-10.png)
+![](img/2022-12-24-21-41-00.png)
+![](img/2022-12-24-21-41-29.png)
+![](img/2022-12-24-21-41-44.png)
+
+```java
+class BalancedBinaryTree_Multi_ReturnValue {
+    static class ReturnValue {
+        int height;
+        boolean isBalance;
+
+        ReturnValue(int h, boolean isBalance) {
+            this.height = h;
+            this.isBalance = isBalance;
+        }
+    }
+
+    public boolean isBalanced(TreeNode root) {
+        if (root == null) {
+            return true;
+        }
+        ReturnValue result = recursion(root);
+        return result.isBalance;
+    }
+
+    private ReturnValue recursion(TreeNode root) {
+        if (root == null) {
+            return new ReturnValue(0, true);
+        }
+        ReturnValue left = recursion(root.left);
+        ReturnValue right = recursion(root.right);
+
+        int curHeight = Math.max(left.height, right.height) + 1;
+        boolean curIsBalance = false;
+
+        if (left.isBalance && right.isBalance &&
+                Math.abs(left.height - right.height) <= 1) {
+            curIsBalance = true;
+        }
+        return new ReturnValue(curHeight, curIsBalance);
+    }
+}
+```
