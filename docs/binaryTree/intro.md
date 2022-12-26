@@ -8,7 +8,7 @@
 - [Determine If Binary Tree Is Full Tree](https://novemberfall.github.io/LeetCode-NoteBook/#/binaryTree/fullbinary)
 
 ![](img/2022-12-24-15-33-50.png)
-- [Determine If Binary Tree Is Perfect Tree]()
+- [Determine If Binary Tree Is Perfect Tree](https://novemberfall.github.io/LeetCode-NoteBook/#/binaryTree/perfectbinary)
 
 ![](img/2022-12-24-15-34-30.png)
 - [958. Check Completeness of a Binary Tree](https://novemberfall.github.io/LeetCode-NoteBook/#/binaryTree/completeness)

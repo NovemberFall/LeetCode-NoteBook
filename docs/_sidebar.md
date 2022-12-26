@@ -198,7 +198,7 @@
     * [270. closest binary search tree value I](ch5/cloestBst.md)
     * [450. Delete Node in a BST ](m2/DeleteNode-BST.md)
     * [199. Binary Tree Right Side View](m2/rightSide.md)
-    * [98. Validate Binary Search Tree | Is Binary Search Tree Or Not?](m2/isBST.md)
+    * [98. Validate Binary Search Tree](m2/isBST.md)
     * [Get Keys In Binary Search Tree In Given Range](m2/getFromRange.md)
     * [156. Binary Tree Upside Down](m2/upsideDown.md)
     * [951. Flip Equivalent Binary Trees](m2/tweakTree.md)

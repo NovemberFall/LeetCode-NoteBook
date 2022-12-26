@@ -1,35 +1,5 @@
 ## 98. Validate Binary Search Tree
-
-```ruby
-Given a binary tree, determine if it is a valid binary search tree (BST).
-
-Assume a BST is defined as follows:
-
-The left subtree of a node contains only nodes with keys less than the node's key.
-The right subtree of a node contains only nodes with keys greater than the node's key.
-Both the left and right subtrees must also be binary search trees.
- 
-
-Example 1:
-
-    2
-   / \
-  1   3
-
-Input: [2,1,3]
-Output: true
-Example 2:
-
-    5
-   / \
-  1   4
-     / \
-    3   6
-
-Input: [5,1,4,null,null,3,6]
-Output: false
-Explanation: The root node's value is 5 but its right child's value is 4.
-```
+![](img/2022-12-25-17-12-53.png)
 ---
 
 ## Analysis:
@@ -38,7 +8,7 @@ Explanation: The root node's value is 5 but its right child's value is 4.
 
 1. **inorder traverse the tree and store all numbers in an arrayList**
 2. iterate over the array to determine, whether `A[i] < A[i + 1]`
-   
+---   
 
 - Our way:
 
@@ -57,9 +27,8 @@ Explanation: The root node's value is 5 but its right child's value is 4.
 - why we set root, `min=-inf, max =+inf`? because we don't know its left child and 
   right child, **we need to know if current level is so far so good**
 
-- Time = O(n)    : since we need to iterate all nodes
-- Space = O(height)
-
+- Time = `O(n)`    : since we need to iterate all nodes
+- Space = `O(height)`
 
 ---
 
@@ -81,21 +50,140 @@ Explanation: The root node's value is 5 but its right child's value is 4.
  */
 class Solution {
     public boolean isValidBST(TreeNode root) {
-        return isValidBst(root, Long.MIN_VALUE, Long.MAX_VALUE);        
+        return isBST(root, Long.MIN_VALUE, Long.MAX_VALUE);
     }
-    
-    private boolean isValidBst(TreeNode root, long min, long max){
-        if(root == null){
+
+    private boolean isBST(TreeNode root, long min, long max) {
+        if (root == null) {
             return true;
         }
-                
-        if(root.val > min && root.val < max){
-            return isValidBst(root.left, min, root.val)
-                && isValidBst(root.right, root.val, max);
-        } else {
+        if (root.val <= min || root.val >= max) {
             return false;
         }
+        return isBST(root.left, min, root.val) &&
+                isBST(root.right, root.val, max);
     }    
+}
+```
+---
+### Recursion
+
+- 本题前面的递归，是**至上而下**传递，但是如果我希望**从下往上**传递, 我当如何做？
+![](img/2022-12-25-20-12-54.png)
+
+```java
+    static class ReturnType {
+        long subtreeMax;
+        long subtreeMin;
+        boolean isBST;
+
+        public ReturnType(long subtreeMax, long subtreeMin, boolean isBST) {
+            this.subtreeMax = subtreeMax;
+            this.subtreeMin = subtreeMin;
+            this.isBST = isBST;
+        }
+    }
+
+    public boolean isValidBST(TreeNode root) {
+        ReturnType result = recursion(root);
+        return result.isBST;
+    }
+
+    private ReturnType recursion(TreeNode root) {
+        if (root == null) {
+            return new ReturnType(Long.MIN_VALUE, Long.MAX_VALUE, true);
+        }
+
+        // leaf Node
+        if (root.left == null && root.right == null) {
+            return new ReturnType(root.val, root.val, true);
+        }
+
+        ReturnType left = recursion(root.left);
+        ReturnType right = recursion(root.right);
+
+        if (!left.isBST || !right.isBST) {
+            return new ReturnType(-1, -1, false);
+        }
+
+        if (left.subtreeMax >= root.val || root.val >= right.subtreeMin) {
+            return new ReturnType(-1, -1, false);
+        }
+
+        long curMax = Math.max(root.val, right.subtreeMax);
+        long curMin = Math.min(root.val, left.subtreeMin);
+
+        return new ReturnType(curMax, curMin, true);
+    }
+```
+
+---
+
+### Brute Force
+
+```java
+public class isBST_BruteForce {
+    public boolean isValidBST_ForLoop(TreeNode root) {
+        if (root == null) {
+            return true;
+        }
+        List<Integer> res = new ArrayList<>();
+        convertToList(res, root);
+        for (int i = 1; i < res.size(); i++) {
+            if (res.get(i - 1) >= res.get(i)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean isValidBST(TreeNode root) {
+        if (root == null) {
+            return true;
+        }
+        List<Integer> res = new ArrayList<>();
+        convertToList(res, root);
+        return res.stream().sorted().distinct().collect(Collectors.toList()).equals(res);
+    }
+
+    private void convertToList(List<Integer> res, TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        convertToList(res, root.left);
+        res.add(root.val);
+        convertToList(res, root.right);
+    }
+
+
+    public static TreeNode create() {
+        TreeNode root = new TreeNode(40);
+        root.left = new TreeNode(20);
+        root.left.left = new TreeNode(10);
+        root.left.left.left = new TreeNode(5);
+        root.left.right = new TreeNode(30);
+        root.right = new TreeNode(50);
+        root.right.right = new TreeNode(60);
+        root.right.left = new TreeNode(47);
+        root.left.right.right = new TreeNode(36);
+        return root;
+    }
+
+    public List<Integer> createList() {
+        TreeNode root = create();
+        List<Integer> res = new ArrayList<>();
+        convertToList(res, root);
+        return res;
+    }
+
+    public static void main(String[] args) {
+        isBST_BruteForce isBST_bruteForce = new isBST_BruteForce();
+        List<Integer> res = isBST_bruteForce.createList();
+        System.out.println(res);
+        System.out.println("======================================");
+        TreeNode root = create();
+        System.out.println(isBST_bruteForce.isValidBST(root));
+    }
 }
 ```
 
