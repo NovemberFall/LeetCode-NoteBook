@@ -51,10 +51,7 @@ class Solution {
 }
 ```
 
-
-
 ---
-
 ## 一个变种题目
 
 ```ruby

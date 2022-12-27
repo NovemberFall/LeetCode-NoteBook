@@ -30,8 +30,7 @@
 class Solution {
     public TreeNode buildTree(int[] preorder, int[] inorder) {
         Map<Integer, Integer> inMap = inOrderIdx(inorder);
-        return construct(inMap, preorder, 
-          0, preorder.length-1, inorder, 0, inorder.length-1);
+        return construct(inMap, preorder, 0, preorder.length-1, inorder, 0, inorder.length-1);
     }
     
     private Map<Integer, Integer> inOrderIdx(int[] inorder) {
@@ -43,8 +42,8 @@ class Solution {
     }
     
     private TreeNode construct(Map<Integer, Integer> inMap, 
-        int[] preorder, int preLeft, int preRight, 
-        int[] inorder, int inLeft, int inRight) {
+            int[] preorder, int preLeft, int preRight, 
+            int[] inorder, int inLeft, int inRight) {
         
         if (preLeft > preRight) {
             return null;
@@ -52,11 +51,11 @@ class Solution {
         TreeNode root = new TreeNode(preorder[preLeft]);
         int leftSize = inMap.get(root.val) - inLeft;
         root.left = construct(inMap, 
-            preorder, preLeft + 1, preLeft + leftSize, 
-            inorder, inLeft, inLeft + leftSize - 1);
+                                preorder, preLeft + 1, preLeft + leftSize, 
+                                inorder, inLeft, inLeft + leftSize - 1);
         root.right = construct(inMap, 
-            preorder, preLeft + leftSize + 1, preRight, 
-            inorder, inLeft + leftSize + 1, inRight);    
+                                preorder, preLeft + leftSize + 1, preRight, 
+                                inorder, inLeft + leftSize + 1, inRight);    
         return root;
     }
 }
