@@ -33,7 +33,7 @@
 - **Key Point:**
 
 - 左树的max, 右树的的max，当前层：更新，返回的时候：要和第一个物理意义一样：返回当前的max + root.val
-  基于这一点，一定要在最后return "current" + root.key, 必须保持递归's state 前后一致
+  基于这一点，一定要在最后return "current" + root.val, 必须保持递归's state 前后一致
   For example: if current.val = 1, root.val = 1, => return current.val + root.val
 
 - **Additional data structure**
@@ -49,38 +49,47 @@
 ---
 
  ```java
- /**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode() {}
- *     TreeNode(int val) { this.val = val; }
- *     TreeNode(int val, TreeNode left, TreeNode right) {
- *         this.val = val;
- *         this.left = left;
- *         this.right = right;
- *     }
- * }
- */
-class Solution {
+class _124_BinaryTreeMaximumPathSum {
+    static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode() {
+        }
+
+        TreeNode(int val) {
+            this.val = val;
+        }
+
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+    }
+
     public int maxPathSum(TreeNode root) {
-        int[] max = new int[1];
-        max[0] = Integer.MIN_VALUE;
-        helper(root, max);
+        int[] max = new int[]{Integer.MIN_VALUE};
+        recursion(root, max);
         return max[0];
     }
-    private int helper(TreeNode root, int[] max){
-        if(root == null){
+
+    private int recursion(TreeNode root, int[] max) {
+        if (root == null) {
             return 0;
         }
-        int left = helper(root.left, max);
-        int right = helper(root.right, max);
-        left = left < 0 ? 0 : left; 
-        right = right < 0 ? 0 : right;
-        max[0] = Math.max(max[0], left + right + root.val);
-        return Math.max(left, right) + root.val;
+        int leftSubtree = recursion(root.left, max);
+        int rightSubtree = recursion(root.right, max);
+        if (leftSubtree < 0) {
+            leftSubtree = 0;
+        }
+        if (rightSubtree < 0) {
+            rightSubtree = 0;
+        }
+        int curSum = leftSubtree + rightSubtree + root.val;
+        max[0] = Math.max(max[0], curSum);
+        return Math.max(leftSubtree, rightSubtree) + root.val;
     }
 }
  ```
