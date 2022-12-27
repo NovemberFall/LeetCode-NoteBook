@@ -30,7 +30,9 @@
 class Solution {
     public TreeNode buildTree(int[] preorder, int[] inorder) {
         Map<Integer, Integer> inMap = inOrderIdx(inorder);
-        return construct(inMap, preorder, 0, preorder.length-1, inorder, 0, inorder.length-1);
+        return construct(inMap, 
+                            preorder, 0, preorder.length-1, 
+                            inorder, 0, inorder.length-1);
     }
     
     private Map<Integer, Integer> inOrderIdx(int[] inorder) {
