@@ -7,6 +7,8 @@
 
 - key point: 把global的问题一分为二(recursively), 每半边返回一个subtree的
   root node。
+- [YouTuBe c21 | 38:40]()
+
 ---
 
 
