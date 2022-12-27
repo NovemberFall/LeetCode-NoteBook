@@ -17,36 +17,34 @@
 ---
 
 ### 复杂度分析
-- 时间复杂度：O(N^2) 其中 N 是树的节点数。在最坏情况下，树的上半部分为链状，下半部分为完全二叉树，并且从根节点到每一个叶子节点的路径都符合题目要求。此时，路径的数目为 O(N)，并且每一条路径的节点个数也为 O(N)，因此要将这些路径全部添加进答案中，时间复杂度为 O(N^2)。
-- 空间复杂度：O(N)，其中 N 是树的节点数。空间复杂度主要取决于栈空间的开销，栈中的元素个数不会超过树的节点数。
+- 时间复杂度：`O(N^2)` 其中 N 是树的节点数。在最坏情况下，树的上半部分为链状，下半部分为完全二叉树，并且从根节点到每一个叶子节点的路径都符合题目要求。
+  此时，路径的数目为 `O(N)`，并且每一条路径的节点个数也为 `O(N)`，因此要将这些路径全部添加进答案中，时间复杂度为 `O(N^2)`。
+- 空间复杂度：`O(N)`，其中 `N` 是树的节点数。空间复杂度主要取决于栈空间的开销，栈中的元素个数不会超过树的节点数。
 
 ```java
-class Solution {
+class _113_PathSum_II {
     public List<List<Integer>> pathSum(TreeNode root, int targetSum) {
         List<List<Integer>> res = new ArrayList<>();
-        
+        if (root == null) {
+            return res;
+        }
         dfs(res, new ArrayList<>(), root, targetSum);
         return res;
     }
-    
-    private void dfs(List<List<Integer>> res, List<Integer> path, 
-                                             TreeNode root, int sum){
+
+    private void dfs(List<List<Integer>> res,
+                     List<Integer> pathSum, TreeNode root, int targetSum) {
         if (root == null) {
             return;
         }
-        
-        path.add(root.val);
-        
-        sum -= root.val;
-        //出口2 leaf node
-        if (root.left == null && root.right == null && sum == 0) {
-            res.add(new ArrayList<>(path));   
+
+        pathSum.add(root.val);
+        if (root.left == null && root.right == null && root.val == targetSum) {
+            res.add(new ArrayList<>(pathSum));
         }
-        
-        //拆解:        
-        dfs(res, path, root.left, sum);
-        dfs(res, path, root.right, sum);
-        path.remove(path.size() - 1);
+        dfs(res, pathSum, root.left, targetSum - root.val);
+        dfs(res, pathSum, root.right, targetSum - root.val);
+        pathSum.remove(pathSum.size() - 1);
     }
 }
 ```
