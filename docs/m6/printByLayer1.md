@@ -1,32 +1,7 @@
-## 107. Binary Tree Level Order Traversal||
-
-```ruby
-Given a binary tree, return the bottom-up level order 
-traversal of its nodes' values. 
-(ie, from left to right, level by level from leaf to root).
-
-
-For example:
-Given binary tree [3,9,20,null,null,15,7],
-
-    3
-   / \
-  9  20
-    /  \
-   15   7
-
-return its bottom-up level order traversal as:
-
-[
-  [15,7],
-  [9,20],
-  [3]
-]
-```
-
-
+## 107. Binary Tree Level Order Traversal II
+![](img/2022-12-27-11-33-22.png)
+---
 - 具体分析可以参考 [102. Binary Tree Level Order Traversal](https://novemberfall.github.io/LeetCode-NoteBook/#/m6/printByLayer)
-
 
 - 唯一不同点在于， `ArrayList.add(0, list)` => 把最先的这一层元素全部加到第一个，然后下一次又加在第一个
 - 最后得到 倒叙结果
