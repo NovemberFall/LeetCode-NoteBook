@@ -190,6 +190,7 @@
     * [100. Same Tree](m2/sameTree.md)
     * [101. Symmetric Tree](ch5/symmetric.md)
     * [104. Maximum Depth of Binary Tree](ch5/getHightTree.md)
+    * [111. Minimum Depth of Binary Tree](binaryTree/minDepth.md)
     * [105. Construct Binary Tree from Preorder and Inorder Traversal](m2/construct.md)
     * [106. Construct Binary Tree from Inorder and Postorder Traversal](m2/construct1.md)
     * [Reconstruct Binary Search Tree With Postorder Traversal](m2/buildBSTbyPost.md)
