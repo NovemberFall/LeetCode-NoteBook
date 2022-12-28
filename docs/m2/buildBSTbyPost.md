@@ -1,4 +1,4 @@
-# Reconstruct Binary Search Tree With Postorder Traversal
+## Reconstruct Binary Search Tree With Postorder Traversal
 
 ```ruby
 Given the postorder traversal sequence of a binary search tree, reconstruct the original tree.
@@ -47,7 +47,7 @@ assume a BST:
 post:   4    7    5    13   12   8
 
 这个array对于第一层root来讲，分三个部分:
-[left nodes(4, 5, 7), right nodes(13, 12), curr node(8)],  node(8) is root
+[left nodes(4, 7, 5), right nodes(13, 12), curr node(8)],  node(8) is root
 在这里面所有的比8小的数字都是他的左子树，而且这些小的数字一定是严格“抱团”，
 右子树同理。当我从这个array最后一个index往前扫的过程，
 但凡看到了第一个比curr node小的数字，从这个数字的index到某个“再左边的index”一定是所有的左子树。
@@ -57,8 +57,8 @@ post:   4    7    5    13   12   8
 ```
 
 
-- Time = O(n)
-- Space = O(n)
+- Time = `O(n)`
+- Space = `O(n)`
 
 
 ```java
