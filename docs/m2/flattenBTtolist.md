@@ -1,38 +1,11 @@
-# 114. Flatten Binary Tree to Linked List
+## 114. Flatten Binary Tree to Linked List
+![](img/2022-12-27-23-28-48.png)
+---
+### Tree + Recursion: Tree Serialization(序列化，串行化) Problem
 
-```ruby
-Given a binary tree, flatten it to a linked list in-place.
+- Given a binary tree, flatten it to a linked list **in-place**
 
-For example, given the following tree:
-
-    1
-   / \
-  2   5
- / \   \
-3   4   6
-The flattened tree should look like:
-
-1
- \
-  2
-   \
-    3
-     \
-      4
-       \
-        5
-         \
-          6
-Accepted
-```
-
-
-#### Tree + Recursion: Tree Serialization(序列化，串行化) Problem
-
-- Given a binary tree, flatten it to a linked list in-place
-
-
-## Approach
+#### Approach
 
 - Key points:
   - do a post-order traversal from right to left
