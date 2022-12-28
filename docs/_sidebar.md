@@ -201,6 +201,7 @@
     * [124. Binary Tree Maximum Path Sum](hBinaryTree/maxPathSum.md)
     * [Maximum Path Sum Binary Tree III](hBinaryTree/maxPathSumIII.md)
     * [Max Path Sum From Leaf To Root](hBinaryTree/maxPathSumLeafToRoot.md)
+    * [129. Sum Root to Leaf Numbers](binaryTree/rootToLeaf.md)
     * [114. Flatten Binary Tree to Linked List](m2/flattenBTtolist.md)
     * [156. Binary Tree Upside Down](m2/upsideDown.md)
     * [199. Binary Tree Right Side View](m2/rightSide.md)
