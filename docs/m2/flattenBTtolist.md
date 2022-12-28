@@ -36,7 +36,7 @@ prev[0] = root;
 
         3
       /    \
-   null     3        prev[0] = 3, 
+   null     4        prev[0] = 3, 
 
 
         2
