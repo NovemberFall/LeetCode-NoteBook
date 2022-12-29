@@ -204,7 +204,7 @@
     * [129. Sum Root to Leaf Numbers](binaryTree/rootToLeaf.md)
     * [114. Flatten Binary Tree to Linked List](m2/flattenBTtolist.md)
     * [156. Binary Tree Upside Down](m2/upsideDown.md)
-    * [199. Binary Tree Right Side View](m2/rightSide.md)
+    * [199. Binary Tree Right Side View](binaryTree/rightSide.md)
     * [236. Lowest Common Ancestor of a Binary Tree](m2/LCA.md)
     * [235. Lowest Common Ancestor of a Binary Search Tree](m2/LCAbst.md)
     * [1650. Lowest Common Ancestor of a Binary Tree III](m2/LCA3.md)
