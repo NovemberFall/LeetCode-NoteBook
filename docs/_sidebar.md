@@ -317,7 +317,7 @@
     * [10. Regular Expression Matching](top/regular.md)
     * [44. Wildcard Matching](top/WildcardMatch.md)
 * [Design](design/intro.md)
-    * [146. LRU Cache](m7/lru.md)
+    * [146. LRU Cache](design/lru.md)
     * [284. Peeking Iterator](design/iterator.md)
     * [716. Max Stack | Hybrid Data Structure](most/maxstk.md)
     * [981. Time Based Key-Value Store](design/timestore.md)
