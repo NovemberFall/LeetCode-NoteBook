@@ -33,6 +33,24 @@ l  r                 m  =  0
 
 ## that's why we need to set :
 ##    while (left < right - 1),    otherwise infinite loop
+
+
+
+### another example:
+
+T = 2
+  0  1  2  3  4
+  1, 2, 2, 2, 3
+  l           r
+
+
+  1, 2, 2, 2, 3
+        l     r        mid = 2
+
+
+  1, 2, 2, 2, 3
+           l  r        mid = 3
+
 ```
 
 

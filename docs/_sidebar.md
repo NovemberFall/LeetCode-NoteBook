@@ -320,6 +320,7 @@
     * [146. LRU Cache](m7/lru.md)
     * [284. Peeking Iterator](design/iterator.md)
     * [716. Max Stack | Hybrid Data Structure](most/maxstk.md)
+    * [981. Time Based Key-Value Store](design/timestore.md)
 
 -----
 * [Top 200](top/intro.md)
