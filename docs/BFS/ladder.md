@@ -29,8 +29,7 @@
 
 ```java
 class Solution {
-    public int ladderLength(String beginWord, String endWord, 
-                                        List<String> wordList){
+    public int ladderLength(String beginWord, String endWord, List<String> wordList){
 
         Set<String> dict = new HashSet<>(wordList);
         if (dict.isEmpty() || !dict.contains(endWord)) {
@@ -50,8 +49,8 @@ class Solution {
                 }
                 for (char c = 'a'; c <= 'z'; c++) {
                     for (int j = 0; j < currWord.length(); j++) {
-                        String newWord = currWord.substring(0, j) 
-                        + c + currWord.substring(j + 1);
+                        String newWord = 
+                            currWord.substring(0, j) + c + currWord.substring(j + 1);
                         
                         if (dict.contains(newWord)) {
                             queue.offer(newWord);
