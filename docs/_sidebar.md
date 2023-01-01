@@ -321,6 +321,7 @@
     * [284. Peeking Iterator](design/iterator.md)
     * [716. Max Stack | Hybrid Data Structure](most/maxstk.md)
     * [981. Time Based Key-Value Store](design/timestore.md)
+    * [380. Insert Delete GetRandom O(1)](most/getRandom.md)
 
 -----
 * [Top 200](top/intro.md)
