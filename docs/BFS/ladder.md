@@ -25,8 +25,10 @@
 - 将它入列，它的 level +1，并从单词表中删去这个词。
 - 出列、入列…重复，当出列的单词和终点词相同，说明遇到了终点词，返回它的 level。
 - 当队列为空时，代表BFS结束，始终没有遇到终点词，没有路径通往终点，返回 0。
+---
+- [A very highly detailed EXPLANATION](https://leetcode.com/problems/word-ladder/discuss/1764371/A-very-highly-detailed-EXPLANATION#:~:text=So%2C%20all%20this,take%20an%20example%3A%2D)
 
-
+---
 ```java
 class Solution {
     public int ladderLength(String beginWord, String endWord, List<String> wordList){
@@ -51,7 +53,11 @@ class Solution {
                     for (int j = 0; j < currWord.length(); j++) {
                         String newWord = 
                             currWord.substring(0, j) + c + currWord.substring(j + 1);
-                        
+                        /* i.e.  currWord: hit   |  wordList = ["hot","dot","dog","lot","log","cog"]
+                            currWord.substring(0, j = 1)  = 'h'
+                                                        c = 'o' 
+                            currWord.substring(1 + 1 = 2) = 't'                                                            
+                        */
                         if (dict.contains(newWord)) {
                             queue.offer(newWord);
                             dict.remove(newWord);
