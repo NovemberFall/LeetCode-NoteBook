@@ -97,18 +97,6 @@ class Solution {
 ## DFS
 
 ```java
-
-
-
-
-
-
-
-
-
-
-
-
 //DFS
 class Solution {
     Map<Node, Node> map = new HashMap<>();
