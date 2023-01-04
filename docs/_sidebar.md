@@ -82,6 +82,9 @@
 
 -----
 * [Sorting](sort/intro.md)
+    * [912. Sort an Array](sort/quick.md)
+        * [Merge Sort](sort/merge.md)
+        * [Selection Sort](sort/select.md)
     * [56. Merge Intervals](amazon/mergeInterval.md)
     * [57. Insert Interval](amazon/insertInterval.md)
     * [252. Meeting Rooms I](sort/room.md)
