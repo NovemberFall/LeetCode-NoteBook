@@ -1,6 +1,44 @@
 ## 32. Longest Valid Parentheses
 ![](img/2022-11-25-20-31-52.png)
 
+```ruby
+") ( ) ( ) )"
+ i 
+stack [ -1, 
+
+
+") ( ) ( ) )"
+ i 
+stack [ 0
+
+
+") ( ) ( ) )"
+   i 
+stack [ 0, 1
+
+
+") ( ) ( ) )"
+     i 
+stack [ 0,                  # max = 2 - 0 = 2
+
+
+") ( ) ( ) )"
+       i 
+stack [ 0, 3     
+
+
+") ( ) ( ) )"
+         i 
+stack [ 0,                 # max = 4 - 0 = 4     
+
+
+") ( ) ( ) )"
+           i 
+stack [ 5,  
+
+```
+
+---
 ```java
 public class _32_LongestValidParentheses {
     public static int longestValidParentheses(String s) {
