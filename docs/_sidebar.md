@@ -263,6 +263,8 @@
     * [35. Search Insert Position](top/SearchInsertPosition.md)
     * [34. First&LastPositionElementInSortedArr](m3/FirstLastPositionOfSortedArr.md)
     * [658. Find K Closest Elements](m3/findKclosest.md)
+* [Math](math/intro.md)
+    * [509. Fibonacci Number](math/fib.md)
 * [Trie](trie/intro.md)
     * [208. Implement Trie (Prefix Tree)](m12/trie.md)
     * [588. Design In-Memory File System](amazon/file.md)
