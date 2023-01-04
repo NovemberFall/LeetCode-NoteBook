@@ -39,15 +39,64 @@
 
 - Time Complexity :- `O(N)`
 - Space Complexity :- `O(N)`
+---
+### Deque
 
 ```java
-class Solution {
-    public String simplifyPath(String path) {
-        if (path == null || path.length() == 0) return "/";
-        
-        String [] dirs = path.split("/");
-        Deque<String> stack = new ArrayDeque();
-        StringBuilder sb = new StringBuilder();
+class SimplifyPath_Deque {
+        public String simplify(String path) {
+        Deque<String> deque = new ArrayDeque<>();
+        StringBuilder res = new StringBuilder();
+        String[] dirs = path.split("/");
+        System.out.println(Arrays.toString(dirs));
+        // Note: first String is ""
+        // [, a, ., b, .., .., c]
+
+        for (int i = 0; i < dirs.length; i++) {
+            if (dirs[i].equals(".")) {
+                continue;
+            }
+            if (!dirs[i].equals("") && !dirs[i].equals("..")) {
+                deque.addLast(dirs[i]);
+            } else if (!deque.isEmpty() && dirs[i].equals("..")) {
+                deque.pollLast();
+            }
+        }
+
+        if (deque.isEmpty()){
+            return "/";
+        }
+
+        while (!deque.isEmpty()) {
+            String top = deque.pollFirst();
+            res.append("/").append(top);
+        }
+        return res.toString();
+    }
+
+    public static void main(String[] args) {
+        SimplifyPath_Deque sp = new SimplifyPath_Deque();
+        String res = sp.simplify("/a/./b/../../c/");
+        System.out.println(res); //  /c
+
+        res = sp.simplify("/a/b/c/d/../e");
+        System.out.println(res); //   /a/b/c/e
+    }
+}
+```
+---
+### Stack
+
+```java
+public class SimplifyPath_Stack {
+    public String simplify(String path) {
+        Stack<String> stack = new Stack<>();
+        StringBuilder res = new StringBuilder();
+        String[] dirs = path.split("/");
+        System.out.println(Arrays.toString(dirs));
+        // Note: first String is ""
+        // [, a, ., b, .., .., c]
+
         for (int i = 0; i < dirs.length; i++) {
             if (dirs[i].equals(".")) {
                 continue;
@@ -58,13 +107,26 @@ class Solution {
                 stack.pop();
             }
         }
-        if (stack.isEmpty()) {
+
+        if (stack.isEmpty()){
             return "/";
-        } 
+        }
+
         while (!stack.isEmpty()) {
-            sb.insert(0, stack.pop()).insert(0, "/");
-        }        
-        return sb.toString();
+            String top = stack.pop();
+            res.insert(0, top).insert(0, "/");
+        }
+        return res.toString();
+    }
+
+    public static void main(String[] args) {
+        SimplifyPath_Stack sp = new SimplifyPath_Stack();
+        String res = sp.simplify("/a/./b/../../c/");
+        System.out.println(res); //  /c
+
+        res = sp.simplify("/a/b/c/d/../e");
+        System.out.println(res); //   /a/b/c/e
     }
 }
+
 ```

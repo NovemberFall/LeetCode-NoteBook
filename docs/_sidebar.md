@@ -93,6 +93,8 @@
     * [94. Binary Tree Inorder Traversal](ch5/inorder.md)
     * [145. Binary Tree Postorder Traversal | recurive](ch5/postorder.md)
     * [173. Binary Search Tree Iterator](stack/bstIterator.md)
+    * [32. Longest Valid Parentheses](top/LongestValidParentheses.md)
+    * [71. Simplify Path](most/simplify.md)
 * [HashMap](ch3/intro.md)
     * [1. Two Sum](ch3/twoSum.md)
     * [12. Integer to Roman](top/intToRoman.md)
