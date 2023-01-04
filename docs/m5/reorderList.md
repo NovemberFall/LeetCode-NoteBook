@@ -16,6 +16,43 @@ solution:
 - Step 3: merge: 
   `dummy -> N1 -> N6 -> N2 -> N5 -> N3 -> N4 -> Null`
 
+
+
+
+```ruby
+    N1 -> N2 -> N3 -> N4 -> N5 -> N6
+
+    N1 -> N2 -> N3     N6 -> N5 -> N4
+    one                two
+    
+    dummy
+    cur -> 
+
+
+
+    N1 -> N2 -> N3     N6 -> N5 -> N4
+          one                two
+        
+ dummy -> N1 -> N6 ->
+                cur
+
+
+
+    N1 -> N2 -> N3     N6 -> N5 -> N4
+                one                two
+        
+ dummy -> N1 -> N6 -> N2 -> N5
+                            cur
+
+
+
+    N1 -> N2 -> N3     N6 -> N5 -> N4
+                   one                two
+        
+ dummy -> N1 -> N6 -> N2 -> N5 -> N3 -> N4
+                                        cur
+
+```
 ---
 
 ```java
@@ -67,13 +104,6 @@ class Solution {
         return prev;
     }    
 
-    /*
-                 N1 -> N2 -> N3 -> N4 -> N5 -> N6
-        
-                 N1 -> N2 -> N3    N6 -> N5 -> N4
-                     
-        dummy -> N1 -> N6 -> N2 -> N5 -> N3 -> N4 -> Null    
-    */
     private ListNode merge(ListNode one, ListNode two) {
         ListNode dummy = new ListNode(0);
         ListNode cur = dummy;
