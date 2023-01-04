@@ -1,6 +1,9 @@
 ## 32. Longest Valid Parentheses
 ![](img/2022-11-25-20-31-52.png)
 
+- [Longest Valid Parentheses | Leetcode - 32](https://youtu.be/VdQuwtEd10M?t=165)
+
+---
 ```ruby
 ") ( ) ( ) )"
  i 
