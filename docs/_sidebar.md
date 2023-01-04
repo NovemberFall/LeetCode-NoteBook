@@ -321,6 +321,7 @@
     * [146. LRU Cache](design/lru.md)
     * [155. Min Stack](design/minstk.md)
     * [232. Implement Queue using Stacks](design/queue.md)
+    * [225. Implement Stack using Queues](design/stack.md)
     * [284. Peeking Iterator](design/iterator.md)
     * [716. Max Stack | Hybrid Data Structure](most/maxstk.md)
     * [981. Time Based Key-Value Store](design/timestore.md)
