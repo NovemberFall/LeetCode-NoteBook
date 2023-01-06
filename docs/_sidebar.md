@@ -119,7 +119,7 @@
 * [LinkedList](LinkedList/intro.md)
     * [2. Add Two Numbers](m5/AddTwoNums.md)
     * [24. Swap Nodes in Pairs](m5/swap.md)
-    * [19. Remove Nth Node From End of List](m5/nthOfEnd.md)
+    * [19. Remove Nth Node From End of List](LinkedList/nthOfEnd.md)
     * [141. Linked List Cycle](ch4/listCycle.md)
     * [138. Copy List with Random Pointer | Deep Copy](m5/deepCopyList.md)
     * [143. Reorder List](m5/reorderList.md)
