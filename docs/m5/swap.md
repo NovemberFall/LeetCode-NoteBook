@@ -44,3 +44,29 @@ class Solution {
     }
 }
 ```
+---
+
+### Iterative
+
+- [Visual Explanation || Well Explained](https://leetcode.com/problems/swap-nodes-in-pairs/discuss/1775033/SWAPPING-NODES-(Not-just-the-values)-oror-Visual-Explanation-oror-Well-Explained-oror-C%2B%2B)
+
+```java
+class SwapNodesInPairs_Iterative {
+    public ListNode swapPairs(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode dummy = new ListNode(9527);
+        ListNode prev = dummy;
+        ListNode cur = head;
+        while (cur != null && cur.next != null) {
+            prev.next = cur.next;
+            cur.next = prev.next.next;
+            prev.next.next = cur;
+            prev = cur;
+            cur = cur.next;
+        }
+        return dummy.next;
+    }
+}
+```

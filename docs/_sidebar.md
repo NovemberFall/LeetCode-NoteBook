@@ -120,7 +120,7 @@
     * [2. Add Two Numbers](m5/AddTwoNums.md)
     * [24. Swap Nodes in Pairs](m5/swap.md)
     * [19. Remove Nth Node From End of List](LinkedList/nthOfEnd.md)
-    * [141. Linked List Cycle](ch4/listCycle.md)
+    * [141. Linked List Cycle](LinkedList/listCycle.md)
     * [138. Copy List with Random Pointer | Deep Copy](m5/deepCopyList.md)
     * [143. Reorder List](m5/reorderList.md)
     * [86. Partition List](m5/partitionList.md)
@@ -337,7 +337,6 @@
 -----
 * [Top 200](top/intro.md)
     * [169. Majority Element | Majority Voting Algorithm](top/majority.md)
-    * [141. Linked List Cycle](ch4/listCycle.md)
     * [6. Zigzag Conversion](top/zigzag.md)
     * [8. String to Integer (atoi)](top/atoi.md)
     * [10. Regular Expression Matching](top/regular.md)
