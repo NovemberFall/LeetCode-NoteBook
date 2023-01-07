@@ -121,6 +121,7 @@
     * [24. Swap Nodes in Pairs](m5/swap.md)
     * [25. Reverse Nodes in k-Group](LinkedList/kgroup.md)
     * [19. Remove Nth Node From End of List](LinkedList/nthOfEnd.md)
+    * [61. Rotate List](LinkedList/rotate.md)
     * [141. Linked List Cycle](LinkedList/listCycle.md)
     * [138. Copy List with Random Pointer | Deep Copy](m5/deepCopyList.md)
     * [143. Reorder List](m5/reorderList.md)

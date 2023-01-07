@@ -17,33 +17,51 @@
 ![](img/2021-06-11-22-08-29.png)
 
 ![](img/2021-06-11-22-08-47.png)
+---
+
+- Why dummy? `head` may be changed:
+
+```ruby
+        [2] -> [3] -> [6] -> [4] -> [6]   ,  target = 2
+
+               [3] -> [6] -> [4] -> [6]  # now head has changed!
+```
 
 ---
 
 ```java
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode() {}
- *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- * }
- */
-class Solution {
+class _203_RemoveLinkedListElements {
     public ListNode removeElements(ListNode head, int val) {
-        ListNode dummy = new ListNode(0);
+        if (head == null) {
+            return head;
+        }
+        ListNode dummy = new ListNode(9527);
         dummy.next = head;
-        ListNode cur = dummy;
-        while (cur.next != null) {
-            if (cur.next.val == val) {
-                cur.next = cur.next.next;
+        ListNode prev = dummy;
+        while (head != null) {
+            if (head.val == val) {
+                prev.next = head.next;
             } else {
-                cur = cur.next;
-            }                  
+                prev = head;
+            }
+            head = head.next;
         }
         return dummy.next;
+    }
+
+    public static void main(String[] args) {
+        ListNode head = new ListNode(1);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(3);
+        head.next.next.next = new ListNode(2);
+        head.next.next.next.next = new ListNode(5);
+
+        _203_RemoveLinkedListElements removeLinkedListElements = new _203_RemoveLinkedListElements();
+        ListNode res = removeLinkedListElements.removeElements(head, 2);
+        while (res != null) {
+            System.out.print(res.val + " ");
+            res = res.next;
+        } // 1->2->3->4->5   =>   1->3->5
     }
 }
 ```
