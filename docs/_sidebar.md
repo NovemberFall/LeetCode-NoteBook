@@ -133,7 +133,7 @@
     * [234. Palindrome Linked List](ch4/palindrome.md)
     * [237. Delete Node in a Linked List](LinkedList/delete.md)
     * [Insert a node into Sorted LinkedList](ch4/insertToList.md)
-    * [876. Middle of the Linked List](ch4/midNodeOfList.md)
+    * [876. Middle of the Linked List](LinkedList/midNode.md)
     * [426. Convert Binary Search Tree to Sorted Doubly Linked List](most/convert.md)
     * [445. Add Two Numbers II](m5/twoNumsII.md)
 * [DFS](DFS/intro.md)
