@@ -6,6 +6,8 @@
 
 ---
 
+### Brute Force
+
 ```java
 /**
  * Definition for singly-linked list.

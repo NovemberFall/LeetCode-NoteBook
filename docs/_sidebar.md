@@ -127,7 +127,7 @@
     * [143. Reorder List](m5/reorderList.md)
     * [86. Partition List](m5/partitionList.md)
     * [160. Intersection of Two Linked Lists](ch4/intersect.md)
-    * [148. Sort List](m5/sortList.md)
+    * [148. Sort List](LinkedList/sortList.md)
     * [203. Remove Linked List Elements](ch4/remove.md)
     * [206. Reverse Linked List](ch4/reverseList.md)
     * [234. Palindrome Linked List](ch4/palindrome.md)
