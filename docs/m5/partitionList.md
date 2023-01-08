@@ -1,12 +1,5 @@
 ## 86. Partition List
-
-- Given the head of a linked list and a value x, partition it such that all nodes less than x 
-  come before nodes greater than or equal to x.
-
-- You should `preserve` the original relative order of the nodes in each of the two partitions.
-
-![](img/2021-06-11-16-26-51.png)
-
+![](img/2023-01-07-23-48-55.png)
 ---
 
 input: 1 -> 6 -> 3 -> 2a -> 5 -> 2b | target x=4
