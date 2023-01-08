@@ -2,30 +2,10 @@
 ![](img/2023-01-07-23-48-55.png)
 ---
 
-input: 1 -> 6 -> 3 -> 2a -> 5 -> 2b | target x=4
-result: 1 -> 3 -> 2a -> 2b -> 6 -> 5
+- 本题相对位置不能比，所以比给定数值小的node 按照原定顺序放左边，否则放右边
 
-- step 1: allocate two new linkedlist heads (one for small values, one for large values)
-
-dummySmallHead ->
-dummyLargeHead -> 
-
-- step 2: Iterate over every single element in the list, and compare with the current node's
-  value with the target's value
-  - case 1: if cur.value < target'value: Add the current node to the tail of the first
-    linkedlist
-  - case 2: otherwise, Add the current node to the tail of the second linkedlist.
-
-dummySmallHead -> 1 -> 3 -> 2a -> 2b
-dummyLargeHead -> 6 -> 5
-
-- step 3: concatenate the tail of the first half to the head of the 2nd linked list
-
-smallTail.next = dummyLargeHead.next
-dummySamllHead -> 1 -> 3 -> 2a -> 2b -> 6 -> 5
-
-- step 4: The tail of the large `list.next = null`
-
+![](img/2023-01-08-00-28-56.png)
+![](img/2023-01-08-00-29-11.png)
 ---
 
 ```java
@@ -45,12 +25,12 @@ class Solution {
             return head;
         }
         
-        ListNode small = new ListNode(0);
+        ListNode small = new ListNode(9527);
         ListNode large = new ListNode(0);
         ListNode curSmall = small;
         ListNode curLarge = large;
         while (head != null) {
-            if (head.val< x) {
+            if (head.val < x) {
                 curSmall.next = head;
                 curSmall = curSmall.next;
             } else {
