@@ -126,6 +126,7 @@
     * [138. Copy List with Random Pointer | Deep Copy](m5/deepCopyList.md)
     * [143. Reorder List](m5/reorderList.md)
     * [86. Partition List](m5/partitionList.md)
+    * [82. Remove Duplicates from Sorted List II](LinkedList/dup2.md)
     * [160. Intersection of Two Linked Lists](ch4/intersect.md)
     * [148. Sort List](LinkedList/sortList.md)
     * [203. Remove Linked List Elements](ch4/remove.md)
