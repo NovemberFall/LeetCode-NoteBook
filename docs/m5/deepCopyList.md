@@ -26,9 +26,6 @@
       - `<N3.random, N3.random'>`
 
 
-
-
-
 ```java
 /*
 // Definition for a Node.
