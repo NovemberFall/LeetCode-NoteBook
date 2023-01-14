@@ -1,17 +1,6 @@
 ## 951. Flip Equivalent Binary Trees
-
-- For a binary tree T, we can define a flip operation as follows: choose any node, 
-  and swap the left and right child subtrees.
-
-- A binary tree X is flip equivalent to a binary tree Y if and only if we can make 
-  X equal to Y after some number of flip operations.
-
-- Write a function that determines whether two binary trees are flip equivalent.  
-  The trees are given by root nodes root1 and root2.
-
-![](img/2020-07-03-01-05-18.png)
-
-
+![](img/2023-01-14-11-53-55.png)
+---
 ![](img/2021-06-19-14-37-52.png)
 ![](img/2021-06-19-14-38-04.png)
 
