@@ -248,6 +248,7 @@
     * [95. Unique Binary Search Trees II](binarySearchTree/uniquebstII.md)
     * [96. Unique Binary Search Trees](binarySearchTree/uniquebst.md)
     * [99. Recover Binary Search Tree](binarySearchTree/recoverBst.md)
+    * [938. Range Sum of BST](binarySearchTree/range.md)
 * [Two Pointers](twopoint/intro.md)
     * [15. 3Sum](m3/threeSum.md)
     * [16. 3Sum Closest](top/3SumClosest.md)
