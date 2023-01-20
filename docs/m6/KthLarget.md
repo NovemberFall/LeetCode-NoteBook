@@ -54,24 +54,30 @@ class Solution {
 
 ---
 
+- `O(N lg K)` running time + `O(K)` memory, **online algorithm**
+
 ```java
-class Solution {
+class _215_KthLargestElementInArray {
     public int findKthLargest(int[] nums, int k) {
-        if(nums.length == 0 || nums == null){
-            return nums[0];
-        }
-        PriorityQueue<Integer> maxHeap = 
-            new PriorityQueue<>((a, b) -> b-a);
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>(
+                (a, b) -> (a - b)
+        );
 
-        for(int elem : nums){
-            maxHeap.offer(elem);
-        }
+        for (int num : nums) {
+            minHeap.offer(num);
 
-        int res = 0;
-        for(int i=0; i<k; i++){
-            res = maxHeap.poll();
+            if (minHeap.size() > k) {
+                minHeap.poll();
+            }
         }
-        return res;
+        return minHeap.peek();
+    }
+
+    public static void main(String[] args) {
+        _215_KthLargestElementInArray kthLargestElementInArray = new _215_KthLargestElementInArray();
+        int[] nums = {3, 2, 3, 1, 2, 4, 5, 5, 6};
+        int res = kthLargestElementInArray.findKthLargest(nums, 4);
+        System.out.println(res); // 4
     }
 }
 ```
