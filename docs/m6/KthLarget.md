@@ -56,6 +56,8 @@ class Solution {
 
 - `O(N lg K)` running time + `O(K)` memory, **online algorithm**
 
+- [video c6 - 39.50]()
+
 ```java
 class _215_KthLargestElementInArray {
     public int findKthLargest(int[] nums, int k) {
