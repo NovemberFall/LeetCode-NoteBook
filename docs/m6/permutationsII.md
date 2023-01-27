@@ -4,6 +4,7 @@
 ## Analysis:
 
 ![](img/2021-07-22-20-14-10.png)
+![](img/2023-01-26-22-26-31.png)
 - [liweiwei | 回溯搜索 + 剪枝 | LeetCode 题解](https://leetcode.cn/problems/permutations-ii/solution/hui-su-suan-fa-python-dai-ma-java-dai-ma-by-liwe-2/)
 - [jiu zhang 全排列II]()
 
