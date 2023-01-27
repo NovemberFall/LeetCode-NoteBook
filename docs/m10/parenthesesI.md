@@ -1,9 +1,7 @@
 ## 22. Generate Parentheses | DFS (All Permutations Of Parentheses I)
+![](img/2023-01-26-16-54-58.png)
 
 ```ruby
-Given n pairs of parentheses, write a function to generate all combinations of 
-well-formed parentheses.
-
 For example, given n = 3, a solution set is:
 
 [
@@ -14,7 +12,6 @@ For example, given n = 3, a solution set is:
   "()()()"
 ]
 ```
-
 ---
 
 
@@ -34,8 +31,7 @@ For example, given n = 3, a solution set is:
   
 ---
 ![](img/2021-05-31-18-25-11.png)
-
-![](img/2021-10-06-20-44-53.png)
+![](img/2023-01-26-20-16-26.png)
 ---
 
 - Because there are `2n` level in the recursion tree, and it's a binary
