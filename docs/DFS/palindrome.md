@@ -10,6 +10,8 @@
 
 ![](img/2023-02-02-01-03-04.png)
 
+- **递归用来纵向遍历，for循环用来横向遍历**
+
 ```java
 /*
                            [a, a, b]
@@ -39,6 +41,7 @@ public class _131_PalindromePartitioning {
             return;
         }
 
+        // 递归用来纵向遍历，for循环用来横向遍历
         for (int i = startIndex; i < s.length(); i++) {
             if (!isPalindrome(s, startIndex, i)) {
                 continue;
