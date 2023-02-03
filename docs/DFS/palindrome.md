@@ -1,6 +1,8 @@
 ## 131. Palindrome Partitioning
 ![](img/2023-02-02-00-54-48.png)
 
+- [中文解释](https://leetcode.cn/problems/palindrome-partitioning/solution/131-fen-ge-hui-wen-chuan-hui-su-sou-suo-yp2jq/)
+
 - **其实切割问题类似组合问题**。
   - 例如对于字符串`abcdef`：
     - 组合问题：选取一个`a`之后，在`bcdef`中再去选取第二个，选取`b`之后在`cdef`中再选取第三个.....
