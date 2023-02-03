@@ -13,18 +13,6 @@
 - **递归用来纵向遍历，for循环用来横向遍历**
 
 ```java
-/*
-                           [a, a, b]
-          a/                  a|           b\
-         {a}                  {aa}         {aab} # cut not palindrome
-       [a, b]                 [b]
-    a/      b\                  b\
-  {a,a}    {ab}                  {aa, b}
-  [b]       # cut not palindrome
- b/
- {a, a, b}
-
- */
 public class _131_PalindromePartitioning {
     public List<List<String>> partition(String s) {
         List<List<String>> res = new ArrayList<>();

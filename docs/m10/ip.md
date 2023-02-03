@@ -2,7 +2,7 @@
 ![](img/2021-07-16-22-21-33.png)
 ---
 - [中文解释 I](https://programmercarl.com/0093.%E5%A4%8D%E5%8E%9FIP%E5%9C%B0%E5%9D%80.html#%E5%9B%9E%E6%BA%AF%E4%B8%89%E9%83%A8%E6%9B%B2)
-- [英文解释](https://www.youtube.com/watch?v=61tN4YEdiTM)
+- [youtube](https://www.youtube.com/watch?v=YqQvmemMbe4)
 
 ![](img/2023-02-02-22-33-27.png)
 ![](img/2023-02-02-22-33-03.png)
@@ -25,19 +25,68 @@ if (pointNum == 3) { // 逗点数量为3时，分隔结束
 - 在`for (int i = startIndex; i < s.size(); i++)` 循环中 `[startIndex, i]` 这个区间就是截取的子串，需要判断这个子串是否合法。
   如果合法就在字符串后面加上符号`.`表示已经分割。
 
+---
 
+```java
+class Restore_IP_Addresses {
+    public List<String> restoreIpAddresses(String s) {
+        List<String> res = new ArrayList<>();
+        if (s.length() < 4 || s.length() > 12) {
+            return res;
+        }
 
+        dfs(res, s, new StringBuilder(), 3, 0);
+        return res;
+    }
 
+    private void dfs(List<String> res, String s, StringBuilder curStr, int dotLeft, int startIndex) {
+        if (dotLeft == 0) {
+            if (isValid(s.substring(startIndex))) {
+                curStr.append("." + s.substring(startIndex));
+                res.add(curStr.toString());
+            }
+            return;
+        }
 
+        for (int i = startIndex; i < s.length(); i++) {
+            if (isValid(s.substring(startIndex, i + 1))) {
+                int length = curStr.length();
+                if (dotLeft == 3) {
+                    curStr.append(s.substring(startIndex, i + 1));
+                    dfs(res, s, curStr, dotLeft - 1, i + 1);
+                    curStr.setLength(length);
+                } else {
+                    curStr.append("." + s.substring(startIndex, i + 1));
+                    dfs(res, s, curStr, dotLeft - 1, i + 1);
+                    curStr.setLength(length);
+                }
+            }
+        }
+    }
 
+    private boolean isValid(String s) {
+        if (s.length() > 3) {
+            return false;
+        }
+        if (s.length() < 1) {
+            return false;
+        }
+        if (s.charAt(0) == '0' && s.length() > 1) { // "01"
+            return false;
+        }
+        if (Integer.parseInt(s) > 255) {
+            return false;
+        }
+        return true;
+    }
 
-
-
-
-
-
-
-
+    public static void main(String[] args) {
+        Restore_IP_Addresses restore_ip_addresses = new Restore_IP_Addresses();
+        List<String> res = restore_ip_addresses.restoreIpAddresses("25525511135");
+        System.out.println(res);// [255.255.11.135, 255.255.111.35]
+    }
+}
+```
 
 
 ---
