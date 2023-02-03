@@ -1,9 +1,40 @@
 ## 93. Restore IP Addresses
 ![](img/2021-07-16-22-21-33.png)
-
-- [中文解释](https://www.youtube.com/watch?v=wLuFymFZORQ&t=957s)
+---
+- [中文解释 I](https://programmercarl.com/0093.%E5%A4%8D%E5%8E%9FIP%E5%9C%B0%E5%9D%80.html#%E5%9B%9E%E6%BA%AF%E4%B8%89%E9%83%A8%E6%9B%B2)
 - [英文解释](https://www.youtube.com/watch?v=61tN4YEdiTM)
 
+![](img/2023-02-02-22-33-27.png)
+![](img/2023-02-02-22-33-03.png)
+
+- 递归终止条件：
+  - `pointNum` 表示逗点数量，`pointNum` 为`3`说明字符串分成了`4`段了。
+
+```java
+if (pointNum == 3) { // 逗点数量为3时，分隔结束
+    // 判断第四段子字符串是否合法，如果合法就放进result中
+    if (isValid(s, startIndex, s.size() - 1)) {
+        result.push_back(s);
+    }
+    return;
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
 ### Brute Force
 ```java
 class Solution {
@@ -44,10 +75,10 @@ class Solution {
 }
 ```
 
-
-
-
 ---
+
+- [中文解释 II](https://www.youtube.com/watch?v=wLuFymFZORQ&t=957s)
+
 ```java
 /*
                    25525511135
