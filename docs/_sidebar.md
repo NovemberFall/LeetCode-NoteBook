@@ -149,7 +149,7 @@
     * [All Permutations II | DFS](m10/permutationsWithStrII.md)
     * [200. Number of Islands](amazon/islands.md)
     * [79. Word Search](amazon/word.md)
-    * [17. Letter Combinations of a Phone Number](most/letterCombin.md)
+    * [17. Letter Combinations of a Phone Number](DFS/letterCombin.md)
     * [46. Permutations](m10/permutations.md)
     * [47. Permutations II](m6/permutationsII.md)
     * [322. Coin Change](DFS/coin.md)
