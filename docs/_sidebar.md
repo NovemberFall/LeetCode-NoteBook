@@ -334,7 +334,7 @@
     * [300. Longest Increasing Subsequence](m9/longestAscSubseq.md)
     * [Largest Set Of Points With Positive Slope](m9/largestSetPositiveSlop.md)
     * [Packing Up the Swags | Interview](m9/packingSwag.md)
-    * [485. Max Consecutive Ones | Longest Consecutive 1s](ch8/longestOnes.md)
+    * [485. Max Consecutive Ones | Longest Consecutive 1s](DP/longestOnes.md)
 * [Design](design/intro.md)
     * [146. LRU Cache](design/lru.md)
     * [155. Min Stack](design/minstk.md)
