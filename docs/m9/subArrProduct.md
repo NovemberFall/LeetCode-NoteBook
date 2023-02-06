@@ -20,7 +20,10 @@
   - why we set to be `1` ?
     - because when we introducing new values: 
       - 1 * 3 = 3
-
+---
+![](img/2023-02-05-23-05-44.png)
+![](img/2023-02-05-23-06-10.png)
+![](img/2023-02-05-23-06-31.png)
 ---
 
 
@@ -32,6 +35,7 @@ res = MIN_VALUE
 -Product:    2   -4  -12  -24  -18  -90 
 ```
 
+---
 
 ```java
 class Solution {
