@@ -318,9 +318,11 @@
     * [53. Maximum Subarray | Largest SubArray Sum](m9/subArrSum.md)
     * [62. Unique Paths](m9/path.md)
     * [85. Maximal Rectangle || Largest Rectangle Of 1s](DP/largestRecArea.md)
+    * [91. Decode Ways](DP/decode.md)
     * [152. Maximum Product Subarray](m9/subArrProduct.md)
     * [139. Word Break | Dictionary Word |](m9/wordBreak.md)
     * [132. Palindrome Partitioning II | Minimum Cuts For Palindromes](DP/minCut.md)
+    * [279. Perfect Squares](DP/perfect.md)
     * [Longest Cross Of 1s](DP/longestCrossOnes.md)
     * [Largest X Of 1s](DP/longestXofOnes.md)
     * [Largest Square Of Matches](DP/longestSquareMatches.md)
@@ -396,9 +398,7 @@
         * [Array Deduplication III](m3/dedup3.md)
         * [Largest And Smallest](m3/maxMin.md)
         * [Largest And Second Largest](m3/maxSecondMax.md)
-        * [48. Rotate Image || Rotate Matrix](m3/rotateMatrix.md)
         * [189. Rotate Array](m3/rotateArr.md)
-        * [59. Spiral Matrix II](m3/spiral2.md)
         * [167. Two Sum II - Input array is sorted](m3/two2.md)
 
 -----
