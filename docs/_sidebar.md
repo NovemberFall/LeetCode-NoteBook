@@ -319,7 +319,7 @@
     * [62. Unique Paths](m9/path.md)
     * [85. Maximal Rectangle || Largest Rectangle Of 1s](DP/largestRecArea.md)
     * [91. Decode Ways](DP/decode.md)
-    * [152. Maximum Product Subarray](m9/subArrProduct.md)
+    * [152. Maximum Product Subarray](DP/subArrProduct.md)
     * [139. Word Break | Dictionary Word |](m9/wordBreak.md)
     * [132. Palindrome Partitioning II | Minimum Cuts For Palindromes](DP/minCut.md)
     * [279. Perfect Squares](DP/perfect.md)
