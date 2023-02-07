@@ -28,4 +28,6 @@
     
    - **Single-responsibility Principle: A class should have only one job**
 
-    Association: a general binary 
+        Association: a general binary relationship that describe an activity between two classes.
+        - Composition: a special form of association, which represents an ownership relationship
+          between two classes. (**has-a**)
