@@ -322,6 +322,7 @@
     * [152. Maximum Product Subarray](DP/subArrProduct.md)
     * [139. Word Break | Dictionary Word |](m9/wordBreak.md)
     * [132. Palindrome Partitioning II | Minimum Cuts For Palindromes](DP/minCut.md)
+    * [198. House Robber](DP/rob.md)
     * [279. Perfect Squares](DP/perfect.md)
     * [Longest Cross Of 1s](DP/longestCrossOnes.md)
     * [Largest X Of 1s](DP/longestXofOnes.md)
