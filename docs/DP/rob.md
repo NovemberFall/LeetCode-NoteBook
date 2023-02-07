@@ -1,5 +1,7 @@
 ## 198. House Robber
 ![](img/2023-02-06-16-22-32.png)
+
+- [中文解释](https://leetcode.cn/problems/house-robber/solution/hua-jie-suan-fa-198-da-jia-jie-she-by-guanpengchn/)
 ---
 ![](img/2023-02-06-16-22-51.png)
 
