@@ -35,11 +35,11 @@
           but weaker than composition. (no real ownership)
         **Inheritance(is-a)**
 
-        Parking Lot -- Level (has-a, composition)
-        Level -- Parking Spot (has-a, composition)
-        Vehicle -- Parking Spot (aggreation)
-        Vehicle -- Car, Truck (inheritance)
-        Parking Lot -- Vehicle (association)
+        - Parking Lot -- Level (has-a, composition)
+        - Level -- Parking Spot (has-a, composition)
+        - Vehicle -- Parking Spot (aggreation)
+        - Vehicle -- Car, Truck (inheritance)
+        - Parking Lot -- Vehicle (association)
 
 3. **For complicated designs, first focus on public methods (APIs)**: 别人怎么调用你的程序？
 
