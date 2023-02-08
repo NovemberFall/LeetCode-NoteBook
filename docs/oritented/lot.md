@@ -43,9 +43,9 @@
 
 3. **For complicated designs, first focus on public methods (APIs)**: 别人怎么调用你的程序？
 
-        Functionality:
-            1. Basic funcionality: for a given vehicle, tell whether there is an available spot in the parking lot.
-            2. Possible extensions: provide available spot locations, assign spot to the vehicle
+    - Functionality:
+       1. Basic funcionality: for a given vehicle, tell whether there is an available spot in the parking lot.
+       2. Possible extensions: provide available spot locations, assign spot to the vehicle
 
 ---
 
