@@ -489,6 +489,7 @@
     * [Object-Oritented Design](oritented/.md)
         * [The Comparator Interface Type](oritented/comparator.md)
         * [Design a Parking Lot](oritented/lot.md)
+        * [Design Patterns](oritented/patterns.md)
     * [C++ vs Java | Garbage collection](garbage/intro.md)
         * [Garbage Collection](garbage/garbage.md)
     * [Concurrency](concurrency/intro.md)
