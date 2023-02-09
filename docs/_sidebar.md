@@ -463,7 +463,7 @@
 -----
 * [Fundamental Concept](basic/intro.md)
     * [Series Big-O | arithmetic, Geometric sequence](basic/series.md)
-    * [Object| Java Pass by Value](basic/pbv.md)
+    * [Object | Java Pass by Value](basic/pbv.md)
     * [ArrayList](basic/list.md)
     * [Stack](basic/stack.md)
     * [Queue](basic/queue.md)
@@ -490,6 +490,7 @@
         * [The Comparator Interface Type](oritented/comparator.md)
         * [Design a Parking Lot](oritented/lot.md)
         * [Design Patterns](oritented/patterns.md)
+        * [Black Jack](oritented/black.md)
     * [C++ vs Java | Garbage collection](garbage/intro.md)
         * [Garbage Collection](garbage/garbage.md)
     * [Concurrency](concurrency/intro.md)
