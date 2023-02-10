@@ -490,6 +490,7 @@
         * [The Comparator Interface Type](oritented/comparator.md)
         * [Design a Parking Lot](oritented/lot.md)
         * [Design Patterns](oritented/patterns.md)
+            * [Singleton](oritented/singleton.md)
         * [Black Jack](oritented/black.md)
     * [C++ vs Java | Garbage collection](garbage/intro.md)
         * [Garbage Collection](garbage/garbage.md)
