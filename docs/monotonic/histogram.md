@@ -4,14 +4,87 @@
 - [geeksforgeeks](https://www.geeksforgeeks.org/largest-rectangle-under-histogram/)
 
 ![](img/2022-09-30-21-21-34.png)
+---
+```ruby
+    [2, 1, 5, 6, 2, 3]
 
+stk: 0, 
+++i => 1
+
+
+
+stK:
+i => 1
+areaWithTop => height[0] * 1 = 2
+maxArea => 2
+
+
+
+stk: 1, 
+++i => 2
+
+
+stk: 1, 2
+++i => 3
+
+
+stk: 1, 2, 3
+++i => 4
+
+
+
+stk: 1, 2
+i => 4
+areaWithTop => height[3] * (4 - 2 -1) = 6
+maxArea => 6
+
+
+
+stk: 1, 
+i => 4
+areaWithTop => height[2] * (4 - 1 -1) = 10
+maxArea => 10
+
+
+
+stk: 1, 4
+++i => 5
+
+
+stk: 1, 4, 5
+++i => 6
+maxArea => 10
+
+
+
+stk: 1, 4
+i => 6
+areaWithTop => height[5] * (6 - 4 - 1) = 3
+maxArea => 10
+
+
+
+stk: 1, 
+i => 6
+areaWithTop => height[4] * (6 - 1 - 1) = 8
+maxArea => 10
+
+
+
+
+stk:  
+i => 6
+areaWithTop => height[1] * 6 = 6
+maxArea => 10
+```
+---
 ```java
-class Solution {
+class LargestRectangleHistogram {
     public int largestRectangleArea(int[] heights) {
         Stack<Integer> stk = new Stack<>();
 
-        int area_with_top;
-        int max_area = -1, i = 0;
+        int areaWithTop;
+        int maxArea = -1, i = 0;
         while (i < heights.length) {
             if (stk.isEmpty() || heights[stk.peek()] <= heights[i]) {
                 stk.push(i);
@@ -19,26 +92,33 @@ class Solution {
             } else {
                 int temp = stk.pop();
                 if (stk.isEmpty()) {
-                    area_with_top = heights[temp] * i;
+                    areaWithTop = heights[temp] * i;
                 } else {
-                    area_with_top = heights[temp] * (i - stk.peek() - 1);
+                    areaWithTop = heights[temp] * (i - stk.peek() - 1);
                 }
 
-                max_area = Math.max(max_area, area_with_top);
+                maxArea = Math.max(maxArea, areaWithTop);
             }
         }
 
         while (!stk.isEmpty()) {
             int tp = stk.pop();
             if (stk.isEmpty()) {
-                area_with_top = heights[tp] * i;
+                areaWithTop = heights[tp] * i;
             } else {
-                area_with_top = heights[tp] * (i - stk.peek() - 1);
+                areaWithTop = heights[tp] * (i - stk.peek() - 1);
             }
 
-            max_area = Math.max(max_area, area_with_top);
+            maxArea = Math.max(maxArea, areaWithTop);
         }
-        return max_area;      
+        return maxArea;
+    }
+
+    public static void main(String[] args) {
+        int[] heights = new int[]{2, 1, 5, 6, 2, 3};
+        LargestRectangleHistogram lrh = new LargestRectangleHistogram();
+        int res = lrh.largestRectangleArea(heights);
+        System.out.println(res);
     }
 }
 ```
