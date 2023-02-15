@@ -1,6 +1,32 @@
 ## 152. Maximum Product Subarray
 ![](img/2023-02-05-23-29-45.png)
 ---
+![](img/2023-02-15-09-46-58.png)
+
+```java
+public class maxProductSubarray {
+    public int maxProduct(int[] nums) {
+        int n = nums.length;
+        int[] largest = new int[n];
+        int[] smallest = new int[n];
+        largest[0] = nums[0];
+        smallest[0] = nums[0];
+        int max = largest[0];
+
+        for (int i = 1; i < n; i++) {
+            int tmpLargest = Math.max(nums[i] * largest[i - 1], nums[i] * smallest[i - 1]);
+            largest[i] = Math.max(tmpLargest, nums[i]);
+
+            int tmpSmallest = Math.min(nums[i] * largest[i - 1], nums[i] * smallest[i - 1]);
+            smallest[i] = Math.min(tmpSmallest, nums[i]);
+
+            max = Math.max(max, largest[i]);
+        }
+        return max;
+    }
+}
+```
+---
 - [中文教程 ｜ 博大精深!](https://leetcode.cn/problems/maximum-product-subarray/solution/hua-jie-suan-fa-152-cheng-ji-zui-da-zi-xu-lie-by-g/)
 ---
 ![](img/2023-02-05-23-30-49.png)
