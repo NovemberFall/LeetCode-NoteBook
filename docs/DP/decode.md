@@ -7,6 +7,8 @@
 - [c9 - Part1 43:00]()
 
 - [中文解释](https://leetcode.cn/problems/decode-ways/solution/gong-shui-san-xie-gen-ju-shu-ju-fan-wei-ug3dd/)
+
+![](img/2023-02-14-19-56-01.png)
 ---
 
 ```java
