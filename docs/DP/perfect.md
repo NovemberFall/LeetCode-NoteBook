@@ -27,6 +27,9 @@ dp[13] = Min{ dp[13-1*1]+1, dp[13-2*2]+1, dp[13-3*3]+1 }
 						.
 dp[n] = Min{ dp[n - i*i] + 1 },  n - i*i >=0 && i >= 1
 ``` 
+---
+
+- [中文教程](https://leetcode.cn/problems/perfect-squares/solution/dai-ma-sui-xiang-lu-279-wan-quan-ping-fa-9ieo/)
 
 ![](img/2023-02-04-22-17-39.png)
 
