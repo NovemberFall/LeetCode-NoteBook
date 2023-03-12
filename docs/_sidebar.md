@@ -279,6 +279,7 @@
     * [509. Fibonacci Number](math/fib.md)
     * [29. Divide Two Integers](math/divide.md)
     * [136. Single Number](math/single.md)
+    * [67. Add Binary](math/addbin.md)
 * [Trie](trie/intro.md)
     * [208. Implement Trie (Prefix Tree)](m12/trie.md)
     * [588. Design In-Memory File System](amazon/file.md)
