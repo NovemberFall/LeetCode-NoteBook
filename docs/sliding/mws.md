@@ -5,6 +5,9 @@
 ---
 ### Brute Force
 
+- [youtube video4.1 => 2:00:15]()
+---
+
 ```java
 class Solution {
     public String minWindow(String s, String t) {
