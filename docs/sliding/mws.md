@@ -16,6 +16,7 @@ class Solution {
             map.put(tc, map.getOrDefault(tc, 0) + 1);
         }
         for (int i = 0; i < s.length(); i++) {
+            // sb.setLength(0);
             sb = new StringBuilder();
             for (int j = i; j < s.length(); j++) {
                 sb.append(s.charAt(j));
