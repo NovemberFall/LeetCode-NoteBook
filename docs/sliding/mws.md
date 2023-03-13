@@ -8,6 +8,8 @@
 ```java
 class Solution {
     public String minWindow(String s, String t) {
+        if (s == null || t == null || t.length() > s.length()) return "";        
+
         int resLen = Integer.MAX_VALUE;
         String res = "";
         StringBuilder sb = null;
@@ -80,6 +82,10 @@ class _76_MinimumWindowSubstring {
             // count == null 的情况，当前这个char如果根本不在T 中,
             // 那么以当前fast结尾一定不是最短的 (最短的substring两头的char肯定都在t中)
             if (count != null) {
+                /*
+                0   1   2   3   4
+                    4 - 1 + 1 = 4
+                 */                
                 if (count == 1) {
                     match++;
                 }
