@@ -98,7 +98,7 @@ class _76_MinimumWindowSubstring {
             // while 当前sliding window满足条件, move slow, 一直移动到第一个不满足条件的slow为止
             // while loop 里所有的sliding window都是满足条件的,所以每一次都可以更新global min
             while (match == map.size()) {
-                if (shortest > fast - slow + 1) {
+                if (fast - slow + 1 < shortest) {
                     shortest = fast - slow + 1;
                     start = slow;
                 }
