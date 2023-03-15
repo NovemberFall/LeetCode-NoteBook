@@ -55,6 +55,14 @@ class Solution {
     0  1  2  3
    [1 -1  3  4]
        i
+
+    0  1  2  3
+   [1 -1  3  4]
+          i
+
+    0  1  2  3
+   [1 -1  3  4]
+             i
 */
 class Solution {
     public int firstMissingPositive(int[] nums) {

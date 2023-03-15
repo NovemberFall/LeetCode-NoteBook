@@ -100,6 +100,7 @@
     * [3.Longest Substring Without Repeating Characters](m8/without.md)
     * [12. Integer to Roman](top/intToRoman.md)
     * [13. Roman to Integer](most/roman.md)
+    * [41. First Missing Positive](most/missNum.md)   
     * [49. Group Anagrams](m7/group.md)
     * [244. Shortest Word Distance II](most/shortest.md)
     * [692. Top K Frequent Words](m7/topKfreq.md)
