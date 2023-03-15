@@ -32,8 +32,16 @@ class Solution {
   location.
 - check `nums[nums[i] - 1] != nums[i]` in case they are same number falling to 
   forever loop.
+---
+```ruby
+                 0  1  2  3  4   
+  asume nums = {-1, 6, 7, 8, 9}
 
+    n = nums.length = 5
 
+        nums[i] >= n , do need to swap()
+```
+---
 ```java
 /*
     0  1  2  3
