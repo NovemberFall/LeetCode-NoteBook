@@ -26,6 +26,8 @@
 ![](img/2021-07-31-15-46-05.png)
 ---
 ![](img/2023-03-19-17-41-34.png)
+
+- 本题的重点： 一整个单词cut, 比如 `"apple"`, `"pen"`, `"apple"`
 ---
 ```java
 Input: s = "applepenapple", wordDict = ["apple","pen"]
