@@ -3,6 +3,8 @@
 
 ### Analysis:
 
+- [youTuBe video](https://www.youtube.com/watch?v=KppuKbiBX78)
+
 - **Base Case**: `M[0] = true`  empty string
 - Induction rule:
   - `M[i]` represents if we can cut the word[0...i] successfully.
@@ -22,7 +24,9 @@
  
 ![](img/2021-07-31-15-45-48.png)
 ![](img/2021-07-31-15-46-05.png)
-
+---
+![](img/2023-03-19-17-41-34.png)
+---
 ```java
 Input: s = "applepenapple", wordDict = ["apple","pen"]
   
@@ -42,7 +46,7 @@ init: dp[0] = true // empty string represents true
 
 wordDict.contains(s.substring(j, i)) && dp[j]
 ```
-
+---
 
 ```java
 class Solution {
