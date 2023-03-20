@@ -110,6 +110,7 @@
     * [350. Intersection of Two Arrays II](ch7/interset1.md)
     * [387. First Unique Character in a String](ch1/firstNonRepeatChar.md)
 * [HashSet](set/intro.md)
+    * [140. Word Break II](set/wb2.md)
     * [268. Missing Number | bit operation](ch7/misssingNum.md)
     * [349. Intersection of Two Arrays](ch7/interset.md)
     * [217. Contains Duplicate](most/contains.md)
