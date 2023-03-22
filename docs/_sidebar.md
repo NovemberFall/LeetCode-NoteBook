@@ -313,7 +313,7 @@
     * [219. Contains Duplicate II](sliding/dup2.md)
     * [220. Contains Duplicate III](sliding/dup3.md)
     * [239. Sliding Window Maximum](amazon/sliding.md)
-    * [438. Find All Anagrams in a String](m8/anagram.md)
+    * [438. Find All Anagrams in a String](sliding/anagram.md)
 * [Dynamic Programming](DP/intro.md)
     * [10. Regular Expression Matching](top/regular.md)
     * [44. Wildcard Matching](top/WildcardMatch.md)
