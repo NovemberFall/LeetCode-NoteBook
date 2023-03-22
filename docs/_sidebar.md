@@ -97,7 +97,6 @@
     * [71. Simplify Path](most/simplify.md)
 * [HashTable](ch3/intro.md)
     * [1. Two Sum](ch3/twoSum.md)
-    * [3.Longest Substring Without Repeating Characters](m8/without.md)
     * [12. Integer to Roman](top/intToRoman.md)
     * [13. Roman to Integer](most/roman.md)
     * [41. First Missing Positive](most/missNum.md)   
