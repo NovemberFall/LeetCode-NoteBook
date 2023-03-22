@@ -308,6 +308,7 @@
     * [1004. Max Consecutive Ones III](m8/maxOnes.md)
 * [Sliding Window](sliding/intro.md)
     * [3.Longest Substring Without Repeating Characters](m8/without.md)
+    * [30. Substring with Concatenation of All Words](sliding/allWords.md)
     * [76. Minimum Window Substring](sliding/mws.md)
     * [159. Longest Substring with At Most Two Distinct Characters](sliding/longest.md)
     * [219. Contains Duplicate II](sliding/dup2.md)
