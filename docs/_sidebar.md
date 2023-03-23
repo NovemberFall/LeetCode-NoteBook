@@ -85,6 +85,7 @@
         * [Selection Sort](sort/select.md)
     * [56. Merge Intervals](amazon/mergeInterval.md)
     * [57. Insert Interval](amazon/insertInterval.md)
+    * [169. Majority Element | Majority Voting Algorithm](sort/majority.md)
     * [252. Meeting Rooms I](sort/room.md)
     * [253. Meeting Rooms II](amazon/room2.md)
 * [Stack](stack/intro.md)
@@ -362,7 +363,6 @@
 
 -----
 * [Top 200](top/intro.md)
-    * [169. Majority Element | Majority Voting Algorithm](top/majority.md)
     * [6. Zigzag Conversion](top/zigzag.md)
     * [8. String to Integer (atoi)](top/atoi.md)
     * [15. 3Sum](m3/threeSum.md)
