@@ -10,7 +10,7 @@ public class _170_TwoSum_III {
     }
 
     public void add(int number) {
-        map.put(number, map.getOrDefault(number, 1) + 1);
+        map.put(number, map.getOrDefault(number, 0) + 1);
     }
 
     public boolean find(int value) {
