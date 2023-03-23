@@ -12,6 +12,7 @@ class _166_FractionToRecurringDecimal {
         if (numerator == 0) return "0";
 
         StringBuilder sb = new StringBuilder();
+        // res.append(((numerator > 0) ^ (denominator > 0)) ? "-" : "");
         if (numerator > 0 && denominator < 0 || numerator < 0 && denominator > 0) {
             sb.append("-");
         }
@@ -32,7 +33,6 @@ class _166_FractionToRecurringDecimal {
 
             remainder *= 10;
             sb.append(remainder / dividend);
-            System.out.println(sb.toString());
             remainder %= dividend;
 
             if (map.containsKey(remainder)) {
