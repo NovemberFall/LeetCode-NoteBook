@@ -105,6 +105,7 @@
     * [73. Set Matrix Zeroes](ch3/matrixZero.md)
     * [128. Longest Consecutive Sequence](ch3/lcs.md)
     * [149. Max Points on a Line](ch3/maxpoints.md)
+    * [170. Two Sum III - Data structure design](ch3/twosum3.md)
     * [244. Shortest Word Distance II](most/shortest.md)
     * [692. Top K Frequent Words](m7/topKfreq.md)
     * [347. Top K Frequent Elements](m7/topKfreq1.md)

@@ -37,12 +37,6 @@ class MajorityVotingAlgorithm {
                 count = 1;
             }
         }
-        int occurrences = 0;
-        for (int num : nums) {
-            if (num == majority) {
-                occurrences++;
-            }
-        }
         return majority;
     }
 
