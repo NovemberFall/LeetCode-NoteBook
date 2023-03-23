@@ -282,6 +282,7 @@
     * [509. Fibonacci Number](math/fib.md)
     * [29. Divide Two Integers](math/divide.md)
     * [136. Single Number](math/single.md)
+    * [166. Fraction to Recurring Decimal](math/fraction.md)
     * [67. Add Binary](math/addbin.md)
     * [268. Missing Number](math/miss.md)
 * [Trie](trie/intro.md)
