@@ -12,7 +12,7 @@ class _166_FractionToRecurringDecimal {
         if (numerator == 0) return "0";
 
         StringBuilder sb = new StringBuilder();
-        // res.append(((numerator > 0) ^ (denominator > 0)) ? "-" : "");
+        // sb.append(((numerator > 0) ^ (denominator > 0)) ? "-" : "");
         if (numerator > 0 && denominator < 0 || numerator < 0 && denominator > 0) {
             sb.append("-");
         }
