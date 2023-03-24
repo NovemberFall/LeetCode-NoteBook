@@ -295,8 +295,6 @@
     * [588. Design In-Memory File System](amazon/file.md)
     * [212. Word Search ||](amazon/word2.md)
     * [472 Concatenated Words](amazon/concatWord.md)
-* [Merge Sort](merge/intro.md)
-    * [4. Median of Two Sorted Arrays](arr/median.md)
 * [Matrix](matrix/intro.md)
     * [36. Valid Sudoku](top/ValidSudoku.md)
     * [37. Sudoku Solver](top/SudokuSolver.md)
