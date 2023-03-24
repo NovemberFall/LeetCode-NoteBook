@@ -7,7 +7,7 @@
 
 - Note: if Roman number `IV`, since `I` is less than `V`, so `V - I` = 4
   Therefore :
-  - init `index = 1`, `num = nums[lastIndex]`
+  - init `index = n - 2`, `num = nums[lastIndex]`
   - if `nums[i + 1] < nums[i]`, `num += nums[i]`
     else `nums[i + 1] > nums[i]` : `num -= nums[i]`
     - for example: `X=10, C=100`, `XC = 100 - 10 = 90`
