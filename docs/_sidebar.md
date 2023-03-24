@@ -300,7 +300,6 @@
     * [37. Sudoku Solver](top/SudokuSolver.md)
 * [String](m8/intro.md)
     * [Remove Certain Characters](m8/rmCertainChar.md)
-    * [Remove Certain Characters](m8/rmCertainChar.md)
     * [151. Reverse Words in a String](m8/reverseWord1.md)
     * [186 Reverse Words in a String II](m8/reverseWord.md)
     * [5. Longest Palindromic Substring](m8/longestPalindrom.md)
