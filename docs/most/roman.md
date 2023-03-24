@@ -10,7 +10,7 @@
   - init `index = n - 2`, `num = nums[lastIndex]`
   - if `nums[i + 1] < nums[i]`, `num += nums[i]`
     else `nums[i + 1] > nums[i]` : `num -= nums[i]`
-    - for example: `X=10, C=100`, `XC = 100 - 10 = 90`
+    - for example: `X = 10, C = 100`, `XC = 100 - 10 = 90`
 
 ```java
 class Solution {
