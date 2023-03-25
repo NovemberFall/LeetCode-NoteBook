@@ -2,7 +2,9 @@
 ![](img/2022-05-22-14-44-23.png)
 
 ![](img/2022-05-22-14-44-34.png)
-
+---
+- [youtube](https://www.youtube.com/watch?v=A0w4BskM4VM)
+---
 - **Idea / Proof**:
   - 1. The widest container (using first and last line) is a good candidate, 
     because of its width. Its water level is the height of the smaller one of first 
@@ -31,8 +33,7 @@ class Solution {
         int left = 0, right = height.length - 1;
         int water = 0;
         while (left < right) {
-            water = Math.max(water, 
-            (right-left) * Math.min(height[left], height[right]));
+            water = Math.max(water, (right-left) * Math.min(height[left], height[right]));
             if (height[left] < height[right]) {
                 left++;
             } else {

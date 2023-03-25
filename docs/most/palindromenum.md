@@ -5,14 +5,12 @@
   - convert integer to string and check if it is a palindrome
 
 ```java
-class Solution {
+class palindromeNumber_bruteForce {
     public boolean isPalindrome(int x) {
         if (x < 0) return false;
+        
         String str = String.valueOf(x);
-        return reverse(str, 0, str.length() - 1);
-    }
-    
-    private boolean reverse(String str,int left, int right){
+        int left = 0, right = str.length() - 1;
         while (left < right) {
             if (str.charAt(left) != str.charAt(right)) {
                 return false;
