@@ -285,6 +285,7 @@
 * [Math](math/intro.md)
     * [7. Reverse Integer](most/ri.md)
     * [8. String to Integer (atoi)](top/atoi.md)
+    * [9. Palindrome Number](most/palindromenum.md)    
     * [50. Pow(x, n)](math/pow.md)
     * [509. Fibonacci Number](math/fib.md)
     * [29. Divide Two Integers](math/divide.md)
