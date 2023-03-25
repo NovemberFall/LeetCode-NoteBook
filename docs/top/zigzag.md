@@ -7,6 +7,8 @@
 
 ![](img/2022-11-07-20-29-18.png)
 
+- [youTuBe](https://www.youtube.com/watch?v=CPamjPdCvIk&t=2s)
+
 ```java
 class Solution {
     public String convert(String s, int numRows) {

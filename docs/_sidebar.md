@@ -302,6 +302,7 @@
     * [151. Reverse Words in a String](m8/reverseWord1.md)
     * [186 Reverse Words in a String II](m8/reverseWord.md)
     * [5. Longest Palindromic Substring](m8/longestPalindrom.md)
+    * [6. Zigzag Conversion](top/zigzag.md)
     * [28. Implement strStr() | Determine If One String Is Another's Substring](ch1/strstr.md)
     * [557. Reverse Words in a String III](m8/reverseWord3.md)
     * [424. Longest Repeating Character Replacement](m8/longest.md)
