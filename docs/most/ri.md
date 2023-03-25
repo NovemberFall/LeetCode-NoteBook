@@ -3,6 +3,20 @@
 
 - Note: `Assume the environment does not allow you to store 64-bit integers (signed or unsigned).`
   - Thus, the result we need to cast `long` to `int`, but if it is overflow return `0`
+---
+
+- `123` % `10` = `3`,   `123` / `10` = `12`
+- `12` % `10` = `2`
+- `3` * `10` = `30` + `2` = `32`     
+
+- **32 bits**
+![](img/2023-03-25-13-25-06.png)
+![](img/2023-03-25-13-29-30.png)
+
+
+---
+
+### Using Long
 
 ```java
 /*  -456
@@ -44,6 +58,55 @@ public class _7_ReverseInteger {
         System.out.println(reverse(num));
         num = -1234;
         System.out.println(reverse(num));
+    }
+}
+```
+
+---
+
+### Not using Long
+
+- Note: 
+
+```java
+reversed == Integer.MAX_VALUE / 10 && chunk > 7
+
+reversed == Integer.MIN_VALUE / 10 && chunk < -8
+```
+
+- cannot change to:
+
+```java
+if (reversed > Integer.MAX_VALUE / 10 || reversed < Integer.MIN_VALUE / 10) {
+                return 0;
+}
+```
+
+- because it will **overflow** after you call rev = rev * 10 + pop;
+
+---
+```java
+class reverseInteger_NotUsing_Long {
+    public int reverse(int x) {
+        int reversed = 0;
+        int digit;
+
+        while (x != 0) {
+            digit = x % 10;
+            x /= 10;
+
+            if (reversed > Integer.MAX_VALUE / 10 ||
+                    reversed == Integer.MAX_VALUE / 10 && digit > 7) {
+                return 0;
+            }
+            if (reversed < Integer.MIN_VALUE / 10 ||
+                    reversed == Integer.MIN_VALUE / 10 && digit < -8) {
+                return 0;
+            }
+            
+            reversed = (reversed * 10) + digit;
+        }
+        return reversed;
     }
 }
 ```

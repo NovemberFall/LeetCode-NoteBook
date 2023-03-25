@@ -283,6 +283,7 @@
     * [34. First&LastPositionElementInSortedArr](m3/FirstLastPositionOfSortedArr.md)
     * [658. Find K Closest Elements](m3/findKclosest.md)
 * [Math](math/intro.md)
+    * [7. Reverse Integer](most/ri.md)
     * [50. Pow(x, n)](math/pow.md)
     * [509. Fibonacci Number](math/fib.md)
     * [29. Divide Two Integers](math/divide.md)
