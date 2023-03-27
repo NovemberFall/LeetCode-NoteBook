@@ -190,7 +190,6 @@
     * [423. Reconstruct Original Digits from English](m8/digitFromEnglish.md)
     * [443. String Compression](m8/strencode.md)
     * [283. Move Zeroes](twopoint/move1.md)
-    * [Move 0s To The End](twopoint/move0.md)
     * [344. Reverse String](ch1/reverseStr.md)
 * [Binary Search](binarySearch/intro.md)
     * [704. Classical Binary Search](ch2/classicalBinarySearch.md)
