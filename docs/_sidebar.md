@@ -2,6 +2,7 @@
     * [4. Median of Two Sorted Arrays](sort/median.md)
     * [56. Merge Intervals](amazon/mergeInterval.md)
     * [57. Insert Interval](amazon/insertInterval.md)
+    * [75. Sort Colors](sort/sortColors.md)
     * [169. Majority Element | Majority Voting Algorithm](sort/majority.md)
     * [252. Meeting Rooms I](sort/room.md)
     * [253. Meeting Rooms II](amazon/room2.md)
