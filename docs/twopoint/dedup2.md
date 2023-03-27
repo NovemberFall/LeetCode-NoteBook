@@ -86,47 +86,24 @@ class Solution {
 
 ---
 
-## 变种题型
+## 不同写法
 
 
 ```ruby
-Given a sorted integer array, remove duplicate elements. 
-For each group of elements with the same value keep 
-at most two of them. Do this in-place, using the left side 
-of the original array and maintain the relative order of 
-the elements of the array. 
-Return the array after deduplication.
+class _80_RemoveDuplicatesFromSortedArray_II {
+    public int removeDuplicates(int[] nums) {
+        if (nums == null || nums.length == 0) return 0;
 
-Assumptions
-
-The given array is not null
-Examples
-
-{1, 2, 2, 3, 3, 3} → {1, 2, 2, 3, 3}
-```
-
-
-
-
-
-
-```java
-public class Solution {
-  public int[] dedup(int[] array) {
-    // Write your solution here
-    if(array.length <= 2){
-      return array;
+        int slow = 2;
+        for (int fast = 2; fast < nums.length; fast++) {
+            if (nums[fast] == nums[slow - 2]) {
+                continue;
+            }
+            nums[slow] = nums[fast];
+            slow++;
+        }
+        return slow;
     }
-    int slow = 2;
-    for(int fast = 2; fast < array.length; fast++){
-      if(array[fast] == array[slow - 2]){
-        continue;
-      }
-      array[slow] = array[fast];
-      slow++;
-    }
-    return Arrays.copyOf(array, slow);
-  }
 }
 ```
 
