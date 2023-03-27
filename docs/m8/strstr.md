@@ -16,15 +16,15 @@ s1 = [a b c d e f g h i]          s2 = [c d e]
       i->                               j-> #every loop init j = 0
 
 assume i = 2,
-                 2   0               
+           
 'c' :  s1.charAt(i + j) == s2.charAt(0)  # j : [0 .. 2]
 
 
-                 2   0               
+         
 'd' :  s1.charAt(i + j) == s2.charAt(1)
 
 
-                 2   0
+
 'e' :  s1.charAt(i + j) == s2.charAt(2)
 ```
 
@@ -63,8 +63,7 @@ class Solution {
         
         for(int i = 0; i <= haystack.length()-needle.length(); i++){
            int j = 0;
-           while(j < needle.length() && 
-                 haystack.charAt(i + j) == needle.charAt(j)) {
+           while(j < needle.length() && haystack.charAt(i + j) == needle.charAt(j)) {
                j++;
            }
            if (j == needle.length()) {
