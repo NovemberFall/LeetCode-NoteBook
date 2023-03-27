@@ -6,7 +6,7 @@
     * [169. Majority Element | Majority Voting Algorithm](sort/majority.md)
     * [252. Meeting Rooms I](sort/room.md)
     * [253. Meeting Rooms II](amazon/room2.md)
-    * [912. Sort an Array](sort/quick.md)
+    * [912. Sort an Array | Quick Sort](sort/quick.md)
         * [Merge Sort](sort/merge.md)
         * [Selection Sort](sort/select.md)
     * [ReOrder Array](m5/reorderArr.md)
