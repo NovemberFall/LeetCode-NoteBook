@@ -75,7 +75,7 @@ public class strStr {
     public static void main(String[] args) {
         String s1 = "abcde";
         String s2 = "cde";
-        System.out.println(new strStr().subStr(s1, s2)); // 2
+        System.out.println(new strStr().subStr(s1, s2)); // 2`
     }
 }
 ```
