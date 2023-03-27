@@ -188,6 +188,7 @@
     * [80. Remove Duplicates from Sorted Array II | Array Deduplication II](twopoint/dedup2.md)
     * [88. Merge Sorted Array | Merge two Sorted Array](ch1/mergeTwoArr.md)
     * [21. Merge Two Sorted Lists | dummyHead](ch4/mergeTwoList.md)
+    * [151. Reverse Words in a String](m8/reverseWord1.md)
     * [680. Valid Palindrome II](amazon/palindrome.md)
     * [423. Reconstruct Original Digits from English](m8/digitFromEnglish.md)
     * [443. String Compression](m8/strencode.md)
