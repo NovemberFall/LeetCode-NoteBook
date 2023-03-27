@@ -2,6 +2,27 @@
 ![](img/2022-11-22-18-26-41.png)
 ![](img/2022-11-22-18-26-53.png)
 
+---
+
+```java
+class Solution {
+    public int removeElement(int[] nums, int val) {
+        int slow = 0;
+        for (int fast = 0; fast < nums.length; fast++) {
+            if (nums[fast] == val) {
+                continue;
+            }
+            nums[slow] = nums[fast];
+            slow++;
+        }
+        return slow;
+    }
+}
+```
+
+---
+
+
 ```java
 /**
  * Using Two Pointers - when elements to remove are rare.
@@ -23,7 +44,6 @@ class _27_RemoveElement {
         }
         int len = nums.length;
         int left = 0;
-        int count = 0;
         while (left < len) {
             if (nums[left] == val) {
                 nums[left] = nums[len - 1];
@@ -34,22 +54,6 @@ class _27_RemoveElement {
             }
         }
         return len;
-    }
-}
-```
-
----
-
-```java
-class Solution {
-    public int removeElement(int[] nums, int val) {
-        int slow = 0;
-        for (int fast = 0; fast < nums.length; fast++) {
-            if (nums[fast] != val) {
-                nums[slow++] = nums[fast];
-            }
-        }
-        return slow;
     }
 }
 ```
