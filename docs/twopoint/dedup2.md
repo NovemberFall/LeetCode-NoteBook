@@ -4,7 +4,7 @@
 
 ## Analysis:
 
-- [reference 26. Remove Duplicates from Sorted Array](https://novemberfall.github.io/LeetCode-NoteBook/#/ch1/dedup1)
+- [reference 26. Remove Duplicates from Sorted Array](https://novemberfall.github.io/LeetCode-NoteBook/#/twopoint/rmDupEle)
 
 - slow: all elements to the left side of the slow (excluding slow) pointer are the result for  
   the elements that have been processed.
