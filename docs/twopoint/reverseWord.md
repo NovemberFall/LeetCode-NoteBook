@@ -40,7 +40,7 @@ class Solution {
     }
     
     private void reverse(char[] res, int left, int right){
-        while(left <= right){
+        while(left < right){
             char temp = res[left];
             res[left] = res[right];
             res[right] = temp;
