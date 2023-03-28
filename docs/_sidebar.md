@@ -419,7 +419,6 @@
         * [Array Deduplication III](m3/dedup3.md)
         * [Largest And Smallest](m3/maxMin.md)
         * [Largest And Second Largest](m3/maxSecondMax.md)
-        * [189. Rotate Array](m3/rotateArr.md)
 
 -----
 * [Amazon Top 50](amazon/intro.md)
