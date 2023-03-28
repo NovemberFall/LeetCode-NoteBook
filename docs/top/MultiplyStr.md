@@ -1,8 +1,21 @@
 ## 43. Multiply Strings
 ![](img/2022-11-27-21-18-24.png)
-
+---
 ![](img/2022-11-27-21-19-12.png)
 
+```ruby
+index i      0   1   2
+            [1   2   3]
+           
+index j          0   1
+                [4   5]
+--------------------------
+                 1   5       indices[i + j, i + j + 1]
+                             indices[]
+
+```
+
+---
 ```java
 StringBuilder sb = new StringBuilder();
 boolean seen = false; // 还未见过第一个非0 数字
