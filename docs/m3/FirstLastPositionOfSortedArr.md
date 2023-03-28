@@ -1,6 +1,6 @@
 ## 34. Find First and Last Position of Element in Sorted Array
 ![](img/2022-08-12-13-58-25.png)
-
+---
 ```java
 public class _34_FindFirstAndLastPositionInSortedArray {
     public int[] searchRange(int[] nums, int target) {
@@ -17,10 +17,9 @@ public class _34_FindFirstAndLastPositionInSortedArray {
             int mid = left + (right - left) / 2;
             if (nums[mid] == target) {
                 idx = mid;
-                // because nothing after mid
-                // can be the first occurrence of target.
-                //maybe mid is the first occurrence , maybe not
-                //so let's narrow the target for [0... mid-1] and find out
+                // because nothing after mid can be the first occurrence of target.
+                // maybe mid is the first occurrence , maybe not
+                // so let's narrow the target for [0... mid-1] and find out
                 right = mid - 1;
             } else if (nums[mid] < target) {
                 left = mid + 1;
@@ -38,10 +37,9 @@ public class _34_FindFirstAndLastPositionInSortedArray {
             int mid = left + (right - left) / 2;
             if (nums[mid] == target) {
                 idx = mid;
-                // because nothing before mid
-                // can be the last occurrence of target.
-                //maybe mid is the last occurrence , maybe not
-                //so let's narrow the target for [mid+1 ... high] and find out
+                // because nothing before mid can be the last occurrence of target.
+                // maybe mid is the last occurrence , maybe not
+                // so let's narrow the target for [mid+1 ... high] and find out
                 left = mid + 1;
             } else if (nums[mid] < target) {
                 left = mid + 1;
