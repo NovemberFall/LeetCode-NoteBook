@@ -217,6 +217,7 @@
     * [136. Single Number](math/single.md)
     * [166. Fraction to Recurring Decimal](math/fraction.md)
     * [67. Add Binary](math/addbin.md)
+    * [189. Rotate Array](math/rotateArr.md)
     * [268. Missing Number](math/miss.md)
 * [Trie](trie/intro.md)
     * [208. Implement Trie (Prefix Tree)](m12/trie.md)
@@ -419,7 +420,6 @@
         * [Largest And Smallest](m3/maxMin.md)
         * [Largest And Second Largest](m3/maxSecondMax.md)
         * [189. Rotate Array](m3/rotateArr.md)
-        * [167. Two Sum II - Input array is sorted](m3/two2.md)
 
 -----
 * [Amazon Top 50](amazon/intro.md)
