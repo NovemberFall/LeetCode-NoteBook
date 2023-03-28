@@ -25,7 +25,7 @@ class _18_4Sum_without_Set {
                 int third = second + 1;
                 int fourth = n - 1;
                 while (third < fourth) {
-                    int curSum = nums[first] + nums[second] + nums[third] + nums[fourth];
+                    long curSum = (long) nums[first] + nums[second] + nums[third] + nums[fourth];
                     if (curSum == tar) {
                         res.add(Arrays.asList(nums[first], nums[second], nums[third], nums[fourth]));
                         third++;
