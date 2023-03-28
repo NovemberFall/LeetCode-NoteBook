@@ -31,7 +31,7 @@ for (int c : pos) {
 
 - 注意，我们需要处理 `Leading ZERO`
   - 因为 假设 `2 * 3 = 6` :
-    - `int sum = mul + pos[p2]`, 这句话 只把 `6` + `pos[p2]`, 那么pos[p1] 还是 **0**.
+    - `pos[p2] = (sum) % 10;`, 这句话 只把 `6 % 10` assign to `pos[p2]`, 那么pos[p1] 还是 **0**.
 
 ![](img/2022-11-27-21-21-03.png)
 
@@ -57,7 +57,9 @@ class Solution {
         StringBuilder sb = new StringBuilder();
         boolean seen = false;
         for (int c : pos) {
-            if (c == 0 && !seen) continue;
+            if (c == 0 && !seen) {
+                continue;
+            }
             sb.append(c);
             seen = true;
         }
