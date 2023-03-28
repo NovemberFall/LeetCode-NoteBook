@@ -1,6 +1,9 @@
 ## 43. Multiply Strings
 ![](img/2022-11-27-21-18-24.png)
 ---
+
+- [youtube](https://www.youtube.com/watch?v=1vZswirL8Y8&t=601s)
+
 ![](img/2022-11-27-21-19-12.png)
 
 ```ruby
@@ -11,7 +14,7 @@ index j          0   1
                 [4   5]
 --------------------------
                  1   5       indices[i + j, i + j + 1]
-                             indices[]
+                             indices[] 
 
 ```
 
