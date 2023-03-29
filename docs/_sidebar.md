@@ -79,7 +79,7 @@
     * [79. Word Search](amazon/word.md)
     * [17. Letter Combinations of a Phone Number](DFS/letterCombin.md)
     * [46. Permutations](m10/permutations.md)
-      * [All Permutations I | DFS](m10/permutationsWithStr.md)
+        * [All Permutations I | DFS](m10/permutationsWithStr.md)
     * [47. Permutations II](m6/permutationsII.md)
         * [All Permutations II | DFS](m10/permutationsWithStrII.md)
     * [322. Coin Change](DFS/coin.md)
