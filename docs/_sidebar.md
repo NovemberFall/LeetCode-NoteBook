@@ -81,7 +81,7 @@
     * [46. Permutations](m10/permutations.md)
       * [All Permutations I | DFS](m10/permutationsWithStr.md)
     * [47. Permutations II](m6/permutationsII.md)
-      * [All Permutations II | DFS](m10/permutationsWithStrII.md)
+        * [All Permutations II | DFS](m10/permutationsWithStrII.md)
     * [322. Coin Change](DFS/coin.md)
     * [Combinations Of Coins | 99 cents](m10/cents.md)
     * [39. Combination Sum](m10/sum.md)
