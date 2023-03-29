@@ -231,6 +231,7 @@
     * [37. Sudoku Solver](top/SudokuSolver.md)
     * [48. Rotate Image || Rotate Matrix](m3/rotateMatrix.md)
     * [54. Spiral Matrix](m4/spiralMatrix.md)
+    * [59. Spiral Matrix II](matrix/spiralMatrix2.md)
 * [Trie](trie/intro.md)
     * [208. Implement Trie (Prefix Tree)](m12/trie.md)
     * [588. Design In-Memory File System](amazon/file.md)
