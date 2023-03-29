@@ -244,6 +244,7 @@
     * [6. Zigzag Conversion](top/zigzag.md)
     * [14. Longest Common Prefix](most/commonPrefix.md)
     * [28. Implement strStr() | Find the Index of the First Occurrence in a String](m8/strstr.md)
+    * [58. Length of Last Word](m8/lenOflast.md)
     * [557. Reverse Words in a String III](m8/reverseWord3.md)
     * [424. Longest Repeating Character Replacement](m8/longest.md)
     * [Remove Certain Characters](m8/rmCertainChar.md)
