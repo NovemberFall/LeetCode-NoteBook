@@ -5,7 +5,7 @@
 
 - [all permutations | DFS](https://novemberfall.github.io/LeetCode-NoteBook/#/m10/permutationsWithStr)
 
-![](img/2022-09-27-00-16-05.png)
+![](img/2023-03-29-12-16-03.png)
 
 - [46.全排列 中文理解](https://programmercarl.com/0046.%E5%85%A8%E6%8E%92%E5%88%97.html#%E6%80%9D%E8%B7%AF)
 
