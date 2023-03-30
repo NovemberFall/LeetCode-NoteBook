@@ -222,6 +222,7 @@
     * [29. Divide Two Integers](math/divide.md)
     * [136. Single Number](math/single.md)
     * [166. Fraction to Recurring Decimal](math/fraction.md)
+    * [66. Plus One](math/plusOne.md)
     * [67. Add Binary](math/addbin.md)
     * [60. Permutation Sequence](math/permu.md)
     * [189. Rotate Array](math/rotateArr.md)
