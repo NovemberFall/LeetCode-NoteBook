@@ -53,3 +53,7 @@ class permutationSequence_bruteForce {
     }
 }
 ```
+---
+
+- [可以先阅读这个video](https://www.youtube.com/watch?v=W9SIlE2jhBQ)
+
