@@ -271,7 +271,6 @@
     * [45. Jump Game II | Array Hopper II](DP/jumpGameII.md)
     * [55. Jump Game | Array Hopper I](m9/jumpGame.md)
     * [53. Maximum Subarray | Largest SubArray Sum](m9/subArrSum.md)
-    * [62. Unique Paths](m9/path.md)
     * [62. Unique Paths](DP/path.md)
     * [85. Maximal Rectangle || Largest Rectangle Of 1s](DP/largestRecArea.md)
     * [91. Decode Ways](DP/decode.md)
