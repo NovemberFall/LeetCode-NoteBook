@@ -223,6 +223,7 @@
     * [136. Single Number](math/single.md)
     * [166. Fraction to Recurring Decimal](math/fraction.md)
     * [67. Add Binary](math/addbin.md)
+    * [60. Permutation Sequence](math/permu.md)
     * [189. Rotate Array](math/rotateArr.md)
     * [268. Missing Number](math/miss.md)
     * [509. Fibonacci Number](math/fib.md)
