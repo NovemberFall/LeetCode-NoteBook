@@ -1,4 +1,4 @@
-# 392. Is Subsequence
+## 392. Is Subsequence
 
 ```ruby
 Given a string s and a string t, check if s is subsequence of t.

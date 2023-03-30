@@ -1,4 +1,4 @@
-# Remove Adjacent Repeated Characters IV
+## Remove Adjacent Repeated Characters IV
 
 ```ruby
 Repeatedly remove all adjacent, repeated characters in a given string from left to right.

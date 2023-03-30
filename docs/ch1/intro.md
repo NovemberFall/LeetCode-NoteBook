@@ -1,2 +1,0 @@
-# Chapter1：Array
-

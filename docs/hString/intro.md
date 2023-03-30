@@ -1,2 +1,0 @@
-# HashTable | String 
-

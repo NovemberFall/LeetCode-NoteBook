@@ -11,7 +11,7 @@ Examples
 
 "abc", 4 -> "cab"
 ```
-
+---
 
 ## Analysis:
 
@@ -30,7 +30,7 @@ reverse(0 ,  n - 1)
 reverse(0, 1)
 reverse(2, n - 1)
 ```
-
+---
 
 ```java
 public class Solution {

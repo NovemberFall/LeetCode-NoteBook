@@ -1,14 +1,15 @@
 ## Remove Spaces
 
+```ruby
+Given a string, remove all leading/trailing/duplicated empty spaces.
+Assumptions:
+The given string is not null.
+Examples:
+  “  a” --> “a”
+  “   I     love MTV ” --> “I love MTV”
+```
 
-- Given a string, remove all leading/trailing/duplicated empty spaces.
-- Assumptions:
-- The given string is not null.
-- Examples:
-- “  a” --> “a”
-- “   I     love MTV ” --> “I love MTV”
-
-
+---
 ### 本题关键在于是否使用 String API
 
 - key point:
@@ -18,6 +19,7 @@
 - 最后注意在结束时候，由于第一次初始end 为 0, 在全部copy 完， end++ => `end == 5`
   所以在最后还要进行post-processing, `end--`
 
+---
 ```java
 public class Solution {
   public String removeSpaces(String input) {
