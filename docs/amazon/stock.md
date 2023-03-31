@@ -1,6 +1,12 @@
 ## 121. Best Time to Buy and Sell Stock
 ![](img/2022-05-03-14-03-49.png)
 
+
+- [卖股票合集](https://www.youtube.com/watch?v=USEFjOtuyA4&t=331s)
+
+---
+### Two Pointers
+
 - The question is saying us to find the best day to buy and sell stock, 
   so we will get maiximum profit.
 
@@ -88,6 +94,24 @@ class Solution {
                 left = right;
             }
             right++;
+        }
+        return maxProfit;
+    }
+}
+```
+---
+
+### DP
+
+
+```java
+class bestTimeToBuyAndSellStock_dp {
+    public int maxProfit(int[] prices) {
+        int maxProfit = 0;
+        int min = prices[0];
+        for (int i = 1; i < prices.length; i++) {
+            maxProfit = Math.max(maxProfit, prices[i] - min);
+            min = Math.min(min, prices[i]);
         }
         return maxProfit;
     }
