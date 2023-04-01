@@ -103,6 +103,13 @@ class Solution {
 
 ### DP
 
+- 以 `[7, 1, 5, 3, 6, 4]` 为例子
+
+- 其实本题 `dp` 破题点在于:
+  - 1. `min` 从 `index 0` 从左往右扫，找出 `min`
+  - 2. `maxProfit` 从 `index 1` 从左往右扫，找出 `max`
+  - 3. finally, `max - min`, 就可以创造出最大价值！
+
 
 ```java
 class bestTimeToBuyAndSellStock_dp {
