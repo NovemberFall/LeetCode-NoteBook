@@ -285,6 +285,8 @@
     * [85. Maximal Rectangle || Largest Rectangle Of 1s](DP/largestRecArea.md)
     * [91. Decode Ways](DP/decode.md)
     * [121. Best Time to Buy and Sell Stock](amazon/stock.md)
+    * [122. Best Time to Buy and Sell Stock II](DP/stock2.md)
+    * [122. Best Time to Buy and Sell Stock III](DP/stock3.md)
     * [152. Maximum Product Subarray](DP/subArrProduct.md)
     * [139. Word Break | Dictionary Word |](m9/wordBreak.md)
     * [132. Palindrome Partitioning II | Minimum Cuts For Palindromes](DP/minCut.md)
