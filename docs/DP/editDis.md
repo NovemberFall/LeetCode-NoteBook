@@ -7,16 +7,10 @@
 ## Analysis
 
 
-
-- we grow the string from the left hand side to the right hand side ===>
-- **M[i][j] represents the minimum number of actions to transform the first letters of S1**
-- **to the first j letters of S2**
-
-
-![](img/2020-06-09-04-27-57.png)
-
 ```java
-case0: do nothing 
+case0: 
+if  s1[0] == s2[0]: 
+            do nothing 
 
 
 case1: replace
@@ -25,6 +19,7 @@ s2 = s
 M[1][1] => M[0][0] + 1
 
 M[i][j] => M[i - 1][j - 1] + 1
+因为实际上，你在这里 'a' -> 's', 's', 这里 'a', 's' 实际上就互相抵消掉了 
 
 
 case2: delete
@@ -33,14 +28,16 @@ s2 = s          1
 M[1][1] => M[0][1] + 1
 
 M[i][j] => M[i - 1][j] + 1
+  
 
 
 case3: insert
-s1 = a -> as    
-s2 = s          
+s1 = a -> sa  其实对比的是 'a'      
+s2 = s -> s              ' '
 M[1][1] => M[1][0] + 1
 
 M[i][j] => M[i][j - 1] + 1
+
 
 Final Rule =>
 
@@ -68,22 +65,27 @@ f    4 | 4  3   3   3   4 -> return
 
 
 ```java
-class Solution {
+class EditDistance_dp {
     public int minDistance(String word1, String word2) {
-        int m = word1.length();
-        int n = word2.length();
+        int m = word1.length(), n = word2.length();
         int[][] dp = new int[m + 1][n + 1];
-        for (int i = 0; i <= m; i++) {
-            for (int j = 0; j <= n; j++) {
-                if (i == 0) {
-                    dp[i][j] = j;
-                } else if (j == 0) {
-                    dp[i][j] = i;
-                } else if(word1.charAt(i-1) == word2.charAt(j-1)){
+
+        for (int i = 0; i < dp.length; i++) {
+            dp[i][0] = i;
+        }
+        for (int j = 0; j < dp[0].length; j++) {
+            dp[0][j] = j;
+        }
+
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= n; j++) {
+                char c1 = word1.charAt(i - 1);
+                char c2 = word2.charAt(j - 1);
+
+                if (c1 == c2) {
                     dp[i][j] = dp[i - 1][j - 1];
                 } else {
-                    int tmp = Math.min(dp[i-1][j], dp[i-1][j-1]);
-                    dp[i][j] = Math.min(tmp, dp[i][j - 1]) + 1;
+                    dp[i][j] = Math.min(dp[i - 1][j - 1], Math.min(dp[i][j - 1], dp[i - 1][j])) + 1;
                 }
             }
         }
@@ -101,37 +103,35 @@ class Solution {
 
 ## 本题DFS 解法
 
-![](img/2020-06-09-04-28-15.png)
+![](img/2023-04-01-21-24-59.png)
 
 - There are at most `m + n` levels in the recursion tree, and there are at most 3 branches
   in each node. Thus
   - Time = O(3^(m + n))
 
 ```java
-class Solution {
+class EditDistance_dfs {
     public int minDistance(String word1, String word2) {
-        //Base case
-        if(word1.isEmpty()){
-            return word2.length();
-        }
-        if(word2.isEmpty()){
-            return word1.length();
-        }
-        
-        //(a) check what the distance is if the character[0] are
-        //identical and we do nonthing first
-        if(word1.charAt(0) == word2.charAt(0)){
-            int nothing = 
-                minDistance(word1.substring(1), word2.substring(1));
-            
+        // base case
+        if (word1.isEmpty()) return word2.length();
+        if (word2.isEmpty()) return word1.length();
+
+        // a. Check what the distance is if the charaxters[0] are identical and we do nothing first
+        if (word1.charAt(0) == word2.charAt(0)) {
+            int nothing = minDistance(word1.substring(1), word2.substring(1));
             return nothing;
         }
-        
-        int replace = 
-            1 + minDistance(word1.substring(1), word2.substring(1));
-        int insert = 1 + minDistance(word1, word2.substring(1));
+
+        // b. chech what the distance is if we do a Replace first?
+        int replace = 1 + minDistance(word1.substring(1), word2.substring(1));
+
+        // c. check what the distance is if we do a Delete first?
         int delete = 1 + minDistance(word1.substring(1), word2);
-        return Math.min(delete,  Math.min(replace, insert));
+
+        // d. chech what the distance is if we do a Insert first?
+        int insert = 1 + minDistance(word1, word2.substring(1));
+
+        return Math.min(delete, Math.min(replace, insert));
     }
 }
 ```
