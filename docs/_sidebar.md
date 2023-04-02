@@ -307,6 +307,7 @@
     * [Largest Set Of Points With Positive Slope](m9/largestSetPositiveSlop.md)
     * [Packing Up the Swags | Interview](m9/packingSwag.md)
     * [485. Max Consecutive Ones | Longest Consecutive 1s](DP/longestOnes.md)
+    * [583. Delete Operation for Two Strings](DP/twoOperations.md)
 * [Monotonic Stack](monotonic/intro.md)
     * [42. Trapping Rain Water](amazon/rain.md)
     * [84. Largest Rectangle in Histogram](monotonic/histogram.md)
