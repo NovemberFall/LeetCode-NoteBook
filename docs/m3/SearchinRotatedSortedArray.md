@@ -8,11 +8,11 @@
 
 - If the entire left part is monotonically increasing, which means the pivot point is 
   on the right part
-  - If left <= target < mid ------> drop the right half
+  - If `left <= target < mid` ------> drop the right half
   - Else ------> drop the left half
-- If the entire right part is monotonically increasing, which means the pivot point 
-  is on the left part
-  - If mid < target <= right ------> drop the left half
+- If the `entire right part` is `monotonically increasing`, which means the `pivot` point 
+  is on the `left part`
+  - If `mid < target <= right` ------> drop the left half
   - Else ------> drop the right half
 
 ![](img/2022-05-23-13-09-22.png)
@@ -56,7 +56,7 @@ class Solution {
 ---
 
 ### Clever idea making it simple
-- [Clever idea making it simple]([)](https://leetcode.com/problems/search-in-rotated-sorted-array/discuss/14435/clever-idea-making-it-simple)
+- [Clever idea making it simple](https://leetcode.com/problems/search-in-rotated-sorted-array/discuss/14435/clever-idea-making-it-simple)
 
 
 ```java
