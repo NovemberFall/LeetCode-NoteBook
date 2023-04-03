@@ -15,10 +15,10 @@
   - 2. sell the first share **sell1**
   - 3. has the second share **buy2**
   - 4. sell the second share **sell2**
-  - `buy1 = max(buy1,  -prices[i])`
-  - `sell1 = max(sell1,  buy1 + prices[i])`
-  - `buy2 = max(buy2,  sell-prices[i])`
-  - `buy1 = max(buy1,  -prices[i])`
+  - `buy1 = max(buy1, -prices[i])`
+  - `sell1 = max(sell1, buy1 + prices[i])`
+  - `buy2 = max(buy2, sell1 - prices[i])`
+  - `sell2 = max(sell2, buy2 + prices[i])`
 ---
 
 ```java
