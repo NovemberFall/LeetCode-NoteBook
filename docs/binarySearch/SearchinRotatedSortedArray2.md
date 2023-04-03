@@ -1,6 +1,9 @@
 ## 81. Search in Rotated Sorted Array II
 ![](img/2023-04-02-19-52-31.png)
 
+- [英文教程](https://leetcode.com/problems/search-in-rotated-sorted-array-ii/discuss/1654316/C%2B%2B-oror-Binary-Search-Approach-oror-O(log-N)-oror-Divided-and-Conquered)
+
+---
 ```java
 class _81_SearchInRotatedSortedArray_II {
     public boolean search(int[] nums, int target) {
