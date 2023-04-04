@@ -312,6 +312,7 @@
 * [Monotonic Stack](monotonic/intro.md)
     * [42. Trapping Rain Water](amazon/rain.md)
     * [84. Largest Rectangle in Histogram](monotonic/histogram.md)
+    * [85. Maximal Rectangle](monotonic/maxrec.md)
 * [Design](design/intro.md)
     * [146. LRU Cache](design/lru.md)
     * [155. Min Stack](design/minstk.md)
