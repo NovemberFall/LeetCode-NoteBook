@@ -286,6 +286,7 @@
     * [85. Maximal Rectangle || Largest Rectangle Of 1s](DP/largestRecArea.md)
     * [91. Decode Ways](DP/decode.md)
     * [97. Interleaving String](DP/interleaving.md)
+    * [115. Distinct Subsequences](DP/distinct.md)
     * [121. Best Time to Buy and Sell Stock](amazon/stock.md)
     * [122. Best Time to Buy and Sell Stock II](DP/stock2.md)
     * [123. Best Time to Buy and Sell Stock III](DP/stock3.md)
