@@ -229,6 +229,7 @@
     * [69. Sqrt(x)](math/sqrt.md)
     * [118. Pascal's Triangle](most/pascal.md)
     * [119. Pascal's Triangle II](math/pascal2.md)
+    * [120. Triangle](math/triangle.md)
     * [189. Rotate Array](math/rotateArr.md)
     * [268. Missing Number](math/miss.md)
     * [509. Fibonacci Number](math/fib.md)
