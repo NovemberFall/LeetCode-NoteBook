@@ -17,6 +17,8 @@ Examples
 The minimum number of cuts needed is 3.
 ```
 
+- [LO midterm2 51:50]()
+
 ---
 ### Analysis:
 
@@ -28,14 +30,14 @@ Assumption:
 
 Approach:
 
-- "minimum cuts" -> from all  the possible ways
+- "minimum cuts" -> from all the possible ways
 - cut a string into every smaller substring, I can search history dictionay
 - Linear Scan search on previous data
-	- dp[i] = min cuts for substring[0, i]
+	- `dp[i]` = min cuts for `substring[0, i]`
 	- induction rule:
-		- dp[i] =
-			- case 1: if substring[0,1] is palindrome, dp[i] = 0
-			- case 2: min(dp[i - 1]) + 1      for j from 1 to i ,   AND substring[i, j] is palindrome 
+		- `dp[i]` =
+			- case 1: if `substring[0,1]` is palindrome, `dp[i] = 0`
+			- case 2: `min(dp[j - 1]) + 1`   `for j: from 1 to i` ,   **&&** `substring[i, j]` is palindrome 
 	- base case: dp[0] = 0, we don't need to cut, 
 	- this dp[] array record all palindrome substring's possible ways
 	   - return dp[n - 1]
@@ -45,7 +47,7 @@ Additional data structures:
 - need to convert this string to char Array
 
 
-- Time = O(n^3),      
+- Time = `O(n^3)`,      
   - two for loop n^2 * isPalindrome() while loop,   =>  n^2 * n = n^3
 
 ---
