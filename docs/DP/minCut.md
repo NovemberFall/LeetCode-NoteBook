@@ -64,43 +64,49 @@ Additional data structures:
 
 
 ```java
-class Solution {
+class _132_PalindromePartitioning_II {
     public int minCut(String s) {
-        if(s == null || s.equals("")){
-            return 0;
-        }
+        if (s == null || s.length() == 0) return 0;
+
         int n = s.length();
         char[] arr = s.toCharArray();
-        int[] dp = new int[n];
-        dp[0] = 0;
-        for(int i = 1; i < n; i++){
-            //case 1:
-            if(isPalindrome(arr, 0, i)){
+        int[] dp = new int[n]; // 这里的dp[] 对应的是每一个char
+        dp[0] = 0; // we don't need to cut
+        for (int i = 1; i < n; i++) {
+            // case 1:
+            if (isPalindrome(arr, 0, i)) {
                 continue;
             }
-            //case 2:
-            dp[i] = i; //worst case, we may need i cut for (i + 1) long array
-            for(int j = 1; j <= i; j++){
-                if(isPalindrome(arr, j, i)){
+
+            // case 2:
+            dp[i] = i; // worst case, we need `i` cut for (i + 1) size array
+            for (int j = 1; j <= i; j++) {
+                if (isPalindrome(arr, j, i)) {
                     dp[i] = Math.min(dp[i], dp[j - 1] + 1);
                 }
             }
         }
         return dp[n - 1];
     }
-    private boolean isPalindrome(char[] arr, int start, int end){
-        int i = start;
-        int j = end;
-        while(i <= j){
-            if(arr[i] != arr[j]){
+
+    private boolean isPalindrome(char[] arr, int left, int right) {
+        while (left <= right) {
+            if (arr[left] != arr[right]) {
                 return false;
             }
-            i++;
-            j--;
+            left++;
+            right--;
         }
         return true;
     }
 }
 ```
+---
 
+
+```ruby
+     0   1   2   3   4   5
+    [a   a   b   c   d   c]
+     
+```
 
