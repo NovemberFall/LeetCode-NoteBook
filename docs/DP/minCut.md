@@ -22,8 +22,8 @@ The minimum number of cuts needed is 3.
 
 
 Assumption:
-1. if there is only one character in this string, it is a palindrome and doesn't need to cut
-2. if this string is empty, it doesn't need to cut, return 0
+1. if there is **only one** character in this string, it is a palindrome and **doesn't need to cut**
+2. if this string is **empty**, it **doesn't need to cut**, return 0
 
 
 Approach:
@@ -48,7 +48,7 @@ Additional data structures:
 - Time = O(n^3),      
   - two for loop n^2 * isPalindrome() while loop,   =>  n^2 * n = n^3
 
-
+---
 
 
 
