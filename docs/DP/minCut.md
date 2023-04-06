@@ -184,3 +184,112 @@ dp  [0   0   1   2   1]
                      i 
                      j
 ```
+
+---
+
+- [watching this AMAZING video by Tushar Roy](https://www.youtube.com/watch?v=lDYIvtBVmgo&t=176s)
+- [leetCode discussion](https://leetcode.com/problems/palindrome-partitioning-ii/discuss/42199/My-DP-Solution-(-explanation-and-code))
+
+---
+
+
+### Brute Force
+
+- [结合前面的leetcode 讨论](https://leetcode.com/problems/palindrome-partitioning-ii/discuss/590653/From-Brute-Force-to-Top-down-DP)
+
+
+
+- We might try all the substring combinations of the given string.
+  To achive this, we might start processing from the `beginning` of the string 
+  and **keep adding one character at a time**.
+- If we **get a palindrome**, we take it as **one cut** and recursively process the remaining.
+
+
+```java
+class palindromePartitioning_II_bf {
+    public int minCut(String s) {
+        return minCutFrom(s, 0, s.length() - 1);
+    }
+
+    private int minCutFrom(String s, int left, int right) {
+        if (left == right || isPalindrome(s, left, right)) {
+            return 0;
+        }
+        int minCut = s.length() - 1;
+        for (int i = left; i <= right; i++) {
+            if (isPalindrome(s, left, i)) {
+                minCut = Math.min(minCut, 1 + minCutFrom(s, i + 1, right));
+            }
+        }
+        return minCut;
+    }
+
+    private boolean isPalindrome(String s, int l, int r) {
+        while (l <= r) {
+            if (s.charAt(l) != s.charAt(r)) {
+                return false;
+            }
+            l++;
+            r--;
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        palindromePartitioning_II_bf palindromePartitioning_ii_bf = new palindromePartitioning_II_bf();
+        int cuts = palindromePartitioning_ii_bf.minCut("ababacde");
+        System.out.println(cuts); // 3
+    }
+}
+```
+---
+
+### Top-down DP
+
+- We might memoize both functions minCut() and isPalindrome().
+  Two indexes are changing in both functions; therefore, we might build a two-dimensional array for each.
+
+
+
+```java
+class palindromePartitioning_topDownDp {
+    private Integer dp[][];
+    private Boolean dpIsPalindrome[][];
+    
+    public int minCut(String s) {
+        int n = s.length();
+        dp = new Integer[n][n];
+        dpIsPalindrome = new Boolean[n][n];
+        return minCutFrom(s, 0, n - 1);
+    }
+
+    private int minCutFrom(String s, int start, int end) {
+        if (start == end || isPalindrome(s, start, end)) {
+            return 0;
+        }
+        if (dp[start][end] != null) {
+            return dp[start][end];
+        }
+        
+        int minCut = s.length() - 1;
+        for (int i = start; i <= end; i++) {
+            if (isPalindrome(s, start, i)) {
+                minCut = Math.min(minCut, 1 + minCutFrom(s, i + 1, end));
+            }
+        }
+    }
+
+    private boolean isPalindrome(String s, int start, int end) {
+        if (start >= end) {
+            return true;
+        }
+
+        if (dpIsPalindrome[start][end] != null) {
+            return dpIsPalindrome[start][end];
+        }
+
+        return dpIsPalindrome[start][end] =
+                (s.charAt(start) == s.charAt(end)) && isPalindrome(s, start + 1, end - 1); 
+    }
+}
+```
