@@ -38,9 +38,9 @@ Approach:
 		- `dp[i]` =
 			- case 1: if `substring[0,1]` is palindrome, `dp[i] = 0`
 			- case 2: `min(dp[j - 1]) + 1`   `for j: from 1 to i` ,   **&&** `substring[i, j]` is palindrome 
-	- base case: dp[0] = 0, we don't need to cut, 
+	- base case: `dp[0] = 0`, we don't need to cut, 
 	- this dp[] array record all palindrome substring's possible ways
-	   - return dp[n - 1]
+	   - return `dp[n - 1]`
 
 Additional data structures:
 
