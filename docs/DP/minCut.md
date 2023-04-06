@@ -1,21 +1,6 @@
-# 132. Palindrome Partitioning II | Minimum Cuts For Palindromes
-
-```ruby
-Given a string s, partition s such that every substring of the partition is a palindrome.
-
-Return the minimum cuts needed for a palindrome partitioning of s.
-
-Example:
-
-Input: "aab"
-Output: 1
-Explanation: The palindrome partitioning ["aa","b"] could be produced using 1 cut.
-```
-
-
-
-
-
+## 132. Palindrome Partitioning II | Minimum Cuts For Palindromes
+![](img/2023-04-06-09-59-30.png)
+---
 
 ```ruby
 Given a string, a partitioning of the string is a palindrome partitioning 
@@ -32,7 +17,7 @@ Examples
 The minimum number of cuts needed is 3.
 ```
 
-
+---
 ### Analysis:
 
 
