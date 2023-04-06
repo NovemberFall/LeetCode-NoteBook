@@ -42,10 +42,16 @@ Approach:
 	- this dp[] array record all palindrome substring's possible ways
 	   - return `dp[n - 1]`
 
+
+- `j` - 右小段的第一个位置
+- 左大段 `[0, j - 1] -> dp[j - 1]`
+
+
+
+---
 Additional data structures:
 
 - need to convert this string to char Array
-
 
 - Time = `O(n^3)`,      
   - two for loop n^2 * isPalindrome() while loop,   =>  n^2 * n = n^3
