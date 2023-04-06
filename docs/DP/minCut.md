@@ -104,9 +104,177 @@ class _132_PalindromePartitioning_II {
 ---
 
 
+- s = `a a a b c`
+
 ```ruby
-     0   1   2   3   4   5
-    [a   a   b   c   d   c]
-     
+dp  [0   0   0            ]
+    [a   a   a   b   c   d]
+                 i
+
+
+dp  [0   0   0   3        ]
+    [a   a   a   b   c   d]
+                 i
+
+
+
+dp  [0   0   0   3        ]
+    [a   a   a   b   c   d]
+                 i
+         j
+
+dp  [0   0   0   3        ]
+    [a   a   a   b   c   d]
+                 i
+             j
+
+
+dp  [0   0   0   1        ]
+    [a   a   a   b   c   d]
+                 i
+                 j
+
+
+dp  [0   0   0   1   4    ]
+    [a   a   a   b   c   d]
+                     i
+
+
+dp  [0   0   0   1   4    ]
+    [a   a   a   b   c   d]
+                     i
+         j 
+
+dp  [0   0   0   1   4    ]
+    [a   a   a   b   c   d]
+                     i
+             j 
+
+dp  [0   0   0   1   4    ]
+    [a   a   a   b   c   d]
+                     i
+                 j 
+
+dp  [0   0   0   1   2    ]
+    [a   a   a   b   c   d]
+                     i
+                     j 
+
+
+dp  [0   0   0   1   2    ]
+    [a   a   a   b   c   d]
+                         i
+
+                          
+dp  [0   0   0   1   2   5]
+    [a   a   a   b   c   d]
+                         i
+
+dp  [0   0   0   1   2   5]
+    [a   a   a   b   c   d]
+                         i
+         j  
+
+dp  [0   0   0   1   2   5]
+    [a   a   a   b   c   d]
+                         i
+             j  
+
+dp  [0   0   0   1   2   5]
+    [a   a   a   b   c   d]
+                         i
+                 j  
+
+dp  [0   0   0   1   2   5]
+    [a   a   a   b   c   d]
+                         i
+                     j               
+
+dp  [0   0   0   1   2   3]
+    [a   a   a   b   c   d]
+                         i
+                         j  
 ```
 
+---
+
+- s = `a a b c b`
+
+
+```ruby
+
+dp  [0   0            ]
+    [a   a   b   c   b]
+             i 
+
+dp  [0   0   2        ]
+    [a   a   b   c   b]
+             i 
+
+
+dp  [0   0   2        ]
+    [a   a   b   c   b]
+             i 
+         j 
+
+dp  [0   0   1        ]
+    [a   a   b   c   b]
+             i 
+             j 
+
+
+dp  [0   0   1        ]
+    [a   a   b   c   b]
+                 i 
+
+dp  [0   0   1   3    ]
+    [a   a   b   c   b]
+                 i 
+
+dp  [0   0   1   3    ]
+    [a   a   b   c   b]
+                 i 
+         j  
+
+dp  [0   0   1   3    ]
+    [a   a   b   c   b]
+                 i 
+             j 
+
+dp  [0   0   1   2    ]
+    [a   a   b   c   b]
+                 i 
+                 j
+
+
+dp  [0   0   1   2   4]
+    [a   a   b   c   b]
+                     i 
+
+dp  [0   0   1   2   4]
+    [a   a   b   c   b]
+                     i 
+         j  
+
+
+dp  [0   0   1   2   4]
+    [a   a   b   c   b]
+                     i 
+             j  
+
+
+dp  [0   0   1   2   1]
+    [a   a   b   c   b]
+                     i 
+             j
+
+dp  [0   0   1   2   1]
+    [a   a   b   c   b]
+                     i 
+                 j
+
+dp  [0   0   1   2   1]
+    [a   a   b   c   b]
+                     i 
+                     j
+```
