@@ -277,6 +277,7 @@ class palindromePartitioning_topDownDp {
                 minCut = Math.min(minCut, 1 + minCutFrom(s, i + 1, end));
             }
         }
+        return minCut;
     }
 
     private boolean isPalindrome(String s, int start, int end) {
