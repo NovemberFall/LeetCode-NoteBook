@@ -489,6 +489,7 @@
     
 -----
 * [Bit Operation](Bit/intro.md)
+    * [Bit Operation](Bit/bitOper.md)
     * [key.hashCode() & 0X7FFFFFFF](Bit/hash.md)
     * [Power Of Two | Easy](Bit/powerTwo.md)
     * [Number Of Different Bits | Medium](Bit/different.md)
