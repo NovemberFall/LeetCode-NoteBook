@@ -40,3 +40,25 @@ class _136_SingleNumber {
     }
 }
 ```
+
+---
+
+### Brute Force
+
+```java
+class Solution {
+    public int singleNumber(int[] nums) {
+        Map<Integer, Integer> freq = new HashMap<>();
+        for (int num : nums) {
+            freq.put(num, freq.getOrDefault(num, 0) + 1);
+        }
+        
+        return freq.entrySet()
+            .stream()
+            .filter(e -> e.getValue() < 2)
+            .findFirst()
+            .map(e -> e.getKey())
+            .orElse(-1);
+    }
+}
+```
