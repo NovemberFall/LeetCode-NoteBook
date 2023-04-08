@@ -35,7 +35,7 @@ class Solution {
             }
             if (nums[left] <= nums[mid]) {
 
-                if (nums[left] <= target && target < nums[mid]) {
+                if (nums[left] <= target && target <= nums[mid]) {
                     right = mid - 1;
                 }
                 else {
@@ -43,7 +43,7 @@ class Solution {
                 }
             }
             else {
-                if (nums[mid] < target && target <= nums[right]) {
+                if (nums[mid] <= target && target <= nums[right]) {
                     left = mid + 1;
                 }
                 else {
@@ -57,6 +57,15 @@ class Solution {
 ```
 
 
+- 注意代码，可以全部统一成两边都是 **闭区间**
+- 但是不可以写成： `if (nums[left] < nums[mid])` 因为:
+
+![](img/2023-04-08-14-10-02.png)
+![](img/2023-04-08-14-11-10.png)
+ 
+- 可以看到right 会向左边越界!
+
+- [本题如何debug? 可以看b站](https://www.bilibili.com/video/BV1pp4y1W7eZ/?spm_id_from=333.880.my_history.page.click&vd_source=333bb18bd89bdbb4a7c9b3b16c3947f3)
 
 ---
 
