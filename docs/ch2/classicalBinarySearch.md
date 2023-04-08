@@ -33,25 +33,9 @@ public class classical {
 
 ---
 
-- 注意：如果`binarySerach`, 找的是具体的**target**, 那么：
-```java
-    while (left <= right) {
-        ...
-        ...
-        left = mid + 1;
+- 注意：如果 `while(left < right)` :
 
-        right = mid - 1;
-    }
-```
+![](img/2023-04-08-11-59-07.png)
 
+- let's look at this example, `left = 0`, `right = 0`, directly `return -1`
 
-- 注意：如果`binarySerach`, 找的是具体的**范围**, 那么：
-```java
-    while (left < right - 1) {
-        ...
-        ...
-        left = mid;
-
-        right = mid;
-    }
-```
