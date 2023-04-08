@@ -1,72 +1,8 @@
 ## 33. Search in Rotated Sorted Array
 ![](img/2022-05-22-21-09-41.png)
 ---
+### One Pass Method
 
-### Binary Search
-
-- [中文教程](https://www.youtube.com/watch?v=IQyJX5ddEx0)
-
-- 1. Find index of **peak element**
-- 2. Apply Binary Search on the subarray
-
-![](img/2023-04-02-19-22-40.png)
-
-
-```java
-class searchInRotatedSortedArray {
-    public int search(int[] nums, int target) {
-        if (nums==null || nums.length ==0) return -1;
-
-        int peakIdx = findPeakIndex(nums);
-        // if (peakIdx >= 0 && (nums[0] <= target && target <= nums[peakIdx]))
-        if (nums[0] <= target && target <= nums[peakIdx]) {
-            return binarySearch(nums, 0, peakIdx, target);
-        } else {
-            return binarySearch(nums, peakIdx + 1, nums.length - 1, target);
-        }
-    }
-
-    private int findPeakIndex(int[] nums) {
-        if (nums.length == 1) return 0;
-
-        if (nums[0] < nums[nums.length - 1]) {
-            // 如果是一个纯单调递增的数组，那么return 最后一个index
-            return nums.length - 1;
-        }
-        int left = 0, right = nums.length - 1;
-        while (left <= right) {
-            int mid = left + (right - left) / 2;
-            if (nums[mid] > nums[mid + 1]) {
-                return mid;
-            } else if (nums[left] <= nums[mid]) {
-                left = mid + 1;
-            } else {
-                right = mid - 1;
-            }
-        }
-        return 0;
-    }
-
-    private int binarySearch(int[] nums, int left, int right, int target) {
-        while (left <= right) {
-            int mid = left + (right - left) /2;
-            if (nums[mid] == target) {
-                return mid;
-            } else if (nums[mid] < target) {
-                left = mid + 1;
-            } else {
-                right = mid - 1;
-            }
-        }
-        return -1;
-    }
-}
-```
-
----
----
-
-### 2nd method
 
 -  the main idea is that we need to find some parts of array that we could adopt
    binary search on that, which means we need to find some completed sorted parts, 
@@ -120,8 +56,93 @@ class Solution {
 }
 ```
 
+
+
 ---
 
+### Binary Search
+
+- [中文教程](https://www.youtube.com/watch?v=IQyJX5ddEx0)
+
+- 1. Find index of **peak element**
+- 2. Apply Binary Search on the subarray
+
+![](img/2023-04-02-19-22-40.png)
+
+
+```java
+class searchInRotatedSortedArray_findPeak {
+    public int search(int[] nums, int target) {
+        if (nums==null || nums.length ==0) return -1;
+
+        int peakIdx = findPeakIndex(nums);
+        // if (peakIdx >= 0 && (nums[0] <= target && target <= nums[peakIdx]))
+        if (nums[0] <= target && target <= nums[peakIdx]) {
+            return binarySearch(nums, 0, peakIdx, target);
+        } else {
+            return binarySearch(nums, peakIdx + 1, nums.length - 1, target);
+        }
+    }
+
+    private int findPeakIndex(int[] nums) {
+        if (nums.length == 1) return 0;
+
+        if (nums[0] < nums[nums.length - 1]) {
+            // 如果是一个纯单调递增的数组，那么return 最后一个index
+            return nums.length - 1;
+        }
+        int left = 0, right = nums.length - 1;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (nums[mid] > nums[mid + 1]) {
+                return mid;
+            } else if (nums[left] <= nums[mid]) { // 注意这里： nums[left] <= nums[mid]
+                left = mid + 1;
+            } else if (nums[right] > nums[mid]){
+                right = mid - 1;
+            }
+        }
+        return 0;
+    }
+
+    private int binarySearch(int[] nums, int left, int right, int target) {
+        while (left <= right) {
+            int mid = left + (right - left) /2;
+            if (nums[mid] == target) {
+                return mid;
+            } else if (nums[mid] < target) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+        return -1;
+    }
+}
+```
+---
+- 注意这里：
+
+```java
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+        if (nums[mid] > nums[mid + 1]) {
+            return mid;
+        } else if (nums[left] <= nums[mid]) { // 注意这里： nums[left] <= nums[mid]
+            left = mid + 1;
+        } else if (nums[right] > nums[mid]){
+            right = mid - 1;
+        }
+    }
+```
+
+- 可以假设： else if (nums[left] < nums[mid])  吗?
+- **不能**，因为会**往左边越界**:
+
+![](img/2023-04-08-13-44-40.png)
+![](img/2023-04-08-13-45-25.png)
+
+---
 ### Clever idea making it simple
 - [Clever idea making it simple](https://leetcode.com/problems/search-in-rotated-sorted-array/discuss/14435/clever-idea-making-it-simple)
 
