@@ -9,6 +9,7 @@
 
 - 注意本题，最后一轮loop, `for (int i = 0; i < k && node != null; i++)`
   - 比如最后还剩下 `7 -> 8`, `node = node.next;`, 最后node 一定变成 null, 因为不够3个node, 所以 `break` 跳出loop
+  - 所以这里的 `node` 只是用来检测是否**reach to the end**.
 
 ---
 ```java
