@@ -17,7 +17,7 @@ Examples
 The minimum number of cuts needed is 3.
 ```
 
-- [LO midterm2 51:50]()
+- [LO mid2 51:50]()
 
 ---
 ### Analysis:
