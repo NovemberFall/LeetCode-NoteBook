@@ -1,7 +1,6 @@
 ## 132. Palindrome Partitioning II | Minimum Cuts For Palindromes
 ![](img/2023-04-06-09-59-30.png)
 ---
-
 ```ruby
 Given a string, a partitioning of the string is a palindrome partitioning 
 if every substring of the partition is a palindrome. 
@@ -60,9 +59,6 @@ Additional data structures:
 
 
 
-
-
-
 ```java
 class _132_PalindromePartitioning_II {
     public int minCut(String s) {
@@ -103,7 +99,56 @@ class _132_PalindromePartitioning_II {
 ```
 ---
 
+### 2d DP
 
+- [watching this AMAZING video by Tushar Roy](https://www.youtube.com/watch?v=lDYIvtBVmgo&t=176s)
+
+
+```ruby
+assume s = "abcbm"
+        0  1  2  3  4
+        a  b  c  b  m
+
+
+len = 1  # since one char, no need to cut
+
+        0  1  2  3  4
+    0   0
+    1      0 
+    2         0
+    3            0
+    4               0
+
+
+
+len = 2       # since `a != b`, minCut = 1
+              # b != c, minCut = 1
+              # c != b, minCut = 1
+              # b != m, minCut = 1
+              # else a == b, minCut = 0
+
+        0  1  2  3  4
+    0   0  1
+    1      0  1  
+    2         0  1  
+    3            0  1
+    4               0
+
+
+
+len = 3
+
+        0  1  2  3  4
+    0   0  1
+    1      0  1  
+    2         0  1  
+    3            0  1
+    4               0
+```
+
+
+
+---
 - s = `a a b c b`
 
 
@@ -187,8 +232,8 @@ dp  [0   0   1   2   1]
 
 ---
 
-- [watching this AMAZING video by Tushar Roy](https://www.youtube.com/watch?v=lDYIvtBVmgo&t=176s)
 - [leetCode discussion](https://leetcode.com/problems/palindrome-partitioning-ii/discuss/42199/My-DP-Solution-(-explanation-and-code))
+
 
 ---
 
@@ -246,9 +291,8 @@ class palindromePartitioning_II_bf {
 
 ### Top-down DP
 
-- We might memoize both functions minCut() and isPalindrome().
-  Two indexes are changing in both functions; therefore, we might build a two-dimensional array for each.
-
+- We might memoize both functions minCut() and isPalindrome(). Two indexes are changing in both functions; therefore, we 
+  might build a two-dimensional array for each.
 
 
 ```java
