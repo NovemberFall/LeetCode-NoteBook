@@ -5,6 +5,11 @@
 - [Java O(n) solution with super detailed explanation & illustration](https://leetcode.com/problems/reverse-nodes-in-k-group/discuss/183356/Java-O(n)-solution-with-super-detailed-explanation-and-illustration)
 ---
 ![](img/2023-01-06-11-21-23.png)
+
+
+- 注意本题，最后一轮loop, `for (int i = 0; i < k && node != null; i++)`
+  - 比如最后还剩下 `7 -> 8`, `node = node.next;`, 最后node 一定变成 null, 因为不够3个node, 所以 `break` 跳出loop
+
 ---
 ```java
 /*
