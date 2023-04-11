@@ -53,6 +53,11 @@ solution:
                                         cur
 
 ```
+
+
+- 注意关于`middle node`, locate at `ODD` or `EVEN`, [refer to LC 876](https://novemberfall.github.io/LeetCode-NoteBook/#/LinkedList/midNode)
+  - `while (fast != null && fast.next != null)` 也行！！！
+
 ---
 
 ```java
