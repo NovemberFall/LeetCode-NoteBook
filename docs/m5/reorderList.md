@@ -112,17 +112,17 @@ class Solution {
     private ListNode merge(ListNode one, ListNode two) {
         ListNode dummy = new ListNode(0);
         ListNode cur = dummy;
-        while (one != null && two != null) {
-            cur.next = one;
-            one = one.next;
-            cur.next.next = two;
-            two = two.next;
-            cur = cur.next.next;
-        }
-        if (one != null) {
-            cur.next = one;
-        } else {
-            cur.next = two;
+        while (one != null || two != null) {
+            if (one != null) {
+                cur.next = one;
+                cur = cur.next;
+                one = one.next;
+            }
+            if (two != null) {
+                cur.next = two;
+                cur = cur.next;
+                two = two.next;
+            }
         }
         return dummy.next;
     }
