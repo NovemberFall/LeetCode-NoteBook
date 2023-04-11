@@ -12,9 +12,26 @@
 
 - Space complexity : `O(max(m, n))`. 
   The length of the new list is at most `max(m,n) + 1`
+---
+- 需要注意的是：
+
+```java
+    if (count != 0) {
+        cur.next = new ListNode(count);
+        cur = cur.next;
+    }
 
 
+Input: [9,9,9,9,9,9,9]
+       [9,9,9,9]
+Expected:
+[8,9,9,9,0,0,0,1]
 
+if we didn't add the above code, the output: [8,9,9,9,0,0,0]
+cause count = 1, 
+```
+ 
+---
 
 
 
@@ -38,7 +55,7 @@ class Solution {
         int count = 0;
         //if the last digit is more than 9, for example: 10
         // we need to handle this, and loop one more time
-        while (l1 != null || l2 != null || count != 0) {
+        while (l1 != null || l2 != null) {
             if (l1 != null) {
                 count += l1.val;
                 l1 = l1.next;
@@ -52,6 +69,10 @@ class Solution {
             count = count / 10;
             cur = cur.next;
         }
+        if (count != 0) {
+            cur.next = new ListNode(count);
+            cur = cur.next;
+        }        
         return dummy.next;
     }
 }
