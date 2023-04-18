@@ -1,8 +1,6 @@
 # Object| Java Pass by Value
 
 - [Java passing objects by value](https://stackoverflow.com/questions/7893492/is-java-really-passing-objects-by-value)
-- [Array, Class Objects I](https://novemberfall.github.io/Algorithm-FullStack/csBasic/arrayClassObject.html)
-- [Array, Class Objects II](https://novemberfall.github.io/Algorithm-FullStack/csBasic/ClassObject2.html)
 
 
 
