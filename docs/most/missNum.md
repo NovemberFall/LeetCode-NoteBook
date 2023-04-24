@@ -25,6 +25,9 @@ class Solution {
 
 - [中文教程](https://leetcode.cn/problems/first-missing-positive/solution/yi-miao-jiu-neng-gao-dong-de-shi-pin-jie-et3v/)
 ---
+![](img/2023-04-24-11-05-46.png)
+
+
 - **O(1) space Java Solution**
 
 - use swap to put `nums[i]` to position `i - 1`, for example put `1` to position `0`.
