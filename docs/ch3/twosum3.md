@@ -17,8 +17,12 @@ public class _170_TwoSum_III {
         for (int key : map.keySet()) {
             int num1 = key, num2 = value - num1;
             // num1 == num2 OR num1 != num2,  这里也可能配对的两个数字是相等的， 也可能不相等
-            if ((num1 == num2 && map.get(num1) > 1) ||
-                    (num1 != num2 && map.containsKey(num2))) {
+
+            // case 1: 这里需要保证， map put() 操作两次对于相同的num
+            //    i.e  map.put(4, ), mp.put(4, ),  target = 8
+            //
+            // case 2: 如果两个数字不相同， map.put(num1, ), map.put(num2, )
+            if ((num1 == num2 && map.get(num1) > 1) ||(num1 != num2 && map.containsKey(num2))) {
                 return true;
             }
         }
