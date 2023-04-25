@@ -2,7 +2,7 @@
 ![](img/2023-03-23-16-23-03.png)
 
 - Note: `AACCCCCAAA` is also a sequence, the only thing we need to care is that 
-  ** return all the 10-letter-long sequences that occur more than once in a DNA molecule.**
+  **return all the 10-letter-long sequences that occur more than once in a DNA molecule**.
 
 ---
 ```java
