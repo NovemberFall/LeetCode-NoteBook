@@ -96,7 +96,7 @@ class _232_ImplementQueueUsingStacks {
     }
 
     public boolean empty() {
-        return input.isEmpty() && output.empty();
+        return input.isEmpty() && output.isEmpty();
     }
 
     public static void main(String[] args) {
