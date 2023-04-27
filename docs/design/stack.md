@@ -15,6 +15,11 @@ Stack [1, 2, 3
 queue [3, 1, 2
 Stack [1, 2, 3
 
+## 注意看这里，queue continuously poll() 2次 => queue [3, 1, 2
+## 可以看到此时，队列的第一个元素就是我们所要pop() 的, 这里只有2次！
+## 所以： for (int i = size - 1; i >= 1; i--)
+
+#####################
 queue [1, 2
 Stack [1, 2
 ```
