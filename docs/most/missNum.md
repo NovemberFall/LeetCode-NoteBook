@@ -42,7 +42,7 @@ class Solution {
 
     n = nums.length = 5
 
-        nums[i] >= n , do need to swap()
+        nums[i] >= n , don't need to swap()
 ```
 ---
 ```java
