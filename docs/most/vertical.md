@@ -3,6 +3,9 @@
 
 ![](img/2022-05-07-00-03-23.png)
 
+
+- [leetcode discuss](https://leetcode.com/problems/binary-tree-vertical-order-traversal/discuss/76401/5ms-Java-Clean-Solution#:~:text=The%20following%20solution,result%20from%20cols)
+
 - BFS, put `node`, `col` into `queue` at the same time
 - Every left child access `col - 1` while right child `col + 1`
 - This maps `node` into different `col` buckets
