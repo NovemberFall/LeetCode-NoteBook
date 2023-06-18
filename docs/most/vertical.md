@@ -15,13 +15,7 @@
 ![](img/2022-05-07-12-32-22.png)
 
 
-- why `min = Math.min(min, col - 1)`?
-  - why don't write `min--`;
-
 ![](img/2022-07-07-21-33-09.png)
-- because `TreeNode 4` and `TreeNode 1` are both the keys of `col`
-- level 3:  `[4, 0, 1, 7]`
-  - assume min = 1, `min--` => `min = 0`, So we use `min = Math.min(min, col - 1)`
 
 
 
