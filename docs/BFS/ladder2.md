@@ -6,6 +6,19 @@
 ![](img/2023-01-02-10-59-01.png)
 ---
 
+- [LC 126| BFS + DFS](https://youtu.be/mIZJIuMpI2M?t=566)
+
+![](img/2023-06-17-16-17-07.png)
+
+- store only **Parent to child** relation Node in `Adjacency List` because if we take a jump then it should 
+  **always increase depth** to get `min-depth` from source to destination. All other Paths will never give
+  min-depth route. 
+
+
+![](img/2023-06-17-16-46-25.png)
+
+
+---
 ### Single Set
 
 ```java
