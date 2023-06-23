@@ -1,7 +1,42 @@
 ## 173. Binary Search Tree Iterator
 ![](img/2022-12-17-20-27-49.png)
 ![](img/2022-12-17-20-28-25.png)
+---
+```ruby
 
+stk [7, 3]
+next: 
+
+
+stk [7, ]
+next: 3 => 
+
+
+stk [ ]
+next: 3 => 7
+
+
+stk [15, ]
+next: 3 => 7
+
+
+stk [15, 9]
+next: 3 => 7 
+
+
+stk [15, ]
+next: 3 => 7 => 9
+
+
+stk [20 ]
+next: 3 => 7 => 9 => 15
+
+
+stk [ ]
+next: 3 => 7 => 9 => 15 => 20
+```
+
+---
 ```java
 class _173_BinarySearchTreeIterator {
     static class TreeNode {
