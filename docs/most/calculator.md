@@ -16,54 +16,52 @@
   result, so we do a check see if the number is zero.
 
 ```java
-public class calculator {
-    public static int calculate(String s) {
+public class _224_calculator {
+    public int calculate(String s) {
         int len = s.length();
         if (s == null || len == 0) return 0;
 
         Stack<Integer> stack = new Stack<>();
+        char[] chars = s.toCharArray();
         int res = 0;
-        int num = 0;
         int sign = 1;
         for (int i = 0; i < len; i++) {
-            char c = s.charAt(i);
-            if (Character.isDigit(c)) {
-                num = num * 10 + c - '0';
-            } else if (c == '+') {
+            if (Character.isDigit(chars[i])) {
+                int num = chars[i] - '0';
+                while (i < len - 1 && Character.isDigit(chars[i + 1])) {
+                    num = num * 10 + (chars[++i] - '0');
+                }
                 res += sign * num;
-                num = 0;
+            } else if (chars[i] == '+') {
                 sign = 1;
-            } else if (c == '-') {
-                res += sign * num;
-                num = 0;
+            } else if (chars[i] == '-') {
                 sign = -1;
-            } else if (c == '(') {
+            } else if (chars[i] == '(') {
                 //we push the result first, then sign;
                 stack.push(res);
                 stack.push(sign);
                 //reset the sign and result for the value in the parenthesis
-                sign = 1;
                 res = 0;
-            } else if (c == ')') {
-                res += sign * num;
-                num = 0;
+                sign = 1;
+            } else if (chars[i] == ')') {
                 res *= stack.pop();
                 res += stack.pop();
             }
         }
 
-        // Finally if there is only one number, just add num * sign to res
-        if (num != 0) {
-            res += sign * num;
-        }
         return res;
     }
 
     public static void main(String[] args) {
+        _224_calculator calculator = new _224_calculator();
         String s = " 2-1 + 2 ";
-        System.out.println(calculate(s)); // 3
-        s = "(1+(4+5+2)-3)+(6+8)";
-        System.out.println(calculate(s)); // 23
+        System.out.println(calculator.calculate(s)); // 3
+        String s2 = "(1+(4+5+2)-3)+(6+8)";
+        System.out.println(calculator.calculate(s2)); // 23
+        String s3 = "15 + 35 + (5 - 4)";
+        System.out.println(calculator.calculate(s3)); // 51
+        String s4 = "-45 + 45 + (10 - 5)";
+        System.out.println(calculator.calculate(s4)); // 5
     }
 }
 ```

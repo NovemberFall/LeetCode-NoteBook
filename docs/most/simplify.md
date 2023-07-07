@@ -53,10 +53,11 @@ class SimplifyPath_Deque {
         // [, a, ., b, .., .., c]
 
         for (int i = 0; i < dirs.length; i++) {
-            if (dirs[i].equals(".")) {
+            if (dirs[i].equals("") || dirs[i].equals(".")) {
                 continue;
             }
-            if (!dirs[i].equals("") && !dirs[i].equals("..")) {
+
+            if (!dirs[i].equals("..")) {
                 deque.addLast(dirs[i]);
             } else if (!deque.isEmpty() && dirs[i].equals("..")) {
                 deque.pollLast();
@@ -84,49 +85,4 @@ class SimplifyPath_Deque {
     }
 }
 ```
----
-### Stack
 
-```java
-public class SimplifyPath_Stack {
-    public String simplify(String path) {
-        Stack<String> stack = new Stack<>();
-        StringBuilder res = new StringBuilder();
-        String[] dirs = path.split("/");
-        System.out.println(Arrays.toString(dirs));
-        // Note: first String is ""
-        // [, a, ., b, .., .., c]
-
-        for (int i = 0; i < dirs.length; i++) {
-            if (dirs[i].equals(".")) {
-                continue;
-            }
-            if (!dirs[i].equals("") && !dirs[i].equals("..")) {
-                stack.push(dirs[i]);
-            } else if (!stack.isEmpty() && dirs[i].equals("..")) {
-                stack.pop();
-            }
-        }
-
-        if (stack.isEmpty()){
-            return "/";
-        }
-
-        while (!stack.isEmpty()) {
-            String top = stack.pop();
-            res.insert(0, top).insert(0, "/");
-        }
-        return res.toString();
-    }
-
-    public static void main(String[] args) {
-        SimplifyPath_Stack sp = new SimplifyPath_Stack();
-        String res = sp.simplify("/a/./b/../../c/");
-        System.out.println(res); //  /c
-
-        res = sp.simplify("/a/b/c/d/../e");
-        System.out.println(res); //   /a/b/c/e
-    }
-}
-
-```
