@@ -1,44 +1,57 @@
 ## 394. Decode String
 ![](img/2021-07-08-02-14-44.png)
 ![](img/2021-07-08-02-15-10.png)
+---
 
+- Note： before you see `[`, there must be a number!
+  - for example: `3 [ a 2 [ c ] ]`
+
+
+---
 ```java
-class Solution {
+public class DecodeString {
     public String decodeString(String s) {
-        if (s == null || s.length() == 0) return null;
-        
-        Stack<String> stack = new Stack<>();
+        if (s.length() == 0) return "";
+        Stack<String> stk = new Stack<>();
         int num = 0;
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
             if (c >= '0' && c <= '9') {
                 num = num * 10 + c - '0';
             } else if (c == '[') {
-                stack.push(num + "");
-                stack.push("[");
+                stk.push(String.valueOf(num));
+                stk.push("["); //use [ as a marker, we don't have to check whether an item is a number or not
                 num = 0;
             } else if (c == ']') {
-                String res = "";
-                while (stack.peek() != "[") {
-                    res = stack.pop() + res;
+                StringBuilder str = new StringBuilder();
+                //keep pop until meet '['
+                while (!stk.peek().equals("[")) {
+                    str.insert(0, stk.pop());
                 }
-                stack.pop(); // pop "["
+                stk.pop(); //pop '['
+                int repeat = Integer.parseInt(stk.pop());
                 StringBuilder sb = new StringBuilder();
-                int repeats = Integer.valueOf(stack.pop());
-                for (int j = 0; j < repeats; j++) {
-                    sb.append(res);
+                for (int k = 0; k < repeat; k++) {
+                    sb.append(str);
                 }
-                stack.push(sb.toString());
+                stk.push(sb.toString());
             } else {
-                stack.push(c + "");
+                stk.push(String.valueOf(c));
             }
         }
-        
-        String ans = "";
-        while (!stack.isEmpty()) {
-            ans = stack.pop() + ans;
+
+        StringBuilder ans = new StringBuilder();
+        while (!stk.isEmpty()) {
+            ans.insert(0, stk.pop());
         }
-        return ans;
+        return ans.toString();
+    }
+
+    public static void main(String[] args) {
+        DecodeString ds = new DecodeString();
+        String str = "3[a2[c]]";
+        String res = ds.decodeString(str);
+        System.out.println(res); // "accaccacc"
     }
 }
 ```
