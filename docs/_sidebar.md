@@ -337,6 +337,7 @@
     * [981. Time Based Key-Value Store](design/timestore.md)
     * [380. Insert Delete GetRandom O(1)](most/getRandom.md)
     * [348. Design Tic-Tac-Toe](amazon/tictactoe.md)
+    * [362. Design Hit Counter](design/hit.md)
 
 -----
 * [Most Frequency](most/intro.md)
