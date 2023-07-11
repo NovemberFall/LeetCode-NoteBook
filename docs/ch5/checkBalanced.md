@@ -193,8 +193,7 @@ class BalancedBinaryTree_Multi_ReturnValue {
         int curHeight = Math.max(left.height, right.height) + 1;
         boolean curIsBalance = false;
 
-        if (left.isBalance && right.isBalance &&
-                Math.abs(left.height - right.height) <= 1) {
+        if (left.isBalance && right.isBalance && Math.abs(left.height - right.height) <= 1) {
             curIsBalance = true;
         }
         return new ReturnValue(curHeight, curIsBalance);
