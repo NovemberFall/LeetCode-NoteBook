@@ -87,15 +87,8 @@ class Solution {
 
 - 也就是说，没有开辟新的空间，stack只有一个
 
-
-
-![](img/2020-07-01-16-50-49.png)
-- 从这里可以看出，递归是先从左子树开始探寻计算其高度，然后触发base case, 才开始探寻右子数
-- 当触发了base case: ` if (root == null) {return 0;}`, 开始return, 递归回到上一层状态，
-  但是： current.right is null, 所以触发 null pointer execption, 但是反复几次以后开始向右子树探寻
-
-
 ---
+
 
 ## Determine whether a binary tree is a balanced binary tree (O(n) solution)
 - Time = O(n)
