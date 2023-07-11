@@ -174,6 +174,7 @@
     * [Determine If Binary Tree Is Full Tree](binaryTree/fullbinary.md)
     * [Determine If Binary Tree Is Perfect Tree](binaryTree/perfectbinary.md)
     * [958. Check Completeness of a Binary Tree](binaryTree/completeness.md)
+    * [226. Invert Binary Tree](binaryTree/invert.md)
 * [Binary Search Tree](binarySearchTree/intro.md)
     * [109. Convert Sorted List to Binary Search Tree](binarySearchTree/listtobst.md)
     * [108. Convert Sorted Array to Binary Search Tree](binarySearchTree/arrtobst.md)
