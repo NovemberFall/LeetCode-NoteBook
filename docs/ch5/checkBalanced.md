@@ -91,15 +91,15 @@ class Solution {
 
 
 ## Determine whether a binary tree is a balanced binary tree (O(n) solution)
-- Time = O(n)
-- Space = O(height)
+- Time = `O(n)`
+- Space = `O(height)`
 
 - Step 1: 
   - ask for whether the left subtree is balanced and the height of the left subtree
   - ask for whether the right subtree is balanced and the height of the right subtree
 - Step 2:
   - left is balanced and right is balanced
-  - abs(left height - right height) <= 1
+  - `abs(left height - right height) <= 1`
 - Step 3:
   - return whether the subtree rooted at me balanced and the height of the subtree rooted at me
   
