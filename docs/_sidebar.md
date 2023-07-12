@@ -215,6 +215,7 @@
     * [658. Find K Closest Elements](m3/findKclosest.md)
     * [240. Search a 2D Matrix II](m3/SearchIn2DArrayII.md)
     * [702. Search in a Sorted Array of Unknown Size](m3/searchInUnknownSize.md)
+    * [278. First Bad Version](binarySearch/firstBad.md)
     * [Array Deduplication III](m3/dedup3.md)
     * [Largest And Smallest](m3/maxMin.md)
     * [Largest And Second Largest](m3/maxSecondMax.md)
