@@ -266,6 +266,7 @@
     * [557. Reverse Words in a String III](m8/reverseWord3.md)
     * [424. Longest Repeating Character Replacement](m8/longest.md)
     * [394. Decode String](m8/decode.md)
+    * [409. Longest Palindrome](m8/longestPalindrome.md)
     * [1004. Max Consecutive Ones III](m8/maxOnes.md)
     * [Remove Certain Characters](m8/rmCertainChar.md)
     * [String Replace](m8/strReplace.md)
