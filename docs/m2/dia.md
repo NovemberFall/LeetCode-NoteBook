@@ -1,11 +1,14 @@
 ## 543. Diameter of Binary Tree | path
 ![](img/2021-08-20-12-13-33.png)
 
+- [youtube](https://youtu.be/3vZV-6qPDmE?t=160)
+
 ![](img/2021-08-20-12-23-01.png)
 
 - T = O(n)
 - Space = O(Height)
 
+---
 ```java
 /**
  * Definition for a binary tree node.
