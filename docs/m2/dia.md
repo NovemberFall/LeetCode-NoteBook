@@ -3,7 +3,9 @@
 
 - [youtube](https://youtu.be/3vZV-6qPDmE?t=160)
 
+![](img/2023-07-13-20-14-20.png)
 ![](img/2021-08-20-12-23-01.png)
+
 
 - T = O(n)
 - Space = O(Height)
@@ -39,7 +41,10 @@ class Solution {
         
         int lh = dfs(root.left, res);
         int rh = dfs(root.right, res);
+
         res[0] = Math.max(res[0], lh + rh);
+        // 如果哪个path 更大，就取哪个，关键看是否可以打破之前的纪律。
+
         return Math.max(lh, rh) + 1;
     }
 }
