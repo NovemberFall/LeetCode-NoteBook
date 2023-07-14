@@ -51,8 +51,7 @@ class Solution {
                 }
                 for (char c = 'a'; c <= 'z'; c++) {
                     for (int j = 0; j < currWord.length(); j++) {
-                        String newWord = 
-                            currWord.substring(0, j) + c + currWord.substring(j + 1);
+                        String newWord = currWord.substring(0, j) + c + currWord.substring(j + 1);
                         /* i.e.  currWord: hit   |  wordList = ["hot","dot","dog","lot","log","cog"]
                             currWord.substring(0, j = 1)  = 'h'
                                                         c = 'o' 
