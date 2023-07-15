@@ -27,8 +27,46 @@
 - 当队列为空时，代表BFS结束，始终没有遇到终点词，没有路径通往终点，返回 0。
 ---
 - [A very highly detailed EXPLANATION](https://leetcode.com/problems/word-ladder/discuss/1764371/A-very-highly-detailed-EXPLANATION#:~:text=So%2C%20all%20this,take%20an%20example%3A%2D)
+---
+
+```java
+```
+
+
+
+
+
 
 ---
+
+### 总结：
+
+- 有一层抽象，将单词作为节点，如果两个单词可以互相转换，就是邻接关系，之间有一条无向边。
+  用图的 BFS 探索路径，求一点到另一点的最短路径，先遇到终点的路径最短。
+
+![](img/2021-07-31-00-02-14.png)
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#### older version:
+
 ```java
 class Solution {
     public int ladderLength(String beginWord, String endWord, List<String> wordList){
@@ -70,10 +108,3 @@ class Solution {
     }
 }
 ```
-
-### 总结：
-
-- 有一层抽象，将单词作为节点，如果两个单词可以互相转换，就是邻接关系，之间有一条无向边。
-  用图的 BFS 探索路径，求一点到另一点的最短路径，先遇到终点的路径最短。
-
-![](img/2021-07-31-00-02-14.png)
