@@ -126,6 +126,7 @@
     * [399. Evaluate Division | DFS](graph/division.md)
     * [785. Is Graph Bipartite? | BFS](graph/bipartite.md)
     * [547. Number of Provinces | union find](graph/numOfProvinces.md)
+    * [261. Graph Valid Tree | union find](graph/validTree.md)
 * [Heap](heap/intro.md)
     * [23. Merge k Sorted Lists](m6/kLists.md)
     * [215. Kth Largest Element in an Array](m6/KthLarget.md)
