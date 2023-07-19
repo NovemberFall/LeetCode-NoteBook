@@ -1,13 +1,22 @@
 ## 399. Evaluate Division
 ![](img/2022-10-13-23-42-58.png)
+---
+- [youtube 1](https://www.youtube.com/watch?v=berj4Xm_YTY)
+- [youtube 2](https://www.youtube.com/watch?v=u9LE_7apB38&t=588s)
 
-- If `a/b = 2.0` and `b/c = 3.0`, we can treat `a,b`, and `c` as vertices.
-  then `edge(a,b)` weight `2.0` and `edge(b,c)` weight `3.0`
-  backward `edge(b,a)` weight `1/2.0` and backward `edge(c,b)` weight `1/3.0`
-  query `a,c` is a path from `a` to `c`, `distance (a,c) = weight(a,b) * weight(b,c)`
+- 以上两个视频需要结合观看
+---
+
+
+
 
 ---
 
+- If `a / b = 2.0` and `b / c = 3.0`, we can treat `a, b`, and `c` as vertices.
+  then `edge(a, b)` weight `2.0` and `edge(b, c)` weight `3.0`
+  backward `edge(b, a)` weight `1 / 2.0` and backward `edge(c, b)` weight `1 / 3.0`
+  query `a, c` is a path from `a` to `c`, `distance(a, c) = weight(a, b) * weight(b, c)`
+---
 ```java
 class EvaluateDivision {
     static class Node {
