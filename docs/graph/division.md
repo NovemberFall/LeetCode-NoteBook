@@ -36,7 +36,9 @@ class EvaluateDivision {
         double[] res = new double[queries.size()];
         Arrays.fill(res, -1.0);
         for (int i = 0; i < queries.size(); i++) {
-            res[i] = dfs(queries.get(i).get(0), queries.get(i).get(1), new HashSet<>(), graph);
+            String src = queries.get(i).get(0);
+            String des = queries.get(i).get(1);
+            res[i] = dfs(src, des, new HashSet<>(), graph);
         }
         return res;
     }
