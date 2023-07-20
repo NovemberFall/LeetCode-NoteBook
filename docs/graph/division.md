@@ -11,6 +11,7 @@
 
 
 ---
+- [leetCode disscusion](https://leetcode.com/problems/evaluate-division/discuss/88169/Java-AC-Solution-using-graph#:~:text=If%20a/b%20%3D%202.0%20and%20b/c%20%3D%203.0%2C%20we%20can%20treat%20a%2Cb%2C%20and%20c%20as%20vertices.%0Athen%20edge(a%2Cb)%20weight%202.0%20and%20edge(b%2Cc)%20weight%203.0%0Abackward%20edge(b%2Ca)%20weight%201/2.0%20and%20backward%20edge(c%2Cb)weight%201/3.0%0Aquery%20a%2Cc%20is%20a%20path%20from%20a%20to%20c%2C%20distance%20(a%2Cc)%20%3D%20weight(a%2Cb)%20*%20weight(b%2Cc))
 
 - If `a / b = 2.0` and `b / c = 3.0`, we can treat `a, b`, and `c` as vertices.
   then `edge(a, b)` weight `2.0` and `edge(b, c)` weight `3.0`
