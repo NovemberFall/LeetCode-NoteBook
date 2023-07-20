@@ -20,7 +20,7 @@
 ---
 ```java
 class EvaluateDivision {
-    static class Node {
+    class Node {
         String key;
         double val;
 
@@ -48,14 +48,18 @@ class EvaluateDivision {
         if (src.equals(des)) {
             return 1.0;
         }
-        visited.add(src);
-        for (Node ng : graph.get(src)) {
-            if (!visited.contains(ng.key)) {
-                double ans = dfs(ng.key, des, visited, graph);
-                if (ans != -1.0) {
-                    return ans * ng.val;
-                }
+        visited.add(src); // prevent a / b , then b / a , overflow
+        for (Node node : graph.get(src)) {
+            String next = node.key;
+            if (visited.contains(next)) {
+                continue;
             }
+            double ans = dfs(next, des, visited, graph);
+            if (ans == -1.0) {
+                continue;
+            }
+            
+            return ans * node.val;
         }
         return -1.0;
     }
