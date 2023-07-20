@@ -48,7 +48,7 @@ class EvaluateDivision {
         if (src.equals(des)) {
             return 1.0;
         }
-        visited.add(src); // prevent a / b , then b / a , overflow
+        visited.add(src); // 由于我们是双向记录的，prevent a / b , then b / a , overflow
         for (Node node : graph.get(src)) {
             String next = node.key;
             if (visited.contains(next)) {
