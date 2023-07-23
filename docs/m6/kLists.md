@@ -36,8 +36,7 @@ class Solution {
       if (lists == null || lists.length == 0) {
           return null;
       }
-      PriorityQueue<ListNode> minHeap = 
-        new PriorityQueue<>(lists.length, new Comparator<ListNode>(){
+      PriorityQueue<ListNode> minHeap = new PriorityQueue<>(lists.length, new Comparator<ListNode>() {
           @Override
           public int compare(ListNode o1, ListNode o2) {
             if (o1.val == o2.val) {
@@ -45,7 +44,7 @@ class Solution {
             }
             return o1.val < o2.val ? -1 : 1;
           }
-        });
+      });
       
       ListNode dummy = new ListNode(0);
       ListNode cur = dummy;
