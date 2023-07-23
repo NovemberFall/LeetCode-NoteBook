@@ -14,7 +14,7 @@
 ---
 
 ```java
-public class DesignHitCounter_array {
+class DesignHitCounter_array {
     private int[] times;
     private int[] hits;
 
@@ -50,5 +50,46 @@ public class DesignHitCounter_array {
         }
         return total;
     }
+
+    public static void main(String[] args) {
+        DesignHitCounter_array designHitCounter = new DesignHitCounter_array();
+        designHitCounter.hit(1);
+        designHitCounter.hit(1);
+        designHitCounter.hit(1);
+        designHitCounter.hit(2);
+        designHitCounter.hit(3);
+        System.out.println(designHitCounter.getHist(4)); // 5
+
+        designHitCounter.hit(300);
+        designHitCounter.hit(300);
+        designHitCounter.hit(300);
+        System.out.println(designHitCounter.getHist(300)); // 8
+        System.out.println(designHitCounter.getHist(301)); // 5
+    }
 }
+```
+---
+
+```ruby
+        designHitCounter.hit(1);
+        designHitCounter.hit(1);
+        designHitCounter.hit(1);
+        designHitCounter.hit(2);
+        designHitCounter.hit(3);
+        System.out.println(designHitCounter.getHist(4)); // 5
+
+        designHitCounter.hit(300);
+        designHitCounter.hit(300);
+        designHitCounter.hit(300);
+        System.out.println(designHitCounter.getHist(300)); // 8
+        System.out.println(designHitCounter.getHist(301)); // 5
+
+
+hit(1) 三次， hit(2) 一次， hit(3) 一次， 3 + 1 + 1 = 5
+
+hit(300) 三次，getHits(300)的时候 5 + 3 = 8 次，
+
+当 hit(301) 的时候，301 % 300 = 1，  这里 times[1] = 1
+违反 timestamp - times[i] < 300 , 所以不会累计 index = 1的 hit's times. 
+所以最后 是 5.
 ```
