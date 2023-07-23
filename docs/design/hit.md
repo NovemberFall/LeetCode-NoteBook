@@ -4,6 +4,13 @@
 - 300秒内，`time[index]` 用来保存 `timestamp % 300` 后的time。
 - 如果 `time[index]` 从未用来保存，则初始化为 `1` 
 
+
+- `O(s)` s is total seconds in given time interval, in this case 300.
+  basic ideal is using buckets. `1` bucket for every second because we only need to keep the recent hits info for 
+  `300` seconds. `hit[]` array is wrapped around by `mod` operation. Each hit bucket is associated with `times[]` 
+  bucket which `record current time`. If it is not current time, it means it is 300s or 600s... ago and need to 
+  reset to 1.
+
 ---
 
 ```java
