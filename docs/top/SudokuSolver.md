@@ -3,6 +3,7 @@
 ![](img/2022-11-26-22-19-17.png)
 
 ```java
+class _37_SudokuSolver {
     public void solveSudoku(char[][] board) {
         solve(board);
     }
@@ -16,7 +17,7 @@
                         if (isValid(board, i, j, num)) {
                             board[i][j] = num;// Set the value of the current square to the valid num
                             if (solve(board)) {
-                            //if it's true that means we have a solved board, so you just keep returning
+                                //if it's true that means we have a solved board, so you just keep returning
                                 return true;
                             }
                             board[i][j] = '.';
@@ -29,6 +30,7 @@
                 }
             }
         }
+        return true;
     }
 
     private boolean isValid(char[][] board, int row, int col, char num) {
@@ -45,4 +47,28 @@
         }
         return true;
     }
+
+    public static void main(String[] args) {
+        char[][] board = {
+                {'5', '3', '.', '.', '7', '.', '.', '.', '.'},
+                {'6', '.', '.', '1', '9', '5', '.', '.', '.'},
+                {'.', '9', '8', '.', '.', '.', '.', '6', '.'},
+                {'8', '.', '.', '.', '6', '.', '.', '.', '3'},
+                {'4', '.', '.', '8', '.', '3', '.', '.', '1'},
+                {'7', '.', '.', '.', '2', '.', '.', '.', '6'},
+                {'.', '6', '.', '.', '.', '.', '2', '8', '.'},
+                {'.', '.', '.', '4', '1', '9', '.', '.', '5'},
+                {'.', '.', '.', '.', '8', '.', '.', '7', '9'}
+        };
+        _37_SudokuSolver sudokuSolver = new _37_SudokuSolver();
+        sudokuSolver.solveSudoku(board);
+//        System.out.println(Arrays.deepToString(board));
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[0].length; j++) {
+                System.out.print(board[i][j] + ", ");
+            }
+            System.out.println();
+        }
+    }
+}
 ```
