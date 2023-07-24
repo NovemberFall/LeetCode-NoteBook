@@ -33,9 +33,10 @@ class Solution {
     private void dfs(int[] nums, 
                     List<List<Integer>> res, 
                     List<Integer> subset, int startIndex) {
+        
         //拆解 deep copy
         res.add(new ArrayList<Integer>(subset));
-    //为什么这一步,一开始就加，而不是最后加？因为它第一次加了一个empty list 
+        //为什么这一步,一开始就加，而不是最后加？因为它第一次加了一个empty list 
         for(int i = startIndex; i < nums.length; i++){
             // 九章算法 subsets version2 [vedio 开始时间 9:00] 解释 for loop
             subset.add(nums[i]);
