@@ -23,7 +23,7 @@
 class Solution {
     public List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
-        if(nums == null){
+        if (nums == null) {
             return result;
         }
         dfs(nums, result, new ArrayList<>(), 0);
@@ -37,7 +37,7 @@ class Solution {
         //拆解 deep copy
         res.add(new ArrayList<Integer>(subset));
         //为什么这一步,一开始就加，而不是最后加？因为它第一次加了一个empty list 
-        for(int i = startIndex; i < nums.length; i++){
+        for (int i = startIndex; i < nums.length; i++) {
             // 九章算法 subsets version2 [vedio 开始时间 9:00] 解释 for loop
             subset.add(nums[i]);
             dfs(nums, res, subset, i + 1);
@@ -59,7 +59,7 @@ import java.util.List;
 public class subsetI {
     public List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
-        if(nums == null){
+        if (nums == null) {
             return result;
         }
         List<Integer> path = new ArrayList<>();
@@ -70,7 +70,7 @@ public class subsetI {
     private void dfs(int[] nums, int index, 
                         List<Integer> path, 
                         List<List<Integer>>result) {
-        if(index == nums.length){
+        if (index == nums.length) {
             List<Integer> temp = new ArrayList<>(path);
             // deep copy 
             result.add(temp);
