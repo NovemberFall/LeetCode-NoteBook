@@ -1,50 +1,10 @@
 ## 78. Subsets | DFS | backtrack 解释
 ![](img/2022-02-05-00-41-34.png)
 ---
-![](img/2021-10-06-18-41-06.png)
 
-```java
-import java.util.ArrayList;
-import java.util.List;
+## BackTracking
 
-public class subsetI {
-    public List<List<Integer>> subsets(int[] nums) {
-        List<List<Integer>> result = new ArrayList<>();
-        if(nums == null){
-            return result;
-        }
-        List<Integer> path = new ArrayList<>();
-        dfs(nums, 0, path, result);
-        return result;
-    }
-
-    private void dfs(int[] nums, int index, 
-                        List<Integer> path, 
-                        List<List<Integer>>result) {
-        if(index == nums.length){
-            List<Integer> temp = new ArrayList<>(path);
-            // deep copy 
-            result.add(temp);
-            return;
-        }
-        path.add(nums[index]); //吃
-        dfs(nums, index+1, path, result);
-        path.remove(path.size() - 1); //🤮
-        dfs(nums, index+1, path, result);
-    }
-
-
-    public static void main(String[] args) {
-        subsetI sb = new subsetI();
-        int[] arr = {1, 2, 3};
-        List<List<Integer>> result = sb.subsets(arr);
-        System.out.println(result);
-    }
-}
-```
-
-
-## Anylysis:
+### Anylysis:
 
 - **解题之前就知道DFS要recurse 多少层**？
   - Three level. For each level, it makes the decision on whether to put this element
@@ -125,6 +85,51 @@ class Solution {
             dfs(nums, res, subset, i + 1);
             subset.remove(subset.size() - 1); //backtracking
         }
+    }
+}
+```
+---
+
+### DFS
+
+![](img/2021-10-06-18-41-06.png)
+
+```java
+import java.util.ArrayList;
+import java.util.List;
+
+public class subsetI {
+    public List<List<Integer>> subsets(int[] nums) {
+        List<List<Integer>> result = new ArrayList<>();
+        if(nums == null){
+            return result;
+        }
+        List<Integer> path = new ArrayList<>();
+        dfs(nums, 0, path, result);
+        return result;
+    }
+
+    private void dfs(int[] nums, int index, 
+                        List<Integer> path, 
+                        List<List<Integer>>result) {
+        if(index == nums.length){
+            List<Integer> temp = new ArrayList<>(path);
+            // deep copy 
+            result.add(temp);
+            return;
+        }
+        path.add(nums[index]); //吃
+        dfs(nums, index+1, path, result);
+        path.remove(path.size() - 1); //🤮
+        dfs(nums, index+1, path, result);
+    }
+
+
+    public static void main(String[] args) {
+        subsetI sb = new subsetI();
+        int[] arr = {1, 2, 3};
+        List<List<Integer>> result = sb.subsets(arr);
+        System.out.println(result);
     }
 }
 ```
