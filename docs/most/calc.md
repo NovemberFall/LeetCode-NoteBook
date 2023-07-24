@@ -1,7 +1,21 @@
 ## 227. Basic Calculator II
 ![](img/2022-05-10-22-17-09.png)
 ---
+```ruby
+- Hint: 本题和 lc 224 不一样，想想看如果用
+    for (char c : s.toCharArray()) {
+        ...
+        ...
+        if (c == '*') {
+            do somthing
+        }
+    }
 
+    想想看 c == '*', 但是你无法知道 * 后面的数字， a * b, 你无法知道b 的值，
+    所以我们希望把 sign 传递给下一轮，也就是当你拿到 variable b 的时候，再进行运算
+```
+
+---
 ```java
 public class calculatorII_v2 {
     public int calculate(String s) {
