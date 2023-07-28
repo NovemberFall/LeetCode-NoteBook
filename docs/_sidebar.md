@@ -101,6 +101,7 @@
     * [1448. Count Good Nodes in Binary Tree](m10/goodNode.md)
     * [695. Max Area of Island](m10/maxArea.md)  
     * [236. Lowest Common Ancestor of a Binary Tree](m2/LCA.md)
+    * [216. Combination Sum III](DFS/sum3.md)
     * [Print If Blocks](DFS/ifBlock.md)
     * [Recruiting Event Schedules | Interview](DFS/recruiting.md)
     * [Infinite Loop Around the Dinner Table | Interview](DFS/formRing.md)
