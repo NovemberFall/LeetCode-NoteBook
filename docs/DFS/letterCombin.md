@@ -18,16 +18,16 @@ class Solution {
         return res;
     }
 
-    private void dfs(List<String> res, StringBuilder sb, String digits, String[] map, int startIndex) {
-        if (startIndex == digits.length()) {
+    private void dfs(List<String> res, StringBuilder sb, String digits, String[] map, int index) {
+        if (index == digits.length()) {
             res.add(new String(sb));
             return;
         }
 
-        String curStr = map[digits.charAt(startIndex) - '0'];
+        String curStr = map[digits.charAt(index) - '0'];
         for (int i = 0; i < curStr.length(); i++) {
             sb.append(curStr.charAt(i));
-            dfs(res, sb, digits, map, startIndex + 1);
+            dfs(res, sb, digits, map, index + 1);
             sb.setLength(sb.length() - 1);
         }
     }
