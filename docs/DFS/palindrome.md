@@ -2,6 +2,7 @@
 ![](img/2023-02-02-00-54-48.png)
 
 - [中文解释](https://leetcode.cn/problems/palindrome-partitioning/solution/131-fen-ge-hui-wen-chuan-hui-su-sou-suo-yp2jq/)
+- [youtube startIndex的解释](https://www.youtube.com/watch?v=YN0mGjMX8Bo&t=338s)
 
 - **其实切割问题类似组合问题**。
   - 例如对于字符串`abcdef`：
