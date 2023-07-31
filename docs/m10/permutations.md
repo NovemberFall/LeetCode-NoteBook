@@ -8,6 +8,7 @@
 ![](img/2023-03-29-12-16-03.png)
 
 - [46.全排列 中文理解](https://programmercarl.com/0046.%E5%85%A8%E6%8E%92%E5%88%97.html#%E6%80%9D%E8%B7%AF)
+- [liweiwei | 回溯搜索 + 剪枝 | 时间复杂度](https://leetcode.cn/problems/permutations/solution/hui-su-suan-fa-python-dai-ma-java-dai-ma-by-liweiw/)
 
 ---
 ```java
