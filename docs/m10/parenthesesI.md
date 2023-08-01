@@ -39,7 +39,55 @@ For example, given n = 3, a solution set is:
 ![](img/2023-08-01-00-50-23.png)
 
 ---
+```java
+class GenerateParentheses_v2 {
+    public List<String> generateParenthesis(int n) {
+        List<String> res = new ArrayList<>();
+        if (n == 0) {
+            return res;
+        }
+        StringBuilder soluPrefix = new StringBuilder();
+        dfs(soluPrefix, 0, 0, n, res);
+        return res;
+    }
 
+    private void dfs(StringBuilder soluPrefix, int left, int right, int n, List<String> res) {
+        if (left == n && right == n) {
+            res.add(soluPrefix.toString());
+            return;
+        }
+
+        // 剪枝（如图，左括号可以使用的个数严格大于右括号可以使用的个数，才剪枝，注意这个细节）
+        if (left < right) {
+            return;
+        }
+
+        if (left < n) {
+            soluPrefix.append("(");
+            dfs(soluPrefix, left + 1, right, n, res);
+            soluPrefix.deleteCharAt(soluPrefix.length() - 1);
+        }
+
+        if (right < n) {
+            soluPrefix.append(")");
+            dfs(soluPrefix, left, right + 1, n, res);
+            soluPrefix.deleteCharAt(soluPrefix.length() - 1);
+        }
+    }
+
+    public static void main(String[] args) {
+        GenerateParentheses_v2 generateParentheses = new GenerateParentheses_v2();
+        List<String> res = generateParentheses.generateParenthesis(3);
+        System.out.println(res);// [ ((())), (()()), (())(), ()(()), ()()() ]
+    }
+}
+```
+
+
+
+
+
+---
 ```java
 class Solution {
     public List<String> generateParenthesis(int n) {
