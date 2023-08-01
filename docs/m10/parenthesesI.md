@@ -34,10 +34,9 @@ For example, given n = 3, a solution set is:
 ![](img/2023-01-26-20-16-26.png)
 ---
 
-- Because there are `2n` level in the recursion tree, and it's a binary
-  tree. Thus, there are at most $$2^{2n}$$
-- $$Time = O(2^{2n}*2n)$$
-- Space = O(2n)
+- [中文教程](https://leetcode.cn/problems/generate-parentheses/solution/hui-su-suan-fa-by-liweiwei1419/)
+
+![](img/2023-08-01-00-50-23.png)
 
 ---
 
