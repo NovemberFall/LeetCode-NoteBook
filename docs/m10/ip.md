@@ -174,7 +174,10 @@ class Restore_IP_Addresses_StringBuilder {
         if (s.length() > 3) {
             return false;
         }
-        if (s.length() < 1) {
+        // if (s.length() < 1) {
+        //     return false;
+        // }
+        if (s.length() == 0) {
             return false;
         }
         if (s.charAt(0) == '0' && s.length() > 1) { // "01"
