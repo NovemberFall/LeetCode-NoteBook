@@ -73,6 +73,14 @@ class Solution {
     }
 }
 
+/*
+   Input; [2,3,6,7], target = 7
+
+   Ouput: [[2,2,3],[2,3,2],[3,2,2],[7]]
+   
+   Expected: [[2,2,3],[7]]
+ */
+
 ```
 
 - Consider the candidates `[2, 3, 6, 7]` and the target `7`. We'll use your original code without the 
