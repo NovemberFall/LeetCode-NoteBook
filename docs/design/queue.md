@@ -77,21 +77,16 @@ class _232_ImplementQueueUsingStacks {
     public int pop() {
         // if out stacks is empty,
         // need to move the elements from in stack to out stack.
-        move();
+        peek();
         return output.pop();
     }
 
-    // when output stack is empty, move the elements from input stack to output stack
-    private void move() {
+    public int peek() {
         if (output.isEmpty()) {
             while (!input.isEmpty()) {
                 output.push(input.pop());
-            }
+            }      
         }
-    }
-
-    public int peek() {
-        move();
         return output.peek();
     }
 
