@@ -123,6 +123,7 @@
     * [958. Check Completeness of a Binary Tree | BFS](m6/checkComplete.md)
     * [1730	Shortest Path to Get Food](amazon/shortestPath.md)
 * [Topological Sort](ts/intro.md)
+    * [207. Course Schedule | BFS](amazon/course.md)
     * [210. Course Schedule II](ts/course2.md)
 * [Graph](graph/concept.md)
     * [1971. Find if Path Exists in Graph](graph/pathExists.md)
