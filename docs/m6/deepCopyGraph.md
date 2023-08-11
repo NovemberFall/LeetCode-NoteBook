@@ -79,8 +79,11 @@ class _133_CloneGraph {
                     map.put(oldNeiNode, new Node(oldNeiNode.val));
                     queue.offer(oldNeiNode);
                 }
-                Node copyOldNeiNode = map.get(oldNeiNode);
-                map.get(oldNode).neighbors.add(copyOldNeiNode);
+                
+                // Node copyOldNeiNode = map.get(oldNeiNode);
+                // map.get(oldNode).neighbors.add(copyOldNeiNode);
+
+                map.get(oldNode).neighbors.add(map.get(oldNeiNode));
             }
         }
         return map.get(node);
