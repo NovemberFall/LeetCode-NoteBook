@@ -57,7 +57,9 @@ class insertInterval {
         if (newInterval != null) {
             result.add(newInterval);
         }
-        return result.toArray(new int[result.size()][]);
+
+        return result.toArray(int[][]::new);
+        // return result.toArray(new int[result.size()][]);
     }
 
     public static void main(String[] args) {
