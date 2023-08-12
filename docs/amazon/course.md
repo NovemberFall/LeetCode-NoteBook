@@ -96,11 +96,13 @@ class Solution {
 class Solution {
     public boolean canFinish(int numCourses, int[][] prerequisites) {
         int[] indegree = new int[numCourses];
+        //记录每门课程的先修课   
         Map<Integer, List<Integer>> graph = new HashMap<>();
         buildGraph(graph, prerequisites, indegree);
         return bfs(graph, numCourses, indegree);
     }
     
+    //把先修课放到每个课程的list 里 & 统计indegree数量
     private void buildGraph(Map<Integer, List<Integer>> graph, int[][]prerequisites, int[] indegree) {
         for (int i = 0; i < prerequisites.length; i++) {
             graph.putIfAbsent(prerequisites[i][1], new ArrayList<>());
@@ -112,20 +114,22 @@ class Solution {
     private boolean bfs(Map<Integer, List<Integer>> graph, int numCourses, int[] indegree) {
         Queue<Integer> queue = new LinkedList<>();
         for (int i = 0; i < numCourses; i++) {
-            if (indegree[i] == 0) {
+            if (indegree[i] == 0) { //没有先修课
                 queue.offer(i);
             }
         }
-        int count = 0;
+        int count = 0; //统计一共上过的课程数量
         while (!queue.isEmpty()) {
             int course = queue.poll();
             count++;
             List<Integer> list = graph.get(course);
-            if (list != null) {
+            if (list != null) { 
+                //有n门课以当前的course作为先修课，course->n个其他课程
                 int n = list.size();
                 for (int i = 0; i < n; i++) {
                     int pointer = graph.get(course).get(i);
                     indegree[pointer]--;
+                    //判断当前课pointer，是否入度为0
                     if (indegree[pointer] == 0) {
                         queue.add(pointer);
                     }
