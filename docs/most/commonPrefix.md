@@ -1,6 +1,30 @@
 ## 14. Longest Common Prefix
 ![](img/2022-05-12-00-43-26.png)
+---
+- [Explanation](https://leetcode.com/problems/longest-common-prefix/discuss/3174307/Well-Explained-Code-oror-Using-Strings-in-JAVA#:~:text=Approach,longest%20common%20prefix.)
 
+
+```java
+class LongestCommonPrefix_sort {
+    public String longestCommonPrefix(String[] strs) {
+        Arrays.sort(strs);
+        String s1 = strs[0];
+        String s2 = strs[strs.length - 1];
+        int idx = 0;
+        while (idx < s1.length() && idx < s2.length()) {
+            if (s1.charAt(idx) == s2.charAt(idx)) {
+                idx++;
+            } else {
+                break;
+            }
+        }
+        return s1.substring(0, idx);
+    }
+}
+```
+
+
+---
 - `int indexOf(String str)` : This method **returns** the index within this string of 
   the **first** occurrence of the specified **substring**. If it does not occur as a 
   substring, **-1** is returned.
