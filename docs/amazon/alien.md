@@ -1,6 +1,8 @@
 ## 269. Alien Dictionary
 ![](img/2021-08-26-00-22-35.png)
-
+---
+- [youtube video](https://www.youtube.com/watch?v=RIrTuf4DfPE)
+---
 - First, build a degree map for each character in all the words:
 
 ```ruby
@@ -23,6 +25,39 @@ e:0
 "wrf",
 "er",
 # first different character is 1rd letter, so w comes before e
+
+
+
+#####################################################################################
+ "wrt"
+ "wrf"
+ "er"
+ "ett"
+ "rftt"
+
+       t -> f
+       w -> e
+
+
+
+       r -> t -> f
+       w -> e
+
+
+
+    -----> r -> t -> f
+    |________
+            |
+            |       
+       w -> e
+
+
+ output:  "wertf"
+ ####################################################################################
+
+ 注意： w -> e   说明 e 的入度 indegree 为 1， w 的出度为 1， 但是 w 的入度为 0
+
+ 所以说 w 就可以排在最前面因为它的入度 为 0
 ```
 
 - The characters in set come after the key. `x -> y` means letter `x` comes before 
