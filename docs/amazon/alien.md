@@ -139,7 +139,7 @@ public class alien1 {
                         graph.get(out).add(in);
                         indegree[in - 'a']++;
                     }
-                    break;
+                    break; // ett, rftt 只有在出现第一个不相同的字符 e, r 才做比较，剩下就不再比较所以 break
                 }
                 // test case: ["abc","ab"], Expected: ""
                 if (j + 1 == len && first.length() > second.length()) {
@@ -171,6 +171,7 @@ public class alien1 {
             }
         }
         return sb.length() == totalChars ? sb.toString() : "";
+        // 看这个例子： ["z","x","a","zb","zx"]， 很明显这里有 环 出现了，所以无法用 Topological Sort
     }
     public static void main(String[] args) {
         String[] words = {"abc", "ab"};
