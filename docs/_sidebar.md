@@ -125,6 +125,8 @@
 * [Topological Sort](ts/intro.md)
     * [207. Course Schedule | BFS](amazon/course.md)
     * [210. Course Schedule II](ts/course2.md)
+    * [269. Alien Dictionary | BFS/Graph](amazon/alien.md)
+    * [329. Longest Increasing Path in a Matrix](most/longestPath.md)
 * [Graph](graph/concept.md)
     * [1971. Find if Path Exists in Graph](graph/pathExists.md)
     * [399. Evaluate Division | DFS](graph/division.md)
