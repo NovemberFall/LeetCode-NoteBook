@@ -172,6 +172,11 @@ public class alien1 {
         }
         return sb.length() == totalChars ? sb.toString() : "";
         // 看这个例子： ["z","x","a","zb","zx"]， 很明显这里有 环 出现了，所以无法用 Topological Sort
+        /*
+        if the graph contains cycles (e.g., there's a cyclic relationship between characters), 
+        your BFS traversal might terminate without visiting all characters, even if there is a valid ordering of 
+        characters. In this case, returning just sb.toString() could give you an incorrect result.
+        */
     }
     public static void main(String[] args) {
         String[] words = {"abc", "ab"};
