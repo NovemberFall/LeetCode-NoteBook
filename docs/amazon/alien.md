@@ -25,8 +25,8 @@ e:0
 # first different character is 1rd letter, so w comes before e
 ```
 
-- The characters in set come after the key. x->y means letter x comes before 
-  letter y.   x -> set: y,z,t,w means x comes before all the letters in the set. 
+- The characters in set come after the key. `x -> y` means letter `x` comes before 
+  letter `y`.   `x -> set: y,z,t,w` means `x` comes before all the letters in the set. 
   The final HashMap "map" looks like.
 
 ```java
@@ -36,8 +36,7 @@ r -> set: t
 e -> set: r
 ```
 
-- and final HashMap "degree" looks like, the number means "how many letters come 
-  before the key":
+- and final HashMap `"degree"` looks like, the number means `"how many letters come before the key"`:
 
 ```ruby
 w:0
@@ -56,7 +55,7 @@ e:1
 ---
 
 ![](img/2022-06-17-12-48-21.png)
-- Note: "ab" should before "abc", so ["abc", "ab"] is impossible!
+- Note: `"ab"` should before `"abc"`, so `["abc", "ab"]` is **impossible**!
   
 ---
 
@@ -86,8 +85,7 @@ public class alien1 {
         return bfs(graph, indegree);
     }
 
-    private static void buildGraph(Map<Character, Set<Character>> graph, 
-                                        String[] words, int[] indegree) {
+    private static void buildGraph(Map<Character, Set<Character>> graph, String[] words, int[] indegree) {
         for (String word : words) {
             for (char c : word.toCharArray()) {
                 graph.putIfAbsent(c, new HashSet<>());
@@ -117,8 +115,7 @@ public class alien1 {
         }
     }
 
-    private static String bfs(Map<Character, Set<Character>> graph, 
-                                                      int[] indegree) {
+    private static String bfs(Map<Character, Set<Character>> graph, int[] indegree) {
         StringBuilder sb = new StringBuilder();
         Queue<Character> queue = new ArrayDeque<>();
         int totalChars = graph.size();
