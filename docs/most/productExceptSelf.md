@@ -1,9 +1,30 @@
 ## 238. Product of Array Except Self
 ![](img/2022-09-08-16-49-05.png)
 
+- [leetocde discussion](https://leetcode.com/problems/product-of-array-except-self/discuss/65622/Simple-Java-solution-in-O(n)-without-extra-space#:~:text=Given%20numbers%20%5B2%2C%203%2C%204%2C%205%5D%2C%20regarding%20the%20third%20number%204%2C%20the%20product%20of%20array%20except%204%20is%202*3*5%20which%20consists%20of%20two%20parts%3A%20left%202*3%20and%20right%205.%20The%20product%20is%20left*right.%20We%20can%20get%20lefts%20and%20rights%3A)
+
+- Given numbers `[2, 3, 4, 5]`, regarding the third number `4`, the product of array except `4` is `2*3*5` which consists of two parts: 
+  `left 2*3` and `right 5`. The product is `left*right`. We can get lefts and rights:
+
+
+```ruby
+Numbers:     2    3    4     5
+Lefts:            2  2*3 2*3*4
+Rights:  3*4*5  4*5    
+
+
+Let’s fill the empty with 1:
+
+Numbers:     2    3    4     5
+Lefts:       1    2  2*3 2*3*4
+Rights:  3*4*5  4*5    5     1
+```
+
+
+---
 ```java
 public class _238_ProductOfArrayExceptSelf {
-    public static int[] productExceptSelf1(int[] nums) {
+    public int[] productExceptSelf(int[] nums) {
         int n = nums.length;
         if (nums == null || n == 0) return new int[]{};
 
@@ -24,7 +45,15 @@ public class _238_ProductOfArrayExceptSelf {
 
         return res;
     }
+}
+```
 
+---
+
+### 2nd
+
+```java
+public class solution {
     public int[] productExceptSelf(int[] nums) {
         int n = nums.length;
         if (nums == null || n == 0) return new int[]{};
