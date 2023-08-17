@@ -24,7 +24,7 @@ class searchInRotatedSortedArray_II {
             }
             //  1 0 1 1 1   or
             //  1 1 1 0 1
-            while (nums[left] == nums[mid]) {
+            if (nums[left] == nums[mid]) {
                 left++;
                 continue;
             }
