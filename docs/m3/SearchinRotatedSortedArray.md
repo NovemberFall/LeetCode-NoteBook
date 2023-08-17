@@ -19,7 +19,7 @@
   - Else ------> drop the right half
 
 ![](img/2022-05-23-13-09-22.png)
-
+---
 ```java
 class Solution {
     public int search(int[] nums, int target) {
@@ -55,8 +55,55 @@ class Solution {
     }
 }
 ```
+---
+![](img/2023-08-16-22-34-18.png)
 
+- **将数组一分为二，其中一定有一个是有序的，另一个可能是有序，也能是部分有序。此时有序部分用二分法查找。无序部分再一分为二，其中一个一定有序，另一个可能有序，可能无序。就这样循环.**
 
+```java
+class binarySearchInRotatedSortedArray_recursion {
+    public int search(int[] nums, int target) {
+        return binarySearch(nums, 0, nums.length - 1, target);
+    }
+
+    private int binarySearch(int[] nums, int left, int right, int target) {
+        if (left > right) {
+            return -1;
+        }
+
+        int mid = left + (right - left) / 2;
+        int leftValue = nums[left];
+        int midValue = nums[mid];
+        int rightValue = nums[right];
+
+        if (leftValue == target) {
+            return left;
+        }
+        if (midValue == target) {
+            return mid;
+        }
+        if (rightValue == target) {
+            return right;
+        }
+
+        if (leftValue < midValue) {
+            if (leftValue < target && target < midValue) {
+                return binarySearch(nums, left + 1, right - 1, target);
+            } else {
+                return binarySearch(nums, mid + 1, right - 1, target);
+            }
+        } else {
+            if (midValue < target && target < rightValue) {
+                return binarySearch(nums, mid + 1, right - 1, target);
+            } else {
+                return binarySearch(nums, left + 1, mid - 1, target);
+            }
+        }
+    }
+}
+```
+
+---
 - 注意代码，可以全部统一成两边都是 **闭区间**
 - 但是不可以写成： `if (nums[left] < nums[mid])` 因为:
 
@@ -150,46 +197,3 @@ class searchInRotatedSortedArray_findPeak {
 
 ![](img/2023-04-08-13-44-40.png)
 ![](img/2023-04-08-13-45-25.png)
-
----
-### Clever idea making it simple
-- [Clever idea making it simple](https://leetcode.com/problems/search-in-rotated-sorted-array/discuss/14435/clever-idea-making-it-simple)
-
-
-```java
-/**
-        [12, 13, 14, 15, 16, 0, 1, 2, 3, 4]
-
- - If target is let's say 14, then we adjust nums to this, where "inf" means infinity:
-        [12, 13, 14, 15, 16, inf, inf, inf, inf, inf]
-
- - If target is let's say 3, then we adjust nums to this:
-        [-inf, -inf, -inf, -inf, -inf, 0, 1, 2, 3, 4]
-
- */
-class BinarySearchInRotatedSortedArray {
-    public int search(int[] nums, int target) {
-        int left = 0, right = nums.length - 1;
-        while (left <= right) {
-            int mid = left + (right - left) / 2;
-
-            int num = nums[mid];
-            // If nums[mid] and target are "on the same side" of nums[0], we just take nums[mid].
-            if ((nums[mid] < nums[0]) == (target < nums[0])) {
-                num = nums[mid];
-            } else {
-                //Otherwise we use -infinity or +infinity as needed.
-                num = target < nums[0] ? Integer.MIN_VALUE : Integer.MAX_VALUE;
-            }
-
-            if (num < target)
-                left = mid + 1;
-            else if (num > target)
-                right = mid - 1;
-            else
-                return mid;
-        }
-        return -1;
-    }
-}
-```
