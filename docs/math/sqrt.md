@@ -1,6 +1,55 @@
 ## 69. Sqrt(x)
 ![](img/2023-03-30-13-35-24.png)
 ---
+### template.2
+
+```java
+class sqrt_x_t2 {
+    public int mySqrt(int x) {
+        if (x == 0) return 0;
+
+        if (x == 1) return 1;
+
+        int left = 1, right = x / 2;
+        while (left < right) {
+            int mid = left + ((right - left) >> 1);
+            if (mid > x / mid) {
+                right = mid - 1;
+            } else {
+                left = mid;
+            }
+        }
+        return left;
+    }
+}
+```
+
+---
+### template.1
+
+```java
+class sqrt_x_tmp1 {
+    public int mySqrt(int x) {
+        int left = 0, right = x, ans = x;
+        while (left <= right) {
+            int mid = left + ((right - left) >> 1);
+            if ((long) mid * mid <= x) {
+                ans = mid;
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+        return ans;
+    }
+}
+
+```
+
+---
+
+### Newton's Method
+
 
 - uppose we want to find the square root of a number `x`. 
 - We can start with an initial guess `y0`, which could be any positive number. 
