@@ -69,48 +69,7 @@ if (nums[0] <= nums[mid]) {
 ```
 
 ---
-```java
-class binarySearchInRotatedSortedArray_recursion {
-    public int search(int[] nums, int target) {
-        return binarySearch(nums, 0, nums.length - 1, target);
-    }
 
-    private int binarySearch(int[] nums, int left, int right, int target) {
-        if (left > right) {
-            return -1;
-        }
-
-        int mid = left + (right - left) / 2;
-        int leftValue = nums[left];
-        int midValue = nums[mid];
-        int rightValue = nums[right];
-
-        if (leftValue == target) {
-            return left;
-        }
-        if (midValue == target) {
-            return mid;
-        }
-        if (rightValue == target) {
-            return right;
-        }
-
-        if (leftValue < midValue) {
-            if (leftValue < target && target < midValue) {
-                return binarySearch(nums, left + 1, right - 1, target);
-            } else {
-                return binarySearch(nums, mid + 1, right - 1, target);
-            }
-        } else {
-            if (midValue < target && target < rightValue) {
-                return binarySearch(nums, mid + 1, right - 1, target);
-            } else {
-                return binarySearch(nums, left + 1, mid - 1, target);
-            }
-        }
-    }
-}
-```
 
 ---
 - 注意代码，可以全部统一成两边都是 **闭区间**
@@ -122,6 +81,36 @@ class binarySearchInRotatedSortedArray_recursion {
 - 可以看到right 会向左边越界!
 
 - [本题如何debug? 可以看b站](https://www.bilibili.com/video/BV1pp4y1W7eZ/?spm_id_from=333.880.my_history.page.click&vd_source=333bb18bd89bdbb4a7c9b3b16c3947f3)
+---
+
+- [中文解释](https://suanfa8.com/binary-search/solutions-1/0033-search-in-rotated-sorted-array)
+
+```java
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ---
 
@@ -185,24 +174,3 @@ class searchInRotatedSortedArray_findPeak {
     }
 }
 ```
----
-- 注意这里：
-
-```java
-    while (left <= right) {
-        int mid = left + (right - left) / 2;
-        if (nums[mid] > nums[mid + 1]) {
-            return mid;
-        } else if (nums[left] <= nums[mid]) { // 注意这里： nums[left] <= nums[mid]
-            left = mid + 1;
-        } else if (nums[right] > nums[mid]){
-            right = mid - 1;
-        }
-    }
-```
-
-- 可以假设： else if (nums[left] < nums[mid])  吗?
-- **不能**，因为会**往左边越界**:
-
-![](img/2023-04-08-13-44-40.png)
-![](img/2023-04-08-13-45-25.png)
