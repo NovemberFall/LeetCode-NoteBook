@@ -224,6 +224,7 @@
     * [74. Search a 2D Matrix I](m3/SearchIn2DArray.md)
     * [35. Search Insert Position](top/SearchInsertPosition.md)
     * [34. First&LastPositionElementInSortedArr](m3/FirstLastPositionOfSortedArr.md)
+    * [69. Sqrt(x)](math/sqrt.md)
     * [658. Find K Closest Elements](m3/findKclosest.md)
     * [240. Search a 2D Matrix II](m3/SearchIn2DArrayII.md)
     * [702. Search in a Sorted Array of Unknown Size](m3/searchInUnknownSize.md)
