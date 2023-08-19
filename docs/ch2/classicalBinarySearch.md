@@ -2,27 +2,7 @@
 
 - [704. Classical Binary Search](https://novemberfall.github.io/LeetCode-NoteBook/#/Array/classicalBinarySearch)
 ---
-### template.2
 
-```java
-class Solution {
-    public int search(int[] nums, int target) {
-        int left = 0, right = nums.length - 1;
-        while (left < right) {
-            int mid = left + ((right - left) >> 1);
-            if (nums[mid] < target) {
-                left = mid + 1;
-            } else {
-                right = mid;
-            }
-        }
-        return nums[left] == target ? left : -1;
-    }
-}
-```
-
-
----
 ### template.1
 
 
@@ -63,3 +43,23 @@ public class classical {
 
 - let's look at this example, `left = 0`, `right = 0`, directly `return -1`
 
+---
+
+### template.2
+
+```java
+class Solution {
+    public int search(int[] nums, int target) {
+        int left = 0, right = nums.length - 1;
+        while (left < right) {
+            int mid = left + ((right - left) >> 1);
+            if (nums[mid] < target) {
+                left = mid + 1;
+            } else {
+                right = mid;
+            }
+        }
+        return nums[left] == target ? left : -1;
+    }
+}
+```

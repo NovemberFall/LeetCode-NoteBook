@@ -1,5 +1,29 @@
 ## 69. Sqrt(x)
 ![](img/2023-03-30-13-35-24.png)
+
+
+---
+### template.1
+
+```java
+class sqrt_x_tmp1 {
+    public int mySqrt(int x) {
+        int left = 0, right = x, ans = x;
+        while (left <= right) {
+            int mid = left + ((right - left) >> 1);
+            if ((long) mid * mid <= x) {
+                ans = mid;
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+        return ans;
+    }
+}
+
+```
+
 ---
 ### template.2
 
@@ -22,28 +46,6 @@ class sqrt_x_t2 {
         return left;
     }
 }
-```
-
----
-### template.1
-
-```java
-class sqrt_x_tmp1 {
-    public int mySqrt(int x) {
-        int left = 0, right = x, ans = x;
-        while (left <= right) {
-            int mid = left + ((right - left) >> 1);
-            if ((long) mid * mid <= x) {
-                ans = mid;
-                left = mid + 1;
-            } else {
-                right = mid - 1;
-            }
-        }
-        return ans;
-    }
-}
-
 ```
 
 ---
