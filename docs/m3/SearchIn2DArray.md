@@ -42,7 +42,7 @@ public class searhInMatrix {
         int left = 0;
         int right = row * column - 1;
         while(left <= right){
-            int mid = (left + right) / 2;
+            int mid = left + ((right - left) >> 1);
             int r = mid / column; //don't  => mid/row   !
             int c = mid % column;
 
