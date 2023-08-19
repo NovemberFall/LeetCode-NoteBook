@@ -220,6 +220,7 @@
     * [33. Search in Rotated Sorted Array](m3/SearchinRotatedSortedArray.md)
     * [81. Search in Rotated Sorted Array II](binarySearch/SearchinRotatedSortedArray2.md)
     * [153. Find Minimum in Rotated Sorted Array](binarySearch/SearchMinRotatedSortedArray.md)
+    * [154. Find Minimum in Rotated Sorted Array II](binarySearch/SearchMin2.md)
     * [162. Find Peak Element](most/findPeak.md)
     * [74. Search a 2D Matrix I](m3/SearchIn2DArray.md)
     * [35. Search Insert Position](top/SearchInsertPosition.md)
