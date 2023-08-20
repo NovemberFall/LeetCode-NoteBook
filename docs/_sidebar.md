@@ -217,6 +217,7 @@
 * [Binary Search](binarySearch/intro.md)
     * [704. Classical Binary Search](ch2/classicalBinarySearch.md)
         * [704 II. Smallest Element that is Larger than Target](ch2/firstLarge.md)
+    * [4. Median of Two Sorted Arrays](sort/median.md)
     * [33. Search in Rotated Sorted Array](m3/SearchinRotatedSortedArray.md)
     * [81. Search in Rotated Sorted Array II](binarySearch/SearchinRotatedSortedArray2.md)
     * [153. Find Minimum in Rotated Sorted Array](binarySearch/SearchMinRotatedSortedArray.md)
