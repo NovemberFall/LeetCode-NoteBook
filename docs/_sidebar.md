@@ -45,7 +45,7 @@
     * [268. Missing Number | bit operation](ch7/misssingNum.md)
     * [349. Intersection of Two Arrays](ch7/interset.md)
     * [217. Contains Duplicate](most/contains.md)
-* [PreSum](presum/intro.md)
+* [Prefix Sum](presum/intro.md)
     * [560. Subarray Sum Equals K](m7/subarrSum.md)
     * [528. Random Pick with Weight](most/pickweight.md)
     * [238. Product of Array Except Self](most/productExceptSelf.md)

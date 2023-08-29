@@ -5,6 +5,7 @@
 ---
 ![](img/2023-01-02-10-59-01.png)
 ---
+- [中文解释](https://leetcode.cn/problems/word-ladder-ii/solutions/279005/ru-guo-ni-fa-xian-kan-bie-ren-de-ti-jie-kan-bu-don/)
 
 - [LC 126| BFS + DFS](https://youtu.be/mIZJIuMpI2M?t=566)
 
