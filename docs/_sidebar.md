@@ -277,6 +277,7 @@
     * [28. Implement strStr() | Find the Index of the First Occurrence in a String](m8/strstr.md)
     * [58. Length of Last Word](m8/lenOflast.md)
     * [242. Valid Anagram](m8/validAnagram.md)
+    * [271. Encode and Decode Strings](m8/encode.md)
     * [383. Ransom Note](m8/ransom.md)
     * [557. Reverse Words in a String III](m8/reverseWord3.md)
     * [424. Longest Repeating Character Replacement](m8/longest.md)
