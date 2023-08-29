@@ -208,6 +208,7 @@
     * [88. Merge Sorted Array | Merge two Sorted Array](ch1/mergeTwoArr.md)
     * [21. Merge Two Sorted Lists | dummyHead](ch4/mergeTwoList.md)
     * [151. Reverse Words in a String](m8/reverseWord1.md)
+    * [167. Two Sum II - Input Array Is Sorted](twopoint/twosum2.md)
     * [186 Reverse Words in a String II](twopoint/reverseWord.md)
     * [680. Valid Palindrome II](amazon/palindrome.md)
     * [423. Reconstruct Original Digits from English](m8/digitFromEnglish.md)
