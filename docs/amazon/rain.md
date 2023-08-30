@@ -48,8 +48,7 @@ class Solution {
         }
         
         for (int i = 0; i < n; i++) {
-          count += 
-            Math.max(0, Math.min(left[i], right[i])-height[i]);
+          count += Math.max(0, Math.min(left[i], right[i])-height[i]);
         }
         return count;
     }

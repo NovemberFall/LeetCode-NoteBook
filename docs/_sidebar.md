@@ -202,6 +202,7 @@
     * [15. 3Sum](m3/threeSum.md)
     * [16. 3Sum Closest](top/3SumClosest.md)
     * [18. 4Sum](twopoint/4Sum.md)
+    * [42. Trapping Rain Water](amazon/rain.md)
     * [26. Remove Duplicates from Sorted Array](twopoint/rmDupEle.md)
     * [27. Remove Element](top/removeEle.md)
     * [80. Remove Duplicates from Sorted Array II | Array Deduplication II](twopoint/dedup2.md)
