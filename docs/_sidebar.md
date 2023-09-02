@@ -302,6 +302,7 @@
     * [239. Sliding Window Maximum](amazon/sliding.md)
     * [424. Longest Repeating Character Replacement](sliding/repeat.md)
     * [438. Find All Anagrams in a String](sliding/anagram.md)
+    * [567. Permutation in String](sliding/permutation.md)
 * [Dynamic Programming](DP/intro.md)
     * [10. Regular Expression Matching](top/regular.md) 
     * [44. Wildcard Matching](top/WildcardMatch.md)
