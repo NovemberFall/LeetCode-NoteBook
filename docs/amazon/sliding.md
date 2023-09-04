@@ -26,6 +26,7 @@ class _239_SlidingWindowMaximum {
 
 ---
 - [YoutTuBe 1:47:10]()
+- [neetcode video](https://youtu.be/DfljaUwZsOk?t=148)
 ![](img/2022-12-23-13-13-23.png)
 ![](img/2022-12-23-13-13-42.png)
 
