@@ -66,7 +66,8 @@ class slidingWindowMaximum_monotonicStack {
             // 添加当前值对应的数组下标
             deque.offerLast(i);
 
-            //判断队列出口的值是否合法，如果值的下标不在窗口内则要将其移出
+            // 如果当前队列最左侧存储的下标等于 i-k 的值，代表目前队列已满。
+            // 但是新元素需要进来，所以列表最左侧的下标出队列
             if (deque.peekFirst() == i - k) {
                 deque.pollFirst();
             }
