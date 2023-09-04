@@ -297,6 +297,7 @@
     * [30. Substring with Concatenation of All Words](sliding/allWords.md)
     * [76. Minimum Window Substring](sliding/mws.md)
     * [159. Longest Substring with At Most Two Distinct Characters](sliding/longest.md)
+    * [209. Minimum Size Subarray Sum](sliding/minsize.md)
     * [219. Contains Duplicate II](sliding/dup2.md)
     * [220. Contains Duplicate III](sliding/dup3.md)
     * [239. Sliding Window Maximum](amazon/sliding.md)
