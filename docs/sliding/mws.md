@@ -7,7 +7,7 @@
 - [leetcode 官方解释](https://www.youtube.com/watch?v=YWBNoH25lRw)
 
 ```java
-class MinimumWindowSubstring_v2 {
+class Solution {
     public String minWindow(String s, String t) {
         if (s == null || s.length() == 0 || t == null || t.length() == 0 || s.length() < t.length()) {
             return "";
@@ -48,15 +48,14 @@ class MinimumWindowSubstring_v2 {
 
             //已有字符串中目标字符出现的次数+1
             winFreq[s.charAt(right)]++;
-            //移动右指针
-            right++;
+
 
             //当且仅当已有字符串已经包含了所有目标字符串的字符，且出现频次一定大于或等于指定频次
             while (matchCount == t.length()) {
 
                 //当窗口的长度比已有的最短值小时，更改最小值，并记录起始位置
-                if (right - left < minLen) {
-                    minLen = right - left;
+                if (right - left + 1 < minLen) {
+                    minLen = right - left + 1;
                     start = left;
                 }
 
@@ -77,12 +76,16 @@ class MinimumWindowSubstring_v2 {
                 //移动左指针
                 left++;
             }
+
+            //移动右指针
+            right++;
         }
 
         //如果最小长度还为初始值，说明没有符合条件的子串
         if (minLen == s.length() + 1) {
             return "";
         }
+
         return s.substring(start, start + minLen);
     }
 }
