@@ -76,6 +76,11 @@ class slidingWindowMaximum_monotonicStack {
             if (i + 1 >= k) {
                 res.add(nums[deque.peekFirst()]);
             }
+            /*
+            这里为什么 是 i + 1 >= k, 而不是 i + 1 == k
+                比如 i = 2,  2 + 1 == k, 成立
+                但是 i = 3,  3 + 1 ?= k, 不成立，就不会再添加新元素
+            */
         }
         return res.stream().mapToInt(Integer::intValue).toArray();
     }
