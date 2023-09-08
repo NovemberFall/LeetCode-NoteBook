@@ -85,3 +85,97 @@ class Solution {
 }
 ```
 ---
+
+
+```ruby
+    words = ["bar","foo","the"],   seen[bar: 1, foo: 1, the: 1]
+
+    count = 0   res[ ],   curSeen[bar: 0, foo: 0, the: 0]
+    b a r f o o f o o b a r t h e f o o b a r m a n
+    l
+    r
+
+
+    count = 1   res[ ]    curSeen[bar: 1, foo: 0, the: 0]
+    b a r f o o f o o b a r t h e f o o b a r m a n
+    l
+          r
+
+
+    count = 2   res[ ]    curSeen[bar: 1, foo: 1, the: 0]
+    b a r f o o f o o b a r t h e f o o b a r m a n
+    l
+                r
+
+
+    count = 3   res[ ]    curSeen[bar: 1, foo: 2, the: 0],  since curSeen.get(cur) > seen.get(cur)
+    b a r f o o f o o b a r t h e f o o b a r m a n
+          l
+                      r
+
+
+    count = 2   res[ ]    curSeen[bar: 0, foo: 2, the: 0],  since curSeen.get(cur) > seen.get(cur)
+    b a r f o o f o o b a r t h e f o o b a r m a n
+          l
+                      r
+
+
+    count = 1   res[ ]    curSeen[bar: 0, foo: 1, the: 0],  since curSeen.get(cur) > seen.get(cur)
+    b a r f o o f o o b a r t h e f o o b a r m a n
+                l
+                      r
+
+
+    count = 2   res[ ]    curSeen[bar: 1, foo: 1, the: 0]
+    b a r f o o f o o b a r t h e f o o b a r m a n
+                l
+                            r
+
+
+    count = 3   res[ ]    curSeen[bar: 1, foo: 1, the: 1]
+    b a r f o o f o o b a r t h e f o o b a r m a n
+                l
+                                  r
+
+
+    count = 3   res[6, ]    curSeen[bar: 1, foo: 1, the: 1]
+    b a r f o o f o o b a r t h e f o o b a r m a n
+                l
+                                  r
+
+
+    count = 4   res[6, ]    curSeen[bar: 1, foo: 2, the: 1], since curSeen.get(cur) > seen.get(cur)
+    b a r f o o f o o b a r t h e f o o b a r m a n
+                l
+                                        r
+
+
+    count = 3   res[6, ]    curSeen[bar: 1, foo: 1, the: 1]
+    b a r f o o f o o b a r t h e f o o b a r m a n
+                      l
+                                        r
+
+
+    count = 3   res[6, 9]    curSeen[bar: 1, foo: 1, the: 1]
+    b a r f o o f o o b a r t h e f o o b a r m a n
+                      l
+                                        r
+
+
+    count = 4   res[6, 9]    curSeen[bar: 2, foo: 1, the: 1]
+    b a r f o o f o o b a r t h e f o o b a r m a n
+                      l
+                                              r    
+                                              
+                                              
+    count = 3   res[6, 9]    curSeen[bar: 1, foo: 1, the: 1]
+    b a r f o o f o o b a r t h e f o o b a r m a n
+                            l
+                                              r  
+
+
+    count = 3   res[6, 9, 12]    curSeen[bar: 1, foo: 1, the: 1]
+    b a r f o o f o o b a r t h e f o o b a r m a n
+                            l
+                                              r  
+```
