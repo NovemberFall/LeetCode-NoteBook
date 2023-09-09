@@ -4,6 +4,43 @@
 
 ### sliding window
 
+![](img/2021-07-08-14-58-23.png)
+
+
+```java
+class Solution {
+    public List<Integer> findAnagrams(String s, String p) {
+        List<Integer> res = new ArrayList<>();
+        if (p.length() > s.length()) return res;
+
+        //Record the frequency of occurrence of all letters of p
+        int[] pFreq = new int[26];
+        for(int i = 0; i < p.length(); i++){
+            pFreq[p.charAt(i) - 'a']++;
+        }
+
+        //[left right] corresponding to the left and right of window
+        int[] window = new int[26];
+        int left = 0;
+        for (int right = 0; right < s.length(); right++) {
+            window[s.charAt(right) - 'a']++;
+            if (right - left + 1 == p.length()) {
+                if (Arrays.equals(pFreq, window)) {
+                    res.add(left);
+                }
+                window[s.charAt(left) - 'a']--;
+                left++;
+            }
+        }
+        return res;
+    }
+}
+```
+
+---
+
+### HashMap
+
 ```java
 class FindAllAnagramsInAString_slidingWindow {
     public List<Integer> findAnagrams(String s, String p) {
@@ -46,42 +83,6 @@ class FindAllAnagramsInAString_slidingWindow {
             map.put(c, map.getOrDefault(c, 0) + 1);
         }
         return map;
-    }
-}
-```
----
-
-![](img/2021-07-08-14-58-23.png)
-
-
-```java
-class Solution {
-    public List<Integer> findAnagrams(String s, String p) {
-        List<Integer> res = new ArrayList<>();
-        
-        //Record the frequency of occurrence of all letters of p
-        int[] pFreq = new int[26];
-        for(int i = 0; i < p.length(); i++){
-           pFreq[p.charAt(i) - 'a']++; 
-        }
-        
-        //[left right] corresponding to the left and right of window
-        int[] window = new int[26];
-        int left = 0, right = 0;
-        while (right < s.length()) {
-            window[s.charAt(right) - 'a']++;
-            //increase frequence of letters of window
-            if (right - left + 1 == p.length()) {
-                //maintain the length of sh, update the result
-                if (Arrays.equals(window, pFreq)) {
-                    res.add(left);
-                }
-                window[s.charAt(left) - 'a']--;
-                left++;
-            }
-            right++;
-        }
-        return res;
     }
 }
 ```
