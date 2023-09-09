@@ -39,32 +39,32 @@
 
 ---
 ```java
-class _567_PermutationInString {
+class Solution {
     public boolean checkInclusion(String s1, String s2) {
         int len1 = s1.length(), len2 = s2.length();
-        if (len1 > len2) {
-            return false;
+        if (len1 > len2) return false;
+
+        int[] cnt1 = new int[26];
+        int[] cnt2 = new int[26];
+        
+        for (char c : s1.toCharArray()) {
+            cnt1[c - 'a']++;
+        }
+        for (int i = 0; i < len1 - 1; i++) {
+            char c = s2.charAt(i);
+            cnt2[c - 'a']++;
         }
 
-        int[] count1 = new int[26];
-        int[] count2 = new int[26];
-        for (int i = 0; i < len1; i++) {
-            count1[s1.charAt(i) - 'a']++;
-            count2[s2.charAt(i) - 'a']++;
-        }
-        if (Arrays.equals(count1, count2)) {
-            return true;
-        }
-
-        int left = 0, right = s1.length();
-        while (right < s2.length()) {
-            count2[s2.charAt(right) - 'a']++;
-            count2[s2.charAt(left) - 'a']--;
-            if (Arrays.equals(count1, count2)) {
+        int left = 0;
+        for (int right = len1 - 1; right < s2.length(); right++) {
+            char c = s2.charAt(right);
+            cnt2[c - 'a']++;
+            if (Arrays.equals(cnt1, cnt2)) {
                 return true;
             }
+
+            cnt2[s2.charAt(left) - 'a']--;
             left++;
-            right++;
         }
         return false;
     }
