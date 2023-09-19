@@ -4,26 +4,24 @@
 ```java
 class Solution {
     public boolean isPalindrome(String s) {
-        StringBuilder sb = new StringBuilder();
         s = s.toLowerCase();
-        char[] chars = s.toCharArray();
-        for (int i = 0; i < chars.length; i++) {
-            if (chars[i] == ' ') {
+        StringBuilder sb = new StringBuilder();
+        for (char c : s.toCharArray()) {
+            if (c == ' ') {
                 continue;
             }
-            if (Character.isLetterOrDigit(chars[i])) {
-                sb.append(chars[i]);
+            if (Character.isLetterOrDigit(c)) {
+                sb.append(c);
             }
         }
         
-        String res = sb.toString();
-        int l = 0, r = res.length() - 1;
-        while (l < r) {
-            if (res.charAt(l) != res.charAt(r)) {
+        int left = 0, right = sb.length() - 1;
+        while (left < right) {
+            if (sb.charAt(left) != sb.charAt(right)) {
                 return false;
             }
-            l++;
-            r--;
+            left++;
+            right--;
         }
         return true;
     }
