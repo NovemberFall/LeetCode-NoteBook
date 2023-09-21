@@ -63,6 +63,9 @@ class Solution {
 - [官方video 15:12](https://leetcode.cn/problems/trapping-rain-water/solutions/692342/jie-yu-shui-by-leetcode-solution-tuvc/)
 
 
+![](img/2023-09-20-21-12-51.png)
+
+
 ```java
 class TrappingRainWater_twoPointers {
     public int trap(int[] height) {
