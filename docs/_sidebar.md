@@ -24,6 +24,7 @@
     * [224. Basic Calculator](most/calculator.md)
     * [227. Basic Calculator II](most/calc.md)
     * [394. Decode String](m8/decode.md)
+    * [739. Daily Temperatures](stack/dailytemp.md)
 * [HashTable](ch3/intro.md)
     * [1. Two Sum](ch3/twoSum.md)
     * [12. Integer to Roman](top/intToRoman.md)
