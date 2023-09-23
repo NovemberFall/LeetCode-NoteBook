@@ -1,5 +1,4 @@
 * [Sorting](sort/intro.md)
-    * [4. Median of Two Sorted Arrays](sort/median.md)
     * [31. Next Permutation](most/nextp.md)
     * [56. Merge Intervals](amazon/mergeInterval.md)
     * [57. Insert Interval](sort/insertInterval.md)
