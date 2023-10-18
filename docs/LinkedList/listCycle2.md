@@ -4,6 +4,7 @@
 ---
 
 - [leetcode disscusion](https://leetcode.com/problems/linked-list-cycle-ii/discuss/1701128/C%2B%2BJavaPython-Slow-and-Fast-oror-Image-Explanation-oror-Beginner-Friendly)
+- [中文解释](https://leetcode.cn/problems/find-the-duplicate-number/solutions/166258/qian-duan-ling-hun-hua-shi-tu-jie-kuai-man-zhi-z-3/)
 
 ```ruby
     s f
