@@ -455,6 +455,7 @@
     * [584. Find Customer Referee](sql/referee.md)
     * [183. Customers Who Never Order](sql/order.md)
     * [1378. Replace Employee ID With The Unique Identifier](sql/indentifier.md)
+    * [1068. Product Sales Analysis I](sql/analysis1.md)
 
 -----
 * [Top 200](top/intro.md)
