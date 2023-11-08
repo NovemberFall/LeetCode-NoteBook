@@ -155,6 +155,7 @@
     * [106. Construct Binary Tree from Inorder and Postorder Traversal](m2/construct1.md)
     * [Reconstruct Binary Search Tree With Postorder Traversal](m2/buildBSTbyPost.md)
     * [110. Balanced Binary Tree](ch5/checkBalanced.md)
+    * [572. Subtree of Another Tree](binaryTree/subtree.md)
     * [112. Path Sum](ch5/pathSum.md)
     * [113. Path Sum II](m2/pathSum2.md)
     * [Maximum Path Sum Binary Tree I](hBinaryTree/maxPathSum1.md)
