@@ -142,6 +142,7 @@
     * [215. Kth Largest Element in an Array](m6/KthLarget.md)
     * [K Smallest In Unsorted Array](m6/K_smallest.md)
     * [378. Kth Smallest Element in a Sorted Matrix | Best FS](m6/kthSmallest.md)
+    * [703. Kth Largest Element in a Stream | Best FS](m6/kthLargest.md)
 * [Recursion](recursive/intro.md)
     * [59. Spiral Matrix II](m4/spiralMatrix1.md)
     * [408 Valid Word Abbreviation](m4/abbreviation.md)
@@ -453,6 +454,7 @@
     * [1757. Recyclable and Low Fat Products](sql/product.md)
     * [584. Find Customer Referee](sql/referee.md)
     * [183. Customers Who Never Order](sql/order.md)
+    * [1378. Replace Employee ID With The Unique Identifier](sql/indentifier.md)
 
 -----
 * [Top 200](top/intro.md)
