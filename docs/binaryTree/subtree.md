@@ -13,7 +13,7 @@ class _572_SubtreeOfAnotherTree {
         if (isSame(root, subRoot)) {
             return true;
         }
-        return isSubtree(root.left, subRoot.left) || isSubtree(root.right, subRoot.right);
+        return isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot);
     }
 
     private boolean isSame(TreeNode root, TreeNode subRoot) {
