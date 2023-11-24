@@ -169,6 +169,7 @@
     * [236. Lowest Common Ancestor of a Binary Tree](m2/LCA.md)
     * [257. Binary Tree Paths](ch6/btreePath.md)
     * [1650. Lowest Common Ancestor of a Binary Tree III](m2/LCA3.md)
+    * [1448. Count Good Nodes in Binary Tree](binaryTree/goodnodes.md)
     * [366. Find Leaves of Binary Tree](most/leaves.md)
     * [700. Search in a Binary Search Tree](ch5/search.md)
     * [993. Cousins in Binary Tree](ch5/cousinInTree.md)
