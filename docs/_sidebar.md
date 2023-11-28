@@ -274,6 +274,7 @@
 * [Trie](trie/intro.md)
     * [208. Implement Trie (Prefix Tree)](m12/trie.md)
     * [588. Design In-Memory File System](amazon/file.md)
+    * [211. Design Add and Search Words Data Structure](amazon/designtrie.md)
     * [212. Word Search ||](amazon/word2.md)
     * [472 Concatenated Words](amazon/concatWord.md)
 * [String](m8/intro.md)
