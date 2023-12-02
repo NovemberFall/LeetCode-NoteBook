@@ -372,6 +372,7 @@
     * [380. Insert Delete GetRandom O(1)](most/getRandom.md)
     * [348. Design Tic-Tac-Toe](amazon/tictactoe.md)
     * [362. Design Hit Counter](design/hit.md)
+    * [355. Design Twitter](design/twitter.md)
 
 -----
 * [Most Frequency](most/intro.md)

@@ -3,14 +3,13 @@
 
 ```java
 class WordDictionary {
-    TrieNode root;
+    private TrieNode root;
     class TrieNode {
-        boolean isWord;
         TrieNode[] children;
-
+        boolean isWord;
         public TrieNode() {
-            isWord = false;
             children = new TrieNode[26];
+            isWord = false;
         }
     }
     public WordDictionary() {
@@ -29,25 +28,24 @@ class WordDictionary {
     }
 
     public boolean search(String word) {
-        return dfs(word, 0, root);
+        return find(word, root, 0);
     }
 
-    private boolean dfs(String word, int index, TrieNode node) {
+    private boolean find(String word, TrieNode cur, int index) {
         if (index == word.length()) {
-            return node.isWord;
+            return cur.isWord;
         }
 
         char c = word.charAt(index);
         if (c == '.') {
-            for (TrieNode tn : node.children) {
-                if (tn != null && dfs(word, index + 1, tn)) {
+            for (int i = 0; i < 26; i++) {
+                if (cur.children[i] != null && find(word, cur.children[i], index + 1)) {
                     return true;
                 }
             }
             return false;
         } else {
-            TrieNode nextNode = node.children[c - 'a'];
-            return nextNode != null && dfs(word, index + 1, nextNode);
+            return cur.children[c - 'a'] != null && find(word, cur.children[c - 'a'], index + 1);
         }
     }
 }
