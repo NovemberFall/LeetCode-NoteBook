@@ -141,6 +141,7 @@
     * [23. Merge k Sorted Lists](m6/kLists.md)
     * [215. Kth Largest Element in an Array](m6/KthLarget.md)
     * [K Smallest In Unsorted Array](m6/K_smallest.md)
+    * [295. Find Median from Data Stream](amazon/median.md)
     * [378. Kth Smallest Element in a Sorted Matrix | Best FS](m6/kthSmallest.md)
     * [621. Task Scheduler](m6/task.md)
     * [703. Kth Largest Element in a Stream | Best FS](m6/kthLargest.md)
