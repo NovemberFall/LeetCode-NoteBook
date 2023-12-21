@@ -31,16 +31,15 @@ public class _79_WordSearch {
         if (index == word.length()) {
             return true;
         }
-        if (i < 0 || i >= board.length || j < 0 || j >= board[0].length ||
-                board[i][j] != word.charAt(index) || visited[i][j]) {
+        if (i < 0 || i >= board.length || j < 0 || j >= board[0].length || board[i][j] != word.charAt(index) || visited[i][j]) {
             return false;
         }
 
         visited[i][j] = true;
         boolean found = dfs(board, i + 1, j, word, index + 1, visited) ||
-                dfs(board, i, j + 1, word, index + 1, visited) ||
-                dfs(board, i - 1, j, word, index + 1, visited) ||
-                dfs(board, i, j - 1, word, index + 1, visited);
+                        dfs(board, i, j + 1, word, index + 1, visited) || 
+                        dfs(board, i - 1, j, word, index + 1, visited) ||
+                        dfs(board, i, j - 1, word, index + 1, visited);
         visited[i][j] = false;
         return found;
     }
