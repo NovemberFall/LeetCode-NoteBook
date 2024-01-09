@@ -4,6 +4,10 @@
 ---
 - [树层dedup && 树枝 dedup](https://novemberfall.github.io/LeetCode-NoteBook/#/m10/subset2)
 
+- [中文解释](https://programmercarl.com/0040.%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8CII.html#%E6%80%9D%E8%B7%AF)
+
+![](img/2024-01-09-11-11-27.png)
+
 ```java
 class Solution {
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
