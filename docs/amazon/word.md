@@ -91,13 +91,15 @@ class Solution {
                                                         board[i][j] != word.charAt(index) ) {
             return false;
         }
+
+        char tmp = board[i][j];
         board[i][j] = '*';
         boolean found = 
             dfs(board, word, i + 1, j, index + 1) ||
             dfs(board, word, i, j + 1, index + 1) ||
             dfs(board, word, i - 1, j, index + 1) ||
             dfs(board, word, i, j - 1, index + 1);
-        board[i][j] = word.charAt(index);
+        board[i][j] = tmp;
         
         return found;
     }
