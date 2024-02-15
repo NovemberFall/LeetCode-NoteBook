@@ -28,11 +28,15 @@ public class _51_NQueens {
 
     private void dfs(List<List<String>> res, int rowIndex, int n, char[][] board) {
         if (rowIndex == n) {
-            List<String> tmp = new ArrayList<>();
-            for (char[] c : board) {
-                tmp.add(String.valueOf(c));
+            List<String> list = new ArrayList<>();
+            for (char[] row : board) {
+                StringBuilder sb = new StringBuilder();
+                for (char c : row) {
+                    sb.append(c);
+                }
+                list.add(sb.toString());
             }
-            res.add(tmp);
+            res.add(list);
         }
 
         for (int colIndex = 0; colIndex < n; colIndex++) {
