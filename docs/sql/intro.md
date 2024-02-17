@@ -6,6 +6,7 @@
 
 
 - [Aggregate Functions]()
+  - `COUNT(*)`  means counts the rows
   - [GROUP BY](https://www.udemy.com/course/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/learn/lecture/34435200#overview)
 
 - [SQL Relationship](https://leetcode.com/explore/learn/card/sql-language/684/sql-relationship/4337/)
