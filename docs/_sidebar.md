@@ -121,6 +121,7 @@
     * [322. Coin Change](BFS/coin.md)
     * [272. closest binary search tree value II](BFS/bstVallue.md)
     * [297. Serialize and Deserialize Binary Tree](m6/sdbt.md)
+    * [286. Walls and Gates](BFS/walls.md)
     * [542. 01 Matrix](BFS/01mat.md)
     * [958. Check Completeness of a Binary Tree | BFS](m6/checkComplete.md)
     * [994. Rotting Oranges](amazon/rotting.md)
