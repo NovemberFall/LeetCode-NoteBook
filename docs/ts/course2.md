@@ -31,7 +31,7 @@ class course2 {
 
     private int[] bfs(int numCourses, Map<Integer, List<Integer>> graph, int[] inDegree) {
         int[] res = new int[numCourses];
-        int index = 0;
+        int index = 0; // index means the counts of num of courses. 
         Queue<Integer> queue = new LinkedList<>();
         for (int i = 0; i < numCourses; i++) {
             if (inDegree[i] == 0) {
@@ -69,59 +69,6 @@ class course2 {
         int[] res = c2.findOrder(numCourse, prerequisites);
         System.out.println(Arrays.toString(res));
     }
-}
-```
-
----
-
-```java
-class Solution {
-    public int[] findOrder(int numCourses, int[][] prerequisites) {
-        Map<Integer, List<Integer>> graph = new HashMap<>();
-        int[] indegree = new int[numCourses];
-        buildGraph(graph, prerequisites, indegree);
-        return bfs(graph, indegree, numCourses);        
-    }
-    
-    private void buildGraph(Map<Integer, List<Integer>> graph, int[][] prerequisites, int[] indegree) {
-        for (int i = 0; i < prerequisites.length; i++) {
-            graph.putIfAbsent(prerequisites[i][1], new ArrayList<>());
-            graph.get(prerequisites[i][1]).add(prerequisites[i][0]);
-            indegree[prerequisites[i][0]]++;
-        }
-    }
-    
-    private int[] bfs(Map<Integer, List<Integer>> graph, int[] indegree, int numCourses) {
-        List<Integer> res = new ArrayList<>();
-        Queue<Integer> queue = new ArrayDeque<>();
-        for (int i = 0; i < numCourses; i++) {
-            if (indegree[i] == 0) {
-                queue.offer(i);
-            }
-        }
-        
-        int count = 0;
-        while (!queue.isEmpty()) {
-            int course = queue.poll();
-            res.add(course);
-            List<Integer> list = graph.get(course);
-            if (list != null) {
-                int n = list.size();
-                for (int i = 0; i < n; i++) {
-                    int pointer = graph.get(course).get(i);
-                    indegree[pointer]--;
-                    if (indegree[pointer] == 0) {
-                        queue.offer(pointer);
-                    }
-                }
-            }
-            count++;
-        }
-        if (count != numCourses) {
-            return new int[0];
-        }
-        return res.stream().mapToInt(i -> i).toArray();
-    } 
 }
 ```
 
