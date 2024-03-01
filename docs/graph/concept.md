@@ -17,6 +17,8 @@
 
 ### Disjoint Set 不相交集
 
+- [Disjoint Sets using union by rank and path compression Graph Algorithm | youtube](https://www.youtube.com/watch?v=ID00PMy0-vE&t=28s)
+
 - [Introduction to Disjoint Sets](https://leetcode.com/explore/learn/card/graph/618/disjoint-set/3881/#:~:text=Introduction%20to%20Disjoint%20Sets)
 
 - [find && union function](https://leetcode.com/explore/learn/card/graph/618/disjoint-set/3881/#:~:text=Implementing%20%E2%80%9Cdisjoint%20sets%E2%80%9D)
