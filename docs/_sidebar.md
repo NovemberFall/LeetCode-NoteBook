@@ -138,6 +138,7 @@
     * [547. Number of Provinces | union find](graph/numOfProvinces.md)
     * [323. Number of Connected Components in an Undirected Graph](graph/numOfCom.md)
     * [261. Graph Valid Tree | union find](graph/validTree.md)
+    * [684. Redundant Connection | union find](graph/redundant.md)
     * [332. Reconstruct Itinerary | Topological Sort (DFS)](graph/itinera.md)
 * [Heap](heap/intro.md)
     * [23. Merge k Sorted Lists](m6/kLists.md)
