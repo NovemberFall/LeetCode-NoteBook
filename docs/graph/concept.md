@@ -30,7 +30,17 @@
 - [Union by Rank - Disjoint Set](https://leetcode.com/explore/learn/card/graph/618/disjoint-set/3879/#:~:text=Disjoint%20Set%20%2D%20Union%20by%20Rank)
 
 - [Path Compression Optimization - Disjoint Set](https://leetcode.com/explore/learn/card/graph/618/disjoint-set/3880/#:~:text=Next-,Path%20Compression%20Optimization%20%2D%20Disjoint%20Set,-Report%20Issue)
-
+  - Thre reason of **Path Compression** can be optimiz:
+    - 1. **Initial Find Operation**:
+      - When you perform the find operation initially on an element, you indeed traverse all the parent nodes until you reach the root node. 
+        This is where the optimization starts.
+    - 2. **Recursion and Path Compression**:    
+      - After finding the root node, during the recursive backtracking, you update the parent node of each traversed element to directly point 
+        to the root node. This process effectively compresses the path from each node to the root node.
+      - This means that every element in the path from the initial element to the root node directly points to the root node after the initial 
+        find operation. Subsequent find operations for the same element or any element in the same path will require minimal traversal, 
+        typically just one or two hops, because the path has been compressed.
+  
 
 - [Optimized “disjoint set” with Path Compression and Union by Rank](https://leetcode.com/explore/learn/card/graph/618/disjoint-set/3843/#:~:text=Next-,Optimized%20%E2%80%9Cdisjoint%20set%E2%80%9D%20with%20Path%20Compression%20and%20Union%20by%20Rank,-Report%20Issue)
 
