@@ -52,10 +52,10 @@ class _261_GraphValidTree {
         }
 
         public int find(int x) {
-            if (parent[x] != x) {
-                parent[x] = find(parent[x]);
+            if (x == parent[x]) {
+                return x;
             }
-            return parent[x];
+            return parent[x] = find(parent[x]);
         }
 
         public void union(int x, int y) {
