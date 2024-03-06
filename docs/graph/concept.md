@@ -51,5 +51,7 @@
 - [Overview of Minimum Spanning Tree](https://leetcode.com/explore/learn/card/graph/621/algorithms-to-construct-minimum-spanning-tree/3884/)
 
 
+###  Dijkstra's Algorithm
 
+- [djikstra are very similar problems. It's just that djikstra cost is different compared with bfs, so use priorityQueue instead a Queue for a standard bfs search.](https://leetcode.com/explore/learn/card/graph/622/single-source-shortest-path-algorithm/3862/)
 
