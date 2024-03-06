@@ -141,6 +141,7 @@
     * [684. Redundant Connection | union find](graph/redundant.md)
     * [332. Reconstruct Itinerary | Topological Sort (DFS)](graph/itinera.md)
     * [743. Network Delay Time | Dijkstra's Algorithm](graph/network.md)
+    * [778. Swim in Rising Water](graph/swim.md)
     * [1584. Min Cost to Connect All Points | Kruskal's Algorithm](graph/mincost.md)
 * [Heap](heap/intro.md)
     * [23. Merge k Sorted Lists](m6/kLists.md)
