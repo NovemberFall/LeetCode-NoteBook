@@ -50,8 +50,20 @@
 
 - [Overview of Minimum Spanning Tree](https://leetcode.com/explore/learn/card/graph/621/algorithms-to-construct-minimum-spanning-tree/3884/)
 
+- “**Kruskal**’s algorithm” is an algorithm to construct a “**minimum spanning tree**” of a “**weighted undirected graph**”.
 
 ###  Dijkstra's Algorithm
 
 - [djikstra are very similar problems. It's just that djikstra cost is different compared with bfs, so use priorityQueue instead a Queue for a standard bfs search.](https://leetcode.com/explore/learn/card/graph/622/single-source-shortest-path-algorithm/3862/)
+
+
+### [Bellman Ford Algorithm](https://leetcode.com/explore/learn/card/graph/622/single-source-shortest-path-algorithm/3864/)
+
+- **Theorem 1**: In a “**graph with no negative-weight cycles” with N vertices, the shortest path between any two vertices has at most N-1 edges**.
+
+- **Theorem 2**: In a “**graph with negative weight cycles”, there is no shortest path**.
+
+
+- Using **Dynamic Programming** to Find the Shortest Path
+
 
