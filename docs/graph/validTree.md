@@ -88,3 +88,63 @@ class _261_GraphValidTree {
     }
 }
 ```
+---
+
+### method 2
+
+```java
+class Solution {
+    class UnionFind {
+        int[] parent;
+        int[] rank;
+        
+        public UnionFind(int n) {
+            parent = new int[n];
+            rank = new int[n];
+            for (int i = 0; i < n; i++) {
+                parent[i] = i;
+                rank[i] = 1;
+            }
+        } 
+        public int find(int x) {
+            if (x == parent[x]) {
+                return x;
+            }
+            return parent[x] = find(parent[x]);
+        }
+        
+        public boolean union(int x, int y) {
+            int rootX = find(x);
+            int rootY = find(y);
+            if (rootX == rootY) {
+                return false;
+            }
+            if (rank[rootX] > rank[rootY]) {
+                parent[rootY] = rootX;
+            } else if (rank[rootX] < rank[rootY]) {
+                parent[rootX] = rootY;
+            } else {
+                parent[rootY] = rootX;
+                rank[rootX] += 1;
+            }
+            return true;
+        }
+    }
+    
+    public boolean validTree(int n, int[][] edges) {
+        int edgeNum = 0;
+        UnionFind uf = new UnionFind(n);
+        for (int[] edge : edges) {
+            if (!uf.union(edge[0], edge[1])) {
+                return false;
+            }
+            uf.union(edge[0], edge[1]);
+            edgeNum++;
+        }
+        if (edgeNum != n - 1) {
+            return false;
+        }
+        return true;
+    }
+}
+```
