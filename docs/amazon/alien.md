@@ -146,6 +146,10 @@ public class alien1 {
                     graph.clear();
                     return;
                 }
+                /*  Why do we need `j + 1 == len`, look at this test case:
+                    ["qb","qts","qs","qa","s"]
+                    without `j + 1 == len`, qts.len() > qs.len(), it will return "", but "qts" come before "qs", that is correct!
+                */                
             }
         }
     }
