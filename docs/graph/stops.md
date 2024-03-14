@@ -27,7 +27,7 @@ class cheapestFlightsWithinKStops {
             if (cur == dst) {
                 return e[0];
             }
-            if (steps > 0) {
+            if (stops > 0) {
                 List<int[]> list = fmap.get(cur);
                 if (list == null || list.isEmpty()) {
                     continue;
