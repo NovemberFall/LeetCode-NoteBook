@@ -8,7 +8,7 @@
 - 在 0 秒内，如果**周围的高度都和beginning 的高度一致**，那么就可以 **swim infinite distances**
 ---
 
-### Dijkstra's Algorithm
+### PriorityQueue
 
 ```java
 class _778_Swim_in_RisingWater {
