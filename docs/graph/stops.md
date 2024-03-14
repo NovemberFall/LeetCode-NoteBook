@@ -12,17 +12,17 @@ class cheapestFlightsWithinKStops {
             fmap.get(flight[0]).add(new int[]{flight[1], flight[2]});
         }
         PriorityQueue<int[]> minHeap = new PriorityQueue<>((a, b) -> a[0] - b[0]);
-        // [0]: price, [1]: curNode, [3]: steps
+        // [0]: price, [1]: curNode, [3]: stops
         minHeap.offer(new int[]{0, src, K + 1});
         Map<Integer, Integer> visited = new HashMap<>();
 
         while (!minHeap.isEmpty()) {
             int[] e = minHeap.poll();
-            int price = e[0], cur = e[1], steps = e[2];
-            if (visited.containsKey(cur) && visited.get(cur) >= steps) {
+            int price = e[0], cur = e[1], stops = e[2];
+            if (visited.containsKey(cur) && visited.get(cur) >= stops) {
                 continue;
             }
-            visited.put(cur, steps);
+            visited.put(cur, stops);
 
             if (cur == dst) {
                 return e[0];
@@ -33,7 +33,7 @@ class cheapestFlightsWithinKStops {
                     continue;
                 }
                 for (int[] f : list) {
-                    minHeap.offer(new int[]{price + f[1], f[0], steps - 1});
+                    minHeap.offer(new int[]{price + f[1], f[0], stops - 1});
                 }
             }
         }
