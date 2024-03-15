@@ -32,26 +32,30 @@ special case:
 ```java
 class Solution {
     public int[][] merge(int[][] intervals) {
-        if (intervals == null || intervals.length == 0) 
-            return null;
-        
         List<int[]> res = new ArrayList<>();
-        Arrays.sort(intervals, (int[]a, int[]b) -> 
-           (a[0] - b[0])
-        );
-        res.add(intervals[0]);
+    
+        Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
         
+        res.add(intervals[0]);
         for (int i = 1; i < intervals.length; i++) {
-            int[] lastArr = res.get(res.size() - 1);
-            if (lastArr[1] >= intervals[i][0]) {
-                lastArr[1] = Math.max(lastArr[1], intervals[i][1]);
+            int[] lastInterval = res.get(res.size() - 1);
+            
+            if (lastInterval[1] >= intervals[i][0]) {
+                lastInterval[1] = Math.max(lastInterval[1], intervals[i][1]);
             } else {
                 res.add(intervals[i]);
             }
         }
+        
+        int[][] ans = new int[res.size()][2];
+        for (int i = 0; i < ans.length; i++) {
+            ans[i] = res.get(i);
+        }
+        return ans;
+
         // return res.toArray(new int[res.size()][2]);
-        return res.stream().toArray(int[][]::new);
     }
 }
+
 ```
 
