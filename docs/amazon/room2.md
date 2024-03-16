@@ -27,23 +27,22 @@ class meetingRooms_II {
     public int minMeetingRooms(int[][] intervals) {
         if (intervals == null || intervals.length == 0) return 0;
 
-        Arrays.sort(intervals, (a, b) -> (a[0] - b[0]));
-        PriorityQueue<int[]> minHeap = new PriorityQueue<>(intervals.length,
-                (e1, e2) -> (e1[1] - e2[1]));
-
+        Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
+        PriorityQueue<int[]> minHeap = new PriorityQueue<>((a, b) -> a[1] - b[1]);
+        
         minHeap.offer(intervals[0]);
         int res = 1;
-        
         for (int i = 1; i < intervals.length; i++) {
-            int[] curMeeting = intervals[i];
             int[] prevMeeting = minHeap.poll();
-            if (curMeeting[0] >= prevMeeting[1]) {
+            int[] curMeeting = intervals[i];
+            if (prevMeeting[1] <= curMeeting[0]) {
                 prevMeeting[1] = curMeeting[1];
+                minHeap.offer(prevMeeting);
             } else {
                 res++;
                 minHeap.offer(curMeeting);
-            } 
-            minHeap.offer(prevMeeting);
+                minHeap.offer(prevMeeting);
+            }
         }
         return res;
 //        return minHeap.size();
