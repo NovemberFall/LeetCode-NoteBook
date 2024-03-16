@@ -15,7 +15,6 @@
 			       |_ _ _ _ _|
 			
 2) i.start > newInterval.end，then we can safely add both to result，
-	and mark newInterval as null
 	
 			       |________|
 	|_ _ _ _ _|
@@ -31,42 +30,48 @@ then use the updated newInterval to compare with latter intervals.
 	|_ _ _ _ _|
 ```
 
+
 ---
 ```java
-class insertInterval {
+class _57_InsertInterval {
     public int[][] insert(int[][] intervals, int[] newInterval) {
         if (intervals == null || intervals.length == 0) {
             return new int[][]{newInterval};
         }
 
-        List<int[]> result = new ArrayList<>();
-
+        List<int[]> res = new ArrayList<>();
+        boolean inserted = false;
         for (int[] curInterval : intervals) {
-            if (newInterval == null || curInterval[1] < newInterval[0]) {
-                result.add(curInterval);
-            } else if (newInterval[1] < curInterval[0]) {
-                result.add(newInterval);
-                result.add(curInterval);
-                newInterval = null;
+            if (curInterval[1] < newInterval[0]) {
+                res.add(curInterval);
+            } else if (curInterval[0] > newInterval[1]) {
+                if (!inserted) {
+                    res.add(newInterval);
+                    inserted = true;
+                }
+                res.add(curInterval);
             } else {
                 newInterval[0] = Math.min(newInterval[0], curInterval[0]);//get min
                 newInterval[1] = Math.max(newInterval[1], curInterval[1]);//get max
             }
         }
 
-        if (newInterval != null) {
-            result.add(newInterval);
+        if (!inserted) {
+            res.add(newInterval);
         }
-
-        return result.toArray(int[][]::new);
-        // return result.toArray(new int[result.size()][]);
+        int[][] ans = new int[res.size()][2];
+        for (int i = 0; i < ans.length; i++) {
+            ans[i] = res.get(i);
+        }
+        return ans;
+//        return res.toArray(new int[res.size()][]);
     }
 
     public static void main(String[] args) {
         int[][] intervals = new int[][]{
                 {1, 2}, {3, 5}, {6, 7}, {8, 10}, {12, 16}
         };
-        insertInterval insertInterval = new insertInterval();
+        _57_InsertInterval insertInterval = new _57_InsertInterval();
         int[][] res = insertInterval.insert(intervals, new int[]{4, 8});
         System.out.println(Arrays.deepToString(res));
         // [[1, 2], [3, 10], [12, 16]]
