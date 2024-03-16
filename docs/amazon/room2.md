@@ -8,7 +8,7 @@
 
 ---
 
-![](img/2021-09-23-00-22-43.png)
+- [中文教程](https://www.youtube.com/watch?v=3hOkj3IGFYk)
 
 ![](img/2021-09-23-00-23-30.png)
 
@@ -17,27 +17,13 @@
   - `(3, 4), (5, 9)` 可以用同一个room
 
 ![](img/2021-09-23-00-23-56.png)
-
-![](img/2021-09-23-11-41-22.png)
-
-![](img/2021-09-23-11-42-12.png)
-
-![](img/2021-09-23-11-43-03.png)
-
-![](img/2021-09-23-11-46-13.png)
-
-![](img/2021-09-23-11-46-50.png)
-
-![](img/2021-09-23-11-48-50.png)
-
-![](img/2021-09-23-11-49-07.png)
-
-![](img/2021-09-23-11-50-29.png)
-
 ---
 
+![](img/2024-03-16-14-29-47.png)
+
+
 ```java
-class _253_MeetingRooms_II {
+class meetingRooms_II {
     public int minMeetingRooms(int[][] intervals) {
         if (intervals == null || intervals.length == 0) return 0;
 
@@ -45,42 +31,34 @@ class _253_MeetingRooms_II {
         PriorityQueue<int[]> minHeap = new PriorityQueue<>(intervals.length,
                 (e1, e2) -> (e1[1] - e2[1]));
 
-        for (int[] arr : intervals) {
-            minHeap.offer(arr);
-        }
-
+        minHeap.offer(intervals[0]);
+        int res = 1;
+        
         for (int i = 1; i < intervals.length; i++) {
-            if (intervals[i][0] >= minHeap.peek()[1]) {
-                minHeap.poll();
-            }
+            int[] curMeeting = intervals[i];
+            int[] prevMeeting = minHeap.poll();
+            if (curMeeting[0] >= prevMeeting[1]) {
+                prevMeeting[1] = curMeeting[1];
+            } else {
+                res++;
+                minHeap.offer(curMeeting);
+            } 
+            minHeap.offer(prevMeeting);
         }
-        return minHeap.size();
-    }
-
-    public int minMeetingRooms_improve(int[][] intervals) {
-        if (intervals == null || intervals.length == 0) return 0;
-
-        Arrays.sort(intervals, (a, b) -> (a[0] - b[0]));
-
-        PriorityQueue<Integer> minHeap = new PriorityQueue<>(intervals.length,
-                (a, b) -> (a - b));
-
-        minHeap.offer(intervals[0][1]);
-
-        for (int i = 1; i < intervals.length; i++) {
-            if (intervals[i][0] >= minHeap.peek()) {
-                minHeap.poll();
-            }
-            minHeap.offer(intervals[i][1]);
-        }
-        return minHeap.size();
+        return res;
+//        return minHeap.size();
     }
 
     public static void main(String[] args) {
         int[][] intervals = new int[][]{{1, 4}, {2, 8}, {5, 7}, {5, 9}, {3, 4}};
-        _253_MeetingRooms_II meetingRooms = new _253_MeetingRooms_II();
+        meetingRooms_II meetingRooms = new meetingRooms_II();
         int size = meetingRooms.minMeetingRooms(intervals);
         System.out.println(size);
     }
 }
 ```
+
+---
+
+### Method 2
+
