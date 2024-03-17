@@ -289,6 +289,7 @@
     * [3.Longest Substring Without Repeating Characters](m8/without.md)
     * [30. Substring with Concatenation of All Words](sliding/allWords.md)
     * [76. Minimum Window Substring](sliding/mws.md)
+    * [121. Best Time to Buy and Sell Stock](sliding/stock.md)
     * [159. Longest Substring with At Most Two Distinct Characters](sliding/longest.md)
     * [209. Minimum Size Subarray Sum](sliding/minsize.md)
     * [219. Contains Duplicate II](sliding/dup2.md)
