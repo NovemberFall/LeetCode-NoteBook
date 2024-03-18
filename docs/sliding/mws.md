@@ -6,6 +6,9 @@
 
 - [leetcode 官方解释](https://www.youtube.com/watch?v=YWBNoH25lRw)
 
+![](img/2024-03-18-11-55-42.png)
+
+
 ```java
 class MinimumWindowSubstring {
     public String minWindow(String s, String t) {
@@ -149,51 +152,49 @@ class Solution {
 ![](img/2022-12-23-17-40-28.png)
 ![](img/2022-12-23-17-40-56.png)
 
+- Note: `match` **represent the map's keySet()** , that is T sting's all chars!
 
 ### Method 2
 
 ```java
-/**
- * Input: s = "ADOBECODEBANC", t = "ABC"
- */
-class _76_MinimumWindowSubstring {
+class MinimumWindowSubstring {
     /**
      * Sliding Window
      */
-    public static String minWindow(String s, String t) {
+    public String minWindow(String s, String t) {
         if (s == null || t == null || t.length() > s.length()) {
             return "";
         }
         Map<Character, Integer> map = buildMap(t);
-        int slow = 0;
+        int left = 0;
         int start = -1;
         int match = 0;
         int shortest = Integer.MAX_VALUE;
-        for (int fast = 0; fast < s.length(); fast++) {
-            // step 1: Add fast
-            char cur = s.charAt(fast);
+        for (int right = 0; right < s.length(); right++) {
+            // step 1: Add right
+            char cur = s.charAt(right);
             Integer count = map.get(cur);
             // count == null 的情况，当前这个char如果根本不在T 中,
             // 那么以当前fast结尾一定不是最短的 (最短的substring两头的char肯定都在t中)
             if (count != null) {
-                /*
-                0   1   2   3   4
-                    4 - 1 + 1 = 4
-                 */                
                 if (count == 1) {
                     match++;
                 }
                 map.put(cur, count - 1);
             }
-            // Step 2: move slow
-            // while 当前sliding window满足条件, move slow, 一直移动到第一个不满足条件的slow为止
-            // while loop 里所有的sliding window都是满足条件的,所以每一次都可以更新global min
+            // Step 2: move left
+            // while 当前sliding window满足条件, move left, 一直移动到第一个不满足条件的left为止
+            // while loop 里所有的sliding window都是满足条件的, 所以每一次都可以更新global min
             while (match == map.size()) {
-                if (fast - slow + 1 < shortest) {
-                    shortest = fast - slow + 1;
-                    start = slow;
+                /*
+                0   1   2   3   4
+                    4 - 1 + 1 = 4
+                 */
+                if (right - left + 1 < shortest) {
+                    shortest = right - left + 1;
+                    start = left;
                 }
-                cur = s.charAt(slow);
+                cur = s.charAt(left);
                 count = map.get(cur);
                 if (count != null) {
                     if (count == 0) {
@@ -201,13 +202,13 @@ class _76_MinimumWindowSubstring {
                     }
                     map.put(cur, count + 1);
                 }
-                slow++;
-            } // slow 在第一个不满足要求的位置
+                left++;
+            } // left 在第一个不满足要求的位置
         }
         return shortest == Integer.MAX_VALUE ? "" : s.substring(start, start + shortest);
     }
 
-    private static Map<Character, Integer> buildMap(String t) {
+    private Map<Character, Integer> buildMap(String t) {
         Map<Character, Integer> map = new HashMap<>();
         for (char c : t.toCharArray()) {
             map.put(c, map.getOrDefault(c, 0) + 1);
@@ -216,9 +217,11 @@ class _76_MinimumWindowSubstring {
     }
 
     public static void main(String[] args) {
+        MinimumWindowSubstring minimumWindowSubstring = new MinimumWindowSubstring();
         String s = "ADOBECODEBANC", t = "ABC";
-        String res = minWindow(s, t);
+        String res = minimumWindowSubstring.minWindow(s, t);
         System.out.println(res); // BANC
     }
 }
+
 ```
