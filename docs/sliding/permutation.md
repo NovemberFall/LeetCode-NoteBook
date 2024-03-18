@@ -77,29 +77,29 @@ class Solution {
 
 
 ```java
-class _567_PermutationInString {
+class Solution {
     public boolean checkInclusion(String s1, String s2) {
-        int len1 = s1.length(), len2 = s2.length();
-        if (len1 > len2) {
-            return false;
+        if (s1.length() > s2.length()) return false;
+        
+        
+        int[] freq1 = new int[128];
+        int[] freq2 = new int[128];
+        for (char c : s1.toCharArray()) {
+            freq1[c]++;
         }
-
-        int[] count1 = new int[26];
-        int[] count2 = new int[26];
-        for (int i = 0; i < len1; i++) {
-            count1[s1.charAt(i) - 'a']++;
-            count2[s2.charAt(i) - 'a']++;
+        int len1 = s1.length();
+        for (int i = 0; i < len1 - 1; i++) {
+            freq2[s2.charAt(i)]++;
         }
-        if (Arrays.equals(count1, count2)) {
-            return true;
-        }
-
-        for (int i = len1; i < len2; i++) {
-            count2[s2.charAt(i) - 'a']++;
-            count2[s2.charAt(i - len1) - 'a']--;
-            if (Arrays.equals(count1, count2)) {
+        int left = 0;
+        for (int right = len1 - 1; right < s2.length(); right++) {
+            char c = s2.charAt(right);
+            freq2[c]++;
+            if (Arrays.equals(freq1, freq2)) {
                 return true;
             }
+            freq2[s2.charAt(left)]--;
+            left++;
         }
         return false;
     }

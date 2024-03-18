@@ -36,3 +36,31 @@ class _424_LongestRepeatingCharacterReplacement {
     }
 }
 ```
+
+---
+
+### version 2
+
+```java
+class Solution {
+    public int characterReplacement(String s, int k) {
+        int[] count = new int[128];
+        int maxUniqueCount = 0;
+        int longest = 0;
+        int left = 0;
+        for (int right = 0; right < s.length(); right++) {
+            char c = s.charAt(right);
+            count[c]++;
+            maxUniqueCount = Math.max(maxUniqueCount, count[c]);
+            int replacement = right - left + 1 - maxUniqueCount;
+            if (replacement > k) {
+                count[s.charAt(left)]--;
+                left++;
+            } else {
+                longest = Math.max(longest, right - left + 1);
+            }
+        }
+        return longest;
+    }
+}
+```
