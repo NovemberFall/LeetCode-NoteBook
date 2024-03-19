@@ -1,7 +1,42 @@
 ## 239. Sliding Window Maximum
 
 ![](img/2021-12-22-16-45-41.png)
+---
 
+### Max Heap
+
+```java
+class Solution {
+    public int[] maxSlidingWindow(int[] nums, int k) {
+        List<Integer> res = new ArrayList<>();
+        int curMax = Integer.MIN_VALUE;
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a,b) -> b - a);
+        int left = 0;
+        for (int right = 0; right < nums.length; right++) {
+            // add right
+            maxHeap.offer(nums[right]);
+            
+            // remove left
+            if (right - left + 1 > k) {
+                maxHeap.remove(nums[left]);
+                left++;
+            }
+            
+            if (right - left + 1 >= k) {
+                res.add(maxHeap.peek());
+            }
+        }
+        
+        int[] ans = new int[res.size()];
+        for (int i = 0; i < ans.length; i++) {
+            ans[i] = res.get(i);
+        }
+        return ans;
+    }
+}
+```
+
+---
 ### Brute Force
 ![](img/2022-12-22-23-47-49.png)
 
@@ -25,29 +60,43 @@ class _239_SlidingWindowMaximum {
 
 
 ---
+
 - [YoutTuBe 1:47:10]()
-- [neetcode video](https://youtu.be/DfljaUwZsOk?t=507)
 - [LeetCode 官方解释](https://leetcode.cn/problems/sliding-window-maximum/solutions/1212012/acm-xuan-shou-tu-jie-leetcode-hua-dong-c-i3wj/)
-![](img/2022-12-23-13-13-23.png)
-![](img/2022-12-23-13-13-42.png)
+
+
+```ruby
+k = 3
+
+      0    1     2     3     4     5     6     7
+     [1,   3,   -1,   -3,    5,    3,    6,    7]
+DQ:  [0]
+DQ:       [1]
+DQ:       [1]   [2]                                 List[3, ]
+DQ:       [1]   [2]   [3]                           List[3, 3]
+DQ:                                                 List[3, 3]  # poll() <== 1, 2, 3
+DQ:                         [4]                     List[3, 3, 5]
+DQ:                         [4]   [5]               List[3, 3, 5, 5]
+DQ:                                     [6]         List[3, 3, 5, 5]  # poll() <== 4, 5
+DQ:                                     [6]         List[3, 3, 5, 5, 6]
+DQ:                                           [7]   List[3, 3, 5, 5, 6, 7]
+```
+---
+
+- **What if every num is decreasing?**
 
 ```java
-/*
-k = 3
-          0  1   2   3  4  5  6  7
-         [1, 3, -1, -3, 5, 3, 6, 7]
-    DQ:   0
-    DQ:      1
-    DQ:      1   2                          List[3, ]
-    DQ:      1   2   3                      List[3, 3]
-    DQ:                                     List[3, 3]   # poll() <== 1, 2, 3
-    DQ:                 4                   List[3, 3, 5]
-    DQ:                 4  5                List[3, 3, 5, 5]
-    DQ:                       6             List[3, 3, 5, 5]  # poll() <== 4, 5
-    DQ:                       6             List[3, 3, 5, 5, 6]
-    DQ:                          7           List[3, 3, 5, 5, 6, 7]
+    // 如果当前队列最左侧存储的下标等于 i-k 的值，代表目前队列已满。
+    // 但是新元素需要进来，所以列表最左侧的下标出队列
+    if (deque.peekFirst() == i - k) {
+        deque.pollFirst();
+    }
+```
 
- */
+![](img/2024-03-18-17-40-18.png)
+
+---
+```java
 class slidingWindowMaximum_monotonicStack {
 
     // Sliding Window
