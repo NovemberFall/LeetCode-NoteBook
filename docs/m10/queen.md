@@ -55,14 +55,14 @@ public class _51_NQueens {
             }
         }
 
-        // check mainDiagonal
+        // check Diagonal
         for (int i = rowIndex - 1, j = colIndex - 1; i >= 0 && j >= 0; i--, j--) {
             if (board[i][j] == 'Q') {
                 return false;
             }
         }
 
-        // check subDiagonal
+        // check negative Diagonal
         for (int i = rowIndex - 1, j = colIndex + 1; i >= 0 && j < n ; i--, j++) {
             if (board[i][j] == 'Q') {
                 return false;
