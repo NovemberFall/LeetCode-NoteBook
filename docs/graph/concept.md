@@ -58,6 +58,8 @@
 
 - [djikstra are very similar problems. It's just that djikstra cost is different compared with bfs, so use priorityQueue instead a Queue for a standard bfs search.](https://leetcode.com/explore/learn/card/graph/622/single-source-shortest-path-algorithm/3862/)
 
+![](img/2024-03-21-18-37-14.png)
+
 
 ### [Bellman Ford Algorithm](https://leetcode.com/explore/learn/card/graph/622/single-source-shortest-path-algorithm/3864/)
 

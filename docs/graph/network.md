@@ -7,6 +7,11 @@
 
 #### [Dijkstra - Shortest Path | youtube video](https://youtu.be/EaphyqKU4PQ?t=278)
 
+- `boolean[] visited = new boolean[n + 1]`, Here's why you need boolean[] visited:
+  -  **Preventing Infinite Loops**: Without marking visited nodes, you risk getting stuck in infinite loops in cyclic graphs. Marking visited 
+    nodes ensures that you won't revisit the same node multiple times, preventing infinite loops
+
+---
 ```java
 class Solution {
     public int networkDelayTime(int[][] times, int n, int k) {
