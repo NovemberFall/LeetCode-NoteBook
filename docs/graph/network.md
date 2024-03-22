@@ -20,36 +20,40 @@
 class Solution {
     public int networkDelayTime(int[][] times, int n, int k) {
         // for `List[int[]{TargetNode, Path}]`, index-0 is the `previous Node`, or `from Node`, index-1 is the `time` of edge,
-        
+
         Map<Integer, List<int[]>> map = new HashMap<>();
-        for (int[] time : times) {
-            // time[0] : source node, time[1] : target node, time[2] : time
+        for (int[] time : times) { // time[0] : source node, time[1] target node, time[2] : time
             map.putIfAbsent(time[0], new ArrayList<>());
             map.get(time[0]).add(new int[]{time[1], time[2]});
         }
-        
-        //distance, node into pq
-        PriorityQueue<int[]> minHeap = new PriorityQueue<>((a, b) -> a[0] - b[0]);
-        minHeap.offer(new int[]{0, k});
         
         // since a network of n nodes, labeled from `1` to `n`.
         boolean[] visited = new boolean[n + 1];
         int res = 0;
         
+        // [0] : target node, [1] : distance
+        PriorityQueue<int[]> minHeap = new PriorityQueue<>((a, b) -> a[1] - b[1]);
+        minHeap.offer(new int[]{k, 0});
+        
         while (!minHeap.isEmpty()) {
             int[] cur = minHeap.poll();
-            int curDist = cur[0];
-            int curNode = cur[1];
+            
+            int curNode = cur[0];
+            int curDist = cur[1];
             if (visited[curNode]) {
                 continue;
-            }
-            visited[curNode] = true;
+            }            
+            visited[curNode] = true;            
             res = curDist;
             n--;
-            if (map.containsKey(curNode)) {
-                for (int[] nextEdge : map.get(curNode)) {
-                    minHeap.offer(new int[]{curDist + nextEdge[1], nextEdge[0]});
-                }
+            
+            List<int[]> nextEdges = map.get(curNode);
+            if (nextEdges != null) {
+                for (int[] nextEdge : nextEdges) {
+                    int nextNode = nextEdge[0];
+                    int nextDist = nextEdge[1];
+                    minHeap.offer(new int[]{nextNode, curDist + nextDist});
+                }                
             }
         }
         
