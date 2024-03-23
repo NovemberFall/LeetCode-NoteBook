@@ -13,6 +13,7 @@
     * [49. Group Anagrams](m7/group.md)
     * [347. Top K Frequent Elements](m7/topKfreq1.md)
     * [238. Product of Array Except Self](Array/productExceptSelf.md)
+    * [36. Valid Sudoku](top/ValidSudoku.md)
     * [187. Repeated DNA Sequences](set/dna.md)
     * [268. Missing Number | bit operation](ch7/misssingNum.md)
     * [349. Intersection of Two Arrays](ch7/interset.md)
