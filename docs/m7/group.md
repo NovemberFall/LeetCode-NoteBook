@@ -36,23 +36,28 @@ class Solution {
 }
 ```
 ---
+### v2
 
-```js
-/**
- * @param {string[]} strs
- * @return {string[][]}
- */
-var groupAnagrams = function(strs) {
-    var map = new Map();
-    
-    for (let str of strs) {
-        const key = [...str].sort().join('');
-        if (!map.get(key)) {
-            map.set(key, []);
+```java
+public class groupAnagrams_v2 {
+    public List<List<String>> groupAnagrams(String[] strs) {
+        List<List<String>> res = new ArrayList<>();
+
+        Map<String, List<String>> dict = new HashMap<>();
+        for (String str : strs) {
+            int[] freq = new int[26];
+            for (char c : str.toCharArray()) {
+                freq[c - 'a']++;
+            }
+            String keyStr = Arrays.toString(freq);
+            dict.putIfAbsent(keyStr, new ArrayList<>());
+            dict.get(keyStr).add(str);
         }
-        map.get(key).push(str)
+
+        for (List<String> list : dict.values()) {
+            res.add(list);
+        }
+        return res;
     }
-    
-    return [...map.values()];
-};
+}
 ```
