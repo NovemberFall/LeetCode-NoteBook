@@ -65,9 +65,10 @@ class Solution {
                     while (second < third && nums[second] == nums[second - 1]) {
                         second++;
                     }
-                    while (second < third && nums[third] == nums[third + 1]) {
-                        third--;
-                    }
+                    // **this check donesn't need to be necessary**
+                    // while (second < third && nums[third] == nums[third + 1]) {
+                    //     third--;
+                    // }
                 } else if (curSum < 0) {
                     second++;
                 } else {
