@@ -61,7 +61,7 @@ class Solution {
 ### Two points
 - [leetcode discussion](https://leetcode.com/problems/trapping-rain-water/solutions/17391/share-my-short-solution/comments/185869)
 - [官方video 15:12](https://leetcode.cn/problems/trapping-rain-water/solutions/692342/jie-yu-shui-by-leetcode-solution-tuvc/)
-
+- [class 23 |  2:24:00]()
 
 ![](img/2023-09-20-21-12-51.png)
 ![](img/2024-03-24-00-58-40.png)
