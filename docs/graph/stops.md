@@ -3,6 +3,46 @@
 ![](img/2024-03-06-23-08-07.png)
 ---
 
+### Bellman Ford
+
+- Using **Dynamic Programming** to Find the Shortest Path
+
+- [youtube bellman ford](https://www.youtube.com/watch?v=FtN3BYH2Zes)
+
+
+```java
+class Solution {
+    public int findCheapestPrice(int n, int[][] flights, int src, int dst, int k) {
+        // Distance from source to all other nodes.
+        int[] dist = new int[n];
+        Arrays.fill(dist, Integer.MAX_VALUE);
+        dist[src] = 0;
+        
+        // Run only K+1 times since we want shortest distance in K hops
+        for (int i = 0; i <= k; i++) { 
+            // Create a copy of dist vector.
+            int[] temp = Arrays.copyOf(dist, dist.length);
+            for (int[] edge: flights) { // Go over all edges
+                int u = edge[0];
+                int v = edge[1];
+                int w = edge[2];
+                if (dist[u] == Integer.MAX_VALUE) continue;
+                if (dist[u] + w < temp[v]) { // relax function
+                    temp[v] = dist[u] + w;
+                }
+            }
+            // Copy the temp vector into dist.
+            dist = temp;
+        }
+        return dist[dst] == Integer.MAX_VALUE ? -1 : dist[dst];      
+    }
+}
+```
+
+
+---
+### Dijkstra Algorithm
+
 ```java
 class cheapestFlightsWithinKStops {
     public int findCheapestPrice(int n, int[][] flights, int src, int dst, int K) {
@@ -40,5 +80,6 @@ class cheapestFlightsWithinKStops {
         return -1;
     }
 }
-
 ```
+
+
