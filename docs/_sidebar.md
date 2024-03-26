@@ -18,6 +18,7 @@
     * [128. Longest Consecutive Sequence](ch3/lcs.md)
 * [Stack](stack/intro.md)
     * [20. Valid Parentheses](stack/valid.md)
+    * [155. Min Stack](design/minstk.md)
     * [144. Binary Tree Preorder Traversal](ch5/preorder.md) 
     * [94. Binary Tree Inorder Traversal](ch5/inorder.md) 
     * [145. Binary Tree Postorder Traversal | recurive](ch5/postorder.md)

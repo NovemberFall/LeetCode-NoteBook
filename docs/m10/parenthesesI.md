@@ -91,30 +91,28 @@ class GenerateParentheses_v2 {
 ```java
 class Solution {
     public List<String> generateParenthesis(int n) {
-        List<String> result = new ArrayList<>();
-        StringBuilder soluPrefix = new StringBuilder();
-        dfs(soluPrefix, 0, 0, n, result);
-        return result;
+        List<String> res = new ArrayList<>();
+        dfs(res, new StringBuilder(), 0, 0, n);
+        return res;
     }
     
-    private void dfs(StringBuilder soluPrefix, int left, int right, int n, 
-                     List<String>result){
-        if(left == n && right == n){
-            result.add(soluPrefix.toString());
+    private void dfs(List<String> res, StringBuilder sb, int left, int right, int n) {
+        if (left == n && right == n) {
+            res.add(sb.toString());
             return;
         }
         
-        if(left < n){
-            soluPrefix.append("(");
-            dfs(soluPrefix, left+1, right, n, result);
-            soluPrefix.deleteCharAt(soluPrefix.length() - 1);
+        if (left < n) {
+            sb.append('(');
+            dfs(res, sb, left + 1, right, n);
+            sb.setLength(sb.length() - 1);
         }
         
-        if(right < left){
-            soluPrefix.append(")");
-            dfs(soluPrefix, left, right+1, n, result);
-            soluPrefix.deleteCharAt(soluPrefix.length()-1);
-        }
+        if (right < left && right < n) {
+            sb.append(')');
+            dfs(res, sb, left, right + 1, n);
+            sb.setLength(sb.length() - 1);
+        } 
     }
 }
 ```

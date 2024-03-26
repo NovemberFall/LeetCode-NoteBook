@@ -3,19 +3,6 @@
 ---
 - [youtube video](https://www.youtube.com/watch?v=RIrTuf4DfPE)
 ---
-- First, build a degree map for each character in all the words:
-
-```ruby
-w:0
-r:0
-t:0
-f:0
-e:0
-```
-
-- Then build the hashmap by comparing the adjacent words, the first character that 
-  is different between two adjacent words reflect the lexicographical order. 
-  For example:
 
 ```ruby
 "wrt",
