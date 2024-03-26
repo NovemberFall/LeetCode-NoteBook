@@ -6,6 +6,39 @@
 
 - [youtube video](https://www.youtube.com/watch?v=cTBiBSnjO3c&ab_channel=NeetCode)
 
+```ruby
+        Output: [73  74  75  71  69  72  76  73]
+
+        Stack[73, 72, 71]
+        Monotonic Decreasing
+
+
+
+
+        Output: [73  74  75  71  69  72  76  73]
+                                      i
+        Stack[73, 72, 71]     71 < 72         # if we meet `72` 
+                              71 => pop()                              
+        Monotonic Decreasing    
+        
+        Stack[73, 72,   ]     71 < 72         # if we meet `72` 
+                              71 => pop()    
+        Stack[73, 72, 72]     71 <= 72         
+
+
+
+        Stack[73, 72,   ]     72 < 76         # if we meet `76` 
+                              72 => pop()                              
+
+
+        Stack[73,   ,   ]     72 < 76         # if we meet `76` 
+                              72 => pop()    
+                
+
+        Stack[  ,   ,   ]     73 < 76         # if we meet `76` 
+                              73 => pop()    
+```
+---
 ```java
 class DailyTemperatures {
     public int[] dailyTemperatures(int[] temperatures) {
