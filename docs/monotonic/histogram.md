@@ -13,7 +13,6 @@
 - 需要注意的是，这种算法，算到 `index-0` 的时候，`(6 - 0 - 1)`， 是算不到最左边`index-0` 的。
   所以我们给它最左边添加`-1` index => `6 - (-1) - 1` = `6`
  
-![](img/2023-04-03-20-33-09.png)
 
 ![](img/2023-04-03-21-39-55.png)
 
@@ -29,7 +28,7 @@ class largestRectangleHistogram_v0 {
         stk.push(-1);
         int max = 0;
         int curIndex = 0;
-        while (curIndex < heights.length) {
+        while (curIndex < heights.length) {// 注意整个算法严格维护 monotonic increasing
             while (stk.peek() != -1 && heights[stk.peek()] >= heights[curIndex]) {
                 max = Math.max(max, heights[stk.pop()] * (curIndex - stk.peek() - 1));
             }
