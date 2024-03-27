@@ -7,57 +7,109 @@
 ![](img/2021-09-23-00-21-38.png)
 
 ---
+- [youtube](https://www.youtube.com/watch?v=FdzJmTCVyJU)
 
-- [中文教程](https://www.youtube.com/watch?v=3hOkj3IGFYk)
+![](img/2024-03-26-17-48-09.png)
 
-![](img/2021-09-23-00-23-30.png)
+- now it happens to be a `start time` so another meeting just started at `time 15`
 
-- **本题题意： 如果`(1, 4), (5, 7)` 可以共存，那么在这里只需要一个room**
-  - `(2, 8)` 需要单独一个room
-  - `(3, 4), (5, 9)` 可以用同一个room
+![](img/2024-03-26-17-52-19.png)
 
-![](img/2021-09-23-00-23-56.png)
+- there are two meetings going on, that tells us increment our count to be `2`
+ 
+![](img/2024-03-26-17-54-19.png)
+
+- after `time 20` is ending, decrement our cout to be 1
+
+![](img/2024-03-26-17-55-44.png)
+
+- zero meeting going on.
+- now we notice that the max value is **2**, so return **2**
+
+![](img/2024-03-26-19-15-49.png)
+- `[5, 10], [10, 15]` are always non-overlapping
+- we always **visited end time 10** first, then we **visit begin time 10**
+
+- le't look at an example:
+
+![](img/2024-03-26-19-25-21.png)
+
+![](img/2024-03-26-19-26-25.png)
+
+- **visit the end time 10** if there is a tie first
+
+![](img/2024-03-26-19-27-49.png)
+
+- now we **compair begin time 10 with end time 15**
+
+![](img/2024-03-26-19-30-38.png)
+
+![](img/2024-03-26-19-30-59.png)
+
+![](img/2024-03-26-19-31-48.png)
+
 ---
-
-![](img/2024-03-16-14-29-47.png)
-
 
 ```java
 class meetingRooms_II {
     public int minMeetingRooms(int[][] intervals) {
-        if (intervals == null || intervals.length == 0) return 0;
+        int[] start = new int[intervals.length];
+        int[] end = new int[intervals.length];
+        for (int i = 0; i < intervals.length; i++) {
+            start[i] = intervals[i][0];
+            end[i] = intervals[i][1];
+        }
+        Arrays.sort(start);
+        Arrays.sort(end);
 
-        Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
-        PriorityQueue<int[]> minHeap = new PriorityQueue<>((a, b) -> a[1] - b[1]);
-        
-        minHeap.offer(intervals[0]);
-        int res = 1;
-        for (int i = 1; i < intervals.length; i++) {
-            int[] prevMeeting = minHeap.poll();
-            int[] curMeeting = intervals[i];
-            if (prevMeeting[1] <= curMeeting[0]) {
-                prevMeeting[1] = curMeeting[1];
-                minHeap.offer(prevMeeting);
+        int res = 0, room = 0;
+        int startIndex = 0, endIndex = 0;
+        while (startIndex < intervals.length) {
+            if (start[startIndex] < end[endIndex]) {
+                startIndex++;
+                room++;
             } else {
-                res++;
-                minHeap.offer(curMeeting);
-                minHeap.offer(prevMeeting);
+                endIndex--;
+                room--;
             }
+            res = Math.max(res, room);
         }
         return res;
-//        return minHeap.size();
-    }
-
-    public static void main(String[] args) {
-        int[][] intervals = new int[][]{{1, 4}, {2, 8}, {5, 7}, {5, 9}, {3, 4}};
-        meetingRooms_II meetingRooms = new meetingRooms_II();
-        int size = meetingRooms.minMeetingRooms(intervals);
-        System.out.println(size);
     }
 }
 ```
 
+
+
+
+
 ---
 
-### Method 2
+### version 2
 
+```java
+class meetingRooms_II_v2 {
+    public int minMeetingRooms(int[][] intervals) {
+        int[] start = new int[intervals.length];
+        int[] end = new int[intervals.length];
+        for (int i = 0; i < intervals.length; i++) {
+            start[i] = intervals[i][0];
+            end[i] = intervals[i][1];
+        }
+
+        Arrays.sort(start);
+        Arrays.sort(end);
+
+        int rooms = 0, endIdx = 0;
+        for (int i = 0; i < intervals.length; i++) {
+            if (start[i] < end[endIdx]) {
+                rooms++;// all rooms occupied, need to allocate new room
+            } else {
+                endIdx++;// just re-use the room that ends previous endIdx
+            }
+        }
+
+        return rooms;
+    }
+}
+```

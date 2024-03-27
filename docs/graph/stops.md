@@ -22,13 +22,15 @@ class Solution {
         for (int i = 0; i <= k; i++) { 
             // Create a copy of dist vector.
             int[] temp = Arrays.copyOf(dist, dist.length);
-            for (int[] edge: flights) { // Go over all edges
-                int u = edge[0];
-                int v = edge[1];
-                int w = edge[2];
-                if (dist[u] == Integer.MAX_VALUE) continue;
-                if (dist[u] + w < temp[v]) { // relax function
-                    temp[v] = dist[u] + w;
+            for (int[] flight: flights) { // Go over all edges
+                int from = flight[0];
+                int to = flight[1];
+                int price = flight[2];
+                if (dist[from] == Integer.MAX_VALUE) {
+                    continue;
+                }
+                if (dist[from] + price < temp[to]) { // relax function
+                     temp[to] = dist[from] + price;
                 }
             }
             // Copy the temp vector into dist.
