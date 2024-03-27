@@ -31,3 +31,27 @@ class containsDuplicate_II_slidingWindow {
 }
 ```
 
+---
+
+### version II
+
+```java
+class Solution {
+    public boolean containsNearbyDuplicate(int[] nums, int k) {
+        Set<Integer> window = new HashSet<>();
+        int slow = 0;
+        for (int fast = 0; fast < nums.length; fast++) {
+            if (!window.add(nums[fast])) {
+                if (fast - slow <= k) {
+                    return true;
+                }
+            }
+            if (window.size() > k) {
+                window.remove(nums[slow]);
+                slow++;
+            }
+        }
+        return false;
+    }
+}
+```
