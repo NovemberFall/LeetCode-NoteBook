@@ -76,6 +76,10 @@ class MinimumWindowSubstring {
                 continue;
             }
 
+            /*    s = F F A D D B A C C D E N C        t = A A B
+                  when it was first time that meet 'A'
+                  winFreq[A] = 0,  tFreq[A] = 2   =>      winFreq[s[right]] <  tFreq[s[right]]
+            */
             //当右边界向右滑动时，且 winFreq[s[right]] < tFreq[s[right]] 时, matchingCharsCount + 1
             if (winFreq[s.charAt(right)] < tFreq[s.charAt(right)]) {
                 matchingCharsCount++;
