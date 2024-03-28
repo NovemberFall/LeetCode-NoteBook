@@ -61,7 +61,7 @@ class _239_SlidingWindowMaximum {
 
 ---
 
-- [YoutTuBe 1:47:10]()
+- [4.1  || 1:47:10]()
 - [LeetCode 官方解释](https://leetcode.cn/problems/sliding-window-maximum/solutions/1212012/acm-xuan-shou-tu-jie-leetcode-hua-dong-c-i3wj/)
 
 
