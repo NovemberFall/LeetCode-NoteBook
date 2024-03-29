@@ -16,6 +16,10 @@
 - we notice the **second line** is the **minimize the idle time** rather than first one
 
 - since **A** is the most frequent
+---
+
+- [youtube](https://www.youtube.com/watch?v=siNqiP6tk94&t=38s)
+
 
 ![](img/2024-03-28-23-03-05.png)
 
