@@ -31,9 +31,8 @@
 ---
 ![](img/2021-09-26-18-49-46.png)
 
-- Time: `addNum: O(logN), N: the numbers of added interges
-  `findMedian: O(1)`
-- Space: O(N)
+- Time: `addNum: O(logN)`, N: the numbers of added interges.  `findMedian: O(1)`
+- Space: `O(N)`
 ---
 
 ```java
