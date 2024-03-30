@@ -12,7 +12,7 @@
 
 ![](img/2024-03-29-16-10-08.png)
 
-- Note: **if we can't get a user's followee, we can let his follow himself**!
+- Note: **if we can't get a user's followee, we can let him follow himself**!
 
 ```java
 class Twitter {    
