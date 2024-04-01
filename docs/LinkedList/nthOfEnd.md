@@ -135,3 +135,18 @@ public class Solution {
     }
 }
 ```
+
+---
+
+### Notice
+
+- if we debug this previous codes:
+  - `ListNode slow = head;` and `ListNode fast = head;`
+
+- `[1] n = 1` : 
+
+![](img/2024-04-01-16-05-04.png)
+
+![](img/2024-04-01-16-05-32.png)
+
+![](img/2024-04-01-16-05-50.png)
