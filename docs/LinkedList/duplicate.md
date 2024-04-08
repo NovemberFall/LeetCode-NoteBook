@@ -13,6 +13,8 @@
 - [全部链表Cycle 中文解释](https://leetcode.cn/problems/find-the-duplicate-number/solutions/58841/287xun-zhao-zhong-fu-shu-by-kirsche/)
 
 
+![](img/2024-04-08-15-03-46.png)
+
 ---
 ```java
 class _287_FindTheDuplicateNumber {
