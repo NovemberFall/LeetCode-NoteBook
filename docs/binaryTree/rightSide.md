@@ -1,41 +1,6 @@
 ## 199. Binary Tree Right Side View
 ![](img/2022-12-29-10-39-32.png)
----
 
-### 错误写法
-
-- 我第一次写递归，直接 `right traverse`, 但是如果 binary tree 长这样：
-  - 我就只能打印出 `1`
-
-```ruby
-                1
-              /
-             2
-              \
-               3 
-```
-
-- 代码如下：
-
-```java
-class Solution {
-    public List<Integer> rightSideView(TreeNode root) {
-        List<Integer> res = new ArrayList<>();
-        if (root == null) return res;
-        
-        dfs(root, res);
-        return res;
-    }
-    
-    private void dfs(TreeNode root,  List<Integer> res) {
-        if (root == null) {
-            return;
-        }   
-        res.add(root.val);
-        dfs(root.right, res);
-    }
-}
-```
 ---
 
 - 所以我们可以记录一下当前 **Nums of current level** 
@@ -129,6 +94,43 @@ class Solution {
             }
         }
         return list;
+    }
+}
+```
+
+---
+
+### 错误写法
+
+- 我第一次写递归，直接 `right traverse`, 但是如果 binary tree 长这样：
+  - 我就只能打印出 `1`
+
+```ruby
+                1
+              /
+             2
+              \
+               3 
+```
+
+- 代码如下：
+
+```java
+class Solution {
+    public List<Integer> rightSideView(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        if (root == null) return res;
+        
+        dfs(root, res);
+        return res;
+    }
+    
+    private void dfs(TreeNode root,  List<Integer> res) {
+        if (root == null) {
+            return;
+        }   
+        res.add(root.val);
+        dfs(root.right, res);
     }
 }
 ```
