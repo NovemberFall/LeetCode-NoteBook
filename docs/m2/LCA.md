@@ -4,10 +4,10 @@
 
 ![](img/2021-07-12-02-58-57.png)
 
-![](img/2021-07-12-02-59-33.png)
 
-![](img/2021-07-12-03-00-18.png)
+- [中文图解](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/solutions/240096/236-er-cha-shu-de-zui-jin-gong-gong-zu-xian-hou-xu/)
 
+---
 ```java
 class Solution {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
