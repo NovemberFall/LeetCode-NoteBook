@@ -79,3 +79,36 @@ public class Codec {
 // Codec deser = new Codec();
 // TreeNode ans = deser.deserialize(ser.serialize(root));
 ```
+
+---
+
+### DFS
+
+```java
+public class Codec {
+
+    // Encodes a tree to a single string.
+    public String serialize(TreeNode root) {
+        if (root == null) return "null";
+        
+        return root.val + "," + serialize(root.left) + "," + serialize(root.right);
+    }
+
+    // Decodes your encoded data to tree.
+    public TreeNode deserialize(String data) {
+        Queue<String> queue = new ArrayDeque<>(Arrays.asList(data.split(",")));
+        return helper(queue);
+    }
+    
+    private TreeNode helper(Queue<String> queue) {
+        String cur = queue.poll();
+        if (cur.equals("null")) return null;
+        
+        TreeNode root = new TreeNode(Integer.valueOf(cur));
+        root.left = helper(queue);
+        root.right = helper(queue);
+        
+        return root;
+    }
+}
+```
