@@ -76,12 +76,14 @@ class Solution {
         if (root == null) return;
         
         dfs(root.left, k);
+        
         cnt++;
         if (cnt == k) {
             res = root.val;
-        } else {
-            dfs(root.right, k);
-        }
+        } 
+            
+        dfs(root.right, k);
+        
     }
 }
 ```

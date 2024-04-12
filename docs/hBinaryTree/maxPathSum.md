@@ -93,3 +93,37 @@ class _124_BinaryTreeMaximumPathSum {
     }
 }
  ```
+
+ ---
+
+ ### version 2
+
+
+ ```java
+ class Solution {
+    int maxSum = Integer.MIN_VALUE;
+    
+    public int maxPathSum(TreeNode root) {
+        dfs(root);
+        return maxSum;
+    }
+    
+    private int dfs(TreeNode root) {
+        if (root == null) return 0;
+        
+        int leftTree = dfs(root.left);
+        int rightTree = dfs(root.right);
+        if (leftTree < 0) {
+            leftTree = 0;
+        }
+        if (rightTree < 0) {
+            rightTree = 0;
+        }
+        
+        int curSum = leftTree + rightTree + root.val;
+        maxSum = Math.max(maxSum, curSum);
+        
+        return Math.max(leftTree, rightTree) + root.val;
+    }
+}
+ ```
