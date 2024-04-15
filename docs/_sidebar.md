@@ -351,6 +351,7 @@
     * [48. Rotate Image || Rotate Matrix](m3/rotateMatrix.md)
     * [54. Spiral Matrix](m4/spiralMatrix.md)
     * [73. Set Matrix Zeroes](ch3/matrixZero.md)
+    * [202. Happy Number](math/happy.md)
     * [7. Reverse Integer](most/ri.md)
     * [8. String to Integer (atoi)](top/atoi.md)
     * [9. Palindrome Number](most/palindromenum.md)    
