@@ -26,31 +26,6 @@ class Pow {
 }
 ```
 ---
-```java
-class Solution {
-    private double helpPow(double x, long N){
-        if(N == 0){
-            return 1.0;
-        }
-        double temp = helpPow(x, N/2);
-        return (N % 2 == 0)? (temp * temp) : (temp * temp * x);
-    }
-    
-    public double myPow(double x, int n) {
-        //to avoid integer overflow, cast int to long
-        long N = n;
-        if(N < 0){
-           x = 1 / x;   // if N is negative, x = 1/x 直接转换成倒数
-           N = -N;      // convert N to be postive, since x already = 1/x
-        }
-        
-        return helpPow(x, N);
-        //we need to write a helper function , since myPow(double x, int n)
-        //we can not assign Long to int   int n != Long N, 精度只有从低往高走！
-    }
-}
-```
----
 ### Brute Force
 ```java
 class Pow_BruteForce {
