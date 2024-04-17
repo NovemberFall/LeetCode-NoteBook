@@ -14,7 +14,7 @@
 
 - `Input: n = 2`
 
-![](img/2024-04-14-23-18-09.png)
+![](img/2024-04-17-15-14-45.png)
 
 - this is **not** a happy number
 
