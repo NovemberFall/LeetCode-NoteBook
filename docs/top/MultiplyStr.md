@@ -4,66 +4,90 @@
 
 - [youtube](https://www.youtube.com/watch?v=1vZswirL8Y8&t=601s)
 
-![](img/2022-11-27-21-19-12.png)
+![](img/2024-04-16-14-15-28.png)
+
+![](img/2024-04-16-14-15-44.png)
+
+![](img/2024-04-16-14-15-55.png)
+
+- [注意为什么这里用 (中文教程) `res[i + j + 1] += mul;`](https://youtu.be/G9OWbq-e9hw?t=302)
 
 ```ruby
-index i      0   1   2
-            [1   2   3]
-           
-index j          0   1
-                [4   5]
---------------------------
-                 1   5       indices[i + j, i + j + 1]
-                             indices[] 
-
+            [0   1   2]
+i            1   2   3
+j        X   4   5   6
+     --------------------
+          
+  
+     
+     i = 2, j = 2
+     res's length = num1.length + num2.length = 3 + 3 = 6
+     假设 3 x 6 ==> 我们需要把结果设置在 res[index=5], 
+                                    ==> i + j + 1 
+                                    ==> 2 + 2 + 1 = 5            
 ```
 
 ---
 ```java
-StringBuilder sb = new StringBuilder();
-boolean seen = false; // 还未见过第一个非0 数字
-for (int c : pos) {
-    if (c == 0 && !seen) continue;
-    sb.append(c);
-    seen = true;
+class multiplyStrings {
+    public String multiply(String num1, String num2) {
+        int len1 = num1.length(), len2 = num2.length();
+        int[] res = new int[len1 + len2];
+        for (int i = len1 - 1; i >= 0; i--) {
+            for (int j = len2 - 1; j >= 0; j--) {
+                int mul = (num1.charAt(i) - '0') * (num2.charAt(j) - '0');
+                res[i + j + 1] += mul;
+            }
+        }
+
+        for (int i = res.length - 1; i > 0; i--) {
+            res[i - 1] += res[i] / 10;
+            res[i] %= 10;
+        }
+
+        StringBuilder sb = new StringBuilder();
+        for (int num : res) {
+            sb.append(num);
+        }
+
+        while (sb.length() != 0 && sb.charAt(0) == '0') {
+            sb.deleteCharAt(0);
+        }
+
+        return sb.length() == 0 ? "0" : sb.toString();
+    }
 }
 ```
 
-- 注意，我们需要处理 `Leading ZERO`
-  - 因为 假设 `2 * 3 = 6` :
-    - `pos[p2] = (sum) % 10;`, 这句话 只把 `6 % 10` assign to `pos[p2]`, 那么pos[p1] 还是 **0**.
-
-![](img/2022-11-27-21-21-03.png)
-
 ---
+
+### 'the Easiest' solution
 
 ```java
 class Solution {
-    public String multiply(String num1, String num2) {
-        int m = num1.length(), n = num2.length();
-        int[] pos = new int[m + n];
+	public String multiply(String num1, String num2) {
+		if ("0".equals(num1) || "0".equals(num2))
+			return "0";
 
-        for(int i = m - 1; i >= 0; i--) {
-            for(int j = n - 1; j >= 0; j--) {
-                int mul = (num1.charAt(i) - '0') * (num2.charAt(j) - '0'); 
-                int p1 = i + j, p2 = i + j + 1;
-                int sum = mul + pos[p2];
+		int[] ans = new int[num1.length() + num2.length() - 1];
 
-                pos[p1] += sum / 10;
-                pos[p2] = (sum) % 10;
-            }
-        }  
+		for (int i = 0; i < num1.length(); i++) {
+			for (int j = 0; j < num2.length(); j++) {
+				ans[i + j] += (num1.charAt(i) - '0') * (num2.charAt(j) - '0');
+			}
+		}
 
-        StringBuilder sb = new StringBuilder();
-        boolean seen = false;
-        for (int c : pos) {
-            if (c == 0 && !seen) {
-                continue;
-            }
-            sb.append(c);
-            seen = true;
-        }
-        return sb.length() == 0 ? "0" : sb.toString();
-    }
+		for (int i = ans.length - 1; i > 0; i--) {
+			ans[i - 1] += ans[i] / 10;
+			ans[i] %= 10;
+		}
+
+		StringBuilder sb = new StringBuilder();
+		for (int i : ans) {
+			sb.append(i);
+		}
+
+		return sb.toString();
+	}
 }
 ```

@@ -104,3 +104,9 @@ class setMatrixZeroes {
     }
 }
 ```
+
+---
+
+- use this codes to debug:
+
+![](img/2024-04-17-00-09-01.png)
