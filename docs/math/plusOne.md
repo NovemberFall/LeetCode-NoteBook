@@ -18,7 +18,9 @@ class _66_PlusOne {
                  and will directly return array
                 */
             }
-            digits[i] = 0;
+            if (digits[i] >= 9) {
+                digits[i] = 0;      
+            }
             /*
              if array[i] is not less than 9, means it have to be 9 only then digit is changed to 0,
              and we again revolve around loop to check for number if less than 9 or not
