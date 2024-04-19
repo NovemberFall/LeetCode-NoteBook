@@ -103,7 +103,6 @@
     * [130. Surrounded Regions](DFS/surrounded.md)
     * [140. Word Break II](DFS/wb2.md)
     * [733. Flood Fill](ch6/flood.md)
-    * [994. Rotting Oranges](amazon/rotting.md)
     * [1448. Count Good Nodes in Binary Tree](m10/goodNode.md)
     * [695. Max Area of Island](m10/maxArea.md)  
     * [417. Pacific Atlantic Water Flow](m10/pacificAtlantic.md)  
