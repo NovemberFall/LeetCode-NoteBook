@@ -21,11 +21,10 @@
 - [中文官方解释](https://leetcode.cn/problems/concatenated-words/solutions/1179021/lian-jie-ci-by-leetcode-solution-mj4d/#:~:text=4-,%E8%BF%9E%E6%8E%A5%E8%AF%8D,-%E5%85%B3%E6%B3%A8)
 
 
-- The approach to determine whether a word is a concatenated word involves searching in a trie. Starting from the 
-  first character of the word (i.e., the character at index 0), sequentially search each character's corresponding 
+- The approach to determine whether a word is a concatenated word involves searching in a trie. **Starting from the first character of the word** (i.e., the character at index 0), sequentially search each character's corresponding 
   node in the trie. There are several possible scenarios:
 
-  1. If a character's corresponding node marks the end of a word, a shorter word has been found. Continue 
+  1. **If a character's corresponding node marks the end of a word, a shorter word has been found.** Continue 
    searching for the next shorter word, starting from the character immediately after this one.
   2. If a character's corresponding node does not exist in the trie, the current search result is unsuccessful. 
    Return to the end of the previous word and continue searching.
