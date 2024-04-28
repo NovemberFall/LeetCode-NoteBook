@@ -5,6 +5,8 @@
 - if the neighboring cell's height is **less than or equal** to the current cell's height. Water can flow from any cell adjacent to an ocean 
   into the ocean.
 
+- [中文教程](https://www.youtube.com/watch?v=blOc3KlAR2I)
+
 ---
 
 ```java
@@ -17,11 +19,13 @@ class Solution {
         boolean[][] pacific = new boolean[m][n];
         boolean[][] atlantic = new boolean[m][n];
         
+        // top and bottom
         for (int col = 0; col < n; col++) {
             dfs(heights, 0, col, heights[0][col], pacific);
             dfs(heights, m - 1, col, heights[m - 1][col], atlantic);
         }
         
+        // left and right
         for (int row = 0; row < m; row++) {
             dfs(heights, row, 0, heights[row][0], pacific);
             dfs(heights, row, n - 1, heights[row][n - 1], atlantic);
