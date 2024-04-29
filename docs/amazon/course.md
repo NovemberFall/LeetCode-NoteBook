@@ -125,13 +125,10 @@ class Solution {
             List<Integer> list = graph.get(course);
             if (list != null) { 
                 //有n门课以当前的course作为先修课，course->n个其他课程
-                int n = list.size();
-                for (int i = 0; i < n; i++) {
-                    int pointer = graph.get(course).get(i);
-                    indegree[pointer]--;
-                    //判断当前课pointer，是否入度为0
-                    if (indegree[pointer] == 0) {
-                        queue.add(pointer);
+                for (int inCourse : list) {
+                    indegree[inCourse]--;
+                    if (indegree[inCourse] == 0) {
+                        queue.offer(inCourse);
                     }
                 }
             }
