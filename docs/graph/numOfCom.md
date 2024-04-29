@@ -27,17 +27,18 @@
 ---
 
 ```java
-class _323_NumberOfConnectedComponentsIn_UndirectedGraph {
+class Solution {
     class UnionFind {
-        private int[] parent;
-
+        int[] parent;
+        int[] rank;
         public UnionFind(int size) {
             parent = new int[size];
+            rank = new int[size];
             for (int i = 0; i < size; i++) {
                 parent[i] = i;
+                rank[i] = 1;
             }
         }
-
         public int find(int x) {
             if (x == parent[x]) {
                 return x;
@@ -45,33 +46,38 @@ class _323_NumberOfConnectedComponentsIn_UndirectedGraph {
             return parent[x] = find(parent[x]);
         }
 
-        public void union(int x, int y) {
+        public boolean union(int x, int y) {
             int rootX = find(x);
             int rootY = find(y);
-            if (rootX != rootY) {
+            if (rootX == rootY) {
+                return false;
+            }
+
+            if (rank[rootX] > rank[rootY]) {
                 parent[rootY] = rootX;
+            } else if (rank[rootX] < rank[rootY]) {
+                parent[rootX] = rootY;
+            } else {
+                parent[rootY] = rootX;
+                rank[rootX] += 1;
             }
-        }
-
-        public boolean connected(int x, int y) {
-            return find(x) == find(y);
-        }
+            return true;
+        }        
     }
-
     public int countComponents(int n, int[][] edges) {
-        int numOfComponents = n;
-        int unionNum = 0;
         UnionFind uf = new UnionFind(n);
+        int count = 0;
         for (int[] edge : edges) {
-            if (uf.connected(edge[0], edge[1])) {
-                continue;
+            if (uf.union(edge[0], edge[1])) {
+                count++;
             }
-            uf.union(edge[0], edge[1]);
-            unionNum++;
         }
-        return numOfComponents - unionNum;
+        
+        return n - count;
     }
 }
+
+
 ```
 
 ---
