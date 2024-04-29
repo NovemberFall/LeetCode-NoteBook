@@ -3,10 +3,10 @@
 ![](img/2023-07-18-13-36-04.png)
 ---
 
-- Check if `edges.length != n - 1` (there is n-1 edge in edges). To form a n node tree, there must have `n - 1` 
+- Check if `edges.length != n - 1` (there is **n-1** edge in edges). To form a n node tree, there must have `n - 1` 
   edges. If there is `n - 1` edges, check if all nodes are **connected** (if there is a loop in edges).
 - Loop through edges and union two nodes of one edge
-  - If that two nodes is already connected, means there is a loop is edges, means it can't be a tree, return false.
+  - If that two nodes is **already connected**, means there is a **loop** is edges, means it can't be a tree, return false.
 
 ![](img/2023-07-18-13-42-50.png)
 
