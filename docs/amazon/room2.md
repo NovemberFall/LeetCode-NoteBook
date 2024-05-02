@@ -69,7 +69,7 @@ class meetingRooms_II {
                 startIndex++;
                 room++;
             } else {
-                endIndex--;
+                endIndex++;
                 room--;
             }
             res = Math.max(res, room);
