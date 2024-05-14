@@ -16,6 +16,8 @@
     * [36. Valid Sudoku](top/ValidSudoku.md)
     * [271. Encode and Decode Strings](m8/encode.md)
     * [128. Longest Consecutive Sequence](ch3/lcs.md)
+    * [1929. Concatenation of Array](array/concatenation.md)
+    * [1299. Replace Elements with Greatest Element on Right Side](array/rightMax.md)
 * [Stack](stack/intro.md)
     * [20. Valid Parentheses](stack/valid.md)
     * [155. Min Stack](design/minstk.md)
