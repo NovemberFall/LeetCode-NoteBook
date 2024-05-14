@@ -1,5 +1,8 @@
 ## 14. Longest Common Prefix
 ![](img/2024-05-13-20-59-18.png)
+---
+
+- [中文教程](https://www.youtube.com/watch?v=gvDxumXJGxY)
 
 ```java
 class _14_LongestCommonPrefix {
