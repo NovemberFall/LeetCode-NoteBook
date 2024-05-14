@@ -368,7 +368,7 @@
     * [66. Plus One](math/plusOne.md)
     * [67. Add Binary](math/addbin.md)
     * [69. Sqrt(x)](math/sqrt.md)
-    * [118. Pascal's Triangle](most/pascal.md)
+    * [118. Pascal's Triangle](math/pascal.md)
     * [119. Pascal's Triangle II](math/pascal2.md)
     * [120. Triangle](math/triangle.md)
     * [189. Rotate Array](math/rotateArr.md)
