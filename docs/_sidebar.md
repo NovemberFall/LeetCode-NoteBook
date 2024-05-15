@@ -19,6 +19,7 @@
     * [271. Encode and Decode Strings](m8/encode.md)
     * [128. Longest Consecutive Sequence](ch3/lcs.md)
     * [392. Is Subsequence](Array/subsequence.md)
+    * [929. Unique Email Addresses](Array/email.md)
     * [1929. Concatenation of Array](Array/concatenation.md)
     * [1299. Replace Elements with Greatest Element on Right Side](Array/rightMax.md)
 * [Stack](stack/intro.md)
