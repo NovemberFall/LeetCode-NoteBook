@@ -61,3 +61,47 @@ public class groupAnagrams_v2 {
     }
 }
 ```
+---
+
+### Python
+
+- the following codes has error:
+
+```py
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        res = {} # mapping charCount to List of Anagrams
+
+        for str in strs:
+            count = [0] * 26 # a ... z
+
+            for c in str:
+                count[ord(c) - ord('a')] += 1
+
+            res[count].append(str)
+
+        return res.values()
+```
+
+- the attempt to use a list (`count`) as a dictionary key. Lists are **mutable** and therefore **not hashable**, 
+  so they **cannot** be used as keys in a dictionary.
+
+```py
+class _49_groupAnagrams:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        res = {} # mapping charCount to List of Anagrams
+
+        for str in strs:
+            count = [0] * 26 # a ... z
+
+            for c in str:
+                count[ord(c) - ord('a')] += 1
+
+            # Convert the list to a tuple to use it as a dictionary key
+            key = tuple(count)
+            if key not in res:
+                res[key] = []
+            res[key].append(str)
+
+        return list(res.values())
+```
