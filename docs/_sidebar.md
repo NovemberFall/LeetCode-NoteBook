@@ -412,6 +412,8 @@
     * [Cousins in a Binary Tree | Interview](hBinaryTree/isCousins.md)
     * [Amazon | OA | K consecutive packages](interview/maxSubarray.md)
     * [Apple | nested anagrams](amazon/nestedAnagram.md)
+    * [TikTok](tiktok/intro.md)
+        * [2263. Make Array Non-decreasing or Non-increasing](tiktok/2263.md)
 
 -----
 * [Amazon Top 50](amazon/intro.md)
