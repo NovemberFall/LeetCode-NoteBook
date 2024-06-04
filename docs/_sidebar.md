@@ -385,7 +385,7 @@
     * [232. Implement Queue using Stacks](design/queue.md)
     * [225. Implement Stack using Queues](design/stack.md)
     * [284. Peeking Iterator](design/iterator.md)
-    * [716. Max Stack | Hybrid Data Structure](most/maxstk.md)
+    * [716. Max Stack | Hybrid Data Structure](design/maxstk.md)
     * [981. Time Based Key-Value Store](design/timestore.md)
     * [380. Insert Delete GetRandom O(1)](most/getRandom.md)
     * [348. Design Tic-Tac-Toe](amazon/tictactoe.md)
