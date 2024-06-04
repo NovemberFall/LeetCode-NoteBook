@@ -414,6 +414,7 @@
     * [Apple | nested anagrams](amazon/nestedAnagram.md)
     * [TikTok](tiktok/intro.md)
         * [2263. Make Array Non-decreasing or Non-increasing](tiktok/2263.md)
+        * [358. Rearrange String k Distance Apart](tiktok/358.md)
 
 -----
 * [Amazon Top 50](amazon/intro.md)
