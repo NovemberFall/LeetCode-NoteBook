@@ -381,6 +381,7 @@
     * [135. Candy](most/candy.md)
 * [Design](design/intro.md)
     * [146. LRU Cache](design/lru.md)
+    * [460. LFU Cache](design/460.md)
     * [155. Min Stack](design/minstk.md)
     * [232. Implement Queue using Stacks](design/queue.md)
     * [225. Implement Stack using Queues](design/stack.md)
