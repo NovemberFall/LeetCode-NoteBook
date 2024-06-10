@@ -3,6 +3,88 @@
 ![](img/2020-12-21-01-40-10.png)
 
 ---
+```java
+class LRUCache {
+    class Node {
+        int key;
+        int val;
+        Node next;
+        Node prev;
+
+        Node(int key, int val) {
+            this.key = key;
+            this.val = val;
+        }
+    }
+
+    private final int capacity;
+    private int size;
+    //<key, Node>, Node => <Node.key, value>
+    private Map<Integer, Node> map;
+
+    // maintain all the time that the head and tail of current doubly LinkedList
+    private Node head;
+    private Node tail;
+
+    public LRUCache(int capacity) {
+        head = new Node(0, 0);
+        tail = new Node(0, 0);
+        head.next = tail;
+        tail.prev = head;
+        map = new HashMap<>();
+        this.capacity = capacity;
+        size = 0;
+    }
+
+    public int get(int key) {
+        Node node = map.get(key);
+        if (node == null) {
+            return -1;
+        }
+        //Even though we just read from linkedList, but we still need to move node to the head
+        remove(key);
+        appendToHead(key, node.val);
+        return node.val;
+    }
+
+    public void put(int key, int val) {
+        if (map.containsKey(key)) {
+            remove(key);
+            appendToHead(key, val);
+        } else {
+            appendToHead(key, val);
+        }
+    }
+
+    private void appendToHead(int key, int val) {
+        Node node = new Node(key, val);
+        Node next = head.next;
+        head.next = node;
+        node.prev = head;
+        node.next = next;
+        next.prev = node;
+        map.put(key, node);
+        size++;
+        if (size > capacity) {
+            Node preTail = tail.prev;
+            remove(preTail.key);
+        }
+    }
+
+    private void remove(int key) {
+        Node cur = map.get(key);
+        Node prev = cur.prev;
+        Node next = cur.next;
+        prev.next = next;
+        next.prev = prev;
+        size--;
+        map.remove(key);
+    }
+}
+```
+---
+
+---
 
 ### from oldest (least recently used) to newest (most recently used)
 
