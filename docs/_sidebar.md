@@ -418,6 +418,7 @@
     * [Walmart Labs](walmart/intro.md)
         * [298. Binary Tree Longest Consecutive Sequence](walmart/298.md)
         * [841. Keys and Rooms](walmart/841.md)
+        * [767. Reorganize String](walmart/767.md)
 
 -----
 * [Amazon Top 50](amazon/intro.md)
