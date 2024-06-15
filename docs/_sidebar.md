@@ -418,6 +418,8 @@
         * [358. Rearrange String k Distance Apart](tiktok/358.md)
         * [588. Design In-Memory File System](tiktok/588.md)
         * [465. Optimal Account Balancing](tiktok/465.md)
+        * [1530. Number of Good Leaf Nodes Pairs](tiktok/1530.md)
+        * [1507. Reformat Date](tiktok/1507.md)
     * [Walmart Labs](walmart/intro.md)
         * [298. Binary Tree Longest Consecutive Sequence](walmart/298.md)
         * [841. Keys and Rooms](walmart/841.md)
