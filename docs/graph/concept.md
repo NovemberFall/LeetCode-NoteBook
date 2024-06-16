@@ -44,6 +44,40 @@
 
 - [Optimized “disjoint set” with Path Compression and Union by Rank](https://leetcode.com/explore/learn/card/graph/618/disjoint-set/3843/#:~:text=Next-,Optimized%20%E2%80%9Cdisjoint%20set%E2%80%9D%20with%20Path%20Compression%20and%20Union%20by%20Rank,-Report%20Issue)
 
+
+### **union by rank (depth of each tree)**  vs **union by size (number of elements in each tree)**
+
+```java
+// 1: Union by Rank (depth)
+public void union(int x, int y) {
+    int rootX = find(x);
+    int rootY = find(y);
+    if (rootX == rootY) return;
+
+    if (rank[x] > rank[y]) {
+        parent[rootY] = rootX;   // Attach smaller rank tree under larger rank
+    } else if (rank[x] < rank[y]) {
+        parent[rootX] = rootY;
+    } else {
+        parent[rootY] = rootX;
+        rank[rootX] += 1;        // If ranks are equal, increment the new root's rank
+    }
+}
+
+
+
+// 2: Union by Size (or Weight)
+public void union(int x, int y) {
+    int rootX = find(x);
+    int rootY = find(y);
+
+    if (rootX != rootY) {
+        parent[rootX] = rootY;       // Attach smaller tree under larger one
+        size[rootY] += size[rootX];  // Update size of the new root
+    }
+}
+```
+
 ---
 
 ### Minimum Spanning Tree
