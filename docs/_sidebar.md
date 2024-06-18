@@ -430,6 +430,7 @@
         * [93. Restore IP Addresses](m10/ip.md)
         * [159. Longest Substring with At Most Two Distinct Characters](sliding/longest.md)
         * [1010. Pairs of Songs With Total Durations Divisible by 60](tiktok/1010.md)
+        * [395. Longest Substring with At Least K Repeating Characters](tiktok/395.md)
     * [Walmart Labs](walmart/intro.md)
         * [298. Binary Tree Longest Consecutive Sequence](walmart/298.md)
         * [841. Keys and Rooms](walmart/841.md)
