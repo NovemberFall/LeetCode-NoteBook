@@ -435,6 +435,7 @@
         * [1062. Longest Repeating Substring](tiktok/1062.md)
         * [926. Flip String to Monotone Increasing](tiktok/926.md)
         * [2217. Find Palindrome With Fixed Length](tiktok/2217.md)
+        * [443. String Compression](tiktok/443.md)
     * [Walmart Labs](walmart/intro.md)
         * [298. Binary Tree Longest Consecutive Sequence](walmart/298.md)
         * [841. Keys and Rooms](walmart/841.md)
