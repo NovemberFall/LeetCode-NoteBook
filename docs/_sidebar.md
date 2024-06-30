@@ -437,6 +437,8 @@
         * [2217. Find Palindrome With Fixed Length](tiktok/2217.md)
         * [443. String Compression](tiktok/443.md)
         * [772. Basic Calculator III](tiktok/772.md)
+        * [2791. Count Paths That Can Form a Palindrome in a Tree](tiktok/2791.md)
+        * [1257. Smallest Common Region](tiktok/1257.md)
     * [Walmart Labs](walmart/intro.md)
         * [298. Binary Tree Longest Consecutive Sequence](walmart/298.md)
         * [841. Keys and Rooms](walmart/841.md)
