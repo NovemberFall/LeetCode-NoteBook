@@ -440,6 +440,7 @@
         * [2791. Count Paths That Can Form a Palindrome in a Tree](tiktok/2791.md)
         * [1257. Smallest Common Region](tiktok/1257.md)
         * [2050. Parallel Courses III](tiktok/2050.md)
+        * [2506. Count Pairs Of Similar Strings](tiktok/2506.md)
     * [Walmart Labs](walmart/intro.md)
         * [298. Binary Tree Longest Consecutive Sequence](walmart/298.md)
         * [841. Keys and Rooms](walmart/841.md)
