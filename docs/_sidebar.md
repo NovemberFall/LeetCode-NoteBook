@@ -414,6 +414,7 @@
     * [Amazon | OA | K consecutive packages](interview/maxSubarray.md)
     * [Apple | nested anagrams](amazon/nestedAnagram.md)
     * [TikTok](tiktok/intro.md)
+        * [56. Merge Intervals](amazon/mergeInterval.md)
         * [2263. Make Array Non-decreasing or Non-increasing](tiktok/2263.md)
         * [358. Rearrange String k Distance Apart](tiktok/358.md)
         * [588. Design In-Memory File System](tiktok/588.md)
