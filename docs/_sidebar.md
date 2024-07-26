@@ -130,7 +130,6 @@
     * [145. Binary Tree Postorder Traversal | BFS](hBinaryTree/bstPost-order.md)
     * [314. Binary Tree Vertical Order Traversal](most/vertical.md)
     * [339. Nested List Weight Sum](most/nestedList.md)
-    * [322. Coin Change](BFS/coin.md)
     * [272. closest binary search tree value II](BFS/bstVallue.md)
     * [297. Serialize and Deserialize Binary Tree](m6/sdbt.md)
     * [286. Walls and Gates](BFS/walls.md)
