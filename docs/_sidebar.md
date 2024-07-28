@@ -435,6 +435,7 @@
         * [207. Course Schedule](amazon/course.md)
         * [210. Course Schedule II](ts/course2.md)
         * [159. Longest Substring with At Most Two Distinct Characters](sliding/longest.md)
+        * [79. Word Search](amazon/word.md)
         * [1010. Pairs of Songs With Total Durations Divisible by 60](tiktok/1010.md)
         * [395. Longest Substring with At Least K Repeating Characters](tiktok/395.md)
         * [2290. Minimum Obstacle Removal to Reach Corner](tiktok/2290.md)
