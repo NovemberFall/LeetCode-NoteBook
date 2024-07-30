@@ -437,6 +437,7 @@
         * [79. Word Search](amazon/word.md)
         * [162. Find Peak Element](tiktok/162.md)
         * [560. Subarray Sum Equals K](m7/subarrSum.md)
+        * [5. Longest Palindromic Substring](m8/longestPalindrom.md)
         * [1010. Pairs of Songs With Total Durations Divisible by 60](tiktok/1010.md)
         * [395. Longest Substring with At Least K Repeating Characters](tiktok/395.md)
         * [2290. Minimum Obstacle Removal to Reach Corner](tiktok/2290.md)
