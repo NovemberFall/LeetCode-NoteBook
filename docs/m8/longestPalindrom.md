@@ -1,9 +1,11 @@
 ## 5. Longest Palindromic Substring
 ![](img/2021-08-22-16-01-43.png)
 
+- [youtube](https://www.youtube.com/watch?v=QhFkiwPLvHg)
+
 
 ```ruby
-assume i = 3
+assume i = 3,   s is even length
 
     0  1  2  3  4  5  6  7
    [a  c  d  b  b  d  a  a]
@@ -74,6 +76,9 @@ class longestPalindromicSubstring {
 
 ### Brute Force
 
+- **T: O(N^3)**
+
+
 ```java
 class bruteForce {
     public String longestPalindrome(String s) {
@@ -117,50 +122,30 @@ class bruteForce {
 ```
 ---
 
-###
+#### Python
 
-```java
-class extendFromCenter {
-    public String longestPalindrome(String s) {
-        if (s == null || s.length() == 0) return "";
+```py
+class Solution:
+    maxLen = float('-inf')
+    res = ""
 
-        int start = 0, end = 0;
-        int maxLen = 0;
-        int n = s.length();
+    def longestPalindrome(self, s: str) -> str:
 
-        // i 不能从`index 0`开始，因为无法向左边扩张
-        for (int i = 1; i < n; i++) {
-            // odd check
-            int len1 = extendByCenter(s, i, i);
+        for i in range(len(s)):
+            # odd-length palindromes
+            oddLeft, oddRight = i, i
+            self.extendPalindromes(s, oddLeft, oddRight)
 
-            // even check
-            int len2 = extendByCenter(s, i - 1, i);
+            # even-length palindromes
+            evenLeft, evenRight = i, i + 1
+            self.extendPalindromes(s, evenLeft, evenRight)
+        return self.res
 
-            if (len1 > maxLen) {
-                start = i - len1 / 2;
-                end = i + len1 / 2;
-                maxLen = len1;
-            }
-
-            if (len2 > maxLen) {
-                start = i - len2 / 2;
-                end = i - 1 + len2 / 2;
-                maxLen = len2;
-            }
-        }
-
-        // substring， end 是不包含的，所以得 + 1
-        return s.substring(start, end + 1);
-    }
-
-    private int extendByCenter(String s, int lo, int hi) {
-        int maxLen = 1;
-        while (lo >= 0 && hi < s.length() && s.charAt(lo) == s.charAt(hi)) {
-            maxLen = hi - lo + 1;
-            lo--;
-            hi++;
-        }
-        return maxLen;
-    }
-}
+    def extendPalindromes(self, s, left, right):
+        while left >= 0 and right < len(s) and s[left] == s[right]:
+            if right - left + 1 > self.maxLen:
+                self.res = s[left: right + 1]
+                self.maxLen = right - left + 1
+            left -= 1
+            right += 1
 ```
