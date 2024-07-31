@@ -1,6 +1,7 @@
 ## 394. Decode String
 ![](img/2021-07-08-02-14-44.png)
-![](img/2021-07-08-02-15-10.png)
+
+
 ---
 
 - Note： before you see `[`, there must be a number!
@@ -9,49 +10,66 @@
 
 ---
 ```java
-public class DecodeString {
+class _394_DecodeString {
     public String decodeString(String s) {
-        if (s.length() == 0) return "";
-        Stack<String> stk = new Stack<>();
-        int num = 0;
+        Stack<String> stack = new Stack<>();
+
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
-            if (c >= '0' && c <= '9') {
-                num = num * 10 + c - '0';
-            } else if (c == '[') {
-                stk.push(String.valueOf(num));
-                stk.push("["); //use [ as a marker, we don't have to check whether an item is a number or not
-                num = 0;
-            } else if (c == ']') {
-                StringBuilder str = new StringBuilder();
-                //keep pop until meet '['
-                while (!stk.peek().equals("[")) {
-                    str.insert(0, stk.pop());
-                }
-                stk.pop(); //pop '['
-                int repeat = Integer.parseInt(stk.pop());
-                StringBuilder sb = new StringBuilder();
-                for (int k = 0; k < repeat; k++) {
-                    sb.append(str);
-                }
-                stk.push(sb.toString());
+            if (c != ']') {
+                stack.push(String.valueOf(c));
             } else {
-                stk.push(String.valueOf(c));
+                StringBuilder substr = new StringBuilder();
+                while (!stack.peek().equals("[")) {
+                    substr.insert(0, stack.pop()); // Reverse the order in Java
+                }
+                stack.pop(); // Pop the "["
+
+                StringBuilder kStr = new StringBuilder();
+                while (!stack.isEmpty() && Character.isDigit(stack.peek().charAt(0))) {
+                    kStr.insert(0, stack.pop()); // Reverse the order in Java
+                }
+                int k = Integer.parseInt(kStr.toString());
+
+                StringBuilder repeatedSubstr = new StringBuilder();
+                for (int j = 0; j < k; j++) {
+                    repeatedSubstr.append(substr);
+                }
+                stack.push(repeatedSubstr.toString());
             }
         }
 
-        StringBuilder ans = new StringBuilder();
-        while (!stk.isEmpty()) {
-            ans.insert(0, stk.pop());
+        StringBuilder result = new StringBuilder();
+        for (String str : stack) {
+            result.append(str);
         }
-        return ans.toString();
-    }
-
-    public static void main(String[] args) {
-        DecodeString ds = new DecodeString();
-        String str = "3[a2[c]]";
-        String res = ds.decodeString(str);
-        System.out.println(res); // "accaccacc"
+        return result.toString();
     }
 }
+```
+
+---
+
+
+#### Python
+
+```py
+class Solution:
+    def decodeString(self, s: str) -> str:
+        stack = []
+
+        for i in range(len(s)):
+            if s[i] != "]":
+                stack.append(s[i])
+            else:
+                substr = ""
+                while stack[-1] != "[":
+                    substr = stack.pop() + substr
+                stack.pop() # pop => 【
+
+                k = ""
+                while stack and stack[-1].isdigit():
+                    k = stack.pop() + k
+                stack.append(int(k) * substr)
+        return "".join(stack)
 ```
