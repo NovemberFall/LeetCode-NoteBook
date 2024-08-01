@@ -438,6 +438,8 @@
         * [5. Longest Palindromic Substring](m8/longestPalindrom.md)
         * [227. Basic Calculator II](tiktok/calc2.md)
         * [224. Basic Calculator](tiktok/calc.md)
+        * [456. 132 Pattern](tiktok/456.md)
+        * [735. Asteroid Collision](tiktok/735.md)
         * [1010. Pairs of Songs With Total Durations Divisible by 60](tiktok/1010.md)
         * [395. Longest Substring with At Least K Repeating Characters](tiktok/395.md)
         * [2290. Minimum Obstacle Removal to Reach Corner](tiktok/2290.md)
