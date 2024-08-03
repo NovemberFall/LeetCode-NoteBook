@@ -415,6 +415,7 @@
         * [358. Rearrange String k Distance Apart](tiktok/358.md)
         * [33. Search in Rotated Sorted Array](m3/SearchinRotatedSortedArray.md)
         * [588. Design In-Memory File System](tiktok/588.md)
+        * [394. Decode String](m8/decode.md)
         * [465. Optimal Account Balancing](tiktok/465.md)
         * [1530. Number of Good Leaf Nodes Pairs](tiktok/1530.md)
         * [1507. Reformat Date](tiktok/1507.md)
