@@ -419,6 +419,7 @@
         * [1530. Number of Good Leaf Nodes Pairs](tiktok/1530.md)
         * [1507. Reformat Date](tiktok/1507.md)
         * [3.Longest Substring Without Repeating Characters](m8/without.md)  
+        * [322. Coin Change](DFS/coin.md)
         * [694. Number of Distinct Islands](tiktok/694.md)
         * [928. Minimize Malware Spread II](tiktok/928.md)
         * [924. Minimize Malware Spread I](tiktok/924.md)
