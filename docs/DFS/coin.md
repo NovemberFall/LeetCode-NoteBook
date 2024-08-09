@@ -1,7 +1,6 @@
 ## 322. Coin Change
 ![](img/2023-01-30-15-51-48.png)
 
-- [video](https://www.youtube.com/watch?v=H9bfqozjoqs&t=206s)
 
 ```ruby
 coins[1, 3, 4, 5]               Amount = 7
