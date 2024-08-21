@@ -1,5 +1,21 @@
 ## String | Regular Expression
 
+#### subsequence
+
+![](img/2024-08-21-12-18-44.png)
+
+
+
+
+
+
+
+
+
+
+
+
+---
 ### replaceAll()
 
 - what does `str.replaceAll("[^a-zA-Z]", "")` do?
