@@ -4,7 +4,7 @@
 
 ---
 
-- [youtube](https://www.youtube.com/watch?v=TZyBPy7iOAw&t=1223s)
+- [youtube](https://leetcode.com/problems/sum-of-subarray-minimums/discuss/4595335/Beats-100-C%2B%2BJavaPythonJS-Explained-with-Video-Monotonic-Stack)
 
 ```ruby
         [2, 9, 7, 8, 3, 4, 6, 1]
@@ -47,49 +47,4 @@ corner case:
                      ^
     nums[i]:    next smaller element
                 previous smaller or equal element
-```
-
-- [Detailed Explanation | Monotonic stack solution | Java | O(n)](https://leetcode.com/problems/sum-of-subarray-minimums/discuss/1787529/Detailed-Explanation-or-Monotonic-stack-solution-or-Java-or-O(n))
-
-
-```java
-class Solution {
-    public int sumSubarrayMins(int[] arr) {
-	    Deque<Integer> stack = new ArrayDeque<>();
-        
-        // left bound we set of -1
-        stack.push(-1);
-        long res = 0;
-        for(int i = 0; i < arr.length; i++) {
-            while(stack.size() > 1 && arr[stack.peek()] > arr[i]) {
-                int currElemIndex = stack.pop();
-                /* Note that after the above line, stack.peek() will give us 
-                    the index of left next smallest element.
-                   We monotonically order the stack always in an increasing order 
-                   at all the times, because of that this argument holds true.
-                   
-                   'i' will be the next right smallest element index. 
-                   (The while loop condition is designed such way).
-                */
-                res += ((long) arr[currElemIndex] * (currElemIndex - stack.peek()) * 
-                                        ( i - currElemIndex)) % 1000000007;
-                res = res % 1000000007;
-            }
-            stack.push(i);
-        }
-    
-        // right bound we set to array length;
-        int rightBoundary = arr.length;
-    
-        while(stack.size() > 1) {
-            int currElemIndex = stack.pop();
-            res += ((long) arr[currElemIndex] * (currElemIndex - stack.peek()) *    
-                                (rightBoundary - currElemIndex)) % 1000000007;
-            res = res % 1000000007;
-        }
-        
-        return (int) res;
-        
-    }
-}
 ```
