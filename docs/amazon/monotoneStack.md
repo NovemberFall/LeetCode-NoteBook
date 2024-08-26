@@ -4,6 +4,8 @@
 
 ---
 
+- [youtube](https://www.youtube.com/watch?v=TZyBPy7iOAw&t=1223s)
+
 ```ruby
         [2, 9, 7, 8, 3, 4, 6, 1]
                      |
@@ -31,8 +33,8 @@ X   0   [3   2   4   5]   1   X   X
 
 总之，盯准一个数，寻找他的所有subarray # 但是这样做，还是 o(N^2)
 
-prev smaller element # 从右往左扫
-next smaller element # 从左往右扫
+prev smaller element # 从左往右扫
+next smaller element # 从右往左扫
 
 
 corner case:
