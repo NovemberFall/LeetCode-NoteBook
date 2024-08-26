@@ -52,7 +52,12 @@ corner case:
   - **while** loop to determine the prev_smaller and next_smaller arrays, which track the **nearest smaller element** to the left and right of 
     each element in the array, respectively  
 
+![](img/2024-08-26-15-22-05.png)
 
+
+
+- Time complexity: The time complexity of the code is **O(n)**.
+- Space complexity: The space complexity of the code is **O(n)**.
 ---
 
 ```java
