@@ -441,6 +441,7 @@
         * [162. Find Peak Element](tiktok/162.md)
         * [560. Subarray Sum Equals K](m7/subarrSum.md)
         * [5. Longest Palindromic Substring](m8/longestPalindrom.md)
+        * [31. Next Permutation](tiktok/31.md)
         * [227. Basic Calculator II](tiktok/calc2.md)
         * [224. Basic Calculator](tiktok/calc.md)
         * [815. Bus Routes](tiktok/815.md)
