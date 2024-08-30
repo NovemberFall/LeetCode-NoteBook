@@ -444,6 +444,7 @@
         * [227. Basic Calculator II](tiktok/calc2.md)
         * [224. Basic Calculator](tiktok/calc.md)
         * [815. Bus Routes](tiktok/815.md)
+        * [1802. Maximum Value at a Given Index in a Bounded Array](tiktok/1802.md)
         * [378. Kth Smallest Element in a Sorted Matrix | Best FS](m6/kthSmallest.md)
         * [456. 132 Pattern](tiktok/456.md)
         * [735. Asteroid Collision](tiktok/735.md)
