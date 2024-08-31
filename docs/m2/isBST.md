@@ -53,16 +53,21 @@ class Solution {
         return isBST(root, Long.MIN_VALUE, Long.MAX_VALUE);
     }
 
-    private boolean isBST(TreeNode root, long min, long max) {
+    private boolean isBST(TreeNode root, long left, long right) {
         if (root == null) {
             return true;
         }
-        if (root.val <= min || root.val >= max) {
-            return false;
+
+        int x = root.val;
+
+        if (left < x && x < right) {
+            return isBST(root.left, left, x)
+                    &&
+                    isBST(root.right, x, right);
         }
-        return isBST(root.left, min, root.val) &&
-                isBST(root.right, root.val, max);
-    }    
+
+        return false;
+    }
 }
 ```
 ---
@@ -154,5 +159,33 @@ class isBST_inOrder {
         return left && right;
     }
 }
+```
+
+---
+
+#### Python
+
+```py
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+
+class Solution:
+    def isValidBST(self, root: Optional[TreeNode]) -> bool:
+        return self.isBST(root, float('-inf'), float('inf'))
+
+    def isBST(self, root: TreeNode, left: float, right: float) -> bool:
+        if root is None:
+            return True
+
+        x = root.val
+
+        if left < x < right:
+            return self.isBST(root.left, left, x) and self.isBST(root.right, x, right)
+
+        return False
 ```
 

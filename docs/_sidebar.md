@@ -450,6 +450,7 @@
         * [456. 132 Pattern](tiktok/456.md)
         * [735. Asteroid Collision](tiktok/735.md)
         * [691. Stickers to Spell Word](tiktok/691.md)
+        * [301. Remove Invalid Parentheses](tiktok/301.md)
         * [1151. Minimum Swaps to Group All 1's Together](amazon/groupOnes.md)
         * [1010. Pairs of Songs With Total Durations Divisible by 60](tiktok/1010.md)
         * [395. Longest Substring with At Least K Repeating Characters](tiktok/395.md)
