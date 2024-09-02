@@ -372,6 +372,7 @@
     * [189. Rotate Array](math/rotateArr.md)
     * [268. Missing Number](math/miss.md)
     * [509. Fibonacci Number](math/fib.md)
+    * [204. Count Primes](math/204.md)
 * [Greedy](greedy/intro.md)
     * [134. Gas Station](most/gas.md)  
     * [135. Candy](most/candy.md)
