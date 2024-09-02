@@ -469,6 +469,8 @@
         * [1011. Capacity To Ship Packages Within D Days](tiktok/1011.md)
         * [1423. Maximum Points You Can Obtain from Cards](tiktok/1423.md)
         * [305. Number of Islands II](tiktok/305.md)
+        * [475. Heaters](tiktok/475.md)
+        * [706. Design HashMap](tiktok/706.md)
     * [Walmart Labs](walmart/intro.md)
         * [298. Binary Tree Longest Consecutive Sequence](walmart/298.md)
         * [841. Keys and Rooms](walmart/841.md)
