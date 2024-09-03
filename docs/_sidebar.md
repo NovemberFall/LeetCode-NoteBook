@@ -472,6 +472,7 @@
         * [475. Heaters](tiktok/475.md)
         * [706. Design HashMap](tiktok/706.md)
         * [408 Valid Word Abbreviation](tiktok/408.md)
+        * [2523. Closest Prime Numbers in Range](tiktok/2523.md)
     * [Walmart Labs](walmart/intro.md)
         * [298. Binary Tree Longest Consecutive Sequence](walmart/298.md)
         * [841. Keys and Rooms](walmart/841.md)
