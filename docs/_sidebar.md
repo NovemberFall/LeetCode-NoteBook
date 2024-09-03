@@ -470,6 +470,7 @@
         * [1423. Maximum Points You Can Obtain from Cards](tiktok/1423.md)
         * [305. Number of Islands II](tiktok/305.md)
         * [475. Heaters](tiktok/475.md)
+        * [473. Matchsticks to Square](tiktok/473.md)
         * [706. Design HashMap](tiktok/706.md)
         * [408 Valid Word Abbreviation](tiktok/408.md)
         * [2523. Closest Prime Numbers in Range](tiktok/2523.md)
