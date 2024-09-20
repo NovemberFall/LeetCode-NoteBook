@@ -15,7 +15,6 @@
     required condition:   x2 <= y6
                           y5 <= x3
                         avg( max(x2, y5), min(x3, y6) )
-                        max(x2, y5)
 
     partitionX: how many nums in the left hand side on X
     partitionY: how many nums in the left hand side on Y
