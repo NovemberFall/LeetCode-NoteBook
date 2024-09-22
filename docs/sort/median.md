@@ -181,7 +181,7 @@ class MedianOfTwoSortedArrays_t1 {
 
 - [我喜欢的 idea](https://leetcode.cn/problems/median-of-two-sorted-arrays/solutions/15086/he-bing-yi-hou-zhao-gui-bing-guo-cheng-zhong-zhao-/)
 
-![](img/2023-08-19-15-50-39.png)
+![](img/2024-09-20-18-10-57.png)
 
 ![](img/2023-08-19-15-52-18.png)
 
@@ -191,7 +191,9 @@ class MedianOfTwoSortedArrays_t1 {
 
 ![](img/2023-08-19-16-10-35.png)
 
-- `分割线左边的最大值`，和 `分割线右边的最小值`，就是分别的两个**中位数**
+
+**分割线左边的最大值**，和 **分割线右边的最小值**，就是分别的两个**中位数**
+
 
 ![](img/2023-08-19-16-23-12.png)
 
