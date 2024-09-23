@@ -216,6 +216,11 @@ class MedianOfTwoSortedArrays_t1 {
 
 ---
 
+
+![](img/2024-09-22-21-57-51.png)
+
+
+
 ### Why Do We Need to Check Boundary Values?
 
 - When partitioning the arrays, we may encounter cases where:
