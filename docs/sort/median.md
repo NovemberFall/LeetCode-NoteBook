@@ -211,10 +211,20 @@ class MedianOfTwoSortedArrays_t1 {
 ![](img/2023-08-19-16-47-20.png)
 
 - `totalLeft = (m + n + 1) / 2` => `totalLeft = 5`
-- `i = left + (right - left + 1) /2`, 这里为了防止 `[left(i), right]` ，进入死循环
+- `i = left + (right - left) /2` = 
 - `j = totalLeft - i` => `j = 5 - 3 = 2`
 
+---
 
+### Why Do We Need to Check Boundary Values?
+
+- When partitioning the arrays, we may encounter cases where:
+  - The partition is at the **very start** of one of the arrays.
+  - The partition is at the **very end** of one of the arrays.
+
+![](img/2024-09-22-17-45-48.png)
+
+---
 ```java
 class Solution {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
@@ -251,9 +261,9 @@ class Solution {
                     return Math.max(nums1LeftMax, nums2LeftMax);
                 }                
             }            
-            else if (nums1LeftMax > nums2RightMin) {
+            else if (nums1LeftMax > nums2RightMin) { // nums1[i - 1] > nums2[j]
                 right = i - 1;
-            } else { 
+            } else {  // nums2[j - 1] > nums1[i]
                 left = i + 1;
             }
         }        
