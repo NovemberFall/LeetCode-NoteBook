@@ -83,38 +83,33 @@ class GenerateParentheses_v2 {
 }
 ```
 
-
-
-
-
 ---
-```java
-class Solution {
-    public List<String> generateParenthesis(int n) {
-        List<String> res = new ArrayList<>();
-        dfs(res, new StringBuilder(), 0, 0, n);
-        return res;
-    }
-    
-    private void dfs(List<String> res, StringBuilder sb, int left, int right, int n) {
-        if (left == n && right == n) {
-            res.add(sb.toString());
-            return;
-        }
-        
-        if (left < n) {
-            sb.append('(');
-            dfs(res, sb, left + 1, right, n);
-            sb.setLength(sb.length() - 1);
-        }
-        
-        if (right < left && right < n) {
-            sb.append(')');
-            dfs(res, sb, left, right + 1, n);
-            sb.setLength(sb.length() - 1);
-        } 
-    }
-}
+
+#### Python
+
+```py
+class Solution:
+    def generateParenthesis(self, n: int) -> List[str]:
+        res = []
+        self.dfs(res, [], n, 0, 0)
+        return res
+
+    def dfs(self, res: List[str], sb: List[str], n: int, left: int, right: int) -> None:
+        if left == n and right == n:
+            res.append("".join(sb))
+            return
+        if right > left:
+            return
+
+        if left < n:
+            sb.append('(')
+            self.dfs(res, sb, n, left + 1, right)
+            sb.pop()  # Remove the last character to backtrack
+
+        if right < n:
+            sb.append(')')
+            self.dfs(res, sb, n, left, right + 1)
+            sb.pop()  # Remove the last character to backtrack
 ```
 
 

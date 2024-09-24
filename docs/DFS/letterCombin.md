@@ -42,36 +42,30 @@ class Solution {
 
 ---
 
-### Method 2:
+### Python
 
-```java
-class Solution {
-    public List<String> letterCombinations(String digits) {
-        List<String> res = new ArrayList<>();
-        if (digits == null || digits.length() == 0) return res;
-        
-        char [][] map = {{}, {}, {'a', 'b', 'c'}, 
-        {'d','e','f'}, {'g','h','i'}, {'j','k','l'}, 
-        {'m','n','o'}, {'p','q','r','s'}, {'t', 'u', 'v'},
-                             {'w','x','y','z'}
-        };
-        
-        dfs(digits, res, map, new StringBuilder(), 0);
-        return res;
-    }
-    
-    private void dfs(String digits, List<String> res, char[][]map,
-                    StringBuilder sb, int start) {
-        if (start == digits.length()) {
-            res.add(new String(sb));
-            return;
-        }
-        int num = digits.charAt(start) - '0';
-        for (int i = 0; i < map[num].length; i++) {
-            sb.append(map[num][i]);
-            dfs(digits, res, map, sb, start+1);
-            sb.deleteCharAt(sb.length() - 1);
-        }
-    }
-}
+```py
+class Solution:
+    def __init__(self):
+        self.map = ["", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"]
+
+    def letterCombinations(self, digits: str) -> List[str]:
+        res = []
+        if digits is None or len(digits) == 0:
+            return res
+
+        self.dfs(res, digits, [], 0)
+        return res
+
+
+    def dfs(self, res: [], digits: str, path: list[str], index: int):
+        if index == len(digits):
+            res.append("".join(path))
+            return
+
+        cur = self.map[int(digits[index])]
+        for char in cur:
+            path.append(char)
+            self.dfs(res, digits, path, index + 1)
+            path.pop()
 ```
