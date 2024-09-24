@@ -5,6 +5,9 @@
 
 - [中文教程](https://leetcode.cn/problems/substring-with-concatenation-of-all-words/solution/chuan-lian-suo-you-dan-ci-de-zi-chuan-by-powcai/)
 
+- 注意: **words's elements can be duplicate**
+
+---
 ```java
 class Solution {
     public List<Integer> findSubstring(String s, String[] words) {
