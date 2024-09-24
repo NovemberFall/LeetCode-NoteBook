@@ -10,7 +10,7 @@ assume i = 3,   s is even length
     0  1  2  3  4  5  6  7
    [a  c  d  b  b  d  a  a]
              l
-             r
+                r
 
     0  1  2  3  4  5  6  7
    [a  c  d  b  b  d  a  a]
@@ -74,52 +74,34 @@ class longestPalindromicSubstring {
 ```
 ---
 
-### Brute Force
-
-- **T: O(N^3)**
-
-
 ```java
-class bruteForce {
+class Solution {
+    int maxLen = Integer.MIN_VALUE;
+    String res = "";    
+    
     public String longestPalindrome(String s) {
         int n = s.length();
-        int maxLen = Integer.MIN_VALUE;
-        String res = "";
-        // check for every substring
+        
         for (int i = 0; i < n; i++) {
-            for (int j = i; j < n; j++) {
-                String temp = s.substring(i, j + 1);
-                if (isPalindrome(temp)) {
-                    if (maxLen < temp.length()) {
-                        str = temp;
-                        maxLen = temp.length();
-                    }
-                }
-            }
+            extendPalindrome(s, i, i);
+            extendPalindrome(s, i, i + 1);
         }
-        return str.toString();
+        return res;
     }
-
-    private boolean isPalindrome(String temp) {
-        int n = temp.length();
-        int i = 0, j = n - 1;
-        while (i <= j) {
-            if (temp.charAt(i) != temp.charAt(j)) {
-                return false;
+    
+    private void extendPalindrome(String s, int left, int right) {
+        while (left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
+            if (right - left + 1 > maxLen) {
+                res = s.substring(left, right + 1);
+                maxLen = right - left + 1;
             }
-            i++;
-            j--;
+            left--;
+            right++;
         }
-        return true;
-    }
-
-    public static void main(String[] args) {
-        bruteForce bf = new bruteForce();
-        String str = "babadbbbaaa ababababa bbabaab";
-        System.out.println(bf.longestPalindrome(str)); // ababababa
     }
 }
 ```
+
 ---
 
 #### Python
@@ -149,3 +131,40 @@ class Solution:
             left -= 1
             right += 1
 ```
+---
+
+
+
+### Brute Force
+
+- **T: O(N^3)**
+
+
+```java
+class Solution {
+    int maxLen = Integer.MIN_VALUE;
+    String res = "";    
+    
+    public String longestPalindrome(String s) {
+        int n = s.length();
+        
+        for (int i = 0; i < n; i++) {
+            extendPalindrome(s, i, i);
+            extendPalindrome(s, i, i + 1);
+        }
+        return res;
+    }
+    
+    private void extendPalindrome(String s, int left, int right) {
+        while (left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
+            if (right - left + 1 > maxLen) {
+                res = s.substring(left, right + 1);
+                maxLen = right - left + 1;
+            }
+            left--;
+            right++;
+        }
+    }
+}
+```
+---
