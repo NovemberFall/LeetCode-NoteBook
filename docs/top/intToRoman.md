@@ -3,6 +3,9 @@
 ![](img/2022-11-18-00-12-14.png)
 ---
 ![](img/2024-09-23-17-00-25.png)
+
+- **"IM" is invalid, "I" can only go before V and X, as stated in problem description.**
+
 ---
 ```java
 class _12_IntegerToRoman {
