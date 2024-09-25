@@ -22,7 +22,7 @@
 ---
 ```java
 public class _32_LongestValidParentheses {
-    public static int longestValidParentheses(String s) {
+    public int longestValidParentheses(String s) {
         Stack<Integer> stk = new Stack<>();
         stk.push(-1);
         int max = 0;
@@ -41,15 +41,29 @@ public class _32_LongestValidParentheses {
         }
         return max;
     }
-
-    public static void main(String[] args) {
-        String str = ")()())";
-        int res = longestValidParentheses(str);
-        System.out.println(res);//4
-
-        str = ")((((())";
-        res = longestValidParentheses(str);
-        System.out.println(res); // 4
-    }
 }
 ```
+---
+
+#### Python
+
+```py
+class Solution:
+    def longestValidParentheses(self, s: str) -> int:
+        stk = []
+        stk.append(-1)
+        maxLen = 0
+        for i in range(len(s)):
+            if s[i] == '(':
+                stk.append(i)
+            else:
+                stk.pop()
+                if not stk:
+                    stk.append(i)
+                else:
+                    maxLen = max(maxLen, i - stk[-1])
+        
+        return maxLen
+```
+
+
