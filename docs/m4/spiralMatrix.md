@@ -10,57 +10,6 @@
 ---
 
 ```java
-class Solution {
-    public List<Integer> spiralOrder(int[][] matrix) {
-        List<Integer> res = new ArrayList<>();
-        if(matrix == null || matrix.length == 0){
-            return res;
-        }
-        int rowBegin = 0;
-        int rowEnd = matrix.length - 1;
-        int colBegin = 0;
-        int colEnd = matrix[0].length - 1;
-        
-        while(rowBegin <= rowEnd && colBegin <= colEnd){
-            if(rowBegin <= rowEnd){
-                for(int i = colBegin; i <= colEnd; i++){
-                    res.add(matrix[rowBegin][i]);
-                }
-            }
-            rowBegin++;
-            
-            if(colBegin <= colEnd){
-                for(int i = rowBegin; i <= rowEnd; i++){
-                    res.add(matrix[i][colEnd]);
-                }
-            }
-            colEnd--;
-
-            if(rowBegin <= rowEnd){
-                for(int i = colEnd; i >= colBegin; i--){
-                    res.add(matrix[rowEnd][i]);
-                }
-            }
-            rowEnd--;
-
-            if(colBegin <= colEnd){
-                for(int i = rowEnd; i >= rowBegin; i--){
-                    res.add(matrix[i][colBegin]);
-                }
-            }
-            colBegin++;
-        }
-        return res;
-    }
-
-}
-```
-
----
-
-- other version:
-
-```java
 public class Solution {
     public List<Integer> spiralOrder(int[][] matrix) {
         List<Integer> res = new ArrayList<Integer>();
@@ -71,7 +20,7 @@ public class Solution {
         int left = 0;
         int right = matrix[0].length - 1;
 
-        while (true) {
+        while (top <= bottom && left <= right) { // while true
             for (int i = left; i <= right; i++) {
                 res.add(matrix[top][i]);
             }
@@ -112,4 +61,42 @@ public class Solution {
     }   
 }
 
+```
+---
+
+#### Python
+
+```py
+class Solution:
+    def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
+        res = []
+        top, bottom = 0, len(matrix) - 1
+        left, right = 0, len(matrix[0]) - 1
+
+        while top <= bottom and left <= right:
+            for i in range(left, right + 1):
+                res.append(matrix[top][i])
+            top += 1
+            if left > right or top > bottom:
+                break
+
+            for i in range(top, bottom + 1):
+                res.append(matrix[i][right])
+            right -= 1
+            if left > right or top > bottom:
+                break
+
+            for i in range(right, left - 1, -1):
+                res.append(matrix[bottom][i])
+            bottom -= 1
+            if left > right or top > bottom:
+                break
+
+            for i in range(bottom, top - 1, -1):
+                res.append(matrix[i][left])
+            left += 1
+            if left > right or top > bottom:
+                break
+
+        return res
 ```
