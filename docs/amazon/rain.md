@@ -6,6 +6,42 @@
 ![](img/2021-09-25-16-21-26.png)
 ---
 
+### Two points
+- [leetcode discussion](https://leetcode.com/problems/trapping-rain-water/solutions/17391/share-my-short-solution/comments/185869)
+- [官方video 15:12](https://leetcode.cn/problems/trapping-rain-water/solutions/692342/jie-yu-shui-by-leetcode-solution-tuvc/)
+- [class 23 |  2:24:00]()
+
+![](img/2023-09-20-21-12-51.png)
+![](img/2024-03-24-00-58-40.png)
+
+```java
+class TrappingRainWater_twoPointers {
+    public int trap(int[] height) {
+        int left = 0, right = height.length - 1;
+        int leftMax = 0, rightMax = 0;
+        int res = 0;
+        while (left < right) {
+            leftMax = Math.max(leftMax, height[left]);
+            rightMax = Math.max(rightMax, height[right]);
+            if (leftMax < rightMax) {
+                res += (leftMax - height[left]);
+                left++;
+            } else {
+                res += (rightMax - height[right]);
+                right--;
+            }
+        }
+        return res;
+    }
+}
+
+```
+
+![](img/2022-02-06-22-26-14.png)
+
+---
+
+
 ### Dynamic Programming
 
 ![](img/2021-09-25-16-26-52.png)
@@ -56,40 +92,7 @@ class Solution {
 ```
 ---
 ![](img/2022-02-06-22-24-42.png)
----
 
-### Two points
-- [leetcode discussion](https://leetcode.com/problems/trapping-rain-water/solutions/17391/share-my-short-solution/comments/185869)
-- [官方video 15:12](https://leetcode.cn/problems/trapping-rain-water/solutions/692342/jie-yu-shui-by-leetcode-solution-tuvc/)
-- [class 23 |  2:24:00]()
-
-![](img/2023-09-20-21-12-51.png)
-![](img/2024-03-24-00-58-40.png)
-
-```java
-class TrappingRainWater_twoPointers {
-    public int trap(int[] height) {
-        int left = 0, right = height.length - 1;
-        int leftMax = 0, rightMax = 0;
-        int res = 0;
-        while (left < right) {
-            leftMax = Math.max(leftMax, height[left]);
-            rightMax = Math.max(rightMax, height[right]);
-            if (leftMax < rightMax) {
-                res += (leftMax - height[left]);
-                left++;
-            } else {
-                res += (rightMax - height[right]);
-                right--;
-            }
-        }
-        return res;
-    }
-}
-
-```
-
-![](img/2022-02-06-22-26-14.png)
 
 ---
 
