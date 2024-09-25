@@ -3,42 +3,19 @@
 
 - [Longest Valid Parentheses | Leetcode - 32](https://youtu.be/VdQuwtEd10M?t=165)
 
+
+
+
+
 ---
-```ruby
-") ( ) ( ) )"
- i 
-stack [ -1, 
+![](img/2024-09-24-19-28-09.png)
+
+![](img/2024-09-24-19-27-11.png)
+
+![](img/2024-09-24-19-27-45.png)
 
 
-") ( ) ( ) )"
- i 
-stack [ 0
-
-
-") ( ) ( ) )"
-   i 
-stack [ 0, 1
-
-
-") ( ) ( ) )"
-     i 
-stack [ 0,                  # max = 2 - 0 = 2
-
-
-") ( ) ( ) )"
-       i 
-stack [ 0, 3     
-
-
-") ( ) ( ) )"
-         i 
-stack [ 0,                 # max = 4 - 0 = 4     
-
-
-") ( ) ( ) )"
-           i 
-stack [ 5,  
-```
+---
 
 ![](img/2023-07-21-13-09-55.png)
 

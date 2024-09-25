@@ -26,6 +26,9 @@
 
 ![](img/2024-09-24-18-02-58.png)
 
+![](img/2024-09-24-18-36-40.png)
+
+- within this **for loop**, `every index i from leftmost to rightmost is a sliding window`
 
 ---
 ```ruby
@@ -134,7 +137,7 @@ class Solution {
         */
         List<Integer> res = new ArrayList<>();
         
-        if (s == null || s.length() == 0 || words == null || words.length == 0) {
+        if (words.length == 0 || s.length() < words.length * words[0].length()) {
             return res;
         }
         
@@ -210,3 +213,7 @@ class Solution {
 }
 
 ```
+---
+
+#### Python
+
