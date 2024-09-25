@@ -40,59 +40,27 @@ class TrappingRainWater_twoPointers {
 ![](img/2022-02-06-22-26-14.png)
 
 ---
+#### Python
 
-
-### Dynamic Programming
-
-![](img/2021-09-25-16-26-52.png)
-
-- Algorithm
-  - Find maximum height of bar from the left end upto an index i in the array `left_max`.
-  - Find maximum height of bar from the right end upto an index i in the array `right_max`.
-    - Add `min(left_max[i], right_max[i]) - height[i]` to ans
-  - `Min(leftMax, rightMax) - Height[i]` (we don't count negative, convert it to be 0)
-
-- 注意：无论左右两边多高，都无法蓄水。都会从最左最右边界溢出，
-  - 因此在比较左边高度，以及右边高度的时候，从 `index = 1`, 以及倒数第二个index 开始比较。
-
-![](img/2022-05-03-10-01-52.png)
-
-```java
-class Solution {
-    public int trap(int[] height) {
-    /* 
-    To check is if we get an array of size less than 3. 
-    We immediately know that it cannot have any water trapped 
-    so we can do an early return of 0.
-    */
-        if (height.length < 3) {
-            return 0;
-        }
-        int n = height.length;
-        int leftMax = 0, rightMax = 0;
-        int [] left = new int[n];
-        int [] right = new int[n];
-        int count = 0;
+```py
+class Solution:
+    def trap(self, height: List[int]) -> int:
+        left, right = 0, len(height) - 1
+        leftMax, rightMax = 0, 0
+        res = 0
         
-        for (int i = 1; i < n; i++) {
-            leftMax = Math.max(leftMax, height[i - 1]);
-            left[i] = leftMax;
-        }
-        for (int j = n - 2; j >= 0; j--) {
-            rightMax = Math.max(rightMax, height[j + 1]);
-            right[j] = rightMax;
-        }
+        while left < right:
+            leftMax = max(leftMax, height[left])
+            rightMax = max(rightMax, height[right])
+            if leftMax < rightMax:
+                res += leftMax - height[left]
+                left += 1
+            else:
+                res += rightMax - height[right]
+                right -= 1
         
-        for (int i = 0; i < n; i++) {
-          count += Math.max(0, Math.min(left[i], right[i])-height[i]);
-        }
-        return count;
-    }
-}
+        return res
 ```
----
-![](img/2022-02-06-22-24-42.png)
-
 
 ---
 
