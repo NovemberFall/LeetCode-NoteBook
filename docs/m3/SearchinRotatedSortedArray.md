@@ -57,19 +57,6 @@ class Solution {
 }
 ```
 ---
-![](img/2023-08-16-22-34-18.png)
-
-- **将数组一分为二，其中一定有一个是有序的，另一个可能是有序，也能是部分有序。此时有序部分用二分法查找。无序部分再一分为二，其中一个一定有序，另一个可能有序，可能无序。就这样循环.**
-
-```ruby
-if (nums[0] <= nums[mid]) {
-    // 左半边有序
-} else {
-    // 右半边有序
-}
-```
-
----
 
 - 注意代码，可以全部统一成两边都是 **闭区间**
 - 但是不可以写成： `if (nums[left] < nums[mid])` 因为:
@@ -84,35 +71,52 @@ if (nums[0] <= nums[mid]) {
 
 - [中文解释](https://suanfa8.com/binary-search/solutions-1/0033-search-in-rotated-sorted-array)
 
-
-
 ---
+
+#### Show all else if conditions
 
 ```java
 class Solution {
     public int search(int[] nums, int target) {
+        if (nums == null || nums.length == 0) {
+            return -1;
+        }
+
         int left = 0, right = nums.length - 1;
         while (left <= right) {
-            int mid = left + (right - left >>> 1);
-            if (nums[mid] == target) {
+            int mid = left + (right - left) / 2;
+
+            // If the target is found at the middle
+            if (target == nums[mid]) {
                 return mid;
-            } 
-            
+            }
+
+            // Check if the left side is sorted
             if (nums[left] <= nums[mid]) {
-                if (nums[left] <= target && target < nums[mid]) {
+
+                // Target is in the left sorted half
+                if (nums[left] <= target && target <= nums[mid]) {
                     right = mid - 1;
-                } else {
+                } 
+                // Target is not in the left sorted half
+                else if (nums[left] > target || target > nums[mid]) {
                     left = mid + 1;
                 }
-            } else {
-                if (nums[mid] < target && target <= nums[right]) {
+
+            } 
+            // Else, the right side must be sorted
+            else if (nums[mid] < nums[right]) {
+
+                // Target is in the right sorted half
+                if (nums[mid] <= target && target <= nums[right]) {
                     left = mid + 1;
-                } else {
+                } 
+                // Target is not in the right sorted half
+                else if (nums[mid] > target || target > nums[right]) {
                     right = mid - 1;
                 }
             }
         }
-        
         return -1;
     }
 }
