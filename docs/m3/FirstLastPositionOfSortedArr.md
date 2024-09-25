@@ -2,12 +2,6 @@
 ![](img/2022-08-12-13-58-25.png)
 ---
 
-- 在搜索区间里只有两个元素的时候，`int mid = (left + right) / 2` 取到的是中间位置**靠左**的元素的位置，
-  `int mid = (left + right + 1) / 2` 取到的是中间位置**靠右**的元素的位置。
-
-![](img/2023-08-18-00-48-07.png)
-
----
 
 ### template.1
 
@@ -64,7 +58,58 @@ public class _34_FindFirstAndLastPositionInSortedArray {
 
 ---
 
+#### Python
+
+```py
+class Solution:
+    def searchRange(self, nums: List[int], target: int) -> List[int]:
+        res = [-1, -1]
+        res[0] = self.findFirst(nums, target)
+        res[1] = self.findLast(nums, target)
+        return res
+    
+    def findFirst(self, nums: List[int], target: int) -> int:
+        idx = -1
+        left, right = 0, len(nums) - 1
+        
+        while left <= right:
+            mid = (left + right) >> 1
+            if nums[mid] == target:
+                idx = mid;
+                right = mid - 1
+            elif nums[mid] < target:
+                left = mid + 1
+            else:
+                right = mid - 1
+        return idx
+    
+    def findLast(self, nums: List[int], target: int) -> int:
+        idx = -1
+        left, right = 0, len(nums) - 1
+        
+        while left <= right:
+            mid = (left + right) >> 1
+            if nums[mid] == target:
+                idx = mid;
+                left = mid + 1
+            elif nums[mid] < target:
+                left = mid + 1
+            else:
+                right = mid - 1
+        return idx    
+```
+
+
+---
+---
+
 ### tempalte.2
+
+- 在搜索区间里只有两个元素的时候，`int mid = (left + right) / 2` 取到的是中间位置**靠左**的元素的位置，
+  `int mid = (left + right + 1) / 2` 取到的是中间位置**靠右**的元素的位置。
+
+![](img/2023-08-18-00-48-07.png)
+---
 
 ```java
 class indFirstAndLastPositionInSortedArray_v2 {
@@ -113,5 +158,3 @@ class indFirstAndLastPositionInSortedArray_v2 {
     }
 }
 ```
-
-
