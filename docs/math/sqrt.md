@@ -1,7 +1,9 @@
 ## 69. Sqrt(x)
 ![](img/2023-03-30-13-35-24.png)
+---
+![](img/2024-09-25-16-20-37.png)
 
-
+![](img/2024-09-25-16-26-21.png)
 ---
 ### template.1
 
@@ -23,31 +25,6 @@ class sqrt_x_tmp1 {
 }
 
 ```
-
----
-### template.2
-
-```java
-class sqrt_x_t2 {
-    public int mySqrt(int x) {
-        if (x == 0) return 0;
-
-        if (x == 1) return 1;
-
-        int left = 1, right = x / 2;
-        while (left < right) {
-            int mid = left + ((right - left) >> 1);
-            if (mid > x / mid) {
-                right = mid - 1;
-            } else {
-                left = mid;
-            }
-        }
-        return left;
-    }
-}
-```
-
 ---
 
 ### Newton's Method
@@ -79,4 +56,22 @@ class _69_Sqrt_x {
         return (int) r;
     }
 }
+```
+---
+
+#### Python
+
+```py
+class Solution:
+    def mySqrt(self, x: int) -> int:
+        left, right, ans = 0, x, x
+        while left <= right:
+            mid = (left + right) >> 1
+            if mid * mid <= x: 
+                ans = mid
+                left = mid + 1
+            else:
+                right = mid - 1
+        
+        return ans
 ```
