@@ -31,7 +31,7 @@
     * [145. Binary Tree Postorder Traversal | recurive](ch5/postorder.md)
     * [173. Binary Search Tree Iterator](stack/bstIterator.md)
     * [32. Longest Valid Parentheses](top/LongestValidParentheses.md)
-    * [71. Simplify Path](most/simplify.md)
+    * [71. Simplify Path](stack/71.md)
     * [Sort With Two Stacks](m1/sortWithTwoStack.md)
     * [150. Evaluate Reverse Polish Notation](stack/erpn.md)
     * [394. Decode String](m8/decode.md)
