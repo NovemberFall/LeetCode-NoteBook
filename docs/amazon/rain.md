@@ -12,7 +12,7 @@
 - [class 23 |  2:24:00]()
 
 ![](img/2023-09-20-21-12-51.png)
-![](img/2024-03-24-00-58-40.png)
+![](img/2024-09-24-22-26-06.png)
 
 ```java
 class TrappingRainWater_twoPointers {
