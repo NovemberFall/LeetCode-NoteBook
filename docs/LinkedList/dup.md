@@ -44,18 +44,58 @@
 ---
 
 ```java
-class _83_RemoveDuplicatesFromSortedList {
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
     public ListNode deleteDuplicates(ListNode head) {
         if (head == null || head.next == null) return head;
-
+        
+        ListNode dummy = new ListNode(-1);
+        dummy.next = head;
         ListNode cur = head;
+        
         while (cur != null) {
-            while (cur.next != null && cur.val == cur.next.val) {
-                cur.next = cur.next.next;
+            if (cur.next != null && cur.val == cur.next.val) {
+                while (cur.next != null && cur.val == cur.next.val) {
+                    cur.next = cur.next.next;
+                }
+            } else {
+                cur = cur.next;
             }
-            cur = cur.next;
         }
-        return head;
+        return dummy.next;
     }
 }
+```
+---
+
+#### Python
+
+```py
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        dummy = ListNode(-1)
+        dummy.next = head
+        cur = head
+        
+        while cur:
+            if cur.next and cur.val == cur.next.val:
+                while cur.next and cur.val == cur.next.val:
+                    cur.next = cur.next.next
+            else:
+                cur = cur.next
+        return dummy.next
 ```
