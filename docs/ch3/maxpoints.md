@@ -14,13 +14,15 @@
 ---
 
 ```java
-class _149_MaxPointsOnALine {
+class Solution {
     public int maxPoints(int[][] points) {
         int n = points.length;
-        if (n <= 2) {// 2 or less points can claways from a line
+        if (n <= 2) { // 2 or less points can claways from a line
             return n;
         }
-        int res = 2;
+        
+        int max = 2;
+        double slope = 0;
         for (int i = 0; i < n; i++) {
             int[] a = points[i];
             Map<Double, Integer> map = new HashMap<>();
@@ -29,19 +31,19 @@ class _149_MaxPointsOnALine {
                 if (a[0] == b[0] && a[1] == b[1]) {
                     continue;
                 }
-                double slope = 0;
-                if (b[0] - a[0] == 0) {
-                    slope = Double.MAX_VALUE;
+                if (a[0] == b[0]) {
+                    slope = Integer.MAX_VALUE;
                 } else {
-                    slope = (b[1] - a[1]) / (double) (b[0] - a[0]);
+                    slope = (double) (b[1] - a[1]) / (b[0] - a[0]);
                 }
                 // `map.getOrDefault(slope, 0)+1` is adding 1 more point count for
-                // that slope if we already had that slope.
+                // that slope if we already had that slope.                
                 map.put(slope, map.getOrDefault(slope, 1) + 1);
-                res = Math.max(res, map.get(slope));
+                max = Math.max(max, map.get(slope));
             }
         }
-        return res;
+    
+        return max;
     }
 }
 ```
