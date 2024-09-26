@@ -26,47 +26,6 @@ if (pointNum == 3) { // 逗点数量为3时，分隔结束
   如果合法就在字符串后面加上符号`.`表示已经分割。
 
 ---
-### Brute Force
-```java
-class Solution {
-    public List<String> restoreIpAddresses(String s) {
-        List<String> res = new ArrayList<>();
-        int len = s.length();
-        for (int i = 1; i < 4 && i < len - 2; i++) {
-            for (int j = i + 1; j < i + 4 && j < len - 1; j++) {
-                for (int k = j + 1; k < j + 4 && k < len; k++) {
-                    String s1 = s.substring(0, i),
-                            s2 = s.substring(i, j),
-                            s3 = s.substring(j, k),
-                            s4 = s.substring(k, len);
-                    if (isValid(s1) && isValid(s2) && isValid(s3) && isValid(s4)) {
-                        res.add(s1 + "." + s2 + "." + s3 + "." + s4);
-                    }
-
-                }
-            }
-        }
-        return res;
-    }
-
-    private boolean isValid(String s) {
-        if (s.length() > 3 || s.length() == 0 ||
-                (s.charAt(0) == '0' && s.length() > 1) || Integer.parseInt(s) > 255) {
-            return false;
-        }
-        return true;
-    }
-
-    public static void main(String[] args) {
-        Solution soln = new Solution();
-        String s = "101023";
-        List<String> res = soln.restoreIpAddresses(s);
-        System.out.println(res);
-    }
-}
-```
-
----
 
 - [中文解释 II](https://www.youtube.com/watch?v=wLuFymFZORQ&t=957s)
 
@@ -124,8 +83,49 @@ class Restore_IP_Addresses_StringBuilder {
 }
 ```
 ---
+---
 
+### Brute Force
+```java
+class Solution {
+    public List<String> restoreIpAddresses(String s) {
+        List<String> res = new ArrayList<>();
+        int len = s.length();
+        for (int i = 1; i < 4 && i < len - 2; i++) {
+            for (int j = i + 1; j < i + 4 && j < len - 1; j++) {
+                for (int k = j + 1; k < j + 4 && k < len; k++) {
+                    String s1 = s.substring(0, i),
+                            s2 = s.substring(i, j),
+                            s3 = s.substring(j, k),
+                            s4 = s.substring(k, len);
+                    if (isValid(s1) && isValid(s2) && isValid(s3) && isValid(s4)) {
+                        res.add(s1 + "." + s2 + "." + s3 + "." + s4);
+                    }
 
+                }
+            }
+        }
+        return res;
+    }
+
+    private boolean isValid(String s) {
+        if (s.length() > 3 || s.length() == 0 ||
+                (s.charAt(0) == '0' && s.length() > 1) || Integer.parseInt(s) > 255) {
+            return false;
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        Solution soln = new Solution();
+        String s = "101023";
+        List<String> res = soln.restoreIpAddresses(s);
+        System.out.println(res);
+    }
+}
+```
+
+---
 ### Python
 
 ```py
