@@ -21,7 +21,7 @@ class permutationSequence_bruteForce {
             return;
         }
         
-        if (res.length() == 0 && sb.length() == n) {
+        if (sb.length() == n) {
             count++;
             if (count == k) {
                 res = sb.toString();
