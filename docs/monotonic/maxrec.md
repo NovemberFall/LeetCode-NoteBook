@@ -25,6 +25,7 @@ class MaximalRectangle_v1 {
     }
 
     private void buildHistogram(char[][] matrix, int[][] grid) {
+        // 第一行特殊处理
         for (int j = 0; j < matrix[0].length; j++) {
             grid[0][j] = matrix[0][j] == '1' ? 1 : 0;
         }
