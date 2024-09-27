@@ -6,25 +6,6 @@
 
 ```java
 class BinaryTreeInorderTraversal_Iterator_easy_understand {
-    static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
-
     public List<Integer> inorderTraversal(TreeNode root) {
         if (root == null) return new ArrayList<>();
 
@@ -78,24 +59,6 @@ class BinaryTreeInorderTraversal_Iterator_easy_understand {
 ---
 ```java
 class BinaryTreeInorderTraversal_Iterator {
-    static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
     public List<Integer> inorderTraversal(TreeNode root) {
         if (root == null) return new ArrayList<>();
