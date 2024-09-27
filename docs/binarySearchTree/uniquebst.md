@@ -39,11 +39,13 @@ G(0)G(1)  G(1)G(0) // base case                                // 4 x 3 x 2
 
 - Time: `C(N) = N x N!`
 - Space: `O(N)`
+
 ---
 ### Recursion with HashMap - Deduplicate
 
 - Examining the previous `recurrence` carefully, we find that there are **repeated calculations**.
-```ruby
+
+```java
 G(3) = G(0) x G(2)  // i = 1
      = G(1) x G(1)  // i = 2
      = G(2) x G(0)  // i = 3
@@ -122,19 +124,6 @@ class UniqueBinarySearchTrees_BruteForce {
             }
         }
         return res;
-    }
-
-    static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode() {}
-        TreeNode(int val) { this.val = val; }
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
     }
 }
 ```
