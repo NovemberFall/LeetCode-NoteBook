@@ -23,21 +23,12 @@ Analysis
 - Particularly, consider two base cases when `i = 1` and `i = 2`:
   - `i = 1: F(1, n) = G(0) x G(n - 1)`. The empty left subtree is still a subtree, so `G(0) = 1`.
   - `i = 2: F(2, n) = G(1) x G(n - 2)`. With one node we can only construct one unique left subtree, so `G(1) = 1`.
+
+
+![](img/2024-09-27-22-16-49.png)
 ---
-- Here is the recurrence tree:
 
-```ruby
-                               G(4)
-                     /      |        |        \
-             G(0)G(3)     G(1)G(2)  G(2)G(1)   G(3)G(0)        // 4
-            /    |    \
-    G(0)G(2)  G(1)G(1)  G(2)G(0)                               // 4 x 3
-    /     \
-G(0)G(1)  G(1)G(0) // base case                                // 4 x 3 x 2
-```
-
-
-- Time: `C(N) = N x N!`
+- Time: `O(N) = N x N!`
 - Space: `O(N)`
 
 ---
@@ -55,7 +46,16 @@ G(4) = G(0) x G(3)  // i = 1
      = G(2) x G(1)  // i = 3
      = G(3) x G(0)  // i = 4
 ```
+---
 
+#### DP
+
+```java
+
+```
+
+
+---
 - Therefore, we can use a `hash map` or an `integer array` to store calculated `G(n)`. Here is the hash map version.
 
 ```java
@@ -94,36 +94,45 @@ class UniqueBinarySearchTrees_Recursion_HashMap {
 ![](img/2022-12-26-13-56-00.png)
 ---
 
+#### Python
+
+```py
+class Solution:
+    def numTrees(self, n: int) -> int:
+        # numTree[4] = numTree[0] * numTree[3] +
+        #              numTree[1] * numTree[2] +
+        #              numTree[2] * numTree[1] +
+        #              numTree[3] * numTree[0]
+        numTree = [1] * (n + 1)
+
+        # 0 nodes = 1 tree  ## since O is an empty tree
+        # 1 nodes = 1 tree
+        for nodes in range(2, n + 1):
+            total = 0
+            for root in range(1, nodes + 1):
+                left = root - 1
+                right = nodes - root
+                total += numTree[left] * numTree[right]
+            numTree[nodes] = total
+        return numTree[n]
+```
+
+
+---
+
 ### Brute Force
 
 ```java
-class UniqueBinarySearchTrees_BruteForce {
+class Solution {
     public int numTrees(int n) {
-        if (n == 0) return 0;
-
-        List<TreeNode> res = recursion(1, n);
-        return res.size();
-    }
-
-    private List<TreeNode> recursion(int start, int end) {
-        List<TreeNode> res = new ArrayList<>();
-        if (start > end) {
-            res.add(null);
-            return res;
+        if (n == 0 || n == 1) {
+            return 1;
         }
-        for (int i = start; i <= end; i++) {
-            List<TreeNode> leftSubtree = recursion(start, i - 1);
-            List<TreeNode> rightSubtree = recursion(i + 1, end);
-            for (TreeNode leftNode : leftSubtree) {
-                for (TreeNode rightNode : rightSubtree) {
-                    TreeNode root = new TreeNode(i);
-                    root.left = leftNode;
-                    root.right = rightNode;
-                    res.add(root);
-                }
-            }
+        int sum = 0;
+        for (int i = 1; i <= n; i++) {
+            sum += numTrees(i - 1) * numTrees(n - i);
         }
-        return res;
+        return sum;
     }
 }
 ```
