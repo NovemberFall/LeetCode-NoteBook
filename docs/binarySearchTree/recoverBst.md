@@ -1,36 +1,31 @@
 ## 99. Recover Binary Search Tree
 ![](img/2022-12-26-15-27-29.png)
 ---
-![](img/2022-12-26-17-29-47.png)
+![](img/2024-09-29-00-00-00.png)
 
-- `9......2` is incorrect
+![](img/2024-09-29-00-00-16.png)
 
-![](img/2022-12-26-17-33-47.png)
-
-![](img/2022-12-26-17-35-51.png)
-
-![](img/2022-12-26-17-36-35.png)
-- for this `prev` is **greater than** `root`
-
-![](img/2022-12-26-17-38-59.png)
-- instead of `previous` the `root` will **become** our `second`
-- 这里可以清楚看到， `9 > 4`, `8 > 2`, 所以我们记录下 **fist** 和 **second** 的位置， 然后`swap`
+- create two nodes: **first** and **second**
+- **first** store `prev node`
+- **second** store `current root`
 
 ---
 
 ```java
 class _99_RecoverBinarySearchTree {
-    TreeNode firstNode = null;
-    TreeNode secondNode = null;
-    TreeNode prev = new TreeNode(Integer.MIN_VALUE);
+    TreeNode first = null; // 第一个错误值
+    TreeNode second = null; // 第二个错误值
+    TreeNode prev = null; // 之前的节点
     public void recoverTree(TreeNode root) {
         if (root == null) {
             return;
         }
+
+        // 找到first和second
         inOrderRecursion(root);
-        int temp = firstNode.val;
-        firstNode.val = secondNode.val;
-        secondNode.val = temp;
+        int temp = first.val;
+        first.val = second.val;
+        second.val = temp;
     }
 
     private void inOrderRecursion(TreeNode root) {
@@ -40,14 +35,20 @@ class _99_RecoverBinarySearchTree {
 
         inOrderRecursion(root.left);
 
-        if (firstNode == null && prev.val > root.val) {
-            firstNode = prev;
+        // 出现了错误的值，中序遍历之前的值比之后的值大
+        if (prev == null && prev.val > root.val) {
+            // 有两个数顺序不对
+            // 第一个错误是prev
+            // 第二个错误是root
+            // [1,(3),(2),4,5]
+            // [1,(4),3,(2),5]
+            if (first == null) {
+                first = prev;
+            }
+            second = root;
         }
-        if (firstNode != null && prev.val > root.val) {
-            secondNode = root;
-        }
-        prev = root;
 
+        prev = root;
         inOrderRecursion(root.right);
     }
 }
