@@ -477,6 +477,7 @@
         * [408 Valid Word Abbreviation](tiktok/408.md)
         * [2523. Closest Prime Numbers in Range](tiktok/2523.md)
         * [2402. Meeting Rooms III](tiktok/2402.md)
+        * [1944. Number of Visible People in a Queue](tiktok/1944.md)
     * [Walmart Labs](walmart/intro.md)
         * [298. Binary Tree Longest Consecutive Sequence](walmart/298.md)
         * [841. Keys and Rooms](walmart/841.md)
