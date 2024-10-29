@@ -480,6 +480,7 @@
         * [1944. Number of Visible People in a Queue](tiktok/1944.md)
         * [1249. Minimum Remove to Make Valid Parentheses](tiktok/1249.md)
         * [1335. Minimum Difficulty of a Job Schedule](tiktok/1335.md)
+        * [1071. Greatest Common Divisor of Strings](tiktok/1071.md)
     * [Walmart Labs](walmart/intro.md)
         * [298. Binary Tree Longest Consecutive Sequence](walmart/298.md)
         * [841. Keys and Rooms](walmart/841.md)
