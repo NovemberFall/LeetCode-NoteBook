@@ -74,11 +74,6 @@ class TicTacToe {
             }            
         }
 
-/*       0 1 2   
-      0 | | |X|
-      1 | |X| |    # row + col + 1 == n
-      2 |X| | |                
-*/
         if (row + col + 1 == n) {
             antiDiagonal += playerId;
             if (antiDiagonal == n || antiDiagonal == -n){
