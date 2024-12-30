@@ -57,3 +57,50 @@ class permutationSequence_bruteForce {
 
 - [可以先阅读这个video](https://www.youtube.com/watch?v=W9SIlE2jhBQ)
 
+---
+
+
+## why did it set `n + 1`, wht is the purpose?   
+
+![](img/2024-12-17-20-32-55.png)
+
+![](img/2024-12-17-20-33-10.png)
+
+![](img/2024-12-17-20-33-48.png)
+
+---
+
+#### Python
+
+```py
+class Solution:
+    def __init__(self):
+        self.count = 0
+        self.res = ""
+
+    def getPermutation(self, n: int, k: int) -> str:
+        visited = [False] * (n + 1)
+        self.dfs(n, k, visited, [])
+        return self.res
+
+    def dfs(self, n: int, k: int, visited: list, path: list):
+        if self.res:
+            return
+        
+        if len(path) == n:
+            self.count += 1
+            if self.count == k:
+                self.res = ''.join(map(str, path))
+            return
+        
+        for i in range(1, n + 1):
+            if visited[i]:
+                continue    
+            
+            visited[i] = True
+            path.append(i)
+            self.dfs(n, k, visited, path)
+            path.pop()
+            visited[i] = False
+        
+```
