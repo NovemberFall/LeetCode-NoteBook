@@ -40,10 +40,6 @@
 
 ---
 
-![](img/2021-08-08-17-08-24.png)
-
-![](img/2021-08-08-17-20-30.png)
-
 - 这里先遍历一下数组prerequisites, 然后 `indegree[prerequisites[i][0]]++`
 
 ![](img/2021-08-08-15-09-39.png)
@@ -60,7 +56,6 @@ class Solution {
         return bfs(graph, numCourses, indegree);
     }
     
-    //把先修课放到每个课程的list 里 & 统计indegree数量
     private void buildGraph(Map<Integer, List<Integer>> graph, int[][]prerequisites, int[] indegree) {
         for (int i = 0; i < prerequisites.length; i++) {
             graph.putIfAbsent(prerequisites[i][1], new ArrayList<>());
@@ -94,4 +89,44 @@ class Solution {
         return count == numCourses;
     }
 }
+```
+---
+
+
+#### Python
+
+```py
+class Solution:
+    def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
+        indegrees = [0] * numCourses
+        graph = defaultdict(list)
+        self.buildGraph(graph, prerequisites, indegrees)
+        return self.bfs(graph, numCourses, indegrees)
+
+    # Build the graph and calculate indegree for each course
+    def buildGraph(self, graph: defaultdict, prerequisites: List[List[int]], indegrees: List[int]) -> None:
+        for prereq in prerequisites:
+            graph[prereq[1]].append(prereq[0]) # Add course that depends on the current prerequisite
+            indegrees[prereq[0]] += 1
+
+    def bfs(self, graph: defaultdict, numCourses: int, indegree: List[int]) -> bool:
+        queue = deque()
+        # Enqueue courses with no prerequisites
+        for i in range(numCourses):
+            if indegree[i] == 0:
+                queue.append(i)
+
+        count = 0  # Count the number of courses we can take
+        while queue:
+            course = queue.popleft()
+            count += 1
+            # Check if current course is a prerequisite for other courses
+            list = graph[course]
+            if list:
+                for in_course in list:
+                    indegree[in_course] -= 1
+                    if indegree[in_course] == 0:
+                        queue.append(in_course)
+
+        return count == numCourses
 ```
