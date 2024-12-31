@@ -106,7 +106,7 @@ class Solution:
     # Build the graph and calculate indegree for each course
     def buildGraph(self, graph: defaultdict, prerequisites: List[List[int]], indegrees: List[int]) -> None:
         for prereq in prerequisites:
-            graph[prereq[1]].append(prereq[0]) # Add course that depends on the current prerequisite
+            graph[prereq[1]].append(prereq[0])  # Add course that depends on the current prerequisite
             indegrees[prereq[0]] += 1
 
     def bfs(self, graph: defaultdict, numCourses: int, indegree: List[int]) -> bool:
@@ -121,12 +121,12 @@ class Solution:
             course = queue.popleft()
             count += 1
             # Check if current course is a prerequisite for other courses
-            list = graph[course]
-            if list:
-                for in_course in list:
-                    indegree[in_course] -= 1
-                    if indegree[in_course] == 0:
-                        queue.append(in_course)
+            for in_course in graph[course]:
+                indegree[in_course] -= 1
+                if indegree[in_course] == 0:
+                    queue.append(in_course)
 
         return count == numCourses
 ```
+
+![](img/2024-12-30-23-49-52.png)
