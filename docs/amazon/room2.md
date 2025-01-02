@@ -79,37 +79,32 @@ class meetingRooms_II {
 }
 ```
 
-
-
-
-
 ---
 
-### version 2
+#### Python
 
-```java
-class meetingRooms_II_v2 {
-    public int minMeetingRooms(int[][] intervals) {
-        int[] start = new int[intervals.length];
-        int[] end = new int[intervals.length];
-        for (int i = 0; i < intervals.length; i++) {
-            start[i] = intervals[i][0];
-            end[i] = intervals[i][1];
-        }
+```py
+class Solution:
+    def minMeetingRooms(self, intervals: List[List[int]]) -> int:
+        if not intervals:
+            return 0
 
-        Arrays.sort(start);
-        Arrays.sort(end);
-
-        int rooms = 0, endIdx = 0;
-        for (int i = 0; i < intervals.length; i++) {
-            if (start[i] < end[endIdx]) {
-                rooms++;// all rooms occupied, need to allocate new room
-            } else {
-                endIdx++;// just re-use the room that ends previous endIdx
-            }
-        }
-
-        return rooms;
-    }
-}
+        start = [interval[0] for interval in intervals]
+        end = [interval[1] for interval in intervals]
+        start.sort()
+        end.sort()
+        res = 0
+        room = 0
+        start_index = 0
+        end_index = 0
+        
+        while start_index < len(intervals):
+            if start[start_index] < end[end_index]:
+                start_index += 1
+                room += 1
+            else:
+                end_index += 1
+                room -= 1
+            res = max(res, room)
+        return res
 ```
