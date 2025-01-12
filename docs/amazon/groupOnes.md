@@ -69,7 +69,7 @@ class _1151_MinimumSwapsToGroupAll_ones_Together {
             } else {
                 // add data[fast], remove data[left]
                 curOneCnt += data[fast];
-                curOneCnt += data[slow];
+                curOneCnt -= data[slow];
                 slow++;
             }
 
