@@ -9,11 +9,17 @@
 ### Two points
 - [leetcode discussion](https://leetcode.com/problems/trapping-rain-water/solutions/17391/share-my-short-solution/comments/185869)
 - [官方video 15:12](https://leetcode.cn/problems/trapping-rain-water/solutions/692342/jie-yu-shui-by-leetcode-solution-tuvc/)
-- [class 23 |  2:24:00]()
+
 
 ![](img/2023-09-20-21-12-51.png)
 ![](img/2024-09-24-22-26-06.png)
+---
 
+![](img/2025-01-15-08-25-16.png)
+![](img/2025-01-15-08-26-40.png)
+
+![](img/2025-01-15-08-26-57.png)
+---
 ```java
 class TrappingRainWater_twoPointers {
     public int trap(int[] height) {
