@@ -3,6 +3,8 @@
     * [75. Sort Colors](sort/sortColors.md)
     * [169. Majority Element | Majority Voting Algorithm](sort/majority.md)
     * [912. Sort an Array | Quick Sort](sort/quick.md)
+        * [Quick Sort](sort/quick.md)
+        * [Quick Sort](array/quick.md)
         * [Merge Sort](sort/merge.md)
         * [Selection Sort](sort/select.md)
     * [ReOrder Array](m5/reorderArr.md)
