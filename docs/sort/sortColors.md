@@ -69,10 +69,10 @@ class Solution:
         self.quickSort(nums, left, pivot - 1)
         self.quickSort(nums, pivot + 1, right)
 
-    def partition(self, nums:List[int], left:int, right:int) -> int:
-        privotIdx = random.randint(left, right)
-        pivotVal = nums[privotIdx]
-        self.swap(nums, privotIdx, right)
+    def partition(self, nums: List[int], left: int, right: int) -> int:
+        pivotIdx = random.randint(left, right)
+        pivotVal = nums[pivotIdx]
+        self.swap(nums, pivotIdx, right)
         leftBound = left
         rightBound = right - 1
         while leftBound <= rightBound:
@@ -87,7 +87,7 @@ class Solution:
         self.swap(nums, leftBound, right)
         return leftBound
 
-    def swap(self, nums:List[int], left:int, right:int) -> None:
+    def swap(self, nums: List[int], left: int, right: int) -> None:
         temp = nums[left]
         nums[left] = nums[right]
         nums[right] = temp
