@@ -59,6 +59,7 @@
     * [Array Deduplication III](m3/dedup3.md)
     * [Largest And Smallest](m3/maxMin.md)
     * [Largest And Second Largest](m3/maxSecondMax.md)
+    * [Closest In Sorted Array](binarySearch/closest.md)
 * [Monotonic Stack](monotonic/intro.md)
     * [42. Trapping Rain Water](amazon/rain.md)
     * [84. Largest Rectangle in Histogram](monotonic/histogram.md)
