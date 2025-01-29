@@ -8,19 +8,22 @@
 ### template.1
 
 ```java
-class sqrt_x_tmp1 {
+class _69_Sqrt_x {
     public int mySqrt(int x) {
-        int left = 0, right = x, ans = x;
+        int left = 0, right = x;
+        int res = x;
         while (left <= right) {
-            int mid = left + ((right - left) >> 1);
-            if ((long) mid * mid <= x) {
-                ans = mid;
+            int mid = (left + right) >>> 1;
+            if ((long) mid * mid == x ) {
+                return mid;
+            } else if ((long) mid * mid < x) {
+                res = mid;
                 left = mid + 1;
             } else {
                 right = mid - 1;
             }
         }
-        return ans;
+        return res;
     }
 }
 
@@ -64,14 +67,16 @@ class _69_Sqrt_x {
 ```py
 class Solution:
     def mySqrt(self, x: int) -> int:
-        left, right, ans = 0, x, x
+        left, right = 0, x
+        res = x
         while left <= right:
             mid = (left + right) >> 1
-            if mid * mid <= x: 
-                ans = mid
+            if mid * mid == x:
+                return mid
+            elif mid * mid < x:
+                res = mid
                 left = mid + 1
             else:
                 right = mid - 1
-        
-        return ans
+        return res
 ```
