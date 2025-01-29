@@ -61,6 +61,7 @@
     * [Largest And Second Largest](m3/maxSecondMax.md)
     * [Closest In Sorted Array](binarySearch/closest.md)
     * [K Closest In Sorted Array](binarySearch/kclosest.md)
+    * [Search In sorted matrix](binarySearch/searchinmatrix.md)
 * [Monotonic Stack](monotonic/intro.md)
     * [42. Trapping Rain Water](amazon/rain.md)
     * [84. Largest Rectangle in Histogram](monotonic/histogram.md)

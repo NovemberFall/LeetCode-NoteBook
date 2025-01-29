@@ -1,22 +1,6 @@
-## 74. Search a 2D Matrix | Search In sorted matrix
+## 74. Search a 2D Matrix 
 ![](img/2022-12-09-22-11-31.png)
 ![](img/2022-12-09-22-11-46.png)
-
-- `matrix.length` is rows' length
-- `matrix[0].length` is column's length
-
-```java
-public class searhInMatrix {
-
-    public static void main(String[] args) {
-        int[][] table = {{1, 2, 3}, 
-                         {4, 5, 6}, 
-                         {7, 8, 9}};
-        System.out.println(table.length); //output 3
-        System.out.println(table[0].length);//output 3
-    }
-}
-```
 
 ![](img/2020-03-15-16-15-00.png)
 
@@ -56,14 +40,6 @@ public class searhInMatrix {
         }
         return false;
     }
-
-    public static void main(String[] args) {
-        int[][] matrix = {{1, 3, 5, 7}, 
-                            {10, 11, 16, 20}, 
-                            {23, 30, 34, 50}};
-        
-        System.out.println(searchMatrix(matrix, 13)); //output: false
-    }
 }
 
 ```
@@ -98,4 +74,11 @@ class _74_SearchA2DMatrix {
         return false;
     }
 }
+```
+---
+
+#### Python
+
+```py
+
 ```
