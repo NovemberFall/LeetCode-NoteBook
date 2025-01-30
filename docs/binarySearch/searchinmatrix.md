@@ -2,7 +2,6 @@
 ![](img/2025-01-28-20-34-08.png)
 ---
 
-#### Py
 
 ```py
 class Solution(object):
