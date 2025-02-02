@@ -1,12 +1,92 @@
 ## 253. Meeting Rooms II
 
-- Given an array of meeting time intervals intervals where 
-  `intervals[i] = [starti, endi]`, return the minimum number of conference rooms 
-  required.
+![](img/2025-02-01-11-38-50.png)
+---
 
-![](img/2021-09-23-00-21-38.png)
+### Method 1
+
+- [Approach 1: Priority Queues](https://leetcode.com/problems/meeting-rooms-ii/solutions/168762/meeting-rooms-ii/)
+
+- **Example**:
+
+```ruby
+
+       Meetings = [2, 7], [3, 19], [8, 12], [1, 10], [10, 20]
+
+       => Sorting:    [1, 10], [2, 7], [3, 19], [8, 12], [10, 20]
+      
+        
+        
+        [1, 10], [2, 7], [3, 19], [8, 12], [10, 20]     index = 0
+
+        meetingRooms = [10]
+        length = 1
+
+
+        [1, 10], [2, 7], [3, 19], [8, 12], [10, 20]     index = 1
+                                                        we check whether 2 is grater and equal than 10
+        meetingRooms = [10, 7]                 
+        length = 2
+
+
+
+        [1, 10], [2, 7], [3, 19], [8, 12], [10, 20]     index = 2
+                                                        we check whether 3 is grater and equal than 7
+        meetingRooms = [10, 7, 19]                 
+        length = 3
+
+
+
+        [1, 10], [2, 7], [3, 19], [8, 12], [10, 20]     index = 3
+                                                        we check whether 8 is grater and equal than 7, 
+                                                        Now it is greater than 7, we removing 7 and replace it with 12
+        meetingRooms = [10, 7, 19]                 
+
+     => meetingRooms = [10, 12, 19]   
+        length = 3
+
+
+
+        [1, 10], [2, 7], [3, 19], [8, 12], [10, 20]     index = 4
+                                                        we check whether 10 is grater and equal than 10, 
+                                                        Now it is greater and equal than 10, we removing 10 and replace it with 20
+        meetingRooms = [10, 12, 19]                 
+
+     => meetingRooms = [20, 12, 19]   
+        length = 3    
+```
+---
+
+```py
+'''
+     [0, 30], [5, 10], [15, 20]
+     
+     
+'''
+
+class Solution:
+    def minMeetingRooms(self, intervals: List[List[int]]) -> int:
+        intervals.sort(key=lambda x: x[0])
+
+        minHeap = []  # Stores end times of meetings
+        for start, end in intervals:
+            # If the earliest meeting in the heap has ended, remove it
+            if minHeap and minHeap[0] <= start:
+                heapq.heappop(minHeap)
+            # Add the current meeting's end time to the heap
+            heapq.heappush(minHeap, end)
+        return len(minHeap)  # The size of the heap represents the number of rooms needed
+
+```
+
 
 ---
+
+---
+
+### Method 2
+
+
 - [youtube](https://www.youtube.com/watch?v=FdzJmTCVyJU)
 
 ![](img/2024-03-26-17-48-09.png)
@@ -48,40 +128,9 @@
 
 ![](img/2024-03-26-19-31-48.png)
 
----
-
-```java
-class meetingRooms_II {
-    public int minMeetingRooms(int[][] intervals) {
-        int[] start = new int[intervals.length];
-        int[] end = new int[intervals.length];
-        for (int i = 0; i < intervals.length; i++) {
-            start[i] = intervals[i][0];
-            end[i] = intervals[i][1];
-        }
-        Arrays.sort(start);
-        Arrays.sort(end);
-
-        int res = 0, room = 0;
-        int startIndex = 0, endIndex = 0;
-        while (startIndex < intervals.length) {
-            if (start[startIndex] < end[endIndex]) {
-                startIndex++;
-                room++;
-            } else {
-                endIndex++;
-                room--;
-            }
-            res = Math.max(res, room);
-        }
-        return res;
-    }
-}
-```
 
 ---
 
-#### Python
 
 ```py
 class Solution:
