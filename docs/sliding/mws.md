@@ -69,7 +69,6 @@ class MinimumWindowSubstring {
 
         // [left, right)
         while (right < s.length()) {
-
             // If the current character at `right` is not in `t`, move the right pointer directly.
             if (tFreq[s.charAt(right)] == 0) {
                 right++;
