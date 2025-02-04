@@ -46,83 +46,84 @@
 ---
 ```java
 class MinimumWindowSubstring {
-    public String minWindow(String s, String t) {
-        if (s == null || t == null || s.length() < t.length()) {
-            return "";
-        }
-        //维护两个数组，记录已有字符串指定字符的出现次数，和目标字符串指定字符的出现次数
-        //ASCII表总长128,    0 ~ 127         ascii('z') = 122
+        if (s == null || t == null || s.length() < t.length()) return "";
+
+        // Maintain two arrays to record the frequency of characters in the current window and the target string.
+        // The ASCII table has a total length of 128, ranging from 0 to 127 (e.g., ascii('z') = 122).
         int[] winFreq = new int[128];
         int[] tFreq = new int[128];
 
-        //将目标字符串指定字符的出现次数记录
+        // Record the frequency of characters in the target string.
         for (int i = 0; i < t.length(); i++) {
             tFreq[t.charAt(i)]++;
         }
 
-        //分别为左指针，右指针，最小长度(初始值为一定不可达到的长度)
+        // Left pointer, right pointer, and the minimum length (initialized to an unattainable value).
         int left = 0, right = 0;
         int minLen = Integer.MAX_VALUE;
 
-        // matchingCharsCount 表示滑动窗口内部包含`T`中字符的个数,(也可以说包含T的size)，窗口内单个字符个数等于`T`中对应的字符个数的时候不再增加
+        // `matchingCharsCount` represents the number of characters in the current window that match the target string.
+        // This count increases only when a character in the window matches the required frequency in `tFreq`.
         int matchingCharsCount = 0;
         int start = 0;
 
         // [left, right)
         while (right < s.length()) {
 
+            // If the current character at `right` is not in `t`, move the right pointer directly.
             if (tFreq[s.charAt(right)] == 0) {
                 right++;
                 continue;
             }
 
-            /*    s = F F A D D B A C C D E N C        t = A A B
-                  when it was first time that meet 'A'
-                  winFreq[A] = 0,  tFreq[A] = 2   =>      winFreq[s[right]] <  tFreq[s[right]]
+            /* Example:
+                 s = F F A D D B A C C D E N C        t = A A B
+                 When encountering 'A' for the first time:
+                 winFreq[A] = 0,  tFreq[A] = 2
+                 => winFreq[s[right]] < tFreq[s[right]], so we increase `matchingCharsCount`.
             */
-            //当右边界向右滑动时，且 winFreq[s[right]] < tFreq[s[right]] 时, matchingCharsCount + 1
+            // When expanding the right boundary, if the count of `s[right]` in `winFreq` is less than in `tFreq`,
+            // we increase `matchingCharsCount`.
             if (winFreq[s.charAt(right)] < tFreq[s.charAt(right)]) {
                 matchingCharsCount++;
             }
 
-            //已有字符串中目标字符出现的次数+1
+            // Increase the frequency count of `s[right]` in the window.
             winFreq[s.charAt(right)]++;
 
-            //当且仅当已有字符串已经包含了所有目标字符串的字符的个数，且出现频次一定大于或等于指定频次
+            // When the current window contains all characters of `t` with the required frequency.
             while (matchingCharsCount == t.length()) {
-
-                //当窗口的长度比已有的最短值小时，更改最小值，并记录起始位置
+                // If the current window size is smaller than the previously recorded minimum, update `minLen` and `start`.
                 if (right - left + 1 < minLen) {
                     minLen = right - left + 1;
                     start = left;
                 }
 
-                //如果左边即将要去掉的字符不被目标字符串需要，那么不需要多余判断，直接可以移动左指针
+                // If the character at `left` is not needed in `t`, move the left pointer directly.
                 if (tFreq[s.charAt(left)] == 0) {
                     left++;
                     continue;
                 }
 
-                //当左边界向右滑动时，且 winFreq[s[left]] == tFreq[s[left]] 时, matchingCharsCount-1
+                // When shrinking the left boundary, if `winFreq[s[left]]` equals `tFreq[s[left]]`,
+                // we must decrease `matchingCharsCount`.
                 if (winFreq[s.charAt(left)] == tFreq[s.charAt(left)]) {
                     matchingCharsCount--;
                 }
 
-                //已有字符串中目标字符出现的次数-1
+                // Decrease the frequency count of `s[left]` in the window.
                 winFreq[s.charAt(left)]--;
-                //移动左指针
+                // Move the left pointer.
                 left++;
             }
-
-            //移动右指针
+            // Move the right pointer.
             right++;
         }
 
-        //如果最小长度还为初始值，说明没有符合条件的子串
+        // If `minLen` is still the initial value, no valid substring was found.
         if (minLen == Integer.MAX_VALUE) {
             return "";
         }
-
         return s.substring(start, start + minLen);
     }
 }
