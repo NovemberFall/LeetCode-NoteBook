@@ -179,7 +179,27 @@ graph = { "dot" → ["hot"], "dog" → ["dot"], "log" → ["lot"], "cog" → ["d
 ![](img/2025-02-10-09-52-06.png)
 
 ![](img/2025-02-10-09-52-21.png)
+---
 
+#### `current.remove(current.size() - 1)` usage:
+
+- within this codes:
+
+```java
+        if (endWord.equals(beginWord)) {
+            current.add(beginWord);
+            List<String> curRes = new ArrayList<>(current);
+            Collections.reverse(curRes);
+            res.add(curRes);
+            current.remove(current.size() - 1);
+        }
+```
+
+![](img/2025-02-10-09-55-07.png)
+
+![](img/2025-02-10-09-56-30.png)
+
+![](img/2025-02-10-09-57-12.png)
 
 ---
 ### Bi-Directional BFS
