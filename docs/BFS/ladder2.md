@@ -119,9 +119,67 @@ class Solution {
 
 
 ![](img/2025-02-09-23-46-36.png)
+---
+
+## Let's go through this Leetcode 126 (Word Ladder II) solution step by step
+
+![](img/2025-02-10-09-45-03.png)
+
+![](img/2025-02-10-09-45-40.png)
+
+![](img/2025-02-10-09-46-53.png)
+
+![](img/2025-02-10-09-47-10.png)
+
+![](img/2025-02-10-09-47-37.png)
+
+![](img/2025-02-10-09-47-54.png)
+
+
+### Example Execution
+
+![](img/2025-02-10-09-48-57.png)
+
+```ruby
+distance = { "hit" → 1, "hot" → 2, "dot" → 3, "dog" → 4, "cog" → 5, "lot" → 3, "log" → 4 }
+
+graph = { "dot" → ["hot"], "dog" → ["dot"], "log" → ["lot"], "cog" → ["dog", "log"], "lot" → ["hot"] }
+```
+
+
+![](img/2025-02-10-09-50-01.png)
 
 
 
 ---
+## Let's break down the DFS (Depth-First Search) function line by line.
 
+```java
+    private void dfs(Map<String, List<String>> graph, String endWord, String beginWord, List<String> current, 
+                                                                                        List<List<String>> res) {
+        if (endWord.equals(beginWord)) {
+            current.add(beginWord);
+            List<String> curRes = new ArrayList<>(current);
+            Collections.reverse(curRes);
+            res.add(curRes);
+            current.remove(current.size() - 1);
+        }
+        current.add(endWord);
+        if (graph.containsKey(endWord)) {
+            for (String nei : graph.get(endWord)) {
+                dfs(graph, nei, beginWord, current, res);
+            }
+        }
+        current.remove(current.size() - 1);
+    }
+```
+
+![](img/2025-02-10-09-51-50.png)
+
+![](img/2025-02-10-09-52-06.png)
+
+![](img/2025-02-10-09-52-21.png)
+
+
+---
 ### Bi-Directional BFS
