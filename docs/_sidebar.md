@@ -7,6 +7,7 @@
         * [Quick Sort](Array/quick.md)
         * [Merge Sort](sort/merge.md)
         * [Selection Sort](sort/select.md)
+        * [Bubble Sort](sort/bubble.md)
     * [ReOrder Array](m5/reorderArr.md)
 * [Arrays & Hashing](Array/intro.md)
     * [1. Two Sum](ch3/twoSum.md)

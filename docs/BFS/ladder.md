@@ -26,8 +26,7 @@
 - 出列、入列…重复，当出列的单词和终点词相同，说明遇到了终点词，返回它的 level。
 - 当队列为空时，代表BFS结束，始终没有遇到终点词，没有路径通往终点，返回 0。
 ---
-- [A very highly detailed EXPLANATION](https://leetcode.com/problems/word-ladder/discuss/1764371/A-very-highly-detailed-EXPLANATION#:~:text=So%2C%20all%20this,take%20an%20example%3A%2D)
----
+
 
 ```java
 class WordLadder {
@@ -82,4 +81,73 @@ class WordLadder {
   用图的 BFS 探索路径，求一点到另一点的最短路径，先遇到终点的路径最短。
 
 ![](img/2021-07-31-00-02-14.png)
+---
+
+
+#### 更进一步的解释
+
+- [更具体的解释](https://docs.google.com/document/d/1F4rMc66oYsG1CdeJYYA2DJkqhj0p_WXDOJkn4uSaRSw/edit?tab=t.0#bookmark=id.lz9tizkd3tul)
+
+![](img/2025-02-07-20-27-33.png)
+
+---
+
+
+## Bi-directional BFS
+
+- 从 **Src** Node and **Dest** Node **both** 出发做BFS
+- 每一次 **你走一步**，**我走一步**，如果有一天，中间**相遇**了就说明 **reachable**
+
+![](img/2025-02-08-11-39-05.png)
+
+### 代码里的细节
+
+- 注意： 每一次交替 **swap two sets**, 另一个 set 存储着下一轮bfs 的 words.
+
+![](img/2025-02-08-13-32-11.png)
+---
+
+```py
+class Solution:
+    def ladderLength(self, beginWord: str, endWord: str, wordList: List[str]) -> int:
+        if not wordList or endWord not in wordList:
+            return 0
+        dict = set(wordList)
+        if endWord not in dict:
+            return 0
+
+        forwardQueue = set()
+        backwardQueue = set()
+
+        forwardQueue.add(beginWord)
+        backwardQueue.add(endWord)
+
+        step = 1
+        while forwardQueue and backwardQueue:
+            if len(forwardQueue) > len(backwardQueue):
+                temp = forwardQueue
+                forwardQueue = backwardQueue
+                backwardQueue = temp
+            step += 1
+            forwardMutation = set()  # manipulate words via a temp set at current level
+            for word in forwardQueue:  # traverse all words from original forwardQueue
+                wordChars = list(word)
+                for i in range(len(wordChars)):
+                    backup = wordChars[i]
+                    for c in range(ord('a'), ord('z') + 1):
+                        if backup == c:
+                            continue
+                        wordChars[i] = chr(c)
+                        mutation = ''.join(wordChars)
+                        if mutation in backwardQueue:
+                            return step
+                        if mutation in dict:
+                            dict.remove(mutation)
+                            forwardMutation.add(mutation)
+                    wordChars[i] = backup
+            forwardQueue = forwardMutation
+        return 0
+```
+
+
 

@@ -5,99 +5,123 @@
 ---
 ![](img/2023-01-02-10-59-01.png)
 ---
-- [中文解释](https://leetcode.cn/problems/word-ladder-ii/solutions/279005/ru-guo-ni-fa-xian-kan-bie-ren-de-ti-jie-kan-bu-don/)
 
-- [LC 126| BFS + DFS](https://youtu.be/mIZJIuMpI2M?t=566)
-
-![](img/2023-06-17-16-17-07.png)
-
-- store only **Parent to child** relation Node in `Adjacency List` because if we take a jump then it should 
-  **always increase depth** to get `min-depth` from source to destination. All other Paths will never give
-  min-depth route. 
-
-
-![](img/2023-06-17-16-46-25.png)
 
 
 ---
-### Single Set
+### BFS + DFS
 
 ```java
-class WordLadder_II {
+class Solution {
     public List<List<String>> findLadders(String beginWord, String endWord, List<String> wordList) {
         List<List<String>> res = new ArrayList<>();
         Set<String> dict = new HashSet<>(wordList);
         if (!dict.contains(endWord)) {
             return res;
         }
-        Map<String, List<String>> map = new HashMap<>();
-        Set<String> startSet = new HashSet<>();
-        startSet.add(beginWord);
-        bfs(startSet, endWord, map, dict);
 
-        List<String> list = new ArrayList<>();
-        list.add(beginWord);
-        dfs(res, list, beginWord, endWord, map);
+        Deque<String> queue = new ArrayDeque<>();
+        Map<String, List<String>> graph = new HashMap<>();
+        Map<String, Integer> distance = new HashMap<>();
+        int level = 0;
+        distance.put(beginWord, 1);
+        queue.offer(beginWord);
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                String cur = queue.poll();
+                List<String> neighbors = getAllNeighbors(dict, cur);
+                if (neighbors.size() != 0) {
+                    for (String nei : neighbors) {
+                        if (!distance.containsKey(nei)) {
+                            distance.put(nei, level + 1);
+                            graph.putIfAbsent(nei, new ArrayList<>());
+                            graph.get(nei).add(cur);
+                            queue.offer(nei);
+                        } else {
+                            if (distance.get(nei) == level + 1) {
+                                graph.get(nei).add(cur);
+                            }
+                        }
+                    }
+                }
+            }
+            level++;
+            if (distance.containsKey(endWord)) {
+                break;
+            }
+        }
+        List<String> current = new ArrayList<>();
+        dfs(graph, endWord, beginWord, current, res);
         return res;
     }
 
-    private void dfs(List<List<String>> res, List<String> list, String word, String endWord,
-                     Map<String, List<String>> map) {
-
-        if (word.equals(endWord)) {
-            res.add(new ArrayList<>(list));
-            return;
+    private void dfs(Map<String, List<String>> graph, String endWord, String beginWord, List<String> current, List<List<String>> res) {
+        if (endWord.equals(beginWord)) {
+            current.add(beginWord);
+            List<String> curRes = new ArrayList<>(current);
+            Collections.reverse(curRes);
+            res.add(curRes);
+            current.remove(curRes.size() - 1);
         }
-        if (map.get(word) == null) {
-            return;
-        }
-        for (String nextWord : map.get(word)) {
-            list.add(nextWord);
-            dfs(res, list, nextWord, endWord, map);
-            list.remove(list.size() - 1);
-        }
-    }
-
-    private void bfs(Set<String> startSet, String endWord, Map<String, List<String>> map, Set<String> dict) {
-        if (startSet.size() == 0) {
-            return;
-        }
-        Set<String> levelSet = new HashSet<>();
-
-        dict.removeAll(startSet);
-        // 为什么这里要删除startSet's elements? 因为不这样做，就会一直重复把字典里的元素添加到startSet里,
-        // 造成重复遍历 startSet's elements.
-
-        boolean finish = false;
-
-        for (String word : startSet) {
-            char[] chs = word.toCharArray();
-            for (int i = 0; i < chs.length; i++) {
-                char old = chs[i];
-                for (char c = 'a'; c <= 'z'; c++) {
-                    chs[i] = c;
-                    String newWord = new String(chs);
-                    if (dict.contains(newWord)) {
-                        if (newWord.equals(endWord)) {
-                            finish = true;
-                        } else {
-                            levelSet.add(newWord);
-                        }
-
-                        map.putIfAbsent(word, new ArrayList<>());
-                        map.get(word).add(newWord);
-                    }
-                }
-                chs[i] = old;
+        current.add(endWord);
+        if (graph.containsKey(endWord)) {
+            for (String nei : graph.get(endWord)) {
+                dfs(graph, nei, beginWord, current, res);
             }
         }
+        current.remove(current.size() - 1);
+    }
 
-        if (!finish) {
-            bfs(levelSet, endWord, map, dict);
+    private List<String> getAllNeighbors(Set<String> dict, String cur) {
+        List<String> res = new ArrayList<>();
+        char[] array = cur.toCharArray();
+        for (int j = 0; j < array.length; j++) {
+            char old = array[j];
+            for (char c = 'a'; c <= 'z'; c++) {
+                if (c == old) {
+                    continue;
+                }
+                array[j] = c;
+                String word = new String(array);
+                if (dict.contains(word)) {
+                    res.add(word);
+                }
+                array[j] = old;
+            }
         }
+        return res;
     }
 }
 ```
+---
+
+### Why Build the Graph in Reverse (Storing Predecessors)?
+
+- Why Storing Predecessors Is Better
+  - Instead of keeping track of **where you can go next**, keep track of **where you came from**.
+  - The shortest path is naturally preserved because BFS always visits a word at its shortest distance.
+
+![](img/2025-02-09-23-03-57.png)
+
+![](img/2025-02-09-23-04-51.png)
+
+![](img/2025-02-09-23-05-06.png)
+
+---
+
+![](img/2025-02-09-23-45-10.png)
+
+![](img/2025-02-09-23-45-34.png)
+
+![](img/2025-02-09-23-46-11.png)
+
+
+
+![](img/2025-02-09-23-46-36.png)
+
+
+
 ---
 
 ### Bi-Directional BFS
