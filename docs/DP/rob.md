@@ -36,7 +36,7 @@ class _198_HouseRobber {
 ```
 ---
 
-#### Recursion with TLE
+### Recursion with TLE
 
 ```java
 class Solution {
@@ -64,4 +64,59 @@ class Solution {
 - SC: **O(N)** , It is recursive stack space.
 ---
 
-#### 
+### Memoization/Top-down DP: [accepted]
+
+```java
+class Solution {
+    public int rob(int[] nums) {
+        int n = nums.length;
+        int[] dp = new int[n];
+        Arrays.fill(dp, -1);
+        return f(n - 1, nums, dp);
+    }
+
+    private int f(int index, int[] nums, int[] dp) {
+        if (index == 0) {
+            return nums[0];
+        }
+        if (index < 0) {
+            return 0;
+        }
+        if (dp[index] != -1) {
+            return dp[index];
+        }
+        int pick = nums[index] + f(index - 2, nums, dp);
+        int notPick = f(index - 1, nums, dp);
+        dp[index] = Math.max(pick, notPick);
+        return dp[index];
+    }
+}
+```
+
+- TC: O(N)
+- SC: O(N)+O(N), one is recursive stack space and anothe O(N) is for dp array.
+---
+
+### Tabulation/Buttom Up DP:
+
+```java
+class Solution {
+    public int rob(int[] nums) {
+        int n = nums.length;
+        int[] dp = new int[n];
+        dp[0] = nums[0];
+        for (int i = 1; i < n; i++) {
+            int pick = nums[i];
+            if (i > 1) {
+                pick += dp[i - 2];
+            }
+            int notPick = dp[i - 1];
+            dp[i] = Math.max(pick, notPick);
+        }
+        return dp[n - 1];
+    }
+}
+```
+
+TC: O(N)
+SC: O(N), for dp array.
