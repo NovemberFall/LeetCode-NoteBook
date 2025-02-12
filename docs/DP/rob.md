@@ -1,15 +1,14 @@
 ## 198. House Robber
 ![](img/2023-02-06-16-22-32.png)
 
-- [中文解释](https://leetcode.cn/problems/house-robber/solution/hua-jie-suan-fa-198-da-jia-jie-she-by-guanpengchn/)
+- [中文解释](https://leetcode.cn/problems/house-robber/solutions/263856/da-jia-jie-she-by-leetcode-solution/)
 ---
-![](img/2023-02-06-16-22-51.png)
 
-![](img/2023-02-06-16-23-12.png)
+- First, consider the simplest cases. If there is **only one** house, stealing from it will yield the highest total amount. 
+  If there are **two houses**, since they are **adjacent** and **cannot be robbed at the same time**, you can only rob one of them. 
+  In this case, **choosing the house with the higher amount will maximize** the total money stolen.
 
-![](img/2023-02-06-16-25-03.png)
-
-![](img/2023-02-06-16-25-19.png)
+![](img/2025-02-11-14-22-14.png)
 ---
 
 ```java
@@ -18,13 +17,13 @@ class _198_HouseRobber {
         if (nums == null || nums.length == 0) {
             return 0;
         }
-        int[] dp = new int[nums.length + 1];
-        dp[0] = 0;
-        dp[1] = nums[0];
-        for (int i = 2; i <= nums.length; i++) {
-            dp[i] = Math.max(dp[i - 1], dp[i - 2] + nums[i - 1]);
+        int[] dp = new int[nums.length];
+        dp[0] = nums[0];
+        dp[1] = Math.max(nums[0], nums[1]);
+        for (int i = 2; i < nums.length; i++) {
+            dp[i] = Math.max(dp[i - 1], dp[i - 2] + nums[i]);
         }
-        return dp[nums.length];
+        return dp[nums.length - 1];
     }
 
     public static void main(String[] args) {
@@ -35,3 +34,34 @@ class _198_HouseRobber {
 }
 
 ```
+---
+
+#### Recursion with TLE
+
+```java
+class Solution {
+    public int rob(int[] nums) {
+        int n = nums.length;
+        return f(n - 1, nums);
+    }
+
+    private int f(int idx, int[] nums) {
+        if (idx == 0) {
+            return nums[0];
+        }
+        if (idx < 0) {
+            return 0;
+        }
+        int pick = nums[idx] + f(idx - 2, nums);
+        int notPick = f(idx - 1, nums);
+        return Math.max(pick, notPick);
+    }
+}
+```
+
+- TC: **O(2^N)** , where N is the number of elements in A. At each index, we have two choices of either robbing or not robbing the current 
+  house. Thus this leads to time complexity of 222...n times ≈ O(2^N)
+- SC: **O(N)** , It is recursive stack space.
+---
+
+#### 
