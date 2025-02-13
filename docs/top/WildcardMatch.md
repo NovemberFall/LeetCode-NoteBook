@@ -55,7 +55,13 @@ class Solution {
         } else if (cleanP.charAt(pidx) == s.charAt(sidx) || cleanP.charAt(pidx) == '?') {
             dp.put(key, dfs(s, cleanP, dp, sidx + 1, pidx + 1));
         } else if (cleanP.charAt(pidx) == '*') {
-            dp.put(key, dfs(s, cleanP, dp, sidx, pidx + 1) || dfs(s, cleanP, dp, sidx + 1, pidx));
+            // Case 1: '*' matches zero characters
+            boolean matchZero = dfs(s, cleanP, dp, sidx, pidx + 1);
+            // Case 2: '*' matches at least one character
+            boolean matchOneOrMore = dfs(s, cleanP, dp, sidx + 1, pidx);
+            dp.put(key, matchZero || matchOneOrMore);
+
+            // dp.put(key, dfs(s, cleanP, dp, sidx, pidx + 1) || dfs(s, cleanP, dp, sidx + 1, pidx));
         } else if (cleanP.charAt(pidx) != s.charAt(sidx)) {
             dp.put(key, false);
         }
@@ -82,7 +88,15 @@ class Solution {
     - `s = "**a**b***c*"` => `s = "*a*b*c*"`
 
 ![](img/2025-02-13-11-11-49.png)
+
+
+![](img/2025-02-13-11-26-45.png)
 ---
+
+## DP 
+
+
+
 ![](img/2022-11-30-13-22-37.png)
 
 ![](img/2022-12-08-18-24-06.png)
