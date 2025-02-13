@@ -1,6 +1,88 @@
 ## 44. Wildcard Matching
 ![](img/2022-11-28-11-29-06.png)
 
+- Note: if `s = aa`, `p = "*b"` => `return false`
+
+- Note: "*" represents **Matches any sequence of characters** (including the empty sequence).
+  - if `s = "aa", p = "**"` => return **true**, thus we can **remove duplicate** `"*"` to make it easy to solve
+
+---
+### Memorization DFS
+
+```java
+class Solution {
+    public boolean isMatch(String s, String p) {
+        Map<String, Boolean> dp = new HashMap<>();
+        String clean_p = remove_duplicate_stars(p);
+        return dfs(s, clean_p, dp, 0, 0);
+    }
+
+    private String remove_duplicate_stars(String p) {
+        StringBuilder sb = new StringBuilder();
+        for (char c : p.toCharArray()) {
+            // If StringBuilder is empty, just append the character
+            if (sb.length() == 0) {
+                sb.append(c);
+                continue;
+            }
+            // Get the last character in the StringBuilder
+            char lastChar = sb.charAt(sb.length() - 1);
+            
+            // If the current character is not '*', append it
+            if (c != '*') {
+                sb.append(c);
+            }
+            // If the current character is '*', check the last character
+            else if (lastChar != '*') {
+                // Append '*' only if the last character is not also '*'
+                sb.append(c);
+            }
+            // If the last character is already '*', do nothing (skip duplicate)
+        }
+        return sb.toString();
+    }
+
+    private boolean dfs(String s, String cleanP, Map<String, Boolean> dp, int sidx, int pidx) {
+        String key = sidx + "," + pidx;
+        if (dp.containsKey(key)) {
+            return dp.get(key);
+        }
+
+        if (pidx == cleanP.length()) {
+            dp.put(key, sidx == s.length());
+        } else if (sidx == s.length()) {
+            dp.put(key, pidx + 1 == cleanP.length() && cleanP.charAt(pidx) == '*');
+        } else if (cleanP.charAt(pidx) == s.charAt(sidx) || cleanP.charAt(pidx) == '?') {
+            dp.put(key, dfs(s, cleanP, dp, sidx + 1, pidx + 1));
+        } else if (cleanP.charAt(pidx) == '*') {
+            dp.put(key, dfs(s, cleanP, dp, sidx, pidx + 1) || dfs(s, cleanP, dp, sidx + 1, pidx));
+        } else if (cleanP.charAt(pidx) != s.charAt(sidx)) {
+            dp.put(key, false);
+        }
+        return dp.get(key);
+    }
+}
+```
+
+
+- **For** 
+
+```java  
+    else if (sidx == s.length()) {
+        dp.put(key, pidx + 1 == cleanP.length() && cleanP.charAt(pidx) == '*');
+    } 
+```    
+
+- why did it use `pidx + 1 == cleanP.length()` instead of `pidx == cleanP.length()`? 
+
+![](img/2025-02-13-10-12-37.png)
+
+
+- For `remove_duplicate_stars`, the result would be:
+    - `s = "**a**b***c*"` => `s = "*a*b*c*"`
+
+![](img/2025-02-13-11-11-49.png)
+---
 ![](img/2022-11-30-13-22-37.png)
 
 ![](img/2022-12-08-18-24-06.png)
@@ -45,160 +127,5 @@ class _44_WildcardMatching {
     }
 }
 ```
-
-
-
-
----
-### Iterator
-
-```ruby
-Input:
-S: "a c c c b"
-P: "a * b"
-
-sp = 0, pp = 0, match(M) = 0, starIdx(SI) = -1;
-
-===============================================
-Round 1:
-  
-  a   c   c   c   b
-  sp++
-  a   *   b
-  pp++
-
-
-Round 2:
-
-  a   c   c   c   b
-      sp
-      M
-  a   *   b
-      pp++
-      SI
-
-
-  a   c   c   c   b
-      sp
-      M
-  a   *   b
-          pp
-      SI
-
-Round 3:
-
-  a   c   c   c   b
-      sp
-      M++
-  a   *   b
-          pp
-      SI     
-
-
-  a   c   c   c   b
-          sp
-          M
-  a   *   b
-          pp
-      SI  
-
-
-Round 4:
-
-  a   c   c   c   b
-          sp
-          M++
-  a   *   b
-          pp
-      SI   
-     
-     
-  a  c  c  c  b
-           sp
-           M
-  a  *  b
-        pp
-     SI
-     
-Round 5:
-
-  a  c  c  c  b
-           sp
-           M++
-  a  *  b
-        pp
-     SI
-
-
-  a  c  c  c  b
-              sp
-              M
-  a  *  b
-        pp
-     SI
-
-Round 6:
-
-  a  c  c  c  b
-              sp++
-              M
-  a  *  b
-        pp++
-     SI
-
-
-  a  c  c  c  b
-                 sp
-              M
-  a  *  b
-          pp
-     SI
-```
-
 ---
 
-```java
-class _44_WildcardMatching {
-    public boolean isMatch(String s, String p) {
-        int sp = 0, pp = 0, match = 0, starIdx = -1;
-        while (sp < s.length()){
-            // advancing both pointers
-            if (pp < p.length()  && (p.charAt(pp) == '?' || s.charAt(sp) == p.charAt(pp))){
-                sp++;
-                pp++;
-            }
-            // * found, only advancing pattern pointer
-            else if (pp < p.length() && p.charAt(pp) == '*'){
-                starIdx = pp;
-                match = sp;
-                pp++;
-            }
-            // last pattern pointer was *, advancing string pointer
-            else if (starIdx != -1){
-                pp = starIdx + 1;
-                match++;
-                sp = match;
-            }
-            //current pattern pointer is not star, last patter pointer was not *
-            //characters do not match
-            else {
-                return false;
-            }
-        }
-
-        //check for remaining characters in pattern
-        while (pp < p.length() && p.charAt(pp) == '*') {
-            pp++;
-        }
-
-        return pp == p.length();
-    }
-
-    public static void main(String[] args) {
-        _44_WildcardMatching wm = new _44_WildcardMatching();
-        String s = "acdcb", p = "a*c?b";
-        boolean res = wm.isMatch(s, p);
-        System.out.println(res);
-    }
-}
-```
