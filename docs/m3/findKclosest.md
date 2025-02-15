@@ -101,7 +101,7 @@ Init:
 
 ## Why do we have `while (right - left - 1 < k)` ?
 
-- assume l = -1, r = 4,   r - l - 1 = 4 - (-1) - 1 = 4,  **4 < k ?**, **所以跳出循环， 刚好留下 k 个元素**
+- assume `l = -1`, `r = 4`,   `r - l - 1 = 4 - (-1) - 1 = 4`,  **4 < k ?**, **所以跳出循环， 刚好留下 k 个元素**
 ---
 
 
@@ -158,38 +158,58 @@ class Solution:
 
 ---
 
-## Method 2
-
 #### Look at the example 1:
 
 ![](img/2025-01-25-17-25-12.png)]
 
 - can we return `[2, 3, 4, 5]` ?, **No!**
 - even though `|1 - 3| == |5 - 3| == 2` but it doesn't meet **a < b** because **5 > 1**
-
-
-
 ---
 
-```java
-class FindKClosestElements {
-    public List<Integer> findClosestElements(int[] arr, int k, int x) {
-        List<Integer> res = new ArrayList<>();
 
-        int left = 0, right = arr.length - k;
-        while (left < right) {
-            int mid = left + ((right - left) >> 1);
-            if ((x - arr[mid]) > (arr[mid + k] - x)) {
-                left = mid + 1;
-            } else {
-                right = mid;
-            }
-        }
 
-        for (int i = left; i < left + k; i++) {
-            res.add(arr[i]);
-        }
-        return res;
-    }
-}
+#### version 2:
+
+```py
+class Solution:
+    def findClosestElements(self, arr: List[int], k: int, x: int) -> List[int]:
+        res = []
+        if len(arr) == 0 or k == 0:
+            return res
+        close = self.binary_search(arr, x)
+        res.append(arr[close])
+        left = close - 1
+        right = close + 1
+        while len(res) < k:
+            if left < 0:
+                res.append(arr[right])
+                right += 1
+            elif right >= len(arr):
+                res.append(arr[left])
+                left -= 1
+            elif abs(arr[left] - x) <= abs(arr[right] - x):
+                res.append(arr[left])
+                left -= 1
+            else:
+                res.append(arr[right])
+                right += 1
+        return sorted(res)
+
+
+    def binary_search(self, arr, target):
+        left, right = 0, len(arr) - 1
+        while left < right - 1:
+            mid = (left + right) >> 1
+            if arr[mid] == target:
+                return mid
+            elif arr[mid] < target:
+                left = mid
+            else:
+                right = mid
+
+        if abs(arr[left] - target) <= abs(arr[right] - target):
+            return left
+        else:
+            return right
+
 ```
