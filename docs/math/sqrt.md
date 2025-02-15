@@ -10,6 +10,9 @@
 ```java
 class _69_Sqrt_x {
     public int mySqrt(int x) {
+        if (x < 2) {
+            return x;
+        }
         int left = 0, right = x;
         int res = x;
         while (left <= right) {
@@ -30,35 +33,57 @@ class _69_Sqrt_x {
 ```
 ---
 
-### Newton's Method
-
-
-- uppose we want to find the square root of a number `x`. 
-- We can start with an initial guess `y0`, which could be any positive number. 
-- We can then use the following formula (Newton's method) to obtain a better approximation:
-
-- `y1 = (y0 + x / y0) / 2`
-
-- In other words, we take the average of `y0` and `x / y0` as the new approximation `y1`. 
-  We can repeat this process, using `y1` as the new initial guess, to obtain a sequence of approximations:
-
-- `y2 = (y1 + x / y1) / 2`
-- `y3 = (y2 + x / y2) / 2`
-- `y4 = (y3 + x / y3) / 2`
-
-
----
+### Use division to avoid overflow `mid > (x / mid)`
 
 ```java
-class _69_Sqrt_x {
+class sqrt_x_t2 {
     public int mySqrt(int x) {
-        long r = x;
-        while (r * r > x) {
-            r = (r + x / r) / 2;
+        if (x < 2) {
+            return x;
         }
-        return (int) r;
+
+        int left = 1, right = x;
+        while (left < right - 1) {
+            int mid = (left + right) >>> 1;
+            if (mid == x / mid) {
+                return mid;
+            } else if (mid < x / mid) {
+                left = mid;
+            } else {
+                right = mid;
+            }
+        }
+        if (left * left < x) {
+            return left;
+        }
+        return right;
     }
 }
+```
+---
+
+![](img/2025-02-15-13-10-48.png)
+
+```java
+class Solution {
+    public int mySqrt(int x) {
+        if (x < 2) {
+            return x;
+        }
+
+        int left = 1, right = x;
+        while (left < right - 1) {
+            int mid = left + (right - left) / 2;
+            if (mid > x / mid) { // Use division to avoid overflow
+                right = mid;
+            } else {
+                left = mid;
+            }
+        }
+        return left;
+    }
+}
+
 ```
 ---
 
@@ -67,13 +92,16 @@ class _69_Sqrt_x {
 ```py
 class Solution:
     def mySqrt(self, x: int) -> int:
-        left, right = 0, x
-        res = x
+        if x < 2:
+            return x
+
+        left, right = 1, x
+        res = left
         while left <= right:
             mid = (left + right) >> 1
-            if mid * mid == x:
+            if mid == x // mid:
                 return mid
-            elif mid * mid < x:
+            elif mid < x // mid:
                 res = mid
                 left = mid + 1
             else:
