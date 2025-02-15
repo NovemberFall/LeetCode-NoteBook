@@ -62,28 +62,36 @@ class Solution(object):
     def firstOccurrence(self, array, target):
         left, right = 0, len(array) - 1
         idx = -1
-        while left <= right:
+        while left < right - 1:
             mid = (left + right) >> 1
             if array[mid] == target:
-                idx = mid
-                right = mid - 1
+                right = mid
             elif array[mid] < target:
                 left = mid + 1
             else:
                 right = mid - 1
-        return idx
+        
+        if array[left] == target:
+            return left
+        if array[right] == target:
+            return right
+        return -1
 
     def lastOccurrence(self, array, target):
         left, right = 0, len(array) - 1
         idx = -1
-        while left <= right:
+        while left < right - 1:
             mid = (left + right) >> 1
             if array[mid] == target:
-                idx = mid
-                left = mid + 1
+                left = mid
             elif array[mid] < target:
                 left = mid + 1
             else:
                 right = mid - 1
-        return idx
+
+        if array[right] == target:
+            return right
+        if array[left] == target:
+            return left
+        return -1
 ```
