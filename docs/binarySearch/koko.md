@@ -12,50 +12,32 @@
 
 
 ```java
-class KokoEatingBananas {
-    public int minEatingSpeed(int[] piles, int h) {
-        int left = 1;
-        int right = getMaxPile(piles);
-        int res = right;
-        while (left <= right) {
-            int mid = left + ((right - left) >> 1);
-            long hours = 0;
-            for (int pile : piles) {
-                hours += pile / mid;
-                if (pile % mid != 0) {
-                    hours++;
-                }
-            }
-            if (hours <= h) {
-                res = Math.min(res, mid);
-                right = mid - 1;
-            } else {
-                left = mid + 1;
-            }
-        }
-        return res;
-    }
+class Solution:
+    def minEatingSpeed(self, piles: List[int], h: int) -> int:
+        left = 1
+        right = self.getMaxPile(piles)
+        while left < right:
+            mid = (left + right) >> 1
+            if self.canEatAllBananas(piles, mid, h):
+                right = mid
+            else:
+                left = mid + 1
+        return right
 
-    private int getMaxPile(int[] piles) {
-        int maxPile = Integer.MIN_VALUE;
-        for (int pile : piles) {
-            maxPile = Math.max(maxPile, pile);
-        }
-        return maxPile;
-    }
-}
+    def getMaxPile(self, piles):
+        max_pile = float('-inf')
+        for pile in piles:
+            max_pile = max(max_pile, pile)
+        return max_pile
+
+    def canEatAllBananas(self, piles, speed, H):
+        hours = 0
+        for pile in piles:
+            hours += (pile // speed)
+            if pile % speed != 0:
+                hours += 1
+        return hours <= H
 ```
----
-
-- **why is this not working**?
-
-```java
-    if (canEatAll(piles, mid, h)) {
-        hight = mid - 1;
-    }   
-```
-
-- even if `canEatAll()` returns true, u r directly doing `high = mid -1` , when `mid` **itself could be a probable answer**
 
 ---
 ### Brute Force
