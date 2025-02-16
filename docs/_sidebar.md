@@ -54,6 +54,7 @@
     * [658. Find K Closest Elements](m3/findKclosest.md)
     * [240. Search a 2D Matrix II](m3/SearchIn2DArrayII.md)
     * [702. Search in a Sorted Array of Unknown Size](m3/searchInUnknownSize.md)
+    * [162. Find Peak Element](tiktok/162.md)
     * [278. First Bad Version](binarySearch/firstBad.md)
     * [875. Koko Eating Bananas](binarySearch/koko.md)
     * [981. Time Based Key-Value Store](binarySearch/key_value.md)
