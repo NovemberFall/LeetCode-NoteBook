@@ -123,19 +123,20 @@ public class Solution {
 
 ---
 
-### Recursive method:
-
-![](img/2022-08-28-00-57-52.png)
+### Recursive method
 
 ![](img/2021-04-23-16-48-23.png)
 
-![](img/2021-04-23-17-27-31.png)
+![](img/2025-02-17-14-41-30.png)
+
+- **每一次**让**一整个反转的链表**里的，`head.next`(Node_2.next) 指向 `head`
+
 
 - 1. head.next.next = head
 - 2. head.next = null
 - if we don't do step 2, that means, it is a circle
 
-
+- [c3 49:35]()
 ---
 
 ```java
@@ -158,34 +159,46 @@ public class reverse {
             return head;
         }
 
-        // if(head == null || head.next == null){
-        //    return head;
-        // }
-
+        // Accepts the first node of a singly linked list, this function will reverse this list and then return the head of the new list.
         ListNode newHead = reverseLinkedList(head.next);
+        
+        // this way: actually, head.next refers to this tail.
         head.next.next = head;
         head.next = null;
         return newHead;
     }
-
-    public static void main(String[] args) {
-        ListNode L1 = new ListNode(3);
-        ListNode L2 = new ListNode(5);
-        ListNode L3 = new ListNode(7);
-        L1.next = L2;
-        L2.next = L3;
-
-        ListNode head = reverseLinkedList(L1);
-        while(head != null){
-            System.out.println(head.value);
-            head = head.next;
-        }
-    }
 }
 ```
 
+![](img/2025-02-17-15-02-24.png)
 
 
+---
 
 
+## Recursion: another way: Just traverse from new_head.
 
+```java
+class reverseLinkedList_Recursive_v2 {
+    public ListNode reverseList(ListNode head) {
+        if (head == null) {
+            return null;
+        }
+        if (head.next == null) {
+            return head;
+        }
+
+        ListNode newHead = reverseList(head.next);
+        ListNode tail = newHead;
+        while (tail.next != null) {
+            tail = tail.next;
+        }
+        tail.next = head;
+        head.next = null;
+        return newHead;
+    }
+}
+
+```
+
+![](img/2025-02-17-15-02-45.png)
