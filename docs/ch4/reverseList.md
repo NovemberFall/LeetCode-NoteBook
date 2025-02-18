@@ -202,3 +202,7 @@ class reverseLinkedList_Recursive_v2 {
 ```
 
 ![](img/2025-02-17-15-02-45.png)
+---
+
+
+![](img/2025-02-17-15-06-04.png)
