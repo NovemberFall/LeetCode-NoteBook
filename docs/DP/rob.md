@@ -99,23 +99,20 @@ class Solution {
 
 ### Tabulation/Buttom Up DP:
 
-```java
-class Solution {
-    public int rob(int[] nums) {
-        int n = nums.length;
-        int[] dp = new int[n];
-        dp[0] = nums[0];
-        for (int i = 1; i < n; i++) {
-            int pick = nums[i];
-            if (i > 1) {
-                pick += dp[i - 2];
-            }
-            int notPick = dp[i - 1];
-            dp[i] = Math.max(pick, notPick);
-        }
-        return dp[n - 1];
-    }
-}
+```py
+class Solution:
+    def rob(self, nums: List[int]) -> int:
+        if len(nums) < 2:
+            return nums[0]
+
+        dp = [0] * len(nums)
+        dp[0] = nums[0]
+        dp[1] = max(nums[0], nums[1])
+        for i in range(2, len(nums)):
+            notPick = dp[i - 1]
+            pick = dp[i - 2] + nums[i]
+            dp[i] = max(pick, notPick)
+        return dp[len(nums) - 1]
 ```
 
 TC: O(N)

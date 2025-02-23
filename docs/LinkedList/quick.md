@@ -60,24 +60,26 @@ class Solution:
         curr = dummy  # Start iterating from the dummy node
 
         while curr.next and curr.next != tail:  # Iterate until we reach the last node before 'tail'
-            node = curr.next  # Move to the next node in the list
-            curr = curr.next  # Update 'curr' to point to the current node
+            node = curr.next  
+            curr = curr.next  
             
             if node.val < pivot.val:  # If current node's value is smaller than the pivot
                 if left_tail:  # If the left partition already has nodes
                     left_tail.next = node  # Link the last node of the left partition to the current node
-                    left_tail = node  # Update 'left_tail' to point to the current node (new tail of the left partition)
-                else:  # If the left partition is empty (this is the first node being added to the left partition)
-                    left_head = node  # Set this node as the first node in the left partition
+                    left_tail = node  
+                #  elif not left_tail:     
+                else: # If the left partition is empty (this is the first node being added to the left partition)
+                    left_head = node  
                     left_tail = node  # Set this node as both the head and tail of the left partition
             
             elif node.val > pivot.val:  # If current node's value is greater than the pivot
                 if right_tail:  # If the right partition already has nodes
-                    right_tail.next = node  # Link the last node of the right partition to the current node
-                    right_tail = node  # Update 'right_tail' to point to the current node (new tail of the right partition)
+                    right_tail.next = node  
+                    right_tail = node  
+                # elif not right_tail:    
                 else:  # If the right partition is empty (this is the first node being added to the right partition)
-                    right_head = node  # Set this node as the first node in the right partition
-                    right_tail = node  # Set this node as both the head and tail of the right partition
+                    right_head = node  
+                    right_tail = node  
             
             else:  # If current node's value is equal to the pivot value
                 pivot_tail.next = node  # Link the last node of the pivot partition to the current node
