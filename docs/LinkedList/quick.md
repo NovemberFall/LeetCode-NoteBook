@@ -1,0 +1,91 @@
+## Quick Sort On LinkedList
+
+![](img/2025-02-22-16-50-12.png)
+---
+
+```py
+# Definition for singly-linked list.
+class ListNode(object):
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
+
+class Solution:
+    def quickSort(self, head: ListNode) -> ListNode:
+        """Sorts the linked list using QuickSort and returns the new head."""
+        if not head:
+            return None
+
+        tail = self.get_tail(head)  # Get the last node
+        head, tail = self.quick_sort(head, tail)
+        tail.next = None  # Ensure the last node points to None
+        return head
+
+    def quick_sort(self, head, tail):
+        """Recursively sorts the linked list using QuickSort."""
+        if head == tail:
+            return head, tail  # Base case: single node
+
+        # Partition the list around a pivot
+        left_head, left_tail, pivot_head, pivot_tail, right_head, right_tail = self.partition(head, tail)
+
+        # Sort the left part
+        if left_head:
+            left_head, left_tail = self.quick_sort(left_head, left_tail)
+            left_tail.next = pivot_head  # Link left part with pivot
+            head = left_head
+        else:
+            head = pivot_head  # No left part, pivot becomes new head
+
+        # Sort the right part
+        if right_head:
+            right_head, right_tail = self.quick_sort(right_head, right_tail)
+            pivot_tail.next = right_head  # Link pivot with right part
+            tail = right_tail
+        else:
+            tail = pivot_tail  # No right part, pivot becomes new tail
+
+        return head, tail
+
+    def partition(self, head, tail):
+        """Partitions the list around the pivot (last node)."""
+        pivot = tail
+        pivot_head, pivot_tail = pivot, pivot  # Nodes equal to pivot
+        left_head, left_tail = None, None  # Nodes smaller than pivot
+        right_head, right_tail = None, None  # Nodes greater than pivot
+
+        dummy = ListNode(-1)  # Dummy node to help traverse
+        dummy.next = head
+        curr = dummy  # Start iterating from the dummy node
+
+        while curr.next and curr.next != tail:
+            node = curr.next
+            curr = curr.next
+
+            if node.val < pivot.val:  # Add to left partition
+                if left_tail:
+                    left_tail.next = node
+                    left_tail = node
+                else:  # First node in left partition
+                    left_head = node
+                    left_tail = node
+            elif node.val > pivot.val:  # Add to right partition
+                if right_tail:
+                    right_tail.next = node
+                    right_tail = node
+                else:  # First node in right partition
+                    right_head = node
+                    right_tail = node
+            else:  # Add to pivot partition
+                pivot_tail.next = node
+                pivot_tail = node
+
+        return left_head, left_tail, pivot_head, pivot_tail, right_head, right_tail
+
+    def get_tail(self, node):
+        """Finds the last node in the linked list."""
+        while node.next:
+            node = node.next
+        return node
+```

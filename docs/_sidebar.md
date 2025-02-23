@@ -113,6 +113,8 @@
     * [426. Convert Binary Search Tree to Sorted Doubly Linked List](most/convert.md)
     * [445. Add Two Numbers II](m5/twoNumsII.md)
     * [Selection Sort LinkedList](LinkedList/select.md)
+    * [Quick Sort LinkedList](LinkedList/quick.md)
+    * [Merge Sort LinkedList](LinkedList/merge.md)
 * [DFS](DFS/intro.md)
     * [77. Combinations](DFS/com.md) 
     * [78. Subsets](m10/subset.md)
