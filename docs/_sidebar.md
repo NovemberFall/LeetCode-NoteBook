@@ -57,7 +57,6 @@
     * [162. Find Peak Element](tiktok/162.md)
     * [278. First Bad Version](binarySearch/firstBad.md)
     * [875. Koko Eating Bananas](binarySearch/koko.md)
-    * [981. Time Based Key-Value Store](binarySearch/key_value.md)
     * [Array Deduplication III](m3/dedup3.md)
     * [Largest And Smallest](m3/maxMin.md)
     * [Largest And Second Largest](m3/maxSecondMax.md)
