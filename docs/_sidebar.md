@@ -453,6 +453,7 @@
         * [210. Course Schedule II](ts/course2.md)
         * [159. Longest Substring with At Most Two Distinct Characters](sliding/longest.md)
         * [79. Word Search](amazon/word.md)
+        * [68. Text Justification](tiktok/68.md)
         * [162. Find Peak Element](tiktok/162.md)
         * [560. Subarray Sum Equals K](m7/subarrSum.md)
         * [5. Longest Palindromic Substring](m8/longestPalindrom.md)
