@@ -1,14 +1,47 @@
 ## 123. Best Time to Buy and Sell Stock III
 ![](img/2023-03-31-10-14-06.png)
-
-- [youtube1](https://www.youtube.com/watch?v=37s1_xBiqH0&t=166s)
-- [youtube2 CHN](https://www.youtube.com/watch?v=USEFjOtuyA4&t=706s)
 ---
-![](img/2023-03-31-10-14-47.png)
+### Memoization
 
+```py
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        n = len(prices)
+        # Initialize a 3D DP array with -1
+        dp = [[[-1 for _ in range(3)] for _ in range(2)] for _ in range(n)]
+        return self.dfs(prices, 1, 2, dp, 0)
+
+    def dfs(self, prices, is_buy, transactions_left, dp, index) -> int:
+        if index >= len(prices) or transactions_left == 0:
+            return 0
+        # if transactions_left == 0:
+        #     return 0
+        if dp[index][is_buy][transactions_left] != -1:
+            return dp[index][is_buy][transactions_left]
+
+        if is_buy:
+            buy = -prices[index] + self.dfs(prices, 0, transactions_left, dp, index + 1)
+            skip = self.dfs(prices, 1, transactions_left, dp, index + 1)
+            dp[index][is_buy][transactions_left] = max(buy, skip)
+        else:
+            sell = prices[index] + self.dfs(prices, 1, transactions_left - 1, dp, index + 1)
+            hold = self.dfs(prices, 0, transactions_left, dp, index + 1)
+            dp[index][is_buy][transactions_left] = max(sell, hold)
+
+        return dp[index][is_buy][transactions_left]
+```
+---
+
+### Tabulation
+
+```py
+
+```
+
+
+---
 - **Only 2 transaction**
 
-![](img/2023-03-31-16-26-18.png)
 
 - for every day, `4` cases:
   - 1. has the first share **buy1**

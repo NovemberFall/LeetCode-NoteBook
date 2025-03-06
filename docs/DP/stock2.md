@@ -2,33 +2,56 @@
 ![](img/2023-03-30-17-08-27.png)
 ---
 
-![](img/2023-03-31-00-48-56.png)
+### Memoization
 
-- we just need to `add` every **increase of the stock price**
-- 可以看到只要每一次是递增就加到profit里，如果是decrease的，就不需要操作
+```py
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        n = len(prices)
+        dp = [[-1 for _ in range(2)] for _ in range(len(prices))]
+        return self.dfs(prices, 1, dp, 0)
 
-![](img/2023-03-31-00-54-08.png)
+    def dfs(self, prices, is_buy, dp, index) -> int:
+        if index >= len(prices):
+            return 0
+        if dp[index][is_buy] != -1:
+            return dp[index][is_buy]
 
-- 如果从`1`到`5` 是递增的，则可以把每一段间距加起来
-
----
-```java
-class bestTimeToBuyAndSellStock {
-    public int maxProfit(int[] prices) {
-        int profit = 0;
-        for (int i = 1; i < prices.length; i++) {
-            if (prices[i] > prices[i - 1]) {
-                profit += prices[i] - prices[i - 1];
-            }
-        }
-        return profit;
-    }
-}
+        if is_buy:
+            buy = -prices[index] + self.dfs(prices, 0, dp, index + 1)
+            skip = self.dfs(prices, 1, dp, index + 1)
+            dp[index][is_buy] = max(buy, skip)
+            return dp[index][is_buy]
+        else:
+            sell = prices[index] + self.dfs(prices, 1, dp, index + 1)
+            hold = self.dfs(prices, 0, dp, index + 1)
+            dp[index][is_buy] = max(sell, hold)
+            return dp[index][is_buy]
 ```
 ---
+### bottom-up DP
 
+```py
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        n = len(prices)
+        dp = [ [0 for _ in range(2)] for _ in range(len(prices) + 1)]
+        for index in range(n - 1, -1, -1):
+            for is_buy in range(2):
+                if is_buy:
+                    buy = -prices[index] + dp[index + 1][0]
+                    skip = 0 + dp[index + 1][1]
+                    dp[index][is_buy] = max(buy, skip)
+                else:
+                    sell = prices[index] + dp[index + 1][1]
+                    hold = 0 + dp[index + 1][0]
+                    dp[index][is_buy] = max(sell, hold)
+        
+        return dp[0][1]
+```
 
-## DP
+---
+### DP
 
 - for each day
   - either 1. hold a share
