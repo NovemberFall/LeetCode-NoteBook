@@ -560,7 +560,6 @@
     * [239. Sliding Window Maximum](amazon/sliding.md)
     * [79. Word Search](amazon/word.md)
     * [212. Word Search ||](amazon/word2.md)
-    * [121. Best Time to Buy and Sell Stock](amazon/stock.md)
     * [680. Valid Palindrome II](amazon/palindrome.md)
     
 -----
