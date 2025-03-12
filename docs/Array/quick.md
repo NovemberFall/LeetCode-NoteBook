@@ -77,40 +77,38 @@ public class Solution {
 #### Python
 
 ```py
-class Solution:
-    def sortColors(self, nums: List[int]) -> None:
+class Solution(object):
+    def quickSort(self, array):
         """
-        Do not return anything, modify nums in-place instead.
+        input: int[] array
+        return: int[]
         """
-        self.quickSort(nums, 0, len(nums) - 1)
+        self.quick_sort(array, 0, len(array) - 1)
+        return array
 
-    def quickSort(self, nums: List[int], left: int, right: int) -> None:
+    def quick_sort(self, array, left, right):
         if left >= right:
             return
-        pivot = self.partition(nums, left, right)
-        self.quickSort(nums, left, pivot - 1)
-        self.quickSort(nums, pivot + 1, right)
+        pivot = self.partition(array, left, right)
+        self.quick_sort(array, left, pivot - 1)
+        self.quick_sort(array, pivot + 1, right)
 
-    def partition(self, nums: List[int], left: int, right: int) -> int:
-        pivotIdx = random.randint(left, right)
-        pivotVal = nums[pivotIdx]
-        self.swap(nums, pivotIdx, right)
+    def partition(self, array, left, right):
         leftBound = left
         rightBound = right - 1
+        import random
+        rand = random.randint(leftBound, rightBound)
+        array[rand], array[right] = array[right], array[rand]
+        pivot = array[right]
         while leftBound <= rightBound:
-            if nums[leftBound] < pivotVal:
+            if array[leftBound] < pivot:
                 leftBound += 1
-            elif nums[rightBound] >= pivotVal:
+            elif array[rightBound] >= pivot:
                 rightBound -= 1
-            elif nums[leftBound] >= pivotVal and nums[rightBound] < pivotVal:
-                self.swap(nums, leftBound, rightBound)
+            elif array[leftBound] >= pivot and array[rightBound] < pivot:
+                array[leftBound], array[rightBound] = array[rightBound], array[leftBound]
                 leftBound += 1
                 rightBound -= 1
-        self.swap(nums, leftBound, right)
+        array[leftBound], array[right] = array[right], array[leftBound]
         return leftBound
-
-    def swap(self, nums: List[int], left: int, right: int) -> None:
-        temp = nums[left]
-        nums[left] = nums[right]
-        nums[right] = temp
 ```
