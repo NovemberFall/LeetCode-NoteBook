@@ -406,6 +406,7 @@
     * [362. Design Hit Counter](design/hit.md)
     * [355. Design Twitter](design/twitter.md)
     * [641. Design Circular Deque](design/641.md)
+    * [622. Design Circular Queue](design/622.md)
 
 -----
 * [Database | MySQL](sql/intro.md) 
