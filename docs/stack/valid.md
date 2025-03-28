@@ -1,82 +1,50 @@
 ## 20. Valid Parentheses
 ![](img/2021-08-25-23-52-31.png)
 ---
-```ruby
-     s = "( ) [ ] { }"
-          i  
-     stk: (  
 
-
-     s = "( ) [ ] { }"
-            i  
-     stk:   
-
-
-     s = "( ) [ ] { }"
-              i  
-     stk: [ 
-
-
-     s = "( ) [ ] { }"
-                i  
-     stk: 
-     
-     
-     s = "( ) [ ] { }"
-                  i  
-     stk: {  
-
-
-     s = "( ) [ ] { }"
-                    i  
-     stk:   
+```py
+class Solution(object):
+    def isValid(self, s: str):
+        res = []
+        match = {'(': ')', '{': '}', '[': ']'}
+        for p in s:
+            if p in match: # If it's an opening bracket
+                res.append(p)
+            elif not res or match[res[-1]] != p: # If stack is empty or top does not match
+                return False
+            elif match[res[-1]] == p:
+                res.pop() # Remove the last opening bracket as it matched correctly
+        return not res # Return True if stack is empty (all matched)
 ```
+
+![](img/2025-03-23-23-16-58.png)
+![](img/2025-03-23-23-17-26.png)
 ---
+
+
+#### Java
+
 ```java
+
 class Solution {
     public boolean isValid(String s) {
-        char[] arr = s.toCharArray();
-        Deque<Character> stack = new LinkedList();
-        for (char c : arr) {         
-            if (c == ')') {
-                if (stack.isEmpty() || stack.pop() != '(') {
-                    return false;
-                }
-            } else if (c == ']') {
-                if (stack.isEmpty() || stack.pop() != '[') {
-                    return false;
-                }
-            } else if (c == '}') {
-                if (stack.isEmpty() || stack.pop() != '{') {
-                    return false;
-                }
+        Stack<Character> stack = new Stack<>();
+        Map<Character, Character> match = new HashMap<>();
+        match.put('(', ')');
+        match.put('{', '}');
+        match.put('[', ']');
+
+        for (char p : s.toCharArray()) {
+            if (match.containsKey(p)) {
+                stack.push(p);
+            } else if (stack.isEmpty() || match.get(stack.peek()) != p) {
+                return false;
             } else {
-                stack.push(c);
-            }           
+                stack.pop();
+            }
         }
         return stack.isEmpty();
     }
 }
-```
----
 
-#### Python
-
-```py
-class Solution:
-    def isValid(self, s: str) -> bool:
-        stack = []
-        for c in s:
-            if c == ')':
-                if not stack or stack.pop() != '(':
-                    return False
-            elif c == ']':
-                if not stack or stack.pop() != '[':
-                    return False
-            elif c == '}':
-                if not stack or stack.pop() != '{':
-                    return False
-            else:
-                stack.append(c)
-        return not stack
 ```

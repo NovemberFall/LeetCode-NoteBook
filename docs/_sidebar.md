@@ -405,6 +405,7 @@
     * [348. Design Tic-Tac-Toe](amazon/tictactoe.md)
     * [362. Design Hit Counter](design/hit.md)
     * [355. Design Twitter](design/twitter.md)
+    * [641. Design Circular Deque](design/641.md)
 
 -----
 * [Database | MySQL](sql/intro.md) 
@@ -574,6 +575,7 @@
 -----
 * [System Design](sd/intro.md)
     * [Rate Limiter](sd/rate.md)
+
 -----
 * [Fundamental Concept](basic/intro.md)
     * [Series Big-O | arithmetic, Geometric sequence](basic/series.md)
