@@ -26,7 +26,7 @@
     * [205. Isomorphic Strings](Array/isomorphic.md)
     * [1929. Concatenation of Array](Array/concatenation.md)
     * [1299. Replace Elements with Greatest Element on Right Side](Array/rightMax.md)
-* [Stack](stack/intro.md)
+* [Stack && Queue](stack/intro.md)
     * [20. Valid Parentheses](stack/valid.md)
     * [155. Min Stack](design/minstk.md)
     * [144. Binary Tree Preorder Traversal](ch5/preorder.md) 
@@ -407,6 +407,7 @@
     * [355. Design Twitter](design/twitter.md)
     * [641. Design Circular Deque](design/641.md)
     * [622. Design Circular Queue](design/622.md)
+    * [346. Moving Average from Data Stream](design/346.md)
 
 -----
 * [Database | MySQL](sql/intro.md) 
