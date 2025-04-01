@@ -39,6 +39,7 @@
     * [150. Evaluate Reverse Polish Notation](stack/erpn.md)
     * [394. Decode String](m8/decode.md)
     * [739. Daily Temperatures](stack/dailytemp.md)
+    * [946. Validate Stack Sequences](stack/946.md)
 * [Binary Search](binarySearch/intro.md)
     * [704. Classical Binary Search](ch2/classicalBinarySearch.md)
         * [704 II. Smallest Element that is Larger than Target](ch2/firstLarge.md)

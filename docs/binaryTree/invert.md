@@ -5,6 +5,8 @@
 
 ---
 
+![](img/2025-03-31-16-29-05.png)
+
 ```java
 /**
  * Definition for a binary tree node.
@@ -36,3 +38,21 @@ class Solution {
     }
 }
 ```
+---
+
+```py
+class Solution:
+    def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+        if root is None:
+            return None
+        tmp_left = root.left
+        root.left = root.right
+        root.right = tmp_left
+
+        self.invertTree(root.left)
+        self.invertTree(root.right)
+        return root
+```
+
+- **T = O(N)**
+- **S = O(log N)**
