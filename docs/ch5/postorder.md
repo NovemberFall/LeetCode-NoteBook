@@ -4,25 +4,6 @@
 
 ```java
 class BinaryTreePostorderTraversal_Iterator {
-    static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
-
     // Post-Order is the reverse order of pre-order with traversing
     // right subtree before traversing left subtree.
     public List<Integer> postorderTraversal(TreeNode root) {
@@ -63,28 +44,27 @@ class BinaryTreePostorderTraversal_Iterator {
 
 
 ---
-### Recursive
 
-```java
-class Solution {
-    public List<Integer> postorderTraversal(TreeNode root) {
-        List<Integer> res = new ArrayList<>();
-        if (root == null) {
-            return res;
-        }
-        
-        postorder(res, root);
-        return res;
-    }
-    
-    private void postorder(List<Integer> res, TreeNode root) {
-        if (root == null) {
-            return;
-        }
-        
-        postorder(res, root.left);
-        postorder(res, root.right);
-        res.add(root.val);
-    }
-}
+```py
+class Solution:
+    def postorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        res = []
+        if not root:
+            return res
+
+        stk = [(root, 1)]
+        while stk:
+            node, count = stk.pop()
+            if count == 1:
+                stk.append((node, count + 1))
+                if node.left:
+                    stk.append((node.left, 1))
+            if count == 2:
+                stk.append((node, count + 1))
+                if node.right:
+                    stk.append((node.right, 1))
+            if count == 3:
+                res.append(node.val)
+                continue  # a node that has been visited 3 times
+        return res
 ```

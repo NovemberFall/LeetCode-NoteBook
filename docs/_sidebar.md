@@ -31,7 +31,7 @@
     * [155. Min Stack](design/minstk.md)
     * [144. Binary Tree Preorder Traversal](ch5/preorder.md) 
     * [94. Binary Tree Inorder Traversal](ch5/inorder.md) 
-    * [145. Binary Tree Postorder Traversal | recurive](ch5/postorder.md)
+    * [145. Binary Tree Postorder Traversal](ch5/postorder.md)
     * [173. Binary Search Tree Iterator](stack/bstIterator.md)
     * [32. Longest Valid Parentheses](top/LongestValidParentheses.md)
     * [71. Simplify Path](stack/71.md)

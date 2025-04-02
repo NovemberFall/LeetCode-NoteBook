@@ -7,25 +7,6 @@
 
 ```java
 class BinaryTreePreorderTraversal_Iterator {
-    static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
-
     public List<Integer> preorderTraversal(TreeNode root) {
         if (root == null) return new ArrayList<>();
 
@@ -64,27 +45,31 @@ class BinaryTreePreorderTraversal_Iterator {
 
 
 ---
-### Recursive
 
-```java
-class Solution {
-    public List<Integer> preorderTraversal(TreeNode root) {
-        if (root == null) {
-            return new ArrayList<>();
-        }
-        
-        List<Integer> res = new ArrayList<>();      
-        preorder(res, root);
-        return res;
-    }
-    
-    private void preorder(List<Integer> res, TreeNode root) {
-        if (root == null) {
-            return;
-        }
-        res.add(root.val);
-        preorder(res, root.left);
-        preorder(res, root.right);
-    }
-}
+- Time = **O(3n) = O(n)**
+- space = **O(H)**
+
+
+```py
+class Solution:
+    def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        res = []
+        if not root:
+            return res
+
+        stk = [(root, 1)]
+        while stk:
+            node, count = stk.pop()
+            if count == 1:
+                res.append(node.val)
+                stk.append((node, count + 1))
+                if node.left:
+                    stk.append((node.left, 1))
+            if count == 2:
+                stk.append((node, count + 1))
+                if node.right:
+                    stk.append((node.right, 1))
+            if count == 3:
+                continue  # a node that has been visited 3 times
+        return res
 ```
