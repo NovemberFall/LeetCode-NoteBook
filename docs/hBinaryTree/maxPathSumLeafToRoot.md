@@ -1,25 +1,5 @@
-# Max Path Sum From Leaf To Root
-
-```ruby
-Given a binary tree in which each node contains an integer number. Find the maximum possible path sum from a leaf to root.
-
-Assumptions:
-The root of given binary tree is not null.
-
-Examples:
-
-         10
-
-       /      \
-
-    -2        7
-
-  /     \
-
-8      -4
-
-The maximum path sum is 10 + 7 = 17.
-```
+## Max Path Sum From Leaf To Root
+![](img/2025-04-05-16-17-52.png)
 
 
 ## Analysis:
@@ -67,4 +47,36 @@ public class Solution {
     maxPath(root.right, prefixSum + root.key, globalMax);    
   }
 }
+```
+---
+
+
+```py
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+class Solution(object):
+  def maxPathSumLeafToRoot(self, root):
+    """
+    input: TreeNode root
+    return: int
+    """
+    # write your solution here
+    if root is None:
+      return 0
+    
+    left = self.getPath(root.left, 0)
+    right = self.getPath(root.right, 0)
+    return max(left, right) + root.val
+  
+  def getPath(self, root, partial):
+    if root is None:
+      return 0
+    
+    if root.left is None and root.right is None:
+      partial = max(partial, partial + root.val)
+      
+    
 ```
