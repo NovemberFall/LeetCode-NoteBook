@@ -59,6 +59,7 @@ class Solution:
         if root is None:
             return float('inf')
         
+        # when it is a leaf node:
         if root.left is None and root.right is None:
             return 1
         left = self.dfs(root.left)

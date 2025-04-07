@@ -1,4 +1,4 @@
-# Maximum Path Sum Binary Tree I
+## Maximum Path Sum Binary Tree I
 
 ```ruby
 Given a binary tree in which each node contains an integer number. 
