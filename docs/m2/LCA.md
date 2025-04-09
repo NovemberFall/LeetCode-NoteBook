@@ -33,6 +33,12 @@ class Solution {
 ```
 ---
 
+![](img/2025-04-07-21-14-54.png)
+
+![](img/2025-04-07-21-15-15.png)
+
+![](img/2025-04-07-21-15-53.png)
+
 ```py
 class TreeNode:
     def __init__(self, x):
