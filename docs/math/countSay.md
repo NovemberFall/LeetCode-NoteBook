@@ -27,6 +27,34 @@ countAndSay(7) 对应上一行， One 3, One 1, Two 2, Two 1 => 13112221
 第四步，和第三步有关系
 etc..
 ```
+
+---
+### import Itertools library
+
+![](img/2025-04-11-16-47-36.png)
+
+![](img/2025-04-11-16-47-49.png)
+
+![](img/2025-04-11-16-48-01.png)
+
+![](img/2025-04-11-16-48-11.png)
+
+![](img/2025-04-11-16-53-13.png)
+
+```py
+class Solution:
+    def countAndSay(self, n: int) -> str:
+        res = '1'
+        for i in range(n-1):
+            addtional = ''
+            for digit, group in itertools.groupby(res):
+                count = len(list(group))
+                # addtional += "%i%s" % (count, digit)
+                addtional += f"{count}{digit}"
+            res = addtional
+        return res
+```
+
 ---
 ```java
 class Solution {
