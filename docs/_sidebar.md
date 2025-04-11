@@ -372,7 +372,7 @@
     * [7. Reverse Integer](math/7.md)
     * [8. String to Integer (atoi)](top/atoi.md)
     * [9. Palindrome Number](most/palindromenum.md)    
-    * [38. Count and Say](m8/countSay.md)
+    * [38. Count and Say](math/countSay.md)
     * [43. Multiply Strings](top/MultiplyStr.md)
     * [50. Pow(x, n)](math/pow.md)
     * [29. Divide Two Integers](math/divide.md)
