@@ -68,3 +68,28 @@ public class Solution {
   }
 }
 ```
+---
+
+![](img/2025-04-10-12-10-11.png)
+![](img/2025-04-10-12-10-20.png)
+
+![](img/2025-04-10-12-57-53.png)
+![](img/2025-04-10-12-58-10.png)
+
+
+```py
+class Solution:
+    def kSmallest(self, nums: List[int], k: int) -> int:
+        if not nums or k <= 0 or k > len(nums):
+            return -1
+
+        # Max heap to store kth smallest elements (we invert to use Python's min-heap)
+        res = [-elem for elem in nums[0:k]]
+        heapq.heapify(res)
+        for i in range(k, len(nums)):
+            if -res[0] > nums[i]:  # if current element is smaller than largest in heap
+                heapq.heappop(res)
+                heapq.heappush(res, -nums[i])
+        # Top of the max heap is the kth smallest (in negative)
+        return -res[0]
+```

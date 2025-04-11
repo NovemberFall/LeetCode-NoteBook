@@ -1,20 +1,6 @@
 ## 215. Kth Largest Element in an Array
 ![](img/2022-05-12-01-22-26.png)
-
-- `O(N lg N)` running time + `O(1)` memory
-
-```java
-class Solution {
-    public int findKthLargest(int[] nums, int k) {
-        if (nums.length == 0 || k == 0) {
-            return new int[0];
-        }
-        int n = nums.length;
-        Arrays.sort(nums);
-        return nums[n - k];
-    }
-}
-```
+---
 
 
 ---
@@ -61,3 +47,8 @@ class Solution:
         return minHeap[0]  # The top of the min-heap is the kth largest element
 
 ```
+---
+
+
+
+
