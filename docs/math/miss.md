@@ -2,6 +2,18 @@
 ![](img/2023-03-11-22-50-47.png)
 
 - [reference](https://novemberfall.github.io/LeetCode-NoteBook/#/math/addbin)
+---
+```py
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        n = len(nums)
+        arr = set(nums)
+        for missing in range(0, n + 1):
+            if missing not in arr:
+                return missing
+        return -1
+```
+
 
 ---
 

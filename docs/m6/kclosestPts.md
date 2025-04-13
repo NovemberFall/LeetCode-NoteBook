@@ -18,35 +18,35 @@ class Solution {
             }
         }
         
-        while (k > 0) {
-            res[--k] = maxHeap.poll();
-        }
-        return res;
-    }
-}
-```
-
----
-
-### version II
-
-```java
-class Solution {
-    public int[][] kClosest(int[][] points, int k) {
-        PriorityQueue<int[]> minHeap = new PriorityQueue<>( (a, b) ->  
-            ((a[0] - 0)*(a[0] - 0) + (a[1] - 0) * (a[1] - 0)) - ((b[0] - 0)*(b[0] - 0) + (b[1] - 0) * (b[1] - 0)) 
-        );
-        
-        for (int[] point : points) {
-            minHeap.offer(point);
-        }
-        
-        int[][] res = new int[k][2];
         for (int i = 0; i < k; i++) {
             res[i] = minHeap.poll();
         }
-        
         return res;
     }
 }
 ```
+---
+
+```py
+import heapq
+
+class Solution:
+    def kClosest(self, points: list[list[int]], k: int) -> list[list[int]]:
+        maxHeap = []  # Use a list to simulate a max-heap
+
+        for point in points:
+            distance_sq = point[0]**2 + point[1]**2
+            # Python's heapq is a min-heap, so we store the negative distance
+            # to simulate a max-heap based on distance.
+            heapq.heappush(maxHeap, (-distance_sq, point))
+            if len(maxHeap) > k:
+                heapq.heappop(maxHeap)
+
+        res = []
+        for _ in range(k):
+            neg_distance_sq, point = heapq.heappop(maxHeap)
+            res.append(point)
+
+        return res
+```
+

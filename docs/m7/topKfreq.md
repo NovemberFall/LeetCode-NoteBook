@@ -87,37 +87,16 @@ class Solution {
 
 ---
 
-```js
-/**
- * @param {string[]} words
- * @param {number} k
- * @return {string[]}
- */
-var topKFrequent = function (words, k) {
-    if (words == null) {
-        return words;
-    }
+### Python 
 
-    var map = new Map();
-    for (let i = 0; i < words.length; i++) {
-        map.set(words[i], (map.get(words[i]) || 0) + 1)
-    }
+![](img/2025-04-12-11-55-02.png)
+![](img/2025-04-12-11-55-14.png)
 
-    var list = [];
-    for (let key of map.keys()) {
-        list.push([key, map.get(key)])
-    }
+![](img/2025-04-12-11-56-22.png)
 
-    list.sort((a, b) => {
-        if (a[1] === b[1]) {
-            return a[0] < b[0] ? -1 : 1;
-        }
-        return a[1] < b[1] ? 1 : -1;
-    })
-
-    return list.slice(0, k).map(e => e[0]);
-};
+```py
+class Solution:
+    def topKFrequent(self, words: List[str], k: int) -> List[str]:
+        count = Counter(words)
+        return sorted(count.keys(), key=lambda w: (-count[w], w))[:k]
 ```
-
-
-
