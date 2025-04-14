@@ -20,13 +20,18 @@
 ---
 
 ```java
-class _67_AddBinary {
+class Solution {
     public String addBinary(String a, String b) {
-        StringBuilder sb = new StringBuilder();
-        int i = a.length() - 1, j = b.length() - 1;
-        
-        int sum = 0, carry = 0;
+        if (a.isEmpty()) return b;
+        if (b.isEmpty()) return a;
+
+        StringBuilder res = new StringBuilder();
+        int carry = 0;
+        int i = a.length() - 1;
+        int j = b.length() - 1;
+
         while (i >= 0 || j >= 0) {
+            int sum = carry;
             if (i >= 0) {
                 sum += a.charAt(i) - '0';
                 i--;
@@ -35,22 +40,43 @@ class _67_AddBinary {
                 sum += b.charAt(j) - '0';
                 j--;
             }
-            
-            sb.insert(0, sum % 2);
+            res.append(sum % 2);
             carry = sum / 2;
-            sum = carry;
         }
-        
-        if (carry != 0) {
-            sb.insert(0, carry);
-        }
-        return sb.toString();
-    }
 
-    public static void main(String[] args) {
-        _67_AddBinary addBinary = new _67_AddBinary();
-        String res = addBinary.addBinary("1010", "1011");
-        System.out.println(res); // "10101"
+        if (carry == 1) {
+            res.append("1");
+        }
+
+        return res.reverse().toString();
     }
 }
+```
+---
+
+```py
+class Solution:
+    def addBinary(self, a: str, b: str) -> str:
+        if not a:
+            return b
+        if not b:
+            return a
+
+        res = []
+        carry = 0
+        i, j = len(a) - 1, len(b) - 1
+        while i >= 0 or j >= 0:
+            sum = carry
+            if i >= 0:
+                sum += int(a[i])
+                i -= 1
+            if j >= 0:
+                sum += int(b[j])
+                j -= 1
+            res.append(str(sum % 2))
+            carry = sum // 2
+        if carry == 1:
+            res.append("1")
+        res.reverse()
+        return "".join(res)
 ```
