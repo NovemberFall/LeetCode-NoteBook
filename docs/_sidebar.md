@@ -56,6 +56,9 @@
     * [240. Search a 2D Matrix II](m3/SearchIn2DArrayII.md)
     * [702. Search in a Sorted Array of Unknown Size](m3/searchInUnknownSize.md)
     * [162. Find Peak Element](tiktok/162.md)
+    * [167. Two Sum II - Input Array Is Sorted](binarySearch/167.md)
+    * [Google | Onsite | Two Sum - Closest to Target](binarySearch/twosumcloest.md)
+    * [2 Sum Smaller](binarySearch/twosumsmaller.md)
     * [278. First Bad Version](binarySearch/firstBad.md)
     * [875. Koko Eating Bananas](binarySearch/koko.md)
     * [Array Deduplication III](m3/dedup3.md)
@@ -583,6 +586,7 @@
 -----
 * [System Design](sd/intro.md)
     * [Rate Limiter](sd/rate.md)
+    * [Design Ticketmaster](sd/ticket.md)
 
 -----
 * [Fundamental Concept](basic/intro.md)
