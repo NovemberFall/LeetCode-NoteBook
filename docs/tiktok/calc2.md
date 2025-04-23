@@ -8,42 +8,45 @@
 
 ---
 ```java
-class _227_BasicCalculator_II {
+class _Basic_Calculator_II {
+    int index = 0;
     public int calculate(String s) {
-        s = s.trim();
-        int num = 0;
-        Stack<Integer> stack = new Stack<>();
-        char lastSign = '+';
-        for (int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i);
-            if (c == ' ') {
+        return evaluate(s + "+");
+    }
+
+    private int evaluate(String s) {
+        Deque<Integer> stack = new ArrayDeque<>();
+        int curNum = 0;
+        char lastOperator = '+';
+        while (index < s.length()) {
+            char curChar = s.charAt(index);
+            index++;
+
+            if (curChar == ' ') {
                 continue;
             }
-            if (Character.isDigit(c)) {
-                num = num * 10 + c - '0';
-            }
-            if (!Character.isDigit(c) && c != ' ' || i == s.length() - 1) {
-                if (lastSign == '+') {
-                    stack.push(num);
-                    lastSign = c;
-                } else if (lastSign == '-') {
-                    stack.push(-num);
-                    lastSign = c;
-                } else if (lastSign == '*') {
-                    stack.push(stack.pop() * num);
-                    lastSign = c;
-                } else if (lastSign == '/') {
-                    stack.push(stack.pop() / num);
-                    lastSign = c;
+            if (Character.isDigit(curChar)) {
+                curNum = curNum * 10 + curChar - '0';
+            } else {
+                if (lastOperator == '+') {
+                    stack.push(curNum);
+                } else if (lastOperator == '-') {
+                    stack.push(-curNum);
+                } else if (lastOperator == '*') {
+                    stack.push(stack.pop() * curNum);
+                } else if (lastOperator == '/') {
+                    stack.push(stack.pop() / curNum);
                 }
-                num = 0;
+                lastOperator = curChar;
+                curNum = 0;
             }
         }
-        int sum = 0;
-        for (int e : stack) {
-            sum += e;
+
+        int res = 0;
+        while (!stack.isEmpty()) {
+            res += stack.pop();
         }
-        return sum;
+        return res;
     }
 }
 ```
@@ -52,30 +55,35 @@ class _227_BasicCalculator_II {
 ```py
 class Solution:
     def calculate(self, s: str) -> int:
-        s = s.strip()  # Remove leading/trailing whitespace
-        stack = []  # use a list as a stack
-        lastSign = '+'
-        num = 0
+        self.index = 0
+        return self.evaluate(s + "+")
 
-        for i, ch in enumerate(s):
-            c = s[i]
-            if c.isdigit():
-                num = num * 10 + int(c)
+    def evaluate(self, s: str) -> int:
+        stack = []
+        curNum = 0
+        lastOperator = "+"
 
-            if ch in "+-*/" or i == len(s) - 1:  # End of number or string
-                if lastSign == '+':
-                    stack.append(num)
-                    lastSign = c
-                elif lastSign == '-':
-                    stack.append(-num)
-                    lastSign = c
-                elif lastSign == '*':
-                    stack.append(stack.pop() * num)
-                    lastSign = c
-                elif lastSign == '/':
-                    stack.append(int(stack.pop() / num))  # Ensure integer division
-                    lastSign = c
-                num = 0
+        while self.index < len(s):
+            curChar = s[self.index]
+            self.index += 1
 
+            if curChar == ' ':
+                continue
+            if curChar.isdigit():
+                curNum = curNum * 10 + int(curChar)
+            else:
+                if lastOperator == "+":
+                    stack.append(curNum)
+                elif lastOperator == "-":
+                    stack.append(-curNum)
+                elif lastOperator == "*":
+                    stack.append(stack.pop() * curNum)
+                elif lastOperator == "/":
+                    # Perform previous '/' operation
+                    # Use int(a / b) for integer division that truncates towards zero (like Java)
+                    # Note: Python's // operator floors, which differs for negative results.
+                    stack.append(int(stack.pop() / curNum))
+                lastOperator = curChar
+                curNum = 0
         return sum(stack)
 ```
