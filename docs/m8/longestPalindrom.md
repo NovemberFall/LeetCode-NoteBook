@@ -90,34 +90,29 @@ class Solution:
 ```
 ---
 
-### solution 2:
+---
 
-![](img/2025-04-14-16-02-15.png)
-
-![](img/2025-04-14-16-13-57.png)
-
-![](img/2025-04-14-16-14-13.png)
-
-![](img/2025-04-14-16-14-26.png)
+### Recursion
 
 ```py
 class Solution:
     def longestPalindrome(self, s: str) -> str:
-        start, end = 0, 0
+        res = ""
         for i in range(len(s)):
-            len1 = self.expandAroundCenter(s, i, i)
-            len2 = self.expandAroundCenter(s, i, i + 1)
-            length = max(len1, len2)
+            # odd case
+            odd_str = self.dfs(s, i, i)
+            if len(odd_str) > len(res):
+                res = odd_str
+            # even case
+            even_str = self.dfs(s, i, i + 1)
+            if len(even_str) > len(res):
+                res = even_str
+        return res
 
-            if length > end - start + 1:
-                start = i - (length - 1) // 2
-                end = i + length // 2
-            print(length, start, end)
-        return s[start: end + 1]
-
-    def expandAroundCenter(self, s, l, r):
+    def dfs(self, s, l, r) -> str:
         while l >= 0 and r < len(s) and s[l] == s[r]:
             l -= 1
             r += 1
-        return r - l - 1
+        return s[l + 1: r]
 ```
+
