@@ -187,7 +187,7 @@
     * [743. Network Delay Time | Dijkstra's Algorithm](graph/network.md)
     * [778. Swim in Rising Water](graph/swim.md)
     * [787. Cheapest Flights Within K Stops | Dijkstra's Algorithm](graph/stops.md)
-    * [1584. Min Cost to Connect All Points | Kruskal's Algorithm](graph/mincost.md)
+    * [1584. Min Cost to Connect All Points | Kruskal's Algorithm | Minimum Spanning Tree](graph/mincost.md)
 * [Heap](heap/intro.md)
     * [215. Kth Largest Element in an Array](m6/KthLarget.md)
     * [如何构造大根堆 K Smallest In Unsorted Array](m6/K_smallest.md)

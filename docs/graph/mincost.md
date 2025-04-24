@@ -2,9 +2,16 @@
 ![](img/2024-03-04-21-37-50.png)
 ![](img/2024-03-04-21-38-03.png)
 
-- [Kruskal's Algorithm](https://leetcode.com/explore/learn/card/graph/621/algorithms-to-construct-minimum-spanning-tree/3858/)
+- [Kruskal's Algorithm | Explain from 2:17](https://leetcode.com/explore/learn/card/graph/621/algorithms-to-construct-minimum-spanning-tree/3858/)
 
 
+
+![](img/2025-04-23-22-25-47.png)
+![](img/2025-04-23-22-26-03.png)
+![](img/2025-04-23-22-26-18.png)
+
+
+---
 - the line `Edge edge = new Edge(i, j, cost)`; is used to create a new edge between two points in the graph. 
   Let's break down what i and j represent in this context:
 
@@ -23,7 +30,7 @@ Here's how it works:
 
 By iterating over all pairs of points in this manner, the algorithm considers all possible edges in the graph formed by the given points.
 
-This approach ensures that each edge is considered exactly once, avoiding duplicate edges and ensuring that the algorithm finds the minimum 
+This approach **ensures that each edge is considered exactly once, avoiding duplicate edges** and ensuring that the algorithm finds the minimum 
 spanning tree (MST) of the graph using Kruskal's algorithm efficiently.
 
 
@@ -36,8 +43,7 @@ class MinCostToConnectAllPoints {
             return 0;
         }
         int size = points.length;
-        PriorityQueue<Edge> minHeap = new PriorityQueue<>((x, y) -> (
-            x.cost - y.cost));
+        PriorityQueue<Edge> minHeap = new PriorityQueue<>((x, y) -> (x.cost - y.cost));
         UnionFind uf = new UnionFind(size);
 
         for (int i = 0; i < size; i++) {
