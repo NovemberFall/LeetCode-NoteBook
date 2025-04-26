@@ -32,136 +32,135 @@ class _10_RegularExpressionMatching {
     }
 }
 ```
+---
+
+### Memorization
+
+```java
+class Solution {
+    private Boolean[][] dp;
+
+    public boolean isMatch(String s, String p) {
+        dp = new Boolean[s.length() + 1][p.length() + 1];
+        return dfs(s, p);
+    }
+
+    private boolean dfs(String s, String p) {
+        int m = s.length(), n = p.length();
+        if (dp[m][n] != null) {
+            return dp[m][n];
+        }
+
+        // Base case: if pattern is empty, string must also be empty
+        if (n == 0) {
+            return dp[m][n] = (m == n);
+        }
+
+        // If the second char in pattern is '*', we have two choices
+        if (n > 1 && p.charAt(1) == '*') {
+            // Option 1: Treat "x*" as empty (zero occurrences)
+            if (dfs(s, p.substring(2))) {
+                return dp[m][n] = true;
+            }
+
+            // Option 2: If s is not empty and first char matches, consume one char from s\
+            // for Option2, look at the explanation under the codes
+            if (m > 0 && (p.charAt(0) == '.' || s.charAt(0) == p.charAt(0))) {
+                if (dfs(s.substring(1), p)) {
+                    return dp[m][n] = true;
+                }
+            }
+
+            // Neither option worked
+            return dp[m][n] = false;
+        } else {
+            // Normal case: if current characters match or pattern has '.', move both pointers
+            if (m > 0 && (p.charAt(0) == '.' || s.charAt(0) == p.charAt(0))) {
+                dp[m][n] = dfs(s.substring(1), p.substring(1));
+                return dp[m][n];
+            }
+            return dp[m][n] = false;
+        }
+    }
+}
+```
+
+
+-  if s = `"aaaaaab"`, p = `"a*b"`, so `"a*"` can **consume** "aaaaaa"(remaining a **b**) and p is unchanged, right?
+   -  Exactly right!
+   -  Let a* consume all `'a'`s → so `s = "b"` remains
+   -  Pattern is still at **"a*b"** (we haven’t moved past * yet)
+   -  Then try `isMatch("b", "a*b")` again:
+      -  "a" still matches → a* consumes nothing this time
+      -  Move on: try isMatch("b", "b")
+---
+
+### Bottom-Up DP
+
+```java
+class tabulation_v1 {
+    public boolean isMatch(String s, String p) {
+        int m = s.length();
+        int n = p.length();
+        // Use boolean primitive, defaults to false
+        boolean[][] dp = new boolean[m + 1][n + 1];
+
+        // Base case: empty string matches empty pattern
+        dp[m][n] = true;
+
+        // Fill the table bottom-up
+        // i = index in s (from end to start), j = index in p (from end to start)
+        for (int i = m; i >= 0; i--) {
+            // Start j from n-1 since dp[...][n] is handled by the base case or implicitly false,
+            // except for dp[m][n].
+            for (int j = n - 1; j >= 0; j--) {
+                // Check if current characters match (only if s is not exhausted(耗尽) at index i)
+                boolean first_match = (i < m && (p.charAt(j) == '.' || s.charAt(i) == p.charAt(j)));
+
+                // Check if the next pattern character is '*'
+                if (j < n - 1 && p.charAt(j + 1) == '*') {
+                    // If p[j+1] is '*':
+                    // Option 1: Treat '*' as zero occurrences of p[j].
+                    // Check if s[i:] matches p[j+2:] (equivalent to skipping p[j] and '*')
+                    boolean match_zero = dp[i][j + 2];
+
+                    // Option 2: Treat '*' as one or more occurrences of p[j].
+                    // Requires current characters to match (first_match)
+                    // AND s[i+1:] must match p[j:] (stay at p[j] due to '*')
+                    boolean match_one_or_more = first_match && dp[i + 1][j];
+
+                    dp[i][j] = match_zero || match_one_or_more;
+                } else {
+                    // Normal character match (no '*' following p[j])
+                    // Check if current s[i] matches p[j] (and s is not exhausted)
+                    dp[i][j] = first_match && dp[i + 1][j + 1];
+
+
+                    // No else needed here: if the characters don't match,
+                    // dp[i][j] remains default false, which is correct.
+                }
+            }
+        }
+
+        // The result is whether the full string s (from index 0) matches the full pattern p (from index 0)
+        return dp[0][0];
+    }
+}
+```
+---
+
+1. `dp[m][n]` corresponds to checking if `s.substring(m)` matches `p.substring(n)`. Since m is the length of s and n is the length of p, both 
+   substring(m) and substring(n) represent empty strings ("").
+
+2. for init **i = m**, **j = n - 1**, why?
+
+![](img/2025-04-25-14-53-05.png)
+
+
+
 
 ---
 ## DP
 
-
-![](img/2022-12-01-11-51-57.png)
-
-![](img/2022-12-07-22-07-39.png)
-
-
-```ruby
-##  How does "ablmy" stand true to "a*b.*y"?
-
-    a* ---> a
-    b ---> b
-    .* ----> . . ----> lm
-    y ----> y
-
-    In regular expression, single * has no meaning. It has to be *
-    Examples:
-    a*
-    b*
-    .*
-```
-
-- Note: `*b`  is **invalid**
-
-![](img/2022-12-07-22-47-53.png)
-- for `column 0`, the pattern string for `index 0` is empty string, so filling up `column 0` all `False`
-  
-```java
-M[0][0] = true;
-```
-
-
 - [video 5:38](https://www.youtube.com/watch?v=l3hda49XcDE&t=303s)
-- [LeetCode10 Discussion:](https://leetcode.com/problems/regular-expression-matching/discuss/280588/DP-solution-with-the-most-general-natural-explanation)
-
-- Now for `row 0`, `a*` or `a*b*` or `a*b*c*` can match text empty string 
-
-```java
-/**
-    1. M[i][0] = false(which is default value of the boolean array) since empty pattern cannot match non-empty string
-    2. M[0][j]: what pattern matches empty string ""? It should be #*#*#*#*..., or (#*)* 
-        if allow me to represent regex using regex :P, and for this case we need to check manually: 
-            as we can see, the length of pattern should be even && the character at the even position should be *, 
-		    thus for odd length, M[0][j] = false which is default. So we can just skip the odd position, i.e. j starts from 2, 
-            the interval of j is also 2. 
-		and notice that the length of repeat sub-pattern #* is only 2, we can just make use of M[0][j - 2] 
-            rather than scanning j length each time 
-		for checking if it matches #*#*#*#*.
-
-*/
-    for (int i = 2; i < T[0].length; i+=2) {
-        if (pattern[i-1] == '*') {
-            T[0][i] = T[0][i - 2];
-        }
-    }
-
-// OR:
-
-    for(int j = 2; j < n + 1; j +=2){
-        if(p.charAt(j - 1) == '*' && M[0][j - 2]){
-            M[0][j] = true;
-        }
-    }
-```
-
----
-
-```java
-/**
-    How does "ablmy" stand true to "a*b.*y"?
-
-    a* ---> a
-    b ---> b
-    .* ----> . . ----> lm
-    y ----> y
-
-    In regular expression, single * has no meaning. It has to be *
-    Examples:
-    a*
-    b*
-    .*
- */
-class _10_RegularExpressionMatching {
-    public static boolean isMatch(String s, String p) {
-        int m = s.length(), n = p.length();
-        char[] sc = s.toCharArray(), pc = p.toCharArray();
-        boolean[][] dp = new boolean[m + 1][n + 1];
-        dp[0][0] = true;
-
-        //Deals with patterns like a* or a*b* or a*b*c*
-        for (int i = 2; i < dp[0].length; i += 2) {
-            if (p.charAt(i - 1) == '*') {
-                dp[0][i] = dp[0][i - 2]; // *可以消掉c*
-            }
-        }
-
-        for (int i = 1; i < dp.length; i++) {
-            for (int j = 1; j < dp[0].length; j++) {
-                if (s.charAt(i - 1) == p.charAt(j - 1) || p.charAt(j - 1) == '.') {
-                    dp[i][j] = dp[i - 1][j - 1];
-                } else if (p.charAt(j - 1) == '*') {
-                    if (s.charAt(i - 1) == p.charAt(j - 2) || p.charAt(j - 2) == '.') {
-                        /*
-                        s = abc  p = ac*  // p need to check preceding element before `*`
-                                          // s only check current element
-                        */
-                        dp[i][j] = dp[i][j - 2] || dp[i][j - 1] || dp[i - 1][j];
-                        // 当*的前一位是'.'， 或者前一位的pc等于sc的话，
-                        // *代表1个(dp[i][j - 1])，*代表多个(dp[i - 1][j])，或者用*消掉c*(dp[i][j - 2])
-                    } else {
-                        dp[i][j] = dp[i][j - 2]; // 用*消掉c*
-                    }
-                } else {
-                    dp[i][j] = false;
-                }
-            }
-        }
-        return dp[m][n];
-    }
-
-    public static void main(String[] args) {
-        String text = "xaabyc", pattern = "xa*b.c";
-        boolean res = isMatch(text, pattern);
-        System.out.println(res);
-    }
-}
-
-```
-
 

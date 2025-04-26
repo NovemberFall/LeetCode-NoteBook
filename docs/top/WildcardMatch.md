@@ -1,200 +1,129 @@
 ## 44. Wildcard Matching
 ![](img/2022-11-28-11-29-06.png)
 
+
+- [video DP](https://youtu.be/3ZDZ-N0EPV0?t=316)
+
 - Note: if `s = aa`, `p = "*b"` => `return false`
 
 - Note: "*" represents **Matches any sequence of characters** (including the empty sequence).
   - if `s = "aa", p = "**"` => return **true**, thus we can **remove duplicate** `"*"` to make it easy to solve
+
 
 ---
 ### Memorization DFS
 
 ```java
 class Solution {
+    private Boolean[][] dp;
+
     public boolean isMatch(String s, String p) {
-        Map<String, Boolean> dp = new HashMap<>();
-        String clean_p = remove_duplicate_stars(p);
-        return dfs(s, clean_p, dp, 0, 0);
+        // Keep the initialization style
+        dp = new Boolean[s.length() + 1][p.length() + 1];
+        // Keep the initial dfs call style
+        return dfs(s, p);
     }
 
-    private String remove_duplicate_stars(String p) {
-        StringBuilder sb = new StringBuilder();
-        for (char c : p.toCharArray()) {
-            // If StringBuilder is empty, just append the character
-            if (sb.length() == 0) {
-                sb.append(c);
-                continue;
+    // Keep the method signature and basic structure
+    private boolean dfs(String s, String p) {
+        int m = s.length();
+        int n = p.length();
+
+        // Keep memoization check style
+        if (dp[m][n] != null) {
+            return dp[m][n];
+        }
+
+        // Keep base case for empty pattern (logic is same for LC44)
+        if (n == 0) {
+            return dp[m][n] = (m == 0); // True only if s is also empty
+        }
+
+        // --- Main Logic Adapted for LC 44 ---
+        // The main difference is how '*' works. It doesn't depend on p[1].
+        // We check p.charAt(0) directly.
+
+        // Case 1: Current pattern character p[0] is '*'
+        if (p.charAt(0) == '*') {
+            // Option 1: '*' matches zero characters in s.
+            // Check if s matches the rest of the pattern p.substring(1).
+            if (dfs(s, p.substring(1))) {
+                // If skipping '*' leads to a match, return true.
+                return dp[m][n] = true;
             }
-            // Get the last character in the StringBuilder
-            char lastChar = sb.charAt(sb.length() - 1);
+            // Option 2: '*' matches one or more characters in s.
+            // This requires s not to be empty (m > 0).
+            // Check if the rest of s (s.substring(1)) matches the current pattern p
+            // (we stay at '*' because it can match more).
+            if (m > 0 && dfs(s.substring(1), p)) {
+                // If matching one char in s and continuing works, return true.
+                return dp[m][n] = true;
+            }
             
-            // If the current character is not '*', append it
-            if (c != '*') {
-                sb.append(c);
+            // If neither '*' option leads to a match.
+            return dp[m][n] = false;
+
+        } else {
+            // Case 2: Current pattern character p[0] is NOT '*' (it's '?' or a letter)
+            // This logic block resembles the non-'*' case from your LC10 code.
+
+            // Check if the first characters match:
+            // - s must not be empty (m > 0)
+            // - EITHER p[0] is '?' (matches any char)
+            // - OR p[0] is the same as s[0]
+            if (m > 0 && (p.charAt(0) == '?' || p.charAt(0) == s.charAt(0))) {
+                // If they match, the result depends on the rest of the strings.
+                // Recursively call for s.substring(1) and p.substring(1).
+                dp[m][n] = dfs(s.substring(1), p.substring(1));
+                // Store and return the result of the recursive call.
+                return dp[m][n];
             }
-            // If the current character is '*', check the last character
-            else if (lastChar != '*') {
-                // Append '*' only if the last character is not also '*'
-                sb.append(c);
-            }
-            // If the last character is already '*', do nothing (skip duplicate)
-        }
-        return sb.toString();
-    }
 
-    private boolean dfs(String s, String cleanP, Map<String, Boolean> dp, int sidx, int pidx) {
-        String key = sidx + "," + pidx;
-        if (dp.containsKey(key)) {
-            return dp.get(key);
+            // If s is empty OR the first characters don't match.
+            return dp[m][n] = false; // Store and return false.
         }
-
-        if (pidx == cleanP.length()) {
-            dp.put(key, sidx == s.length());
-        } else if (sidx == s.length()) {
-            dp.put(key, pidx + 1 == cleanP.length() && cleanP.charAt(pidx) == '*');
-        } else if (cleanP.charAt(pidx) == s.charAt(sidx) || cleanP.charAt(pidx) == '?') {
-            dp.put(key, dfs(s, cleanP, dp, sidx + 1, pidx + 1));
-        } else if (cleanP.charAt(pidx) == '*') {
-            // Case 1: '*' matches zero characters
-            boolean matchZero = dfs(s, cleanP, dp, sidx, pidx + 1);
-            // Case 2: '*' matches at least one character
-            boolean matchOneOrMore = dfs(s, cleanP, dp, sidx + 1, pidx);
-            dp.put(key, matchZero || matchOneOrMore);
-
-            // dp.put(key, dfs(s, cleanP, dp, sidx, pidx + 1) || dfs(s, cleanP, dp, sidx + 1, pidx));
-        } else if (cleanP.charAt(pidx) != s.charAt(sidx)) {
-            dp.put(key, false);
-        }
-        return dp.get(key);
     }
 }
 ```
 
-
-- **For** 
-
-```java  
-    else if (sidx == s.length()) {
-        dp.put(key, pidx + 1 == cleanP.length() && cleanP.charAt(pidx) == '*');
-    } 
-```    
-
-- why did it use `pidx + 1 == cleanP.length()` instead of `pidx == cleanP.length()`? 
-
-![](img/2025-02-13-10-12-37.png)
-
-
-- For `remove_duplicate_stars`, the result would be:
-    - `s = "**a**b***c*"` => `s = "*a*b*c*"`
-
-![](img/2025-02-13-11-11-49.png)
-
-
-![](img/2025-02-13-11-26-45.png)
 ---
 
-## DP 
-
-
-
-![](img/2022-11-30-13-22-37.png)
-
-![](img/2022-12-08-18-24-06.png)
-
-- [video DP](https://youtu.be/3ZDZ-N0EPV0?t=316)
-
 ```java
-class _44_WildcardMatching {
+class tabulation {
     public boolean isMatch(String s, String p) {
         int m = s.length(), n = p.length();
         boolean[][] dp = new boolean[m + 1][n + 1];
-        dp[0][0] = true;
-        // first col: dp[i][0]: can't match when p is empty. All false.
 
-        for (int j = 1; j < dp[0].length; j++) {
-            if (p.charAt(j - 1) == '*') {
-                // first row: dp[0][j]: except for String p starts with *, otherwise all false
-                dp[0][j] = dp[0][j - 1];
-            }
-        }
+        // Base Case: Empty string vs Empty pattern
+        dp[m][n] = true;
+        for (int i = m; i >= 0; i--) {
+            // Iterate through pattern p backwards (j = n-1 to 0)
+            // We still need dp[...][n] which is handled by the base case dp[m][n]
+            // and the default false for dp[i<m][n].
+            for (int j = n - 1; j >= 0; j--) {
+                if (p.charAt(j) == '*') {
+                    // Option 1: '*' matches zero chars -> dp[i][j+1] (works even if i=m)
+                    boolean matchZero = dp[i][j + 1];
+                    // Option 2: '*' matches one or more chars -> dp[i+1][j]
+                    // This requires i < m (string s must have chars left to match)
+                    boolean matchOnePlus = (i < m) && dp[i + 1][j];
+                    dp[i][j] = matchZero || matchOnePlus;
 
-        for (int i = 1; i < dp.length; i++) {
-            for (int j = 1; j < dp[0].length; j++) {
-                if (p.charAt(j - 1) == s.charAt(i - 1) || p.charAt(j - 1) == '?') {
-                    dp[i][j] = dp[i - 1][j - 1];
-                } else if (p.charAt(j - 1) == '*') {
-                    dp[i][j] = dp[i - 1][j] || dp[i][j - 1];
-                } else {
-                    dp[i][j] = false;
+                } else { // pChar is '?' or a letter
+                    // Match requires:
+                    // 1. String s is not empty (i < m)
+                    // 2. Pattern char matches string char ('?' or equal letters)
+                    if (i < m && (p.charAt(j) == '?' || s.charAt(i) == p.charAt(j))) {
+                        // If first chars match, result depends on the rest -> dp[i+1][j+1]
+                        dp[i][j] = dp[i + 1][j + 1];
+                    }
+                    // else: If i == m OR first chars don't match, dp[i][j] remains false (default)
                 }
             }
         }
 
-        return dp[m][n];
-    }
-
-    public static void main(String[] args) {
-        _44_WildcardMatching wm = new _44_WildcardMatching();
-        String s = "acdcb", p = "a*c?b";
-        boolean res = wm.isMatch(s, p);
-        System.out.println(res); // false
+        // Result for full string s[0:] vs full pattern p[0:]
+        return dp[0][0];        
     }
 }
-```
----
-
-### Python
-
-```py
-class Solution(object):
-    def match(self, input, pattern):
-        """
-        input: string input, string pattern
-        return: boolean
-        """
-        # write your solution here
-        clean_p = self.remove_duplicate_stars(pattern)
-        return self.dfs(input, clean_p, {}, 0, 0)
-
-    def remove_duplicate_stars(self, pattern):
-        res = []
-        for c in pattern:
-            if len(res) == 0:
-                res.append(c)
-                continue
-            last_char = res[-1]
-            if c == '*' and last_char != '*':
-                res.append(c)
-            elif c != '*':
-                res.append(c)
-        return "".join(res)
-
-    def dfs(self, s, p, dp, si, pi):
-        key = str(si) + "," + str(pi)
-        if key in dp:
-            return dp[key]
-
-        if pi == len(p):
-            dp[key] = si == len(s)
-        elif si == len(s):
-            dp[key] = pi + 1 == len(p) and p[pi] == '*'
-        elif s[si] == p[pi] or p[pi] == '?':
-            dp[key] = self.dfs(s, p, dp, si + 1, pi + 1)
-        elif p[pi] == '*':
-            match_zero = self.dfs(s, p, dp, si, pi + 1)
-            match_one_more = self.dfs(s, p, dp, si + 1, pi)
-            dp[key] = match_zero or match_one_more
-        elif s[si] != p[pi]:
-            dp[key] = False
-        return dp[key]
-
-
-
-    # Testing Method
-    def test_remove_remove_duplicate_stars(self, pattern):
-        clean_p = self.remove_duplicate_stars(pattern)
-        print(clean_p)
-
-sol = Solution()
-sol.test_remove_remove_duplicate_stars("**a**b***c*")  # "*a*b*c*"
 ```
