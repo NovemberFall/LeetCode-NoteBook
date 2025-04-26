@@ -328,6 +328,7 @@
     * [416. Partition Equal Subset Sum](memoization/416.md)
     * [3389. Minimum Operations to Make Character Frequencies Equal](memoization/3389.md)
 * [Dynamic Programming](DP/intro.md)
+    * [1143. Longest Common Subsequence](DP/1143.md) 
     * [10. Regular Expression Matching](top/regular.md) 
     * [44. Wildcard Matching](top/WildcardMatch.md)
     * [42. Trapping Rain Water](amazon/rain.md)
