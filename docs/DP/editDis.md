@@ -2,106 +2,7 @@
 
 ![](img/2021-08-18-00-53-05.png)
 ---
-
-
-## Analysis
-
-
-```java
-case0: 
-if  s1[0] == s2[0]: 
-            do nothing 
-
-
-case1: replace
-s1 = a -> s
-s2 = s
-M[1][1] => M[0][0] + 1
-
-M[i][j] => M[i - 1][j - 1] + 1
-因为实际上，你在这里 'a' -> 's', 's', 这里 'a', 's' 实际上就互相抵消掉了 
-
-
-case2: delete
-s1 = a -> ""    0
-s2 = s          1
-M[1][1] => M[0][1] + 1
-
-M[i][j] => M[i - 1][j] + 1
-  
-
-
-case3: insert
-s1 = a -> sa  其实对比的是 'a'      
-s2 = s -> s              ' '
-M[1][1] => M[1][0] + 1
-
-M[i][j] => M[i][j - 1] + 1
-
-
-Final Rule =>
-
-M[i][j] = Math.min(M[i - 1][j - 1], M[i - 1][j], M[1][j - 1]) + 1
-
-
-How to fill in the 2D M[i][j] matrix?
-
-
-s2     |    s   g   h   j
-size   | 0  1   2   3   4
---------------------------
-s1   0 | 0  1   2   3   4
-a    1 | 1  1   2   3   4
-s    2 | 2  1   2   3   4
-d    3 | 3  2   2   3   4
-f    4 | 4  3   3   3   4 -> return
-```
-
-![](img/2021-08-18-09-27-43.png)
-
-
-- T = O(m * n)
-- Space = O(m * n)
-
-
-```java
-class EditDistance_dp {
-    public int minDistance(String word1, String word2) {
-        int m = word1.length(), n = word2.length();
-        int[][] dp = new int[m + 1][n + 1];
-
-        for (int i = 0; i < dp.length; i++) {
-            dp[i][0] = i;
-        }
-        for (int j = 0; j < dp[0].length; j++) {
-            dp[0][j] = j;
-        }
-
-        for (int i = 1; i <= m; i++) {
-            for (int j = 1; j <= n; j++) {
-                char c1 = word1.charAt(i - 1);
-                char c2 = word2.charAt(j - 1);
-
-                if (c1 == c2) {
-                    dp[i][j] = dp[i - 1][j - 1];
-                } else {
-                    dp[i][j] = Math.min(dp[i - 1][j - 1], Math.min(dp[i][j - 1], dp[i - 1][j])) + 1;
-                }
-            }
-        }
-        return dp[m][n];
-    }
-}
-```
-
-
-
-
-
----
-
-
-## 本题DFS 解法
+### 本题DFS 解法
 
 ![](img/2023-04-01-21-24-59.png)
 
@@ -135,3 +36,81 @@ class EditDistance_dfs {
     }
 }
 ```
+---
+![](img/2025-04-26-15-20-59.png)
+
+
+---
+
+### Meorization DFS
+
+```java
+class memo {
+    private Integer[][] dp;
+    private String word1;
+    private String word2;
+    public int minDistance(String word1, String word2) {
+        this.word1 = word1;
+        this.word2 = word2;
+
+        // dp[i][j] will store the min distance between word1[0...i-1] and word2[0...j-1]
+        // Initialize with null to indicate not computed
+        dp = new Integer[word1.length() + 1][word2.length() + 1];
+
+        // Start the DFS from the end (using full lengths as initial i, j)
+        return dfs(word1.length(), word2.length());
+    }
+
+    // i = length of word1 prefix considered, j = length of word2 prefix considered
+    private int dfs(int i, int j) {
+        // Base Case 1: If word1 prefix is empty (length i=0),
+        // we need 'j' insertions to make it word2's prefix.
+        if (i == 0) {
+            return j; // Cost is j operations
+        }
+        // Base Case 2: If word2 prefix is empty (length j=0),
+        // we need 'i' deletions from word1's prefix.
+        if (j == 0) {
+            return i; // Cost is i operations
+        }
+
+        if (dp[i][j] != null) {
+            return dp[i][j];
+        }
+
+        // Compare the characters at the end of the current prefixes (indices i-1, j-1)
+        if (word1.charAt(i - 1) == word2.charAt(j - 1)) {
+            // Last characters match. No operation needed for this character.
+            // Cost is the same as the cost for prefixes ending at i-1, j-1.
+            return dp[i][j] = dfs(i - 1, j - 1);
+        } else {
+            // Last characters differ. We need one operation. Find the minimum cost:
+            // 1. Insert: Transform word1[0..i-1] to word2[0..j-2], then insert word2[j-1].
+            //    Cost = 1 + dfs(i, j - 1)
+            int insert = 1 + dfs(i, j - 1);
+
+            // 2. Delete: Transform word1[0..i-2] to word2[0..j-1], then delete word1[i-1].
+            //    Cost = 1 + dfs(i - 1, j)
+            int delete = 1 + dfs(i - 1, j);
+
+            // 3. Replace: Transform word1[0..i-2] to word2[0..j-2], then replace word1[i-1] with word2[j-1].
+            //    Cost = 1 + dfs(i - 1, j - 1)
+            int replace = 1 + dfs(i - 1, j - 1);
+
+            dp[i][j] = Math.min(insert, Math.min(delete, replace));
+            return dp[i][j];
+        }
+    }
+}
+```
+
+---
+## Top-Down DP
+
+```java
+
+```
+
+
+- T = O(m * n)
+- Space = O(m * n)

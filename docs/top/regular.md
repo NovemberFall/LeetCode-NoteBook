@@ -39,47 +39,45 @@ class _10_RegularExpressionMatching {
 ```java
 class Solution {
     private Boolean[][] dp;
-
+    private String s;
+    private String p;
     public boolean isMatch(String s, String p) {
+        this.s = s;
+        this.p = p;
         dp = new Boolean[s.length() + 1][p.length() + 1];
-        return dfs(s, p);
+        return dfs(0, 0);
     }
 
-    private boolean dfs(String s, String p) {
-        int m = s.length(), n = p.length();
-        if (dp[m][n] != null) {
-            return dp[m][n];
+    private boolean dfs(int i, int j) {
+        if (j == p.length()) {
+            return dp[i][j] = (i == s.length());
         }
-
-        // Base case: if pattern is empty, string must also be empty
-        if (n == 0) {
-            return dp[m][n] = (m == n);
+        if (dp[i][j] != null) {
+            return dp[i][j];
         }
-
-        // If the second char in pattern is '*', we have two choices
-        if (n > 1 && p.charAt(1) == '*') {
-            // Option 1: Treat "x*" as empty (zero occurrences)
-            if (dfs(s, p.substring(2))) {
-                return dp[m][n] = true;
-            }
-
-            // Option 2: If s is not empty and first char matches, consume one char from s\
-            // for Option2, look at the explanation under the codes
-            if (m > 0 && (p.charAt(0) == '.' || s.charAt(0) == p.charAt(0))) {
-                if (dfs(s.substring(1), p)) {
-                    return dp[m][n] = true;
+        if (j + 1 < p.length() && p.charAt(j + 1) == '*') {
+            // Case 1: first char matches, consume one char from s
+            // s = aaaxxx   p = a*  这里的p可以等待接下来的char from s, 也就是可以把状态传递给 next dfs
+            if (i < s.length() && (p.charAt(j) == '.' || s.charAt(i) == p.charAt(j))) {
+                if (dfs(i + 1, j)) {
+                    return dp[i][j] = true;
                 }
             }
 
-            // Neither option worked
-            return dp[m][n] = false;
-        } else {
-            // Normal case: if current characters match or pattern has '.', move both pointers
-            if (m > 0 && (p.charAt(0) == '.' || s.charAt(0) == p.charAt(0))) {
-                dp[m][n] = dfs(s.substring(1), p.substring(1));
-                return dp[m][n];
+            // Case 2: zero occurrences of char before '*'
+            // s = aaaxxx   p = b*  这里的p可以直接表示0个前面字母，所以skip 2 个 chars
+            if (dfs(i, j + 2)) {
+                return dp[i][j] = true;
             }
-            return dp[m][n] = false;
+
+            return dp[i][j] = false;
+        } else {
+            // Second char is not '*'
+            if (i < s.length() && (p.charAt(j) == '.' || s.charAt(i) == p.charAt(j))) {
+                dp[i][j] = dfs(i + 1, j + 1);
+                return dp[i][j];
+            }
+            return dp[i][j] = false;
         }
     }
 }
