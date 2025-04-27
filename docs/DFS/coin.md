@@ -36,8 +36,8 @@ MinCoin = 2
 ![](img/2023-01-30-16-00-17.png)
 
 - note: this is a repeated branch, so we need to cut
-
-- For **DFS** approach, **TLE**
+---
+## **DFS** approach, **TLE**
 
 
 ```java

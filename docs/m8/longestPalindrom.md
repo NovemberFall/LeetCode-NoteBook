@@ -21,9 +21,6 @@ assume i = 3,   s is even length
    [a  c  d  b  b  d  a  a]
        l
                       r
-
-right - left - 1 = 6 - 1 - 1 = 4, # dbbd => len = 4
-lo = left + 1 # since we need to put lo back to begin of palindrome
 ```
 ---
 
@@ -32,63 +29,35 @@ lo = left + 1 # since we need to put lo back to begin of palindrome
 ---
 
 ```java
-class Solution {
-    int maxLen = Integer.MIN_VALUE;
-    String res = "";    
-    
+class longestPalindromicSubstring {
     public String longestPalindrome(String s) {
-        int n = s.length();
-        
-        for (int i = 0; i < n; i++) {
-            extendPalindrome(s, i, i);
-            extendPalindrome(s, i, i + 1);
+        if (s == null || s.length() == 0) {
+            return "";
+        }
+        String res = "";
+        for (int i = 0; i < s.length(); i++) {
+            String oddStr = expandAroundCenter(s, i, i);
+            if (oddStr.length() > res.length()) {
+                res = oddStr;
+            }
+
+            String evenStr = expandAroundCenter(s, i, i + 1);
+            if (evenStr.length() > res.length()) {
+                res = evenStr;
+            }
         }
         return res;
     }
-    
-    private void extendPalindrome(String s, int left, int right) {
+
+    private String expandAroundCenter(String s, int left, int right) {
         while (left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
-            if (right - left + 1 > maxLen) {
-                res = s.substring(left, right + 1);
-                maxLen = right - left + 1;
-            }
             left--;
             right++;
         }
+        return s.substring(left + 1, right);
     }
 }
 ```
-
----
-
-#### Python
-
-```py
-class Solution:
-    maxLen = float('-inf')
-    res = ""
-
-    def longestPalindrome(self, s: str) -> str:
-
-        for i in range(len(s)):
-            # odd-length palindromes
-            oddLeft, oddRight = i, i
-            self.extendPalindromes(s, oddLeft, oddRight)
-
-            # even-length palindromes
-            evenLeft, evenRight = i, i + 1
-            self.extendPalindromes(s, evenLeft, evenRight)
-        return self.res
-
-    def extendPalindromes(self, s, left, right):
-        while left >= 0 and right < len(s) and s[left] == s[right]:
-            if right - left + 1 > self.maxLen:
-                self.res = s[left: right + 1]
-                self.maxLen = right - left + 1
-            left -= 1
-            right += 1
-```
----
 
 ---
 

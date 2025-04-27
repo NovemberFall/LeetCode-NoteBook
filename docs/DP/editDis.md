@@ -2,7 +2,7 @@
 
 ![](img/2021-08-18-00-53-05.png)
 ---
-### 本题DFS 解法
+### 本题DFS 解法 TLE
 
 ![](img/2023-04-01-21-24-59.png)
 
@@ -11,28 +11,45 @@
   - Time = O(3^(m + n))
 
 ```java
-class EditDistance_dfs {
+class dfs_with_TLE {
+    private String word1, word2;
     public int minDistance(String word1, String word2) {
-        // base case
-        if (word1.isEmpty()) return word2.length();
-        if (word2.isEmpty()) return word1.length();
+        this.word1 = word1;
+        this.word2 = word2;
+        return dfs(0, 0);
+    }
 
-        // a. Check what the distance is if the charaxters[0] are identical and we do nothing first
-        if (word1.charAt(0) == word2.charAt(0)) {
-            int nothing = minDistance(word1.substring(1), word2.substring(1));
-            return nothing;
+    private int dfs(int i, int j) {
+        // Base cases: if one string is finished,
+        // the cost is to insert/delete the rest of the other string
+        if (i == word1.length()) {
+            return word2.length() - j;  // insert remaining chars of word2
+        }
+        if (j == word2.length()) {
+            return word1.length() - i;  // delete remaining chars of word1
         }
 
-        // b. chech what the distance is if we do a Replace first?
-        int replace = 1 + minDistance(word1.substring(1), word2.substring(1));
+        // If the current characters match
+        if (word1.charAt(i) == word2.charAt(j)) {
+            // No operation needed for these matching characters.
+            // The minimum distance is the distance of the remaining substrings.
+            int nothing = dfs(i + 1, j + 1);
+            return nothing;
+        } else {
+            // 1. Insert: Insert word2[j] into word1. This means we now need to match
+            //    word1[i...end] with the rest of word2[j+1...end]. Cost is 1 + distance of remaining.
+            int insert = 1 + dfs(i, j + 1);
 
-        // c. check what the distance is if we do a Delete first?
-        int delete = 1 + minDistance(word1.substring(1), word2);
+            // 2. Delete: Delete word1[i]. This means we now need to match
+            //    word1[i+1...end] with word2[j...end]. Cost is 1 + distance of remaining.
+            int delete = 1 + dfs(i + 1, j);
 
-        // d. chech what the distance is if we do a Insert first?
-        int insert = 1 + minDistance(word1, word2.substring(1));
+            // 3. Replace: Replace word1[i] with word2[j]. This means we now need to match
+            //    word1[i+1...end] with word2[j+1...end]. Cost is 1 + distance of remaining.
+            int replace = 1 + dfs(i + 1, j + 1);
 
-        return Math.min(delete, Math.min(replace, insert));
+            return Math.min(insert, Math.min(delete, replace));
+        }
     }
 }
 ```
@@ -105,10 +122,49 @@ class memo {
 ```
 
 ---
-## Top-Down DP
+## Tabulation 
 
 ```java
+class tabulation {
+    public int minDistance(String word1, String word2) {
+        int m = word1.length(), n = word2.length();
+        int[][] dp = new int[m + 1][n + 1];
 
+        // --- Base Cases ---
+        // 1. If word2 is empty (j=0), we need 'i' deletions to make word1 empty.
+        for (int i = 0; i <= m; i++) {
+            dp[i][0] = i;
+        }
+        // 2. If word1 is empty (i=0), we need 'j' insertions to create word2.
+        for (int j = 0; j <= n; j++) {
+            dp[0][j] = j;
+        }
+
+        // Iterate forwards through prefixes of word1 (length i)
+        for (int i = 1; i <= m; i++) {
+            // Iterate forwards through prefixes of word2 (length j)
+            for (int j = 1; j <= n; j++) {
+                // Compare the LAST characters of the current prefixes
+                // (character at index i-1 in word1 and j-1 in word2)
+                if (word1.charAt(i - 1) == word2.charAt(j - 1)) {
+                    dp[i][j] = dp[i - 1][j - 1];
+                } else {
+                    // Cost if we inserted word2[j-1] into word1
+                    int insert = dp[i][j - 1] + 1;
+
+                    // Cost if we deleted word1[i-1] from word1
+                    int delete = dp[i - 1][j] + 1;
+
+                    // Cost if we replaced word1[i-1] with word2[j-1]
+                    int replace = dp[i - 1][j - 1] + 1;
+
+                    dp[i][j] = Math.min(Math.min(insert, delete), replace);
+                }
+            }
+        }
+        return dp[m][n];
+    }
+}
 ```
 
 

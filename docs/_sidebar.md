@@ -334,6 +334,7 @@
     * [42. Trapping Rain Water](amazon/rain.md)
     * [70. Climbing Stairs](DP/climb.md)
     * [72. Edit Distance](DP/editDis.md)
+    * [322. Coin Change](DFS/coin.md)
     * [45. Jump Game II | Array Hopper II](DP/jumpGameII.md)
     * [55. Jump Game | Array Hopper I](m9/jumpGame.md)
     * [53. Maximum Subarray | Largest SubArray Sum](m9/subArrSum.md)
