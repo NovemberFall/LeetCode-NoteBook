@@ -1,37 +1,6 @@
 ## 322. Coin Change
 ![](img/2023-01-30-15-51-48.png)
-
-
-```ruby
-coins[1, 3, 4, 5]               Amount = 7
-
-
-                                    [1, 3, 4, 5]
-           1/                 3/               4\                   5\
-           {6}                {4}               {3}                 {2}
-       1/  3|  4\   5\                                       1/     3/    4\      5\
-      {5}  {3}  {2}  {1}                                   {1}    {-1}   {-2}     {-3}
-                      1|                                  1/
-                      {0}                                {0} 
-
-
-MinCoin = 3
-
-#####################################################################################
-
-
-                            [1, 3, 4, 5]
-    1/                 3/               4\                        5\
-    {6}                {4}               {3}                       {2}
-                1/   3|  4\   5\                        1/     3/    4\      5\
-               {5}  {3}   {0}  {1}                    {1}    {-1}   {-2}   {-3}
-                                                     1/
-                                                    {0} 
-
-MinCoin = 2
-```
-
-
+---
 
 ![](img/2023-01-30-16-00-17.png)
 
@@ -69,11 +38,53 @@ class backtracking {
 }
 ```
 ---
+### Memorization 
+
+```java
+class memo {
+    private int[] dp;
+    public int coinChange(int[] coins, int amount) {
+        // Initialize the dp array with size amount + 1
+        // Index 0 will store the result for amount 0, up to index 'amount'
+        dp = new int[amount + 1];
+        if (amount < 1) {
+            return 0;
+        }
+        return dfs(coins, amount);
+    }
+
+    private int dfs(int[] coins, int remaining) {
+        if (remaining < 0) {
+            return -1;
+        }
+        if (remaining == 0) {
+            return 0;// We needed 0 additional coins to reach this state
+        }
+        if (dp[remaining] != 0) {
+            return dp[remaining];
+        }
+        int min = Integer.MAX_VALUE;
+        for (int coin : coins) {
+            int res = dfs(coins, remaining - coin);
+
+            // If the recursive call returned a valid result (not -1, meaning possible)
+            // AND this result + 1 (for the current coin) is better than the current minimum
+            if (res >= 0 && res < min) {
+                min = res + 1; // +1 because we are adding the current 'coin'
+            }
+        }
+        dp[remaining] = (min == Integer.MAX_VALUE) ? -1 : min;
+        return dp[remaining];
+    }
+}
+```
 
 
-#### Dynamic Programming
+---
 
-- [youtube | en](https://www.youtube.com/watch?v=H9bfqozjoqs)
+
+## Tabulation
+
 - [youtube | cn](https://www.youtube.com/watch?v=KzkQMXpWSuA&t=463s)
 
 
@@ -92,7 +103,8 @@ class tabulation {
         // dp[i] will store the minimum coins needed for amount i.
         int[] dp = new int[amount + 1];
 
-        // Initialize dp array: fill with a large value (amount + 1 works since it's impossible to need more than amount coins)
+        // Initialize dp array: fill with a large value
+        // (amount + 1 works since it's impossible to need more than amount coins)
         Arrays.fill(dp, amount + 1);
 
         // base case: 0 coins needed for amount 0
@@ -100,11 +112,16 @@ class tabulation {
 
         // Iterate through each amount from 1 up to the target amount.
         for (int i = 1; i <= amount; i++) {
-            // For each amount, iterate through the available coins.
+            // For each amount 'i', iterate through all available coin denominations.
             for (int coin : coins) {
-                // If the current coin can be used to reach amount i from a smaller amount (i - coin >= 0)
+                // If the current coin can be used to make change for amount 'i'
+                // (i.e., if 'i' is greater than or equal to the coin value)
                 if (i - coin >= 0) {
-                    // Update dp[i] with the minimum of its current value and the value from the subproblem (dp[i - coin] + 1 for the current coin).
+                    // We are trying to find the minimum coins for amount 'i'.
+                    // One possibility is to use the current 'coin'.
+                    // If we use 'coin', the remaining amount needed is 'i - coin'.
+                    // The number of coins for this path is 1 (for the current 'coin') + dp[i - coin]
+                    // (the minimum coins for the remaining amount).
                     dp[i] = Math.min(dp[i], dp[i - coin] + 1);
                 }
             }
@@ -115,8 +132,12 @@ class tabulation {
         return dp[amount] > amount ? -1 : dp[amount];
     }
 }
-
 ```
+---
+![](img/2025-04-29-14-54-48.png)
+![](img/2025-04-29-16-28-26.png)
+
+
 ---
 
 
