@@ -187,3 +187,9 @@ public class Solution {     //Method2: Rabin Karp
   }
 }
 ```
+---
+
+
+### KMP
+
+- [Solution: KMP](https://novemberfall.github.io/LeetCode-NoteBook/#/m8/intro)
