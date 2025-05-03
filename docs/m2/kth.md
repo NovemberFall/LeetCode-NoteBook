@@ -51,6 +51,24 @@ class Solution {
 ```
 ---
 
+```py
+class Solution:
+    def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
+        res = []
+        self.dfs(root, res)
+        return res[k - 1]
+
+    def dfs(self, root, res):
+        if not root:
+            return
+
+        self.dfs(root.left, res)
+        res.append(root.val)
+        self.dfs(root.right, res)
+```
+
+---
+
 ### 剪枝
 
 - 1. bst
@@ -86,4 +104,27 @@ class Solution {
         
     }
 }
+```
+---
+
+```py
+class Solution:
+    def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
+        self.cnt = 0
+        self.res = 0
+
+        self.dfs(root, k)
+        return self.res
+
+    def dfs(self, root, k):
+        if not root:
+            return
+
+        self.dfs(root.left, k)
+
+        self.cnt += 1
+        if self.cnt == k:
+            self.res = root.val
+
+        self.dfs(root.right, k)
 ```
