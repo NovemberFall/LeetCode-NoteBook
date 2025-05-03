@@ -1,7 +1,7 @@
 ## 28. Find the Index of the First Occurrence in a String  |  Implement strStr()
 ![](img/2023-03-27-00-32-44.png)
 
-### Analysis:
+### Navie way:
 
 - Assume:
   - s1 = "abcde"          s2 = "cde"
@@ -79,10 +79,16 @@ public class strStr {
     }
 }
 ```
+---
+### Solution 2: **KMP**
+
+
+
+
 
 ---
 
-### Solution 2:  O(m) Rabin-Karp
+### Solution 3:  O(m) Rabin-Karp
 
 ```ruby
 hash(c d e) = 1434
