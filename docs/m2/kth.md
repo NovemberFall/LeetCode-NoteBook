@@ -58,7 +58,7 @@ class Solution {
 
 - left -> root -> right
 - inorder traversal => 按照输出的顺序(从小到大)保留treenode(val) 
-  -                 => 计数
+  - 计数
 
 ---
 
