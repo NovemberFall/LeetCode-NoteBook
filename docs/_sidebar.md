@@ -501,6 +501,7 @@
         * [926. Flip String to Monotone Increasing](tiktok/926.md)
         * [2217. Find Palindrome With Fixed Length](tiktok/2217.md)
         * [443. String Compression](tiktok/443.md)
+        * [2551. Put Marbles in Bags](tiktok/2551.md)
         * [2673. Make Costs of Paths Equal in a Binary Tree](tiktok/2673.md)
         * [3043. Find the Length of the Longest Common Prefix](tiktok/3043.md)
         * [2791. Count Paths That Can Form a Palindrome in a Tree](tiktok/2791.md)
