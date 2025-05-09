@@ -191,6 +191,7 @@
     * [787. Cheapest Flights Within K Stops | Dijkstra's Algorithm](graph/stops.md)
     * [1584. Min Cost to Connect All Points | Kruskal's Algorithm | Minimum Spanning Tree](graph/mincost.md)
     * [1293. Shortest Path in a Grid with Obstacles Elimination](graph/1293.md)
+    * [827. Making A Large Island](graph/827.md)
     * [924. Minimize Malware Spread I](tiktok/924.md)
     * [928. Minimize Malware Spread II](tiktok/928.md)
 * [Heap](heap/intro.md)
