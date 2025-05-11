@@ -75,7 +75,6 @@
     * [85. Maximal Rectangle](monotonic/maxrec.md)
     * [2334. Subarray With Elements Greater Than Varying Threshold](tiktok/2334.md)
 * [HashTable](ch3/intro.md)
-    * [128. Longest Consecutive Sequence](ch3/lcs.md)
     * [167. Two Sum II - Input Array Is Sorted](ch3/twosum2.md)
     * [170. Two Sum III - Data structure design](ch3/twosum3.md)
     * [692. Top K Frequent Words](m7/topKfreq.md)

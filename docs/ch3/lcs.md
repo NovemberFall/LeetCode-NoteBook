@@ -16,29 +16,54 @@
 ![](img/2023-03-19-00-49-49.png)
 ---
 
+- 这个做法 TLE
+
 ```java
 class _128_LongestConsecutiveSequence {
     public int longestConsecutive(int[] nums) {
         Set<Integer> set = new HashSet<>();
+        for (int n : nums) {
+            set.add(n);
+        }
         int longest = 0;
         for (int num : nums) {
-            set.add(num);
-        }
-
-        for (int n : nums) {
-            // check if its the start of a sequence
-            if (!set.contains(n - 1)) {
-                int length = 0;
-                while (set.contains(n + length)) {
-                    length++;
+            if (!set.contains(num - 1)) {
+                int curNum = num;
+                int len = 1;
+                while (set.contains(curNum + 1)) {
+                    curNum += 1;
+                    len += 1;
                 }
-                longest = Math.max(longest, length);
+                longest = Math.max(longest, len);
             }
+
         }
         return longest;
     }
 }
 ```
+---
+
+### Union By Size | disjoint
+
+- [Disjoint 更详细的中文解释以及案例](https://leetcode.cn/problems/longest-consecutive-sequence/solutions/1453487/by-lfool-jdy4/)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ---
 
 ### Method 2
