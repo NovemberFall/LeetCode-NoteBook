@@ -49,18 +49,105 @@ class _128_LongestConsecutiveSequence {
 - [Disjoint 更详细的中文解释以及案例](https://leetcode.cn/problems/longest-consecutive-sequence/solutions/1453487/by-lfool-jdy4/)
 
 
+![](img/2025-05-11-16-09-09.png)
 
+```java
+    public int getMaxComponentSize() { 
+        int maxSize = 0; 
 
+        //  parent.length is 'n', the number of elements UnionFind was initialized with.
+        for (int i = 0; i < parent.length; i++) {
 
+            //    Check if the current element 'i' is a root of its component (subset).
+            //    A node is a root if its parent is itself.
+            if (i == parent[i]) {
+                //    If 'i' is a root, then size[i] holds the total number of elements
+                //    in the component (subset) that 'i' represents.
+                //    Update maxSize if the size of this component is larger than any found previously.
+                maxSize = Math.max(maxSize, size[i]);
+            }
+        }
+        return maxSize;
+    }
+```
 
+![](img/2025-05-11-16-30-50.png)
 
+![](img/2025-05-11-16-31-16.png)
+![](img/2025-05-11-16-31-57.png)
 
+![](img/2025-05-11-16-32-16.png)
+![](img/2025-05-11-16-32-33.png)
+---
 
+```java
+class union_find {
+    public int longestConsecutive(int[] nums) {
+        UnionFind unionFind = new UnionFind(nums.length);
+        Map<Integer, Integer> map = new HashMap<>();
+        UnionFind uf = new UnionFind(nums.length);
+        for (int i = 0; i < nums.length; i++) {
+            if (map.containsKey(nums[i])) {
+                continue;
+            }
+            if (map.containsKey(nums[i] - 1)) {
+                uf.union(i, map.get(nums[i] - 1));
+            }
+            if (map.containsKey(nums[i] + 1)) {
+                uf.union(i, map.get(nums[i] + 1));
+            }
+            map.put(nums[i], i);
+        }
+        return uf.getMaxComponentSize();
+    }
 
+    class UnionFind {
+        private int[] parent;
+        private int[] size;
 
+        public UnionFind(int n) {
+            parent = new int[n];
+            size = new int[n];
+            for (int i = 0; i < n; i++) {
+                parent[i] = i;
+                size[i] = 1;
+            }
+        }
 
+        public int find(int x) {
+            if (x == parent[x]) {
+                return x;
+            }
+            return parent[x] = find(parent[x]);
+        }
 
+        public void union(int x, int y) {
+            int rootX = find(x);
+            int rootY = find(y);
+            if (rootX == rootY) {
+                return;
+            }
+            if (size[rootX] >= size[rootY]) {
+                parent[rootY] = rootX;
+                size[rootX] += size[rootY];
+            } else {
+                parent[rootX] = rootY;
+                size[rootY] += size[rootX];
+            }
+        }
 
+        public int getMaxComponentSize() {
+            int maxSize = 0;
+            for (int i = 0; i < parent.length; i++) {
+                if (i == parent[i]) {
+                    maxSize = Math.max(maxSize, size[i]);
+                }
+            }
+            return maxSize;
+        }
+    }
+}
+```
 
 
 

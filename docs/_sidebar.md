@@ -194,6 +194,7 @@
     * [827. Making A Large Island](graph/827.md)
     * [924. Minimize Malware Spread I](tiktok/924.md)
     * [928. Minimize Malware Spread II](tiktok/928.md)
+    * [128. Longest Consecutive Sequence](ch3/lcs.md)
 * [Heap](heap/intro.md)
     * [215. Kth Largest Element in an Array](m6/KthLarget.md)
     * [如何构造大根堆 K Smallest In Unsorted Array](m6/K_smallest.md)
