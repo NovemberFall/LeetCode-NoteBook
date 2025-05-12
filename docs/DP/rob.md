@@ -25,12 +25,6 @@ class _198_HouseRobber {
         }
         return dp[nums.length - 1];
     }
-
-    public static void main(String[] args) {
-        _198_HouseRobber houseRobber = new _198_HouseRobber();
-        int[] nums = {3, 1, 2, 4};
-        System.out.println(houseRobber.rob(nums)); // 7
-    }
 }
 
 ```
@@ -66,35 +60,30 @@ class Solution {
 
 ### Memoization/Top-down DP: [accepted]
 
-```java
-class Solution {
-    public int rob(int[] nums) {
-        int n = nums.length;
-        int[] dp = new int[n];
-        Arrays.fill(dp, -1);
-        return f(n - 1, nums, dp);
-    }
+```py
+class Solution:
+    def rob(self, nums: List[int]) -> int:
+        dp = [-1] * len(nums)
+        return self.f(nums, dp, 0)
 
-    private int f(int index, int[] nums, int[] dp) {
-        if (index == 0) {
-            return nums[0];
-        }
-        if (index < 0) {
-            return 0;
-        }
-        if (dp[index] != -1) {
-            return dp[index];
-        }
-        int pick = nums[index] + f(index - 2, nums, dp);
-        int notPick = f(index - 1, nums, dp);
-        dp[index] = Math.max(pick, notPick);
-        return dp[index];
-    }
-}
+    def f(self, nums: List[int], dp: List[int], index: int) -> int:
+        if index == len(nums) - 1:
+            return nums[index]
+
+        if index >= len(nums):
+            return 0
+
+        if dp[index] != -1:
+            return dp[index]
+
+        pick = nums[index] + self.f(nums, dp, index + 2)
+        notPick = self.f(nums, dp, index + 1)
+        dp[index] = max(pick, notPick)
+        return dp[index]
 ```
 
-- TC: O(N)
-- SC: O(N)+O(N), one is recursive stack space and anothe O(N) is for dp array.
+- TC: **O(N)**
+- SC: **O(N)+O(N)**, one is recursive stack space and anothe O(N) is for dp array.
 ---
 
 ### Tabulation/Buttom Up DP:
