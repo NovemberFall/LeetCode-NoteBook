@@ -27,59 +27,43 @@ public class maxProductSubarray {
 }
 ```
 ---
-- [中文教程 ｜ 博大精深!](https://leetcode.cn/problems/maximum-product-subarray/solution/hua-jie-suan-fa-152-cheng-ji-zui-da-zi-xu-lie-by-g/)
----
-![](img/2023-02-05-23-30-49.png)
 
-![](img/2023-02-05-23-31-41.png)
+### Memorization 
 
-![](img/2023-02-05-23-31-07.png)
 
-![](img/2023-02-05-23-31-58.png)
+```py
+class Solution:
+    def maxProduct(self, nums: List[int]) -> int:
+        dp = {}
+        return self.dfs(nums, dp, nums[0], 1)
 
-![](img/2023-02-05-23-32-12.png)
+    def dfs(self, nums: List[int], dp: List[int], curProduct: int, index: int) -> int:
+        key = (index, curProduct)
+        if key in dp:
+            return dp[key]
 
-![](img/2023-02-05-23-32-33.png)
----
+        # Base Case: If index is out of bounds.
+        # 'curProduct' at this point is the product of a contiguous subarray ending at nums[len(nums)-1].
+        # This is one of the fully formed products to be considered.
+        if index == len(nums):
+            return curProduct
 
-```ruby
-max = 1, min = 1
-res = MIN_VALUE
-            [2   -2   3    2   -3    5]
-+Product:    2   -2   3    6   72   360
--Product:    2   -4  -12  -24  -18  -90 
-```
----
+        # Option 1: Extend the current product.
+        # The subarray ending at nums[index-1] (with product 'curProduct') is extended by nums[index].
+        # The new product is curProduct * nums[index].
+        # We recursively call _dfs for the next index with this new product.
+        extend = self.dfs(nums, dp, curProduct * nums[index], index + 1)
 
-```java
-class _152_MaximumProductSubarray {
-    public int maxProduct(int[] nums) {
-        if (nums == null || nums.length == 0) {
-            return 0;
-        }
-        int globalMax = Integer.MIN_VALUE;
-        int imax = 1, imin = 1;
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] < 0) {
-                int tmp = imax;
-                imax = imin;
-                imin = tmp;
-            }
-            imax = Math.max(imax * nums[i], nums[i]);
-            imin = Math.min(imin * nums[i], nums[i]);
+        # Option 2: Start a new product (new subarray) beginning with nums[index].
+        # The product of this new subarray is initially nums[index].
+        # We recursively call _dfs for the next index with this new product.
+        restart = self.dfs(nums, dp, nums[index], index + 1)
 
-            globalMax = Math.max(globalMax, imax);
-        }
-        return globalMax;
-    }
+        # Option 3: Stop here. Consider 'curProduct' itself as a candidate maximum.
+        # 'curProduct' is the product of the subarray that ended at nums[index-1].
+        stop = curProduct
 
-    public static void main(String[] args) {
-        _152_MaximumProductSubarray maximumProductSubarray = new _152_MaximumProductSubarray();
-        int[] nums = {2, 3, -2, 4};
-        System.out.println(maximumProductSubarray.maxProduct(nums)); // 6
-
-        nums = new int[]{2, 3, -2, 4, -2};
-        System.out.println(maximumProductSubarray.maxProduct(nums)); // 96
-    }
-}
+        res = max(extend, restart, stop)
+        dp[key] = res
+        return dp[key]
 ```
