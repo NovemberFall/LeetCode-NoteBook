@@ -28,53 +28,46 @@ class Solution:
             dp[index][is_buy] = max(sell, hold)
             return dp[index][is_buy]
 ```
+
 ---
 ### bottom-up DP
-
-```py
-class Solution:
-    def maxProfit(self, prices: List[int]) -> int:
-        n = len(prices)
-        dp = [ [0 for _ in range(2)] for _ in range(len(prices) + 1)]
-        for index in range(n - 1, -1, -1):
-            for is_buy in range(2):
-                if is_buy:
-                    buy = -prices[index] + dp[index + 1][0]
-                    skip = 0 + dp[index + 1][1]
-                    dp[index][is_buy] = max(buy, skip)
-                else:
-                    sell = prices[index] + dp[index + 1][1]
-                    hold = 0 + dp[index + 1][0]
-                    dp[index][is_buy] = max(sell, hold)
-        
-        return dp[0][1]
-```
-
----
-### DP
 
 - for each day
   - either 1. hold a share
   - or     2. not hold a share 
 
-![](img/2023-03-31-23-35-13.png)
-
 ---
-```java
-class bestTimeToBuyAndSellStock_II_dp {
-    public int maxProfit(int[] prices) {
-        if (prices == null || prices.length == 0) return 0;
-
-        int[] hold = new int[prices.length];
-        int[] unhold = new int[prices.length];
-        hold[0] = -prices[0];
-        unhold[0] = 0;
+```py
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        n = len(prices)
+        # Handle the case of an empty price list
+        if n == 0:
+            return 0
         
-        for (int i = 1; i < prices.length; i++) {
-            hold[i] = Math.max(hold[i - 1], unhold[i - 1] - prices[i]);
-            unhold[i] = Math.max(unhold[i - 1], hold[i - 1] + prices[i]);
-        }
-        return unhold[prices.length - 1];
-    }
-}
+        # dp[i][0]: max cash at the end of day i, not holding stock
+        # dp[i][1]: max cash at the end of day i, holding stock
+        # (0 for not holding, 1 for holding)
+        dp = [[0] * 2 for _ in range(n)]
+
+        # dp[0][0]: At the end of day 0, if not holding -> 0 cash (no transactions yet)
+        dp[0][0] = 0
+        # dp[0][1]: At the end of day 0, if holding -> bought on day 0 (cash is -prices[0])
+        dp[0][1] = -prices[0]
+
+        # Calculate the DP states for the current day 'i' based on the states of day 'i-1'
+        for i in range(1, n):
+            # Calculate dp[i][0]: Max cash at the end of day i, not holding stock
+            # 1. Being not holding yesterday (dp[i-1][0]) and doing nothing today (skip).
+            # 2. Being holding yesterday (dp[i-1][1]) and selling the stock today (+ prices[i]).
+            dp[i][0] = max(dp[i - 1][0], dp[i - 1][1] + prices[i])
+
+            # Calculate dp[i][1]: Max cash at the end of day i, holding stock
+            # 1. Being not holding yesterday (dp[i-1][0]) and buying a stock today (- prices[i]).
+            # 2. Being holding yesterday (dp[i-1][1]) and continuing to hold the stock today.
+            dp[i][1] = max(dp[i - 1][0] - prices[i], dp[i - 1][1])
+
+        # The final answer is the maximum cash on hand at the end of the last day (index n-1),
+        # when not holding stock (dp[n-1][0]), as this represents the total profit realized after all potential transactions.
+        return dp[n - 1][0]
 ```
