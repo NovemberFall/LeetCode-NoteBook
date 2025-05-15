@@ -357,6 +357,7 @@
     * [123. Best Time to Buy and Sell Stock III](DP/stock3.md)
     * [188. Best Time to Buy and Sell Stock IV](DP/stock4.md)
     * [309. Best Time to Buy and Sell Stock with Cooldown](DP/309.md)
+    * [714. Best Time to Buy and Sell Stock with Transaction Fee](DP/714.md)
     * [152. Maximum Product Subarray](DP/subArrProduct.md)
     * [139. Word Break | Dictionary Word |](m9/wordBreak.md)
     * [132. Palindrome Partitioning II | Minimum Cuts For Palindromes](DP/minCut.md)
