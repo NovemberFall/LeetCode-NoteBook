@@ -340,6 +340,7 @@
     * [44. Wildcard Matching](top/WildcardMatch.md)
     * [42. Trapping Rain Water](amazon/rain.md)
     * [70. Climbing Stairs](DP/climb.md)
+    * [746. Min Cost Climbing Stairs](DP/746.md)
     * [72. Edit Distance](DP/editDis.md)
     * [322. Coin Change](DP/322.md)
     * [45. Jump Game II | Array Hopper II](DP/jumpGameII.md)
