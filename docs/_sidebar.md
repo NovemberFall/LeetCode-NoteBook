@@ -366,6 +366,7 @@
     * [213. House Robber II](DP/213.md)
     * [337. House Robber III](DP/337.md)
     * [740. Delete and Earn | 伪House Robber](DP/740.md)
+    * [2466. Count Ways To Build Good Strings](DP/2466.md)
     * [221. Maximal Square | Largest Square Of 1s](DP/largestSquare.md)
     * [279. Perfect Squares](DP/perfect.md)
     * [300. Longest Increasing Subsequence](m9/longestAscSubseq.md)
