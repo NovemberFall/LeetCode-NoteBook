@@ -367,6 +367,7 @@
     * [740. Delete and Earn | 伪House Robber](DP/740.md)
     * [746. Min Cost Climbing Stairs](DP/746.md)
     * [2466. Count Ways To Build Good Strings](DP/2466.md)
+    * [377. Combination Sum IV](DP/377.md)
     * [221. Maximal Square | Largest Square Of 1s](DP/largestSquare.md)
     * [279. Perfect Squares](DP/perfect.md)
     * [300. Longest Increasing Subsequence](m9/longestAscSubseq.md)
