@@ -367,6 +367,7 @@
     * [740. Delete and Earn | 伪House Robber](DP/740.md)
     * [746. Min Cost Climbing Stairs](DP/746.md)
     * [2466. Count Ways To Build Good Strings](DP/2466.md)
+    * [3441. Minimum Cost Good Caption](tiktok/3441.md)
     * [377. Combination Sum IV](DP/377.md)
     * [221. Maximal Square | Largest Square Of 1s](DP/largestSquare.md)
     * [279. Perfect Squares](DP/perfect.md)
