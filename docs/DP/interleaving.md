@@ -1,6 +1,44 @@
 ## 97. Interleaving String
 ![](img/2023-04-04-12-46-21.png)
 ---
+
+- m = len(s1), n = len(s3)
+
+- m = 3, n = 4
+- i = m - 1 = 2                       # i start from the last index of s1
+- j = n - 1 = 3                       # j start from the last index of s2
+    
+- len(s3) = m + n = 7
+- **k =  len(s3) - 1** = 6                # k start from the last index of s3
+- **k = i + j + 1** = 6
+- **i + j + 1 is the last index of len(s3)**
+
+
+- Note: **the ending of s3** is either **from the last index of S1** or **from the last index of s2**
+---
+### memorization
+
+```py
+class Solution:
+    def isInterleave(self, s1: str, s2: str, s3: str) -> bool:
+        m, n = len(s1), len(s2)
+        if n + m != len(s3):
+            return False
+
+        @cache
+        def dfs(i, j):
+            if i < 0 and j < 0:
+                return True
+
+            if i >= 0 and s1[i] == s3[i + j + 1] and dfs(i - 1, j):
+                return True
+            if j >= 0 and s2[j] == s3[i + j + 1] and dfs(i, j - 1):
+                return True
+
+        return dfs(m - 1, n - 1)
+```
+
+---
 - [DP Explain:](https://www.youtube.com/watch?v=ih2OZ9-M3OM)
 
 
