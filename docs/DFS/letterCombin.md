@@ -50,6 +50,12 @@ class Solution {
 }
 ```
 
+- 每一个数字都有（3−4）个字符选择，可以算成4；总共有 n 个字符，因此有 4^n种选择(状态）， 对
+  于每一种选择（状态），都需要O(n)的时间 append 到 ans， 因此是 O(n*4^n)
+- TC = **O(N * 4^N)**
+
+- SC = O(N * 4^N)
+
 ---
 
 ### Python
@@ -79,3 +85,38 @@ class Solution:
             self.dfs(res, digits, path, index + 1)
             path.pop()
 ```
+---
+
+### 直接覆盖，不需要回溯
+
+```java
+class dfs {
+    final String[] MAP = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+    public List<String> letterCombinations(String digits) {
+        if (digits == null || digits.length() == 0) {
+            return new ArrayList<>();
+        }
+        List<String> res = new ArrayList<>();
+        char[] path = new char[digits.length()];
+        dfs(digits, res, path, 0);
+        return res;
+    }
+
+    private void dfs(String digits, List<String> res, char[] path, int index) {
+        if (index == digits.length()) {
+            res.add(new String(path));
+            return;
+        }
+
+        char digit = digits.charAt(index);
+        String letters = MAP[digit - '0'];
+        for (char c : letters.toCharArray()) {
+            path[index] = c;  // 直接覆盖
+            dfs(digits, res, path, index + 1);
+        }
+    }
+}
+```
+
+- TC = **O(N * 4^N)**
+- SC = **O(N)**
