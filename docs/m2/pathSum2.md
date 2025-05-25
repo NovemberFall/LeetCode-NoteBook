@@ -22,29 +22,27 @@
 - 空间复杂度：`O(N)`，其中 `N` 是树的节点数。空间复杂度主要取决于栈空间的开销，栈中的元素个数不会超过树的节点数。
 
 ```java
-class _113_PathSum_II {
+class dfs {
     public List<List<Integer>> pathSum(TreeNode root, int targetSum) {
         List<List<Integer>> res = new ArrayList<>();
-        if (root == null) {
-            return res;
-        }
         dfs(res, new ArrayList<>(), root, targetSum);
         return res;
     }
 
-    private void dfs(List<List<Integer>> res,
-                     List<Integer> pathSum, TreeNode root, int targetSum) {
+    private void dfs(List<List<Integer>> res, List<Integer> path, TreeNode root, int targetSum) {
         if (root == null) {
             return;
         }
 
-        pathSum.add(root.val);
-        if (root.left == null && root.right == null && root.val == targetSum) {
-            res.add(new ArrayList<>(pathSum));
+        path.add(root.val);
+        targetSum -= root.val;
+        if (root.left == null && root.right == null && targetSum == 0) {
+            res.add(new ArrayList<>(path));
+        } else {
+            dfs(res, path, root.left, targetSum);
+            dfs(res, path, root.right, targetSum);
         }
-        dfs(res, pathSum, root.left, targetSum - root.val);
-        dfs(res, pathSum, root.right, targetSum - root.val);
-        pathSum.remove(pathSum.size() - 1);
+        path.remove(path.size() - 1);
     }
 }
 ```

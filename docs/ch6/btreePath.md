@@ -63,60 +63,27 @@ class Solution {
 }
 ```
 
+---
 
+```py
+class Solution:
+    def binaryTreePaths(self, root: Optional[TreeNode]) -> List[str]:
+        res = []
+        path = []
 
-
-
-
-## 题型变种：
-
-- 题目与leetCode 一样，但是要返回的类型改成 `String[]`, 那就需要在最后convert list to String array
-  - `return list.toArray(new String[0])`
-  - 或者你也可以进行一次 deep copy
-
-
-```java
-/**
- * public class TreeNode {
- *   public int key;
- *   public TreeNode left;
- *   public TreeNode right;
- *   public TreeNode(int key) {
- *     this.key = key;
- *   }
- * }
- */
-public class Solution {
-  public String[] binaryTreePaths(TreeNode root) {
-    // Write your solution here
-    if(root == null){
-      return new String[0];
-    }
-    List<String> list = new ArrayList<>();
-    StringBuilder sb = new StringBuilder();
-    dfs(list, sb, root);
-    // String[] res = new String[list.size()];
-    // for(int i = 0; i < res.length; i++){
-    //   res[i] = list.get(i);
-    // }
-    // return res;   
-    return list.toArray(new String[0]);
-  }
-  
-  private void dfs(List<String> res, StringBuilder sb, TreeNode root){
-    if(root == null){
-      return;
-    }
-    int len = sb.length();
-    sb.append(root.key);
-    if(root.left == null && root.right == null){
-      res.add(sb.toString());
-    }else{
-      sb.append("->");
-      dfs(res, sb, root.left);
-      dfs(res, sb, root.right);
-    }
-    sb.setLength(len);
-  }
-}
+        def dfs(root: TreeNode) -> None:
+            if root is None:
+                return
+            path.append(str(root.val))
+            if root.left is None and root.right is None:
+                res.append("->".join(path))
+            else:
+                dfs(root.left)
+                dfs(root.right)
+            path.pop()
+        dfs(root)
+        return res
 ```
+
+
+![](img/2025-05-24-17-11-07.png)
