@@ -44,89 +44,109 @@
                                right++;
 ```
 ---
+
+```py
+class Solution:
+    def minWindow(self, s: str, t: str) -> str:
+        s_count = Counter()
+        t_count = Counter(t)
+
+        res_left, res_right = -1, len(s)
+        left = 0
+        for right, c in enumerate(s):
+            s_count[c] += 1
+            while s_count >= t_count:
+                if right - left + 1 < res_right - res_left + 1:
+                    res_left, res_right = left, right
+                s_count[s[left]] -= 1
+                left += 1
+        return "" if res_left < 0 else s[res_left: res_right + 1]
+```
+
+
+---
+
+
+![](img/2025-05-26-23-58-38.png)
+
 ```java
-class MinimumWindowSubstring {
-        if (s == null || t == null || s.length() < t.length()) return "";
-
-        // Maintain two arrays to record the frequency of characters in the current window and the target string.
-        // The ASCII table has a total length of 128, ranging from 0 to 127 (e.g., ascii('z') = 122).
-        int[] winFreq = new int[128];
-        int[] tFreq = new int[128];
-
-        // Record the frequency of characters in the target string.
-        for (int i = 0; i < t.length(); i++) {
-            tFreq[t.charAt(i)]++;
+class final_version {
+    public String minWindow(String s, String t) {
+        char[] sArr = s.toCharArray();
+        int m = sArr.length;
+        int resLeft = -1, resRight = m;
+        int[] s_count = new int[128];
+        int[] t_count = new int[128];
+        for (char c : t.toCharArray()) {
+            t_count[c]++;
         }
-
-        // Left pointer, right pointer, and the minimum length (initialized to an unattainable value).
-        int left = 0, right = 0;
-        int minLen = Integer.MAX_VALUE;
-
-        // `matchingCharsCount` represents the number of characters in the current window that match the target string.
-        // This count increases only when a character in the window matches the required frequency in `tFreq`.
-        int matchingCharsCount = 0;
-        int start = 0;
-
-        // [left, right)
-        while (right < s.length()) {
-            // If the current character at `right` is not in `t`, move the right pointer directly.
-            if (tFreq[s.charAt(right)] == 0) {
-                right++;
-                continue;
-            }
-
-            /* Example:
-                 s = F F A D D B A C C D E N C        t = A A B
-                 When encountering 'A' for the first time:
-                 winFreq[A] = 0,  tFreq[A] = 2
-                 => winFreq[s[right]] < tFreq[s[right]], so we increase `matchingCharsCount`.
-            */
-            // When expanding the right boundary, if the count of `s[right]` in `winFreq` is less than in `tFreq`,
-            // we increase `matchingCharsCount`.
-            if (winFreq[s.charAt(right)] < tFreq[s.charAt(right)]) {
-                matchingCharsCount++;
-            }
-
-            // Increase the frequency count of `s[right]` in the window.
-            winFreq[s.charAt(right)]++;
-
-            // When the current window contains all characters of `t` with the required frequency.
-            while (matchingCharsCount == t.length()) {
-                // If the current window size is smaller than the previously recorded minimum, update `minLen` and `start`.
-                if (right - left + 1 < minLen) {
-                    minLen = right - left + 1;
-                    start = left;
+        int left = 0;
+        for (int right = 0; right < m; right++) {
+            s_count[sArr[right]]++;
+            while (isCovered(s_count, t_count)) {
+                if (right - left + 1 < resRight - resLeft + 1) {
+                    resLeft = left;
+                    resRight = right;
                 }
-
-                // If the character at `left` is not needed in `t`, move the left pointer directly.
-                if (tFreq[s.charAt(left)] == 0) {
-                    left++;
-                    continue;
-                }
-
-                // When shrinking the left boundary, if `winFreq[s[left]]` equals `tFreq[s[left]]`,
-                // we must decrease `matchingCharsCount`.
-                if (winFreq[s.charAt(left)] == tFreq[s.charAt(left)]) {
-                    matchingCharsCount--;
-                }
-
-                // Decrease the frequency count of `s[left]` in the window.
-                winFreq[s.charAt(left)]--;
-                // Move the left pointer.
+                s_count[sArr[left]]--;
                 left++;
             }
-            // Move the right pointer.
-            right++;
         }
-
-        // If `minLen` is still the initial value, no valid substring was found.
-        if (minLen == Integer.MAX_VALUE) {
-            return "";
-        }
-        return s.substring(start, start + minLen);
+        return resLeft == -1 ? "" : s.substring(resLeft, resRight + 1);
     }
+
+    // optimized space
+    private boolean isCovered(int[] s_count, int[] t_count) {
+        for (int i = 'A'; i <= 'Z'; i++) {
+            if (s_count[i] < t_count[i]) {
+                return false;
+            }
+        }
+        for (int i = 'a'; i <= 'z'; i++) {
+            if (s_count[i] < t_count[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // easy way
+//    private boolean isCovered(int[] s_count, int[] t_count) {
+//        for (int i = 0; i < 128; i++) {
+//            if (s_count[i] < t_count[i]) {
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
 }
 ```
+---
+
+![](img/2025-05-26-23-03-40.png)
+
+```py
+class Solution:
+    def minWindow(self, s: str, t: str) -> str:
+        s_count = Counter()
+        t_count = Counter(t)
+
+        res_left, res_right = -1, len(s)
+        left = 0
+        for right, c in enumerate(s):
+            s_count[c] += 1
+            while s_count >= t_count:
+                if right - left + 1 < res_right - res_left + 1:
+                    res_left, res_right = left, right
+                s_count[s[left]] -= 1
+                left += 1
+        return "" if res_left < 0 else s[res_left: res_right + 1]
+```
+
+
+
+
+
 
 ---
 
@@ -253,13 +273,6 @@ class MinimumWindowSubstring {
             map.put(c, map.getOrDefault(c, 0) + 1);
         }
         return map;
-    }
-
-    public static void main(String[] args) {
-        MinimumWindowSubstring minimumWindowSubstring = new MinimumWindowSubstring();
-        String s = "ADOBECODEBANC", t = "ABC";
-        String res = minimumWindowSubstring.minWindow(s, t);
-        System.out.println(res); // BANC
     }
 }
 

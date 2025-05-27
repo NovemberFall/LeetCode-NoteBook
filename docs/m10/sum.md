@@ -17,26 +17,28 @@
 class Solution {
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<List<Integer>> res = new ArrayList<>();
-        List<Integer> path = new ArrayList<>();
-        backtracking(candidates, target, 0, path, res);
+        if (candidates == null || candidates.length == 0) {
+            return res;
+        }
+        Arrays.sort(candidates);
+        dfs(res, new ArrayList<>(), 0, candidates, target);
         return res;
     }
-    
-    private void backtracking(int[] candidates, int target, int startIndex, 
-                              List<Integer> path, List<List<Integer>> res) {
+
+    private void dfs(List<List<Integer>> res, List<Integer> combine,
+                     int startIdx, int[] candidates, int target) {
         if (target < 0) {
             return;
         }
-        
         if (target == 0) {
-            res.add(new ArrayList<>(path));
+            res.add(new ArrayList<>(combine));
             return;
         }
-        
-        for (int i = startIndex; i < candidates.length; i++) {
-            path.add(candidates[i]);
-            backtracking(candidates, target-candidates[i], i, path, res);
-            path.remove(path.size() - 1);
+
+        for (int i = startIdx; i < candidates.length; i++) {
+            combine.add(candidates[i]);
+            dfs(res, combine, i, candidates, target - candidates[i]);
+            combine.remove(combine.size() - 1);
         }
     }
 }
@@ -90,3 +92,28 @@ class Solution {
 
 - By using the `startIndex` parameter, the modified code ensures that each candidate is considered only once 
   at each level of the recursion, preventing the generation of duplicate combinations.
+
+---
+
+```py
+class Solution:
+    def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
+        candidates.sort()
+        n = len(candidates)
+        res = []
+        path = []
+        def dfs(index, target):
+            if target == 0:
+                res.append(path.copy())
+                return
+
+            if target - candidates[index] < 0:
+                return
+
+            for j in range(index, n):
+                path.append(candidates[j])
+                dfs(j, target - candidates[j])
+                path.pop()
+        dfs(0, target)
+        return res
+```

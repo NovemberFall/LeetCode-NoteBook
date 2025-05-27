@@ -35,6 +35,23 @@ class Solution {
     }
 }
 ```
+
+
+```py
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        map = defaultdict(list)
+        for word in strs:
+            sorted_word = ''.join(sorted(word))
+            map[sorted_word].append(word)
+        return list(map.values())
+```
+
+- Note: cannot use ASCII values' sum as a key:
+
+![](img/2025-05-26-01-52-20.png)
+
+
 ---
 ### v2
 
@@ -105,3 +122,4 @@ class _49_groupAnagrams:
 
         return list(res.values())
 ```
+---
