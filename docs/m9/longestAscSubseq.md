@@ -25,8 +25,7 @@ class Solution:
 
 
 - **dfs(i)** 表示以 nums[i] 结尾的**最长递增子序列（LIS）的长度**。
-- 枚举**subsequence**的倒数第二个数的下标是 **j**，如果 **nums[j] < nums[i]**，那么有:
-                                                        **dfs(i) = dfs(j) + 1**
+- 枚举**subsequence**的倒数第二个数的下标是 **j**，如果 **nums[j] < nums[i]**，那么有:**dfs(i) = dfs(j) + 1**
 
 
 
