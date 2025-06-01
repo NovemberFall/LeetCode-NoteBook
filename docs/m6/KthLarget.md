@@ -36,16 +36,15 @@ class _215_KthLargestElementInArray {
 ```python
 class Solution:
     def findKthLargest(self, nums: List[int], k: int) -> int:
-        minHeap = []  # Create an empty list to represent the min-heap
-
-        for num in nums:
-            heapq.heappush(minHeap, num)  # Add the element to the min-heap
-
-            if len(minHeap) > k:
-                heapq.heappop(minHeap)   # Remove the smallest element if the size exceeds k
-
-        return minHeap[0]  # The top of the min-heap is the kth largest element
-
+        res = []
+        for i in range(len(nums)):
+            if len(res) < k:
+                heapq.heappush(res, nums[i])
+            else:
+                if nums[i] > res[0]:
+                    heapq.heappop(res)
+                    heapq.heappush(res, nums[i])
+        return res[0]
 ```
 ---
 

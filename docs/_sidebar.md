@@ -398,6 +398,7 @@
     * [Packing Up the Swags | Interview](m9/packingSwag.md)
     * [485. Max Consecutive Ones | Longest Consecutive 1s](DP/longestOnes.md)
 * [Math](math/intro.md)
+    * [](math/282.md)
     * [12. Integer to Roman](top/intToRoman.md)
     * [13. Roman to Integer](math/13.md)
     * [48. Rotate Image || Rotate Matrix](m3/rotateMatrix.md)
