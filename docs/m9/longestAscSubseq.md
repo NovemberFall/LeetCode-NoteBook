@@ -52,3 +52,11 @@ class Solution:
             dp[i] += 1
         return max(dp)
 ```
+
+---
+
+### dp 第二种写法
+
+```py
+
+```
