@@ -9,8 +9,8 @@
   1. Remove the specified value val from the set (represented by the list and indexMap).
   2. Maintain the **O(1)** time complexity.
 
-The main challenge is that removing an element from the middle of a list in Java is** O(n)** 
-because **all subsequent elements need to be shifted**. To avoid this, the solution uses a **swap-and-remove** strategy.
+The main challenge is that removing an element from the middle of a list in Java is **O(n)** 
+because **all subsequent elements need to be shifted** To avoid this, the solution uses a **swap-and-remove** strategy.
 
 
 ![](img/2025-01-14-18-13-00.png)
