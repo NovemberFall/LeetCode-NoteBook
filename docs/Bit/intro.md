@@ -1,5 +1,12 @@
 ## Bit Representation & Bit Operations
 
+- [从集合论到位运算，常见位运算技巧分类总结！](https://leetcode.cn/discuss/post/3571304/cong-ji-he-lun-dao-wei-yun-suan-chang-ji-enve/)
+
+
+- **Note**: 
+
+![](img/2025-06-04-14-01-37.png)
+---
 ```ruby
 219 = 2 * 100 + 1 * 10 + 9 * 1
 ```
@@ -152,3 +159,5 @@ int col = ch % 32 = 100 % 32 = 4
 
 因此 1 << col  => 16
 ```
+---
+
