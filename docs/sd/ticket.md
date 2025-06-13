@@ -63,6 +63,14 @@ body: {
 ```
 ---
 
+
 ## High-Level Design
 
+
+![](img/2025-06-12-19-10-29.png)
+
+---
+
+
+## DEEP DIVES
 
