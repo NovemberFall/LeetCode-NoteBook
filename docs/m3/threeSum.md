@@ -100,7 +100,9 @@ class _15_3Sum_Set {
             while (second < third) {
                 int curSum = nums[first] + nums[second] + nums[third];
                 if (curSum == 0) {
-                    res.add(Arrays.asList(nums[first], nums[second++], nums[third--]));
+                    res.add(Arrays.asList(nums[first], nums[second], nums[third]));
+                    second++;
+                    third--;
                 } else if (curSum > 0) {
                     third--;
                 } else {
@@ -131,8 +133,6 @@ class Solution:
                     res.append([nums[i], nums[left], nums[right]])
                     while left < right and nums[left] == nums[left + 1]:
                         left += 1                    
-                    while left < right and nums[right] == nums[right - 1]:
-                        right -= 1
                     left += 1
                     right -= 1
                 elif three_sum < 0:

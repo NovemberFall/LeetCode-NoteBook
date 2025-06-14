@@ -93,6 +93,16 @@ class Solution {
 - By using the `startIndex` parameter, the modified code ensures that each candidate is considered only once 
   at each level of the recursion, preventing the generation of duplicate combinations.
 
+
+
+### What Does “Using **startIndex** Prevents Duplicates” Mean?
+
+![](img/2025-06-14-14-04-21.png)
+
+
+
+
+
 ---
 
 ```py
