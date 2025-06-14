@@ -9,7 +9,7 @@
 ## Reuqirements:
 
 ### Functional Requirement
-- book tickets
+- 1. book tickets
 - view events
 - search for events
   
@@ -74,3 +74,4 @@ body: {
 
 ## DEEP DIVES
 
+![](img/2025-06-12-22-44-04.png)
