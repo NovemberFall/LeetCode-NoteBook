@@ -1,4 +1,4 @@
-## Design a URL Shortener Like Bit.ly
+## [Design a URL Shortener Like Bit.ly](https://www.hellointerview.com/learn/system-design/problem-breakdowns/bitly)
 
 - **Functional Requirements**:
   - 1. Users should be able to submit a long URL and receive a shortened version.
@@ -90,5 +90,10 @@ GET /{short_code}
 2. How can we ensure that redirects are fast?
 3. How can we scale to support 1B shortened urls and 100M DAU?
 
+
+![](img/2025-06-13-22-25-00.png)
+
+
+![](img/2025-06-13-22-25-15.png)
 
 
