@@ -100,7 +100,7 @@ class Solution {
 ![](img/2025-06-14-14-04-21.png)
 
 
-
+- Note this line: `for j in range(index, n):`, for every loop, it is decreasing to from index to n
 
 
 ---
