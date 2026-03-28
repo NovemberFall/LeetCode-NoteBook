@@ -14,6 +14,59 @@
   <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/pure.css"> -->
   <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/dolphin.css"> -->
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css"> -->
+  <style>
+    :root {
+      --docsify-sidebar-width: 300px;
+      --docsify-sidebar-min-width: 200px;
+      --docsify-sidebar-max-width: 500px;
+    }
+
+    .sidebar {
+      position: relative;
+      width: var(--docsify-sidebar-width);
+    }
+
+    .content {
+      left: var(--docsify-sidebar-width);
+    }
+
+    .sidebar-resizer {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 6px;
+      height: 100%;
+      cursor: col-resize;
+      background: transparent;
+      z-index: 10;
+      transition: background-color 0.2s ease;
+    }
+
+    .sidebar-resizer:hover,
+    body.sidebar-resizing .sidebar-resizer {
+      background: rgba(0, 0, 0, 0.08);
+    }
+
+    body.sidebar-resizing,
+    body.sidebar-resizing * {
+      cursor: col-resize !important;
+      user-select: none;
+    }
+
+    @media screen and (max-width: 767px) {
+      .sidebar {
+        width: auto;
+      }
+
+      .content {
+        left: 0;
+      }
+
+      .sidebar-resizer {
+        display: none;
+      }
+    }
+  </style>
 </head>
 <body>
   <nav>
@@ -79,6 +132,99 @@
   <!-- footer 分页导航插件 -->
   <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0"></script>
+  <script>
+    (function() {
+      var STORAGE_KEY = 'docsify-sidebar-width';
+      var DEFAULT_WIDTH = 300;
+      var MIN_WIDTH = 200;
+      var MAX_WIDTH = 500;
+      var MOBILE_BREAKPOINT = 768;
+
+      function isMobile() {
+        return window.innerWidth < MOBILE_BREAKPOINT;
+      }
+
+      function clampWidth(width) {
+        return Math.min(MAX_WIDTH, Math.max(MIN_WIDTH, width));
+      }
+
+      function readStoredWidth() {
+        var stored = parseInt(window.localStorage.getItem(STORAGE_KEY), 10);
+        return Number.isFinite(stored) ? clampWidth(stored) : DEFAULT_WIDTH;
+      }
+
+      function applyWidth(width) {
+        if (isMobile()) {
+          document.documentElement.style.removeProperty('--docsify-sidebar-width');
+          return;
+        }
+
+        var nextWidth = clampWidth(width);
+        document.documentElement.style.setProperty('--docsify-sidebar-width', nextWidth + 'px');
+      }
+
+      function ensureResizableSidebar() {
+        var sidebar = document.querySelector('.sidebar');
+        if (!sidebar) {
+          window.setTimeout(ensureResizableSidebar, 100);
+          return;
+        }
+
+        if (!sidebar.querySelector('.sidebar-resizer')) {
+          var resizer = document.createElement('div');
+          var startX = 0;
+          var startWidth = 0;
+
+          resizer.className = 'sidebar-resizer';
+          resizer.setAttribute('aria-hidden', 'true');
+
+          resizer.addEventListener('mousedown', function(event) {
+            if (isMobile()) {
+              return;
+            }
+
+            startX = event.clientX;
+            startWidth = sidebar.getBoundingClientRect().width;
+            document.body.classList.add('sidebar-resizing');
+
+            function handleMouseMove(moveEvent) {
+              var delta = moveEvent.clientX - startX;
+              applyWidth(startWidth + delta);
+            }
+
+            function handleMouseUp() {
+              var appliedWidth = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--docsify-sidebar-width'), 10);
+
+              document.removeEventListener('mousemove', handleMouseMove);
+              document.removeEventListener('mouseup', handleMouseUp);
+              document.body.classList.remove('sidebar-resizing');
+
+              if (Number.isFinite(appliedWidth)) {
+                window.localStorage.setItem(STORAGE_KEY, String(clampWidth(appliedWidth)));
+              }
+            }
+
+            document.addEventListener('mousemove', handleMouseMove);
+            document.addEventListener('mouseup', handleMouseUp);
+          });
+
+          sidebar.appendChild(resizer);
+        }
+
+        applyWidth(readStoredWidth());
+      }
+
+      window.addEventListener('resize', function() {
+        applyWidth(readStoredWidth());
+      });
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', ensureResizableSidebar);
+      } else {
+        ensureResizableSidebar();
+      }
+    })();
+  </script>
 
 </body>
 </html>
