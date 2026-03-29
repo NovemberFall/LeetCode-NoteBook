@@ -19,59 +19,11 @@
   <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/pure.css"> -->
   <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/dolphin.css"> -->
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css"> -->
-  <style>
-    :root {
-      --docsify-sidebar-width: 300px;
-      --docsify-sidebar-min-width: 200px;
-      --docsify-sidebar-max-width: 500px;
-    }
 
-    .sidebar {
-      position: relative;
-      width: var(--docsify-sidebar-width);
-    }
+  
+  <link rel="stylesheet" href="./_styles/code-theme.css">
 
-    .content {
-      left: var(--docsify-sidebar-width);
-    }
 
-    .sidebar-resizer {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 6px;
-      height: 100%;
-      cursor: col-resize;
-      background: transparent;
-      z-index: 10;
-      transition: background-color 0.2s ease;
-    }
-
-    .sidebar-resizer:hover,
-    body.sidebar-resizing .sidebar-resizer {
-      background: rgba(0, 0, 0, 0.08);
-    }
-
-    body.sidebar-resizing,
-    body.sidebar-resizing * {
-      cursor: col-resize !important;
-      user-select: none;
-    }
-
-    @media screen and (max-width: 767px) {
-      .sidebar {
-        width: auto;
-      }
-
-      .content {
-        left: 0;
-      }
-
-      .sidebar-resizer {
-        display: none;
-      }
-    }
-  </style>
 </head>
 <body>
   <nav>
@@ -137,8 +89,8 @@
   <!-- footer 分页导航插件 -->
   <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0"></script>
-  <script src="./_resize_sidebar.js"></script>
-  <script src="./_theme_toggle.js"></script>
+  <script src="./_scripts/resize_sidebar.js"></script>
+  <script src="./_scripts/theme_toggle.js"></script>
 
 </body>
 </html>

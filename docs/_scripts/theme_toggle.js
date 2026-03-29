@@ -9,6 +9,7 @@
   function applyTheme(theme, lightLink, darkLink, button) {
     var isDark = theme === DARK;
 
+    document.body.setAttribute('data-theme', isDark ? 'dark' : 'light');
     lightLink.disabled = isDark;
     darkLink.disabled = !isDark;
 
