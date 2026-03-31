@@ -637,7 +637,10 @@
 
 -----
 * [Fundamental Concept](basic/intro.md)
+    * [Python Basic knowledge](basic/bas.md)
+        * [`enumerate`](basic/enum.md)
     * [Python Data Structure](basic/ds.md)
+        * [`Counter()` vs `dict`](basic/cnt.md)
     * [Series Big-O | arithmetic, Geometric sequence](basic/series.md)
     * [Object | Java Pass by Value](basic/pbv.md)
     * [HashMap | Set](map/intro.md)
