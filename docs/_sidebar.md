@@ -637,6 +637,7 @@
 
 -----
 * [Fundamental Concept](basic/intro.md)
+    * [Python Data Structure](basic/ds.md)
     * [Series Big-O | arithmetic, Geometric sequence](basic/series.md)
     * [Object | Java Pass by Value](basic/pbv.md)
     * [HashMap | Set](map/intro.md)
