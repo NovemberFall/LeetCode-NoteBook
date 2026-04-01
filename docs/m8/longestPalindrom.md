@@ -61,7 +61,7 @@ class longestPalindromicSubstring {
 
 ---
 
-### Recursion
+### Python
 
 ```py
 class Solution:
@@ -69,19 +69,23 @@ class Solution:
         res = ""
         for i in range(len(s)):
             # odd case
-            odd_str = self.dfs(s, i, i)
+            odd_str = self.expand_from_center(s, i, i)
             if len(odd_str) > len(res):
                 res = odd_str
             # even case
-            even_str = self.dfs(s, i, i + 1)
+            even_str = self.expand_from_center(s, i, i + 1)
             if len(even_str) > len(res):
                 res = even_str
         return res
 
-    def dfs(self, s, l, r) -> str:
+    def expand_from_center(self, s, l, r) -> str:
         while l >= 0 and r < len(s) and s[l] == s[r]:
             l -= 1
             r += 1
         return s[l + 1: r]
 ```
+
+---
+
+### don't need to consider `odd` or `even`
 

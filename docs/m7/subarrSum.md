@@ -55,9 +55,11 @@ public class Solution {
 ```
 
 - Complexity Analysis
-  - Time complexity : **O(n^2)**
+![](img/2026-03-31-16-09-57.png)
   - Space complexity : **O(n)**
 
+
+![](img/2026-03-31-16-12-16.png)
 ---
 
 - Optimization by Hashmap
