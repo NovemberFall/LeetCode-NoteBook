@@ -7,44 +7,6 @@
 - [leetcode 官方解释](https://www.youtube.com/watch?v=YWBNoH25lRw)
 
 
-```ruby
-   left = 0,   right = 0
-
-    s = A D O B E C O D E B A N C           t = A B C
-        r              since sFreq[A] < tFreq[A]  :  matchingCharsCount++ 
-                             sFreq[right]++  => 1
-
-
-    s = A D O B E C O D E B A N C           t = A B C
-          r              
-
-    s = A D O B E C O D E B A N C           t = A B C
-            r              
-
-    s = A D O B E C O D E B A N C           t = A B C
-              r         since sFreq[B] < tFreq[B]  :  matchingCharsCount++ 
-                              sFreq[right]++  => 2
-
-
-    s = A D O B E C O D E B A N C           t = A B C
-                r 
-
-    s = A D O B E C O D E B A N C           t = A B C
-                  r      since sFreq[C] < tFreq[C]  :  matchingCharsCount++  
-                               sFreq[right]++  => 3      minLen = 6     
-
-
-    s = A D O B E C O D E B A N C           t = A B C
-        l         r           
-
-    s = A D O B E C O D E B A N C           t = A B C
-          l           r        when (matchingCharsCount == t.length()) :
-                               sFreq[A] == tFreq[A] : =>  matchingCharsCount--   =>   2
-                               sFreq[left]--       left++   
-                               right++;
-```
----
-
 ```py
 class Solution:
     def minWindow(self, s: str, t: str) -> str:
@@ -62,8 +24,17 @@ class Solution:
                 left += 1
         return "" if res_left < 0 else s[res_left: res_right + 1]
 ```
+---
+![](img/2026-04-01-18-31-26.png)
+
+![](img/2026-04-01-18-33-28.png)
+
+![](img/2026-04-01-18-34-04.png)
+
+![](img/2026-04-01-18-36-47.png)
 
 
+![](img/2026-04-01-18-41-33.png)
 ---
 
 
