@@ -3,37 +3,36 @@
 ![](img/2021-12-22-16-45-41.png)
 ---
 
-### Max Heap
+### Monotonic Queue
 
-```java
-class Solution {
-    public int[] maxSlidingWindow(int[] nums, int k) {
-        List<Integer> res = new ArrayList<>();
-        int curMax = Integer.MIN_VALUE;
-        PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a,b) -> b - a);
-        int left = 0;
-        for (int right = 0; right < nums.length; right++) {
-            // add right
-            maxHeap.offer(nums[right]);
+```python
+class Solution:
+    def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
+        res = []
+        dq = deque() # # store indices, values are in decreasing order
+
+        for i, num in enumerate(nums):
+
+            # 1. Maintain decreasing deque
+            # Remove all elements smaller than current num
+            # because they can never be the maximum
+            while dq and nums[dq[-1]] <= num:
+                dq.pop()
+
+            # Add current index
+            dq.append(i)
             
-            // remove left
-            if (right - left + 1 > k) {
-                maxHeap.remove(nums[left]);
-                left++;
-            }
-            
-            if (right - left + 1 >= k) {
-                res.add(maxHeap.peek());
-            }
-        }
-        
-        int[] ans = new int[res.size()];
-        for (int i = 0; i < ans.length; i++) {
-            ans[i] = res.get(i);
-        }
-        return ans;
-    }
-}
+            # 2. Remove elements out of the window
+            # If the front index is too old (out of window), remove it
+            if i - dq[0] >= k:
+                dq.popleft()
+
+            # 3. Record result when window is valid
+            # The front of deque is always the maximum
+            if i >= k - 1:
+                res.append(nums[dq[0]])
+                
+        return res
 ```
 
 ---
