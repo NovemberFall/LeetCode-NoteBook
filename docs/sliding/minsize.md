@@ -26,20 +26,22 @@ class _209_MinimumSizeSubarraySum {
 ```
 ---
 
+### Base On my Py Sliding Window Template
+
 ```py
 class Solution:
     def minSubArrayLen(self, target: int, nums: List[int]) -> int:
-        n = len(nums)
-        res = float('inf')
-        curr_sum = 0
+        cur_sum = 0
+        res_left, res_right = -1, len(nums)
         left = 0
-        for right, x in enumerate(nums):
-            curr_sum += x
-            while curr_sum >= target:
-                res = min(res, right - left + 1)
-                curr_sum -= nums[left]
+        for right, num in enumerate(nums):
+            cur_sum += num
+            while cur_sum >= target:
+                if right - left + 1 < res_right - res_left + 1:
+                    res_left, res_right = left, right
+                cur_sum -= nums[left]
                 left += 1
-        return res if res != float('inf') else 0
+        return 0 if res_left < 0 else res_right - res_left + 1
 ```
 ---
 
