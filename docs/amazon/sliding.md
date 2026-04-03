@@ -3,7 +3,7 @@
 ![](img/2021-12-22-16-45-41.png)
 ---
 
-### Monotonic Queue
+### Monotonic decreasing deque
 
 ```python
 class Solution:
