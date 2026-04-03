@@ -36,6 +36,43 @@
                                  return True
  
 ```
+---
+
+```py
+class Solution:
+    def checkInclusion(self, s1: str, s2: str) -> bool:
+        s_cnt = Counter()           # sliding window frequency
+        t_cnt = Counter(s1)         # target frequency (pattern)
+        k = len(s1)                 # fixed window size
+
+        left = 0
+        for right, c in enumerate(s2):
+            # 1. expand window: include current character
+            s_cnt[c] += 1
+
+            # 2. keep window size == k
+            if right - left + 1 > k:
+                s_cnt[s2[left]] -= 1
+
+                # 🔥 remove key if count becomes 0 (important!)
+                if s_cnt[s2[left]] == 0:
+                    del s_cnt[s2[left]]
+
+                left += 1
+
+            # 3. check if current window is a permutation of s1
+            if right - left + 1 == k and s_cnt == t_cnt:
+                return True
+
+        return False
+```
+---
+
+### Counter ignores **zero-count keys** in comparison.
+
+![](img/2026-04-03-09-12-50.png)
+
+![](img/2026-04-03-09-14-01.png)
 
 ---
 ```java
@@ -73,35 +110,7 @@ class Solution {
 
 
 ---
-## Method 2
 
 
-```java
-class Solution {
-    public boolean checkInclusion(String s1, String s2) {
-        if (s1.length() > s2.length()) return false;
-        
-        
-        int[] freq1 = new int[128];
-        int[] freq2 = new int[128];
-        for (char c : s1.toCharArray()) {
-            freq1[c]++;
-        }
-        int len1 = s1.length();
-        for (int i = 0; i < len1 - 1; i++) {
-            freq2[s2.charAt(i)]++;
-        }
-        int left = 0;
-        for (int right = len1 - 1; right < s2.length(); right++) {
-            char c = s2.charAt(right);
-            freq2[c]++;
-            if (Arrays.equals(freq1, freq2)) {
-                return true;
-            }
-            freq2[s2.charAt(left)]--;
-            left++;
-        }
-        return false;
-    }
-}
-```
+
+
