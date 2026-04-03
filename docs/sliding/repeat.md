@@ -12,6 +12,36 @@
 ---
 ![](img/2024-03-17-17-26-06.png)
 ---
+
+
+### Python
+
+```py
+class Solution:
+    def characterReplacement(self, s: str, k: int) -> int:
+        cnt = Counter()
+        res = 0
+        max_freq = 0
+        left = 0
+
+        for right, c in enumerate(s):
+            # expand
+            cnt[c] += 1
+            max_freq = max(max_freq, cnt[c])
+
+            # shrink (⚠️ condition changed)
+            while (right - left + 1) - max_freq > k:
+                cnt[s[left]] -= 1
+                left += 1
+            
+            res = max(res, right - left + 1)
+        return res
+```
+
+
+
+
+---
 ```java
 class _424_LongestRepeatingCharacterReplacement {
     public int characterReplacement(String s, int k) {
@@ -38,29 +68,3 @@ class _424_LongestRepeatingCharacterReplacement {
 ```
 
 ---
-
-### version 2
-
-```java
-class Solution {
-    public int characterReplacement(String s, int k) {
-        int[] count = new int[128];
-        int maxUniqueCount = 0;
-        int longest = 0;
-        int left = 0;
-        for (int right = 0; right < s.length(); right++) {
-            char c = s.charAt(right);
-            count[c]++;
-            maxUniqueCount = Math.max(maxUniqueCount, count[c]);
-            int replacement = right - left + 1 - maxUniqueCount;
-            if (replacement > k) {
-                count[s.charAt(left)]--;
-                left++;
-            } else {
-                longest = Math.max(longest, right - left + 1);
-            }
-        }
-        return longest;
-    }
-}
-```
