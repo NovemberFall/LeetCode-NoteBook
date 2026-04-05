@@ -334,6 +334,7 @@
     * [424. Longest Repeating Character Replacement](sliding/repeat.md)
     * [438. Find All Anagrams in a String](sliding/anagram.md)
     * [567. Permutation in String](sliding/permutation.md)
+    * [930. Binary Subarrays With Sum](sliding/930.md)
 * [Matrix](matrix/intro.md)
     * [37. Sudoku Solver](top/SudokuSolver.md)
     * [59. Spiral Matrix II](matrix/spiralMatrix2.md)

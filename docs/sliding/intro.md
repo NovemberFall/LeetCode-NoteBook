@@ -4,7 +4,12 @@
   - 1. Maintain a sliding window that satisfies certain conditions
   - 2. Move the right pointer to the right to expand the window.
   - 3. Move the left pointer to the right to shrink the window and make it satisfy the condition again.
+---
+![](img/2026-04-04-00-08-30.png)
 
+![](img/2026-04-04-00-08-50.png)
+
+![](img/2026-04-04-00-19-21.png)
 
 
 
