@@ -249,3 +249,125 @@ class LRUCache {
 }
 
 ```
+---
+
+### Python
+
+```py
+class Node:
+    def __init__(self, key, val) -> None:
+        self.key = key
+        self.val = val
+        self.next = None
+        self.prev = None
+
+
+
+class LRUCache:
+
+    def __init__(self, capacity: int):
+        self.capacity = capacity
+        self.dict = {}    # key -> Node
+        self.head = None
+        self.tail = None
+
+    def get(self, key: int) -> int:
+        node = self.dict.get(key)
+        if not node:
+            return -1
+
+        # Move to head because it was recently used
+        self.remove(node)
+        self.appendToHead(node)
+        return node.val
+
+    def put(self, key: int, value: int) -> None:
+
+        if key in self.dict:
+            # Update existing node
+            node = self.dict.get(key)
+            node.val = value
+
+            self.remove(node)
+            self.appendToHead(node)
+        else:
+            node = Node(key, value)
+            if len(self.dict) < self.capacity:
+                self.appendToHead(node)
+            else:
+                self.remove(self.tail)
+                self.appendToHead(node)
+
+
+    def appendToHead(self, node):
+        self.dict[node.key] = node
+        if not self.head:
+            self.head = self.tail = node
+        else:
+            node.next = self.head
+            self.head.prev = node
+            self.head = node
+
+    # there are 4 cases for doubly linkedList
+    def remove(self, node):
+        self.dict.pop(node.key)
+        if node == self.tail:
+            self.tail = self.tail.prev
+
+        if node.prev:
+            node.prev.next = node.next
+
+        if node.next:
+            node.next.prev = node.prev
+
+        if node == self.head:
+            self.head = self.head.next
+
+        node.prev = None
+        node.next = None
+
+
+
+# Your LRUCache object will be instantiated and called as such:
+# obj = LRUCache(capacity)
+# param_1 = obj.get(key)
+# obj.put(key,value)
+
+
+
+
+
+if __name__ == "__main__":
+
+    lru = LRUCache(5)
+
+    lru.put(1, 1)
+    lru.put(2, 2)
+
+    temp = lru.get(1)
+    print(f"Should return 1 => {temp}")
+
+    lru.put(3, 3)
+    lru.put(4, 4)
+    lru.put(5, 5)
+    lru.put(6, 6)   # Evicts key 2
+
+    print("\nCurrent Cache:")
+    for key, node in lru.dict.items():
+        print(f"{key} => {node.val}")
+
+    temp = lru.get(2)
+    print(f"\nShould return -1 => {temp}")
+
+    lru.put(7, 7)   # Evicts key 1
+
+    print("\nCurrent Cache:")
+    for key, node in lru.dict.items():
+        print(f"{key} => {node.val}")
+
+    temp = lru.get(3)
+    print(f"\nShould return 3 => {temp}")
+
+    temp = lru.get(4)
+    print(f"Should return 4 => {temp}")
+```
