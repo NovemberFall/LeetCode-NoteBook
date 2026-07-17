@@ -92,7 +92,10 @@ class TimeBased_KeyValue_Store_Simple {
 ```
 ---
 
+- We can use binary search because **the timestamps for each key are guaranteed to be sorted in increasing order**. Our goal is to find the **largest timestamp that is less than or equal to the target timestamp**, which is a classic binary search problem.
 
+
+---
 ```py
 class TimeMap:
 
