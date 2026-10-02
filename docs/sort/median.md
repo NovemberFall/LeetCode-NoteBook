@@ -50,6 +50,8 @@ k = the rank we're looking for among remaining elements
 
 ![](img/2026-09-26-21-06-59.png)
 
+
+![](img/2026-10-01-21-31-54.png)
 ---
 
 ```py
